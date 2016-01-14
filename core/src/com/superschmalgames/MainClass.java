@@ -13,12 +13,13 @@ public class MainClass extends Game {
 
 	SpriteBatch batch;
 	BitmapFont font;
+	HeroCharacter hero;
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		font = new BitmapFont();
-
+		hero = new HeroCharacter();
 		this.setScreen(new TitleScreen(this));
 	}
 

@@ -29,6 +29,13 @@ public class GameScreen implements Screen {
 
         worldMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/world_map_music.wav"));
         worldMusic.setLooping(true);
+
+        //Set initial info for the main character.
+        game.hero.name = "Matt";
+        game.hero.width = 50;
+        game.hero.height = 87;
+        game.hero.xPos = game.GAME_SCREEN_WIDTH/2 - game.hero.width/2;
+        game.hero.yPos = game.GAME_SCREEN_HEIGHT/2 - game.hero.height/2;
     }
 
     @Override
