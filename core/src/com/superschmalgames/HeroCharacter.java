@@ -6,14 +6,14 @@ public class HeroCharacter {
 
     public String name;
     public int level;
-    public int width;
-    public int height;
-    public int xPos;
-    public int yPos;
-    public double gpa;
+    public float width;
+    public float height;
+    public float xPos;
+    public float yPos;
+    public float gpa;
 
     public HeroCharacter(){
         level = 1;
-        gpa = 4.0;
+        gpa = 4;
     }
 }
