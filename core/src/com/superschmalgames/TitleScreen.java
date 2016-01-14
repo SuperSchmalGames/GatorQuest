@@ -53,7 +53,7 @@ public class TitleScreen implements Screen {
 
     @Override
     public void show() {
-        titleScreenMusic.play();
+        //titleScreenMusic.play();
     }
 
     @Override

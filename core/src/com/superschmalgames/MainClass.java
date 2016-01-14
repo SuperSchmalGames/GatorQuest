@@ -1,10 +1,8 @@
 package com.superschmalgames;
 
-import com.badlogic.gdx.ApplicationAdapter;
+//The main game class that contains much of the "guts" of everything.
+
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
