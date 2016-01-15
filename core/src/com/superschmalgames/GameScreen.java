@@ -43,24 +43,38 @@ public class GameScreen implements Screen {
         Gdx.gl.glClearColor(0, 0, 0.2f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+        //Update the camera that the game sees.
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
 
+        //Draw to our batch each refresh. The batch is then rendered to the screen.
         game.batch.begin();
-        game.batch.draw(heroTexture,game.hero.xPos, game.hero.yPos);
+        game.batch.draw(game.hero.heroAnim.currentFrame, game.hero.xPos, game.hero.yPos);
         game.batch.end();
 
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT)){
             game.hero.xPos -= 200 * Gdx.graphics.getDeltaTime();
+            game.hero.leftWalk.stateTime += Gdx.graphics.getDeltaTime();
+            game.hero.leftWalk.currentFrame = game.hero.leftWalk.walkAnimation.getKeyFrame(game.hero.leftWalk.stateTime, true);
+            game.hero.heroAnim = game.hero.leftWalk;
         }
         if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
             game.hero.xPos += 200 * Gdx.graphics.getDeltaTime();
+            game.hero.rightWalk.stateTime += Gdx.graphics.getDeltaTime();
+            game.hero.rightWalk.currentFrame = game.hero.rightWalk.walkAnimation.getKeyFrame(game.hero.rightWalk.stateTime, true);
+            game.hero.heroAnim = game.hero.rightWalk;
         }
         if(Gdx.input.isKeyPressed(Input.Keys.UP)){
             game.hero.yPos += 200 * Gdx.graphics.getDeltaTime();
+            game.hero.upWalk.stateTime += Gdx.graphics.getDeltaTime();
+            game.hero.upWalk.currentFrame = game.hero.upWalk.walkAnimation.getKeyFrame(game.hero.upWalk.stateTime, true);
+            game.hero.heroAnim = game.hero.upWalk;
         }
         if(Gdx.input.isKeyPressed(Input.Keys.DOWN)){
             game.hero.yPos -= 200 * Gdx.graphics.getDeltaTime();
+            game.hero.downWalk.stateTime += Gdx.graphics.getDeltaTime();
+            game.hero.downWalk.currentFrame = game.hero.downWalk.walkAnimation.getKeyFrame(game.hero.downWalk.stateTime, true);
+            game.hero.heroAnim = game.hero.downWalk;
         }
         //Include guards that keep the character on the screen.
         if(game.hero.xPos < 0) game.hero.xPos = 0;
