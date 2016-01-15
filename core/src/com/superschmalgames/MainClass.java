@@ -20,7 +20,11 @@ public class MainClass extends Game {
 	public void create () {
 		batch = new SpriteBatch();
 		font = new BitmapFont();
+
+		//Create and initialize the main character object.
 		hero = new HeroCharacter();
+
+		//Set the screen as the title screen.
 		this.setScreen(new TitleScreen(this));
 	}
 
