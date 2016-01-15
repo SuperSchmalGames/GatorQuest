@@ -10,6 +10,7 @@ public class MainClass extends Game {
 
 	final int GAME_SCREEN_WIDTH = 800;
 	final int GAME_SCREEN_HEIGHT = 480;
+	final int MAP_RESOLUTION = 64;
 
 	SpriteBatch batch;
 	BitmapFont font;
@@ -19,7 +20,11 @@ public class MainClass extends Game {
 	public void create () {
 		batch = new SpriteBatch();
 		font = new BitmapFont();
+
+		//Create and initialize the main character object.
 		hero = new HeroCharacter();
+
+		//Set the screen as the title screen.
 		this.setScreen(new TitleScreen(this));
 	}
 
