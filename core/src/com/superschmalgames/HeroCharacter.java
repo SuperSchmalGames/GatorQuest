@@ -30,6 +30,7 @@ public class HeroCharacter {
 
     public void setAnimations(){
         //Initialize all of the different animations.
+
         leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l.png");
         rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r.png");
         upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u.png");

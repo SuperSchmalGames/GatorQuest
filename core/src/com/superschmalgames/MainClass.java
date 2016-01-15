@@ -10,6 +10,7 @@ public class MainClass extends Game {
 
 	final int GAME_SCREEN_WIDTH = 800;
 	final int GAME_SCREEN_HEIGHT = 480;
+	final int MAP_RESOLUTION = 64;
 
 	SpriteBatch batch;
 	BitmapFont font;
