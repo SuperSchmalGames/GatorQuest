@@ -9,6 +9,11 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 
 public class GameScreen implements Screen {
 
@@ -18,6 +23,10 @@ public class GameScreen implements Screen {
 
     Music worldMusic;
     Texture heroTexture;
+
+    TiledMap tiledmap;
+    TiledMapTileLayer collision;
+    TiledMapRenderer tiledmaprenderer;
 
     public GameScreen(final MainClass gam) {
         this.game = gam;
@@ -29,6 +38,10 @@ public class GameScreen implements Screen {
 
         worldMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/world_map_music.wav"));
         worldMusic.setLooping(true);
+
+        tiledmap = new TmxMapLoader().load("visuals/maps/gatorquesttest.tmx");
+        tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
+        collision = (TiledMapTileLayer) tiledmap.getLayers().get("Shade");
 
         //Set initial info for the main character.
         game.hero.name = "Matt";
@@ -45,33 +58,56 @@ public class GameScreen implements Screen {
 
         //Update the camera that the game sees.
         camera.update();
-        game.batch.setProjectionMatrix(camera.combined);
+        //game.batch.setProjectionMatrix(camera.combined);
+
+        tiledmaprenderer.setView(camera);
+        tiledmaprenderer.render();
 
         //Draw to our batch each refresh. The batch is then rendered to the screen.
         game.batch.begin();
         game.batch.draw(game.hero.heroAnim.currentFrame, game.hero.xPos, game.hero.yPos);
         game.batch.end();
 
-        if(Gdx.input.isKeyPressed(Input.Keys.LEFT)){
-            game.hero.xPos -= 200 * Gdx.graphics.getDeltaTime();
+        if(Gdx.input.isKeyPressed(Input.Keys.LEFT) &&
+                !collision.getCell((int)(camera.position.x-33)/16, (int) camera.position.y/16).getTile().getProperties().containsKey("blocked") &&
+                !collision.getCell((int)(camera.position.x-33)/16, (int) (camera.position.y+16)/16).getTile().getProperties().containsKey("blocked") &&
+                !collision.getCell((int)(camera.position.x-33)/16, (int) (camera.position.y-16)/16).getTile().getProperties().containsKey("blocked")
+                ){
+            //game.hero.xPos -= 200 * Gdx.graphics.getDeltaTime();
+            camera.translate(-2f,0f);
             game.hero.leftWalk.stateTime += Gdx.graphics.getDeltaTime();
             game.hero.leftWalk.currentFrame = game.hero.leftWalk.walkAnimation.getKeyFrame(game.hero.leftWalk.stateTime, true);
             game.hero.heroAnim = game.hero.leftWalk;
         }
-        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
-            game.hero.xPos += 200 * Gdx.graphics.getDeltaTime();
+        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) &&
+                !collision.getCell((int)(camera.position.x+33)/16, (int) camera.position.y/16).getTile().getProperties().containsKey("blocked") &&
+                !collision.getCell((int)(camera.position.x+33)/16, (int) (camera.position.y+16)/16).getTile().getProperties().containsKey("blocked") &&
+                !collision.getCell((int)(camera.position.x+33)/16, (int) (camera.position.y-16)/16).getTile().getProperties().containsKey("blocked")
+                ){
+            //game.hero.xPos += 200 * Gdx.graphics.getDeltaTime();
+            camera.translate(2f,0f);
             game.hero.rightWalk.stateTime += Gdx.graphics.getDeltaTime();
             game.hero.rightWalk.currentFrame = game.hero.rightWalk.walkAnimation.getKeyFrame(game.hero.rightWalk.stateTime, true);
             game.hero.heroAnim = game.hero.rightWalk;
         }
-        if(Gdx.input.isKeyPressed(Input.Keys.UP)){
-            game.hero.yPos += 200 * Gdx.graphics.getDeltaTime();
+        if(Gdx.input.isKeyPressed(Input.Keys.UP) &&
+                !collision.getCell((int)camera.position.x/16, (int) (camera.position.y+33)/16).getTile().getProperties().containsKey("blocked") &&
+                !collision.getCell((int)(camera.position.x-16)/16, (int) (camera.position.y+33)/16).getTile().getProperties().containsKey("blocked") &&
+                !collision.getCell((int)(camera.position.x+16)/16, (int) (camera.position.y+33)/16).getTile().getProperties().containsKey("blocked")
+                ){
+            //game.hero.yPos += 200 * Gdx.graphics.getDeltaTime();
+            camera.translate(0f,2f);
             game.hero.upWalk.stateTime += Gdx.graphics.getDeltaTime();
             game.hero.upWalk.currentFrame = game.hero.upWalk.walkAnimation.getKeyFrame(game.hero.upWalk.stateTime, true);
             game.hero.heroAnim = game.hero.upWalk;
         }
-        if(Gdx.input.isKeyPressed(Input.Keys.DOWN)){
-            game.hero.yPos -= 200 * Gdx.graphics.getDeltaTime();
+        if(Gdx.input.isKeyPressed(Input.Keys.DOWN) &&
+                !collision.getCell((int)camera.position.x/16, (int) (camera.position.y-33)/16).getTile().getProperties().containsKey("blocked") &&
+                !collision.getCell((int)(camera.position.x-16)/16, (int) (camera.position.y-33)/16).getTile().getProperties().containsKey("blocked") &&
+                !collision.getCell((int)(camera.position.x+16)/16, (int) (camera.position.y-33)/16).getTile().getProperties().containsKey("blocked")
+                ){
+            //game.hero.yPos -= 200 * Gdx.graphics.getDeltaTime();
+            camera.translate(0f,-2f);
             game.hero.downWalk.stateTime += Gdx.graphics.getDeltaTime();
             game.hero.downWalk.currentFrame = game.hero.downWalk.walkAnimation.getKeyFrame(game.hero.downWalk.stateTime, true);
             game.hero.heroAnim = game.hero.downWalk;
