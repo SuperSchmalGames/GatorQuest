@@ -4,13 +4,14 @@ package com.superschmalgames;
 
 public class HeroCharacter {
 
-    public String name;
-    public int level;
-    public float width;
-    public float height;
-    public float xPos;
-    public float yPos;
-    public float gpa;
+    public String name;     //Our hero character's name. Can be set at start of game, and used in dialogue with NPC's.
+    public int level;       //Character's level. Goes up as enemies are defeated. (MAY NOT END UP USING)
+    public float gpa;       //Character's Grade Point Average. Acts as a "health meter." If reduced to zero, character loses fight.
+
+    public float width;     //Width of character object. Used to handle collision detection and how player interacts with environment
+    public float height;    //Height of character object.
+    public float xPos;      //Cartesian x-coordinate of character. Used for player movement tracking.
+    public float yPos;      //Cartesian y-coordinate of character.
 
     //Animators that take care of walking in each direction.
     Animator leftWalk;
