@@ -13,6 +13,15 @@ public class HeroCharacter {
     public float xPos;      //Cartesian x-coordinate of character. Used for player movement tracking.
     public float yPos;      //Cartesian y-coordinate of character.
 
+    //Character stats.
+    public float software;
+    public float hardware;
+    public float readWrite;
+    public float endurance;
+    public float social;
+    public float math;
+    public float detail;
+
     //Animators that take care of walking in each direction.
     Animator leftWalk;
     Animator rightWalk;
