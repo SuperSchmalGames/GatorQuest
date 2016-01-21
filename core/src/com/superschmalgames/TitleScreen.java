@@ -14,13 +14,15 @@ import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.utils.Align;
 
 public class TitleScreen implements Screen {
-
+    //An instance of our actual game object.
     final MainClass game;
 
+    //The camera through which we "see" the game world.
+    OrthographicCamera camera;
+
+    //Textures and audio used in the title screen.
     Music titleScreenMusic;
     Sound titleScreenSelectionSound;
-
-    OrthographicCamera camera;
 
     GlyphLayout layout1 = new GlyphLayout();
     GlyphLayout layout2 = new GlyphLayout();
@@ -30,10 +32,11 @@ public class TitleScreen implements Screen {
     public TitleScreen(final MainClass gam) {
         this.game = gam;
 
-        //Initialize all textures, sounds, etc.
+        //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
         camera.setToOrtho(false, game.GAME_SCREEN_WIDTH, game.GAME_SCREEN_HEIGHT);
 
+        //Initialize the music. Load an audio file from our assets into the Music object.
         titleScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/title_screen_music.wav"));
         titleScreenSelectionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/explosion.wav"));
         titleScreenMusic.setLooping(true);
@@ -41,14 +44,18 @@ public class TitleScreen implements Screen {
 
     @Override
     public void render(float delta) {
+
         Gdx.gl.glClearColor(0, 0, 0.5f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
 
 
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
 
+        //Draw to our batch each refresh. The batch is then rendered to the screen.
         game.batch.begin();
+
         game.font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
         layout1.setText(game.font, GatorQuest);
         layout2.setText(game.font, PressSpace);
@@ -62,8 +69,10 @@ public class TitleScreen implements Screen {
                 Gdx.graphics.getWidth()/2 - layout2.width/2,
                 Gdx.graphics.getHeight()/2 + layout2.height/2-100
         );
+
         game.batch.end();
 
+        //Take keyboard input from the user.
         if(Gdx.input.isKeyPressed(Input.Keys.SPACE)){
             titleScreenSelectionSound.play();
             game.setScreen(new AvatarColorSel(game));
