@@ -9,6 +9,9 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
+import com.badlogic.gdx.utils.Align;
 
 public class TitleScreen implements Screen {
 
@@ -18,6 +21,11 @@ public class TitleScreen implements Screen {
     Sound titleScreenSelectionSound;
 
     OrthographicCamera camera;
+
+    GlyphLayout layout1 = new GlyphLayout();
+    GlyphLayout layout2 = new GlyphLayout();
+    String GatorQuest = "GatorQuest";
+    String PressSpace = "Press space to start.";
 
     public TitleScreen(final MainClass gam) {
         this.game = gam;
@@ -33,20 +41,32 @@ public class TitleScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(0, 0, 0.2f, 1);
+        Gdx.gl.glClearColor(0, 0, 0.5f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
 
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
 
         game.batch.begin();
-        game.font.draw(game.batch, "GatorQuest", camera.viewportWidth/3, camera.viewportHeight/2+20);
-        game.font.draw(game.batch, "Press Space to Begin", camera.viewportWidth/3, camera.viewportHeight/2-20);
+        game.font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
+        layout1.setText(game.font, GatorQuest);
+        layout2.setText(game.font, PressSpace);
+        game.font.draw(game.batch,
+                GatorQuest,
+                Gdx.graphics.getWidth()/2 - layout1.width/2,
+                Gdx.graphics.getHeight()/2 + layout1.height/2
+                );
+        game.font.draw(game.batch,
+                PressSpace,
+                Gdx.graphics.getWidth()/2 - layout2.width/2,
+                Gdx.graphics.getHeight()/2 + layout2.height/2-100
+        );
         game.batch.end();
 
         if(Gdx.input.isKeyPressed(Input.Keys.SPACE)){
             titleScreenSelectionSound.play();
-            game.setScreen(new GameScreen(game));
+            game.setScreen(new AvatarColorSel(game));
             dispose();
         }
     }
