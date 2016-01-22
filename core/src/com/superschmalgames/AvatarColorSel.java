@@ -69,42 +69,42 @@ public class AvatarColorSel implements Screen{
 
         if(Gdx.input.isKeyPressed(Input.Keys.NUM_1)){
             game.hero.outfitNum = 1;
-            game.hero.setAnimations();
+            game.hero.initAnimations();
             titleScreenSelectionSound.play();
             game.setScreen(new GameScreen(game));
             dispose();
         }
         if(Gdx.input.isKeyPressed(Input.Keys.NUM_2)){
             game.hero.outfitNum = 2;
-            game.hero.setAnimations();
+            game.hero.initAnimations();
             titleScreenSelectionSound.play();
             game.setScreen(new GameScreen(game));
             dispose();
         }
         if(Gdx.input.isKeyPressed(Input.Keys.NUM_3)){
             game.hero.outfitNum = 3;
-            game.hero.setAnimations();
+            game.hero.initAnimations();
             titleScreenSelectionSound.play();
             game.setScreen(new GameScreen(game));
             dispose();
         }
         if(Gdx.input.isKeyPressed(Input.Keys.NUM_4)){
             game.hero.outfitNum = 4;
-            game.hero.setAnimations();
+            game.hero.initAnimations();
             titleScreenSelectionSound.play();
             game.setScreen(new GameScreen(game));
             dispose();
         }
         if(Gdx.input.isKeyPressed(Input.Keys.NUM_5)){
             game.hero.outfitNum = 5;
-            game.hero.setAnimations();
+            game.hero.initAnimations();
             titleScreenSelectionSound.play();
             game.setScreen(new GameScreen(game));
             dispose();
         }
         if(Gdx.input.isKeyPressed(Input.Keys.NUM_6)){
             game.hero.outfitNum = 6;
-            game.hero.setAnimations();
+            game.hero.initAnimations();
             titleScreenSelectionSound.play();
             game.setScreen(new GameScreen(game));
             dispose();
