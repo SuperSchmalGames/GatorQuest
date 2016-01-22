@@ -48,8 +48,7 @@ public class TitleScreen implements Screen {
         Gdx.gl.glClearColor(0, 0, 0.5f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-
-
+        //Update the camera once per refresh.
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
 
