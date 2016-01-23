@@ -68,7 +68,7 @@ public class AvatarColorSel implements Screen{
         game.batch.end();
 
         if(Gdx.input.isKeyPressed(Input.Keys.NUM_1)){
-            game.hero.outfitNum = 1;
+            game.hero.outfitNum = 7;   //Normally set to 1.
             game.hero.initAnimations();
             titleScreenSelectionSound.play();
             game.setScreen(new GameScreen(game));

@@ -61,12 +61,12 @@ public class TitleScreen implements Screen {
         game.font.draw(game.batch,
                 GatorQuest,
                 Gdx.graphics.getWidth()/2 - layout1.width/2,
-                Gdx.graphics.getHeight()/2 + layout1.height/2
+                Gdx.graphics.getHeight()/2 + layout1.height/2+50
                 );
         game.font.draw(game.batch,
                 PressSpace,
                 Gdx.graphics.getWidth()/2 - layout2.width/2,
-                Gdx.graphics.getHeight()/2 + layout2.height/2-100
+                Gdx.graphics.getHeight()/2 + layout2.height/2-50
         );
 
         game.batch.end();

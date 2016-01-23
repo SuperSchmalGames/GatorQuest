@@ -31,8 +31,8 @@ public class Animator {
             }
         }
 
-        //Initialize our animation.
-        walkAnimation = new Animation(0.075f, walkFrames);  //Might need to tweak this value to make animation smoother.
+        //Initialize our animation.  //Was 0.075
+        walkAnimation = new Animation(0.17f, walkFrames);  //Might need to tweak this value to make animation smoother.
 
         //Set our time to zero. It will re-zero every time render() is called.
         stateTime = 0f;

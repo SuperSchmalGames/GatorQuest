@@ -13,6 +13,8 @@ public class HeroCharacter {
     public float xPos;
     public float yPos;
 
+    //Character inventory.
+
     //Character stats.
     public float software;
     public float hardware;
@@ -40,7 +42,7 @@ public class HeroCharacter {
         math = 1.0f;
         detail = 1.0f;
 
-        initAnimations();
+        //initAnimations();
     }
 
     public void initAnimations(){
@@ -81,6 +83,12 @@ public class HeroCharacter {
             rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r6.png");
             upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u6.png");
             downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d6.png");
+        }
+        else if(outfitNum == 7) {
+            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l7.png");
+            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r7.png");
+            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u7.png");
+            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d7.png");
         }
         else{
             leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l.png");
