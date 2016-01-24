@@ -67,6 +67,10 @@ public class GameScreen implements Screen {
         //Draw to our batch each refresh. The batch is then rendered to the screen.
         game.batch.begin();
         game.font.draw(game.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y, 0, game.GAME_SCREEN_HEIGHT-40);
+        game.font.draw(game.batch, "Player GPA: "+game.hero.gpa, 0, game.GAME_SCREEN_HEIGHT-75);
+        if(!game.hero.inventory.isEmpty()) {
+            game.batch.draw(game.hero.inventory.get(0).texture, 350, 350);
+        }
         //The following draw method is weird but allows us to make our hero smaller in order to look like he fits better proportional to objects in the world.
         //The second-to-last and third-to-last args are floats (from 0 to 1.0) that you can tweak to change the character's size.
         game.batch.draw(game.hero.heroAnim.currentFrame, game.hero.xPos, game.hero.yPos, 0, 0, game.hero.heroAnim.currentFrame.getRegionWidth(), game.hero.heroAnim.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
@@ -108,6 +112,16 @@ public class GameScreen implements Screen {
                 ){
             camera.translate(0f,-3f);
             game.hero.walkAnimation('D', Gdx.graphics.getDeltaTime());
+        }
+        else if(Gdx.input.isKeyPressed(Input.Keys.R) &&
+                (camera.position.x > 250 && camera.position.x < 350) &&
+                (camera.position.y > 250 && camera.position.y < 350)){
+            InventoryItem tmp = new InventoryItem("Red Bull","visuals/sprites/hero.png","GPA",false,1.2f,3,1);
+            game.hero.addInvItem(tmp);
+        }
+        else if(Gdx.input.isKeyPressed(Input.Keys.T)){
+            game.hero.gpa = game.hero.inventory.get(0).useItem(game.hero.gpa);
+            game.hero.upDateInv();
         }
 
         //Mouse/touchpad control for character movement. It appears the call to getY() may use the inverted y-axis used by openGL.
