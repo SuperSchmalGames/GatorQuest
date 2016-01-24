@@ -68,7 +68,7 @@ public class GameScreen implements Screen {
         game.batch.begin();
         game.font.draw(game.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y, 0, game.GAME_SCREEN_HEIGHT-40);
         //The following draw method is weird but allows us to make our hero smaller in order to look like he fits better proportional to objects in the world.
-        //The second-to-last and third-to-last args are floats (from 0 to 1.0) that you can tweak to change the character's size. //0.8f for the sprite we've been using!
+        //The second-to-last and third-to-last args are floats (from 0 to 1.0) that you can tweak to change the character's size. //0.8f for the sprite we've been using, 2.0 for #1, 0.9 for #2
         game.batch.draw(game.hero.heroAnim.currentFrame, game.hero.xPos, game.hero.yPos, 0, 0, game.hero.heroAnim.currentFrame.getRegionWidth(), game.hero.heroAnim.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
         game.batch.end();
 

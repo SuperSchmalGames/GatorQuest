@@ -90,6 +90,12 @@ public class HeroCharacter {
             upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u7.png");
             downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d7.png");
         }
+        else if(outfitNum == 8) {
+            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l8.png");
+            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r8.png");
+            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u8.png");
+            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d8.png");
+        }
         else{
             leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l.png");
             rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r.png");
