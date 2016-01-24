@@ -2,6 +2,8 @@ package com.superschmalgames;
 
 //This class will represent our main playable character.
 
+import java.util.ArrayList;
+
 public class HeroCharacter {
 
     public int outfitNum;
@@ -14,6 +16,7 @@ public class HeroCharacter {
     public float yPos;
 
     //Character inventory.
+    ArrayList<InventoryItem> inventory;
 
     //Character stats.
     public float software;
@@ -42,65 +45,65 @@ public class HeroCharacter {
         math = 1.0f;
         detail = 1.0f;
 
-        //initAnimations();
+        inventory = new ArrayList<InventoryItem>();
     }
 
     public void initAnimations(){
         //Initialize all of the different animations.
 
         if(outfitNum == 1) {
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l.png");
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r.png");
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u.png");
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d.png");
+            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l.png", 0.075f);
+            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r.png", 0.075f);
+            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u.png", 0.075f);
+            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d.png", 0.075f);
         }
         else if(outfitNum == 2) {
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l2.png");
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r2.png");
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u2.png");
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d2.png");
+            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l2.png", 0.075f);
+            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r2.png", 0.075f);
+            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u2.png", 0.075f);
+            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d2.png", 0.075f);
         }
         else if(outfitNum == 3) {
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l3.png");
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r3.png");
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u3.png");
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d3.png");
+            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l3.png", 0.075f);
+            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r3.png", 0.075f);
+            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u3.png", 0.075f);
+            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d3.png", 0.075f);
         }
         else if(outfitNum == 4) {
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l4.png");
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r4.png");
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u4.png");
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d4.png");
+            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l4.png", 0.075f);
+            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r4.png", 0.075f);
+            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u4.png", 0.075f);
+            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d4.png", 0.075f);
         }
         else if(outfitNum == 5) {
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l5.png");
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r5.png");
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u5.png");
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d5.png");
+            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l5.png", 0.075f);
+            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r5.png", 0.075f);
+            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u5.png", 0.075f);
+            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d5.png", 0.075f);
         }
         else if(outfitNum == 6) {
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l6.png");
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r6.png");
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u6.png");
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d6.png");
+            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l6.png", 0.075f);
+            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r6.png", 0.075f);
+            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u6.png", 0.075f);
+            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d6.png", 0.075f);
         }
         else if(outfitNum == 7) {
-            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l7.png");
-            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r7.png");
-            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u7.png");
-            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d7.png");
+            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l7.png", 0.17f);
+            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r7.png", 0.17f);
+            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u7.png", 0.17f);
+            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d7.png", 0.17f);
         }
         else if(outfitNum == 8) {
-            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l8.png");
-            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r8.png");
-            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u8.png");
-            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d8.png");
+            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l8.png", 0.17f);
+            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r8.png", 0.17f);
+            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u8.png", 0.17f);
+            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d8.png", 0.17f);
         }
         else{
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l.png");
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r.png");
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u.png");
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d.png");
+            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l.png", 0.075f);
+            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r.png", 0.075f);
+            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u.png", 0.075f);
+            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d.png", 0.075f);
         }
 
         //Set up the initial frame that will be rendered to the screen before any input is given.
@@ -143,6 +146,24 @@ public class HeroCharacter {
                 break;
             case 'D':   heroAnim.currentFrame = downWalk.walkAnimation.getKeyFrame(0f, true);
                 break;
+        }
+    }
+
+    //Method to add an item to the character inventory.
+    public void addInvItem(InventoryItem item){
+        for(InventoryItem i : inventory){
+            if(item.itemName == i.itemName){
+                i.quantity++;
+                return;
+            }
+        }
+        inventory.add(item);
+    }
+
+    //Method to update the character's inventory, removing objects that have been used.
+    public void upDateInv(){
+        for(InventoryItem i : inventory){
+            if(i.quantity < 1) inventory.remove(i);
         }
     }
 }
