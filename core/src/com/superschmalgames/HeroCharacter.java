@@ -99,6 +99,24 @@ public class HeroCharacter {
             upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u8.png", 0.17f);
             downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d8.png", 0.17f);
         }
+        else if(outfitNum == 9) {
+            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l9.png", 0.17f);
+            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r9.png", 0.17f);
+            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u9.png", 0.17f);
+            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d9.png", 0.17f);
+        }
+        else if(outfitNum == 10) {
+            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u10.png", 0.17f);
+            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r10.png", 0.17f);
+            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u10.png", 0.17f);
+            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d10.png", 0.17f);
+        }
+        else if(outfitNum == 11) {
+            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l11.png", 0.17f);
+            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r11.png", 0.17f);
+            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u11.png", 0.17f);
+            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d11.png", 0.17f);
+        }
         else{
             leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l.png", 0.075f);
             rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r.png", 0.075f);
