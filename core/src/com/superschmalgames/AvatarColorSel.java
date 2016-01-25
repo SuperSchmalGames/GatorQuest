@@ -55,7 +55,7 @@ public class AvatarColorSel implements Screen{
         game.font.draw(game.batch,
                 key_prompt_text,
                 Gdx.graphics.getWidth()/2 - layout1.width/2,
-                Gdx.graphics.getHeight()/2 + layout1.height/2
+                Gdx.graphics.getHeight()/2 + layout1.height/2+50
         );
         game.batch.draw(avTex,0,0);
         game.batch.end();
