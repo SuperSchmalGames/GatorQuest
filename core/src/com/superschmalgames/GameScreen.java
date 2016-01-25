@@ -27,7 +27,7 @@ public class GameScreen implements Screen {
     TiledMap tiledmap;
     TiledMapTileLayer collision;
     TiledMapRenderer tiledmaprenderer;
-    int[] background = new int[2];
+    int[] background = new int[3];
     int[] foreground = new int[1];
 
     public GameScreen(final MainClass gam) {
@@ -41,12 +41,13 @@ public class GameScreen implements Screen {
         worldMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/world_map_music.wav"));
         worldMusic.setLooping(true);
 
-        tiledmap = new TmxMapLoader().load("visuals/maps/btest.tmx");
+        tiledmap = new TmxMapLoader().load("visuals/maps/CISE_Dungeon.tmx");
         tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
         collision = (TiledMapTileLayer) tiledmap.getLayers().get("Collision");
         background[0] = 0;
         background[1] = 1;
-        foreground[0] = 2;
+        background[2] = 2;
+        foreground[0] = 3;
 
         //Set initial info for the main character.
         game.hero.name = "Matt";
@@ -78,7 +79,6 @@ public class GameScreen implements Screen {
 
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT) &&
                 !collision.getCell((int)(camera.position.x-game.hero.width/2-5)/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                !collision.getCell((int)(camera.position.x-game.hero.width/2-5)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
                 !collision.getCell((int)(camera.position.x-game.hero.width/2-5)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
                 ){
             //game.hero.xPos -= 200 * Gdx.graphics.getDeltaTime();
@@ -89,7 +89,6 @@ public class GameScreen implements Screen {
         }
         else if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) &&
                 !collision.getCell((int)(camera.position.x+game.hero.width/2+5)/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                !collision.getCell((int)(camera.position.x+game.hero.width/2+5)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
                 !collision.getCell((int)(camera.position.x+game.hero.width/2+5)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
                 ){
             //game.hero.xPos += 200 * Gdx.graphics.getDeltaTime();
@@ -99,9 +98,9 @@ public class GameScreen implements Screen {
             game.hero.heroAnim = game.hero.rightWalk;
         }
         else if(Gdx.input.isKeyPressed(Input.Keys.UP) &&
-                !collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                !collision.getCell((int)(camera.position.x-game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                !collision.getCell((int)(camera.position.x+game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
+                !collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) (camera.position.y+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                !collision.getCell((int)(camera.position.x-game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                !collision.getCell((int)(camera.position.x+game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
                 ){
             //game.hero.yPos += 200 * Gdx.graphics.getDeltaTime();
             camera.translate(0f,5f);
