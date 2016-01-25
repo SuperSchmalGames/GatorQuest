@@ -30,23 +30,15 @@ public class InputHandler implements InputProcessor {
                 pushed = true;
             }
             else if(keycode == Input.Keys.NUM_2) {
-                game.hero.outfitNum = 8;
+                game.hero.outfitNum = 11;
                 pushed = true;
             }
             else if(keycode == Input.Keys.NUM_3) {
-                game.hero.outfitNum = 3;
+                game.hero.outfitNum = 10;
                 pushed = true;
             }
             else if(keycode == Input.Keys.NUM_4) {
-                game.hero.outfitNum = 4;
-                pushed = true;
-            }
-            else if(keycode == Input.Keys.NUM_5) {
-                game.hero.outfitNum = 5;
-                pushed = true;
-            }
-            else if(keycode == Input.Keys.NUM_6) {
-                game.hero.outfitNum = 6;
+                game.hero.outfitNum = 9;
                 pushed = true;
             }
 
