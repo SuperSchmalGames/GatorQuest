@@ -16,7 +16,7 @@ public class Animator {
 
     float stateTime;                //Number of seconds elapsed since the start of the animation.
 
-    public Animator(int cols, int rows, String path) {
+    public Animator(int cols, int rows, String path, float dur) {
 
         //Load the specified sprite sheet into the texture.
         walkSheet = new Texture(Gdx.files.internal(path));
@@ -31,8 +31,8 @@ public class Animator {
             }
         }
 
-        //Initialize our animation.
-        walkAnimation = new Animation(0.075f, walkFrames);  //Might need to tweak this value to make animation smoother.
+        //Initialize our animation. The dur variable can be tweaked to make animation look smoother.
+        walkAnimation = new Animation(dur, walkFrames);
 
         //Set our time to zero. It will re-zero every time render() is called.
         stateTime = 0f;
