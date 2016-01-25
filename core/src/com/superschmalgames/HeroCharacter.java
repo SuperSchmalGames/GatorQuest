@@ -106,7 +106,7 @@ public class HeroCharacter {
             downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d9.png", 0.17f);
         }
         else if(outfitNum == 10) {
-            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u10.png", 0.17f);
+            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l10.png", 0.17f);
             rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r10.png", 0.17f);
             upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u10.png", 0.17f);
             downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d10.png", 0.17f);
