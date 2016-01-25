@@ -41,13 +41,7 @@ public class GameScreen implements Screen {
         worldMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/world_map_music.wav"));
         worldMusic.setLooping(true);
 
-        tiledmap = new TmxMapLoader().load("visuals/maps/CISE_Dungeon.tmx");
-        tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
-        collision = (TiledMapTileLayer) tiledmap.getLayers().get("Collision");
-        background[0] = 0;
-        background[1] = 1;
-        background[2] = 2;
-        foreground[0] = 3;
+        setMap("Full_Map.tmx");
 
         //Set initial info for the main character.
         game.hero.name = "Matt";
@@ -56,6 +50,16 @@ public class GameScreen implements Screen {
         game.hero.xPos = game.GAME_SCREEN_WIDTH/2 - game.hero.width/2;
         game.hero.yPos = game.GAME_SCREEN_HEIGHT/2 - game.hero.height/2;
 
+    }
+
+    private void setMap(String str) {
+        tiledmap = new TmxMapLoader().load("visuals/maps/" + str);
+        tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
+        collision = (TiledMapTileLayer) tiledmap.getLayers().get("Collision");
+        background[0] = 0;
+        background[1] = 1;
+        background[2] = 2;
+        foreground[0] = 3;
     }
 
     @Override
@@ -86,6 +90,11 @@ public class GameScreen implements Screen {
             game.hero.leftWalk.stateTime += Gdx.graphics.getDeltaTime();
             game.hero.leftWalk.currentFrame = game.hero.leftWalk.walkAnimation.getKeyFrame(game.hero.leftWalk.stateTime, true);
             game.hero.heroAnim = game.hero.leftWalk;
+            if(collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("door")) {
+                int x = Integer.valueOf((String)collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().get("x"));
+                int y = Integer.valueOf((String)collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().get("y"));
+                camera.translate(x*game.MAP_RESOLUTION, y*game.MAP_RESOLUTION);
+            }
         }
         else if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) &&
                 !collision.getCell((int)(camera.position.x+game.hero.width/2+5)/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -96,6 +105,11 @@ public class GameScreen implements Screen {
             game.hero.rightWalk.stateTime += Gdx.graphics.getDeltaTime();
             game.hero.rightWalk.currentFrame = game.hero.rightWalk.walkAnimation.getKeyFrame(game.hero.rightWalk.stateTime, true);
             game.hero.heroAnim = game.hero.rightWalk;
+            if(collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("door")) {
+                int x = Integer.valueOf((String)collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().get("x"));
+                int y = Integer.valueOf((String)collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().get("y"));
+                camera.translate(x*game.MAP_RESOLUTION, y*game.MAP_RESOLUTION);
+            }
         }
         else if(Gdx.input.isKeyPressed(Input.Keys.UP) &&
                 !collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) (camera.position.y+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -107,6 +121,11 @@ public class GameScreen implements Screen {
             game.hero.upWalk.stateTime += Gdx.graphics.getDeltaTime();
             game.hero.upWalk.currentFrame = game.hero.upWalk.walkAnimation.getKeyFrame(game.hero.upWalk.stateTime, true);
             game.hero.heroAnim = game.hero.upWalk;
+            if(collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("door")) {
+                int x = Integer.valueOf((String)collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().get("x"));
+                int y = Integer.valueOf((String)collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().get("y"));
+                camera.translate(x*game.MAP_RESOLUTION, y*game.MAP_RESOLUTION);
+            }
         }
         else if(Gdx.input.isKeyPressed(Input.Keys.DOWN) &&
                 !collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2-5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -118,55 +137,13 @@ public class GameScreen implements Screen {
             game.hero.downWalk.stateTime += Gdx.graphics.getDeltaTime();
             game.hero.downWalk.currentFrame = game.hero.downWalk.walkAnimation.getKeyFrame(game.hero.downWalk.stateTime, true);
             game.hero.heroAnim = game.hero.downWalk;
+            if(collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("door")) {
+                int x = Integer.valueOf((String)collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().get("x"));
+                int y = Integer.valueOf((String)collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().get("y"));
+                camera.translate(x*game.MAP_RESOLUTION, y*game.MAP_RESOLUTION);
+            }
         }
 
-        //Mouse/touchpad control
-        else if(Gdx.input.isTouched()){
-            if(Gdx.input.getX() < Gdx.graphics.getWidth()/2 &&
-                    !collision.getCell((int)(camera.position.x-game.hero.width/2-5)/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x-game.hero.width/2-5)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x-game.hero.width/2-5)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
-                    ){
-                //game.hero.xPos -= 200 * Gdx.graphics.getDeltaTime();
-                camera.translate(-5f,0f);
-                game.hero.leftWalk.stateTime += Gdx.graphics.getDeltaTime();
-                game.hero.leftWalk.currentFrame = game.hero.leftWalk.walkAnimation.getKeyFrame(game.hero.leftWalk.stateTime, true);
-                game.hero.heroAnim = game.hero.leftWalk;
-            }
-            if(Gdx.input.getX() > Gdx.graphics.getWidth()/2 &&
-                    !collision.getCell((int)(camera.position.x+game.hero.width/2+5)/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x+game.hero.width/2+5)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x+game.hero.width/2+5)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
-                    ){
-                //game.hero.xPos += 200 * Gdx.graphics.getDeltaTime();
-                camera.translate(5f,0f);
-                game.hero.rightWalk.stateTime += Gdx.graphics.getDeltaTime();
-                game.hero.rightWalk.currentFrame = game.hero.rightWalk.walkAnimation.getKeyFrame(game.hero.rightWalk.stateTime, true);
-                game.hero.heroAnim = game.hero.rightWalk;
-            }
-            if(Gdx.input.getY() < Gdx.graphics.getHeight()/2 &&
-                    !collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x-game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x+game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
-                    ){
-                //game.hero.yPos += 200 * Gdx.graphics.getDeltaTime();
-                camera.translate(0f,5f);
-                game.hero.upWalk.stateTime += Gdx.graphics.getDeltaTime();
-                game.hero.upWalk.currentFrame = game.hero.upWalk.walkAnimation.getKeyFrame(game.hero.upWalk.stateTime, true);
-                game.hero.heroAnim = game.hero.upWalk;
-            }
-            if(Gdx.input.getY() > Gdx.graphics.getHeight()/2 &&
-                    !collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x-game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2-5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x+game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2-5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
-                    ){
-                //game.hero.yPos -= 200 * Gdx.graphics.getDeltaTime();
-                camera.translate(0f,-5f);
-                game.hero.downWalk.stateTime += Gdx.graphics.getDeltaTime();
-                game.hero.downWalk.currentFrame = game.hero.downWalk.walkAnimation.getKeyFrame(game.hero.downWalk.stateTime, true);
-                game.hero.heroAnim = game.hero.downWalk;
-            }
-        }
         //Include guards that keep the character on the screen.
         //if(game.hero.xPos < 0) game.hero.xPos = 0;
         //if(game.hero.yPos < 0) game.hero.yPos = 0;
@@ -205,4 +182,5 @@ public class GameScreen implements Screen {
         heroTexture.dispose();
         worldMusic.dispose();
     }
+
 }
