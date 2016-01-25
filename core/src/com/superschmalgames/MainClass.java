@@ -15,7 +15,7 @@ public class MainClass extends Game {
 	final int MAP_RESOLUTION = 64;
 
 	SpriteBatch batch;
-	BitmapFont font;
+	BitmapFont font, testFont;
 	HeroCharacter hero;
 
 	TitleScreen titleScreen;
@@ -28,6 +28,7 @@ public class MainClass extends Game {
 	public void create () {
 		batch = new SpriteBatch();
 		font = new BitmapFont();
+		testFont = new BitmapFont();
 
 		inputHandler = new InputHandler(this);
 		Gdx.input.setInputProcessor(inputHandler);
@@ -35,8 +36,8 @@ public class MainClass extends Game {
 		//Create and initialize the main character object.
 		hero = new HeroCharacter();
 		hero.name = "Matt";
-		hero.width = 50;
-		hero.height = 87;
+		hero.width = 55;
+		hero.height = 64;
 		hero.xPos = GAME_SCREEN_WIDTH/2 - hero.width/2;
 		hero.yPos = GAME_SCREEN_HEIGHT/2 - hero.height/2;
 

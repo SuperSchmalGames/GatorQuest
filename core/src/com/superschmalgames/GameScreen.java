@@ -31,8 +31,15 @@ public class GameScreen implements Screen {
     int[] background = new int[2];
     int[] foreground = new int[1];
 
+    boolean lWalk, rWalk, uWalk, dWalk;
+
     public GameScreen(final MainClass gam) {
         this.game = gam;
+
+        lWalk = false;
+        rWalk = false;
+        uWalk = false;
+        dWalk = false;
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
@@ -66,8 +73,8 @@ public class GameScreen implements Screen {
 
         //Draw to our batch each refresh. The batch is then rendered to the screen.
         game.batch.begin();
-        game.font.draw(game.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y, 0, game.GAME_SCREEN_HEIGHT-40);
-        game.font.draw(game.batch, "Player GPA: "+game.hero.gpa, 0, game.GAME_SCREEN_HEIGHT-75);
+        game.testFont.draw(game.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y, 0, game.GAME_SCREEN_HEIGHT-40);
+        game.testFont.draw(game.batch, "GPA: "+game.hero.gpa, 0, game.GAME_SCREEN_HEIGHT-75);
         if(!game.hero.inventory.isEmpty()) {
             game.batch.draw(game.hero.inventory.get(0).texture, 350, 350);
         }
@@ -79,88 +86,10 @@ public class GameScreen implements Screen {
         //NOTES
         tiledmaprenderer.render(foreground);
 
-        //Take keyboard input from user for character movement. Character actually stays centered on screen, and the
-        //camera is translated about the map to give illusion of character movement.
-        if(Gdx.input.isKeyPressed(Input.Keys.LEFT) &&
-                !collision.getCell((int)(camera.position.x-game.hero.width/2-3)/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                !collision.getCell((int)(camera.position.x-game.hero.width/2-3)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                !collision.getCell((int)(camera.position.x-game.hero.width/2-3)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
-                ){
-            camera.translate(-3f,0f);
-            game.hero.walkAnimation('L', Gdx.graphics.getDeltaTime());
-        }
-        else if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) &&
-                !collision.getCell((int)(camera.position.x+game.hero.width/2+3)/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                !collision.getCell((int)(camera.position.x+game.hero.width/2+3)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                !collision.getCell((int)(camera.position.x+game.hero.width/2+3)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
-                ){
-            camera.translate(3f,0f);
-            game.hero.walkAnimation('R', Gdx.graphics.getDeltaTime());
-        }
-        else if(Gdx.input.isKeyPressed(Input.Keys.UP) &&
-                !collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) (camera.position.y+33)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                !collision.getCell((int)(camera.position.x-game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2+3)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                !collision.getCell((int)(camera.position.x+game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2+3)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
-                ){
-            camera.translate(0f,3f);
-            game.hero.walkAnimation('U', Gdx.graphics.getDeltaTime());
-        }
-        else if(Gdx.input.isKeyPressed(Input.Keys.DOWN) &&
-                !collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) (camera.position.y-33)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                !collision.getCell((int)(camera.position.x-game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2-3)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                !collision.getCell((int)(camera.position.x+game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2-3)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
-                ){
-            camera.translate(0f,-3f);
-            game.hero.walkAnimation('D', Gdx.graphics.getDeltaTime());
-        }
-        else if(Gdx.input.isKeyPressed(Input.Keys.R) &&
-                (camera.position.x > 250 && camera.position.x < 350) &&
-                (camera.position.y > 250 && camera.position.y < 350)){
-            InventoryItem tmp = new InventoryItem("Red Bull","visuals/sprites/hero.png","GPA",false,1.2f,3,1);
-            game.hero.addInvItem(tmp);
-        }
-        else if(Gdx.input.isKeyPressed(Input.Keys.T)){
-            game.hero.gpa = game.hero.inventory.get(0).useItem(game.hero.gpa);
-            game.hero.upDateInv();
-        }
+        //Keyboard input is taken in the InputHandler class, which updates the following walk variables to control
+        //how character movement is rendered to the screen
+        walk(delta);
 
-        //Mouse/touchpad control for character movement. It appears the call to getY() may use the inverted y-axis used by openGL.
-        else if(Gdx.input.isTouched()){
-            if((Gdx.input.getX() < game.GAME_SCREEN_WIDTH/2 && (Gdx.input.getY() < game.GAME_SCREEN_HEIGHT/2+game.GAME_SCREEN_HEIGHT/4 && Gdx.input.getY() > game.GAME_SCREEN_HEIGHT/2-game.GAME_SCREEN_HEIGHT/4)) &&
-                    !collision.getCell((int)(camera.position.x-game.hero.width/2-3)/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x-game.hero.width/2-3)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x-game.hero.width/2-3)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
-                    ){
-                camera.translate(-3f,0f);
-                game.hero.walkAnimation('L', Gdx.graphics.getDeltaTime());
-            }
-            else if((Gdx.input.getX() > game.GAME_SCREEN_WIDTH/2 && (Gdx.input.getY() < game.GAME_SCREEN_HEIGHT/2+game.GAME_SCREEN_HEIGHT/4 && Gdx.input.getY() > game.GAME_SCREEN_HEIGHT/2-game.GAME_SCREEN_HEIGHT/4)) &&
-                    !collision.getCell((int)(camera.position.x+game.hero.width/2+3)/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x+game.hero.width/2+3)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x+game.hero.width/2+3)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
-                    ){
-                camera.translate(3f,0f);
-                game.hero.walkAnimation('R', Gdx.graphics.getDeltaTime());
-            }
-            else if(Gdx.input.getY() < game.GAME_SCREEN_HEIGHT/2 /*&& (Gdx.input.getX() < game.GAME_SCREEN_WIDTH/2+game.GAME_SCREEN_WIDTH/3 && Gdx.input.getX() > game.GAME_SCREEN_WIDTH/2-game.GAME_SCREEN_WIDTH/3))*/ &&
-                    !collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) (camera.position.y+33)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x-game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2+3)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x+game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2+3)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
-                    ){
-                camera.translate(0f,3f);
-                game.hero.walkAnimation('U', Gdx.graphics.getDeltaTime());
-            }
-            else if(Gdx.input.getY() > game.GAME_SCREEN_HEIGHT/2 /*&& (Gdx.input.getX() < game.GAME_SCREEN_WIDTH/2+game.GAME_SCREEN_WIDTH/3 && Gdx.input.getX() > game.GAME_SCREEN_WIDTH/2-game.GAME_SCREEN_WIDTH/3))*/ &&
-                    !collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) (camera.position.y-33)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x-game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2-3)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x+game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2-3)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")
-                    ){
-                camera.translate(0f,-3f);
-                game.hero.walkAnimation('D', Gdx.graphics.getDeltaTime());
-            }
-            else game.hero.standAnimation();
-        }
-        else game.hero.standAnimation();
 
         //Include guards that keep the character on the screen. Likely a temporary implementation, since this should
         //be achievable using Tiled.
@@ -168,6 +97,38 @@ public class GameScreen implements Screen {
         if(camera.position.y < 50) camera.position.y = 50;
         if(camera.position.x > 6370) camera.position.x = 6370;
         if(camera.position.y > 6350) camera.position.y = 6350;
+    }
+
+    public void walk(float delta){
+            if(lWalk && !collision.getCell((int)(camera.position.x-game.hero.width/2-5)/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                    !collision.getCell((int)(camera.position.x-game.hero.width/2-5)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                    !collision.getCell((int)(camera.position.x-game.hero.width/2-5)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
+            {
+                camera.translate(-3f, 0f);
+                game.hero.walkAnimation('L', delta);
+            }
+            else if(rWalk && !collision.getCell((int)(camera.position.x+game.hero.width/2+5)/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                    !collision.getCell((int)(camera.position.x+game.hero.width/2+5)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                    !collision.getCell((int)(camera.position.x+game.hero.width/2+5)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
+            {
+                camera.translate(3f,0f);
+                game.hero.walkAnimation('R', delta);
+            }
+            else if(uWalk && !collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                    !collision.getCell((int)(camera.position.x-game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                    !collision.getCell((int)(camera.position.x+game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y+game.hero.height/2+5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
+            {
+                camera.translate(0f,3f);
+                game.hero.walkAnimation('U', delta);
+            }
+            else if(dWalk && !collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2-5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                    !collision.getCell((int)(camera.position.x-game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2-5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                    !collision.getCell((int)(camera.position.x+game.hero.width/2)/game.MAP_RESOLUTION, (int) (camera.position.y-game.hero.height/2-5)/game.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
+            {
+                camera.translate(0f,-3f);
+                game.hero.walkAnimation('D', delta);
+            }
+            else game.hero.standAnimation();
     }
 
     @Override
