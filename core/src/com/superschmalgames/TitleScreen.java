@@ -1,6 +1,7 @@
 package com.superschmalgames;
 
-//This class is for the title screen you see when the game first loads up.
+//This class is for the title screen you see when the game first loads up. Input is handled through the InputHandler
+//class, which processes input events and takes care of everything.
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -61,22 +62,14 @@ public class TitleScreen implements Screen {
         game.font.draw(game.batch,
                 GatorQuest,
                 Gdx.graphics.getWidth()/2 - layout1.width/2,
-                Gdx.graphics.getHeight()/2 + layout1.height/2
+                Gdx.graphics.getHeight()/2 + layout1.height/2+50
                 );
         game.font.draw(game.batch,
                 PressSpace,
                 Gdx.graphics.getWidth()/2 - layout2.width/2,
-                Gdx.graphics.getHeight()/2 + layout2.height/2-100
+                Gdx.graphics.getHeight()/2 + layout2.height/2-50
         );
-
         game.batch.end();
-
-        //Take keyboard input from the user.
-        if(Gdx.input.isKeyPressed(Input.Keys.SPACE)){
-            titleScreenSelectionSound.play();
-            game.setScreen(new AvatarColorSel(game));
-            dispose();
-        }
     }
 
     @Override
