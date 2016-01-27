@@ -65,7 +65,7 @@ public class HeroCharacter {
         inventory = new ArrayList<InventoryItem>();
         InventoryItem tmp;
         tmp = new InventoryItem("Red Bull","visuals/sprites/hero.png","GPA",false,1.2f,3,0);
-        addInvItem(tmp);
+        tmp.addInvItem(this);
     }
 
     //Gets the current frame of the proper walking animation for the character
@@ -104,17 +104,6 @@ public class HeroCharacter {
             case 'D':   heroAnim.currentFrame = downWalk.walkAnimation.getKeyFrame(0f, true);
                 break;
         }
-    }
-
-    //Method to add an item to the character inventory.
-    public void addInvItem(InventoryItem item){
-        for(InventoryItem i : inventory){
-            if(item.itemName.equals(i.itemName)){
-                i.quantity++;
-                return;
-            }
-        }
-        inventory.add(item);
     }
 
 }

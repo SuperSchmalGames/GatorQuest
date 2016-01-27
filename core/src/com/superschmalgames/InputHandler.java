@@ -79,7 +79,7 @@ public class InputHandler implements InputProcessor {
             ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
             else if(keycode == Input.Keys.R){
                 InventoryItem tmp = new InventoryItem("Red Bull","visuals/sprites/hero.png","GPA",false,1.2,3,1);
-                game.hero.addInvItem(tmp);
+                tmp.addInvItem(game.hero);
             }
             else if((keycode == Input.Keys.T)){
                 if(!game.hero.inventory.isEmpty()) {
