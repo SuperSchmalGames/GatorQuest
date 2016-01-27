@@ -9,6 +9,7 @@ public class InventoryItem {
     public int quantity;           //Number of that item currently in inventory. If it hits 0, remove it from inventory.
     public Texture texture;        //Texture used to render the item in the game.
     public boolean canEquip;       //Is the item equippable? If not, it's a "useable" item like a potion.
+    public boolean equipped;       //prevents an equipable item from being equipped twice
     public String statBoosted;     //Which stat is affected by equipping/using the item.
     public float boostAmt;         //How much is the stat changed.
     public int boostDuration;      //How long (in combat turns) will the boost last
@@ -17,17 +18,22 @@ public class InventoryItem {
         itemName = name;
         texture = new Texture(texPath);
         statBoosted = stat;
-        canEquip = equip;
+        canEquip = true;
         boostAmt = boost;
         boostDuration = dur;
         quantity += initQuant;
     }
 
+    //hero needs to be passed in when useItem is called. Everything then handled here
+    //possibly need to think about making this an interface, then have a consumableitem
+    //class and an equipmentitem class extend this
+
     //Method to effectively use/equip an item in the player's inventory
     public float useItem(float boostedStat){
         //For usable items, apply the appropriate buff and reduce the inventory number by one.
-        if(canEquip){
+        if(canEquip && !equipped){
             boostedStat += boostAmt;
+            equipped = true;
         }
         else{ //Item is a temp boost
             boostedStat += boostAmt;

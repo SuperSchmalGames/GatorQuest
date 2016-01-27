@@ -50,7 +50,6 @@ public class GameScreen implements Screen {
         worldMusic.setLooping(true);
 
         //Initialize the map.
-        //tiledmap = new TmxMapLoader().load("visuals/maps/gatorquesttest.tmx"); <- now handled in setMap()?
         setMap("Full_Map.tmx");
     }
 
@@ -90,6 +89,7 @@ public class GameScreen implements Screen {
         game.batch.end();
 
         //NOTES
+        //this will allow the player to walk behind specific objects
         tiledmaprenderer.render(foreground);
 
         //Keyboard input is taken in the InputHandler class, which updates the following walk variables to control
