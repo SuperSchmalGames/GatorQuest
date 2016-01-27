@@ -3,7 +3,6 @@ package com.superschmalgames;
 //This class is for the main screen we see when moving through the game world.
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
@@ -13,6 +12,8 @@ import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+
+import java.text.DecimalFormat;
 
 public class GameScreen implements Screen {
     //An instance of our actual game object.
@@ -31,7 +32,12 @@ public class GameScreen implements Screen {
     int[] background = new int[3];
     int[] foreground = new int[1];
 
+    //Flags for handling character movement.
     boolean lWalk, rWalk, uWalk, dWalk;
+
+    //Format for rounding doubles when printing them to the screen. The raw number should be close enough to make the
+    //behind-the-scenes math stay accurate.
+    DecimalFormat df1 = new DecimalFormat("0.0#");
 
     public GameScreen(final MainClass gam) {
         this.game = gam;
@@ -50,7 +56,6 @@ public class GameScreen implements Screen {
         worldMusic.setLooping(true);
 
         //Initialize the map.
-        //tiledmap = new TmxMapLoader().load("visuals/maps/gatorquesttest.tmx"); <- now handled in setMap()?
         setMap("Full_Map.tmx");
     }
 
@@ -79,11 +84,12 @@ public class GameScreen implements Screen {
 
         //Draw to our batch each refresh. The batch is then rendered to the screen.
         game.batch.begin();
+
+        ////////////////////////////////////////////////////////TEST PRINTS////////////////////////////////////////////////////////////////////
         game.testFont.draw(game.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y, 0, game.GAME_SCREEN_HEIGHT-40);
-        game.testFont.draw(game.batch, "GPA: "+game.hero.gpa, 0, game.GAME_SCREEN_HEIGHT-75);
-        if(!game.hero.inventory.isEmpty()) {
-            game.batch.draw(game.hero.inventory.get(0).texture, 350, 350);
-        }
+        game.testFont.draw(game.batch, "GPA: "+df1.format(game.hero.gpa)+" InvSize: "+game.hero.inventory.size()+" RedBull Quant: "+game.hero.inventory.get(0).quantity, 0, game.GAME_SCREEN_HEIGHT-75);
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         //The following draw method is weird but allows us to make our hero smaller in order to look like he fits better proportional to objects in the world.
         //The second-to-last and third-to-last args are floats (from 0 to 1.0) that you can tweak to change the character's size.
         game.batch.draw(game.hero.heroAnim.currentFrame, game.hero.xPos, game.hero.yPos, 0, 0, game.hero.heroAnim.currentFrame.getRegionWidth(), game.hero.heroAnim.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
@@ -154,7 +160,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void show() {
-        worldMusic.play();
+        //worldMusic.play();
     }
 
 

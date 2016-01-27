@@ -8,7 +8,7 @@ public class HeroCharacter {
 
     public int outfitNum;
     public String name;     //Our hero character's name. Can be set at start of game, and used in dialogue with NPC's.
-    public float gpa;       //Character's Grade Point Average. Acts as a "health meter." If reduced to zero, character loses fight.
+    public double gpa;       //Character's Grade Point Average. Acts as a "health meter." If reduced to zero, character loses fight.
 
     public float width;
     public float height;
@@ -36,7 +36,7 @@ public class HeroCharacter {
     Animator heroAnim;
 
     public HeroCharacter(){
-        gpa = 4.0f;
+        gpa = 4.0;
         software = 1.0f;
         hardware = 1.0f;
         readWrite = 1.0f;
@@ -45,7 +45,7 @@ public class HeroCharacter {
         math = 1.0f;
         detail = 1.0f;
 
-        inventory = new ArrayList<InventoryItem>();
+        initInventory();
     }
 
     public void initAnimations(){
@@ -129,6 +129,13 @@ public class HeroCharacter {
         heroAnim.currentFrame = downWalk.walkAnimation.getKeyFrame(downWalk.stateTime, true);
     }
 
+    public void initInventory(){
+        inventory = new ArrayList<InventoryItem>();
+        InventoryItem tmp;
+        tmp = new InventoryItem("Red Bull","visuals/sprites/hero.png","GPA",false,1.2f,3,0);
+        addInvItem(tmp);
+    }
+
     //Gets the current frame of the proper walking animation for the character
     public void walkAnimation(char direction, float deltaTime) {
         switch (direction) {
@@ -170,7 +177,7 @@ public class HeroCharacter {
     //Method to add an item to the character inventory.
     public void addInvItem(InventoryItem item){
         for(InventoryItem i : inventory){
-            if(item.itemName == i.itemName){
+            if(item.itemName.equals(i.itemName)){
                 i.quantity++;
                 return;
             }
@@ -178,10 +185,4 @@ public class HeroCharacter {
         inventory.add(item);
     }
 
-    //Method to update the character's inventory, removing objects that have been used.
-    public void upDateInv(){
-        for(InventoryItem i : inventory){
-            if(i.quantity < 1) inventory.remove(i);
-        }
-    }
 }

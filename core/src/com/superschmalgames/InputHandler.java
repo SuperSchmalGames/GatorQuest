@@ -3,7 +3,6 @@ package com.superschmalgames;
 //Class to handle all user input. Allows us to put all the code in one place, and make the render() method in
 //all the other classes much cleaner.
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 
@@ -26,6 +25,7 @@ public class InputHandler implements InputProcessor {
                 //Set the game screen to be the character select screen.
                 game.avatarScreen = new AvatarColorSel(game);
                 game.setScreen(game.avatarScreen);
+                game.getScreen().dispose();
             }
         }
         if(game.getScreen() == game.avatarScreen) {
@@ -57,6 +57,7 @@ public class InputHandler implements InputProcessor {
                 //Set game screen to be the main game screen.
                 game.gameScreen = new GameScreen(game);
                 game.setScreen(game.gameScreen);
+                game.getScreen().dispose();
             }
         }
         if(game.getScreen() == game.gameScreen) {
@@ -74,16 +75,21 @@ public class InputHandler implements InputProcessor {
             else if(keycode == Input.Keys.DOWN){
                 game.gameScreen.dWalk = true;
             }
-            else if((keycode == Input.Keys.R) &&
-                    (game.gameScreen.camera.position.x > 250 && game.gameScreen.camera.position.x < 350) &&
-                    (game.gameScreen.camera.position.y > 250 && game.gameScreen.camera.position.y < 350)){
-                InventoryItem tmp = new InventoryItem("Red Bull","visuals/sprites/hero.png","GPA",false,1.2f,3,1);
+
+            ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
+            else if(keycode == Input.Keys.R){
+                InventoryItem tmp = new InventoryItem("Red Bull","visuals/sprites/hero.png","GPA",false,1.2,3,1);
                 game.hero.addInvItem(tmp);
             }
             else if((keycode == Input.Keys.T)){
-                game.hero.gpa = game.hero.inventory.get(0).useItem(game.hero.gpa);
-                game.hero.upDateInv();
+                if(!game.hero.inventory.isEmpty()) {
+                    game.hero.gpa = game.hero.inventory.get(0).useItem(game.hero.gpa);
+                }
             }
+            else if(keycode == Input.Keys.Y){
+                game.hero.gpa = game.hero.inventory.get(0).unUseItem(game.hero.gpa);
+            }
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         }
 
         return false;
@@ -91,7 +97,7 @@ public class InputHandler implements InputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
-        //Set the appropriate boolean value flase to stop the walk animation when the button is lifted
+        //Set the appropriate boolean value false to stop the walk animation when the button is lifted
         if(keycode == Input.Keys.LEFT) game.gameScreen.lWalk = false;
         if(keycode == Input.Keys.RIGHT) game.gameScreen.rWalk = false;
         if(keycode == Input.Keys.UP) game.gameScreen.uWalk = false;
