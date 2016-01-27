@@ -49,80 +49,12 @@ public class HeroCharacter {
     }
 
     public void initAnimations(){
-        //Initialize all of the different animations.
 
-        if(outfitNum == 1) {
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l.png", 0.075f);
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r.png", 0.075f);
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u.png", 0.075f);
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d.png", 0.075f);
-        }
-        else if(outfitNum == 2) {
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l2.png", 0.075f);
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r2.png", 0.075f);
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u2.png", 0.075f);
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d2.png", 0.075f);
-        }
-        else if(outfitNum == 3) {
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l3.png", 0.075f);
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r3.png", 0.075f);
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u3.png", 0.075f);
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d3.png", 0.075f);
-        }
-        else if(outfitNum == 4) {
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l4.png", 0.075f);
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r4.png", 0.075f);
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u4.png", 0.075f);
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d4.png", 0.075f);
-        }
-        else if(outfitNum == 5) {
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l5.png", 0.075f);
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r5.png", 0.075f);
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u5.png", 0.075f);
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d5.png", 0.075f);
-        }
-        else if(outfitNum == 6) {
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l6.png", 0.075f);
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r6.png", 0.075f);
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u6.png", 0.075f);
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d6.png", 0.075f);
-        }
-        else if(outfitNum == 7) {
-            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l7.png", 0.17f);
-            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r7.png", 0.17f);
-            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u7.png", 0.17f);
-            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d7.png", 0.17f);
-        }
-        else if(outfitNum == 8) {
-            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l8.png", 0.17f);
-            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r8.png", 0.17f);
-            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u8.png", 0.17f);
-            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d8.png", 0.17f);
-        }
-        else if(outfitNum == 9) {
-            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l9.png", 0.17f);
-            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r9.png", 0.17f);
-            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u9.png", 0.17f);
-            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d9.png", 0.17f);
-        }
-        else if(outfitNum == 10) {
-            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l10.png", 0.17f);
-            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r10.png", 0.17f);
-            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u10.png", 0.17f);
-            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d10.png", 0.17f);
-        }
-        else if(outfitNum == 11) {
-            leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l11.png", 0.17f);
-            rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r11.png", 0.17f);
-            upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u11.png", 0.17f);
-            downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d11.png", 0.17f);
-        }
-        else{
-            leftWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_l.png", 0.075f);
-            rightWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_r.png", 0.075f);
-            upWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_u.png", 0.075f);
-            downWalk = new Animator(8, 1, "visuals/sprite_sheets/sprite_walk_d.png", 0.075f);
-        }
+        //Initialize the skin that will be displayed on the character.
+        leftWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_l"+outfitNum+".png", 0.17f);
+        rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r"+outfitNum+".png", 0.17f);
+        upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u"+outfitNum+".png", 0.17f);
+        downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d"+outfitNum+".png", 0.17f);
 
         //Set up the initial frame that will be rendered to the screen before any input is given.
         heroAnim = downWalk;
