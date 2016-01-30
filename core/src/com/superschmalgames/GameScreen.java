@@ -5,6 +5,7 @@ package com.superschmalgames;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -24,6 +25,9 @@ public class GameScreen implements Screen {
 
     //Textures and audio used in the game screen.
     Music worldMusic;
+
+    //FPS Logger for main game screen
+    FPSLogger logger;
 
     //The game map itself.
     TiledMap tiledmap;
@@ -57,6 +61,9 @@ public class GameScreen implements Screen {
 
         //Initialize the map.
         setMap("Full_Map.tmx");
+
+        //Initialize FPS logger
+        logger = new FPSLogger();
     }
 
     private void setMap(String str) {
@@ -74,6 +81,9 @@ public class GameScreen implements Screen {
         //Clear the screen once per refresh.
         Gdx.gl.glClearColor(0, 0, 0.2f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        //Log FPS in the console
+        logger.log();
 
         //Update the camera that the game sees.
         camera.update();
