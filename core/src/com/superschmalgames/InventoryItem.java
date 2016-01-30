@@ -28,6 +28,17 @@ public class InventoryItem {
         quantity += initQuant;
     }
 
+    //Method to add an item to the character inventory.
+    public void addInvItem(HeroCharacter hero){
+        for(InventoryItem i : hero.inventory){
+            if(this.itemName.equals(i.itemName)){
+                i.quantity++;
+                return;
+            }
+        }
+        hero.inventory.add(this);
+    }
+
     //Method to effectively use/equip an item in the player's inventory
     public double useItem(double boostedStat){
         //For usable items, apply the appropriate buff and reduce the inventory number by one.
