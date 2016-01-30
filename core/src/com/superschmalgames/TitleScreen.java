@@ -72,7 +72,7 @@ public class TitleScreen implements Screen {
 
     @Override
     public void show() {
-        //titleScreenMusic.play();
+        titleScreenMusic.play();
     }
 
     @Override
@@ -98,7 +98,8 @@ public class TitleScreen implements Screen {
     @Override
     public void dispose() {
         titleScreenMusic.dispose();
-        //titleScreenSelectionSound.dispose();  If we dispose here, it keeps the effect from playing when the space
+
+        //titleScreenSelectionSound.dispose();  //If we dispose here, it keeps the effect from playing when the space
         //bar is pressed.
     }
 }

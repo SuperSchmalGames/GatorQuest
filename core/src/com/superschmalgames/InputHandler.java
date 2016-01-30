@@ -25,7 +25,7 @@ public class InputHandler implements InputProcessor {
                 //Set the game screen to be the character select screen.
                 game.avatarScreen = new AvatarColorSel(game);
                 game.setScreen(game.avatarScreen);
-                game.getScreen().dispose();
+                game.titleScreen.dispose();
             }
         }
         if(game.getScreen() == game.avatarScreen) {
@@ -57,7 +57,7 @@ public class InputHandler implements InputProcessor {
                 //Set game screen to be the main game screen.
                 game.gameScreen = new GameScreen(game);
                 game.setScreen(game.gameScreen);
-                game.getScreen().dispose();
+                game.avatarScreen.dispose();
             }
         }
         if(game.getScreen() == game.gameScreen) {
@@ -78,16 +78,16 @@ public class InputHandler implements InputProcessor {
 
             ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
             else if(keycode == Input.Keys.R){
-                InventoryItem tmp = new InventoryItem("Red Bull","visuals/sprites/hero.png","GPA",false,1.2,3,1);
-                tmp.addInvItem(game.hero);
+                ConsumableItem tmp = new ConsumableItem("Red Bull","visuals/sprites/hero.png","GPA",1.2,3,1,true);
+                tmp.addItem(game.hero);
             }
             else if((keycode == Input.Keys.T)){
                 if(!game.hero.inventory.isEmpty()) {
-                    game.hero.gpa = game.hero.inventory.get(0).useItem(game.hero.gpa);
+                    game.hero.gpa = game.hero.inventory.get(0).activateItem(game.hero.gpa);
                 }
             }
             else if(keycode == Input.Keys.Y){
-                game.hero.gpa = game.hero.inventory.get(0).unUseItem(game.hero.gpa);
+                game.hero.gpa = game.hero.inventory.get(0).disableItem(game.hero.gpa);
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         }

@@ -3,6 +3,7 @@ package com.superschmalgames;
 //This class will represent our main playable character.
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HeroCharacter {
 
@@ -16,7 +17,7 @@ public class HeroCharacter {
     public float yPos;
 
     //Character inventory.
-    ArrayList<InventoryItem> inventory;
+    List<InventoryItem> inventory;
 
     //Character stats.
     public float software;
@@ -63,9 +64,9 @@ public class HeroCharacter {
 
     public void initInventory(){
         inventory = new ArrayList<InventoryItem>();
-        InventoryItem tmp;
-        tmp = new InventoryItem("Red Bull","visuals/sprites/hero.png","GPA",false,1.2f,3,0);
-        tmp.addInvItem(this);
+        ConsumableItem tmp;
+        tmp = new ConsumableItem("Red Bull","visuals/sprites/hero.png","GPA",1.2f,3,0,true);
+        tmp.addItem(this);
     }
 
     //Gets the current frame of the proper walking animation for the character
