@@ -37,22 +37,19 @@ public class EquipableItem implements InventoryItem {
     }
 
     @Override
-    public double activateItem(double boostedStat) {
+    public void activateItem(HeroCharacter hero) {
         //Equip the item and apply the appropriate boost.
         if(quantity > 0) {
-            boostedStat += boostAmt;
+            //boostedStat += boostAmt;
         }
         else errTone.play();
 
-        return boostedStat;
     }
 
     @Override
-    public double disableItem(double boostedStat) {
+    public void disableItem(HeroCharacter hero) {
         //Unequip the item and remove the boost that was given.
-        boostedStat -= boostAmt;
 
-        return boostedStat;
     }
 
     @Override
@@ -95,4 +92,8 @@ public class EquipableItem implements InventoryItem {
         boostAmt = boost;
     }
 
+    @Override
+    public Texture getTexture(){
+        return texture;
+    }
 }

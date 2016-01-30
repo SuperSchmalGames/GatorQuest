@@ -65,7 +65,7 @@ public class HeroCharacter {
     public void initInventory(){
         inventory = new ArrayList<InventoryItem>();
         ConsumableItem tmp;
-        tmp = new ConsumableItem("Red Bull","visuals/sprites/hero.png","GPA",1.2f,3,0,true);
+        tmp = new ConsumableItem("Red Bull","visuals/InvItems/use/starbucks.png","GPA",1.2f,3,0,true);
         tmp.addItem(this);
     }
 

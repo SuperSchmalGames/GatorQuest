@@ -41,23 +41,26 @@ public class ConsumableItem implements InventoryItem {
     }
 
     @Override
-    public double activateItem(double boostedStat) {
+    public void activateItem(HeroCharacter hero) {
         //For usable items, apply the appropriate buff and reduce the inventory number by one.
         if(quantity > 0) {
-            boostedStat += boostAmt;
-            quantity--;
+            if(itemName.equals("Red Bull")) {
+                hero.gpa += boostAmt;
+                quantity--;
+                return;
+            }
         }
         else errTone.play();
 
-        return boostedStat;
     }
 
     @Override
-    public double disableItem(double boostedStat) {
+    public void disableItem(HeroCharacter hero) {
         //When the item's boost wears off, decrease the stat by appropriate amount.
-        boostedStat -= boostAmt;
-
-        return boostedStat;
+        if(itemName.equals("Red Bull")) {
+            hero.gpa -= boostAmt;
+            return;
+        }
     }
 
     @Override
@@ -98,5 +101,10 @@ public class ConsumableItem implements InventoryItem {
     @Override
     public void setBoostAmt(double boost) {
         boostAmt = boost;
+    }
+
+    @Override
+    public Texture getTexture(){
+        return texture;
     }
 }

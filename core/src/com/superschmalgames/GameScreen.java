@@ -97,7 +97,10 @@ public class GameScreen implements Screen {
 
         ////////////////////////////////////////////////////////TEST PRINTS////////////////////////////////////////////////////////////////////
         game.testFont.draw(game.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y, 0, game.GAME_SCREEN_HEIGHT-40);
-        game.testFont.draw(game.batch, "GPA: "+df1.format(game.hero.gpa)+" InvSize: "+game.hero.inventory.size()+" RedBull Quant: "+game.hero.inventory.get(0).getQuantity(), 0, game.GAME_SCREEN_HEIGHT-75);
+        game.testFont.draw(game.batch, "GPA: " + df1.format(game.hero.gpa) + " InvSize: " + game.hero.inventory.size() + " RedBull Quant: " + game.hero.inventory.get(0).getQuantity(), 0, game.GAME_SCREEN_HEIGHT - 75);
+        if(game.hero.inventory.get(0).getQuantity() > 0){
+            game.batch.draw(game.hero.inventory.get(0).getTexture(), game.hero.xPos-40, game.hero.yPos);
+        }
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //The following draw method is weird but allows us to make our hero smaller in order to look like he fits better proportional to objects in the world.

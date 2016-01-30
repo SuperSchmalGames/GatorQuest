@@ -83,11 +83,11 @@ public class InputHandler implements InputProcessor {
             }
             else if((keycode == Input.Keys.T)){
                 if(!game.hero.inventory.isEmpty()) {
-                    game.hero.gpa = game.hero.inventory.get(0).activateItem(game.hero.gpa);
+                    game.hero.inventory.get(0).activateItem(game.hero);
                 }
             }
             else if(keycode == Input.Keys.Y){
-                game.hero.gpa = game.hero.inventory.get(0).disableItem(game.hero.gpa);
+                game.hero.inventory.get(0).disableItem(game.hero);
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         }
