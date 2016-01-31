@@ -37,7 +37,7 @@ public class AvatarColorSel implements Screen{
         game.font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
         layout1.setText(game.font, key_prompt_text);
 
-        titleScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/title_screen_music.wav"));
+        titleScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Prelude.ogg"));
         titleScreenSelectionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/explosion.wav"));
         titleScreenMusic.setLooping(true);
     }

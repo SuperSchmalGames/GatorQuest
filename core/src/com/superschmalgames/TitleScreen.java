@@ -36,7 +36,7 @@ public class TitleScreen implements Screen {
         camera.setToOrtho(false, game.GAME_SCREEN_WIDTH, game.GAME_SCREEN_HEIGHT);
 
         //Initialize the music. Load an audio file from our assets into the Music object.
-        titleScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/title_screen_music.wav"));
+        titleScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Opening.ogg"));
         titleScreenSelectionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/explosion.wav"));
         titleScreenMusic.setLooping(true);
     }
