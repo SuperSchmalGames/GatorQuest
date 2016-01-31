@@ -2,8 +2,6 @@ package com.superschmalgames;
 
 //Class for representing items that can be equipped/worn on the character.
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 
 public class EquipableItem implements InventoryItem {
@@ -14,9 +12,6 @@ public class EquipableItem implements InventoryItem {
     public String statBoosted;     //Which stat is affected by equipping/using the item.
     public double boostAmt;         //How much is the stat changed.
 
-    //Likely temporary. Need to have some sort of generic/global sound handler?
-    static final Sound errTone = Gdx.audio.newSound(Gdx.files.internal("sound/effects/error_tone.wav"));
-
     public EquipableItem(String name, String texPath, String stat, double boost, int initQuant){
         itemName = name;
         texture = new Texture(texPath);
@@ -26,30 +21,26 @@ public class EquipableItem implements InventoryItem {
     }
 
     @Override
-    public void addItem(HeroCharacter hero) {
-        for(InventoryItem i : hero.inventory){
+    public void addItem(HeroInventory inv) {
+        for(InventoryItem i : inv.items){
             if(this.itemName.equals(i.getItemName())){
                 i.setQuantity(i.getQuantity()+1);
                 return;
             }
         }
-        hero.inventory.add(this);
+        inv.items.add(this);
     }
 
     @Override
-    public void activateItem(HeroCharacter hero) {
+    public double activateItem(double boostedStat) {
         //Equip the item and apply the appropriate boost.
-        if(quantity > 0) {
-            //boostedStat += boostAmt;
-        }
-        else errTone.play();
-
+        return boostedStat + boostAmt;
     }
 
     @Override
-    public void disableItem(HeroCharacter hero) {
+    public double disableItem(double boostedStat) {
         //Unequip the item and remove the boost that was given.
-
+        return boostedStat - boostAmt;
     }
 
     @Override

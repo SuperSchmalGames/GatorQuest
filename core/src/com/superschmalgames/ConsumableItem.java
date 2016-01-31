@@ -30,37 +30,31 @@ public class ConsumableItem implements InventoryItem {
     }
 
     @Override
-    public void addItem(HeroCharacter hero) {
-        for(InventoryItem i : hero.inventory){
+    public void addItem(HeroInventory inv) {
+        for(InventoryItem i : inv.items){
             if(this.itemName.equals(i.getItemName())){
                 i.setQuantity(i.getQuantity()+1);
                 return;
             }
         }
-        hero.inventory.add(this);
+        inv.items.add(this);
     }
 
     @Override
-    public void activateItem(HeroCharacter hero) {
+    public double activateItem(double boostedStat) {
         //For usable items, apply the appropriate buff and reduce the inventory number by one.
         if(quantity > 0) {
-            if(itemName.equals("Red Bull")) {
-                hero.gpa += boostAmt;
-                quantity--;
-                return;
-            }
+            quantity--;
+            return boostedStat + boostAmt;
         }
         else errTone.play();
-
+        return boostedStat;
     }
 
     @Override
-    public void disableItem(HeroCharacter hero) {
+    public double disableItem(double boostedStat) {
         //When the item's boost wears off, decrease the stat by appropriate amount.
-        if(itemName.equals("Red Bull")) {
-            hero.gpa -= boostAmt;
-            return;
-        }
+        return boostedStat - boostAmt;
     }
 
     @Override

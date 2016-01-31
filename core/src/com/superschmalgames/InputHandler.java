@@ -78,16 +78,13 @@ public class InputHandler implements InputProcessor {
 
             ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
             else if(keycode == Input.Keys.R){
-                ConsumableItem tmp = new ConsumableItem("Red Bull","visuals/sprites/hero.png","GPA",1.2,3,1,true);
-                tmp.addItem(game.hero);
+                game.hero.inventory.addItem("Red Bull");
             }
             else if((keycode == Input.Keys.T)){
-                if(!game.hero.inventory.isEmpty()) {
-                    game.hero.inventory.get(0).activateItem(game.hero);
-                }
+                game.hero.inventory.useItem("Red Bull", game.hero);
             }
             else if(keycode == Input.Keys.Y){
-                game.hero.inventory.get(0).disableItem(game.hero);
+                game.hero.inventory.removeEffect("Red Bull", game.hero);
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         }

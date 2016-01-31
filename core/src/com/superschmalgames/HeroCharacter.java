@@ -2,9 +2,6 @@ package com.superschmalgames;
 
 //This class will represent our main playable character.
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class HeroCharacter {
 
     public int outfitNum;
@@ -16,18 +13,17 @@ public class HeroCharacter {
     public float xPos;
     public float yPos;
 
-    //Character inventory.
-    List<InventoryItem> inventory;
+    HeroInventory inventory;
 
     //Character stats.
-    public float software;
-    public float hardware;
-    public float readWrite;
-    public float endurance;
-    public float social;
-    public float math;
-    public float detail;
-    private final float STAT_CAP = 10.0f;   //Cap all stats at 10.0
+    public double software;
+    public double hardware;
+    public double readWrite;
+    public double endurance;
+    public double social;
+    public double math;
+    public double detail;
+    private final double STAT_CAP = 10.0;   //Cap all stats at 10.0
 
     //Animators that take care of walking in each direction.
     Animator leftWalk, rightWalk, upWalk, downWalk;
@@ -38,15 +34,16 @@ public class HeroCharacter {
 
     public HeroCharacter(){
         gpa = 4.0;
-        software = 1.0f;
-        hardware = 1.0f;
-        readWrite = 1.0f;
-        endurance = 1.0f;
-        social = 1.0f;
-        math = 1.0f;
-        detail = 1.0f;
+        software = 1.0;
+        hardware = 1.0;
+        readWrite = 1.0;
+        endurance = 1.0;
+        social = 1.0;
+        math = 1.0;
+        detail = 1.0;
 
-        initInventory();
+        //Create and initialize hero character's inventory.
+        inventory = new HeroInventory();
     }
 
     public void initAnimations(){
@@ -60,13 +57,6 @@ public class HeroCharacter {
         //Set up the initial frame that will be rendered to the screen before any input is given.
         heroAnim = downWalk;
         heroAnim.currentFrame = downWalk.walkAnimation.getKeyFrame(downWalk.stateTime, true);
-    }
-
-    public void initInventory(){
-        inventory = new ArrayList<InventoryItem>();
-        ConsumableItem tmp;
-        tmp = new ConsumableItem("Red Bull","visuals/InvItems/use/starbucks.png","GPA",1.2f,3,0,true);
-        tmp.addItem(this);
     }
 
     //Gets the current frame of the proper walking animation for the character

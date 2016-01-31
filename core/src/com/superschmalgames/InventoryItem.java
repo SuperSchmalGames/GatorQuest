@@ -6,14 +6,14 @@ import com.badlogic.gdx.graphics.Texture;
 
 public interface InventoryItem {
     //Method to add an item to the character inventory.
-    void addItem(HeroCharacter hero);
+    void addItem(HeroInventory inv);
 
     //Method to effectively use/equip an item in the player's inventory
-    void activateItem(HeroCharacter hero);
+    double activateItem(double boostedStat);
 
     //Method to effectively unequip or "finish using" an item. It will remove the stat buff and decrease the item
     //quantity if necessary.
-    void disableItem(HeroCharacter hero);
+    double disableItem(double boostedStat);
 
     String getItemName();
     void setItemName(String itemName);
