@@ -22,11 +22,13 @@ public class MainClass extends Game {
 	GameScreen gameScreen;
 
 	InputHandler inputHandler;
+
+	public boolean isPaused;
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		font = new BitmapFont();
+		font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
 		testFont = new BitmapFont();
 
 		inputHandler = new InputHandler(this);
@@ -40,6 +42,8 @@ public class MainClass extends Game {
 		hero.xPos = GAME_SCREEN_WIDTH/2 - hero.width/2;
 		hero.yPos = GAME_SCREEN_HEIGHT/2 - hero.height/2;
 
+		isPaused = false;
+
 		//Set the screen as the title screen.
 		titleScreen = new TitleScreen(this);
 		this.setScreen(titleScreen);
@@ -51,8 +55,22 @@ public class MainClass extends Game {
 	}
 
 	@Override
+	public void pause(){
+		super.pause();
+	}
+
+	@Override
+	public void resume(){
+		super.resume();
+	}
+
+	@Override
 	public void dispose() {
 		batch.dispose();
 		font.dispose();
+		testFont.dispose();
+		titleScreen.dispose();
+		avatarScreen.dispose();
+		gameScreen.dispose();
 	}
 }

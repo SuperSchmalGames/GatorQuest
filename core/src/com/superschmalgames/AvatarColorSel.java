@@ -34,7 +34,7 @@ public class AvatarColorSel implements Screen{
 
         //Set up the character options texture and the font that prompts for user input.
         avTex = new Texture("visuals/sprite_sheets/Sprite_Color_Sel.png");
-        game.font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
+        //game.font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
         layout1.setText(game.font, key_prompt_text);
 
         titleScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Prelude.ogg"));

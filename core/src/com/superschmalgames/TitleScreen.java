@@ -54,7 +54,7 @@ public class TitleScreen implements Screen {
         //Draw to our batch each refresh. The batch is then rendered to the screen.
         game.batch.begin();
 
-        game.font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
+        //game.font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
         layout1.setText(game.font, GatorQuest);
         layout2.setText(game.font, PressSpace);
         game.font.draw(game.batch,

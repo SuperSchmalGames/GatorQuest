@@ -63,29 +63,40 @@ public class InputHandler implements InputProcessor {
         if(game.getScreen() == game.gameScreen) {
             //Take keyboard input from user for character movement. Character actually stays centered on screen, and the
             //camera is translated about the map to give illusion of character movement.
-            if(keycode == Input.Keys.LEFT){
+            if(keycode == Input.Keys.LEFT && !game.isPaused){
                 game.gameScreen.lWalk = true;
             }
-            else if(keycode == Input.Keys.RIGHT){
+            else if(keycode == Input.Keys.RIGHT && !game.isPaused){
                 game.gameScreen.rWalk = true;
             }
-            else if(keycode == Input.Keys.UP){
+            else if(keycode == Input.Keys.UP && !game.isPaused){
                 game.gameScreen.uWalk = true;
             }
-            else if(keycode == Input.Keys.DOWN){
+            else if(keycode == Input.Keys.DOWN && !game.isPaused){
                 game.gameScreen.dWalk = true;
             }
 
             ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
-            else if(keycode == Input.Keys.R){
+            else if(keycode == Input.Keys.R && !game.isPaused){
                 game.hero.inventory.addItem("Red Bull");
             }
-            else if((keycode == Input.Keys.T)){
+            else if((keycode == Input.Keys.T && !game.isPaused)){
                 game.hero.inventory.useItem("Red Bull", game.hero);
             }
-            else if(keycode == Input.Keys.Y){
+            else if(keycode == Input.Keys.Y && !game.isPaused){
                 game.hero.inventory.removeEffect("Red Bull", game.hero);
             }
+            else if (keycode == Input.Keys.P){
+                if(!game.isPaused) {
+                    game.isPaused = true;
+                    game.pause();
+                }
+                else {
+                    game.isPaused = false;
+                    game.resume();
+                }
+            }
+
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         }
 
