@@ -21,6 +21,7 @@ public class MainClass extends Game {
 	TitleScreen titleScreen;
 	AvatarColorSel avatarScreen;
 	GameScreen gameScreen;
+	InventoryScreen inventoryScreen;
 
 	InputHandler inputHandler;
 	

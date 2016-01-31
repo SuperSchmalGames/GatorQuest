@@ -6,6 +6,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -23,6 +24,7 @@ public class GameScreen implements Screen {
 
     //Textures and audio used in the game screen.
     Music worldMusic;
+    Sound inventoryScreenSelectionSound;
 
     //The game map itself.
     TiledMap tiledmap;
@@ -48,6 +50,8 @@ public class GameScreen implements Screen {
         //Initialize the music. Load an audio file from our assets into the Music object.
         worldMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/world_map_music.wav"));
         worldMusic.setLooping(true);
+
+        inventoryScreenSelectionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/zipper.wav"));
 
         //Initialize the map.
         setMap("Full_Map.tmx");
@@ -175,7 +179,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void hide() {
-
+        worldMusic.stop();
     }
 
     @Override

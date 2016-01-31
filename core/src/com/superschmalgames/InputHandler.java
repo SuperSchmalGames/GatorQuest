@@ -84,6 +84,50 @@ public class InputHandler implements InputProcessor {
                 game.hero.gpa = game.hero.inventory.get(0).useItem(game.hero.gpa);
                 game.hero.upDateInv();
             }
+            else if((keycode == Input.Keys.I)){
+                //Play the sound effect when player pushes the button.
+                game.gameScreen.inventoryScreenSelectionSound.play();
+
+                //Set the gamescreen to be the inventory game screen.
+                game.inventoryScreen = new InventoryScreen(game);
+                game.setScreen(game.inventoryScreen);
+
+                game.inventoryScreen.invPanel = "Consumable";
+                game.inventoryScreen.invPage = 0;
+                game.inventoryScreen.invRow = 0;
+
+            }
+        }
+        if(game.getScreen() == game.inventoryScreen) {
+            if (keycode == Input.Keys.LEFT) {
+                if (game.inventoryScreen.invPanel == "Consumable")
+                    game.inventoryScreen.invPanel = "Apparel";
+                else if (game.inventoryScreen.invPanel == "Apparel")
+                    game.inventoryScreen.invPanel = "Equipment";
+                else if (game.inventoryScreen.invPanel == "Equipment")
+                    game.inventoryScreen.invPanel = "Consumable";
+            } else if (keycode == Input.Keys.RIGHT) {
+                if (game.inventoryScreen.invPanel == "Consumable")
+                    game.inventoryScreen.invPanel = "Equipment";
+                else if (game.inventoryScreen.invPanel == "Apparel")
+                    game.inventoryScreen.invPanel = "Consumable";
+                else if (game.inventoryScreen.invPanel == "Equipment")
+                    game.inventoryScreen.invPanel = "Apparel";
+            } else if (keycode == Input.Keys.ESCAPE) {
+                //Play the sound effect when player pushes the button.
+                game.gameScreen.inventoryScreenSelectionSound.play();
+
+                //Set the gamescreen to be the inventory game screen.
+                game.setScreen(game.gameScreen);
+            }
+            else if (keycode == Input.Keys.DOWN){
+                if ((game.inventoryScreen.invRow + 1)%8 == 0) {
+                    game.inventoryScreen.invPage += 1;
+                    game.inventoryScreen.invRow = 0;
+                }
+                else
+                    game.inventoryScreen.invRow += 1;
+            }
         }
 
         return false;
@@ -91,7 +135,7 @@ public class InputHandler implements InputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
-        //Set the appropriate boolean value flase to stop the walk animation when the button is lifted
+        //Set the appropriate boolean value false to stop the walk animation when the button is lifted
         if(keycode == Input.Keys.LEFT) game.gameScreen.lWalk = false;
         if(keycode == Input.Keys.RIGHT) game.gameScreen.rWalk = false;
         if(keycode == Input.Keys.UP) game.gameScreen.uWalk = false;
