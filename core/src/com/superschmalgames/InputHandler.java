@@ -100,6 +100,9 @@ public class InputHandler implements InputProcessor {
         }
         if(game.getScreen() == game.inventoryScreen) {
             if (keycode == Input.Keys.LEFT) {
+
+                game.inventoryScreen.invRow = 0;
+
                 if (game.inventoryScreen.invPanel == "Consumable")
                     game.inventoryScreen.invPanel = "Apparel";
                 else if (game.inventoryScreen.invPanel == "Apparel")
@@ -107,6 +110,9 @@ public class InputHandler implements InputProcessor {
                 else if (game.inventoryScreen.invPanel == "Equipment")
                     game.inventoryScreen.invPanel = "Consumable";
             } else if (keycode == Input.Keys.RIGHT) {
+
+                game.inventoryScreen.invRow = 0;
+
                 if (game.inventoryScreen.invPanel == "Consumable")
                     game.inventoryScreen.invPanel = "Equipment";
                 else if (game.inventoryScreen.invPanel == "Apparel")
@@ -127,6 +133,17 @@ public class InputHandler implements InputProcessor {
                 }
                 else
                     game.inventoryScreen.invRow += 1;
+            }
+            else if (keycode == Input.Keys.UP){
+                if(game.inventoryScreen.invRow == 0 && game.inventoryScreen.invPage == 0){
+
+                }
+                else if ((game.inventoryScreen.invRow)%8 == 0) {
+                    game.inventoryScreen.invPage -= 1;
+                    game.inventoryScreen.invRow += 7;
+                }
+                else
+                    game.inventoryScreen.invRow -= 1;
             }
         }
 
