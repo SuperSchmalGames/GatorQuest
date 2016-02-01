@@ -4,34 +4,22 @@ package com.superschmalgames;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MainClass extends Game {
 
-	final int GAME_SCREEN_WIDTH = 1020;
-	final int GAME_SCREEN_HEIGHT = 612	;
-	final int MAP_RESOLUTION = 64;
-
-	SpriteBatch batch;
-	BitmapFont font, testFont;
-	HeroCharacter hero;
-
-	TitleScreen titleScreen;
-	AvatarColorSel avatarScreen;
-	GameScreen gameScreen;
-
-	InputHandler inputHandler;
-
-	public boolean isPaused;
+	public static SpriteBatch batch;
+	public static HeroCharacter hero;
+	public static TitleScreen titleScreen;
+	public static AvatarColorSel avatarScreen;
+	public static GameScreen gameScreen;
+	public static InputHandler inputHandler;
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
-		testFont = new BitmapFont();
 
-		inputHandler = new InputHandler(this);
+		inputHandler = new InputHandler();
 		Gdx.input.setInputProcessor(inputHandler);
 
 		//Create and initialize the main character object.
@@ -39,13 +27,14 @@ public class MainClass extends Game {
 		hero.name = "Matt";
 		hero.width = 55;
 		hero.height = 64;
-		hero.xPos = GAME_SCREEN_WIDTH/2 - hero.width/2;
-		hero.yPos = GAME_SCREEN_HEIGHT/2 - hero.height/2;
+		hero.xPos = Utils.GAME_SCREEN_WIDTH/2 - hero.width/2;
+		hero.yPos = Utils.GAME_SCREEN_HEIGHT/2 - hero.height/2;
 
-		isPaused = false;
+		//Initialize all utility values.
+		Utils.initUtils();
 
 		//Set the screen as the title screen.
-		titleScreen = new TitleScreen(this);
+		titleScreen = new TitleScreen();
 		this.setScreen(titleScreen);
 	}
 
@@ -67,10 +56,9 @@ public class MainClass extends Game {
 	@Override
 	public void dispose() {
 		batch.dispose();
-		font.dispose();
-		testFont.dispose();
 		titleScreen.dispose();
 		avatarScreen.dispose();
 		gameScreen.dispose();
 	}
+
 }
