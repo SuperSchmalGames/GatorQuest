@@ -77,7 +77,18 @@ public class InputHandler implements InputProcessor {
             else if(keycode == Input.Keys.DOWN && !Utils.isPaused){
                 MainClass.gameScreen.dWalk = true;
             }
+            else if((keycode == Input.Keys.I)){
+                //Play the sound effect when player pushes the button.
+                Utils.inventoryScreenSelectionSound.play();
 
+                //Set the gamescreen to be the inventory game screen.
+                MainClass.inventoryScreen = new InventoryScreen();
+                ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.inventoryScreen);
+
+                MainClass.inventoryScreen.invPanel = "Consumable";
+                MainClass.inventoryScreen.invPage = 0;
+                MainClass.inventoryScreen.invRow = 0;
+            }
             ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
             else if(keycode == Input.Keys.R && !Utils.isPaused){
                 MainClass.hero.inventory.addItem("Red Bull");
@@ -99,6 +110,55 @@ public class InputHandler implements InputProcessor {
                 }
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        }
+
+        if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.inventoryScreen) {
+            if (keycode == Input.Keys.LEFT) {
+
+                MainClass.inventoryScreen.invRow = 0;
+
+                if (MainClass.inventoryScreen.invPanel == "Consumable")
+                    MainClass.inventoryScreen.invPanel = "Apparel";
+                else if (MainClass.inventoryScreen.invPanel == "Apparel")
+                    MainClass.inventoryScreen.invPanel = "Equipment";
+                else if (MainClass.inventoryScreen.invPanel == "Equipment")
+                    MainClass.inventoryScreen.invPanel = "Consumable";
+            } else if (keycode == Input.Keys.RIGHT) {
+
+                MainClass.inventoryScreen.invRow = 0;
+
+                if (MainClass.inventoryScreen.invPanel == "Consumable")
+                    MainClass.inventoryScreen.invPanel = "Equipment";
+                else if (MainClass.inventoryScreen.invPanel == "Apparel")
+                    MainClass.inventoryScreen.invPanel = "Consumable";
+                else if (MainClass.inventoryScreen.invPanel == "Equipment")
+                    MainClass.inventoryScreen.invPanel = "Apparel";
+            } else if (keycode == Input.Keys.ESCAPE) {
+                //Play the sound effect when player pushes the button.
+                Utils.inventoryScreenSelectionSound.play();
+
+                //Set the gamescreen to be the inventory game screen.
+                ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+            }
+            else if (keycode == Input.Keys.DOWN){
+                if ((MainClass.inventoryScreen.invRow + 1)%8 == 0) {
+                    MainClass.inventoryScreen.invPage += 1;
+                    MainClass.inventoryScreen.invRow = 0;
+                }
+                else
+                    MainClass.inventoryScreen.invRow += 1;
+            }
+            else if (keycode == Input.Keys.UP){
+                if(MainClass.inventoryScreen.invRow == 0 && MainClass.inventoryScreen.invPage == 0){
+
+                }
+                else if ((MainClass.inventoryScreen.invRow)%8 == 0) {
+                    MainClass.inventoryScreen.invPage -= 1;
+                    MainClass.inventoryScreen.invRow += 7;
+                }
+                else
+                    MainClass.inventoryScreen.invRow -= 1;
+            }
         }
 
         return false;

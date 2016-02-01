@@ -13,6 +13,7 @@ public class MainClass extends Game {
 	public static TitleScreen titleScreen;
 	public static AvatarColorSel avatarScreen;
 	public static GameScreen gameScreen;
+	public static InventoryScreen inventoryScreen;
 	public static InputHandler inputHandler;
 	
 	@Override
