@@ -37,6 +37,8 @@ public class GameScreen implements Screen {
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
         camera.setToOrtho(false, game.GAME_SCREEN_WIDTH, game.GAME_SCREEN_HEIGHT);
+        //Test NEB_Dungeon
+        camera.translate(300f,500f);
 
         //Initialize the music. Load an audio file from our assets into the Music object.
         worldMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/world_map_music.wav"));
@@ -44,7 +46,7 @@ public class GameScreen implements Screen {
 
         //Initialize the map.
         //tiledmap = new TmxMapLoader().load("visuals/maps/gatorquesttest.tmx"); <- now handled in setMap()?
-        setMap("Full_Map.tmx");
+        setMap("NEB_Dungeon.tmx");
     }
 
     private void setMap(String str) {
@@ -90,9 +92,8 @@ public class GameScreen implements Screen {
             camera.translate(-5f,0f);
             game.hero.walkAnimation('L', Gdx.graphics.getDeltaTime());
             if(collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().containsKey("door")) {
-                int x = Integer.valueOf((String)collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().get("x"));
-                int y = Integer.valueOf((String)collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().get("y"));
-                camera.translate(x*game.MAP_RESOLUTION, y*game.MAP_RESOLUTION);
+                camera.translate(Integer.valueOf((String)collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().get("x"))*game.MAP_RESOLUTION,
+                                 Integer.valueOf((String)collision.getCell((int)camera.position.x/game.MAP_RESOLUTION, (int) camera.position.y/game.MAP_RESOLUTION).getTile().getProperties().get("y"))*game.MAP_RESOLUTION);
             }
         }
         else if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) &&
