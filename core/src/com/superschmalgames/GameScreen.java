@@ -38,7 +38,7 @@ public class GameScreen implements Screen {
         camera = new OrthographicCamera();
         camera.setToOrtho(false, game.GAME_SCREEN_WIDTH, game.GAME_SCREEN_HEIGHT);
         //Test NEB_Dungeon
-        camera.translate(300f,500f);
+        //camera.translate(300f,500f);
 
         //Initialize the music. Load an audio file from our assets into the Music object.
         worldMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/world_map_music.wav"));
@@ -46,7 +46,7 @@ public class GameScreen implements Screen {
 
         //Initialize the map.
         //tiledmap = new TmxMapLoader().load("visuals/maps/gatorquesttest.tmx"); <- now handled in setMap()?
-        setMap("NEB_Dungeon.tmx");
+        setMap("CISE_Dungeon.tmx");
     }
 
     private void setMap(String str) {
