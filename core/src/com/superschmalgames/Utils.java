@@ -41,13 +41,40 @@ public class Utils {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////GAME SCREEN////////////////////////////////////////////////////////////////////////////
-    public static final Music gameMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/world_map_music.wav"));
+    public static final Music gameMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Dungeon.ogg"));
     public static final TiledMap tiledmap = new TmxMapLoader().load("visuals/maps/Full_Map.tmx");
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////INVENTORY SCREEN///////////////////////////////////////////////////////////////////////
     public static final Sound inventoryScreenSelectionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/zipper.wav"));
+
+    //Offsets in the ArrayList of Items for the categories (Apparel, Consumables, Equipment)
+    //Apparel is <20 (from 0-19), Consumables are <40 (from 20 to 39), Equipment is <60 (from 40 to 59)
+    public static final int apparelStart = 0;
+    public static final int apparelEnd = 20;
+    public static final int consumableStart = 20;
+    public static final int consumableEnd = 40;
+    public static final int equipmentStart = 40;
+    public static final int equipmentEnd = 60;
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////INVENTORY ITEM TEXTURES///////////////////////////////////////////////////////////////
+    //Consumable
+    public static final Texture redbull_tex = new Texture("visuals/inv_items/consume/redbull.png");
+    public static final Texture starbucks_tex = new Texture("visuals/inv_items/consume/starbucks.png");
+
+    //Apparel
+    public static final Texture business_casual_attire_tex = new Texture("visuals/inv_items/apparel/business_casual_attire.png");
+    public static final Texture class_ring_tex = new Texture("visuals/inv_items/apparel/class_ring.png");
+    public static final Texture gator_hat_tex = new Texture("visuals/inv_items/apparel/gator_hat.png");
+    public static final Texture graduation_gown_tex = new Texture("visuals/inv_items/apparel/graduation_gown.png");
+    public static final Texture suit_and_tie_tex = new Texture("visuals/inv_items/apparel/suit_and_tie.png");
+
+    //Equipment
+    public static final Texture avr_dragon_tex = new Texture("visuals/inv_items/equip/avr_dragon.png");
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //Static method to initialize all required options for the variables fields used above.
     public static void initUtils(){
@@ -65,6 +92,11 @@ public class Utils {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /////////////////////////////////GAME SCREEN///////////////////////////////////////////////////////////////////////////
+        gameMusic.setLooping(true);
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        /////////////////////////////////INVENTORY SCREEN//////////////////////////////////////////////////////////////////////
+        inventoryScreenSelectionSound.setVolume(1, 1);
         gameMusic.setLooping(true);
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }

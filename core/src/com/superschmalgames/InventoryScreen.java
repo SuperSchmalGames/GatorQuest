@@ -1,7 +1,6 @@
 package com.superschmalgames;
 
-//This class is for the title screen you see when the game first loads up. Input is handled through the InputHandler
-//class, which processes input events and takes care of everything.
+//This class is for the inventory screen you see when you hit "I" from the game screen.
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -23,7 +22,7 @@ public class InventoryScreen implements Screen {
     int invPage;
     int invRow;
 
-    Texture invTex1, invTex2, invTex3, invTex4;
+    Texture invTex1, invTex2, invTex3, invTex4, invTex5;
 
     public InventoryScreen() {
 
@@ -35,6 +34,7 @@ public class InventoryScreen implements Screen {
         invTex2 = new Texture("visuals/Menus/Equipment Item Menu.png");
         invTex3 = new Texture("visuals/Menus/Apparel Item Menu.png");
         invTex4 = new Texture("visuals/Menus/Selected Item Box.png");
+        invTex5 = new Texture("visuals/Menus/white_sq.png");
 
     }
 
@@ -65,14 +65,215 @@ public class InventoryScreen implements Screen {
                 Gdx.graphics.getHeight()/2 + layout2.height/2-50
         );
 
-        if(invPanel.equals("Consumable"))
-            MainClass.batch.draw(invTex1, Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2,0);
-        else if(invPanel == "Equipment")
-            MainClass.batch.draw(invTex2, Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2,0);
-        else if(invPanel == "Apparel")
-            MainClass.batch.draw(invTex3, Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2,0);
+        if(invPanel.equals("Consumable")) {
+            MainClass.batch.draw(invTex1, Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2, 0);
+            int temp = 0;
+            if(invPage == 0) {
+                for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
+                    if (MainClass.hero.inventory.items.get(i) != null &&
+                            MainClass.hero.inventory.items.get(i).getQuantity() > 0 &&
+                            MainClass.hero.inventory.items.get(i).getItemType() == 'c') {
+                        Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
+                                        + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
+                                Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2 + 50, 515 - 65 * temp);
+                        temp += 1;
+                    }
+                }
+            }
+            else if(invPage > 0)
+            {
+                int indexRelPopEquip = 0;
+                int indexRelAllItems = 0;
+                while(indexRelPopEquip < invPage*8) {
+                    if (MainClass.hero.inventory.items.get(indexRelAllItems).getQuantity() > 0 && MainClass.hero.inventory.items.get(indexRelAllItems).getItemType() == 'c')
+                    {
+                        indexRelPopEquip += 1;
+                    }
+                    indexRelAllItems+=1;
+                }
+
+                for(int i=indexRelAllItems; i < MainClass.hero.inventory.items.size(); i++) {
+                    if (MainClass.hero.inventory.items.get(i) != null
+                            && MainClass.hero.inventory.items.get(i).getQuantity() > 0
+                            && MainClass.hero.inventory.items.get(i).getItemType() == 'c') {
+                        Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
+                                        + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
+                                Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2 + 50, 515 - 65 * invRow);
+                    }
+                }
+            }
+
+            int populatedEquipments = 0;
+            int invIndex = 0;
+            if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNumC() > 0)
+            {
+                MainClass.batch.draw(invTex5, 505, 435, 94, 94);
+                MainClass.batch.draw(MainClass.hero.inventory.items.get(5).getTexture(), 520, 450, 64, 64);
+                Utils.testFont.draw(MainClass.batch, MainClass.hero.inventory.items.get(7).getItemName() +
+                        "\nBoosts "+ MainClass.hero.inventory.items.get(5).getStatBoosted()+" by "+
+                        MainClass.hero.inventory.items.get(5).getBoostAmt(), 610,520);
+            }
+            else if(invRow == 0 && invPage == 0)
+            {
+            }
+            else {
+                while (populatedEquipments < (invRow + 8 * invPage)) {
+                    if (MainClass.hero.inventory.items.get(invIndex).getQuantity() > 0 && MainClass.hero.inventory.items.get(invIndex).getItemType() == 'c')
+                        populatedEquipments += 1;
+                    invIndex += 1;
+                }
+                if (MainClass.hero.inventory.getNumC() > 0) {
+                    MainClass.batch.draw(invTex5, 505, 435, 94, 94);
+                    MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
+                    Utils.testFont.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
+                            "\nBoosts "+ MainClass.hero.inventory.items.get(invIndex).getStatBoosted()+" by "+
+                            MainClass.hero.inventory.items.get(invIndex).getBoostAmt(), 610,520);
+                }
+            }
+        }
+        else if(invPanel == "Equipment") {
+            MainClass.batch.draw(invTex2, Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2, 0);
+            int temp = 0;
+            if(invPage == 0) {
+                for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
+                    if (MainClass.hero.inventory.items.get(i) != null &&
+                            MainClass.hero.inventory.items.get(i).getQuantity() > 0 &&
+                            MainClass.hero.inventory.items.get(i).getItemType() == 'e') {
+                        Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
+                                        + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
+                                Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2 + 50, 515 - 65 * temp);
+                        temp += 1;
+                    }
+                }
+            }
+            else if(invPage > 0)
+            {
+                int indexRelPopEquip = 0;
+                int indexRelAllItems = 0;
+                while(indexRelPopEquip < invPage*8) {
+                        if (MainClass.hero.inventory.items.get(indexRelAllItems).getQuantity() > 0 && MainClass.hero.inventory.items.get(indexRelAllItems).getItemType() == 'e')
+                        {
+                            indexRelPopEquip += 1;
+                        }
+                        indexRelAllItems+=1;
+                }
+
+                for(int i=indexRelAllItems; i < MainClass.hero.inventory.items.size(); i++) {
+                    if (MainClass.hero.inventory.items.get(i) != null
+                            && MainClass.hero.inventory.items.get(i).getQuantity() > 0
+                            && MainClass.hero.inventory.items.get(i).getItemType() == 'e') {
+                        Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
+                                        + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
+                                Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2 + 50, 515 - 65 * invRow);
+                    }
+                }
+            }
+
+            int populatedEquipments = 0;
+            int invIndex = 0;
+            if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNumE() > 0)
+            {
+                MainClass.batch.draw(invTex5, 505, 435, 94, 94);
+                MainClass.batch.draw(MainClass.hero.inventory.items.get(7).getTexture(), 520, 450, 64, 64);
+                Utils.testFont.draw(MainClass.batch, MainClass.hero.inventory.items.get(7).getItemName() +
+                        "\nBoosts "+ MainClass.hero.inventory.items.get(7).getStatBoosted()+" by "+
+                        MainClass.hero.inventory.items.get(7).getBoostAmt(), 610,520);
+            }
+            else if(invRow == 0 && invPage == 0)
+            {
+            }
+            else {
+                while (populatedEquipments < (invRow + 8 * invPage)) {
+                    if (MainClass.hero.inventory.items.get(invIndex).getQuantity() > 0 && MainClass.hero.inventory.items.get(invIndex).getItemType() == 'e')
+                        populatedEquipments += 1;
+                    invIndex += 1;
+                }
+                if (MainClass.hero.inventory.getNumE() > 0) {
+                    MainClass.batch.draw(invTex5, 505, 435, 94, 94);
+                    MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
+                    Utils.testFont.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
+                            "\nBoosts "+ MainClass.hero.inventory.items.get(invIndex).getStatBoosted()+" by "+
+                            MainClass.hero.inventory.items.get(invIndex).getBoostAmt(), 610,520);
+                }
+            }
+        }
+        else if(invPanel == "Apparel") {
+            MainClass.batch.draw(invTex3, Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2, 0);
+            int temp = 0;
+            if(invPage == 0) {
+                for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
+                    if (MainClass.hero.inventory.items.get(i) != null &&
+                            MainClass.hero.inventory.items.get(i).getQuantity() > 0 &&
+                            MainClass.hero.inventory.items.get(i).getItemType() == 'a') {
+                        Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
+                                        + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
+                                Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2 + 50, 515 - 65 * temp);
+                        temp += 1;
+                    }
+                }
+            }
+            else if(invPage > 0)
+            {
+                int indexRelPopEquip = 0;
+                int indexRelAllItems = 0;
+                while(indexRelPopEquip < invPage*8) {
+                    if (MainClass.hero.inventory.items.get(indexRelAllItems).getQuantity() > 0 && MainClass.hero.inventory.items.get(indexRelAllItems).getItemType() == 'a')
+                    {
+                        indexRelPopEquip += 1;
+                    }
+                    indexRelAllItems+=1;
+                }
+
+                for(int i=indexRelAllItems; i < MainClass.hero.inventory.items.size(); i++) {
+                    if (MainClass.hero.inventory.items.get(i) != null
+                            && MainClass.hero.inventory.items.get(i).getQuantity() > 0
+                            && MainClass.hero.inventory.items.get(i).getItemType() == 'a') {
+                        Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
+                                        + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
+                                Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2 + 50, 515 - 65 * invRow);
+                    }
+                }
+            }
+
+            int populatedEquipments = 0;
+            int invIndex = 0;
+            if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNumA() > 0)
+            {
+                MainClass.batch.draw(invTex5, 505, 435, 94, 94);
+                MainClass.batch.draw(MainClass.hero.inventory.items.get(0).getTexture(), 520, 450, 64, 64);
+                Utils.testFont.draw(MainClass.batch, MainClass.hero.inventory.items.get(7).getItemName() +
+                        "\nBoosts "+ MainClass.hero.inventory.items.get(0).getStatBoosted()+" by "+
+                        MainClass.hero.inventory.items.get(0).getBoostAmt(), 610,520);
+            }
+            else if(invRow == 0 && invPage == 0)
+            {
+            }
+            else {
+                while (populatedEquipments < (invRow + 8 * invPage)) {
+                    if (MainClass.hero.inventory.items.get(invIndex).getQuantity() > 0 && MainClass.hero.inventory.items.get(invIndex).getItemType() == 'a')
+                        populatedEquipments += 1;
+                    invIndex += 1;
+                }
+                if (MainClass.hero.inventory.getNumA() > 0) {
+                    MainClass.batch.draw(invTex5, 505, 435, 94, 94);
+                    MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
+                    Utils.testFont.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
+                            "\nBoosts "+ MainClass.hero.inventory.items.get(invIndex).getStatBoosted()+" by "+
+                            MainClass.hero.inventory.items.get(invIndex).getBoostAmt(), 610,520);
+                }
+            }
+        }
 
         MainClass.batch.draw(invTex4, Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+35,480-65*invRow);
+
+
+        if (invPanel.equals("Consumable") && MainClass.hero.inventory.getNumC() == 0)
+            Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
+        else if (invPanel.equals("Consumable") && MainClass.hero.inventory.getNumC() == 0)
+            Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
+        else if (invPanel.equals("Consumable") && MainClass.hero.inventory.getNumC() == 0)
+            Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
+
 
         MainClass.batch.end();
     }

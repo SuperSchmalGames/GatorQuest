@@ -11,6 +11,7 @@ public class EquipableItem implements InventoryItem {
     public Texture texture;        //Texture used to render the item in the game.
     public String statBoosted;     //Which stat is affected by equipping/using the item.
     public double boostAmt;         //How much is the stat changed.
+    public char itemType;          //Defines the item by Apparel, Equipment or Consumable by chars 'a', 'e' or 'c' respectively
 
     public EquipableItem(String name, String texPath, String stat, double boost, int initQuant){
         itemName = name;
@@ -18,6 +19,7 @@ public class EquipableItem implements InventoryItem {
         statBoosted = stat;
         boostAmt = boost;
         quantity += initQuant;
+        itemType = 'e';
     }
 
     @Override
@@ -82,6 +84,9 @@ public class EquipableItem implements InventoryItem {
     public void setBoostAmt(double boost) {
         boostAmt = boost;
     }
+
+    @Override
+    public char getItemType() { return itemType; }
 
     @Override
     public Texture getTexture(){
