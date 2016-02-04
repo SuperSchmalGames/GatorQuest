@@ -132,6 +132,26 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="961">
+   <properties>
+    <property name="exit" value=""/>
+   </properties>
+  </tile>
+  <tile id="962">
+   <properties>
+    <property name="exit" value=""/>
+   </properties>
+  </tile>
+  <tile id="1000">
+   <properties>
+    <property name="exit" value=""/>
+   </properties>
+  </tile>
+  <tile id="1001">
+   <properties>
+    <property name="exit" value=""/>
+   </properties>
+  </tile>
  </tileset>
  <tileset firstgid="1132" name="roguelikeIndoor_transparent64" tilewidth="64" tileheight="64" tilecount="532">
   <image source="roguelikeIndoor_transparent64.png" width="1828" height="1220"/>
@@ -2806,7 +2826,7 @@
  </layer>
  <layer name="Collision" width="54" height="46">
   <data encoding="base64" compression="zlib">
-   eJztmc1Kw0AQgHchLaiFvIrau/oM3oT6BlLtwauQ4qngQcSH8FHUx1CfQzeEhe24f8lmZ5Iwhe+w3TSdLzNsltkDIcRRR64QaRPXoWKhKDuwVHwg0ibOZaLXucQD02s7x+Frxl45vFYZGILXVPM1VS+uQ5x8nTooPXMnA/eqhPsd75v7JKhD1zOGaC/XO943dyFx8+V7xrZ8VMZzfyoa9Liy5IQC7RW75wp5PQzMa+/juT7kdWPU2v1s/7dwvA6Mb9X4TrGJ/D6n14vh9Qz+F453gTFlvt6KBuq669srJ5R1aJunzlVXr2tP7I/GXOq6QVGHa2nHvDZ13aCow1dph7r+Ur2o447x2or/vbexe/0qr3cRv/+GXpuiISWGbxXD5dzPT4c15azF/jtm3wtzvwrk11f3GtljLkVEvmxecI0M1e1YvOAaORUv22/G5gX3vWP2WnjirHsg8AymDHjFnuPk9Erps6UQ06NLiYu92Iu92Iu92Iu92AvD61jEnyv1Scgr5d71maOrb4CJdunrfnXPw9U3wER79XW/uufxB/RHbZs=
+   eJztmU1Kw0AUgN+QtKAWchW1e/UM7oR6A6l24VZI6UpwIeIhvIau1GOoC72ETgiB6Th/yfy8JLzCt5hOmr4v7zEZ3uwAwF5HzhLSJq5dzoxTdGDOeUtImzjnnl7HLB0pvdbTNHxMyCuG1yICffAaa77G6kV1mCZfhxoKw9xBz71K0L/jTXPvCHWoe8YyjZfuHW+aO2Fp82V6xqp8lMJzv8trmnGpyAkGjZfrnsvmddMzr62P4Xqb14VQa9eT7d/K46VlfMnHV5yV4/cxvR4Er3vpf+XxrWWMma+nvAa77kJ7xQSzDlXz2Lnq6nVuiH0jzPmuGxh1uGRqxGt91w2MOnxkarDrz9cLO24XrzX8770N3euXe72C+/5b9lrlNT4xfPIYTqdmvjqsKUct9t8u+1459wtLfk1138AC5hIc8qXyktdIW90OxUteI8fipfrN0Lzkfe+QvWaGOKseiHwGU1i8XM9xYnr59Nl8cOnR+cRFXuRFXuRFXuRFXuSVwmsf3M+VQmLz8rl3deao6xuk5DkDeMnC3a/qeej6Bin55k4/Wbj7VT2PP8Pubt8=
   </data>
  </layer>
  <layer name="Mid" width="54" height="46">

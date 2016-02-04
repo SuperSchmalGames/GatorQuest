@@ -48,8 +48,8 @@ public class Utils {
     public static final TiledMap cise = new TmxMapLoader().load("visuals/maps/CISE_Dungeon.tmx");
     public static final TiledMap neb = new TmxMapLoader().load("visuals/maps/NEB_Dungeon.tmx");
     public static final TiledMap dorm = new TmxMapLoader().load("visuals/maps/Dorm.tmx");
-    public static final TiledMap tiledmap = new TmxMapLoader().load("visuals/maps/CISE_Dungeon.tmx");
-
+    public static final TiledMap marston = new TmxMapLoader().load("visuals/maps/Marston.tmx");
+    public static final TiledMap openworld = new TmxMapLoader().load("visuals/maps/UF_Full_Map.tmx");
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////INVENTORY SCREEN///////////////////////////////////////////////////////////////////////

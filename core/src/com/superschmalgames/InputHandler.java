@@ -82,13 +82,14 @@ public class InputHandler implements InputProcessor {
                 Utils.inventoryScreenSelectionSound.play();
 
                 //Set the gamescreen to be the inventory game screen.
-                MainClass.inventoryScreen = new InventoryScreen();      //should new be called every time the inventory is opened?
+                MainClass.inventoryScreen = new InventoryScreen();
                 ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.inventoryScreen);
 
                 MainClass.inventoryScreen.invPanel = "Consumable";
                 MainClass.inventoryScreen.invPage = 0;
                 MainClass.inventoryScreen.invRow = 0;
             }
+
             ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
             else if(keycode == Input.Keys.R && !Utils.isPaused){
                 MainClass.hero.inventory.addItem("Red Bull");
