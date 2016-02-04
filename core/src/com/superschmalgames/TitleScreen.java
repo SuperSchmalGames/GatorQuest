@@ -164,7 +164,7 @@ public class TitleScreen implements Screen {
 
     @Override
     public void dispose() {
-        
+
     }
 
     public boolean fadeSprite(float delta, Sprite sprite, float timeToFade){

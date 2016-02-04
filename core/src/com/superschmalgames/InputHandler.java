@@ -26,14 +26,14 @@ public class InputHandler implements InputProcessor {
         if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.titleScreen){
             if(keycode == Input.Keys.DOWN && Utils.menuReady && menuIndex < 2){
                 //Play the sound effect when player pushes the button.
-                Utils.titleOptionSound.play();
+                Utils.titleOptionSound.play(0.6f);
                 //Move the menu icon down to the next menu option.
                 Utils.menuIcon.translateY(-33.0f);
                 //Increment the menu index.
                 menuIndex++;
             }
             else if(keycode == Input.Keys.UP && Utils.menuReady && menuIndex > 0){
-                Utils.titleOptionSound.play();
+                Utils.titleOptionSound.play(0.6f);
                 Utils.menuIcon.translateY(33.0f);
                 menuIndex--;
             }
@@ -48,7 +48,7 @@ public class InputHandler implements InputProcessor {
                     MainClass.titleScreen.dispose();
                 }
                 else
-                    Utils.errTone.play();
+                    Utils.errTone.play(0.5f);
             }
         }
         if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.avatarScreen) {
