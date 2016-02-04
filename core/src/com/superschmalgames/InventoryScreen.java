@@ -103,29 +103,34 @@ public class InventoryScreen implements Screen {
                 }
             }
 
-            int populatedEquipments = 0;
+            int populatedConsumables = 0;
             int invIndex = 0;
             if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNumC() > 0)
             {
                 MainClass.batch.draw(invTex5, 505, 435, 94, 94);
-                MainClass.batch.draw(MainClass.hero.inventory.items.get(5).getTexture(), 520, 450, 64, 64);
-                Utils.testFont.draw(MainClass.batch, MainClass.hero.inventory.items.get(7).getItemName() +
-                        "\nBoosts "+ MainClass.hero.inventory.items.get(5).getStatBoosted()+" by "+
-                        MainClass.hero.inventory.items.get(5).getBoostAmt(), 610,520);
+
+                while (MainClass.hero.inventory.items.get(invIndex).getItemType() != 'c' ||
+                        MainClass.hero.inventory.items.get(invIndex).getQuantity() == 0) {
+                    invIndex += 1;
+                }
+                MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
+                Utils.font_small.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
+                        "\nBoosts "+ MainClass.hero.inventory.items.get(invIndex).getStatBoosted()+" by "+
+                        MainClass.hero.inventory.items.get(invIndex).getBoostAmt(), 610,520);
             }
             else if(invRow == 0 && invPage == 0)
             {
             }
             else {
-                while (populatedEquipments < (invRow + 8 * invPage)) {
+                while (populatedConsumables < (invRow + 8 * invPage)) {
                     if (MainClass.hero.inventory.items.get(invIndex).getQuantity() > 0 && MainClass.hero.inventory.items.get(invIndex).getItemType() == 'c')
-                        populatedEquipments += 1;
+                        populatedConsumables += 1;
                     invIndex += 1;
                 }
                 if (MainClass.hero.inventory.getNumC() > 0) {
                     MainClass.batch.draw(invTex5, 505, 435, 94, 94);
                     MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
-                    Utils.testFont.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
+                    Utils.font_small.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
                             "\nBoosts "+ MainClass.hero.inventory.items.get(invIndex).getStatBoosted()+" by "+
                             MainClass.hero.inventory.items.get(invIndex).getBoostAmt(), 610,520);
                 }
@@ -174,10 +179,15 @@ public class InventoryScreen implements Screen {
             if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNumE() > 0)
             {
                 MainClass.batch.draw(invTex5, 505, 435, 94, 94);
-                MainClass.batch.draw(MainClass.hero.inventory.items.get(7).getTexture(), 520, 450, 64, 64);
-                Utils.testFont.draw(MainClass.batch, MainClass.hero.inventory.items.get(7).getItemName() +
-                        "\nBoosts "+ MainClass.hero.inventory.items.get(7).getStatBoosted()+" by "+
-                        MainClass.hero.inventory.items.get(7).getBoostAmt(), 610,520);
+
+                while (MainClass.hero.inventory.items.get(invIndex).getItemType() != 'e' ||
+                        MainClass.hero.inventory.items.get(invIndex).getQuantity() == 0) {
+                    invIndex += 1;
+                }
+                MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
+                Utils.font_small.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
+                        "\nBoosts "+ MainClass.hero.inventory.items.get(invIndex).getStatBoosted()+" by "+
+                        MainClass.hero.inventory.items.get(invIndex).getBoostAmt(), 610,520);
             }
             else if(invRow == 0 && invPage == 0)
             {
@@ -191,7 +201,7 @@ public class InventoryScreen implements Screen {
                 if (MainClass.hero.inventory.getNumE() > 0) {
                     MainClass.batch.draw(invTex5, 505, 435, 94, 94);
                     MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
-                    Utils.testFont.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
+                    Utils.font_small.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
                             "\nBoosts "+ MainClass.hero.inventory.items.get(invIndex).getStatBoosted()+" by "+
                             MainClass.hero.inventory.items.get(invIndex).getBoostAmt(), 610,520);
                 }
@@ -235,29 +245,34 @@ public class InventoryScreen implements Screen {
                 }
             }
 
-            int populatedEquipments = 0;
+            int populatedApparels = 0;
             int invIndex = 0;
             if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNumA() > 0)
             {
                 MainClass.batch.draw(invTex5, 505, 435, 94, 94);
-                MainClass.batch.draw(MainClass.hero.inventory.items.get(0).getTexture(), 520, 450, 64, 64);
-                Utils.testFont.draw(MainClass.batch, MainClass.hero.inventory.items.get(7).getItemName() +
-                        "\nBoosts "+ MainClass.hero.inventory.items.get(0).getStatBoosted()+" by "+
-                        MainClass.hero.inventory.items.get(0).getBoostAmt(), 610,520);
+
+                while (MainClass.hero.inventory.items.get(invIndex).getItemType() != 'a' ||
+                        MainClass.hero.inventory.items.get(invIndex).getQuantity() == 0) {
+                    invIndex += 1;
+                }
+                MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
+                Utils.font_small.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
+                        "\nBoosts "+ MainClass.hero.inventory.items.get(invIndex).getStatBoosted()+" by "+
+                        MainClass.hero.inventory.items.get(invIndex).getBoostAmt(), 610,520);
             }
             else if(invRow == 0 && invPage == 0)
             {
             }
             else {
-                while (populatedEquipments < (invRow + 8 * invPage)) {
+                while (populatedApparels < (invRow + 8 * invPage)) {
                     if (MainClass.hero.inventory.items.get(invIndex).getQuantity() > 0 && MainClass.hero.inventory.items.get(invIndex).getItemType() == 'a')
-                        populatedEquipments += 1;
+                        populatedApparels += 1;
                     invIndex += 1;
                 }
                 if (MainClass.hero.inventory.getNumA() > 0) {
                     MainClass.batch.draw(invTex5, 505, 435, 94, 94);
                     MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
-                    Utils.testFont.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
+                    Utils.font_small.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
                             "\nBoosts "+ MainClass.hero.inventory.items.get(invIndex).getStatBoosted()+" by "+
                             MainClass.hero.inventory.items.get(invIndex).getBoostAmt(), 610,520);
                 }

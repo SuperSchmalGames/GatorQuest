@@ -26,7 +26,7 @@ public class TitleScreen implements Screen {
         //Initialize the text that will print to the screen.
         titleLayout1 = new GlyphLayout();
         titleLayout2 = new GlyphLayout();
-        titleLayout1.setText(Utils.font, Utils.GatorQuest);
+        titleLayout1.setText(Utils.font_large, Utils.GatorQuest);
         titleLayout2.setText(Utils.font, Utils.PressSpace);
     }
 
@@ -42,7 +42,7 @@ public class TitleScreen implements Screen {
 
         //Draw to our batch each refresh. The batch is then rendered to the screen.
         MainClass.batch.begin();
-        Utils.font.draw(MainClass.batch,
+        Utils.font_large.draw(MainClass.batch,
                 Utils.GatorQuest,
                 Utils.GAME_SCREEN_WIDTH/2 - titleLayout1.width/2,
                 Utils.GAME_SCREEN_HEIGHT/2 + titleLayout1.height/2+50

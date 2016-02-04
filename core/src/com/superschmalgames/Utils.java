@@ -20,6 +20,8 @@ public class Utils {
     public static final int GAME_SCREEN_HEIGHT = 612;
     public static final int MAP_RESOLUTION = 64;
     public static final BitmapFont font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
+    public static final BitmapFont font_large = new BitmapFont(Gdx.files.internal("RosesAreFF0_large.fnt"));
+    public static final BitmapFont font_small = new BitmapFont(Gdx.files.internal("RosesAreFF0_small.fnt"));
     public static final BitmapFont testFont = new BitmapFont();
     public static boolean isPaused;
     public static final FPSLogger logger = new FPSLogger();

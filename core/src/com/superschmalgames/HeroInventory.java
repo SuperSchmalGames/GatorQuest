@@ -35,7 +35,7 @@ public class HeroInventory {
         tmpE.addItem(this);
         tmpE = new EquipableItem("Cyclone III", "visuals/inv_items/equip/cyclone_III.png", "Hardware Skillz", 2.0, 1);
         tmpE.addItem(this);
-        tmpE = new EquipableItem("DAD Board", "visuals/inv_items/equip/dad_board.png", "Attention to Detail", 1.0, 1);
+        tmpE = new EquipableItem("DAD Board", "visuals/inv_items/equip/dad_board.png", "Focus", 1.0, 1);
         tmpE.addItem(this);
         tmpE = new EquipableItem("Macbook Pro", "visuals/inv_items/equip/macbook_pro.png", "Software Skillz", 1.0, 1);
         tmpE.addItem(this);

@@ -22,7 +22,7 @@ public class HeroCharacter {
     public double endurance;
     public double social;
     public double math;
-    public double detail;
+    public double focus;
     private final double STAT_CAP = 10.0;   //Cap all stats at 10.0
 
     //Animators that take care of walking in each direction.
@@ -40,7 +40,7 @@ public class HeroCharacter {
         endurance = 1.0;
         social = 1.0;
         math = 1.0;
-        detail = 1.0;
+        focus = 1.0;
 
         //Create and initialize hero character's inventory.
         inventory = new HeroInventory();
