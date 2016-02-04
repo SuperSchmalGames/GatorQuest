@@ -11,23 +11,44 @@ import com.badlogic.gdx.InputProcessor;
 public class InputHandler implements InputProcessor {
 
     //Has a button been pushed?
-    boolean pushed;
+    public boolean pushed;
+
+    //Int used for selecting menu options
+    public int menuIndex;
 
     public InputHandler(){
         pushed = false;
+        menuIndex = 0;
     }
 
     @Override
     public boolean keyDown(int keycode) {
         if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.titleScreen){
-            if(keycode == Input.Keys.SPACE){
+            if(keycode == Input.Keys.DOWN && Utils.menuReady && menuIndex < 2){
                 //Play the sound effect when player pushes the button.
-                Utils.titleScreenSelectionSound.play(0.4f);
+                Utils.titleOptionSound.play();
+                //Move the menu icon down to the next menu option.
+                Utils.menuIcon.translateY(-33.0f);
+                //Increment the menu index.
+                menuIndex++;
+            }
+            else if(keycode == Input.Keys.UP && Utils.menuReady && menuIndex > 0){
+                Utils.titleOptionSound.play();
+                Utils.menuIcon.translateY(33.0f);
+                menuIndex--;
+            }
+            else if(keycode == Input.Keys.ENTER && Utils.menuReady){
+                if(menuIndex == 0) {
+                    //Play the sound effect when player pushes the button.
+                    Utils.titleScreenSelectionSound.play(0.4f);
 
-                //Set the game screen to be the character select screen.
-                MainClass.avatarScreen = new AvatarColorSel();
-                ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.avatarScreen);
-                MainClass.titleScreen.dispose();
+                    //Set the game screen to be the character select screen.
+                    MainClass.avatarScreen = new AvatarColorSel();
+                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.avatarScreen);
+                    MainClass.titleScreen.dispose();
+                }
+                else
+                    Utils.errTone.play();
             }
         }
         if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.avatarScreen) {
@@ -166,11 +187,13 @@ public class InputHandler implements InputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
-        //Set the appropriate boolean value false to stop the walk animation when the button is lifted
-        if(keycode == Input.Keys.LEFT) MainClass.gameScreen.lWalk = false;
-        if(keycode == Input.Keys.RIGHT) MainClass.gameScreen.rWalk = false;
-        if(keycode == Input.Keys.UP) MainClass.gameScreen.uWalk = false;
-        if(keycode == Input.Keys.DOWN) MainClass.gameScreen.dWalk = false;
+        if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen) {
+            //Set the appropriate boolean value false to stop the walk animation when the button is lifted
+            if (keycode == Input.Keys.LEFT) MainClass.gameScreen.lWalk = false;
+            if (keycode == Input.Keys.RIGHT) MainClass.gameScreen.rWalk = false;
+            if (keycode == Input.Keys.UP) MainClass.gameScreen.uWalk = false;
+            if (keycode == Input.Keys.DOWN) MainClass.gameScreen.dWalk = false;
+        }
 
         return false;
     }

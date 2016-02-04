@@ -31,14 +31,16 @@ public class Utils {
     public static final  Music titleScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Opening.ogg"));
     public static final Sound titleScreenSelectionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/explosion.wav"));
     public static final Sound orangeBlue = Gdx.audio.newSound(Gdx.files.internal("sound/effects/orange_blue_chant.wav"));
-    public static final Texture gator = new Texture("visuals/sprites/gator_logo.png");
-    public static final Sprite gatorLogo = new Sprite(gator);
-    public static final Texture title = new Texture("visuals/title_screen/final_title_test.png");
-    public static final Sprite titleLogo = new Sprite(title);
+    public static final Sound titleOptionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/click_6.mp3"));
+    public static final Sound errTone = Gdx.audio.newSound(Gdx.files.internal("sound/effects/error_tone.wav"));
+    public static final Sprite gatorLogo = new Sprite(new Texture("visuals/sprites/gator_logo.png"));
+    public static final Sprite titleLogo = new Sprite(new Texture("visuals/title_screen/final_title_test.png"));
+    public static final Sprite menuBorder = new Sprite(new Texture("visuals/title_screen/white_sq.png"));
+    public static final Sprite menuIcon = new Sprite(new Texture("visuals/title_screen/white_tr.png"));
     public static final String superSchmal = "Super Schmal Games";
     public static final String presents = "Presents";
-    public static final String GatorQuest = "GatorQuest";
-    public static final String PressSpace = "Press space to start.";
+    public static final String menuOptions = "New Game\nLoad Game\nExit Game";
+    public static boolean menuReady;
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////AVATAR SCREEN/////////////////////////////////////////////////////////////////////////
@@ -68,6 +70,7 @@ public class Utils {
         titleScreenMusic.setLooping(true);
         gatorLogo.setAlpha(0);
         titleLogo.setAlpha(0);
+        menuReady = false;
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //////////////////////////////////AVATAR SCREEN////////////////////////////////////////////////////////////////////////

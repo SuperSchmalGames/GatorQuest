@@ -16,9 +16,12 @@ public class TitleScreen implements Screen {
     //The camera through which we "see" the game world.
     OrthographicCamera camera;
 
+    //The text layout for the text we're printing to the screen.
     public GlyphLayout titleLayout1;
     public GlyphLayout titleLayout2;
+    public GlyphLayout titleLayout3;
 
+    //The variables needed for proper fading transitions.
     public float alpha;
     public fader fadeStatus;
     public boolean doneFadingSprite;
@@ -50,7 +53,13 @@ public class TitleScreen implements Screen {
                 Utils.GAME_SCREEN_HEIGHT/2-Utils.gatorLogo.getHeight()/2);
         Utils.gatorLogo.setScale(3.5f);
         Utils.titleLogo.setPosition(Utils.GAME_SCREEN_WIDTH/2-Utils.titleLogo.getWidth()/2,
-                Utils.GAME_SCREEN_HEIGHT-Utils.titleLogo.getHeight());
+                Utils.GAME_SCREEN_HEIGHT-Utils.titleLogo.getHeight()-15);
+        Utils.menuBorder.setScale(0.85f,0.4f);
+        Utils.menuBorder.setPosition(Utils.GAME_SCREEN_WIDTH/2-Utils.menuBorder.getWidth()/2+10,
+                -50);
+        Utils.menuIcon.setPosition(Utils.GAME_SCREEN_WIDTH/2-105,
+                171);
+        Utils.menuIcon.setScale(3);
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
@@ -59,8 +68,10 @@ public class TitleScreen implements Screen {
         //Initialize the text that will print to the screen.
         titleLayout1 = new GlyphLayout();
         titleLayout2 = new GlyphLayout();
+        titleLayout3 = new GlyphLayout();
         titleLayout1.setText(Utils.font, Utils.superSchmal);
         titleLayout2.setText(Utils.font, Utils.presents);
+        titleLayout3.setText(Utils.font, Utils.menuOptions);
         Utils.font.setColor(1,1,1,0);
     }
 
@@ -86,7 +97,9 @@ public class TitleScreen implements Screen {
         else if(transDelay < 1.0) {
             transDelay += delta;
             if(transDelay >= 1.0) {
+                Utils.menuReady = true;
                 Utils.titleLogo.setAlpha(1);
+                Utils.font.setColor(1,1,1,1);
                 Utils.titleScreenMusic.play();
             }
         }
@@ -99,16 +112,27 @@ public class TitleScreen implements Screen {
 
         Utils.gatorLogo.draw(MainClass.batch);
         Utils.titleLogo.draw(MainClass.batch);
-        Utils.font.draw(MainClass.batch,
-                Utils.superSchmal,
-                Utils.GAME_SCREEN_WIDTH/2 - titleLayout1.width/2,
-                Utils.GAME_SCREEN_HEIGHT/2 + titleLayout1.height/2+20
-                );
-        Utils.font.draw(MainClass.batch,
-                Utils.presents,
-                Utils.GAME_SCREEN_WIDTH/2 - titleLayout2.width/2,
-                Utils.GAME_SCREEN_HEIGHT/2 + titleLayout2.height/2-20
-        );
+        if(!Utils.menuReady) {
+            Utils.font.draw(MainClass.batch,
+                    Utils.superSchmal,
+                    Utils.GAME_SCREEN_WIDTH / 2 - titleLayout1.width / 2,
+                    Utils.GAME_SCREEN_HEIGHT / 2 + titleLayout1.height / 2 + 20
+            );
+            Utils.font.draw(MainClass.batch,
+                    Utils.presents,
+                    Utils.GAME_SCREEN_WIDTH / 2 - titleLayout2.width / 2,
+                    Utils.GAME_SCREEN_HEIGHT / 2 + titleLayout2.height / 2 - 20
+            );
+        }
+        else{
+            Utils.font.draw(MainClass.batch,
+                    Utils.menuOptions,
+                    Utils.GAME_SCREEN_WIDTH / 2 - titleLayout3.width / 2+40,
+                    Utils.GAME_SCREEN_HEIGHT / 2 - titleLayout3.height-20
+            );
+            Utils.menuBorder.draw(MainClass.batch);
+            Utils.menuIcon.draw(MainClass.batch);
+        }
 
         MainClass.batch.end();
     }
@@ -140,7 +164,7 @@ public class TitleScreen implements Screen {
 
     @Override
     public void dispose() {
-
+        
     }
 
     public boolean fadeSprite(float delta, Sprite sprite, float timeToFade){
