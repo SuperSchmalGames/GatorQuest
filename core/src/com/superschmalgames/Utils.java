@@ -49,15 +49,15 @@ public class Utils {
 
     ////////////////////////////////////INVENTORY SCREEN///////////////////////////////////////////////////////////////////////
     public static final Sound inventoryScreenSelectionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/zipper.wav"));
+    public static boolean invOpen;
 
     //Offsets in the ArrayList of Items for the categories (Apparel, Consumables, Equipment)
-    //Apparel is <20 (from 0-19), Consumables are <40 (from 20 to 39), Equipment is <60 (from 40 to 59)
     public static final int apparelStart = 0;
-    public static final int apparelEnd = 20;
-    public static final int consumableStart = 20;
-    public static final int consumableEnd = 40;
-    public static final int equipmentStart = 40;
-    public static final int equipmentEnd = 60;
+    public static final int apparelEnd = 4;
+    public static final int consumableStart = 5;
+    public static final int consumableEnd = 6;
+    public static final int equipmentStart = 7;
+    public static final int equipmentEnd = 15;
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -75,6 +75,22 @@ public class Utils {
 
     //Equipment
     public static final Texture avr_dragon_tex = new Texture("visuals/inv_items/equip/avr_dragon.png");
+    public static final Texture cyclone_III_tex = new Texture("visuals/inv_items/equip/cyclone_III.png");
+    public static final Texture dad_board_tex = new Texture("visuals/inv_items/equip/dad_board.png");
+    public static final Texture macbook_pro_tex = new Texture("visuals/inv_items/equip/macbook_pro.png");
+    public static final Texture nspire_tex = new Texture("visuals/inv_items/equip/nspire.png");
+    public static final Texture soldering_iron_tex = new Texture("visuals/inv_items/equip/soldering_iron.png");
+    public static final Texture ti_89_tex = new Texture("visuals/inv_items/equip/ti89.png");
+    public static final Texture usb_blaster_tex = new Texture("visuals/inv_items/equip/usb_blaster.png");
+    public static final Texture wire_kit_tex = new Texture("visuals/inv_items/equip/wire_kit.png");
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////INVENTORY ITEM SOUNDS///////////////////////////////////////////////////////////////
+    static final Sound error = Gdx.audio.newSound(Gdx.files.internal("sound/effects/error_tone.wav"));
+    static final Sound rustling = Gdx.audio.newSound(Gdx.files.internal("sound/effects/rustling.mp3"));
+    static final Sound page = Gdx.audio.newSound(Gdx.files.internal("sound/effects/page.wav"));
+    static final Sound oob_error = Gdx.audio.newSound(Gdx.files.internal("sound/effects/oob_error.wav"));
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -82,6 +98,7 @@ public class Utils {
     public static void initUtils(){
         ///////////////////////////////////MAIN CLASS//////////////////////////////////////////////////////////////////////////
         isPaused = false;
+        invOpen = false;
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //////////////////////////////////TITLE SCREEN/////////////////////////////////////////////////////////////////////////

@@ -17,9 +17,6 @@ public class ConsumableItem implements InventoryItem {
     public int boostDuration;      //How long (in combat turns) will the boost last (if isTemp is true).
     public char itemType;          //Defines the item by Apparel, Equipment or Consumable by chars 'a', 'e' or 'c' respectively
 
-    //Likely temporary. Need to have some sort of generic/global sound handler?
-    static final Sound errTone = Gdx.audio.newSound(Gdx.files.internal("sound/effects/error_tone.wav"));
-
     public ConsumableItem(String name, String texPath, String stat, double boost, int dur, int initQuant, boolean isTemporary){
         itemName = name;
         texture = new Texture(texPath);
@@ -49,7 +46,7 @@ public class ConsumableItem implements InventoryItem {
             quantity--;
             return boostedStat + boostAmt;
         }
-        else errTone.play();
+        else Utils.error.play();
         return boostedStat;
     }
 
