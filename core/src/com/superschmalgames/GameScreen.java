@@ -6,6 +6,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
@@ -35,14 +36,14 @@ public class GameScreen implements Screen {
         camera = new OrthographicCamera();
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
 
-        //Initialize the map.
-        setMap();
+        //Initialize the map
+        setMap(Utils.dorm);
 
     }
 
-    private void setMap() {
-        tiledmaprenderer = new OrthogonalTiledMapRenderer(Utils.tiledmap);
-        collision = (TiledMapTileLayer) Utils.tiledmap.getLayers().get("Collision");
+    private void setMap(TiledMap tiledmap) {
+        tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
+        collision = (TiledMapTileLayer) tiledmap.getLayers().get("Collision");
         background[0] = 0;
         background[1] = 1;
         background[2] = 2;
