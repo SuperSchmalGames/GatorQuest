@@ -8,6 +8,7 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 
@@ -29,6 +30,13 @@ public class Utils {
     ////////////////////////////////////TITLE SCREEN///////////////////////////////////////////////////////////////////////////
     public static final  Music titleScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Opening.ogg"));
     public static final Sound titleScreenSelectionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/explosion.wav"));
+    public static final Sound orangeBlue = Gdx.audio.newSound(Gdx.files.internal("sound/effects/orange_blue_chant.wav"));
+    public static final Texture gator = new Texture("visuals/sprites/gator_logo.png");
+    public static final Sprite gatorLogo = new Sprite(gator);
+    public static final Texture title = new Texture("visuals/title_screen/final_title_test.png");
+    public static final Sprite titleLogo = new Sprite(title);
+    public static final String superSchmal = "Super Schmal Games";
+    public static final String presents = "Presents";
     public static final String GatorQuest = "GatorQuest";
     public static final String PressSpace = "Press space to start.";
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -58,6 +66,8 @@ public class Utils {
         //////////////////////////////////TITLE SCREEN/////////////////////////////////////////////////////////////////////////
         //Set the music to loop.
         titleScreenMusic.setLooping(true);
+        gatorLogo.setAlpha(0);
+        titleLogo.setAlpha(0);
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //////////////////////////////////AVATAR SCREEN////////////////////////////////////////////////////////////////////////
@@ -66,6 +76,8 @@ public class Utils {
 
         /////////////////////////////////GAME SCREEN///////////////////////////////////////////////////////////////////////////
         gameMusic.setLooping(true);
+        gameMusic.setVolume(0.4f);
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
+
 }

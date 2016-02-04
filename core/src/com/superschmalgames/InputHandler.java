@@ -22,7 +22,7 @@ public class InputHandler implements InputProcessor {
         if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.titleScreen){
             if(keycode == Input.Keys.SPACE){
                 //Play the sound effect when player pushes the button.
-                Utils.titleScreenSelectionSound.play();
+                Utils.titleScreenSelectionSound.play(0.4f);
 
                 //Set the game screen to be the character select screen.
                 MainClass.avatarScreen = new AvatarColorSel();
@@ -54,7 +54,7 @@ public class InputHandler implements InputProcessor {
                 MainClass.hero.initAnimations();
 
                 //Play the "selection" sound effect.
-                Utils.avatarScreenSelectionSound.play();
+                Utils.avatarScreenSelectionSound.play(0.4f);
 
                 //Set game screen to be the main game screen.
                 MainClass.gameScreen = new GameScreen();
