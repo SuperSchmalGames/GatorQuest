@@ -39,16 +39,13 @@ public class InputHandler implements InputProcessor {
             }
             else if(keycode == Input.Keys.ENTER && Utils.menuReady){
                 if(menuIndex == 0) {
-                    //Play the sound effect when player pushes the button.
+                    //Play the sound effect and stop the music when player pushes the button.
                     Utils.titleScreenMusic.stop();
                     Utils.titleScreenSelectionSound.play();
-
                     MainClass.titleScreen.titleDone = true;
-
-                    //Set the game screen to be the character select screen.
-                    /*MainClass.avatarScreen = new AvatarColorSel();
-                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.avatarScreen);
-                    MainClass.titleScreen.dispose();*/
+                }
+                else if(menuIndex == 2){
+                    Gdx.app.exit();
                 }
                 else
                     Utils.errTone.play(0.5f);

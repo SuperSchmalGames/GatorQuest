@@ -56,10 +56,10 @@ public class MainClass extends Game {
 
 	@Override
 	public void dispose() {
-		batch.dispose();
-		titleScreen.dispose();
-		avatarScreen.dispose();
-		gameScreen.dispose();
+		if(batch != null) batch.dispose();
+		if(titleScreen != null) titleScreen.dispose();
+		if(avatarScreen != null) avatarScreen.dispose();
+		if(gameScreen != null) gameScreen.dispose();
 	}
 
 }

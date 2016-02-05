@@ -162,8 +162,8 @@ public class TitleScreen implements Screen {
 
     @Override
     public void dispose() {
-        Utils.titleScreenMusic.dispose();
-        Utils.orangeBlue.dispose();
-        Utils.titleScreenSelectionSound.dispose();
+        if(Utils.titleScreenMusic != null) Utils.titleScreenMusic.dispose();
+        if(Utils.orangeBlue != null)Utils.orangeBlue.dispose();
+        if(Utils.titleScreenSelectionSound != null)Utils.titleScreenSelectionSound.dispose();
     }
 }
