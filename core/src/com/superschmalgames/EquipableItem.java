@@ -22,6 +22,14 @@ public class EquipableItem implements InventoryItem {
         itemType = 'e';
     }
 
+    public EquipableItem(){
+        itemName = "";
+        statBoosted = "";
+        boostAmt = 0;
+        quantity = 0;
+        itemType = 'e';
+    }
+
     @Override
     public void addItem(HeroInventory inv) {
         for(InventoryItem i : inv.items){
@@ -91,5 +99,15 @@ public class EquipableItem implements InventoryItem {
     @Override
     public Texture getTexture(){
         return texture;
+    }
+
+    public void setTexture(Texture texPass){texture = texPass;}
+
+    public void removeEquipment()
+    {
+        MainClass.hero.heroEquipment.itemName = "";
+        MainClass.hero.heroEquipment.statBoosted = "";
+        MainClass.hero.heroEquipment.boostAmt = 0;
+
     }
 }

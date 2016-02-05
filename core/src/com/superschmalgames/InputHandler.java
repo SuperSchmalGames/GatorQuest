@@ -22,47 +22,7 @@ public class InputHandler implements InputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
-        if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.titleScreen) {
-            if (keycode == Input.Keys.SPACE) {
-                //Play the sound effect when player pushes the button.
-                Utils.titleScreenSelectionSound.play();
-
-                //Set the game screen to be the character select screen.
-                MainClass.avatarScreen = new AvatarColorSel();
-                ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.avatarScreen);
-                MainClass.titleScreen.dispose();
-            }
-        }
-        else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.avatarScreen) {
-            if (keycode == Input.Keys.NUM_1) {
-                MainClass.hero.outfitNum = 7;
-                pushed = true;
-            } else if (keycode == Input.Keys.NUM_2) {
-                MainClass.hero.outfitNum = 11;
-                pushed = true;
-            } else if (keycode == Input.Keys.NUM_3) {
-                MainClass.hero.outfitNum = 10;
-                pushed = true;
-            } else if (keycode == Input.Keys.NUM_4) {
-                MainClass.hero.outfitNum = 9;
-                pushed = true;
-            }
-
-            if (pushed) {
-                pushed = false;
-                //Initialize character with proper texture.
-                MainClass.hero.initAnimations();
-
-                //Play the "selection" sound effect.
-                Utils.avatarScreenSelectionSound.play();
-
-                //Set game screen to be the main game screen.
-                MainClass.gameScreen = new GameScreen();
-                ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
-                MainClass.avatarScreen.dispose();
-            }
-        }
-        else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen) {
+        if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen) {
             //Take keyboard input from user for character movement. Character actually stays centered on screen, and the
             //camera is translated about the map to give illusion of character movement.
             if (keycode == Input.Keys.LEFT && !Utils.isPaused) {
@@ -83,21 +43,21 @@ public class InputHandler implements InputProcessor {
                 MainClass.inventoryScreen.invPage = 0;
                 MainClass.inventoryScreen.invRow = 0;
             }
-        }
-        ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
-        else if (keycode == Input.Keys.R && !Utils.isPaused) {
-            MainClass.hero.inventory.incItem("Redbull");
-        } else if ((keycode == Input.Keys.T && !Utils.isPaused)) {
-            MainClass.hero.inventory.useItem("Redbull", MainClass.hero);
-        } else if (keycode == Input.Keys.Y && !Utils.isPaused) {
-            MainClass.hero.inventory.removeEffect("Redbull", MainClass.hero);
-        } else if (keycode == Input.Keys.P) {
-            if (!Utils.isPaused) {
-                Utils.isPaused = true;
-                (Gdx.app.getApplicationListener()).pause();
-            } else {
-                Utils.isPaused = false;
-                (Gdx.app.getApplicationListener()).resume();
+            ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
+            else if (keycode == Input.Keys.R && !Utils.isPaused) {
+                MainClass.hero.inventory.incItem("Redbull");
+            } else if ((keycode == Input.Keys.T && !Utils.isPaused)) {
+                MainClass.hero.inventory.useItem("Redbull", MainClass.hero);
+            } else if (keycode == Input.Keys.Y && !Utils.isPaused) {
+                MainClass.hero.inventory.removeEffect("Redbull", MainClass.hero);
+            } else if (keycode == Input.Keys.P) {
+                if (!Utils.isPaused) {
+                    Utils.isPaused = true;
+                    (Gdx.app.getApplicationListener()).pause();
+                } else {
+                    Utils.isPaused = false;
+                    (Gdx.app.getApplicationListener()).resume();
+                }
             }
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -194,6 +154,65 @@ public class InputHandler implements InputProcessor {
                 else
                     MainClass.inventoryScreen.invRow -= 1;
                     currentItemIndex-=1;
+            }
+            else if (keycode == Input.Keys.E ){
+                if(MainClass.inventoryScreen.invPanel == "Equipment" && MainClass.hero.inventory.getNumE() > 0){
+                    MainClass.hero.heroEquipment.removeEquipment();
+                    MainClass.hero.heroEquipment.setItemName(MainClass.hero.inventory.items.get(currentItemIndex).getItemName());
+                    MainClass.hero.heroEquipment.setStatBoosted(MainClass.hero.inventory.items.get(currentItemIndex).getStatBoosted());
+                    MainClass.hero.heroEquipment.setBoostAmt(MainClass.hero.inventory.items.get(currentItemIndex).getBoostAmt());
+                    MainClass.hero.heroEquipment.setTexture(MainClass.hero.inventory.items.get(currentItemIndex).getTexture());
+                }
+                else if (MainClass.inventoryScreen.invPanel == "Apparel" && MainClass.hero.inventory.getNumA()>0){
+                    MainClass.hero.heroApparel.removeApparel();
+                    MainClass.hero.heroApparel.setItemName(MainClass.hero.inventory.items.get(currentItemIndex).getItemName());
+                    MainClass.hero.heroApparel.setStatBoosted(MainClass.hero.inventory.items.get(currentItemIndex).getStatBoosted());
+                    MainClass.hero.heroApparel.setBoostAmt(MainClass.hero.inventory.items.get(currentItemIndex).getBoostAmt());
+                    MainClass.hero.heroApparel.setTexture(MainClass.hero.inventory.items.get(currentItemIndex).getTexture());
+                }
+                else{
+                    Utils.error.play();
+                }
+            }
+        }
+        else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.titleScreen) {
+            if (keycode == Input.Keys.SPACE) {
+                //Play the sound effect when player pushes the button.
+                Utils.titleScreenSelectionSound.play();
+
+                //Set the game screen to be the character select screen.
+                MainClass.avatarScreen = new AvatarColorSel();
+                ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.avatarScreen);
+                MainClass.titleScreen.dispose();
+            }
+        }
+        else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.avatarScreen) {
+            if (keycode == Input.Keys.NUM_1) {
+                MainClass.hero.outfitNum = 7;
+                pushed = true;
+            } else if (keycode == Input.Keys.NUM_2) {
+                MainClass.hero.outfitNum = 11;
+                pushed = true;
+            } else if (keycode == Input.Keys.NUM_3) {
+                MainClass.hero.outfitNum = 10;
+                pushed = true;
+            } else if (keycode == Input.Keys.NUM_4) {
+                MainClass.hero.outfitNum = 9;
+                pushed = true;
+            }
+
+            if (pushed) {
+                pushed = false;
+                //Initialize character with proper texture.
+                MainClass.hero.initAnimations();
+
+                //Play the "selection" sound effect.
+                Utils.avatarScreenSelectionSound.play();
+
+                //Set game screen to be the main game screen.
+                MainClass.gameScreen = new GameScreen();
+                ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+                MainClass.avatarScreen.dispose();
             }
         }
 

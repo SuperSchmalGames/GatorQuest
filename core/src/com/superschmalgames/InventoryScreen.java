@@ -17,7 +17,7 @@ public class InventoryScreen implements Screen {
     GlyphLayout layout1 = new GlyphLayout();
     GlyphLayout layout2 = new GlyphLayout();
     String GatorQuest = "Inventory";
-    String PressSpace = "Press Esc to return to game";
+    String PressSpace = "Press I to return to game";
     String invPanel;
     int invPage;
     int invRow;
@@ -289,6 +289,23 @@ public class InventoryScreen implements Screen {
         else if (invPanel.equals("Consumable") && MainClass.hero.inventory.getNumC() == 0)
             Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
 
+        if(MainClass.hero.heroApparel.getItemName() != "")
+        {
+            MainClass.batch.draw(invTex5, 505, 240, 94, 94);
+            MainClass.batch.draw(MainClass.hero.heroApparel.getTexture(), 520, 255, 64, 64);
+            Utils.font_small.draw(MainClass.batch, MainClass.hero.heroApparel.getItemName() +
+                    "\nBoosts "+ MainClass.hero.heroApparel.getStatBoosted()+" by "+
+                    MainClass.hero.heroApparel.getBoostAmt(), 610,325);
+        }
+
+        if(MainClass.hero.heroEquipment.getItemName() != "")
+        {
+            MainClass.batch.draw(invTex5, 505, 55, 94, 94);
+            MainClass.batch.draw(MainClass.hero.heroEquipment.getTexture(), 520, 70, 64, 64);
+            Utils.font_small.draw(MainClass.batch, MainClass.hero.heroEquipment.getItemName() +
+                    "\nBoosts "+ MainClass.hero.heroEquipment.getStatBoosted()+" by "+
+                    MainClass.hero.heroEquipment.getBoostAmt(), 610, 140);
+        }
 
         MainClass.batch.end();
     }

@@ -22,6 +22,14 @@ public class ApparelItem implements InventoryItem {
         itemType = 'a';
     }
 
+    public ApparelItem(){
+        itemName = "";
+        statBoosted = "";
+        boostAmt = 0;
+        quantity = 0;
+        itemType = 'a';
+    }
+
     @Override
     public void addItem(HeroInventory inv) {
         for(InventoryItem i : inv.items){
@@ -91,5 +99,15 @@ public class ApparelItem implements InventoryItem {
     @Override
     public Texture getTexture(){
         return texture;
+    }
+
+    public void setTexture(Texture texPass){texture = texPass;}
+
+    public void removeApparel()
+    {
+        MainClass.hero.heroApparel.itemName = "";
+        MainClass.hero.heroApparel.statBoosted = "";
+        MainClass.hero.heroApparel.boostAmt = 0;
+
     }
 }

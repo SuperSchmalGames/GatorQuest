@@ -14,6 +14,8 @@ public class HeroCharacter {
     public float yPos;
 
     HeroInventory inventory;
+    ApparelItem heroApparel;
+    EquipableItem heroEquipment;
 
     //Character stats.
     public double software;
@@ -41,6 +43,10 @@ public class HeroCharacter {
         social = 1.0;
         math = 1.0;
         focus = 1.0;
+
+        //These will represent the actual equipped slots that the hero character has
+        heroApparel = new ApparelItem();
+       heroEquipment = new EquipableItem();
 
         //Create and initialize hero character's inventory.
         inventory = new HeroInventory();
