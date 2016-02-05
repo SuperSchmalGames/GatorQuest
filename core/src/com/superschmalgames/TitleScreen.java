@@ -3,13 +3,12 @@ package com.superschmalgames;
 //This class is for the title screen you see when the game first loads up. Input is handled through the InputHandler
 //class, which processes input events and takes care of everything.
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 
 public class TitleScreen implements Screen {
 
@@ -22,30 +21,21 @@ public class TitleScreen implements Screen {
     public GlyphLayout titleLayout3;
 
     //The variables needed for proper fading transitions.
-    public float alpha;
-    public fader fadeStatus;
     public boolean doneFadingSprite;
     public boolean doneFadingFont;
     public boolean doneOrange;
+    public boolean titleDone;
     public float transDelay;
-
-    //Enum for holding state info for fade-in/fade-out animation
-    public enum fader{
-        FADING_IN,
-        FINISHED_FADE_IN,
-        FADING_OUT,
-        FINISHED_FADE_OUT
-    }
 
     public final float TIME_TO_FADE = 0.85f;
 
     public TitleScreen() {
         //Initialize fader info.
-        alpha = 0;
         doneFadingSprite = false;
         doneFadingFont = false;
         doneOrange = false;
-        fadeStatus = fader.FADING_IN;
+        titleDone = false;
+        Utils.fadeStatus = Utils.fader.FADING_IN;
         transDelay = 0.0f;
 
         //Initialize info for the gator logo sprite and title sprite.
@@ -83,7 +73,7 @@ public class TitleScreen implements Screen {
 
         //Fade the Gator logo sprite in and then out
         if(!doneFadingSprite) {
-            doneFadingSprite = fadeSprite(delta, Utils.gatorLogo, TIME_TO_FADE);
+            doneFadingSprite = Utils.fadeSprite(delta, Utils.gatorLogo, TIME_TO_FADE);
             if(!doneOrange){
                 doneOrange = true;
                 Utils.orangeBlue.play(0.9f);   //Play the orange and blue chant audio.
@@ -91,16 +81,17 @@ public class TitleScreen implements Screen {
         }
         //After Gator logo fades out, fade the company text in then out.
         else if(!doneFadingFont){
-            doneFadingFont = fadeFont(delta, Utils.font, TIME_TO_FADE);
+            doneFadingFont = Utils.fadeFont(delta, Utils.font, TIME_TO_FADE);
         }
         //After company text fades out, wait 1 second then display title text.
-        else if(transDelay < 1.0) {
+        else if(transDelay < 1.0 && !titleDone) {
             transDelay += delta;
             if(transDelay >= 1.0) {
                 Utils.menuReady = true;
                 Utils.titleLogo.setAlpha(1);
                 Utils.font.setColor(1,1,1,1);
                 Utils.titleScreenMusic.play();
+                transDelay = 0;
             }
         }
         //Update the camera once per refresh.
@@ -109,7 +100,6 @@ public class TitleScreen implements Screen {
 
         //Draw to our batch each refresh. The batch is then rendered to the screen.
         MainClass.batch.begin();
-
         Utils.gatorLogo.draw(MainClass.batch);
         Utils.titleLogo.draw(MainClass.batch);
         if(!Utils.menuReady) {
@@ -124,7 +114,7 @@ public class TitleScreen implements Screen {
                     Utils.GAME_SCREEN_HEIGHT / 2 + titleLayout2.height / 2 - 20
             );
         }
-        else{
+        else if(!titleDone){
             Utils.font.draw(MainClass.batch,
                     Utils.menuOptions,
                     Utils.GAME_SCREEN_WIDTH / 2 - titleLayout3.width / 2+40,
@@ -133,7 +123,15 @@ public class TitleScreen implements Screen {
             Utils.menuBorder.draw(MainClass.batch);
             Utils.menuIcon.draw(MainClass.batch);
         }
-
+        else{
+            transDelay += delta;
+            if(transDelay > 2.0) {
+                //Set the game screen to be the character select screen.
+                MainClass.avatarScreen = new AvatarColorSel();
+                dispose();
+                ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.avatarScreen);
+            }
+        }
         MainClass.batch.end();
     }
 
@@ -159,83 +157,13 @@ public class TitleScreen implements Screen {
 
     @Override
     public void hide() {
-        Utils.titleScreenMusic.stop();
+
     }
 
     @Override
     public void dispose() {
-
-    }
-
-    public boolean fadeSprite(float delta, Sprite sprite, float timeToFade){
-
-        if(fadeStatus == fader.FADING_OUT){
-            alpha -= (delta / timeToFade);
-            if (alpha < 0) {
-                alpha = 0;
-            }
-            sprite.setAlpha(alpha);
-            if (alpha <= 0) {
-                fadeStatus = fader.FINISHED_FADE_OUT;
-            }
-            return false;
-        }
-        else if (fadeStatus == fader.FINISHED_FADE_OUT) {
-            fadeStatus = fader.FADING_IN;
-            return true;
-        }
-        else if (fadeStatus == fader.FADING_IN) {
-            alpha += (delta / timeToFade);
-            if (alpha > 1) {
-                alpha = 1;
-            }
-            sprite.setAlpha(alpha);
-            if (alpha >= 1) {
-                fadeStatus = fader.FINISHED_FADE_IN;
-            }
-            return false;
-        }
-        else if (fadeStatus == fader.FINISHED_FADE_IN) {
-            alpha = 1;
-            fadeStatus = fader.FADING_OUT;
-            return false;
-        }
-        return false;
-    }
-
-    public boolean fadeFont(float delta, BitmapFont font, float timeToFade){
-
-        if(fadeStatus == fader.FADING_OUT){
-            alpha -= (delta / timeToFade);
-            if (alpha < 0) {
-                alpha = 0;
-            }
-            font.setColor(1,1,1,alpha);
-            if (alpha <= 0) {
-                fadeStatus = fader.FINISHED_FADE_OUT;
-            }
-            return false;
-        }
-        else if (fadeStatus == fader.FINISHED_FADE_OUT) {
-            fadeStatus = fader.FADING_IN;
-            return true;
-        }
-        else if (fadeStatus == fader.FADING_IN) {
-            alpha += (delta / timeToFade);
-            if (alpha > 1) {
-                alpha = 1;
-            }
-            font.setColor(1,1,1,alpha);
-            if (alpha >= 1) {
-                fadeStatus = fader.FINISHED_FADE_IN;
-            }
-            return false;
-        }
-        else if (fadeStatus == fader.FINISHED_FADE_IN) {
-            alpha = 1;
-            fadeStatus = fader.FADING_OUT;
-            return false;
-        }
-        return false;
+        Utils.titleScreenMusic.dispose();
+        Utils.orangeBlue.dispose();
+        Utils.titleScreenSelectionSound.dispose();
     }
 }

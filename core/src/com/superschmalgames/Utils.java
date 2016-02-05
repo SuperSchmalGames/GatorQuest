@@ -25,13 +25,23 @@ public class Utils {
     public static boolean isPaused;
     public static final FPSLogger logger = new FPSLogger();
     public static final DecimalFormat df1 = new DecimalFormat("0.0#");
+    //Enum for holding state info for fade-in/fade-out animation
+    public enum fader{
+        FADING_IN,
+        FINISHED_FADE_IN,
+        FADING_OUT,
+        FINISHED_FADE_OUT
+    }
+    //The variables needed for proper fading transitions.
+    public static float alpha;
+    public static fader fadeStatus;
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////TITLE SCREEN///////////////////////////////////////////////////////////////////////////
-    public static final  Music titleScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Opening.ogg"));
-    public static final Sound titleScreenSelectionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/explosion.wav"));
-    public static final Sound orangeBlue = Gdx.audio.newSound(Gdx.files.internal("sound/effects/orange_blue_chant.wav"));
-    public static final Sound titleOptionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/click_6.mp3"));
+    public static final Music titleScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Opening.ogg"));  //disposed
+    public static final Sound titleScreenSelectionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/sword_sound.wav")); //disposed
+    public static final Sound orangeBlue = Gdx.audio.newSound(Gdx.files.internal("sound/effects/orange_blue_chant.wav"));  //disposed
+    public static final Sound menuOptionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/click_6.mp3"));
     public static final Sound errTone = Gdx.audio.newSound(Gdx.files.internal("sound/effects/error_tone.wav"));
     public static final Sprite gatorLogo = new Sprite(new Texture("visuals/sprites/gator_logo.png"));
     public static final Sprite titleLogo = new Sprite(new Texture("visuals/title_screen/final_title_test.png"));
@@ -81,6 +91,76 @@ public class Utils {
         gameMusic.setLooping(true);
         gameMusic.setVolume(0.4f);
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    }
+
+    public static boolean fadeSprite(float delta, Sprite sprite, float timeToFade){
+        if(fadeStatus == fader.FADING_OUT){
+            alpha -= (delta / timeToFade);
+            if (alpha < 0) {
+                alpha = 0;
+            }
+            sprite.setAlpha(alpha);
+            if (alpha <= 0) {
+                fadeStatus = fader.FINISHED_FADE_OUT;
+            }
+            return false;
+        }
+        else if (fadeStatus == fader.FINISHED_FADE_OUT) {
+            fadeStatus = fader.FADING_IN;
+            return true;
+        }
+        else if (fadeStatus == fader.FADING_IN) {
+            alpha += (delta / timeToFade);
+            if (alpha > 1) {
+                alpha = 1;
+            }
+            sprite.setAlpha(alpha);
+            if (alpha >= 1) {
+                fadeStatus = fader.FINISHED_FADE_IN;
+            }
+            return false;
+        }
+        else if (fadeStatus == fader.FINISHED_FADE_IN) {
+            alpha = 1;
+            fadeStatus = fader.FADING_OUT;
+            return false;
+        }
+        return false;
+    }
+
+    public static boolean fadeFont(float delta, BitmapFont font, float timeToFade){
+        if(fadeStatus == fader.FADING_OUT){
+            alpha -= (delta / timeToFade);
+            if (alpha < 0) {
+                alpha = 0;
+            }
+            font.setColor(1,1,1,alpha);
+            if (alpha <= 0) {
+                fadeStatus = fader.FINISHED_FADE_OUT;
+            }
+            return false;
+        }
+        else if (fadeStatus == fader.FINISHED_FADE_OUT) {
+            fadeStatus = fader.FADING_IN;
+            return true;
+        }
+        else if (fadeStatus == fader.FADING_IN) {
+            alpha += (delta / timeToFade);
+            if (alpha > 1) {
+                alpha = 1;
+            }
+            font.setColor(1,1,1,alpha);
+            if (alpha >= 1) {
+                fadeStatus = fader.FINISHED_FADE_IN;
+            }
+            return false;
+        }
+        else if (fadeStatus == fader.FINISHED_FADE_IN) {
+            alpha = 1;
+            fadeStatus = fader.FADING_OUT;
+            return false;
+        }
+        return false;
     }
 
 }
