@@ -68,8 +68,8 @@ public class GameScreen implements Screen {
         MainClass.batch.begin();
 
         ////////////////////////////////////////////////////////TEST PRINTS////////////////////////////////////////////////////////////////////
-        Utils.testFont.draw(MainClass.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y +" Number of consumable items:"+MainClass.hero.inventory.getNumC()+" Number of equipable items:"+MainClass.hero.inventory.getNumE(), 0, Utils.GAME_SCREEN_HEIGHT-40);
-        Utils.testFont.draw(MainClass.batch, "GPA: " + Utils.df1.format(MainClass.hero.gpa) + " InvSize: " + MainClass.hero.inventory.items.size() + " RedBull Quant: " + MainClass.hero.inventory.items.get(5).getQuantity(), 0, Utils.GAME_SCREEN_HEIGHT - 75);
+        Utils.testFont.draw(MainClass.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y , 0, Utils.GAME_SCREEN_HEIGHT-40);
+        Utils.testFont.draw(MainClass.batch, "GPA: " + Utils.df1.format(MainClass.hero.gpa) + " RedBull Quant: " + MainClass.hero.inventory.items.get(5).getQuantity(), 0, Utils.GAME_SCREEN_HEIGHT - 75);
         if(MainClass.hero.inventory.items.get(5).getQuantity() > 0){
             MainClass.batch.draw(MainClass.hero.inventory.items.get(5).getTexture(), MainClass.hero.xPos-40, MainClass.hero.yPos);
         }

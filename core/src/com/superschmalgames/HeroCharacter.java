@@ -27,6 +27,15 @@ public class HeroCharacter {
     public double focus;
     private final double STAT_CAP = 10.0;   //Cap all stats at 10.0
 
+    //Character Stats including Apparel/Equipment
+    public double software_buf;
+    public double hardware_buf;
+    public double readWrite_buf;
+    public double endurance_buf;
+    public double social_buf;
+    public double math_buf;
+    public double focus_buf;
+
     //Animators that take care of walking in each direction.
     Animator leftWalk, rightWalk, upWalk, downWalk;
     char lastDir;

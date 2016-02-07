@@ -43,6 +43,16 @@ public class InputHandler implements InputProcessor {
                 MainClass.inventoryScreen.invPage = 0;
                 MainClass.inventoryScreen.invRow = 0;
             }
+            else if ((keycode == Input.Keys.H && !Utils.isPaused)) {
+                //Play the sound effect when player pushes the button.
+                Utils.inventoryScreenSelectionSound.play();
+                //Set the gamescreen to be the inventory game screen.
+                MainClass.heroScreen = new HeroScreen();
+                ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.heroScreen);
+                MainClass.heroScreen.heroPanel = "Statistics";
+                MainClass.heroScreen.heroPage = 0;
+                MainClass.heroScreen.heroRow = 0;
+            }
             ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
             else if (keycode == Input.Keys.R && !Utils.isPaused) {
                 MainClass.hero.inventory.incItem("Redbull");
@@ -61,39 +71,43 @@ public class InputHandler implements InputProcessor {
             }
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //THIS IS THE CODE FOR THE INVENTORY SCREEN
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.inventoryScreen) {
             if (keycode == Input.Keys.LEFT) {
                 Utils.page.play();
                 MainClass.inventoryScreen.invRow = 0;
                 MainClass.inventoryScreen.invPage = 0;
+                currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
                 if (MainClass.inventoryScreen.invPanel == "Consumable") {
-                    currentItemIndex = 0;
+                    currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                     MainClass.inventoryScreen.invPanel = "Apparel";
                 }
                 else if (MainClass.inventoryScreen.invPanel == "Apparel") {
-                    currentItemIndex = 7;
+                    currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                     MainClass.inventoryScreen.invPanel = "Equipment";
                 }
                 else if (MainClass.inventoryScreen.invPanel == "Equipment") {
-                    currentItemIndex = 5;
+                    currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                     MainClass.inventoryScreen.invPanel = "Consumable";
                 }
             } else if (keycode == Input.Keys.RIGHT) {
                 Utils.page.play();
                 MainClass.inventoryScreen.invRow = 0;
                 MainClass.inventoryScreen.invPage = 0;
+                currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
                 if (MainClass.inventoryScreen.invPanel == "Consumable") {
-                    currentItemIndex = 7;
+                    currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                     MainClass.inventoryScreen.invPanel = "Equipment";
                 }
                 else if (MainClass.inventoryScreen.invPanel == "Apparel") {
-                    currentItemIndex = 5;
+                    currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                     MainClass.inventoryScreen.invPanel = "Consumable";
                 }
                 else if (MainClass.inventoryScreen.invPanel == "Equipment") {
-                    currentItemIndex = 0;
+                    currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                     MainClass.inventoryScreen.invPanel = "Apparel";
                 }
             } else if (keycode == Input.Keys.I) {
@@ -108,7 +122,7 @@ public class InputHandler implements InputProcessor {
                 if(MainClass.inventoryScreen.invPage*8 + MainClass.inventoryScreen.invRow +1 < MainClass.hero.inventory.getNumC()
                         && MainClass.inventoryScreen.invPanel == "Consumable") {
 
-                    currentItemIndex+=1;
+                    currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
                     if ((MainClass.inventoryScreen.invRow + 1) % 8 == 0) {
                         MainClass.inventoryScreen.invPage += 1;
@@ -119,7 +133,7 @@ public class InputHandler implements InputProcessor {
                 else if(MainClass.inventoryScreen.invPage*8 + MainClass.inventoryScreen.invRow +1 < MainClass.hero.inventory.getNumA()
                         && MainClass.inventoryScreen.invPanel == "Apparel") {
 
-                    currentItemIndex+=1;
+                    currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
                     if ((MainClass.inventoryScreen.invRow + 1) % 8 == 0) {
                         MainClass.inventoryScreen.invPage += 1;
@@ -130,7 +144,7 @@ public class InputHandler implements InputProcessor {
                 else if(MainClass.inventoryScreen.invPage*8 + MainClass.inventoryScreen.invRow +1 < MainClass.hero.inventory.getNumE()
                         && MainClass.inventoryScreen.invPanel == "Equipment") {
 
-                    currentItemIndex+=1;
+                    currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
                     if ((MainClass.inventoryScreen.invRow + 1) % 8 == 0) {
                         MainClass.inventoryScreen.invPage += 1;
@@ -149,11 +163,12 @@ public class InputHandler implements InputProcessor {
                 else if ((MainClass.inventoryScreen.invRow)%8 == 0) {
                     MainClass.inventoryScreen.invPage -= 1;
                     MainClass.inventoryScreen.invRow += 7;
-                    currentItemIndex-=1;
+                    currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                 }
-                else
+                else {
                     MainClass.inventoryScreen.invRow -= 1;
-                    currentItemIndex-=1;
+                    currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
+                }
             }
             else if (keycode == Input.Keys.E ){
                 if(MainClass.inventoryScreen.invPanel == "Equipment" && MainClass.hero.inventory.getNumE() > 0){
@@ -162,6 +177,7 @@ public class InputHandler implements InputProcessor {
                     MainClass.hero.heroEquipment.setStatBoosted(MainClass.hero.inventory.items.get(currentItemIndex).getStatBoosted());
                     MainClass.hero.heroEquipment.setBoostAmt(MainClass.hero.inventory.items.get(currentItemIndex).getBoostAmt());
                     MainClass.hero.heroEquipment.setTexture(MainClass.hero.inventory.items.get(currentItemIndex).getTexture());
+                    MainClass.hero.inventory.calc_stats();
                 }
                 else if (MainClass.inventoryScreen.invPanel == "Apparel" && MainClass.hero.inventory.getNumA()>0){
                     MainClass.hero.heroApparel.removeApparel();
@@ -169,12 +185,80 @@ public class InputHandler implements InputProcessor {
                     MainClass.hero.heroApparel.setStatBoosted(MainClass.hero.inventory.items.get(currentItemIndex).getStatBoosted());
                     MainClass.hero.heroApparel.setBoostAmt(MainClass.hero.inventory.items.get(currentItemIndex).getBoostAmt());
                     MainClass.hero.heroApparel.setTexture(MainClass.hero.inventory.items.get(currentItemIndex).getTexture());
+                    MainClass.hero.inventory.calc_stats();
                 }
                 else{
                     Utils.error.play();
                 }
             }
+            else if (keycode == Input.Keys.R) {
+                if(MainClass.inventoryScreen.invPanel == "Equipment")
+                    MainClass.hero.heroEquipment.removeEquipment();
+                else if(MainClass.inventoryScreen.invPanel == "Apparel")
+                    MainClass.hero.heroApparel.removeApparel();
+                else
+                    Utils.error.play();
+            }
         }
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //THIS IS THE CODE FOR THE HERO SCREEN
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.heroScreen) {
+            if (keycode == Input.Keys.LEFT || keycode == Input.Keys.RIGHT) {
+                Utils.page.play();
+                MainClass.heroScreen.heroRow = 0;
+                MainClass.heroScreen.heroPage = 0;
+                if (MainClass.heroScreen.heroPanel == "Statistics") {
+                    MainClass.heroScreen.heroPanel = "Moves";
+                } else if (MainClass.heroScreen.heroPanel == "Moves") {
+                    MainClass.heroScreen.heroPanel = "Statistics";
+                }
+            }
+            else if (keycode == Input.Keys.H) {
+                //Play the sound effect when player pushes the button.
+                Utils.inventoryScreenSelectionSound.play();
+                //Set the gamescreen to be the inventory game screen.
+                Utils.heroOpen = false;
+                ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+            }
+            else if (keycode == Input.Keys.DOWN){
+                Utils.rustling.play();
+                if(MainClass.heroScreen.heroPage*8 + MainClass.heroScreen.heroRow +1 < 7
+                        && MainClass.heroScreen.heroPanel == "Statistics") {
+
+                    if ((MainClass.heroScreen.heroRow + 1) % 8 == 0) {
+                        MainClass.heroScreen.heroPage += 1;
+                        MainClass.heroScreen.heroRow = 0;
+                    } else
+                        MainClass.heroScreen.heroRow += 1;
+                }
+                else if(MainClass.heroScreen.heroPage*8 + MainClass.heroScreen.heroRow +1 < 20 && MainClass.heroScreen.heroPanel == "Moves")
+                {
+                    if ((MainClass.heroScreen.heroRow + 1) % 8 == 0) {
+                        MainClass.heroScreen.heroPage += 1;
+                        MainClass.heroScreen.heroRow = 0;
+                    } else
+                        MainClass.heroScreen.heroRow += 1;
+                }
+                else
+                    Utils.oob_error.play();
+            }
+            else if (keycode == Input.Keys.UP){
+                Utils.rustling.play();
+                if(MainClass.heroScreen.heroRow == 0 && MainClass.heroScreen.heroPage == 0){
+                    Utils.oob_error.play();
+                }
+                else if ((MainClass.heroScreen.heroRow)%8 == 0) {
+                    MainClass.heroScreen.heroPage -= 1;
+                    MainClass.heroScreen.heroRow += 7;
+                }
+                else
+                    MainClass.heroScreen.heroRow -= 1;
+            }
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //TITLE SCREEN CODE
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.titleScreen) {
             if (keycode == Input.Keys.SPACE) {
                 //Play the sound effect when player pushes the button.

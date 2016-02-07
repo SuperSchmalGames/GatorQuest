@@ -108,6 +108,6 @@ public class EquipableItem implements InventoryItem {
         MainClass.hero.heroEquipment.itemName = "";
         MainClass.hero.heroEquipment.statBoosted = "";
         MainClass.hero.heroEquipment.boostAmt = 0;
-
+        MainClass.hero.inventory.calc_stats();
     }
 }

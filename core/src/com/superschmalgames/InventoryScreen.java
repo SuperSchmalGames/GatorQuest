@@ -51,6 +51,8 @@ public class InventoryScreen implements Screen {
         //Draw to our batch each refresh. The batch is then rendered to the screen.
         MainClass.batch.begin();
 
+        MainClass.inputHandler.currentItemIndex=MainClass.hero.inventory.getCurrentItemIndex();
+
         //Utils.font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
         layout1.setText(Utils.font, GatorQuest);
         layout2.setText(Utils.font, PressSpace);
@@ -291,20 +293,20 @@ public class InventoryScreen implements Screen {
 
         if(MainClass.hero.heroApparel.getItemName() != "")
         {
-            MainClass.batch.draw(invTex5, 505, 240, 94, 94);
-            MainClass.batch.draw(MainClass.hero.heroApparel.getTexture(), 520, 255, 64, 64);
+            MainClass.batch.draw(invTex5, 505, 55, 94, 94);
+            MainClass.batch.draw(MainClass.hero.heroApparel.getTexture(), 520, 70, 64, 64);
             Utils.font_small.draw(MainClass.batch, MainClass.hero.heroApparel.getItemName() +
                     "\nBoosts "+ MainClass.hero.heroApparel.getStatBoosted()+" by "+
-                    MainClass.hero.heroApparel.getBoostAmt(), 610,325);
+                    MainClass.hero.heroApparel.getBoostAmt(), 610,140);
         }
 
         if(MainClass.hero.heroEquipment.getItemName() != "")
         {
-            MainClass.batch.draw(invTex5, 505, 55, 94, 94);
-            MainClass.batch.draw(MainClass.hero.heroEquipment.getTexture(), 520, 70, 64, 64);
+            MainClass.batch.draw(invTex5, 505, 240, 94, 94);
+            MainClass.batch.draw(MainClass.hero.heroEquipment.getTexture(), 520, 255, 64, 64);
             Utils.font_small.draw(MainClass.batch, MainClass.hero.heroEquipment.getItemName() +
                     "\nBoosts "+ MainClass.hero.heroEquipment.getStatBoosted()+" by "+
-                    MainClass.hero.heroEquipment.getBoostAmt(), 610, 140);
+                    MainClass.hero.heroEquipment.getBoostAmt(), 610, 325);
         }
 
         MainClass.batch.end();

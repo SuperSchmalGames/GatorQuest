@@ -108,6 +108,6 @@ public class ApparelItem implements InventoryItem {
         MainClass.hero.heroApparel.itemName = "";
         MainClass.hero.heroApparel.statBoosted = "";
         MainClass.hero.heroApparel.boostAmt = 0;
-
+        MainClass.hero.inventory.calc_stats();
     }
 }
