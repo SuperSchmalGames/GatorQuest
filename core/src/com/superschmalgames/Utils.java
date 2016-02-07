@@ -48,7 +48,7 @@ public class Utils {
     public static final Sprite menuBorder = new Sprite(new Texture("visuals/title_screen/white_sq.png"));
     public static final Sprite menuIcon = new Sprite(new Texture("visuals/title_screen/white_tr.png"));
     public static final String superSchmal = "Super Schmal Games";
-    public static final String presents = "Presents";
+    public static final String presents = "presents";
     public static final String menuOptions = "New Game\nLoad Game\nExit Game";
     public static boolean menuReady;
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
