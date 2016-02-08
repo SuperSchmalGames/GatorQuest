@@ -37,6 +37,7 @@ public class GameScreen implements Screen {
 
         //Initialize the map.
         setMap();
+
     }
 
     private void setMap() {
