@@ -27,6 +27,8 @@ public interface InventoryItem {
     double getBoostAmt();
     void setBoostAmt(double boost);
 
+    char getItemType();
+
     Texture getTexture();
 
 }

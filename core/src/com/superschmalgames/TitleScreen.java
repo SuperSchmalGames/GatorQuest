@@ -63,6 +63,7 @@ public class TitleScreen implements Screen {
         titleLayout2.setText(Utils.font, Utils.presents);
         titleLayout3.setText(Utils.font, Utils.menuOptions);
         Utils.font.setColor(1,1,1,0);
+
     }
 
     @Override
@@ -100,6 +101,7 @@ public class TitleScreen implements Screen {
 
         //Draw to our batch each refresh. The batch is then rendered to the screen.
         MainClass.batch.begin();
+
         Utils.gatorLogo.draw(MainClass.batch);
         Utils.titleLogo.draw(MainClass.batch);
         if(!Utils.menuReady) {
@@ -132,6 +134,7 @@ public class TitleScreen implements Screen {
                 ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.avatarScreen);
             }
         }
+
         MainClass.batch.end();
     }
 

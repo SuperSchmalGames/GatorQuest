@@ -14,6 +14,8 @@ public class HeroCharacter {
     public float yPos;
 
     HeroInventory inventory;
+    ApparelItem heroApparel;
+    EquipableItem heroEquipment;
 
     //Character stats.
     public double software;
@@ -22,8 +24,17 @@ public class HeroCharacter {
     public double endurance;
     public double social;
     public double math;
-    public double detail;
+    public double focus;
     private final double STAT_CAP = 10.0;   //Cap all stats at 10.0
+
+    //Character Stats including Apparel/Equipment
+    public double software_buf;
+    public double hardware_buf;
+    public double readWrite_buf;
+    public double endurance_buf;
+    public double social_buf;
+    public double math_buf;
+    public double focus_buf;
 
     //Animators that take care of walking in each direction.
     Animator leftWalk, rightWalk, upWalk, downWalk;
@@ -40,7 +51,11 @@ public class HeroCharacter {
         endurance = 1.0;
         social = 1.0;
         math = 1.0;
-        detail = 1.0;
+        focus = 1.0;
+
+        //These will represent the actual equipped slots that the hero character has
+        heroApparel = new ApparelItem();
+       heroEquipment = new EquipableItem();
 
         //Create and initialize hero character's inventory.
         inventory = new HeroInventory();
