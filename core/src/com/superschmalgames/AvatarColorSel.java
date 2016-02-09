@@ -21,6 +21,7 @@ public class AvatarColorSel implements Screen{
         //Initialize text to be printed on screen.
         avatarLayout = new GlyphLayout();
         avatarLayout.setText(Utils.font, Utils.key_prompt_text);
+        Utils.font.setColor(1,1,1,1);
     }
 
     @Override

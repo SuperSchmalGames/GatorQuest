@@ -11,187 +11,300 @@ import com.badlogic.gdx.InputProcessor;
 public class InputHandler implements InputProcessor {
 
     //Has a button been pushed?
-    boolean pushed;
+    public boolean pushed;
 
-    public InputHandler(){
+    //Int used for selecting menu options
+    public int menuIndex;
+
+    //The index in the ArrayList of the item currently being hovered over
+    int currentItemIndex;
+
+    public InputHandler() {
         pushed = false;
+        menuIndex = 0;
     }
 
     @Override
     public boolean keyDown(int keycode) {
-        if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.titleScreen){
-            if(keycode == Input.Keys.SPACE){
-                //Play the sound effect when player pushes the button.
-                Utils.titleScreenSelectionSound.play();
-
-                //Set the game screen to be the character select screen.
-                MainClass.avatarScreen = new AvatarColorSel();
-                ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.avatarScreen);
-                MainClass.titleScreen.dispose();
-            }
-        }
-        if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.avatarScreen) {
-            if(keycode == Input.Keys.NUM_1) {
-                MainClass.hero.outfitNum = 7;
-                pushed = true;
-            }
-            else if(keycode == Input.Keys.NUM_2) {
-                MainClass.hero.outfitNum = 11;
-                pushed = true;
-            }
-            else if(keycode == Input.Keys.NUM_3) {
-                MainClass.hero.outfitNum = 10;
-                pushed = true;
-            }
-            else if(keycode == Input.Keys.NUM_4) {
-                MainClass.hero.outfitNum = 9;
-                pushed = true;
-            }
-
-            if(pushed) {
-                pushed = false;
-                //Initialize character with proper texture.
-                MainClass.hero.initAnimations();
-
-                //Play the "selection" sound effect.
-                Utils.avatarScreenSelectionSound.play();
-
-                //Set game screen to be the main game screen.
-                MainClass.gameScreen = new GameScreen();
-                ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
-                MainClass.avatarScreen.dispose();
-            }
-        }
-        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen) {
-            //Take keyboard input from user for character movement. Character actually stays centered on screen, and the
-            //camera is translated about the map to give illusion of character movement.
-            if(keycode == Input.Keys.LEFT && !Utils.isPaused){
-                MainClass.gameScreen.lWalk = true;
-            }
-            else if(keycode == Input.Keys.RIGHT && !Utils.isPaused){
-                MainClass.gameScreen.rWalk = true;
-            }
-            else if(keycode == Input.Keys.UP && !Utils.isPaused){
-                MainClass.gameScreen.uWalk = true;
-            }
-            else if(keycode == Input.Keys.DOWN && !Utils.isPaused){
-                MainClass.gameScreen.dWalk = true;
-            }
-            else if((keycode == Input.Keys.I)){
-                //Play the sound effect when player pushes the button.
-                Utils.inventoryScreenSelectionSound.play();
-
-                //Set the gamescreen to be the inventory game screen.
-                MainClass.inventoryScreen = new InventoryScreen();
-                ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.inventoryScreen);
-
-                MainClass.inventoryScreen.invPanel = "Consumable";
-                MainClass.inventoryScreen.invPage = 0;
-                MainClass.inventoryScreen.invRow = 0;
-            }
-
-            ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
-            else if(keycode == Input.Keys.R && !Utils.isPaused){
-                MainClass.hero.inventory.addItem("Red Bull");
-            }
-            else if((keycode == Input.Keys.T && !Utils.isPaused)){
-                MainClass.hero.inventory.useItem("Red Bull", MainClass.hero);
-            }
-            else if(keycode == Input.Keys.Y && !Utils.isPaused){
-                MainClass.hero.inventory.removeEffect("Red Bull", MainClass.hero);
-            }
-            else if (keycode == Input.Keys.P){
-                if(!Utils.isPaused) {
-                    Utils.isPaused = true;
-                    (Gdx.app.getApplicationListener()).pause();
+            if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.titleScreen) {
+                if (keycode == Input.Keys.DOWN && Utils.menuReady && menuIndex < 2) {
+                    //Play the sound effect when player pushes the button.
+                    Utils.menuOptionSound.play(0.6f);
+                    //Move the menu icon down to the next menu option.
+                    Utils.menuIcon.translateY(-33.0f);
+                    //Increment the menu index.
+                    menuIndex++;
+                } else if (keycode == Input.Keys.UP && Utils.menuReady && menuIndex > 0) {
+                    Utils.menuOptionSound.play(0.6f);
+                    Utils.menuIcon.translateY(33.0f);
+                    menuIndex--;
+                } else if (keycode == Input.Keys.ENTER && Utils.menuReady) {
+                    if (menuIndex == 0) {
+                        //Play the sound effect and stop the music when player pushes the button.
+                        Utils.titleScreenMusic.stop();
+                        Utils.titleScreenSelectionSound.play();
+                        MainClass.titleScreen.titleDone = true;
+                    } else if (menuIndex == 2) {
+                        Gdx.app.exit();
+                    } else
+                        Utils.errTone.play(0.5f);
                 }
-                else {
-                    Utils.isPaused = false;
-                    (Gdx.app.getApplicationListener()).resume();
+            }
+            else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.avatarScreen) {
+                if (keycode == Input.Keys.NUM_1) {
+                    MainClass.hero.outfitNum = 7;
+                    pushed = true;
+                } else if (keycode == Input.Keys.NUM_2) {
+                    MainClass.hero.outfitNum = 11;
+                    pushed = true;
+                } else if (keycode == Input.Keys.NUM_3) {
+                    MainClass.hero.outfitNum = 10;
+                    pushed = true;
+                } else if (keycode == Input.Keys.NUM_4) {
+                    MainClass.hero.outfitNum = 9;
+                    pushed = true;
+                }
+
+                if (pushed) {
+                    pushed = false;
+                    //Initialize character with proper texture.
+                    MainClass.hero.initAnimations();
+
+                    //Play the "selection" sound effect.
+                    Utils.avatarScreenSelectionSound.play(0.4f);
+
+                    //Set game screen to be the main game screen.
+                    MainClass.gameScreen = new GameScreen();
+                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+                    MainClass.avatarScreen.dispose();
+                }
+
+            }
+            else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen) {
+                //Take keyboard input from user for character movement. Character actually stays centered on screen, and the
+                //camera is translated about the map to give illusion of character movement.
+                if (keycode == Input.Keys.LEFT && !Utils.isPaused) {
+                    MainClass.gameScreen.lWalk = true;
+                } else if (keycode == Input.Keys.RIGHT && !Utils.isPaused) {
+                    MainClass.gameScreen.rWalk = true;
+                } else if (keycode == Input.Keys.UP && !Utils.isPaused) {
+                    MainClass.gameScreen.uWalk = true;
+                } else if (keycode == Input.Keys.DOWN && !Utils.isPaused) {
+                    MainClass.gameScreen.dWalk = true;
+                } else if ((keycode == Input.Keys.I && !Utils.isPaused)) {
+                    //Play the sound effect when player pushes the button.
+                    Utils.inventoryScreenSelectionSound.play();
+                    //Set the gamescreen to be the inventory game screen.
+                    MainClass.inventoryScreen = new InventoryScreen();
+                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.inventoryScreen);
+                    MainClass.inventoryScreen.invPanel = "Consumable";
+                    MainClass.inventoryScreen.invPage = 0;
+                    MainClass.inventoryScreen.invRow = 0;
+                } else if ((keycode == Input.Keys.H && !Utils.isPaused)) {
+                    //Play the sound effect when player pushes the button.
+                    Utils.inventoryScreenSelectionSound.play();
+                    //Set the gamescreen to be the inventory game screen.
+                    MainClass.heroScreen = new HeroScreen();
+                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.heroScreen);
+                    MainClass.heroScreen.heroPanel = "Statistics";
+                    MainClass.heroScreen.heroPage = 0;
+                    MainClass.heroScreen.heroRow = 0;
+                }
+                ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
+                else if (keycode == Input.Keys.R && !Utils.isPaused) {
+                    MainClass.hero.inventory.incItem("Redbull");
+                } else if ((keycode == Input.Keys.T && !Utils.isPaused)) {
+                    MainClass.hero.inventory.useItem("Redbull", MainClass.hero);
+                } else if (keycode == Input.Keys.Y && !Utils.isPaused) {
+                    MainClass.hero.inventory.removeEffect("Redbull", MainClass.hero);
+                } else if (keycode == Input.Keys.P) {
+                    if (!Utils.isPaused) {
+                        Utils.isPaused = true;
+                        (Gdx.app.getApplicationListener()).pause();
+                    } else {
+                        Utils.isPaused = false;
+                        (Gdx.app.getApplicationListener()).resume();
+                    }
                 }
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        }
-
-        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.inventoryScreen) {
-            if (keycode == Input.Keys.LEFT) {
-
-                MainClass.inventoryScreen.invRow = 0;
-
-                if (MainClass.inventoryScreen.invPanel == "Consumable")
-                    MainClass.inventoryScreen.invPanel = "Apparel";
-                else if (MainClass.inventoryScreen.invPanel == "Apparel")
-                    MainClass.inventoryScreen.invPanel = "Equipment";
-                else if (MainClass.inventoryScreen.invPanel == "Equipment")
-                    MainClass.inventoryScreen.invPanel = "Consumable";
-            } else if (keycode == Input.Keys.RIGHT) {
-
-                MainClass.inventoryScreen.invRow = 0;
-
-                if (MainClass.inventoryScreen.invPanel == "Consumable")
-                    MainClass.inventoryScreen.invPanel = "Equipment";
-                else if (MainClass.inventoryScreen.invPanel == "Apparel")
-                    MainClass.inventoryScreen.invPanel = "Consumable";
-                else if (MainClass.inventoryScreen.invPanel == "Equipment")
-                    MainClass.inventoryScreen.invPanel = "Apparel";
-            } else if (keycode == Input.Keys.I) {
-                //Play the sound effect when player pushes the button.
-                Utils.inventoryScreenSelectionSound.play();
-
-                //Set the gamescreen to be the inventory game screen.
-                ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
-            }
-            else if (keycode == Input.Keys.DOWN){
-                if ((MainClass.inventoryScreen.invRow + 1)%8 == 0) {
-                    MainClass.inventoryScreen.invPage += 1;
+            //THIS IS THE CODE FOR THE INVENTORY SCREEN
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.inventoryScreen) {
+                if (keycode == Input.Keys.LEFT) {
+                    Utils.page.play();
                     MainClass.inventoryScreen.invRow = 0;
-                }
-                else
-                    MainClass.inventoryScreen.invRow += 1;
-            }
-            else if (keycode == Input.Keys.UP){
-                if(MainClass.inventoryScreen.invRow == 0 && MainClass.inventoryScreen.invPage == 0){
+                    MainClass.inventoryScreen.invPage = 0;
+                    currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
-                }
-                else if ((MainClass.inventoryScreen.invRow)%8 == 0) {
-                    MainClass.inventoryScreen.invPage -= 1;
-                    MainClass.inventoryScreen.invRow += 7;
-                }
-                else
-                    MainClass.inventoryScreen.invRow -= 1;
-            }
-        }
+                    if (MainClass.inventoryScreen.invPanel == "Consumable") {
+                        currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
+                        MainClass.inventoryScreen.invPanel = "Apparel";
+                    } else if (MainClass.inventoryScreen.invPanel == "Apparel") {
+                        currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
+                        MainClass.inventoryScreen.invPanel = "Equipment";
+                    } else if (MainClass.inventoryScreen.invPanel == "Equipment") {
+                        currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
+                        MainClass.inventoryScreen.invPanel = "Consumable";
+                    }
+                } else if (keycode == Input.Keys.RIGHT) {
+                    Utils.page.play();
+                    MainClass.inventoryScreen.invRow = 0;
+                    MainClass.inventoryScreen.invPage = 0;
+                    currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
-        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openworldscreen) {
-            if (keycode == Input.Keys.UP) {
-                MainClass.openworldscreen.movement = 4;
-            }
-            else if (keycode == Input.Keys.DOWN) {
-                MainClass.openworldscreen.movement = 3;
-            }
-            else if (keycode == Input.Keys.LEFT) {
-                MainClass.openworldscreen.movement = 2;
-            }
-            else if (keycode == Input.Keys.RIGHT) {
-                MainClass.openworldscreen.movement = 1;
-            }
-        }
+                    if (MainClass.inventoryScreen.invPanel == "Consumable") {
+                        currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
+                        MainClass.inventoryScreen.invPanel = "Equipment";
+                    } else if (MainClass.inventoryScreen.invPanel == "Apparel") {
+                        currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
+                        MainClass.inventoryScreen.invPanel = "Consumable";
+                    } else if (MainClass.inventoryScreen.invPanel == "Equipment") {
+                        currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
+                        MainClass.inventoryScreen.invPanel = "Apparel";
+                    }
+                } else if (keycode == Input.Keys.I) {
+                    //Play the sound effect when player pushes the button.
+                    Utils.inventoryScreenSelectionSound.play();
+                    //Set the gamescreen to be the inventory game screen.
+                    Utils.invOpen = false;
+                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+                } else if (keycode == Input.Keys.DOWN) {
+                    Utils.rustling.play();
+                    if (MainClass.inventoryScreen.invPage * 8 + MainClass.inventoryScreen.invRow + 1 < MainClass.hero.inventory.getNumC()
+                            && MainClass.inventoryScreen.invPanel == "Consumable") {
 
-        return false;
+                        currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
+
+                        if ((MainClass.inventoryScreen.invRow + 1) % 8 == 0) {
+                            MainClass.inventoryScreen.invPage += 1;
+                            MainClass.inventoryScreen.invRow = 0;
+                        } else
+                            MainClass.inventoryScreen.invRow += 1;
+                    } else if (MainClass.inventoryScreen.invPage * 8 + MainClass.inventoryScreen.invRow + 1 < MainClass.hero.inventory.getNumA()
+                            && MainClass.inventoryScreen.invPanel == "Apparel") {
+
+                        currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
+
+                        if ((MainClass.inventoryScreen.invRow + 1) % 8 == 0) {
+                            MainClass.inventoryScreen.invPage += 1;
+                            MainClass.inventoryScreen.invRow = 0;
+                        } else
+                            MainClass.inventoryScreen.invRow += 1;
+                    } else if (MainClass.inventoryScreen.invPage * 8 + MainClass.inventoryScreen.invRow + 1 < MainClass.hero.inventory.getNumE()
+                            && MainClass.inventoryScreen.invPanel == "Equipment") {
+
+                        currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
+
+                        if ((MainClass.inventoryScreen.invRow + 1) % 8 == 0) {
+                            MainClass.inventoryScreen.invPage += 1;
+                            MainClass.inventoryScreen.invRow = 0;
+                        } else
+                            MainClass.inventoryScreen.invRow += 1;
+                    } else
+                        Utils.oob_error.play();
+                } else if (keycode == Input.Keys.UP) {
+                    Utils.rustling.play();
+                    if (MainClass.inventoryScreen.invRow == 0 && MainClass.inventoryScreen.invPage == 0) {
+                        Utils.oob_error.play();
+                    } else if ((MainClass.inventoryScreen.invRow) % 8 == 0) {
+                        MainClass.inventoryScreen.invPage -= 1;
+                        MainClass.inventoryScreen.invRow += 7;
+                        currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
+                    } else {
+                        MainClass.inventoryScreen.invRow -= 1;
+                        currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
+                    }
+                } else if (keycode == Input.Keys.E) {
+                    if (MainClass.inventoryScreen.invPanel == "Equipment" && MainClass.hero.inventory.getNumE() > 0) {
+                        MainClass.hero.heroEquipment.removeEquipment();
+                        MainClass.hero.heroEquipment.setItemName(MainClass.hero.inventory.items.get(currentItemIndex).getItemName());
+                        MainClass.hero.heroEquipment.setStatBoosted(MainClass.hero.inventory.items.get(currentItemIndex).getStatBoosted());
+                        MainClass.hero.heroEquipment.setBoostAmt(MainClass.hero.inventory.items.get(currentItemIndex).getBoostAmt());
+                        MainClass.hero.heroEquipment.setTexture(MainClass.hero.inventory.items.get(currentItemIndex).getTexture());
+                        MainClass.hero.inventory.calc_stats();
+                    } else if (MainClass.inventoryScreen.invPanel == "Apparel" && MainClass.hero.inventory.getNumA() > 0) {
+                        MainClass.hero.heroApparel.removeApparel();
+                        MainClass.hero.heroApparel.setItemName(MainClass.hero.inventory.items.get(currentItemIndex).getItemName());
+                        MainClass.hero.heroApparel.setStatBoosted(MainClass.hero.inventory.items.get(currentItemIndex).getStatBoosted());
+                        MainClass.hero.heroApparel.setBoostAmt(MainClass.hero.inventory.items.get(currentItemIndex).getBoostAmt());
+                        MainClass.hero.heroApparel.setTexture(MainClass.hero.inventory.items.get(currentItemIndex).getTexture());
+                        MainClass.hero.inventory.calc_stats();
+                    } else {
+                        Utils.error.play();
+                    }
+                } else if (keycode == Input.Keys.R) {
+                    if (MainClass.inventoryScreen.invPanel == "Equipment")
+                        MainClass.hero.heroEquipment.removeEquipment();
+                    else if (MainClass.inventoryScreen.invPanel == "Apparel")
+                        MainClass.hero.heroApparel.removeApparel();
+                    else
+                        Utils.error.play();
+                }
+            }
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //THIS IS THE CODE FOR THE HERO SCREEN
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.heroScreen) {
+                if (keycode == Input.Keys.LEFT || keycode == Input.Keys.RIGHT) {
+                    Utils.page.play();
+                    MainClass.heroScreen.heroRow = 0;
+                    MainClass.heroScreen.heroPage = 0;
+                    if (MainClass.heroScreen.heroPanel == "Statistics") {
+                        MainClass.heroScreen.heroPanel = "Moves";
+                    } else if (MainClass.heroScreen.heroPanel == "Moves") {
+                        MainClass.heroScreen.heroPanel = "Statistics";
+                    }
+                } else if (keycode == Input.Keys.H) {
+                    //Play the sound effect when player pushes the button.
+                    Utils.inventoryScreenSelectionSound.play();
+                    //Set the gamescreen to be the inventory game screen.
+                    Utils.heroOpen = false;
+                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+                } else if (keycode == Input.Keys.DOWN) {
+                    Utils.rustling.play();
+                    if (MainClass.heroScreen.heroPage * 8 + MainClass.heroScreen.heroRow + 1 < 7
+                            && MainClass.heroScreen.heroPanel == "Statistics") {
+
+                        if ((MainClass.heroScreen.heroRow + 1) % 8 == 0) {
+                            MainClass.heroScreen.heroPage += 1;
+                            MainClass.heroScreen.heroRow = 0;
+                        } else
+                            MainClass.heroScreen.heroRow += 1;
+                    } else if (MainClass.heroScreen.heroPage * 8 + MainClass.heroScreen.heroRow + 1 < 20 && MainClass.heroScreen.heroPanel == "Moves") {
+                        if ((MainClass.heroScreen.heroRow + 1) % 8 == 0) {
+                            MainClass.heroScreen.heroPage += 1;
+                            MainClass.heroScreen.heroRow = 0;
+                        } else
+                            MainClass.heroScreen.heroRow += 1;
+                    } else
+                        Utils.oob_error.play();
+                } else if (keycode == Input.Keys.UP) {
+                    Utils.rustling.play();
+                    if (MainClass.heroScreen.heroRow == 0 && MainClass.heroScreen.heroPage == 0) {
+                        Utils.oob_error.play();
+                    } else if ((MainClass.heroScreen.heroRow) % 8 == 0) {
+                        MainClass.heroScreen.heroPage -= 1;
+                        MainClass.heroScreen.heroRow += 7;
+                    } else
+                        MainClass.heroScreen.heroRow -= 1;
+                }
+            }
+            return false;
+
     }
 
     @Override
     public boolean keyUp(int keycode) {
-        //Set the appropriate boolean value false to stop the walk animation when the button is lifted
+
         if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen) {
+            //Set the appropriate boolean value false to stop the walk animation when the button is lifted
             if (keycode == Input.Keys.LEFT) MainClass.gameScreen.lWalk = false;
-            else if (keycode == Input.Keys.RIGHT) MainClass.gameScreen.rWalk = false;
-            else if (keycode == Input.Keys.UP) MainClass.gameScreen.uWalk = false;
-            else if (keycode == Input.Keys.DOWN) MainClass.gameScreen.dWalk = false;
+            if (keycode == Input.Keys.RIGHT) MainClass.gameScreen.rWalk = false;
+            if (keycode == Input.Keys.UP) MainClass.gameScreen.uWalk = false;
+            if (keycode == Input.Keys.DOWN) MainClass.gameScreen.dWalk = false;
         }
-        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openworldscreen){
-            MainClass.openworldscreen.movement = 0;
-        }
+        
         return false;
     }
 
