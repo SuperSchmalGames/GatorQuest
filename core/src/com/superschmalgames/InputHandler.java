@@ -290,21 +290,40 @@ public class InputHandler implements InputProcessor {
                         MainClass.heroScreen.heroRow -= 1;
                 }
             }
-            return false;
+
+        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openworldscreen) {
+            if (keycode == Input.Keys.UP) {
+                MainClass.openworldscreen.movement = 4;
+            }
+            else if (keycode == Input.Keys.DOWN) {
+                MainClass.openworldscreen.movement = 3;
+            }
+            else if (keycode == Input.Keys.LEFT) {
+                MainClass.openworldscreen.movement = 2;
+            }
+            else if (keycode == Input.Keys.RIGHT) {
+                MainClass.openworldscreen.movement = 1;
+            }
+        }
+        return false;
 
     }
 
     @Override
     public boolean keyUp(int keycode) {
 
+        //Set the appropriate boolean value false to stop the walk animation when the button is lifted
         if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen) {
-            //Set the appropriate boolean value false to stop the walk animation when the button is lifted
             if (keycode == Input.Keys.LEFT) MainClass.gameScreen.lWalk = false;
-            if (keycode == Input.Keys.RIGHT) MainClass.gameScreen.rWalk = false;
-            if (keycode == Input.Keys.UP) MainClass.gameScreen.uWalk = false;
-            if (keycode == Input.Keys.DOWN) MainClass.gameScreen.dWalk = false;
+            else if (keycode == Input.Keys.RIGHT) MainClass.gameScreen.rWalk = false;
+            else if (keycode == Input.Keys.UP) MainClass.gameScreen.uWalk = false;
+            else if (keycode == Input.Keys.DOWN) MainClass.gameScreen.dWalk = false;
         }
-        
+
+        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openworldscreen){
+            MainClass.openworldscreen.movement = 0;
+        }
+
         return false;
     }
 
