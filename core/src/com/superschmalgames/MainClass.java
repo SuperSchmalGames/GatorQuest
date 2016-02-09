@@ -15,6 +15,7 @@ public class MainClass extends Game {
 	public static GameScreen gameScreen;
 	public static InventoryScreen inventoryScreen;
 	public static InputHandler inputHandler;
+	public static OpenWorldScreen openworldscreen;
 	
 	@Override
 	public void create () {

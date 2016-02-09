@@ -17,6 +17,7 @@ public class OpenWorldScreen implements Screen {
     OrthographicCamera camera;
     TiledMap tiledmap;
     TiledMapRenderer tiledmaprenderer;
+    int movement =  0;
 
     public OpenWorldScreen() {
 
@@ -29,6 +30,30 @@ public class OpenWorldScreen implements Screen {
 
     }
 
+    public void move() {
+        switch(movement){
+            //UP
+            case 4 :
+                camera.translate(0f,5f);
+                break;
+            //DOWN
+            case 3 :
+                camera.translate(0f,-5f);
+                break;
+            //LEFT
+            case 2 :
+                camera.translate(-5f,0f);
+                break;
+            //RIGHT
+            case 1 :
+                camera.translate(5f,0f);
+                break;
+            //STATIONARY
+            case 0 :
+                break;
+        }
+    }
+
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(0,0,0,1);
@@ -38,6 +63,8 @@ public class OpenWorldScreen implements Screen {
 
         tiledmaprenderer.setView(camera);
         tiledmaprenderer.render();
+
+        move();
     }
 
     @Override

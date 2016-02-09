@@ -2,6 +2,7 @@ package com.superschmalgames;
 
 //This class is for the main screen we see when moving through the game world.
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
@@ -10,6 +11,7 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.sun.javaws.Main;
 
 public class GameScreen implements Screen {
 
@@ -93,14 +95,13 @@ public class GameScreen implements Screen {
     public void walk(float delta){
             if(lWalk &&
                !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-5)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-               !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-5)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
-            {
+               !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-5)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")) {
                 camera.translate(-5f, 0f);
                 MainClass.hero.walkAnimation('L', delta);
-                if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("door")) {
-                    int x = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("x"));
-                    int y = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("y"));
-                    camera.translate(x*Utils.MAP_RESOLUTION, y*Utils.MAP_RESOLUTION);
+                if (collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("door")) {
+                    int x = Integer.valueOf((String) collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().get("x"));
+                    int y = Integer.valueOf((String) collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().get("y"));
+                    camera.translate(x * Utils.MAP_RESOLUTION, y * Utils.MAP_RESOLUTION);
                 }
             }
             else if(rWalk &&
@@ -127,6 +128,10 @@ public class GameScreen implements Screen {
                     int y = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("y"));
                     camera.translate(x*Utils.MAP_RESOLUTION, y*Utils.MAP_RESOLUTION);
                 }
+                else if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("exit")) {
+                    MainClass.openworldscreen = new OpenWorldScreen();
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openworldscreen);
+                }
             }
             else if(dWalk &&
                     !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2-5)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -139,6 +144,10 @@ public class GameScreen implements Screen {
                     int x = Integer.valueOf((String) collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().get("x"));
                     int y = Integer.valueOf((String) collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().get("y"));
                     camera.translate(x * Utils.MAP_RESOLUTION, y * Utils.MAP_RESOLUTION);
+                }
+                else if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("exit")) {
+                    MainClass.openworldscreen = new OpenWorldScreen();
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openworldscreen);
                 }
             }
             else MainClass.hero.standAnimation();
