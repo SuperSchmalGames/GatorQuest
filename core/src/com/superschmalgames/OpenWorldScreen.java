@@ -6,17 +6,14 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.GlyphLayout;
-import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
-import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 
 public class OpenWorldScreen implements Screen {
 
     OrthographicCamera camera;
-    TiledMap tiledmap;
     TiledMapRenderer tiledmaprenderer;
     TiledMapTileLayer collision;
     Boolean lwalk = false, rwalk = false, uwalk = false, dwalk = false;
@@ -27,9 +24,8 @@ public class OpenWorldScreen implements Screen {
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
-        tiledmap = new TmxMapLoader().load("visuals/maps/UF_Full_Map.tmx");
-        tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
-        collision = (TiledMapTileLayer) tiledmap.getLayers().get(0);
+        tiledmaprenderer = new OrthogonalTiledMapRenderer(Utils.openworld);
+        collision = (TiledMapTileLayer) Utils.openworld.getLayers().get(0);
         crosshair = new Texture("visuals/crosshair.png");
 
     }

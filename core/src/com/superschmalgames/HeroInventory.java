@@ -52,64 +52,64 @@ public class HeroInventory {
     }
 
     public void incItem(String itemName){
-        if(itemName.equals("Biz Casual Attire")){
+        if("Biz Casual Attire".equals(itemName)){
             items.get(0).setQuantity(items.get(0).getQuantity() +1);
         }
-        if(itemName.equals("Class Ring")){
+        if("Class Ring".equals(itemName)){
             items.get(1).setQuantity(items.get(1).getQuantity() +1);
         }
-        if(itemName.equals("Gator Hat")){
+        if("Gator Hat".equals(itemName)){
             items.get(2).setQuantity(items.get(2).getQuantity() +1);
         }
-        if(itemName.equals("Graduation Gown")){
+        if("Graduation Gown".equals(itemName)){
             items.get(3).setQuantity(items.get(3).getQuantity() +1);
         }
-        if(itemName.equals("Suit and Tie")){
+        if("Suit and Tie".equals(itemName)){
             items.get(4).setQuantity(items.get(4).getQuantity() +1);
         }
-        if(itemName.equals("Redbull")){
+        if("Redbull".equals(itemName)){
             items.get(5).setQuantity(items.get(5).getQuantity() +1);
         }
-        if(itemName.equals("Starbucks")){
+        if("Starbucks".equals(itemName)){
             items.get(6).setQuantity(items.get(6).getQuantity() +1);
         }
-        if(itemName.equals("AVR Dragon")){
+        if("AVR Dragon".equals(itemName)){
             items.get(7).setQuantity(items.get(7).getQuantity() +1);
         }
-        if(itemName.equals("Cyclone III")){
+        if("Cyclone III".equals(itemName)){
             items.get(8).setQuantity(items.get(8).getQuantity() +1);
         }
-        if(itemName.equals("DAD Board")){
+        if("DAD Board".equals(itemName)){
             items.get(9).setQuantity(items.get(9).getQuantity() +1);
         }
-        if(itemName.equals("Macbook Pro")){
+        if("Macbook Pro".equals(itemName)){
             items.get(10).setQuantity(items.get(10).getQuantity() +1);
         }
-        if(itemName.equals("Nspire")){
+        if("Nspire".equals(itemName)){
             items.get(11).setQuantity(items.get(11).getQuantity() +1);
         }
-        if(itemName.equals("Soldering Iron")){
+        if("Soldering Iron".equals(itemName)){
             items.get(12).setQuantity(items.get(12).getQuantity() +1);
         }
-        if(itemName.equals("TI-89")){
+        if("TI-89".equals(itemName)){
             items.get(13).setQuantity(items.get(13).getQuantity() +1);
         }
-        if(itemName.equals("USB Blaster")){
+        if("USB Blaster".equals(itemName)){
             items.get(14).setQuantity(items.get(15).getQuantity() +1);
         }
-        if(itemName.equals("Wire Kit")){
+        if("Wire Kit".equals(itemName)){
             items.get(15).setQuantity(items.get(15).getQuantity() +1);
         }
     }
 
     public void useItem(String itemName, HeroCharacter hero){
-        if(itemName.equals("Redbull")){
+        if("Redbull".equals(itemName)){
             hero.gpa = items.get(5).activateItem(hero.gpa);
         }
     }
 
     public void removeEffect(String itemName, HeroCharacter hero){
-        if(itemName.equals("Redbull")){
+        if("Redbull".equals(itemName)){
             hero.gpa = items.get(5).disableItem(hero.gpa);
         }
     }
@@ -152,64 +152,82 @@ public class HeroInventory {
         MainClass.hero.social_buf = MainClass.hero.social;
         MainClass.hero.math_buf = MainClass.hero.math;
         MainClass.hero.focus_buf = MainClass.hero.focus;
-        if(MainClass.hero.heroApparel.getItemName() != "")
+        //JAVA STRING comparisons must be done with equals, typical comparisons (==, !=)
+        //only check if the objects are the same.
+        if("".equals(MainClass.hero.heroApparel.getItemName()))
+        //if(MainClass.hero.heroApparel.getItemName() != "")
         {
-            if(MainClass.hero.heroApparel.getItemName() == "Biz Casual Attire")
+            if("Biz Casual Attire".equals(MainClass.hero.heroApparel.getItemName()))
+            //if(MainClass.hero.heroApparel.getItemName() == "Biz Casual Attire")
             {
                 MainClass.hero.social_buf+=2;
             }
-            else if(MainClass.hero.heroApparel.getItemName() == "Class Ring")
+            else if("Class Ring".equals(MainClass.hero.heroApparel.getItemName()))
+            //else if(MainClass.hero.heroApparel.getItemName() == "Class Ring")
             {
                 MainClass.hero.endurance_buf+=1;
             }
-            else if(MainClass.hero.heroApparel.getItemName() == "Gator Hat")
+            else if("Gator Hat".equals(MainClass.hero.heroApparel.getItemName()))
+            //else if(MainClass.hero.heroApparel.getItemName() == "Gator Hat")
             {
                 MainClass.hero.social_buf+=1;
             }
-            else if(MainClass.hero.heroApparel.getItemName() == "Graduation Gown")
+            else if("Graduation Gown".equals(MainClass.hero.heroApparel.getItemName()))
+            //else if(MainClass.hero.heroApparel.getItemName() == "Graduation Gown")
             {
                 MainClass.hero.endurance_buf+=2;
             }
-            else if(MainClass.hero.heroApparel.getItemName() == "Suit and Tie")
+            else if("Suit and Tie".equals(MainClass.hero.heroApparel.getItemName()))
+            // else if(MainClass.hero.heroApparel.getItemName() == "Suit and Tie")
             {
                 MainClass.hero.social_buf+=3;
             }
         }
-        if(MainClass.hero.heroEquipment.getItemName() != "")
+        if("".equals(MainClass.hero.heroEquipment.getItemName()))
+        //if(MainClass.hero.heroEquipment.getItemName() != "")
         {
-            if(MainClass.hero.heroEquipment.getItemName() == "AVR Dragon")
+            if("AVR Dragon".equals(MainClass.hero.heroEquipment.getItemName()))
+            //if(MainClass.hero.heroEquipment.getItemName() == "AVR Dragon")
             {
                 MainClass.hero.hardware_buf+=3;
             }
-            else if(MainClass.hero.heroEquipment.getItemName() == "Cyclone III")
+            else if("Cyclone III".equals(MainClass.hero.heroEquipment.getItemName()))
+            //else if(MainClass.hero.heroEquipment.getItemName() == "Cyclone III")
             {
                 MainClass.hero.hardware_buf+=2;
             }
-            else if(MainClass.hero.heroEquipment.getItemName() == "DAD Board")
+            else if("DAD Board".equals(MainClass.hero.heroEquipment.getItemName()))
+            //else if(MainClass.hero.heroEquipment.getItemName() == "DAD Board")
             {
                 MainClass.hero.focus_buf+=1;
             }
-            else if(MainClass.hero.heroEquipment.getItemName() == "Macbook Pro")
+            else if("Macbook Pro".equals(MainClass.hero.heroEquipment.getItemName()))
+            //else if(MainClass.hero.heroEquipment.getItemName() == "Macbook Pro")
             {
                 MainClass.hero.software_buf+=1;
             }
-            else if(MainClass.hero.heroEquipment.getItemName() == "Nspire")
+            else if("Nspire".equals(MainClass.hero.heroEquipment.getItemName()))
+            //else if(MainClass.hero.heroEquipment.getItemName() == "Nspire")
             {
                 MainClass.hero.math_buf+=2;
             }
-            else if(MainClass.hero.heroEquipment.getItemName() == "Soldering Iron")
+            else if("Soldering Iron".equals(MainClass.hero.heroEquipment.getItemName()))
+            //else if(MainClass.hero.heroEquipment.getItemName() == "Soldering Iron")
             {
                 MainClass.hero.endurance_buf+=1;
             }
-            else if(MainClass.hero.heroEquipment.getItemName() == "TI-89")
+            else if("TI-89".equals(MainClass.hero.heroEquipment.getItemName()))
+            //else if(MainClass.hero.heroEquipment.getItemName() == "TI-89")
             {
                 MainClass.hero.math_buf+=1;
             }
-            else if(MainClass.hero.heroEquipment.getItemName() == "USB Blaster")
+            else if("USB Blaster".equals(MainClass.hero.heroEquipment.getItemName()))
+            //else if(MainClass.hero.heroEquipment.getItemName() == "USB Blaster")
             {
                 MainClass.hero.software_buf+=2;
             }
-            else if(MainClass.hero.heroEquipment.getItemName() == "Wire Kit")
+            else if("Wire Kit".equals(MainClass.hero.heroEquipment.getItemName()))
+            //else if(MainClass.hero.heroEquipment.getItemName() == "Wire Kit")
             {
                 MainClass.hero.hardware_buf+=1;
             }
@@ -219,7 +237,8 @@ public class HeroInventory {
     public int getCurrentItemIndex(){
         int relIndex = 0;
         int overallIndex = 0;
-        if(MainClass.inventoryScreen.invPanel == "Consumable" && MainClass.hero.inventory.getNumC() > 0)
+        if("Consumable".equals(MainClass.inventoryScreen.invPanel) && MainClass.hero.inventory.getNumC() > 0)
+        //if(MainClass.inventoryScreen.invPanel == "Consumable" && MainClass.hero.inventory.getNumC() > 0)
         {
             if(MainClass.inventoryScreen.invRow== 0 && MainClass.inventoryScreen.invPage == 0)
             {
@@ -244,7 +263,8 @@ public class HeroInventory {
                 }
             }
         }
-        else if(MainClass.inventoryScreen.invPanel == "Equipment" && MainClass.hero.inventory.getNumE() > 0)
+        else if("Equipment".equals(MainClass.inventoryScreen.invPanel) && MainClass.hero.inventory.getNumE() > 0)
+        //else if(MainClass.inventoryScreen.invPanel == "Equipment" && MainClass.hero.inventory.getNumE() > 0)
         {
             if(MainClass.inventoryScreen.invRow== 0 && MainClass.inventoryScreen.invPage == 0)
             {
@@ -269,7 +289,8 @@ public class HeroInventory {
                 }
             }
         }
-        else if(MainClass.inventoryScreen.invPanel == "Apparel" && MainClass.hero.inventory.getNumA() > 0)
+        else if("Apparel".equals(MainClass.inventoryScreen.invPanel) && MainClass.hero.inventory.getNumA() > 0)
+        //else if(MainClass.inventoryScreen.invPanel == "Apparel" && MainClass.hero.inventory.getNumA() > 0)
         {
             if(MainClass.inventoryScreen.invRow== 0 && MainClass.inventoryScreen.invPage == 0)
             {

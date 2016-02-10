@@ -138,7 +138,7 @@ public class InventoryScreen implements Screen {
                 }
             }
         }
-        else if(invPanel == "Equipment") {
+        else if("Equipment".equals(invPanel)) {
             MainClass.batch.draw(invTex2, Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2, 0);
             int temp = 0;
             if(invPage == 0) {
@@ -209,7 +209,7 @@ public class InventoryScreen implements Screen {
                 }
             }
         }
-        else if(invPanel == "Apparel") {
+        else if("Apparel".equals(invPanel)) {
             MainClass.batch.draw(invTex3, Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2, 0);
             int temp = 0;
             if(invPage == 0) {
@@ -284,14 +284,14 @@ public class InventoryScreen implements Screen {
         MainClass.batch.draw(invTex4, Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+35,480-65*invRow);
 
 
-        if (invPanel.equals("Consumable") && MainClass.hero.inventory.getNumC() == 0)
+        if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNumC() == 0)
             Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
-        else if (invPanel.equals("Consumable") && MainClass.hero.inventory.getNumC() == 0)
+        else if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNumC() == 0)
             Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
-        else if (invPanel.equals("Consumable") && MainClass.hero.inventory.getNumC() == 0)
+        else if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNumC() == 0)
             Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
 
-        if(MainClass.hero.heroApparel.getItemName() != "")
+        if(!"".equals(MainClass.hero.heroApparel.getItemName()))
         {
             MainClass.batch.draw(invTex5, 505, 55, 94, 94);
             MainClass.batch.draw(MainClass.hero.heroApparel.getTexture(), 520, 70, 64, 64);
@@ -300,7 +300,7 @@ public class InventoryScreen implements Screen {
                     MainClass.hero.heroApparel.getBoostAmt(), 610,140);
         }
 
-        if(MainClass.hero.heroEquipment.getItemName() != "")
+        if(!"".equals(MainClass.hero.heroEquipment.getItemName()))
         {
             MainClass.batch.draw(invTex5, 505, 240, 94, 94);
             MainClass.batch.draw(MainClass.hero.heroEquipment.getTexture(), 520, 255, 64, 64);

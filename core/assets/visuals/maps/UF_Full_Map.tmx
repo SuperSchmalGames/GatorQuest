@@ -1417,6 +1417,11 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="2024">
+   <properties>
+    <property name="level" value="4"/>
+   </properties>
+  </tile>
   <tile id="2025">
    <properties>
     <property name="level" value="4"/>
@@ -1465,6 +1470,11 @@
   <tile id="2080">
    <properties>
     <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="2114">
+   <properties>
+    <property name="level" value="4"/>
    </properties>
   </tile>
   <tile id="2115">
