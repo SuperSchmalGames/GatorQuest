@@ -39,11 +39,12 @@ public class GameScreen implements Screen {
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
 
         //Initialize the map
-        setMap(Utils.dorm);
+        setMap(Utils.dorm, Utils.start_x, Utils.start_y);
 
     }
 
-    private void setMap(TiledMap tiledmap) {
+    public void setMap(TiledMap tiledmap, int x, int y) {
+        camera.position.set(x,y,0);
         tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
         collision = (TiledMapTileLayer) tiledmap.getLayers().get("Collision");
         background[0] = 0;
@@ -129,6 +130,7 @@ public class GameScreen implements Screen {
                     camera.translate(x*Utils.MAP_RESOLUTION, y*Utils.MAP_RESOLUTION);
                 }
                 else if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("exit")) {
+                    uWalk = false;
                     MainClass.openworldscreen = new OpenWorldScreen();
                     ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openworldscreen);
                 }
@@ -146,6 +148,7 @@ public class GameScreen implements Screen {
                     camera.translate(x * Utils.MAP_RESOLUTION, y * Utils.MAP_RESOLUTION);
                 }
                 else if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("exit")) {
+                    dWalk = false;
                     MainClass.openworldscreen = new OpenWorldScreen();
                     ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openworldscreen);
                 }

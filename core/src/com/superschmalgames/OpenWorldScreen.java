@@ -17,41 +17,38 @@ public class OpenWorldScreen implements Screen {
     OrthographicCamera camera;
     TiledMap tiledmap;
     TiledMapRenderer tiledmaprenderer;
+    TiledMapTileLayer collision;
     int movement =  0;
+    Boolean lwalk = false, rwalk = false, uwalk = false, dwalk = false;
+    public Texture crosshair;
 
     public OpenWorldScreen() {
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
-
         tiledmap = new TmxMapLoader().load("visuals/maps/UF_Full_Map.tmx");
         tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
-
+        collision = (TiledMapTileLayer) tiledmap.getLayers().get(0);
+        crosshair = new Texture("visuals/crosshair.png");
 
     }
 
     public void move() {
-        switch(movement){
-            //UP
-            case 4 :
-                camera.translate(0f,5f);
-                break;
-            //DOWN
-            case 3 :
-                camera.translate(0f,-5f);
-                break;
-            //LEFT
-            case 2 :
-                camera.translate(-5f,0f);
-                break;
-            //RIGHT
-            case 1 :
-                camera.translate(5f,0f);
-                break;
-            //STATIONARY
-            case 0 :
-                break;
+        if(uwalk && !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION + 1).getTile().getProperties().containsKey("blocked"))
+            camera.translate(0f,5f);
+        if(dwalk && !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION - 1).getTile().getProperties().containsKey("blocked"))
+            camera.translate(0f,-5f);
+        if(lwalk && !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION - 1, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
+            camera.translate(-5f,0f);
+        if(rwalk && !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION + 1, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
+            camera.translate(5f,0f);
+    }
+
+    public int select() {
+        if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("level")) {
+            return(Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("level")));
         }
+        return(0);
     }
 
     @Override
@@ -63,6 +60,11 @@ public class OpenWorldScreen implements Screen {
 
         tiledmaprenderer.setView(camera);
         tiledmaprenderer.render();
+
+        MainClass.batch.begin();
+        MainClass.batch.draw(crosshair, Utils.GAME_SCREEN_WIDTH/2, Utils.GAME_SCREEN_HEIGHT/2);
+        Utils.testFont.draw(MainClass.batch, "Map data ©2016 Google Imagery ©2016, DigitalGlobe, U.S. Geological Survey", 0, Utils.GAME_SCREEN_HEIGHT - 10);
+        MainClass.batch.end();
 
         move();
     }

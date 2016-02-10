@@ -1022,6 +1022,26 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="1304">
+   <properties>
+    <property name="level" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1305">
+   <properties>
+    <property name="level" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1306">
+   <properties>
+    <property name="level" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1307">
+   <properties>
+    <property name="level" value="1"/>
+   </properties>
+  </tile>
   <tile id="1312">
    <properties>
     <property name="blocked" value=""/>
@@ -1057,6 +1077,26 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="1394">
+   <properties>
+    <property name="level" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1395">
+   <properties>
+    <property name="level" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1396">
+   <properties>
+    <property name="level" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1397">
+   <properties>
+    <property name="level" value="1"/>
+   </properties>
+  </tile>
   <tile id="1402">
    <properties>
     <property name="blocked" value=""/>
@@ -1090,6 +1130,26 @@
   <tile id="1450">
    <properties>
     <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="1484">
+   <properties>
+    <property name="level" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1485">
+   <properties>
+    <property name="level" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1486">
+   <properties>
+    <property name="level" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1487">
+   <properties>
+    <property name="level" value="1"/>
    </properties>
   </tile>
   <tile id="1492">
@@ -1197,6 +1257,26 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="1751">
+   <properties>
+    <property name="level" value="2"/>
+   </properties>
+  </tile>
+  <tile id="1752">
+   <properties>
+    <property name="level" value="2"/>
+   </properties>
+  </tile>
+  <tile id="1753">
+   <properties>
+    <property name="level" value="2"/>
+   </properties>
+  </tile>
+  <tile id="1754">
+   <properties>
+    <property name="level" value="2"/>
+   </properties>
+  </tile>
   <tile id="1762">
    <properties>
     <property name="blocked" value=""/>
@@ -1230,6 +1310,26 @@
   <tile id="1810">
    <properties>
     <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="1841">
+   <properties>
+    <property name="level" value="2"/>
+   </properties>
+  </tile>
+  <tile id="1842">
+   <properties>
+    <property name="level" value="2"/>
+   </properties>
+  </tile>
+  <tile id="1843">
+   <properties>
+    <property name="level" value="2"/>
+   </properties>
+  </tile>
+  <tile id="1844">
+   <properties>
+    <property name="level" value="2"/>
    </properties>
   </tile>
   <tile id="1852">
@@ -1267,6 +1367,16 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="1935">
+   <properties>
+    <property name="level" value="4"/>
+   </properties>
+  </tile>
+  <tile id="1936">
+   <properties>
+    <property name="level" value="4"/>
+   </properties>
+  </tile>
   <tile id="1942">
    <properties>
     <property name="blocked" value=""/>
@@ -1300,6 +1410,16 @@
   <tile id="1990">
    <properties>
     <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="2025">
+   <properties>
+    <property name="level" value="4"/>
+   </properties>
+  </tile>
+  <tile id="2026">
+   <properties>
+    <property name="level" value="4"/>
    </properties>
   </tile>
   <tile id="2032">
@@ -1967,9 +2087,20 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="3740">
+   <properties>
+    <property name="level" value="5"/>
+   </properties>
+  </tile>
+  <tile id="3741">
+   <properties>
+    <property name="level" value="5"/>
+   </properties>
+  </tile>
   <tile id="3742">
    <properties>
     <property name="blocked" value=""/>
+    <property name="level" value="5"/>
    </properties>
   </tile>
   <tile id="3743">
@@ -2002,9 +2133,20 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="3830">
+   <properties>
+    <property name="level" value="5"/>
+   </properties>
+  </tile>
+  <tile id="3831">
+   <properties>
+    <property name="level" value="5"/>
+   </properties>
+  </tile>
   <tile id="3832">
    <properties>
     <property name="blocked" value=""/>
+    <property name="level" value="5"/>
    </properties>
   </tile>
   <tile id="3833">
@@ -2177,6 +2319,31 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="4255">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
+  <tile id="4256">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
+  <tile id="4257">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
+  <tile id="4258">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
+  <tile id="4259">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
   <tile id="4282">
    <properties>
     <property name="blocked" value=""/>
@@ -2210,6 +2377,31 @@
   <tile id="4330">
    <properties>
     <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="4345">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
+  <tile id="4346">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
+  <tile id="4347">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
+  <tile id="4348">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
+  <tile id="4349">
+   <properties>
+    <property name="level" value="3"/>
    </properties>
   </tile>
   <tile id="4372">
@@ -2247,6 +2439,31 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="4435">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
+  <tile id="4436">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
+  <tile id="4437">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
+  <tile id="4438">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
+  <tile id="4439">
+   <properties>
+    <property name="level" value="3"/>
+   </properties>
+  </tile>
   <tile id="4462">
    <properties>
     <property name="blocked" value=""/>
@@ -2280,6 +2497,31 @@
   <tile id="4510">
    <properties>
     <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="4525">
+   <properties>
+    <property name="level" value="neb"/>
+   </properties>
+  </tile>
+  <tile id="4526">
+   <properties>
+    <property name="level" value="neb"/>
+   </properties>
+  </tile>
+  <tile id="4527">
+   <properties>
+    <property name="level" value="neb"/>
+   </properties>
+  </tile>
+  <tile id="4528">
+   <properties>
+    <property name="level" value="neb"/>
+   </properties>
+  </tile>
+  <tile id="4529">
+   <properties>
+    <property name="level" value="neb"/>
    </properties>
   </tile>
   <tile id="4552">
