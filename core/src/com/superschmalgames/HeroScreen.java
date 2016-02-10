@@ -7,7 +7,6 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 
 public class HeroScreen implements Screen {
 
@@ -45,7 +44,7 @@ public class HeroScreen implements Screen {
         //Draw to our batch each refresh. The batch is then rendered to the screen.
         MainClass.batch.begin();
 
-        if(heroPanel.equals("Statistics")) {
+        if("Statistics".equals(heroPanel)) {
             MainClass.batch.draw(heroTex1, Utils.GAME_SCREEN_WIDTH / 2 - heroTex1.getWidth() / 2, 0);
             Utils.font.draw(MainClass.batch,"Software: "+MainClass.hero.software_buf+"/"+MainClass.hero.software, 50,515);
             Utils.font.draw(MainClass.batch,"Hardware: "+MainClass.hero.hardware_buf+"/"+MainClass.hero.hardware, 50,450);
@@ -55,14 +54,16 @@ public class HeroScreen implements Screen {
             Utils.font.draw(MainClass.batch,"Math: "+MainClass.hero.math_buf+"/"+MainClass.hero.math, 50, 190);
             Utils.font.draw(MainClass.batch,"Focus: "+MainClass.hero.focus_buf+"/"+MainClass.hero.focus, 50, 125);
         }
-        else if(heroPanel == "Moves")
+        else if("Moves".equals(heroPanel))
+        //else if(heroPanel == "Moves")
         {
             MainClass.batch.draw(heroTex2, Utils.GAME_SCREEN_WIDTH / 2 - heroTex1.getWidth() / 2, 0);
         }
 
         MainClass.batch.draw(heroTex4, 35,480-65*heroRow);
 
-        if(MainClass.hero.heroApparel.getItemName() != "")
+        if(!"".equals(MainClass.hero.heroApparel.getItemName()))
+        //if(MainClass.hero.heroApparel.getItemName() != "")
         {
             MainClass.batch.draw(heroTex5, 505, 55, 94, 94);
             MainClass.batch.draw(MainClass.hero.heroApparel.getTexture(), 520, 70, 64, 64);
@@ -71,7 +72,8 @@ public class HeroScreen implements Screen {
                     MainClass.hero.heroApparel.getBoostAmt(), 610,140);
         }
 
-        if(MainClass.hero.heroEquipment.getItemName() != "")
+        if(!"".equals(MainClass.hero.heroEquipment.getItemName()))
+        //if(MainClass.hero.heroEquipment.getItemName() != "")
         {
             MainClass.batch.draw(heroTex5, 505, 240, 94, 94);
             MainClass.batch.draw(MainClass.hero.heroEquipment.getTexture(), 520, 255, 64, 64);

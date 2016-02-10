@@ -19,9 +19,6 @@ public class InputHandler implements InputProcessor {
     //The index in the ArrayList of the item currently being hovered over
     int currentItemIndex;
 
-    //used by openworldscreen
-    int location;
-
     public InputHandler() {
         pushed = false;
         menuIndex = 0;
@@ -140,13 +137,16 @@ public class InputHandler implements InputProcessor {
                     MainClass.inventoryScreen.invPage = 0;
                     currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
-                    if (MainClass.inventoryScreen.invPanel == "Consumable") {
+                    if ("Consumable".equals(MainClass.inventoryScreen.invPanel)) {
+                    //if (MainClass.inventoryScreen.invPanel == "Consumable") {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                         MainClass.inventoryScreen.invPanel = "Apparel";
-                    } else if (MainClass.inventoryScreen.invPanel == "Apparel") {
+                    } else if ("Apparel".equals(MainClass.inventoryScreen.invPanel)) {
+                    //} else if (MainClass.inventoryScreen.invPanel == "Apparel") {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                         MainClass.inventoryScreen.invPanel = "Equipment";
-                    } else if (MainClass.inventoryScreen.invPanel == "Equipment") {
+                    } else if ("Equipment".equals(MainClass.inventoryScreen.invPanel)) {
+                    //} else if (MainClass.inventoryScreen.invPanel == "Equipment") {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                         MainClass.inventoryScreen.invPanel = "Consumable";
                     }
@@ -156,13 +156,16 @@ public class InputHandler implements InputProcessor {
                     MainClass.inventoryScreen.invPage = 0;
                     currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
-                    if (MainClass.inventoryScreen.invPanel == "Consumable") {
+                    if ("Consumable".equals(MainClass.inventoryScreen.invPanel)) {
+                    //if (MainClass.inventoryScreen.invPanel == "Consumable") {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                         MainClass.inventoryScreen.invPanel = "Equipment";
-                    } else if (MainClass.inventoryScreen.invPanel == "Apparel") {
+                    } else if ("Apparel".equals(MainClass.inventoryScreen.invPanel)) {
+                    //} else if (MainClass.inventoryScreen.invPanel == "Apparel") {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                         MainClass.inventoryScreen.invPanel = "Consumable";
-                    } else if (MainClass.inventoryScreen.invPanel == "Equipment") {
+                    } else if ("Equipment".equals(MainClass.inventoryScreen.invPanel)) {
+                    //} else if (MainClass.inventoryScreen.invPanel == "Equipment") {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                         MainClass.inventoryScreen.invPanel = "Apparel";
                     }
@@ -175,7 +178,7 @@ public class InputHandler implements InputProcessor {
                 } else if (keycode == Input.Keys.DOWN) {
                     Utils.rustling.play();
                     if (MainClass.inventoryScreen.invPage * 8 + MainClass.inventoryScreen.invRow + 1 < MainClass.hero.inventory.getNumC()
-                            && MainClass.inventoryScreen.invPanel == "Consumable") {
+                            && "Consumable".equals(MainClass.inventoryScreen.invPanel)) {
 
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
@@ -185,7 +188,7 @@ public class InputHandler implements InputProcessor {
                         } else
                             MainClass.inventoryScreen.invRow += 1;
                     } else if (MainClass.inventoryScreen.invPage * 8 + MainClass.inventoryScreen.invRow + 1 < MainClass.hero.inventory.getNumA()
-                            && MainClass.inventoryScreen.invPanel == "Apparel") {
+                            && "Apparel".equals(MainClass.inventoryScreen.invPanel)) {
 
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
@@ -195,7 +198,7 @@ public class InputHandler implements InputProcessor {
                         } else
                             MainClass.inventoryScreen.invRow += 1;
                     } else if (MainClass.inventoryScreen.invPage * 8 + MainClass.inventoryScreen.invRow + 1 < MainClass.hero.inventory.getNumE()
-                            && MainClass.inventoryScreen.invPanel == "Equipment") {
+                            && "Equipment".equals(MainClass.inventoryScreen.invPanel)) {
 
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
@@ -219,14 +222,14 @@ public class InputHandler implements InputProcessor {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                     }
                 } else if (keycode == Input.Keys.E) {
-                    if (MainClass.inventoryScreen.invPanel == "Equipment" && MainClass.hero.inventory.getNumE() > 0) {
+                    if ("Equipment".equals(MainClass.inventoryScreen.invPanel) && MainClass.hero.inventory.getNumE() > 0) {
                         MainClass.hero.heroEquipment.removeEquipment();
                         MainClass.hero.heroEquipment.setItemName(MainClass.hero.inventory.items.get(currentItemIndex).getItemName());
                         MainClass.hero.heroEquipment.setStatBoosted(MainClass.hero.inventory.items.get(currentItemIndex).getStatBoosted());
                         MainClass.hero.heroEquipment.setBoostAmt(MainClass.hero.inventory.items.get(currentItemIndex).getBoostAmt());
                         MainClass.hero.heroEquipment.setTexture(MainClass.hero.inventory.items.get(currentItemIndex).getTexture());
                         MainClass.hero.inventory.calc_stats();
-                    } else if (MainClass.inventoryScreen.invPanel == "Apparel" && MainClass.hero.inventory.getNumA() > 0) {
+                    } else if ("Apparel".equals(MainClass.inventoryScreen.invPanel) && MainClass.hero.inventory.getNumA() > 0) {
                         MainClass.hero.heroApparel.removeApparel();
                         MainClass.hero.heroApparel.setItemName(MainClass.hero.inventory.items.get(currentItemIndex).getItemName());
                         MainClass.hero.heroApparel.setStatBoosted(MainClass.hero.inventory.items.get(currentItemIndex).getStatBoosted());
@@ -237,9 +240,9 @@ public class InputHandler implements InputProcessor {
                         Utils.error.play();
                     }
                 } else if (keycode == Input.Keys.R) {
-                    if (MainClass.inventoryScreen.invPanel == "Equipment")
+                    if ("Equipment".equals(MainClass.inventoryScreen.invPanel))
                         MainClass.hero.heroEquipment.removeEquipment();
-                    else if (MainClass.inventoryScreen.invPanel == "Apparel")
+                    else if ("Apparel".equals(MainClass.inventoryScreen.invPanel))
                         MainClass.hero.heroApparel.removeApparel();
                     else
                         Utils.error.play();
@@ -253,9 +256,9 @@ public class InputHandler implements InputProcessor {
                     Utils.page.play();
                     MainClass.heroScreen.heroRow = 0;
                     MainClass.heroScreen.heroPage = 0;
-                    if (MainClass.heroScreen.heroPanel == "Statistics") {
+                    if ("Statistics".equals(MainClass.heroScreen.heroPanel)) {
                         MainClass.heroScreen.heroPanel = "Moves";
-                    } else if (MainClass.heroScreen.heroPanel == "Moves") {
+                    } else if ("Moves".equals(MainClass.heroScreen.heroPanel)) {
                         MainClass.heroScreen.heroPanel = "Statistics";
                     }
                 } else if (keycode == Input.Keys.H) {
@@ -267,14 +270,14 @@ public class InputHandler implements InputProcessor {
                 } else if (keycode == Input.Keys.DOWN) {
                     Utils.rustling.play();
                     if (MainClass.heroScreen.heroPage * 8 + MainClass.heroScreen.heroRow + 1 < 7
-                            && MainClass.heroScreen.heroPanel == "Statistics") {
+                            && "Statistics".equals(MainClass.heroScreen.heroPanel)) {
 
                         if ((MainClass.heroScreen.heroRow + 1) % 8 == 0) {
                             MainClass.heroScreen.heroPage += 1;
                             MainClass.heroScreen.heroRow = 0;
                         } else
                             MainClass.heroScreen.heroRow += 1;
-                    } else if (MainClass.heroScreen.heroPage * 8 + MainClass.heroScreen.heroRow + 1 < 20 && MainClass.heroScreen.heroPanel == "Moves") {
+                    } else if (MainClass.heroScreen.heroPage * 8 + MainClass.heroScreen.heroRow + 1 < 20 && "Moves".equals(MainClass.heroScreen.heroPanel)) {
                         if ((MainClass.heroScreen.heroRow + 1) % 8 == 0) {
                             MainClass.heroScreen.heroPage += 1;
                             MainClass.heroScreen.heroRow = 0;
