@@ -1377,6 +1377,11 @@
     <property name="level" value="4"/>
    </properties>
   </tile>
+  <tile id="1937">
+   <properties>
+    <property name="level" value="4"/>
+   </properties>
+  </tile>
   <tile id="1942">
    <properties>
     <property name="blocked" value=""/>
@@ -1422,6 +1427,11 @@
     <property name="level" value="4"/>
    </properties>
   </tile>
+  <tile id="2027">
+   <properties>
+    <property name="level" value="4"/>
+   </properties>
+  </tile>
   <tile id="2032">
    <properties>
     <property name="blocked" value=""/>
@@ -1455,6 +1465,21 @@
   <tile id="2080">
    <properties>
     <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="2115">
+   <properties>
+    <property name="level" value="4"/>
+   </properties>
+  </tile>
+  <tile id="2116">
+   <properties>
+    <property name="level" value="4"/>
+   </properties>
+  </tile>
+  <tile id="2117">
+   <properties>
+    <property name="level" value="4"/>
    </properties>
   </tile>
   <tile id="2122">
@@ -2501,27 +2526,27 @@
   </tile>
   <tile id="4525">
    <properties>
-    <property name="level" value="neb"/>
+    <property name="level" value="3"/>
    </properties>
   </tile>
   <tile id="4526">
    <properties>
-    <property name="level" value="neb"/>
+    <property name="level" value="3"/>
    </properties>
   </tile>
   <tile id="4527">
    <properties>
-    <property name="level" value="neb"/>
+    <property name="level" value="3"/>
    </properties>
   </tile>
   <tile id="4528">
    <properties>
-    <property name="level" value="neb"/>
+    <property name="level" value="3"/>
    </properties>
   </tile>
   <tile id="4529">
    <properties>
-    <property name="level" value="neb"/>
+    <property name="level" value="3"/>
    </properties>
   </tile>
   <tile id="4552">

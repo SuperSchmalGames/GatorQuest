@@ -294,52 +294,21 @@ public class InputHandler implements InputProcessor {
                 }
             }
 
-        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openworldscreen) {
+        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openWorldScreen) {
             if (keycode == Input.Keys.UP) {
-                MainClass.openworldscreen.uwalk = true;
+                MainClass.openWorldScreen.uwalk = true;
             }
             else if (keycode == Input.Keys.DOWN) {
-                MainClass.openworldscreen.dwalk = true;
+                MainClass.openWorldScreen.dwalk = true;
             }
             else if (keycode == Input.Keys.LEFT) {
-                MainClass.openworldscreen.lwalk = true;
+                MainClass.openWorldScreen.lwalk = true;
             }
             else if (keycode == Input.Keys.RIGHT) {
-                MainClass.openworldscreen.rwalk = true;
+                MainClass.openWorldScreen.rwalk = true;
             }
             else if (keycode == Input.Keys.ENTER) {
-                location = MainClass.openworldscreen.select();
-                switch(location) {
-                    //Dorms
-                    case 5 :
-                        MainClass.gameScreen.setMap(Utils.dorm, Utils.dorm_x, Utils.dorm_y);
-                        ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
-                        MainClass.openworldscreen.dispose();
-                        break;
-                    //Marston
-                    case 4 :
-                        MainClass.gameScreen.setMap(Utils.marston, Utils.marston_x, Utils.marston_y);
-                        ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
-                        MainClass.openworldscreen.dispose();
-                        break;
-                    //NEB
-                    case 3 :
-                        MainClass.gameScreen.setMap(Utils.neb, Utils.neb_x, Utils.neb_y);
-                        ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
-                        MainClass.openworldscreen.dispose();
-                        break;
-                    //CISE
-                    case 2 :
-                        MainClass.gameScreen.setMap(Utils.cise, Utils.cise_x, Utils.cise_y);
-                        ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
-                        MainClass.openworldscreen.dispose();
-                        break;
-                    //Turlington
-                    case 1 :
-                        break;
-                    default:
-                        break;
-                }
+                MainClass.openWorldScreen.select();
             }
         }
         return false;
@@ -357,11 +326,11 @@ public class InputHandler implements InputProcessor {
             else if (keycode == Input.Keys.DOWN) MainClass.gameScreen.dWalk = false;
         }
 
-        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openworldscreen){
-            if (keycode == Input.Keys.LEFT) MainClass.openworldscreen.lwalk = false;
-            else if (keycode == Input.Keys.RIGHT) MainClass.openworldscreen.rwalk = false;
-            else if (keycode == Input.Keys.UP) MainClass.openworldscreen.uwalk = false;
-            else if (keycode == Input.Keys.DOWN) MainClass.openworldscreen.dwalk = false;
+        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openWorldScreen){
+            if (keycode == Input.Keys.LEFT) MainClass.openWorldScreen.lwalk = false;
+            else if (keycode == Input.Keys.RIGHT) MainClass.openWorldScreen.rwalk = false;
+            else if (keycode == Input.Keys.UP) MainClass.openWorldScreen.uwalk = false;
+            else if (keycode == Input.Keys.DOWN) MainClass.openWorldScreen.dwalk = false;
         }
 
         return false;

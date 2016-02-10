@@ -1,5 +1,6 @@
 package com.superschmalgames;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
@@ -18,8 +19,8 @@ public class OpenWorldScreen implements Screen {
     TiledMap tiledmap;
     TiledMapRenderer tiledmaprenderer;
     TiledMapTileLayer collision;
-    int movement =  0;
     Boolean lwalk = false, rwalk = false, uwalk = false, dwalk = false;
+    int location = 0;
     public Texture crosshair;
 
     public OpenWorldScreen() {
@@ -33,6 +34,7 @@ public class OpenWorldScreen implements Screen {
 
     }
 
+    //Handles movement around the map, allows for sideways motion
     public void move() {
         if(uwalk && !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION + 1).getTile().getProperties().containsKey("blocked"))
             camera.translate(0f,5f);
@@ -44,9 +46,37 @@ public class OpenWorldScreen implements Screen {
             camera.translate(5f,0f);
     }
 
+    //Handles the moving from open world into a selected dungeon
     public int select() {
         if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("level")) {
-            return(Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("level")));
+            location = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("level"));
+            switch(location) {
+                //Dorms
+                case 5 :
+                    MainClass.gameScreen.setMap(Utils.dorm, Utils.dorm_x, Utils.dorm_y);
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+                    break;
+                //Marston
+                case 4 :
+                    MainClass.gameScreen.setMap(Utils.marston, Utils.marston_x, Utils.marston_y);
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+                    break;
+                //NEB
+                case 3 :
+                    MainClass.gameScreen.setMap(Utils.neb, Utils.neb_x, Utils.neb_y);
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+                    break;
+                //CISE
+                case 2 :
+                    MainClass.gameScreen.setMap(Utils.cise, Utils.cise_x, Utils.cise_y);
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+                    break;
+                //Turlington
+                case 1 :
+                    break;
+                default:
+                    break;
+            }
         }
         return(0);
     }

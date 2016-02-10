@@ -16,7 +16,7 @@ public class MainClass extends Game {
 	public static InventoryScreen inventoryScreen;
 	public static HeroScreen heroScreen;
 	public static InputHandler inputHandler;
-	public static OpenWorldScreen openworldscreen;
+	public static OpenWorldScreen openWorldScreen;
 	
 	@Override
 	public void create () {
@@ -36,8 +36,13 @@ public class MainClass extends Game {
 		//Initialize all utility values.
 		Utils.initUtils();
 
-		//Set the screen as the title screen.
+		//Initialize screens (after testing creating and deleting
+		//screens when needed to minimize memory, discovered that
+		//there was a noticeable speed delay in loading screens)
+		openWorldScreen = new OpenWorldScreen();
 		titleScreen = new TitleScreen();
+
+		//Set the screen as the title screen.
 		this.setScreen(titleScreen);
 	}
 
@@ -62,6 +67,7 @@ public class MainClass extends Game {
 		if(titleScreen != null) titleScreen.dispose();
 		if(avatarScreen != null) avatarScreen.dispose();
 		if(gameScreen != null) gameScreen.dispose();
+		if(openWorldScreen != null) openWorldScreen.dispose();
 	}
 
 }

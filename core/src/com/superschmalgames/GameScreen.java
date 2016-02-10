@@ -131,8 +131,7 @@ public class GameScreen implements Screen {
                 }
                 else if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("exit")) {
                     uWalk = false;
-                    MainClass.openworldscreen = new OpenWorldScreen();
-                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openworldscreen);
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openWorldScreen);
                 }
             }
             else if(dWalk &&
@@ -149,8 +148,7 @@ public class GameScreen implements Screen {
                 }
                 else if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("exit")) {
                     dWalk = false;
-                    MainClass.openworldscreen = new OpenWorldScreen();
-                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openworldscreen);
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openWorldScreen);
                 }
             }
             else MainClass.hero.standAnimation();
