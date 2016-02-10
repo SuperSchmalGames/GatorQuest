@@ -19,6 +19,9 @@ public class InputHandler implements InputProcessor {
     //The index in the ArrayList of the item currently being hovered over
     int currentItemIndex;
 
+    //used by openworldscreen
+    int location;
+
     public InputHandler() {
         pushed = false;
         menuIndex = 0;
@@ -78,6 +81,7 @@ public class InputHandler implements InputProcessor {
                     ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
                     MainClass.avatarScreen.dispose();
                 }
+
             }
             else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen) {
                 //Take keyboard input from user for character movement. Character actually stays centered on screen, and the
@@ -290,18 +294,43 @@ public class InputHandler implements InputProcessor {
                 }
             }
 
-            return false;
+        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openWorldScreen) {
+            if (keycode == Input.Keys.UP) {
+                MainClass.openWorldScreen.uwalk = true;
+            }
+            else if (keycode == Input.Keys.DOWN) {
+                MainClass.openWorldScreen.dwalk = true;
+            }
+            else if (keycode == Input.Keys.LEFT) {
+                MainClass.openWorldScreen.lwalk = true;
+            }
+            else if (keycode == Input.Keys.RIGHT) {
+                MainClass.openWorldScreen.rwalk = true;
+            }
+            else if (keycode == Input.Keys.ENTER) {
+                MainClass.openWorldScreen.select();
+            }
+        }
+        return false;
 
     }
 
     @Override
     public boolean keyUp(int keycode) {
+
+        //Set the appropriate boolean value false to stop the walk animation when the button is lifted
         if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen) {
-            //Set the appropriate boolean value false to stop the walk animation when the button is lifted
             if (keycode == Input.Keys.LEFT) MainClass.gameScreen.lWalk = false;
-            if (keycode == Input.Keys.RIGHT) MainClass.gameScreen.rWalk = false;
-            if (keycode == Input.Keys.UP) MainClass.gameScreen.uWalk = false;
-            if (keycode == Input.Keys.DOWN) MainClass.gameScreen.dWalk = false;
+            else if (keycode == Input.Keys.RIGHT) MainClass.gameScreen.rWalk = false;
+            else if (keycode == Input.Keys.UP) MainClass.gameScreen.uWalk = false;
+            else if (keycode == Input.Keys.DOWN) MainClass.gameScreen.dWalk = false;
+        }
+
+        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openWorldScreen){
+            if (keycode == Input.Keys.LEFT) MainClass.openWorldScreen.lwalk = false;
+            else if (keycode == Input.Keys.RIGHT) MainClass.openWorldScreen.rwalk = false;
+            else if (keycode == Input.Keys.UP) MainClass.openWorldScreen.uwalk = false;
+            else if (keycode == Input.Keys.DOWN) MainClass.openWorldScreen.dwalk = false;
         }
 
         return false;
@@ -318,22 +347,14 @@ public class InputHandler implements InputProcessor {
     }
 
     @Override
-    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-        return false;
-    }
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) { return false; }
 
     @Override
-    public boolean touchDragged(int screenX, int screenY, int pointer) {
-        return false;
-    }
+    public boolean touchDragged(int screenX, int screenY, int pointer) { return false; }
 
     @Override
-    public boolean mouseMoved(int screenX, int screenY) {
-        return false;
-    }
+    public boolean mouseMoved(int screenX, int screenY) { return false; }
 
     @Override
-    public boolean scrolled(int amount) {
-        return false;
-    }
+    public boolean scrolled(int amount) { return false; }
 }

@@ -2,13 +2,16 @@ package com.superschmalgames;
 
 //This class is for the main screen we see when moving through the game world.
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.sun.javaws.Main;
 
 public class GameScreen implements Screen {
 
@@ -35,14 +38,15 @@ public class GameScreen implements Screen {
         camera = new OrthographicCamera();
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
 
-        //Initialize the map.
-        setMap();
+        //Initialize the map
+        setMap(Utils.dorm, Utils.start_x, Utils.start_y);
 
     }
 
-    private void setMap() {
-        tiledmaprenderer = new OrthogonalTiledMapRenderer(Utils.tiledmap);
-        collision = (TiledMapTileLayer) Utils.tiledmap.getLayers().get("Collision");
+    public void setMap(TiledMap tiledmap, int x, int y) {
+        camera.position.set(x,y,0);
+        tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
+        collision = (TiledMapTileLayer) tiledmap.getLayers().get("Collision");
         background[0] = 0;
         background[1] = 1;
         background[2] = 2;
@@ -92,14 +96,13 @@ public class GameScreen implements Screen {
     public void walk(float delta){
             if(lWalk &&
                !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-5)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-               !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-5)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
-            {
+               !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-5)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")) {
                 camera.translate(-5f, 0f);
                 MainClass.hero.walkAnimation('L', delta);
-                if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("door")) {
-                    int x = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("x"));
-                    int y = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("y"));
-                    camera.translate(x*Utils.MAP_RESOLUTION, y*Utils.MAP_RESOLUTION);
+                if (collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("door")) {
+                    int x = Integer.valueOf((String) collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().get("x"));
+                    int y = Integer.valueOf((String) collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().get("y"));
+                    camera.translate(x * Utils.MAP_RESOLUTION, y * Utils.MAP_RESOLUTION);
                 }
             }
             else if(rWalk &&
@@ -126,6 +129,10 @@ public class GameScreen implements Screen {
                     int y = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("y"));
                     camera.translate(x*Utils.MAP_RESOLUTION, y*Utils.MAP_RESOLUTION);
                 }
+                else if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("exit")) {
+                    uWalk = false;
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openWorldScreen);
+                }
             }
             else if(dWalk &&
                     !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2-5)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -138,6 +145,10 @@ public class GameScreen implements Screen {
                     int x = Integer.valueOf((String) collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().get("x"));
                     int y = Integer.valueOf((String) collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().get("y"));
                     camera.translate(x * Utils.MAP_RESOLUTION, y * Utils.MAP_RESOLUTION);
+                }
+                else if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("exit")) {
+                    dWalk = false;
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openWorldScreen);
                 }
             }
             else MainClass.hero.standAnimation();
