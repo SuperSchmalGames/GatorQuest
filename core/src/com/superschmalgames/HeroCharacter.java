@@ -14,6 +14,8 @@ public class HeroCharacter {
     public float yPos;
 
     HeroInventory inventory;
+    HeroMoves moves;
+
     ApparelItem heroApparel;
     EquipableItem heroEquipment;
 
@@ -59,6 +61,8 @@ public class HeroCharacter {
 
         //Create and initialize hero character's inventory.
         inventory = new HeroInventory();
+        //Create and initialize hero character's move list.
+        moves = new HeroMoves();
     }
 
     public void initAnimations(){

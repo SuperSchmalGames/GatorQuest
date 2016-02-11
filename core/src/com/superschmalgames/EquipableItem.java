@@ -30,6 +30,16 @@ public class EquipableItem implements InventoryItem {
         itemType = 'e';
     }
 
+    public EquipableItem(String name, Texture tex, String stat, double boost, int initQuant){
+        itemName = name;
+        texture = tex;
+        statBoosted = stat;
+        boostAmt = boost;
+        quantity += initQuant;
+        itemType = 'e';
+    }
+
+
     @Override
     public void addItem(HeroInventory inv) {
         for(InventoryItem i : inv.items){

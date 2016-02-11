@@ -54,15 +54,87 @@ public class HeroScreen implements Screen {
             Utils.font.draw(MainClass.batch,"Social Skills: "+MainClass.hero.social_buf+"/"+MainClass.hero.social, 50,255);
             Utils.font.draw(MainClass.batch,"Math: "+MainClass.hero.math_buf+"/"+MainClass.hero.math, 50, 190);
             Utils.font.draw(MainClass.batch,"Focus: "+MainClass.hero.focus_buf+"/"+MainClass.hero.focus, 50, 125);
+
+            if(MainClass.heroScreen.heroRow==0)
+                Utils.font_medsmall.draw(MainClass.batch,"Increases the effectiveness\n" +
+                                                         "of moves like Java Function\n" +
+                                                         "and Recursive Loop", 510,535);
+            else if(MainClass.heroScreen.heroRow==1)
+                Utils.font_medsmall.draw(MainClass.batch,"Increases the effectiveness\nof moves like Nodal Analysis\nand Karnaugh Map", 510,535);
+            else if(MainClass.heroScreen.heroRow==2)
+                Utils.font_medsmall.draw(MainClass.batch,"Increases the effectiveness\nof moves like Documentation\nand Commented Code", 510,535);
+            else if(MainClass.heroScreen.heroRow==3)
+                Utils.font_medsmall.draw(MainClass.batch,"Increases the effectiveness\nof moves like Soldering Skills\nand Karnaugh Map", 510,535);
+            else if(MainClass.heroScreen.heroRow==4)
+                Utils.font_medsmall.draw(MainClass.batch,"Increases the effectiveness\nof moves like Perf.\nPresentation", 510,535);
+            else if(MainClass.heroScreen.heroRow==5)
+                Utils.font_medsmall.draw(MainClass.batch,"Increases the effectiveness\nof moves like Double\nIntegration and Set Equal\nto 0", 510,535);
+            else if(MainClass.heroScreen.heroRow==6)
+                Utils.font_medsmall.draw(MainClass.batch,"Increases the effectiveness\nof moves like Soldering Skills\nand Code Testing", 510,535);
         }
-        else if(heroPanel == "Moves")
+        else if("Moves".equals(heroPanel))
         {
             MainClass.batch.draw(heroTex2, Utils.GAME_SCREEN_WIDTH / 2 - heroTex1.getWidth() / 2, 0);
+            int temp = 0;
+            int p2index = 0;
+            int p3index = 0;
+            if(MainClass.heroScreen.heroPage==0) {
+                for (int i = 0; i < 18; i++) {
+                    if(MainClass.hero.moves.attacks[i].obtained && temp < 8)
+                    {
+                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(),
+                                50, 515 - 65 * temp);
+                        temp +=1;
+                    }
+                }
+            }
+            else if(MainClass.heroScreen.heroPage==1) {
+                for (int i = 0; i < 18; i++) {
+                    if(MainClass.hero.moves.attacks[i].obtained && temp < 8)
+                    {
+                        if(temp == 7)
+                        {
+                            p2index = i+1;
+                        }
+                        temp +=1;
+                    }
+                }
+                for(int i= p2index; i<18; i++)
+                {
+                    if(MainClass.hero.moves.attacks[i].obtained && temp < 16)
+                    {
+                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(),
+                                50, 515 - 65 * (temp-8));
+                        temp +=1;
+                    }
+                }
+            }
+            else if(MainClass.heroScreen.heroPage==2) {
+                for (int i = 0; i < 18; i++) {
+                    if(MainClass.hero.moves.attacks[i].obtained && temp < 16)
+                    {
+                        if(temp == 15)
+                        {
+                            p2index = i+1;
+                        }
+                        temp +=1;
+                    }
+                }
+                for(int i= p2index; i<18; i++)
+                {
+                    if(MainClass.hero.moves.attacks[i].obtained && temp < 24)
+                    {
+                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(),
+                                50, 515 - 65 * (temp-16));
+                        temp +=1;
+                    }
+                }
+            }
         }
 
         MainClass.batch.draw(heroTex4, 35,480-65*heroRow);
 
-        if(MainClass.hero.heroApparel.getItemName() != "")
+        if(MainClass.hero.heroApparel.getItemName() != "" && "Statistics".equals(heroPanel))
         {
             MainClass.batch.draw(heroTex5, 505, 55, 94, 94);
             MainClass.batch.draw(MainClass.hero.heroApparel.getTexture(), 520, 70, 64, 64);
@@ -71,7 +143,7 @@ public class HeroScreen implements Screen {
                     MainClass.hero.heroApparel.getBoostAmt(), 610,140);
         }
 
-        if(MainClass.hero.heroEquipment.getItemName() != "")
+        if(MainClass.hero.heroEquipment.getItemName() != "" && "Statistics".equals(heroPanel))
         {
             MainClass.batch.draw(heroTex5, 505, 240, 94, 94);
             MainClass.batch.draw(MainClass.hero.heroEquipment.getTexture(), 520, 255, 64, 64);
@@ -80,6 +152,16 @@ public class HeroScreen implements Screen {
                     MainClass.hero.heroEquipment.getBoostAmt(), 610, 325);
         }
 
+        if("Moves".equals(heroPanel))
+        {
+            MainClass.batch.draw(heroTex5, 495, 215, 94, 94);
+            MainClass.batch.draw(MainClass.hero.moves.attacks[MainClass.hero.moves.getCurrentMove()].texture, 510, 230, 64, 64);
+            Utils.font_medsmall.draw(MainClass.batch,
+                    MainClass.hero.moves.attacks[MainClass.hero.moves.getCurrentMove()].description,
+                    595, 300);
+        }
+
+        Utils.testFont.draw(MainClass.batch, "heroRow " + MainClass.heroScreen.heroRow + " heroPage "+MainClass.heroScreen.heroPage, 0, Utils.GAME_SCREEN_HEIGHT - 75);
         MainClass.batch.end();
     }
 
