@@ -27,7 +27,7 @@ public class HeroInventory {
         tmpA.addItem(this);
         tmpA = new ApparelItem("Suit and Tie", "visuals/inv_items/apparel/suit_and_tie.png", "Social", 3.0, 1);
         tmpA.addItem(this);
-        tmpC = new ConsumableItem("Redbull","visuals/inv_items/consume/redbull.png","GPA",0.8,3,5,true);
+        tmpC = new ConsumableItem("Redbull","visuals/inv_items/consume/redbull.png","gpa",0.8,3,5,true);
         tmpC.addItem(this);
         tmpC = new ConsumableItem("Starbucks","visuals/inv_items/consume/starbucks.png","GPA",1.2,3,5,true);
         tmpC.addItem(this);
@@ -51,61 +51,13 @@ public class HeroInventory {
         tmpE.addItem(this);
     }
 
-    public void incItem(String itemName){
-        if("Biz Casual Attire".equals(itemName)){
-            items.get(0).setQuantity(items.get(0).getQuantity() +1);
-        }
-        if("Class Ring".equals(itemName)){
-            items.get(1).setQuantity(items.get(1).getQuantity() +1);
-        }
-        if("Gator Hat".equals(itemName)){
-            items.get(2).setQuantity(items.get(2).getQuantity() +1);
-        }
-        if("Graduation Gown".equals(itemName)){
-            items.get(3).setQuantity(items.get(3).getQuantity() +1);
-        }
-        if("Suit and Tie".equals(itemName)){
-            items.get(4).setQuantity(items.get(4).getQuantity() +1);
-        }
-        if("Redbull".equals(itemName)){
-            items.get(5).setQuantity(items.get(5).getQuantity() +1);
-        }
-        if("Starbucks".equals(itemName)){
-            items.get(6).setQuantity(items.get(6).getQuantity() +1);
-        }
-        if("AVR Dragon".equals(itemName)){
-            items.get(7).setQuantity(items.get(7).getQuantity() +1);
-        }
-        if("Cyclone III".equals(itemName)){
-            items.get(8).setQuantity(items.get(8).getQuantity() +1);
-        }
-        if("DAD Board".equals(itemName)){
-            items.get(9).setQuantity(items.get(9).getQuantity() +1);
-        }
-        if("Macbook Pro".equals(itemName)){
-            items.get(10).setQuantity(items.get(10).getQuantity() +1);
-        }
-        if("Nspire".equals(itemName)){
-            items.get(11).setQuantity(items.get(11).getQuantity() +1);
-        }
-        if("Soldering Iron".equals(itemName)){
-            items.get(12).setQuantity(items.get(12).getQuantity() +1);
-        }
-        if("TI-89".equals(itemName)){
-            items.get(13).setQuantity(items.get(13).getQuantity() +1);
-        }
-        if("USB Blaster".equals(itemName)){
-            items.get(14).setQuantity(items.get(15).getQuantity() +1);
-        }
-        if("Wire Kit".equals(itemName)){
-            items.get(15).setQuantity(items.get(15).getQuantity() +1);
-        }
+    public void incItem(Utils.INV_ITEMS itemName){
+
+        items.get(itemName.getNumVal()).setQuantity(items.get(itemName.getNumVal()).getQuantity() +1);
     }
 
-    public void useItem(String itemName, HeroCharacter hero){
-        if("Redbull".equals(itemName)){
-            hero.gpa = items.get(5).activateItem(hero.gpa);
-        }
+    public void useItem(Utils.INV_ITEMS itemName){
+        items.get(itemName.getNumVal()).activateItem();
     }
 
     public void removeEffect(String itemName, HeroCharacter hero){

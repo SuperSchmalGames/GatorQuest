@@ -112,9 +112,9 @@ public class InputHandler implements InputProcessor {
                 }
                 ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
                 else if (keycode == Input.Keys.R && !Utils.isPaused) {
-                    MainClass.hero.inventory.incItem("Redbull");
+                    MainClass.hero.inventory.incItem(Utils.INV_ITEMS.RED_BULL);
                 } else if ((keycode == Input.Keys.T && !Utils.isPaused)) {
-                    MainClass.hero.inventory.useItem("Redbull", MainClass.hero);
+                    MainClass.hero.inventory.useItem(Utils.INV_ITEMS.RED_BULL);  //was "Redbull"
                 } else if (keycode == Input.Keys.Y && !Utils.isPaused) {
                     MainClass.hero.inventory.removeEffect("Redbull", MainClass.hero);
                 } else if (keycode == Input.Keys.P) {
@@ -237,7 +237,7 @@ public class InputHandler implements InputProcessor {
                         MainClass.hero.heroApparel.setTexture(MainClass.hero.inventory.items.get(currentItemIndex).getTexture());
                         MainClass.hero.inventory.calc_stats();
                     } else {
-                        Utils.error.play();
+                        Utils.errTone.play();
                     }
                 } else if (keycode == Input.Keys.R) {
                     if ("Equipment".equals(MainClass.inventoryScreen.invPanel))
@@ -245,7 +245,7 @@ public class InputHandler implements InputProcessor {
                     else if ("Apparel".equals(MainClass.inventoryScreen.invPanel))
                         MainClass.hero.heroApparel.removeApparel();
                     else
-                        Utils.error.play();
+                        Utils.errTone.play();
                 }
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////

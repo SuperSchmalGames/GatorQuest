@@ -3,6 +3,7 @@ package com.superschmalgames;
 //Class to represent all items that can be consumed (not equipped) by the character.
 
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 
 public class ConsumableItem implements InventoryItem {
@@ -39,14 +40,20 @@ public class ConsumableItem implements InventoryItem {
     }
 
     @Override
-    public double activateItem(double boostedStat) {
+    public void activateItem() {
         //For usable items, apply the appropriate buff and reduce the inventory number by one.
         if(quantity > 0) {
-            quantity--;
-            return boostedStat + boostAmt;
+            try {
+                double temp1 = MainClass.hero.getClass().getField(statBoosted).getDouble(MainClass.hero) + boostAmt;
+                MainClass.hero.getClass().getField(statBoosted).setDouble(MainClass.hero, temp1);
+                quantity--;
+            } catch (Exception e) {
+                Gdx.app.log("test", "Something wrong here!");
+            }
         }
-        else Utils.error.play();
-        return boostedStat;
+        else{
+            Utils.errTone.play();
+        }
     }
 
     @Override

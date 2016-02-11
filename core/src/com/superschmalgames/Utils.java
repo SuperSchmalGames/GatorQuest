@@ -122,10 +122,38 @@ public class Utils {
     public static final Texture usb_blaster_tex = new Texture("visuals/inv_items/equip/usb_blaster.png");
     public static final Texture wire_kit_tex = new Texture("visuals/inv_items/equip/wire_kit.png");
 
+    //Enum of all items player can carry. IF ORDER OF THIS LIST CHANGES, IT WILL CHANGE LOGIC ELSEWHERE! BE CAREFUL!
+    public enum INV_ITEMS{
+        BIZ_CAS_ATTIRE (0),
+        CLASS_RING (1),
+        GATOR_HAT (2),
+        GRAD_GOWN (3),
+        SUIT_TIE (4),
+        RED_BULL (5),
+        STARBUCKS (6),
+        DRAGON (7),
+        CYCLONE (8),
+        DAD (9),
+        MACBOOK (10),
+        NSPIRE (11),
+        SOLDER (12),
+        TI89 (13),
+        USB_BLASTER (14),
+        WIRE_KIT (15);
+
+        private int numVal;
+
+        INV_ITEMS(int numVal){
+            this.numVal = numVal;
+        }
+
+        public int getNumVal(){
+            return numVal;
+        }
+    }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////INVENTORY ITEM SOUNDS///////////////////////////////////////////////////////////////
-    static final Sound error = Gdx.audio.newSound(Gdx.files.internal("sound/effects/error_tone.wav"));
     static final Sound rustling = Gdx.audio.newSound(Gdx.files.internal("sound/effects/rustling.mp3"));
     static final Sound page = Gdx.audio.newSound(Gdx.files.internal("sound/effects/page.wav"));
     static final Sound oob_error = Gdx.audio.newSound(Gdx.files.internal("sound/effects/oob_error.wav"));

@@ -42,9 +42,8 @@ public class ApparelItem implements InventoryItem {
     }
 
     @Override
-    public double activateItem(double boostedStat) {
+    public void activateItem() {
         //Equip the item and apply the appropriate boost.
-        return boostedStat + boostAmt;
     }
 
     @Override
