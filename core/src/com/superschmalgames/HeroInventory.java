@@ -27,7 +27,7 @@ public class HeroInventory {
         tmpA.addItem(this);
         tmpA = new ApparelItem("Suit and Tie", "visuals/inv_items/apparel/suit_and_tie.png", "Social", 3.0, 1);
         tmpA.addItem(this);
-        tmpC = new ConsumableItem("Redbull","visuals/inv_items/consume/redbull.png","gpa",0.8,3,5,true);
+        tmpC = new ConsumableItem("Redbull","visuals/inv_items/consume/redbull.png","GPA",0.8,3,5,true);
         tmpC.addItem(this);
         tmpC = new ConsumableItem("Starbucks","visuals/inv_items/consume/starbucks.png","GPA",1.2,3,5,true);
         tmpC.addItem(this);
@@ -52,20 +52,31 @@ public class HeroInventory {
     }
 
     public void incItem(Utils.INV_ITEMS itemName){
-
+        //Pass in the enum for the item being inc'ed, use it to get the appropriate index of arraylist, then inc the quantity of items at that index.
         items.get(itemName.getNumVal()).setQuantity(items.get(itemName.getNumVal()).getQuantity() +1);
     }
 
     public void useItem(Utils.INV_ITEMS itemName){
+        //Pass in enum for item being used/equipped, then find item's index and call activate() for that item.
         items.get(itemName.getNumVal()).activateItem();
     }
 
-    public void removeEffect(String itemName, HeroCharacter hero){
-        if("Redbull".equals(itemName)){
-            hero.gpa = items.get(5).disableItem(hero.gpa);
-        }
+    public void removeEffect(Utils.INV_ITEMS itemName){
+        //Pass in enum for item being unequipped, then find item's index and call disable() for that item.
+        items.get(itemName.getNumVal()).disableItem();
     }
 
+    //Method to return the number of items of a certain type in the character's inventory.
+    public int getNum(char type){
+        int tempNum = 0;
+        for(int i=0; i < items.size();i++){
+            if(items.get(i).getItemType()==type && items.get(i).getQuantity() > 0)
+                tempNum++;
+        }
+        return tempNum;
+    }
+
+    ////////////////////////////////////THE ABOVE METHOD LETS US GET RID OF THESE//////////////////////////////////////////////////
     public int getNumC(){
         int numC = 0;
         for(int i=0; i<items.size(); i++)
@@ -95,6 +106,7 @@ public class HeroInventory {
         }
         return numE;
     }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public void calc_stats(){
         MainClass.hero.software_buf = MainClass.hero.software;

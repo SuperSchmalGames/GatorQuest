@@ -48,7 +48,7 @@ public class ConsumableItem implements InventoryItem {
                 MainClass.hero.getClass().getField(statBoosted).setDouble(MainClass.hero, temp1);
                 quantity--;
             } catch (Exception e) {
-                Gdx.app.log("test", "Something wrong here!");
+                Gdx.app.log("test", "Something wrong in activateItem()!");
             }
         }
         else{
@@ -57,9 +57,14 @@ public class ConsumableItem implements InventoryItem {
     }
 
     @Override
-    public double disableItem(double boostedStat) {
+    public void disableItem() {
         //When the item's boost wears off, decrease the stat by appropriate amount.
-        return boostedStat - boostAmt;
+        try {
+            double temp1 = MainClass.hero.getClass().getField(statBoosted).getDouble(MainClass.hero) - boostAmt;
+            MainClass.hero.getClass().getField(statBoosted).setDouble(MainClass.hero, temp1);
+        } catch (Exception e) {
+            Gdx.app.log("test", "Something wrong in disableItem()!");
+        }
     }
 
     @Override
@@ -110,9 +115,4 @@ public class ConsumableItem implements InventoryItem {
         return texture;
     }
 
-    public void incItem(String itemName){
-        if(itemName.equals("Red Bull")){
-            MainClass.hero.inventory.items.get(5).setQuantity(MainClass.hero.inventory.items.get(5).getQuantity() +1);
-        }
-    }
 }

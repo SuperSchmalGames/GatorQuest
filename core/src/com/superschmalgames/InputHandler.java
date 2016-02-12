@@ -114,9 +114,9 @@ public class InputHandler implements InputProcessor {
                 else if (keycode == Input.Keys.R && !Utils.isPaused) {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.RED_BULL);
                 } else if ((keycode == Input.Keys.T && !Utils.isPaused)) {
-                    MainClass.hero.inventory.useItem(Utils.INV_ITEMS.RED_BULL);  //was "Redbull"
+                    MainClass.hero.inventory.useItem(Utils.INV_ITEMS.RED_BULL);
                 } else if (keycode == Input.Keys.Y && !Utils.isPaused) {
-                    MainClass.hero.inventory.removeEffect("Redbull", MainClass.hero);
+                    MainClass.hero.inventory.removeEffect(Utils.INV_ITEMS.RED_BULL);
                 } else if (keycode == Input.Keys.P) {
                     if (!Utils.isPaused) {
                         Utils.isPaused = true;

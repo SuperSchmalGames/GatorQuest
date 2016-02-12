@@ -47,9 +47,9 @@ public class EquipableItem implements InventoryItem {
     }
 
     @Override
-    public double disableItem(double boostedStat) {
+    public void disableItem() {
         //Unequip the item and remove the boost that was given.
-        return boostedStat - boostAmt;
+        //return boostedStat - boostAmt;
     }
 
     @Override

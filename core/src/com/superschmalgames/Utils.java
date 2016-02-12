@@ -49,7 +49,7 @@ public class Utils {
     public static final Sprite titleLogo = new Sprite(new Texture("visuals/title_screen/final_title_test.png"));
     public static final Sprite menuBorder = new Sprite(new Texture("visuals/title_screen/white_sq.png"));
     public static final Sprite menuIcon = new Sprite(new Texture("visuals/title_screen/white_tr.png"));
-    public static final String superSchmal = "Super Schmal Games";
+    public static final String superSchmal = "SUPER SCHMAL GAMES";
     public static final String presents = "presents";
     public static final String menuOptions = "New Game\nLoad Game\nExit Game";
     public static boolean menuReady;
@@ -122,7 +122,7 @@ public class Utils {
     public static final Texture usb_blaster_tex = new Texture("visuals/inv_items/equip/usb_blaster.png");
     public static final Texture wire_kit_tex = new Texture("visuals/inv_items/equip/wire_kit.png");
 
-    //Enum of all items player can carry. IF ORDER OF THIS LIST CHANGES, IT WILL CHANGE LOGIC ELSEWHERE! BE CAREFUL!
+    //Enum of all items player can carry.
     public enum INV_ITEMS{
         BIZ_CAS_ATTIRE (0),
         CLASS_RING (1),

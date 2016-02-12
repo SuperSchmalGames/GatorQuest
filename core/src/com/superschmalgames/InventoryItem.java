@@ -13,7 +13,7 @@ public interface InventoryItem {
 
     //Method to effectively unequip or "finish using" an item. It will remove the stat buff and decrease the item
     //quantity if necessary.
-    double disableItem(double boostedStat);
+    void disableItem();
 
     String getItemName();
     void setItemName(String itemName);

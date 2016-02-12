@@ -6,7 +6,7 @@ public class HeroCharacter {
 
     public int outfitNum;
     public String name;     //Our hero character's name. Can be set at start of game, and used in dialogue with NPC's.
-    public double gpa;       //Character's Grade Point Average. Acts as a "health meter." If reduced to zero, character loses fight.
+    public double GPA;       //Character's Grade Point Average. Acts as a "health meter." If reduced to zero, character loses fight.
 
     public float width;
     public float height;
@@ -44,7 +44,7 @@ public class HeroCharacter {
     Animator heroAnim;
 
     public HeroCharacter(){
-        gpa = 4.0;
+        GPA = 4.0;
         software = 1.0;
         hardware = 1.0;
         readWrite = 1.0;
