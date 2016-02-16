@@ -14,10 +14,6 @@ public class InventoryScreen implements Screen {
     //The camera through which we "see" the game world.
     OrthographicCamera camera;
 
-    GlyphLayout layout1 = new GlyphLayout();
-    GlyphLayout layout2 = new GlyphLayout();
-    String GatorQuest = "Inventory";
-    String PressSpace = "Press I to return to game";
     String invPanel;
     int invPage;
     int invRow;
@@ -52,20 +48,6 @@ public class InventoryScreen implements Screen {
         MainClass.batch.begin();
 
         MainClass.inputHandler.currentItemIndex=MainClass.hero.inventory.getCurrentItemIndex();
-
-        //Utils.font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
-        layout1.setText(Utils.font, GatorQuest);
-        layout2.setText(Utils.font, PressSpace);
-        Utils.font.draw(MainClass.batch,
-                GatorQuest,
-                Gdx.graphics.getWidth()/2 - layout1.width/2,
-                Gdx.graphics.getHeight()/2 + layout1.height/2+50
-        );
-        Utils.font.draw(MainClass.batch,
-                PressSpace,
-                Gdx.graphics.getWidth()/2 - layout2.width/2,
-                Gdx.graphics.getHeight()/2 + layout2.height/2-50
-        );
 
         if(invPanel.equals("Consumable")) {
             MainClass.batch.draw(invTex1, Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2, 0);
@@ -107,7 +89,7 @@ public class InventoryScreen implements Screen {
 
             int populatedConsumables = 0;
             int invIndex = 0;
-            if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNumC() > 0)
+            if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNum('c') > 0)
             {
                 MainClass.batch.draw(invTex5, 505, 435, 94, 94);
 
@@ -129,7 +111,7 @@ public class InventoryScreen implements Screen {
                         populatedConsumables += 1;
                     invIndex += 1;
                 }
-                if (MainClass.hero.inventory.getNumC() > 0) {
+                if (MainClass.hero.inventory.getNum('c') > 0) {
                     MainClass.batch.draw(invTex5, 505, 435, 94, 94);
                     MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
                     Utils.font_small.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
@@ -178,7 +160,7 @@ public class InventoryScreen implements Screen {
 
             int populatedEquipments = 0;
             int invIndex = 0;
-            if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNumE() > 0)
+            if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNum('c') > 0)
             {
                 MainClass.batch.draw(invTex5, 505, 435, 94, 94);
 
@@ -200,7 +182,7 @@ public class InventoryScreen implements Screen {
                         populatedEquipments += 1;
                     invIndex += 1;
                 }
-                if (MainClass.hero.inventory.getNumE() > 0) {
+                if (MainClass.hero.inventory.getNum('e') > 0) {
                     MainClass.batch.draw(invTex5, 505, 435, 94, 94);
                     MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
                     Utils.font_small.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
@@ -249,7 +231,7 @@ public class InventoryScreen implements Screen {
 
             int populatedApparels = 0;
             int invIndex = 0;
-            if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNumA() > 0)
+            if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNum('a') > 0)
             {
                 MainClass.batch.draw(invTex5, 505, 435, 94, 94);
 
@@ -271,7 +253,7 @@ public class InventoryScreen implements Screen {
                         populatedApparels += 1;
                     invIndex += 1;
                 }
-                if (MainClass.hero.inventory.getNumA() > 0) {
+                if (MainClass.hero.inventory.getNum('a') > 0) {
                     MainClass.batch.draw(invTex5, 505, 435, 94, 94);
                     MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
                     Utils.font_small.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
@@ -284,11 +266,11 @@ public class InventoryScreen implements Screen {
         MainClass.batch.draw(invTex4, Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+35,480-65*invRow);
 
 
-        if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNumC() == 0)
+        if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNum('c') == 0)
             Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
-        else if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNumC() == 0)
+        else if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNum('c') == 0)
             Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
-        else if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNumC() == 0)
+        else if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNum('c') == 0)
             Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
 
         if(!"".equals(MainClass.hero.heroApparel.getItemName()))
@@ -300,8 +282,10 @@ public class InventoryScreen implements Screen {
                     MainClass.hero.heroApparel.getBoostAmt(), 610,140);
         }
 
-        if(!"".equals(MainClass.hero.heroEquipment.getItemName()))
+        //If we currently have an item equipped.
+        if(MainClass.hero.heroEquipment != null)
         {
+            //Draw the sprite associated with the equipped item and print its description.
             MainClass.batch.draw(invTex5, 505, 240, 94, 94);
             MainClass.batch.draw(MainClass.hero.heroEquipment.getTexture(), 520, 255, 64, 64);
             Utils.font_small.draw(MainClass.batch, MainClass.hero.heroEquipment.getItemName() +

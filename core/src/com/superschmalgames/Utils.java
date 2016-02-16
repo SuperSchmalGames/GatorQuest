@@ -150,6 +150,13 @@ public class Utils {
         public int getNumVal(){
             return numVal;
         }
+
+        public static INV_ITEMS getItem(int itemIndex) {
+            for (INV_ITEMS i : INV_ITEMS.values()) {
+                if (i.numVal == itemIndex) return i;
+            }
+            return null;
+        }
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

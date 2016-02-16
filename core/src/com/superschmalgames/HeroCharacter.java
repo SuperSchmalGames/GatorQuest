@@ -13,28 +13,29 @@ public class HeroCharacter {
     public float xPos;
     public float yPos;
 
+    //The character's inventory of items, and which item is currently being worn (apparel) and held (equipment)
     HeroInventory inventory;
     ApparelItem heroApparel;
     EquipableItem heroEquipment;
 
     //Character stats.
-    public double software;
-    public double hardware;
-    public double readWrite;
-    public double endurance;
-    public double social;
-    public double math;
-    public double focus;
-    private final double STAT_CAP = 10.0;   //Cap all stats at 10.0
+    public double Software;
+    public double Hardware;
+    public double Writing;
+    public double Endurance;
+    public double Social;
+    public double Math;
+    public double Focus;
+    private final double STAT_CAP = 10.0;   //Cap all stats at 10.0 (but may exceed 10 through equipment buffs)
 
     //Character Stats including Apparel/Equipment
-    public double software_buf;
-    public double hardware_buf;
-    public double readWrite_buf;
-    public double endurance_buf;
-    public double social_buf;
-    public double math_buf;
-    public double focus_buf;
+    public double Software_buf;
+    public double Hardware_buf;
+    public double Writing_buf;
+    public double Endurance_buf;
+    public double Social_buf;
+    public double Math_buf;
+    public double Focus_buf;
 
     //Animators that take care of walking in each direction.
     Animator leftWalk, rightWalk, upWalk, downWalk;
@@ -45,17 +46,25 @@ public class HeroCharacter {
 
     public HeroCharacter(){
         GPA = 4.0;
-        software = 1.0;
-        hardware = 1.0;
-        readWrite = 1.0;
-        endurance = 1.0;
-        social = 1.0;
-        math = 1.0;
-        focus = 1.0;
+        Software = 1.0;
+        Hardware = 1.0;
+        Writing = 1.0;
+        Endurance = 1.0;
+        Social = 1.0;
+        Math = 1.0;
+        Focus = 1.0;
+
+        Software_buf = 1.0;
+        Hardware_buf = 1.0;
+        Writing_buf = 1.0;
+        Endurance_buf = 1.0;
+        Social_buf = 1.0;
+        Math_buf = 1.0;
+        Focus_buf = 1.0;
 
         //These will represent the actual equipped slots that the hero character has
         heroApparel = new ApparelItem();
-       heroEquipment = new EquipableItem();
+        //heroEquipment = new EquipableItem();
 
         //Create and initialize hero character's inventory.
         inventory = new HeroInventory();
