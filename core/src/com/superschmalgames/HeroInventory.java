@@ -69,8 +69,8 @@ public class HeroInventory {
     //Method to return the number of items of a certain type in the character's inventory.
     public int getNum(char type){
         int tempNum = 0;
-        for(int i=0; i < items.size();i++){
-            if(items.get(i).getItemType()==type && items.get(i).getQuantity() > 0)
+        for(InventoryItem i : items){
+            if(i.getItemType()==type && i.getQuantity() > 0)
                 tempNum++;
         }
         return tempNum;
