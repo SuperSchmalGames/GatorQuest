@@ -273,8 +273,10 @@ public class InventoryScreen implements Screen {
         else if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNum('c') == 0)
             Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
 
-        if(!"".equals(MainClass.hero.heroApparel.getItemName()))
+        //If we currently have apparel equipped.
+        if(MainClass.hero.heroApparel != null)
         {
+            //Draw the sprite associated with the apparel item and print its description.
             MainClass.batch.draw(invTex5, 505, 55, 94, 94);
             MainClass.batch.draw(MainClass.hero.heroApparel.getTexture(), 520, 70, 64, 64);
             Utils.font_small.draw(MainClass.batch, MainClass.hero.heroApparel.getItemName() +

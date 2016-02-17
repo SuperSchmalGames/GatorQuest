@@ -44,6 +44,7 @@ public class HeroScreen implements Screen {
         MainClass.batch.begin();
 
         if("Statistics".equals(heroPanel)) {
+            //Render the list of our character's stats.
             MainClass.batch.draw(heroTex1, Utils.GAME_SCREEN_WIDTH / 2 - heroTex1.getWidth() / 2, 0);
             Utils.font.draw(MainClass.batch,"Software: "+MainClass.hero.Software_buf+"/"+MainClass.hero.Software, 50,515);
             Utils.font.draw(MainClass.batch,"Hardware: "+MainClass.hero.Hardware_buf+"/"+MainClass.hero.Hardware, 50,450);
@@ -60,8 +61,10 @@ public class HeroScreen implements Screen {
 
         MainClass.batch.draw(heroTex4, 35,480-65*heroRow);
 
-        if(!"".equals(MainClass.hero.heroApparel.getItemName()))
+        //If we currently have apparel equipped.
+        if(MainClass.hero.heroApparel != null)
         {
+            //Draw the sprite associated with our currently worn apparel item and print its description.
             MainClass.batch.draw(heroTex5, 505, 55, 94, 94);
             MainClass.batch.draw(MainClass.hero.heroApparel.getTexture(), 520, 70, 64, 64);
             Utils.font_small.draw(MainClass.batch, MainClass.hero.heroApparel.getItemName() +

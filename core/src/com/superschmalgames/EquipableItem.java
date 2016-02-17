@@ -45,7 +45,7 @@ public class EquipableItem implements InventoryItem {
             double temp1 = MainClass.hero.getClass().getField(statBoosted+"_buf").getDouble(MainClass.hero) + boostAmt;
             MainClass.hero.getClass().getField(statBoosted+"_buf").setDouble(MainClass.hero, temp1);
         } catch (Exception e) {
-            Gdx.app.log("test", "Something wrong in activateItem()!");
+            Gdx.app.log("test", "Something wrong in equipable activateItem()!");
         }
     }
 
@@ -57,7 +57,7 @@ public class EquipableItem implements InventoryItem {
             double temp1 = MainClass.hero.getClass().getField(statBoosted+"_buf").getDouble(MainClass.hero) - boostAmt;
             MainClass.hero.getClass().getField(statBoosted+"_buf").setDouble(MainClass.hero, temp1);
         } catch (Exception e) {
-            Gdx.app.log("test", "Something wrong in disableItem()!");
+            Gdx.app.log("test", "Something wrong in equipable disableItem()!");
         }
 
         //Item is no longer equipped, so set character's equipment to null.

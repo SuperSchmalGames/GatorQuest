@@ -223,30 +223,32 @@ public class InputHandler implements InputProcessor {
                     }
                 } else if (keycode == Input.Keys.E) {
                     if ("Equipment".equals(MainClass.inventoryScreen.invPanel) && MainClass.hero.inventory.getNum('e') > 0) {
-                        //First we unequip and item that was previously equipped.
+                        //First we unequip the item that was previously equipped.
                         if(MainClass.hero.heroEquipment != null)
                             MainClass.hero.heroEquipment.disableItem();
 
                         //Get the enum item associated with our current index, then call method to equip that item.
                         MainClass.hero.inventory.useItem(Utils.INV_ITEMS.getItem(currentItemIndex));
-
                     } else if ("Apparel".equals(MainClass.inventoryScreen.invPanel) && MainClass.hero.inventory.getNum('a') > 0) {
-                        MainClass.hero.heroApparel.removeApparel();
-                        MainClass.hero.heroApparel.setItemName(MainClass.hero.inventory.items.get(currentItemIndex).getItemName());
-                        MainClass.hero.heroApparel.setStatBoosted(MainClass.hero.inventory.items.get(currentItemIndex).getStatBoosted());
-                        MainClass.hero.heroApparel.setBoostAmt(MainClass.hero.inventory.items.get(currentItemIndex).getBoostAmt());
-                        MainClass.hero.heroApparel.setTexture(MainClass.hero.inventory.items.get(currentItemIndex).getTexture());
-                        MainClass.hero.inventory.calc_stats();
+                        //First we unequip the apparel that was previously equipped.
+                        if(MainClass.hero.heroApparel != null)
+                            MainClass.hero.heroApparel.disableItem();
+
+                        //Get the enum item associated with our current index, then call method to equip that item.
+                        MainClass.hero.inventory.useItem(Utils.INV_ITEMS.getItem(currentItemIndex));
                     } else {
                         Utils.errTone.play();
                     }
                 } else if (keycode == Input.Keys.R) {
                     if ("Equipment".equals(MainClass.inventoryScreen.invPanel)) {
+                        //Unequip the currently equipped item.
                         if (MainClass.hero.heroEquipment != null)
                             MainClass.hero.heroEquipment.disableItem();
                     }
                     else if ("Apparel".equals(MainClass.inventoryScreen.invPanel)) {    //APPLY CHANGES HERE!!!
-                        MainClass.hero.heroApparel.removeApparel();
+                        //Unequip the currently equipped apparel.
+                        if (MainClass.hero.heroApparel != null)
+                            MainClass.hero.heroApparel.disableItem();
                     }
                     else
                         Utils.errTone.play();

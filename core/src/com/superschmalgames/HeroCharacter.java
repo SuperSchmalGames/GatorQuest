@@ -62,10 +62,6 @@ public class HeroCharacter {
         Math_buf = 1.0;
         Focus_buf = 1.0;
 
-        //These will represent the actual equipped slots that the hero character has
-        heroApparel = new ApparelItem();
-        //heroEquipment = new EquipableItem();
-
         //Create and initialize hero character's inventory.
         inventory = new HeroInventory();
     }
