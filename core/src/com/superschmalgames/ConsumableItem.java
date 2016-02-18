@@ -27,6 +27,17 @@ public class ConsumableItem implements InventoryItem {
         itemType = 'c';
     }
 
+    public ConsumableItem(String name, Texture tex, String stat, double boost, int dur, int initQuant, boolean isTemporary){
+        itemName = name;
+        texture = tex;
+        statBoosted = stat;
+        boostAmt = boost;
+        boostDuration = dur;
+        quantity += initQuant;
+        isTemp = isTemporary;
+        itemType = 'c';
+    }
+
     @Override
     public void addItem(HeroInventory inv) {
         for(InventoryItem i : inv.items){

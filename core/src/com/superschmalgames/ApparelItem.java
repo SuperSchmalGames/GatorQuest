@@ -30,6 +30,15 @@ public class ApparelItem implements InventoryItem {
         itemType = 'a';
     }
 
+    public ApparelItem(String name, Texture tex, String stat, double boost, int initQuant){
+        itemName = name;
+        texture = tex;
+        statBoosted = stat;
+        boostAmt = boost;
+        quantity += initQuant;
+        itemType = 'a';
+    }
+
     @Override
     public void addItem(HeroInventory inv) {
         for(InventoryItem i : inv.items){

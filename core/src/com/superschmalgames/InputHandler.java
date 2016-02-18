@@ -252,16 +252,31 @@ public class InputHandler implements InputProcessor {
             //THIS IS THE CODE FOR THE HERO SCREEN
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.heroScreen) {
-                if (keycode == Input.Keys.LEFT || keycode == Input.Keys.RIGHT) {
+                if (keycode == Input.Keys.LEFT) {
                     Utils.page.play();
                     MainClass.heroScreen.heroRow = 0;
                     MainClass.heroScreen.heroPage = 0;
                     if ("Statistics".equals(MainClass.heroScreen.heroPanel)) {
                         MainClass.heroScreen.heroPanel = "Moves";
                     } else if ("Moves".equals(MainClass.heroScreen.heroPanel)) {
+                        MainClass.heroScreen.heroPanel = "Degree Audit";
+                    } else if ("Degree Audit".equals(MainClass.heroScreen.heroPanel)) {
                         MainClass.heroScreen.heroPanel = "Statistics";
                     }
-                } else if (keycode == Input.Keys.H) {
+                }
+                else if (keycode == Input.Keys.RIGHT) {
+                    Utils.page.play();
+                    MainClass.heroScreen.heroRow = 0;
+                    MainClass.heroScreen.heroPage = 0;
+                    if ("Statistics".equals(MainClass.heroScreen.heroPanel)) {
+                        MainClass.heroScreen.heroPanel = "Degree Audit";
+                    } else if ("Moves".equals(MainClass.heroScreen.heroPanel)) {
+                        MainClass.heroScreen.heroPanel = "Statistics";
+                    } else if ("Degree Audit".equals(MainClass.heroScreen.heroPanel)) {
+                        MainClass.heroScreen.heroPanel = "Moves";
+                    }
+                }
+                else if (keycode == Input.Keys.H) {
                     //Play the sound effect when player pushes the button.
                     Utils.inventoryScreenSelectionSound.play();
                     //Set the gamescreen to be the inventory game screen.
@@ -277,7 +292,9 @@ public class InputHandler implements InputProcessor {
                             MainClass.heroScreen.heroRow = 0;
                         } else
                             MainClass.heroScreen.heroRow += 1;
-                    } else if (MainClass.heroScreen.heroPage * 8 + MainClass.heroScreen.heroRow + 1 < 20 && "Moves".equals(MainClass.heroScreen.heroPanel)) {
+                    }
+                    else if (MainClass.heroScreen.heroPage * 8 + MainClass.heroScreen.heroRow + 1 < 18
+                            && MainClass.heroScreen.heroPanel == "Moves") {
                         if ((MainClass.heroScreen.heroRow + 1) % 8 == 0) {
                             MainClass.heroScreen.heroPage += 1;
                             MainClass.heroScreen.heroRow = 0;

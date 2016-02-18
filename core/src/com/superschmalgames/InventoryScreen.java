@@ -22,19 +22,11 @@ public class InventoryScreen implements Screen {
     int invPage;
     int invRow;
 
-    Texture invTex1, invTex2, invTex3, invTex4, invTex5;
-
     public InventoryScreen() {
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
-
-        invTex1 = new Texture("visuals/Menus/Consumable Item Menu.png");
-        invTex2 = new Texture("visuals/Menus/Equipment Item Menu.png");
-        invTex3 = new Texture("visuals/Menus/Apparel Item Menu.png");
-        invTex4 = new Texture("visuals/Menus/Selected Item Box.png");
-        invTex5 = new Texture("visuals/Menus/white_sq.png");
 
     }
 
@@ -68,7 +60,7 @@ public class InventoryScreen implements Screen {
         );
 
         if(invPanel.equals("Consumable")) {
-            MainClass.batch.draw(invTex1, Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2, 0);
+            MainClass.batch.draw(Utils.inv_consumable_tex, 0, 0);
             int temp = 0;
             if(invPage == 0) {
                 for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
@@ -77,7 +69,7 @@ public class InventoryScreen implements Screen {
                             MainClass.hero.inventory.items.get(i).getItemType() == 'c') {
                         Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
                                         + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
-                                Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2 + 50, 515 - 65 * temp);
+                                        50, 515 - 65 * temp);
                         temp += 1;
                     }
                 }
@@ -99,8 +91,7 @@ public class InventoryScreen implements Screen {
                             && MainClass.hero.inventory.items.get(i).getQuantity() > 0
                             && MainClass.hero.inventory.items.get(i).getItemType() == 'c') {
                         Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
-                                        + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
-                                Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2 + 50, 515 - 65 * invRow);
+                                        + " x" + MainClass.hero.inventory.items.get(i).getQuantity(), 50, 515 - 65 * invRow);
                     }
                 }
             }
@@ -109,7 +100,7 @@ public class InventoryScreen implements Screen {
             int invIndex = 0;
             if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNumC() > 0)
             {
-                MainClass.batch.draw(invTex5, 505, 435, 94, 94);
+                MainClass.batch.draw(Utils.white_sq_tex, 505, 435, 94, 94);
 
                 while (MainClass.hero.inventory.items.get(invIndex).getItemType() != 'c' ||
                         MainClass.hero.inventory.items.get(invIndex).getQuantity() == 0) {
@@ -130,7 +121,7 @@ public class InventoryScreen implements Screen {
                     invIndex += 1;
                 }
                 if (MainClass.hero.inventory.getNumC() > 0) {
-                    MainClass.batch.draw(invTex5, 505, 435, 94, 94);
+                    MainClass.batch.draw(Utils.white_sq_tex, 505, 435, 94, 94);
                     MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
                     Utils.font_small.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
                             "\nBoosts "+ MainClass.hero.inventory.items.get(invIndex).getStatBoosted()+" by "+
@@ -139,7 +130,7 @@ public class InventoryScreen implements Screen {
             }
         }
         else if("Equipment".equals(invPanel)) {
-            MainClass.batch.draw(invTex2, Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2, 0);
+            MainClass.batch.draw(Utils.inv_equip_tex, 0, 0);
             int temp = 0;
             if(invPage == 0) {
                 for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
@@ -148,7 +139,7 @@ public class InventoryScreen implements Screen {
                             MainClass.hero.inventory.items.get(i).getItemType() == 'e') {
                         Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
                                         + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
-                                Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2 + 50, 515 - 65 * temp);
+                                50, 515 - 65 * temp);
                         temp += 1;
                     }
                 }
@@ -171,7 +162,7 @@ public class InventoryScreen implements Screen {
                             && MainClass.hero.inventory.items.get(i).getItemType() == 'e') {
                         Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
                                         + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
-                                Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2 + 50, 515 - 65 * invRow);
+                               50, 515 - 65 * invRow);
                     }
                 }
             }
@@ -180,7 +171,7 @@ public class InventoryScreen implements Screen {
             int invIndex = 0;
             if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNumE() > 0)
             {
-                MainClass.batch.draw(invTex5, 505, 435, 94, 94);
+                MainClass.batch.draw(Utils.white_sq_tex, 505, 435, 94, 94);
 
                 while (MainClass.hero.inventory.items.get(invIndex).getItemType() != 'e' ||
                         MainClass.hero.inventory.items.get(invIndex).getQuantity() == 0) {
@@ -201,7 +192,7 @@ public class InventoryScreen implements Screen {
                     invIndex += 1;
                 }
                 if (MainClass.hero.inventory.getNumE() > 0) {
-                    MainClass.batch.draw(invTex5, 505, 435, 94, 94);
+                    MainClass.batch.draw(Utils.white_sq_tex, 505, 435, 94, 94);
                     MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
                     Utils.font_small.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
                             "\nBoosts "+ MainClass.hero.inventory.items.get(invIndex).getStatBoosted()+" by "+
@@ -210,7 +201,7 @@ public class InventoryScreen implements Screen {
             }
         }
         else if("Apparel".equals(invPanel)) {
-            MainClass.batch.draw(invTex3, Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2, 0);
+            MainClass.batch.draw(Utils.inv_apparel_tex, 0, 0);
             int temp = 0;
             if(invPage == 0) {
                 for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
@@ -219,7 +210,7 @@ public class InventoryScreen implements Screen {
                             MainClass.hero.inventory.items.get(i).getItemType() == 'a') {
                         Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
                                         + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
-                                Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2 + 50, 515 - 65 * temp);
+                                50, 515 - 65 * temp);
                         temp += 1;
                     }
                 }
@@ -242,7 +233,7 @@ public class InventoryScreen implements Screen {
                             && MainClass.hero.inventory.items.get(i).getItemType() == 'a') {
                         Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
                                         + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
-                                Utils.GAME_SCREEN_WIDTH / 2 - invTex1.getWidth() / 2 + 50, 515 - 65 * invRow);
+                                50, 515 - 65 * invRow);
                     }
                 }
             }
@@ -251,7 +242,7 @@ public class InventoryScreen implements Screen {
             int invIndex = 0;
             if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNumA() > 0)
             {
-                MainClass.batch.draw(invTex5, 505, 435, 94, 94);
+                MainClass.batch.draw(Utils.white_sq_tex, 505, 435, 94, 94);
 
                 while (MainClass.hero.inventory.items.get(invIndex).getItemType() != 'a' ||
                         MainClass.hero.inventory.items.get(invIndex).getQuantity() == 0) {
@@ -272,7 +263,7 @@ public class InventoryScreen implements Screen {
                     invIndex += 1;
                 }
                 if (MainClass.hero.inventory.getNumA() > 0) {
-                    MainClass.batch.draw(invTex5, 505, 435, 94, 94);
+                    MainClass.batch.draw(Utils.white_sq_tex, 505, 435, 94, 94);
                     MainClass.batch.draw(MainClass.hero.inventory.items.get(invIndex).getTexture(), 520, 450, 64, 64);
                     Utils.font_small.draw(MainClass.batch, MainClass.hero.inventory.items.get(invIndex).getItemName() +
                             "\nBoosts "+ MainClass.hero.inventory.items.get(invIndex).getStatBoosted()+" by "+
@@ -281,19 +272,18 @@ public class InventoryScreen implements Screen {
             }
         }
 
-        MainClass.batch.draw(invTex4, Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+35,480-65*invRow);
+        MainClass.batch.draw(Utils.sel_item_tex, 35,480-65*invRow);
 
-
-        if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNumC() == 0)
-            Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
-        else if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNumC() == 0)
-            Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
-        else if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNumC() == 0)
-            Utils.font.draw(MainClass.batch, "No items of this type!", Utils.GAME_SCREEN_WIDTH/2-invTex1.getWidth()/2+50,515);
+        if (invPanel.equals("Consumable") && MainClass.hero.inventory.getNumC() == 0)
+            Utils.font.draw(MainClass.batch, "No items of this type!", 50,515);
+        else if (invPanel.equals("Consumable") && MainClass.hero.inventory.getNumC() == 0)
+            Utils.font.draw(MainClass.batch, "No items of this type!", 50,515);
+        else if (invPanel.equals("Consumable") && MainClass.hero.inventory.getNumC() == 0)
+            Utils.font.draw(MainClass.batch, "No items of this type!", 50,515);
 
         if(!"".equals(MainClass.hero.heroApparel.getItemName()))
         {
-            MainClass.batch.draw(invTex5, 505, 55, 94, 94);
+            MainClass.batch.draw(Utils.white_sq_tex, 505, 55, 94, 94);
             MainClass.batch.draw(MainClass.hero.heroApparel.getTexture(), 520, 70, 64, 64);
             Utils.font_small.draw(MainClass.batch, MainClass.hero.heroApparel.getItemName() +
                     "\nBoosts "+ MainClass.hero.heroApparel.getStatBoosted()+" by "+
@@ -302,7 +292,7 @@ public class InventoryScreen implements Screen {
 
         if(!"".equals(MainClass.hero.heroEquipment.getItemName()))
         {
-            MainClass.batch.draw(invTex5, 505, 240, 94, 94);
+            MainClass.batch.draw(Utils.white_sq_tex, 505, 240, 94, 94);
             MainClass.batch.draw(MainClass.hero.heroEquipment.getTexture(), 520, 255, 64, 64);
             Utils.font_small.draw(MainClass.batch, MainClass.hero.heroEquipment.getItemName() +
                     "\nBoosts "+ MainClass.hero.heroEquipment.getStatBoosted()+" by "+

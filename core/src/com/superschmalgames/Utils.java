@@ -23,6 +23,7 @@ public class Utils {
     public static final BitmapFont font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
     public static final BitmapFont font_large = new BitmapFont(Gdx.files.internal("RosesAreFF0_large.fnt"));
     public static final BitmapFont font_small = new BitmapFont(Gdx.files.internal("RosesAreFF0_small.fnt"));
+    public static final BitmapFont font_medsmall = new BitmapFont(Gdx.files.internal("RosesAreFF0_medsmall.fnt"));
     public static final BitmapFont testFont = new BitmapFont();
     public static boolean isPaused;
     public static final FPSLogger logger = new FPSLogger();
@@ -89,17 +90,13 @@ public class Utils {
     public static boolean invOpen;
     public static boolean heroOpen;
 
-    //Offsets in the ArrayList of Items for the categories (Apparel, Consumables, Equipment)
-    public static final int apparelStart = 0;
-    public static final int apparelEnd = 4;
-    public static final int consumableStart = 5;
-    public static final int consumableEnd = 6;
-    public static final int equipmentStart = 7;
-    public static final int equipmentEnd = 15;
-
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////INVENTORY ITEM TEXTURES///////////////////////////////////////////////////////////////
+    public static final Texture inv_consumable_tex = new Texture("visuals/Menus/Consumable Item Menu.png");
+    public static final Texture inv_equip_tex = new Texture("visuals/Menus/Equipment Item Menu.png");
+    public static final Texture inv_apparel_tex = new Texture("visuals/Menus/Apparel Item Menu.png");
+
     //Consumable
     public static final Texture redbull_tex = new Texture("visuals/inv_items/consume/redbull.png");
     public static final Texture starbucks_tex = new Texture("visuals/inv_items/consume/starbucks.png");
@@ -129,6 +126,38 @@ public class Utils {
     static final Sound rustling = Gdx.audio.newSound(Gdx.files.internal("sound/effects/rustling.mp3"));
     static final Sound page = Gdx.audio.newSound(Gdx.files.internal("sound/effects/page.wav"));
     static final Sound oob_error = Gdx.audio.newSound(Gdx.files.internal("sound/effects/oob_error.wav"));
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////HERO MOVE TEXTURES///////////////////////////////////////////////////////////////
+    public static final Texture boolean_logic_tex = new Texture("visuals/hero_moves/boolean_logic.png");
+    public static final Texture code_testing_tex = new Texture("visuals/hero_moves/code_testing.png");
+    public static final Texture commented_code_tex = new Texture("visuals/hero_moves/commented_code.png");
+    public static final Texture cpp_skills_tex = new Texture("visuals/hero_moves/cpp_skills.png");
+    public static final Texture documentation_tex = new Texture("visuals/hero_moves/documentation.png");
+    public static final Texture double_integration_tex = new Texture("visuals/hero_moves/double_integration.png");
+    public static final Texture extra_credit_tex = new Texture("visuals/hero_moves/extra_credit.png");
+    public static final Texture f2_solve_tex = new Texture("visuals/hero_moves/f2_solve.png");
+    public static final Texture f_lines_matlab_code_tex = new Texture("visuals/hero_moves/f_lines_matlab_code.png");
+    public static final Texture java_function_tex = new Texture("visuals/hero_moves/java_function.png");
+    public static final Texture karnaugh_map_tex = new Texture("visuals/hero_moves/karnaugh_map.png");
+    public static final Texture nodal_analysis_tex = new Texture("visuals/hero_moves/nodal_analysis.png");
+    public static final Texture perfect_presentation_tex = new Texture("visuals/hero_moves/perfect_presentation.png");
+    public static final Texture practice_test_tex = new Texture("visuals/hero_moves/practice_test.png");
+    public static final Texture recursive_function_tex = new Texture("visuals/hero_moves/recursive_function.png");
+    public static final Texture set_equal_to_0_tex = new Texture("visuals/hero_moves/set_equal_to_0.png");
+    public static final Texture soldering_skills_tex = new Texture("visuals/hero_moves/soldering_skills.png");
+    public static final Texture stack_overflow_tex = new Texture("visuals/hero_moves/stack_overflow.png");
+
+    //ADDITIONAL HERO SCREEN TEXTURES
+    public static final Texture checkbox_tex = new Texture("visuals/Menus/checkbox.png");
+    public static final Texture checkbox2_tex = new Texture("visuals/Menus/checkbox2.png");
+
+    public static final Texture hero_stats_tex = new Texture("visuals/Menus/hero_statistics_menu.png");
+    public static final Texture hero_moves_tex = new Texture("visuals/Menus/hero_moves_menu.png");
+    public static final Texture sel_item_tex = new Texture("visuals/Menus/Selected Item Box.png");
+    public static final Texture white_sq_tex = new Texture("visuals/Menus/white_sq.png");
+    public static final Texture hero_degree_tex = new Texture("visuals/Menus/hero_degree_menu.png");
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
