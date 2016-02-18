@@ -50,7 +50,7 @@ public class Utils {
     public static final Sprite titleLogo = new Sprite(new Texture("visuals/title_screen/final_title_test.png"));
     public static final Sprite menuBorder = new Sprite(new Texture("visuals/title_screen/white_sq.png"));
     public static final Sprite menuIcon = new Sprite(new Texture("visuals/title_screen/white_tr.png"));
-    public static final String superSchmal = "Super Schmal Games";
+    public static final String superSchmal = "SUPER SCHMAL GAMES";
     public static final String presents = "presents";
     public static final String menuOptions = "New Game\nLoad Game\nExit Game";
     public static boolean menuReady;
@@ -119,10 +119,45 @@ public class Utils {
     public static final Texture usb_blaster_tex = new Texture("visuals/inv_items/equip/usb_blaster.png");
     public static final Texture wire_kit_tex = new Texture("visuals/inv_items/equip/wire_kit.png");
 
+    //Enum of all items player can carry.
+    public enum INV_ITEMS{
+        BIZ_CAS_ATTIRE (0),
+        CLASS_RING (1),
+        GATOR_HAT (2),
+        GRAD_GOWN (3),
+        SUIT_TIE (4),
+        RED_BULL (5),
+        STARBUCKS (6),
+        DRAGON (7),
+        CYCLONE (8),
+        DAD (9),
+        MACBOOK (10),
+        NSPIRE (11),
+        SOLDER (12),
+        TI89 (13),
+        USB_BLASTER (14),
+        WIRE_KIT (15);
+
+        private int numVal;
+
+        INV_ITEMS(int numVal){
+            this.numVal = numVal;
+        }
+
+        public int getNumVal(){
+            return numVal;
+        }
+
+        public static INV_ITEMS getItem(int itemIndex) {
+            for (INV_ITEMS i : INV_ITEMS.values()) {
+                if (i.numVal == itemIndex) return i;
+            }
+            return null;
+        }
+    }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////INVENTORY ITEM SOUNDS///////////////////////////////////////////////////////////////
-    static final Sound error = Gdx.audio.newSound(Gdx.files.internal("sound/effects/error_tone.wav"));
     static final Sound rustling = Gdx.audio.newSound(Gdx.files.internal("sound/effects/rustling.mp3"));
     static final Sound page = Gdx.audio.newSound(Gdx.files.internal("sound/effects/page.wav"));
     static final Sound oob_error = Gdx.audio.newSound(Gdx.files.internal("sound/effects/oob_error.wav"));

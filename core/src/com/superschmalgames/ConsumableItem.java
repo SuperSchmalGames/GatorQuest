@@ -3,6 +3,7 @@ package com.superschmalgames;
 //Class to represent all items that can be consumed (not equipped) by the character.
 
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 
 public class ConsumableItem implements InventoryItem {
@@ -15,17 +16,6 @@ public class ConsumableItem implements InventoryItem {
     public double boostAmt;        //How much is the stat changed.
     public int boostDuration;      //How long (in combat turns) will the boost last (if isTemp is true).
     public char itemType;          //Defines the item by Apparel, Equipment or Consumable by chars 'a', 'e' or 'c' respectively
-
-    public ConsumableItem(String name, String texPath, String stat, double boost, int dur, int initQuant, boolean isTemporary){
-        itemName = name;
-        texture = new Texture(texPath);
-        statBoosted = stat;
-        boostAmt = boost;
-        boostDuration = dur;
-        quantity += initQuant;
-        isTemp = isTemporary;
-        itemType = 'c';
-    }
 
     public ConsumableItem(String name, Texture tex, String stat, double boost, int dur, int initQuant, boolean isTemporary){
         itemName = name;
@@ -50,20 +40,31 @@ public class ConsumableItem implements InventoryItem {
     }
 
     @Override
-    public double activateItem(double boostedStat) {
+    public void activateItem() {
         //For usable items, apply the appropriate buff and reduce the inventory number by one.
         if(quantity > 0) {
-            quantity--;
-            return boostedStat + boostAmt;
+            try {
+                double temp1 = MainClass.hero.getClass().getField(statBoosted).getDouble(MainClass.hero) + boostAmt;
+                MainClass.hero.getClass().getField(statBoosted).setDouble(MainClass.hero, temp1);
+                quantity--;
+            } catch (Exception e) {
+                Gdx.app.log("test", "Something wrong in activateItem()!");
+            }
         }
-        else Utils.error.play();
-        return boostedStat;
+        else{
+            Utils.errTone.play();
+        }
     }
 
     @Override
-    public double disableItem(double boostedStat) {
+    public void disableItem() {
         //When the item's boost wears off, decrease the stat by appropriate amount.
-        return boostedStat - boostAmt;
+        try {
+            double temp1 = MainClass.hero.getClass().getField(statBoosted).getDouble(MainClass.hero) - boostAmt;
+            MainClass.hero.getClass().getField(statBoosted).setDouble(MainClass.hero, temp1);
+        } catch (Exception e) {
+            Gdx.app.log("test", "Something wrong in disableItem()!");
+        }
     }
 
     @Override
@@ -114,9 +115,4 @@ public class ConsumableItem implements InventoryItem {
         return texture;
     }
 
-    public void incItem(String itemName){
-        if(itemName.equals("Red Bull")){
-            MainClass.hero.inventory.items.get(5).setQuantity(MainClass.hero.inventory.items.get(5).getQuantity() +1);
-        }
-    }
 }

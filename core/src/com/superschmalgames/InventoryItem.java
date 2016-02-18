@@ -9,11 +9,11 @@ public interface InventoryItem {
     void addItem(HeroInventory inv);
 
     //Method to effectively use/equip an item in the player's inventory
-    double activateItem(double boostedStat);
+    void activateItem();
 
     //Method to effectively unequip or "finish using" an item. It will remove the stat buff and decrease the item
     //quantity if necessary.
-    double disableItem(double boostedStat);
+    void disableItem();
 
     String getItemName();
     void setItemName(String itemName);

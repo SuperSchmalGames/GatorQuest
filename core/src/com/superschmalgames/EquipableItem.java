@@ -2,6 +2,7 @@ package com.superschmalgames;
 
 //Class for representing items that can be equipped/worn on the character.
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 
 public class EquipableItem implements InventoryItem {
@@ -13,23 +14,6 @@ public class EquipableItem implements InventoryItem {
     public double boostAmt;         //How much is the stat changed.
     public char itemType;          //Defines the item by Apparel, Equipment or Consumable by chars 'a', 'e' or 'c' respectively
 
-    public EquipableItem(String name, String texPath, String stat, double boost, int initQuant){
-        itemName = name;
-        texture = new Texture(texPath);
-        statBoosted = stat;
-        boostAmt = boost;
-        quantity += initQuant;
-        itemType = 'e';
-    }
-
-    public EquipableItem(){
-        itemName = "";
-        statBoosted = "";
-        boostAmt = 0;
-        quantity = 0;
-        itemType = 'e';
-    }
-
     public EquipableItem(String name, Texture tex, String stat, double boost, int initQuant){
         itemName = name;
         texture = tex;
@@ -38,7 +22,6 @@ public class EquipableItem implements InventoryItem {
         quantity += initQuant;
         itemType = 'e';
     }
-
 
     @Override
     public void addItem(HeroInventory inv) {
@@ -51,16 +34,34 @@ public class EquipableItem implements InventoryItem {
         inv.items.add(this);
     }
 
+    //Method to equip the item and apply the appropriate boost.
     @Override
-    public double activateItem(double boostedStat) {
-        //Equip the item and apply the appropriate boost.
-        return boostedStat + boostAmt;
+    public void activateItem() {
+        //Set hero's equipped item to the item we're activating
+        MainClass.hero.heroEquipment = this;
+
+        //Get the character's buffed skill value and add this item's boost amount to it.
+        try {
+            double temp1 = MainClass.hero.getClass().getField(statBoosted+"_buf").getDouble(MainClass.hero) + boostAmt;
+            MainClass.hero.getClass().getField(statBoosted+"_buf").setDouble(MainClass.hero, temp1);
+        } catch (Exception e) {
+            Gdx.app.log("test", "Something wrong in equipable activateItem()!");
+        }
     }
 
+    //Method to unequip the item and remove the boost that was given.
     @Override
-    public double disableItem(double boostedStat) {
-        //Unequip the item and remove the boost that was given.
-        return boostedStat - boostAmt;
+    public void disableItem() {
+        //Get the character's buffed skill value and subtract this item's boost amount from it.
+        try {
+            double temp1 = MainClass.hero.getClass().getField(statBoosted+"_buf").getDouble(MainClass.hero) - boostAmt;
+            MainClass.hero.getClass().getField(statBoosted+"_buf").setDouble(MainClass.hero, temp1);
+        } catch (Exception e) {
+            Gdx.app.log("test", "Something wrong in equipable disableItem()!");
+        }
+
+        //Item is no longer equipped, so set character's equipment to null.
+        MainClass.hero.heroEquipment = null;
     }
 
     @Override
@@ -112,12 +113,4 @@ public class EquipableItem implements InventoryItem {
     }
 
     public void setTexture(Texture texPass){texture = texPass;}
-
-    public void removeEquipment()
-    {
-        MainClass.hero.heroEquipment.itemName = "";
-        MainClass.hero.heroEquipment.statBoosted = "";
-        MainClass.hero.heroEquipment.boostAmt = 0;
-        MainClass.hero.inventory.calc_stats();
-    }
 }
