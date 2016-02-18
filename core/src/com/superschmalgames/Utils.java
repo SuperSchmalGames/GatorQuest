@@ -82,6 +82,9 @@ public class Utils {
     public static final int marston_x = 2170;
     public static final int marston_y = 257;
     public static final TiledMap openworld = new TmxMapLoader().load("visuals/maps/UF_Full_Map.tmx");
+    public static final TiledMap turlington = new TmxMapLoader().load("visuals/maps/Turlington_Dungeon.tmx");
+    public static final int turlington_x = 7264;
+    public static final int turlington_y = 3560;
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////INVENTORY SCREEN///////////////////////////////////////////////////////////////////////
