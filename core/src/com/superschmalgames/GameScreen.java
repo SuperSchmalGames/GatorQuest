@@ -2,10 +2,12 @@ package com.superschmalgames;
 
 //This class is for the main screen we see when moving through the game world.
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
@@ -18,7 +20,9 @@ public class GameScreen implements Screen {
     //The game map itself.
     TiledMapTileLayer collision;
     TiledMapRenderer tiledmaprenderer;
+    //storage for the tile layers that are drawn under the character
     int[] background = new int[3];
+    //storage for the tile layer drawn above the character
     int[] foreground = new int[1];
 
     //Flags for handling character movement.
@@ -35,17 +39,25 @@ public class GameScreen implements Screen {
         camera = new OrthographicCamera();
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
 
-        //Initialize the map.
-        setMap();
+        //Initialize the map
+        setMap(Utils.dorm, Utils.start_x, Utils.start_y);
 
     }
 
-    private void setMap() {
-        tiledmaprenderer = new OrthogonalTiledMapRenderer(Utils.tiledmap);
-        collision = (TiledMapTileLayer) Utils.tiledmap.getLayers().get("Collision");
+    //made a separate method so that the map can be changed and starting coordinates
+    //can be provided. This allows the gamescreen to handle all of the dungeons without
+    //making seperate screens.
+    public void setMap(TiledMap tiledmap, int x, int y) {
+        camera.position.set(x,y,0);
+        tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
+        collision = (TiledMapTileLayer) tiledmap.getLayers().get("Collision");
+        //background layer
         background[0] = 0;
+        //collision layer
         background[1] = 1;
+        //mid layer
         background[2] = 2;
+        //foreground layer
         foreground[0] = 3;
     }
 
@@ -61,8 +73,9 @@ public class GameScreen implements Screen {
         //Update the camera that the game sees.
         camera.update();
 
-        //NOTES
+        //sets the map to move with a stationary camera
         tiledmaprenderer.setView(camera);
+        //draw all the layers that appear below the character
         tiledmaprenderer.render(background);
 
         //Draw to our batch each refresh. The batch is then rendered to the screen.
@@ -70,7 +83,10 @@ public class GameScreen implements Screen {
 
         ////////////////////////////////////////////////////////TEST PRINTS////////////////////////////////////////////////////////////////////
         Utils.testFont.draw(MainClass.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y , 0, Utils.GAME_SCREEN_HEIGHT-40);
-        Utils.testFont.draw(MainClass.batch, "GPA: " + Utils.df1.format(MainClass.hero.gpa), 0, Utils.GAME_SCREEN_HEIGHT - 75);
+        Utils.testFont.draw(MainClass.batch, "GPA: " + Utils.df1.format(MainClass.hero.gpa) + " RedBull Quant: " + MainClass.hero.inventory.items.get(5).getQuantity(), 0, Utils.GAME_SCREEN_HEIGHT - 75);
+        //if(MainClass.hero.inventory.items.get(5).getQuantity() > 0){
+        //    MainClass.batch.draw(MainClass.hero.inventory.items.get(5).getTexture(), MainClass.hero.xPos-40, MainClass.hero.yPos);
+        //}
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //The following draw method is weird but allows us to make our hero smaller in order to look like he fits better proportional to objects in the world.
@@ -78,7 +94,7 @@ public class GameScreen implements Screen {
         MainClass.batch.draw(MainClass.hero.heroAnim.currentFrame, MainClass.hero.xPos, MainClass.hero.yPos, 0, 0, MainClass.hero.heroAnim.currentFrame.getRegionWidth(), MainClass.hero.heroAnim.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
         MainClass.batch.end();
 
-        //NOTES
+        //draw the layer that appears above the character
         tiledmaprenderer.render(foreground);
 
         //Keyboard input is taken in the InputHandler class, which updates the following walk variables to control
@@ -86,17 +102,19 @@ public class GameScreen implements Screen {
         walk(delta);
     }
 
+    //checks if one of the walk booleans has been triggered, then checks if the blocks that the character would move into are considered blocked using the collision layer of the maps
+    //if able, the "character" moves (actually the camera is moved, and the character is linked to the camera). A check is made to see if the character has entered a "door" to another floor.
+    //After that, if the character has moved up or down an additional check is needed to determine if the character is leaving the dungeon to the open world
     public void walk(float delta){
             if(lWalk &&
                !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-5)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-               !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-5)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
-            {
+               !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-5)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")) {
                 camera.translate(-5f, 0f);
                 MainClass.hero.walkAnimation('L', delta);
-                if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("door")) {
-                    int x = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("x"));
-                    int y = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("y"));
-                    camera.translate(x*Utils.MAP_RESOLUTION, y*Utils.MAP_RESOLUTION);
+                if (collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("door")) {
+                    int x = Integer.valueOf((String) collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().get("x"));
+                    int y = Integer.valueOf((String) collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().get("y"));
+                    camera.translate(x * Utils.MAP_RESOLUTION, y * Utils.MAP_RESOLUTION);
                 }
             }
             else if(rWalk &&
@@ -123,6 +141,10 @@ public class GameScreen implements Screen {
                     int y = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("y"));
                     camera.translate(x*Utils.MAP_RESOLUTION, y*Utils.MAP_RESOLUTION);
                 }
+                else if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("exit")) {
+                    uWalk = false;
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openWorldScreen);
+                }
             }
             else if(dWalk &&
                     !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2-5)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -135,6 +157,10 @@ public class GameScreen implements Screen {
                     int x = Integer.valueOf((String) collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().get("x"));
                     int y = Integer.valueOf((String) collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().get("y"));
                     camera.translate(x * Utils.MAP_RESOLUTION, y * Utils.MAP_RESOLUTION);
+                }
+                else if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("exit")) {
+                    dWalk = false;
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openWorldScreen);
                 }
             }
             else MainClass.hero.standAnimation();

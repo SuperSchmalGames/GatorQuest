@@ -78,6 +78,7 @@ public class InputHandler implements InputProcessor {
                     ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
                     MainClass.avatarScreen.dispose();
                 }
+
             }
             else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen) {
                 //Take keyboard input from user for character movement. Character actually stays centered on screen, and the
@@ -136,13 +137,16 @@ public class InputHandler implements InputProcessor {
                     MainClass.inventoryScreen.invPage = 0;
                     currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
-                    if (MainClass.inventoryScreen.invPanel == "Consumable") {
+                    if ("Consumable".equals(MainClass.inventoryScreen.invPanel)) {
+                    //if (MainClass.inventoryScreen.invPanel == "Consumable") {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                         MainClass.inventoryScreen.invPanel = "Apparel";
-                    } else if (MainClass.inventoryScreen.invPanel == "Apparel") {
+                    } else if ("Apparel".equals(MainClass.inventoryScreen.invPanel)) {
+                    //} else if (MainClass.inventoryScreen.invPanel == "Apparel") {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                         MainClass.inventoryScreen.invPanel = "Equipment";
-                    } else if (MainClass.inventoryScreen.invPanel == "Equipment") {
+                    } else if ("Equipment".equals(MainClass.inventoryScreen.invPanel)) {
+                    //} else if (MainClass.inventoryScreen.invPanel == "Equipment") {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                         MainClass.inventoryScreen.invPanel = "Consumable";
                     }
@@ -152,13 +156,16 @@ public class InputHandler implements InputProcessor {
                     MainClass.inventoryScreen.invPage = 0;
                     currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
-                    if (MainClass.inventoryScreen.invPanel == "Consumable") {
+                    if ("Consumable".equals(MainClass.inventoryScreen.invPanel)) {
+                    //if (MainClass.inventoryScreen.invPanel == "Consumable") {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                         MainClass.inventoryScreen.invPanel = "Equipment";
-                    } else if (MainClass.inventoryScreen.invPanel == "Apparel") {
+                    } else if ("Apparel".equals(MainClass.inventoryScreen.invPanel)) {
+                    //} else if (MainClass.inventoryScreen.invPanel == "Apparel") {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                         MainClass.inventoryScreen.invPanel = "Consumable";
-                    } else if (MainClass.inventoryScreen.invPanel == "Equipment") {
+                    } else if ("Equipment".equals(MainClass.inventoryScreen.invPanel)) {
+                    //} else if (MainClass.inventoryScreen.invPanel == "Equipment") {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                         MainClass.inventoryScreen.invPanel = "Apparel";
                     }
@@ -171,7 +178,7 @@ public class InputHandler implements InputProcessor {
                 } else if (keycode == Input.Keys.DOWN) {
                     Utils.rustling.play();
                     if (MainClass.inventoryScreen.invPage * 8 + MainClass.inventoryScreen.invRow + 1 < MainClass.hero.inventory.getNumC()
-                            && MainClass.inventoryScreen.invPanel == "Consumable") {
+                            && "Consumable".equals(MainClass.inventoryScreen.invPanel)) {
 
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
@@ -181,7 +188,7 @@ public class InputHandler implements InputProcessor {
                         } else
                             MainClass.inventoryScreen.invRow += 1;
                     } else if (MainClass.inventoryScreen.invPage * 8 + MainClass.inventoryScreen.invRow + 1 < MainClass.hero.inventory.getNumA()
-                            && MainClass.inventoryScreen.invPanel == "Apparel") {
+                            && "Apparel".equals(MainClass.inventoryScreen.invPanel)) {
 
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
@@ -191,7 +198,7 @@ public class InputHandler implements InputProcessor {
                         } else
                             MainClass.inventoryScreen.invRow += 1;
                     } else if (MainClass.inventoryScreen.invPage * 8 + MainClass.inventoryScreen.invRow + 1 < MainClass.hero.inventory.getNumE()
-                            && MainClass.inventoryScreen.invPanel == "Equipment") {
+                            && "Equipment".equals(MainClass.inventoryScreen.invPanel)) {
 
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
 
@@ -215,14 +222,14 @@ public class InputHandler implements InputProcessor {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                     }
                 } else if (keycode == Input.Keys.E) {
-                    if (MainClass.inventoryScreen.invPanel == "Equipment" && MainClass.hero.inventory.getNumE() > 0) {
+                    if ("Equipment".equals(MainClass.inventoryScreen.invPanel) && MainClass.hero.inventory.getNumE() > 0) {
                         MainClass.hero.heroEquipment.removeEquipment();
                         MainClass.hero.heroEquipment.setItemName(MainClass.hero.inventory.items.get(currentItemIndex).getItemName());
                         MainClass.hero.heroEquipment.setStatBoosted(MainClass.hero.inventory.items.get(currentItemIndex).getStatBoosted());
                         MainClass.hero.heroEquipment.setBoostAmt(MainClass.hero.inventory.items.get(currentItemIndex).getBoostAmt());
                         MainClass.hero.heroEquipment.setTexture(MainClass.hero.inventory.items.get(currentItemIndex).getTexture());
                         MainClass.hero.inventory.calc_stats();
-                    } else if (MainClass.inventoryScreen.invPanel == "Apparel" && MainClass.hero.inventory.getNumA() > 0) {
+                    } else if ("Apparel".equals(MainClass.inventoryScreen.invPanel) && MainClass.hero.inventory.getNumA() > 0) {
                         MainClass.hero.heroApparel.removeApparel();
                         MainClass.hero.heroApparel.setItemName(MainClass.hero.inventory.items.get(currentItemIndex).getItemName());
                         MainClass.hero.heroApparel.setStatBoosted(MainClass.hero.inventory.items.get(currentItemIndex).getStatBoosted());
@@ -233,9 +240,9 @@ public class InputHandler implements InputProcessor {
                         Utils.error.play();
                     }
                 } else if (keycode == Input.Keys.R) {
-                    if (MainClass.inventoryScreen.invPanel == "Equipment")
+                    if ("Equipment".equals(MainClass.inventoryScreen.invPanel))
                         MainClass.hero.heroEquipment.removeEquipment();
-                    else if (MainClass.inventoryScreen.invPanel == "Apparel")
+                    else if ("Apparel".equals(MainClass.inventoryScreen.invPanel))
                         MainClass.hero.heroApparel.removeApparel();
                     else
                         Utils.error.play();
@@ -278,7 +285,7 @@ public class InputHandler implements InputProcessor {
                 } else if (keycode == Input.Keys.DOWN) {
                     Utils.rustling.play();
                     if (MainClass.heroScreen.heroPage * 8 + MainClass.heroScreen.heroRow + 1 < 7
-                            && MainClass.heroScreen.heroPanel == "Statistics") {
+                            && "Statistics".equals(MainClass.heroScreen.heroPanel)) {
 
                         if ((MainClass.heroScreen.heroRow + 1) % 8 == 0) {
                             MainClass.heroScreen.heroPage += 1;
@@ -307,18 +314,43 @@ public class InputHandler implements InputProcessor {
                 }
             }
 
-            return false;
+        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openWorldScreen) {
+            if (keycode == Input.Keys.UP) {
+                MainClass.openWorldScreen.uwalk = true;
+            }
+            else if (keycode == Input.Keys.DOWN) {
+                MainClass.openWorldScreen.dwalk = true;
+            }
+            else if (keycode == Input.Keys.LEFT) {
+                MainClass.openWorldScreen.lwalk = true;
+            }
+            else if (keycode == Input.Keys.RIGHT) {
+                MainClass.openWorldScreen.rwalk = true;
+            }
+            else if (keycode == Input.Keys.ENTER) {
+                MainClass.openWorldScreen.select();
+            }
+        }
+        return false;
 
     }
 
     @Override
     public boolean keyUp(int keycode) {
+
+        //Set the appropriate boolean value false to stop the walk animation when the button is lifted
         if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen) {
-            //Set the appropriate boolean value false to stop the walk animation when the button is lifted
             if (keycode == Input.Keys.LEFT) MainClass.gameScreen.lWalk = false;
-            if (keycode == Input.Keys.RIGHT) MainClass.gameScreen.rWalk = false;
-            if (keycode == Input.Keys.UP) MainClass.gameScreen.uWalk = false;
-            if (keycode == Input.Keys.DOWN) MainClass.gameScreen.dWalk = false;
+            else if (keycode == Input.Keys.RIGHT) MainClass.gameScreen.rWalk = false;
+            else if (keycode == Input.Keys.UP) MainClass.gameScreen.uWalk = false;
+            else if (keycode == Input.Keys.DOWN) MainClass.gameScreen.dWalk = false;
+        }
+
+        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openWorldScreen){
+            if (keycode == Input.Keys.LEFT) MainClass.openWorldScreen.lwalk = false;
+            else if (keycode == Input.Keys.RIGHT) MainClass.openWorldScreen.rwalk = false;
+            else if (keycode == Input.Keys.UP) MainClass.openWorldScreen.uwalk = false;
+            else if (keycode == Input.Keys.DOWN) MainClass.openWorldScreen.dwalk = false;
         }
 
         return false;
@@ -335,22 +367,14 @@ public class InputHandler implements InputProcessor {
     }
 
     @Override
-    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-        return false;
-    }
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) { return false; }
 
     @Override
-    public boolean touchDragged(int screenX, int screenY, int pointer) {
-        return false;
-    }
+    public boolean touchDragged(int screenX, int screenY, int pointer) { return false; }
 
     @Override
-    public boolean mouseMoved(int screenX, int screenY) {
-        return false;
-    }
+    public boolean mouseMoved(int screenX, int screenY) { return false; }
 
     @Override
-    public boolean scrolled(int amount) {
-        return false;
-    }
+    public boolean scrolled(int amount) { return false; }
 }

@@ -2,8 +2,7 @@ package com.superschmalgames;
 
 //Class to represent all items that can be consumed (not equipped) by the character.
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Sound;
+
 import com.badlogic.gdx.graphics.Texture;
 
 public class ConsumableItem implements InventoryItem {

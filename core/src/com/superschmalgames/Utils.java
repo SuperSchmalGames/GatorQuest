@@ -64,8 +64,25 @@ public class Utils {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////GAME SCREEN////////////////////////////////////////////////////////////////////////////
-    public static final Music gameMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Dungeon.ogg"));
-    public static final TiledMap tiledmap = new TmxMapLoader().load("visuals/maps/CISE_Dungeon.tmx");
+    public static final Music gameMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/world_map_music.wav"));
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////TILED MAPS////////////////////////////////////////////////////////////////////////////
+    public static final int start_x = 157;
+    public static final int start_y = 1572;
+    public static final TiledMap cise = new TmxMapLoader().load("visuals/maps/CISE_Dungeon.tmx");
+    public static final int cise_x = 4351;
+    public static final int cise_y = 4031;
+    public static final TiledMap neb = new TmxMapLoader().load("visuals/maps/NEB_Dungeon.tmx");
+    public static final int neb_x = 3745;
+    public static final int neb_y = 292;
+    public static final TiledMap dorm = new TmxMapLoader().load("visuals/maps/Dorm.tmx");
+    public static final int dorm_x = 865;
+    public static final int dorm_y = 227;
+    public static final TiledMap marston = new TmxMapLoader().load("visuals/maps/Marston.tmx");
+    public static final int marston_x = 2170;
+    public static final int marston_y = 257;
+    public static final TiledMap openworld = new TmxMapLoader().load("visuals/maps/UF_Full_Map.tmx");
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////INVENTORY SCREEN///////////////////////////////////////////////////////////////////////
