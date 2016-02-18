@@ -127,7 +127,7 @@ public class TitleScreen implements Screen {
         }
         else{
             transDelay += delta;
-            if(transDelay > 2.0) {
+            if(transDelay > 1.0) {
                 //Set the game screen to be the character select screen.
                 MainClass.avatarScreen = new AvatarColorSel();
                 dispose();
