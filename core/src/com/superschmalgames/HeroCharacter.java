@@ -15,8 +15,13 @@ public class HeroCharacter {
 
     //The character's inventory of items, and which item is currently being worn (apparel) and held (equipment)
     HeroInventory inventory;
+    HeroMoves moves;
+
     ApparelItem heroApparel;
     EquipableItem heroEquipment;
+
+    //Represents numbers of semester completed. Each named professor beaten will increase this by 1.
+    public int semester;
 
     //Character stats.
     public double Software;
@@ -64,6 +69,11 @@ public class HeroCharacter {
 
         //Create and initialize hero character's inventory.
         inventory = new HeroInventory();
+        //Create and initialize hero character's move list.
+        moves = new HeroMoves();
+
+        //#Semesters completed. Each named professor beaten increments this by 1.
+        semester = 8;
     }
 
     public void initAnimations(){

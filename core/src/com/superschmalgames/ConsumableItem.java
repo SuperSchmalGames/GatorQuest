@@ -17,9 +17,9 @@ public class ConsumableItem implements InventoryItem {
     public int boostDuration;      //How long (in combat turns) will the boost last (if isTemp is true).
     public char itemType;          //Defines the item by Apparel, Equipment or Consumable by chars 'a', 'e' or 'c' respectively
 
-    public ConsumableItem(String name, String texPath, String stat, double boost, int dur, int initQuant, boolean isTemporary){
+    public ConsumableItem(String name, Texture tex, String stat, double boost, int dur, int initQuant, boolean isTemporary){
         itemName = name;
-        texture = new Texture(texPath);
+        texture = tex;
         statBoosted = stat;
         boostAmt = boost;
         boostDuration = dur;

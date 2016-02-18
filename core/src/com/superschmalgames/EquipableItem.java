@@ -14,9 +14,9 @@ public class EquipableItem implements InventoryItem {
     public double boostAmt;         //How much is the stat changed.
     public char itemType;          //Defines the item by Apparel, Equipment or Consumable by chars 'a', 'e' or 'c' respectively
 
-    public EquipableItem(String name, String texPath, String stat, double boost, int initQuant){
+    public EquipableItem(String name, Texture tex, String stat, double boost, int initQuant){
         itemName = name;
-        texture = new Texture(texPath);
+        texture = tex;
         statBoosted = stat;
         boostAmt = boost;
         quantity += initQuant;
