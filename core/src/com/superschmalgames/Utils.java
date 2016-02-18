@@ -76,6 +76,10 @@ public class Utils {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////INVENTORY ITEM TEXTURES///////////////////////////////////////////////////////////////
+    public static final Texture inv_consumable_tex = new Texture("visuals/Menus/Consumable Item Menu.png");
+    public static final Texture inv_equip_tex = new Texture("visuals/Menus/Equipment Item Menu.png");
+    public static final Texture inv_apparel_tex = new Texture("visuals/Menus/Apparel Item Menu.png");
+
     //Consumable
     public static final Texture redbull_tex = new Texture("visuals/inv_items/consume/redbull.png");
     public static final Texture starbucks_tex = new Texture("visuals/inv_items/consume/starbucks.png");
@@ -127,6 +131,16 @@ public class Utils {
     public static final Texture set_equal_to_0_tex = new Texture("visuals/hero_moves/set_equal_to_0.png");
     public static final Texture soldering_skills_tex = new Texture("visuals/hero_moves/soldering_skills.png");
     public static final Texture stack_overflow_tex = new Texture("visuals/hero_moves/stack_overflow.png");
+
+    //ADDITIONAL HERO SCREEN TEXTURES
+    public static final Texture checkbox_tex = new Texture("visuals/Menus/checkbox.png");
+    public static final Texture checkbox2_tex = new Texture("visuals/Menus/checkbox2.png");
+
+    public static final Texture hero_stats_tex = new Texture("visuals/Menus/hero_statistics_menu.png");
+    public static final Texture hero_moves_tex = new Texture("visuals/Menus/hero_moves_menu.png");
+    public static final Texture sel_item_tex = new Texture("visuals/Menus/Selected Item Box.png");
+    public static final Texture white_sq_tex = new Texture("visuals/Menus/white_sq.png");
+    public static final Texture hero_degree_tex = new Texture("visuals/Menus/hero_degree_menu.png");
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

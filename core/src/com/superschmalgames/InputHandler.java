@@ -245,16 +245,31 @@ public class InputHandler implements InputProcessor {
             //THIS IS THE CODE FOR THE HERO SCREEN
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.heroScreen) {
-                if (keycode == Input.Keys.LEFT || keycode == Input.Keys.RIGHT) {
+                if (keycode == Input.Keys.LEFT) {
                     Utils.page.play();
                     MainClass.heroScreen.heroRow = 0;
                     MainClass.heroScreen.heroPage = 0;
-                    if (MainClass.heroScreen.heroPanel == "Statistics") {
+                    if ("Statistics".equals(MainClass.heroScreen.heroPanel)) {
                         MainClass.heroScreen.heroPanel = "Moves";
-                    } else if (MainClass.heroScreen.heroPanel == "Moves") {
+                    } else if ("Moves".equals(MainClass.heroScreen.heroPanel)) {
+                        MainClass.heroScreen.heroPanel = "Degree Audit";
+                    } else if ("Degree Audit".equals(MainClass.heroScreen.heroPanel)) {
                         MainClass.heroScreen.heroPanel = "Statistics";
                     }
-                } else if (keycode == Input.Keys.H) {
+                }
+                else if (keycode == Input.Keys.RIGHT) {
+                    Utils.page.play();
+                    MainClass.heroScreen.heroRow = 0;
+                    MainClass.heroScreen.heroPage = 0;
+                    if ("Statistics".equals(MainClass.heroScreen.heroPanel)) {
+                        MainClass.heroScreen.heroPanel = "Degree Audit";
+                    } else if ("Moves".equals(MainClass.heroScreen.heroPanel)) {
+                        MainClass.heroScreen.heroPanel = "Statistics";
+                    } else if ("Degree Audit".equals(MainClass.heroScreen.heroPanel)) {
+                        MainClass.heroScreen.heroPanel = "Moves";
+                    }
+                }
+                else if (keycode == Input.Keys.H) {
                     //Play the sound effect when player pushes the button.
                     Utils.inventoryScreenSelectionSound.play();
                     //Set the gamescreen to be the inventory game screen.

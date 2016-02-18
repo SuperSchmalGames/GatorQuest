@@ -19,6 +19,9 @@ public class HeroCharacter {
     ApparelItem heroApparel;
     EquipableItem heroEquipment;
 
+    //Represents numbers of semester completed. Each named professor beaten will increase this by 1.
+    public int semester;
+
     //Character stats.
     public double software;
     public double hardware;
@@ -57,12 +60,15 @@ public class HeroCharacter {
 
         //These will represent the actual equipped slots that the hero character has
         heroApparel = new ApparelItem();
-       heroEquipment = new EquipableItem();
+        heroEquipment = new EquipableItem();
 
         //Create and initialize hero character's inventory.
         inventory = new HeroInventory();
         //Create and initialize hero character's move list.
         moves = new HeroMoves();
+
+        //#Semesters completed. Each named professor beaten increments this by 1.
+        semester = 8;
     }
 
     public void initAnimations(){
