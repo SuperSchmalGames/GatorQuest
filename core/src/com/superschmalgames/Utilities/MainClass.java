@@ -1,10 +1,12 @@
-package com.superschmalgames;
+package com.superschmalgames.Utilities;
 
 //The main game class that contains much of the "guts" of everything.
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.superschmalgames.Hero.HeroCharacter;
+import com.superschmalgames.Screens.*;
 
 public class MainClass extends Game {
 

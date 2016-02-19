@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.Screens;
 
 //This class is for the title screen you see when the game first loads up. Input is handled through the InputHandler
 //class, which processes input events and takes care of everything.
@@ -9,6 +9,8 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
+import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.Utils;
 
 public class TitleScreen implements Screen {
 
@@ -127,7 +129,7 @@ public class TitleScreen implements Screen {
         }
         else{
             transDelay += delta;
-            if(transDelay > 1.0) {
+            if(transDelay > 2.0) { //Amount of time to wait after selecting an option from the main menu. 2.0 is our actual value.
                 //Set the game screen to be the character select screen.
                 MainClass.avatarScreen = new AvatarColorSel();
                 dispose();

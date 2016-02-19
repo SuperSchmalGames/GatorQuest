@@ -1,6 +1,10 @@
-package com.superschmalgames;
+package com.superschmalgames.Hero;
 
 //This class will represent our main playable character.
+
+import com.superschmalgames.Inventory.ApparelItem;
+import com.superschmalgames.Inventory.EquipableItem;
+import com.superschmalgames.Utilities.Animator;
 
 public class HeroCharacter {
 
@@ -14,11 +18,11 @@ public class HeroCharacter {
     public float yPos;
 
     //The character's inventory of items, and which item is currently being worn (apparel) and held (equipment)
-    HeroInventory inventory;
-    HeroMoves moves;
+    public HeroInventory inventory;
+    public HeroMoves moves;
 
-    ApparelItem heroApparel;
-    EquipableItem heroEquipment;
+    public ApparelItem heroApparel;
+    public EquipableItem heroEquipment;
 
     //Represents numbers of semester completed. Each named professor beaten will increase this by 1.
     public int semester;
@@ -43,11 +47,11 @@ public class HeroCharacter {
     public double Focus_buf;
 
     //Animators that take care of walking in each direction.
-    Animator leftWalk, rightWalk, upWalk, downWalk;
-    char lastDir;
+    public Animator leftWalk, rightWalk, upWalk, downWalk;
+    public char lastDir;
 
     //Main animator that handles switching between all different direction the character can walk.
-    Animator heroAnim;
+    public Animator heroAnim;
 
     public HeroCharacter(){
         GPA = 4.0;

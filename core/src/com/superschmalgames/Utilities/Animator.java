@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.Utilities;
 
 //Generic animator class for creating character animations from sprite sheets.
 
@@ -9,12 +9,12 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class Animator {
 
-    Animation walkAnimation;        //The actual animation we end up with.
-    Texture walkSheet;              //The sprite sheet used for animation.
-    TextureRegion[] walkFrames;     //The array of individual frames of our animation.
-    TextureRegion currentFrame;     //The current frame of our animation.
+    public Animation walkAnimation;        //The actual animation we end up with.
+    public Texture walkSheet;              //The sprite sheet used for animation.
+    public TextureRegion[] walkFrames;     //The array of individual frames of our animation.
+    public TextureRegion currentFrame;     //The current frame of our animation.
 
-    float stateTime;                //Number of seconds elapsed since the start of the animation.
+    public float stateTime;                //Number of seconds elapsed since the start of the animation.
 
     public Animator(int cols, int rows, String path, float dur) {
 

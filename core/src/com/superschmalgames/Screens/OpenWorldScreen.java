@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.Screens;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -10,14 +10,16 @@ import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.Utils;
 
 public class OpenWorldScreen implements Screen {
 
     OrthographicCamera camera;
-    TiledMapRenderer tiledmaprenderer;
-    TiledMapTileLayer collision;
-    Boolean lwalk = false, rwalk = false, uwalk = false, dwalk = false;
-    int location = 0;
+    public TiledMapRenderer tiledmaprenderer;
+    public TiledMapTileLayer collision;
+    public Boolean lwalk = false, rwalk = false, uwalk = false, dwalk = false;
+    public int location = 0;
     public Texture crosshair;
 
     public OpenWorldScreen() {

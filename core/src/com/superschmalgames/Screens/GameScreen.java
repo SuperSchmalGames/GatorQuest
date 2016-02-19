@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.Screens;
 
 //This class is for the main screen we see when moving through the game world.
 
@@ -11,6 +11,8 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.Utils;
 
 public class GameScreen implements Screen {
 
@@ -18,15 +20,15 @@ public class GameScreen implements Screen {
     OrthographicCamera camera;
 
     //The game map itself.
-    TiledMapTileLayer collision;
-    TiledMapRenderer tiledmaprenderer;
+    public TiledMapTileLayer collision;
+    public TiledMapRenderer tiledmaprenderer;
     //storage for the tile layers that are drawn under the character
-    int[] background = new int[3];
+    public int[] background = new int[3];
     //storage for the tile layer drawn above the character
-    int[] foreground = new int[1];
+    public int[] foreground = new int[1];
 
     //Flags for handling character movement.
-    boolean lWalk, rWalk, uWalk, dWalk;
+    public boolean lWalk, rWalk, uWalk, dWalk;
 
     public GameScreen() {
 

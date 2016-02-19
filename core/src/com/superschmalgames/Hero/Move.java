@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.Hero;
 
 //Class to represent all of the possible moves of the character
 

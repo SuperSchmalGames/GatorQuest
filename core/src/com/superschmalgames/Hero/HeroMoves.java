@@ -1,18 +1,18 @@
-package com.superschmalgames;
+package com.superschmalgames.Hero;
 
 //Class to represent the character's inventory.
 
-import java.util.ArrayList;
-import java.util.List;
+import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.Utils;
 
 public class HeroMoves {
 
     //Character inventory.
-    Move[] attacks;
+    public Move[] attacks;
 
     public HeroMoves(){
         attacks = new Move[18];
-        attacks[0] = new Move("Java Function",Utils.java_function_tex, "A move that benefits\nfrom improved Software \nskill.", true);
+        attacks[0] = new Move("Java Function", Utils.java_function_tex, "A move that benefits\nfrom improved Software \nskill.", true);
         attacks[1] = new Move("Recursive Loop",Utils.recursive_function_tex, "A move that benefits\nfrom improved Software \nskill.", true);
         attacks[2] = new Move("Stack Overflow",Utils.stack_overflow_tex, "A move that benefits\nfrom improved Software \nand Read/Write skills.", true);
         attacks[3] = new Move("Commented Code",Utils.commented_code_tex, "A move that benefits\nfrom improved Software\nand Read/Write skills.", true);
