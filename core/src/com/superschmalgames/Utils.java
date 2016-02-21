@@ -20,6 +20,8 @@ public class Utils {
     public static final int GAME_SCREEN_WIDTH = 1020;
     public static final int GAME_SCREEN_HEIGHT = 612;
     public static final int MAP_RESOLUTION = 64;
+    public static final int MOVE_DIST = 5;
+    public static final int N_MOVE_DIST = - MOVE_DIST;
     public static final BitmapFont font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
     public static final BitmapFont font_large = new BitmapFont(Gdx.files.internal("RosesAreFF0_large.fnt"));
     public static final BitmapFont font_small = new BitmapFont(Gdx.files.internal("RosesAreFF0_small.fnt"));
@@ -86,6 +88,20 @@ public class Utils {
     public static final TiledMap turlington = new TmxMapLoader().load("visuals/maps/Turlington_Dungeon.tmx");
     public static final int turlington_x = 7264;
     public static final int turlington_y = 3560;
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //////////////////////////////////////DUNGEON ENEMIES//////////////////////////////////////////////////////////////////////
+    //========================================NEB=============================================
+    public static NPC[] NEB_enemies = {
+        new NPC('l',"Welcome to the New Engineering Building",20,20)  //4190, 802
+    };
+    //========================================================================================
+    //========================================CISE============================================
+
+    //========================================================================================
+    //========================================Turlington======================================
+
+    //========================================================================================
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////INVENTORY SCREEN///////////////////////////////////////////////////////////////////////

@@ -24,6 +24,7 @@ public class OpenWorldScreen implements Screen {
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
+        camera.position.set(2700f,830f,0f);
         tiledmaprenderer = new OrthogonalTiledMapRenderer(Utils.openworld);
         collision = (TiledMapTileLayer) Utils.openworld.getLayers().get(0);
         crosshair = new Texture("visuals/crosshair.png");
@@ -49,27 +50,27 @@ public class OpenWorldScreen implements Screen {
             switch(location) {
                 //Dorms
                 case 5 :
-                    MainClass.gameScreen.setMap(Utils.dorm, Utils.dorm_x, Utils.dorm_y);
+                    MainClass.gameScreen.setMap(Utils.dorm, Utils.dorm_x, Utils.dorm_y, 5);
                     ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
                     break;
                 //Marston
                 case 4 :
-                    MainClass.gameScreen.setMap(Utils.marston, Utils.marston_x, Utils.marston_y);
+                    MainClass.gameScreen.setMap(Utils.marston, Utils.marston_x, Utils.marston_y, 4);
                     ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
                     break;
                 //NEB
                 case 3 :
-                    MainClass.gameScreen.setMap(Utils.neb, Utils.neb_x, Utils.neb_y);
+                    MainClass.gameScreen.setMap(Utils.neb, Utils.neb_x, Utils.neb_y, 3);
                     ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
                     break;
                 //CISE
                 case 2 :
-                    MainClass.gameScreen.setMap(Utils.cise, Utils.cise_x, Utils.cise_y);
+                    MainClass.gameScreen.setMap(Utils.cise, Utils.cise_x, Utils.cise_y, 2);
                     ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
                     break;
                 //Turlington
                 case 1 :
-                    MainClass.gameScreen.setMap(Utils.turlington, Utils.turlington_x, Utils.turlington_y);
+                    MainClass.gameScreen.setMap(Utils.turlington, Utils.turlington_x, Utils.turlington_y, 1);
                     ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
                     break;
                 default:
