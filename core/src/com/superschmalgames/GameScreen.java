@@ -11,11 +11,14 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class GameScreen implements Screen {
 
     //The camera through which we "see" the game world.
     OrthographicCamera camera;
+    private Viewport viewport;
     int current_location;
     //The game map itself.
     TiledMapTileLayer collision;
@@ -29,7 +32,6 @@ public class GameScreen implements Screen {
     boolean lWalk, rWalk, uWalk, dWalk;
 
     public GameScreen() {
-
         lWalk = false;
         rWalk = false;
         uWalk = false;
@@ -37,6 +39,7 @@ public class GameScreen implements Screen {
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
+        viewport = new FitViewport(Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT, camera);
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
 
         //Initialize the map
@@ -73,8 +76,7 @@ public class GameScreen implements Screen {
             //NEB
             case 3:
                 for (NPC enemies : Utils.NEB_enemies) {
-                    MainClass.batch.draw(enemies.walk.currentFrame, enemies.org_x, enemies.org_y,0,0,enemies.walk.currentFrame.getRegionWidth(), enemies.walk.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
-
+                    MainClass.batch.draw(enemies.walk.currentFrame, enemies.x_pos, enemies.y_pos,0,0,enemies.walk.currentFrame.getRegionWidth(), enemies.walk.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
                 }
                 break;
             //CISE
@@ -85,6 +87,43 @@ public class GameScreen implements Screen {
                 break;
             default :
                 break;
+        }
+    }
+
+    private void checkForEnemy(float delta) {
+        if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("enemy")) {
+            lWalk = false;
+            rWalk = false;
+            uWalk = false;
+            dWalk = false;
+            int temp = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("number"));
+            switch(current_location) {
+                //Dorm
+                case 5:
+                    break;
+                //Marston
+                case 4:
+                    break;
+                //NEB
+                case 3:
+                    if(!Utils.NEB_enemies[temp].getTriggered()) {
+                        Utils.NEB_enemies[temp].move(delta);
+                        MainClass.hero.setMove(false);
+                    }
+                    else {
+                        MainClass.hero.setMove(true);
+                    }
+                    break;
+                //CISE
+                case 2:
+                    break;
+                //Turlington
+                case 1:
+                    break;
+                default :
+                    break;
+            }
+
         }
     }
 
@@ -106,6 +145,7 @@ public class GameScreen implements Screen {
         tiledmaprenderer.render(background);
 
         //Draw to our batch each refresh. The batch is then rendered to the screen.
+        MainClass.batch.setProjectionMatrix(camera.combined);
         MainClass.batch.begin();
 
         ////////////////////////////////////////////////////////TEST PRINTS////////////////////////////////////////////////////////////////////
@@ -125,6 +165,7 @@ public class GameScreen implements Screen {
         //Keyboard input is taken in the InputHandler class, which updates the following walk variables to control
         //how character movement is rendered to the screen
         walk(delta);
+        checkForEnemy(delta);
     }
 
     //checks if one of the walk booleans has been triggered, then checks if the blocks that the character would move into are considered blocked using the collision layer of the maps
@@ -187,6 +228,8 @@ public class GameScreen implements Screen {
                 }
             }
             else MainClass.hero.standAnimation();
+            MainClass.hero.setPosition(camera.position.x, camera.position.y);
+
     }
 
     @Override
@@ -197,7 +240,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-
+        viewport.update(width, height);
     }
 
     @Override

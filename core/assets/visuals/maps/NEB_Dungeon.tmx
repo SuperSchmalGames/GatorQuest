@@ -42,7 +42,7 @@
   </tile>
   <tile id="28">
    <properties>
-    <property name="enemy" value="neb"/>
+    <property name="enemy" value="3"/>
     <property name="number" value="0"/>
    </properties>
   </tile>

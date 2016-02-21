@@ -10,10 +10,13 @@ import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class OpenWorldScreen implements Screen {
 
     OrthographicCamera camera;
+    private Viewport viewport;
     TiledMapRenderer tiledmaprenderer;
     TiledMapTileLayer collision;
     Boolean lwalk = false, rwalk = false, uwalk = false, dwalk = false;
@@ -23,6 +26,7 @@ public class OpenWorldScreen implements Screen {
     public OpenWorldScreen() {
 
         camera = new OrthographicCamera();
+        viewport = new FitViewport(Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT, camera);
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
         camera.position.set(2700f,830f,0f);
         tiledmaprenderer = new OrthogonalTiledMapRenderer(Utils.openworld);
@@ -90,8 +94,9 @@ public class OpenWorldScreen implements Screen {
         tiledmaprenderer.setView(camera);
         tiledmaprenderer.render();
 
+        MainClass.batch.setProjectionMatrix(camera.combined);
         MainClass.batch.begin();
-        MainClass.batch.draw(crosshair, Utils.GAME_SCREEN_WIDTH/2, Utils.GAME_SCREEN_HEIGHT/2);
+        MainClass.batch.draw(crosshair, camera.position.x, camera.position.y);
         Utils.testFont.draw(MainClass.batch, "Map data ©2016 Google Imagery ©2016, DigitalGlobe, U.S. Geological Survey", 0, Utils.GAME_SCREEN_HEIGHT - 10);
         MainClass.batch.end();
 
@@ -105,7 +110,7 @@ public class OpenWorldScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-
+        viewport.update(width,height);
     }
 
     @Override

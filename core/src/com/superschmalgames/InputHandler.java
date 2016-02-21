@@ -80,7 +80,7 @@ public class InputHandler implements InputProcessor {
                 }
 
             }
-            else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen) {
+            else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen && MainClass.hero.canMove()) {
                 //Take keyboard input from user for character movement. Character actually stays centered on screen, and the
                 //camera is translated about the map to give illusion of character movement.
                 if (keycode == Input.Keys.LEFT && !Utils.isPaused) {

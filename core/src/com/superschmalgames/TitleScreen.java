@@ -9,11 +9,14 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class TitleScreen implements Screen {
 
     //The camera through which we "see" the game world.
     OrthographicCamera camera;
+    private Viewport viewport;
 
     //The text layout for the text we're printing to the screen.
     public GlyphLayout titleLayout1;
@@ -53,6 +56,7 @@ public class TitleScreen implements Screen {
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
+        viewport = new FitViewport(Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT, camera);
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
 
         //Initialize the text that will print to the screen.
@@ -145,7 +149,7 @@ public class TitleScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-
+        viewport.update(width,height);
     }
 
     @Override

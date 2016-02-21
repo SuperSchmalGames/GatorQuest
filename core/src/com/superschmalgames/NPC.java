@@ -8,7 +8,7 @@ public class NPC {
     int x_pos,y_pos;
     //used to reset position
     int org_x, org_y;
-    int triggered;
+    boolean triggered;
     String script;
 
     //NPCs will only move in one direction if any
@@ -21,7 +21,7 @@ public class NPC {
         direction = dir;
         walk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_" + direction +"9.png", 0.17f);
         walk.currentFrame = walk.walkAnimation.getKeyFrame(walk.stateTime, true);
-        triggered = 0;
+        triggered = false;
 
     }
 
@@ -30,16 +30,16 @@ public class NPC {
         walk.stateTime += delta;
         walk.currentFrame = walk.walkAnimation.getKeyFrame(walk.stateTime, true);
         switch(direction) {
-            case 'L':
+            case 'l':
                 x_pos -= Utils.MOVE_DIST;
                 break;
-            case 'R':
+            case 'r':
                 x_pos += Utils.MOVE_DIST;
                 break;
-            case 'U':
+            case 'u':
                 y_pos += Utils.MOVE_DIST;
                 break;
-            case 'D':
+            case 'd':
                 y_pos -= Utils.MOVE_DIST;
                 break;
         }
@@ -54,7 +54,11 @@ public class NPC {
         return script;
     }
 
-    public int getTriggered() {
+    public boolean getTriggered() {
         return triggered;
+    }
+
+    public void setTriggered(boolean set) {
+        triggered = set;
     }
 }
