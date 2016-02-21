@@ -92,10 +92,6 @@ public class GameScreen implements Screen {
 
     private void checkForEnemy(float delta) {
         if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("enemy")) {
-            lWalk = false;
-            rWalk = false;
-            uWalk = false;
-            dWalk = false;
             int temp = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("number"));
             switch(current_location) {
                 //Dorm
@@ -107,7 +103,11 @@ public class GameScreen implements Screen {
                 //NEB
                 case 3:
                     if(!Utils.NEB_enemies[temp].getTriggered()) {
-                        Utils.NEB_enemies[temp].move(delta);
+                        lWalk = false;
+                        rWalk = false;
+                        uWalk = false;
+                        dWalk = false;
+                        Utils.NEB_enemies[temp].move(delta, camera.position.x, camera.position.y);
                         MainClass.hero.setMove(false);
                     }
                     else {

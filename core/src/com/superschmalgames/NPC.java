@@ -26,22 +26,45 @@ public class NPC {
     }
 
     //move to players location.
-    public void move(float delta) {
-        walk.stateTime += delta;
-        walk.currentFrame = walk.walkAnimation.getKeyFrame(walk.stateTime, true);
+    public void move(float delta, float x, float y) {
+        boolean temp = false;
         switch(direction) {
             case 'l':
-                x_pos -= Utils.MOVE_DIST;
+                if (x_pos > x + MainClass.hero.width/2) {
+                    x_pos -= Utils.MOVE_DIST;
+                    temp = true;
+                }
+                else
+                    initiateCombat();
                 break;
             case 'r':
-                x_pos += Utils.MOVE_DIST;
+                if (x_pos < x - MainClass.hero.width/2) {
+                    x_pos += Utils.MOVE_DIST;
+                    temp = true;
+                }
+                else
+                    initiateCombat();
                 break;
             case 'u':
-                y_pos += Utils.MOVE_DIST;
+                if (y_pos < y - MainClass.hero.height/2) {
+                    y_pos += Utils.MOVE_DIST;
+                    temp = true;
+                }
+                else
+                    initiateCombat();
                 break;
             case 'd':
-                y_pos -= Utils.MOVE_DIST;
+                if (y_pos > y + MainClass.hero.height/2) {
+                    y_pos -= Utils.MOVE_DIST;
+                    temp = true;
+                }
+                else
+                    initiateCombat();
                 break;
+        }
+        if(temp) {
+            walk.stateTime += delta;
+            walk.currentFrame = walk.walkAnimation.getKeyFrame(walk.stateTime, true);
         }
     }
 
@@ -60,5 +83,11 @@ public class NPC {
 
     public void setTriggered(boolean set) {
         triggered = set;
+    }
+
+    public void initiateCombat() {
+        System.out.print(script);
+        reset();
+        triggered = true;
     }
 }
