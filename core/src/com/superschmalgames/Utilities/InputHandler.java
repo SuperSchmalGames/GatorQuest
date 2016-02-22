@@ -99,12 +99,16 @@ public class InputHandler implements InputProcessor {
                 //camera is translated about the map to give illusion of character movement.
                 if (keycode == Input.Keys.LEFT && !Utils.isPaused) {
                     MainClass.gameScreen.lWalk = true;
+                    MainClass.hero.lastDir = 'L';
                 } else if (keycode == Input.Keys.RIGHT && !Utils.isPaused) {
                     MainClass.gameScreen.rWalk = true;
+                    MainClass.hero.lastDir = 'R';
                 } else if (keycode == Input.Keys.UP && !Utils.isPaused) {
                     MainClass.gameScreen.uWalk = true;
+                    MainClass.hero.lastDir = 'U';
                 } else if (keycode == Input.Keys.DOWN && !Utils.isPaused) {
                     MainClass.gameScreen.dWalk = true;
+                    MainClass.hero.lastDir = 'D';
                 } else if ((keycode == Input.Keys.I && !Utils.isPaused)) {
                     //Play the sound effect when player pushes the button.
                     Utils.inventoryScreenSelectionSound.play();

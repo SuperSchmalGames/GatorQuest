@@ -9,10 +9,10 @@ import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.maps.Map;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.superschmalgames.NPC;
-
 import java.text.DecimalFormat;
 
 public class Utils {
@@ -92,10 +92,11 @@ public class Utils {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////////////DUNGEON ENEMIES//////////////////////////////////////////////////////////////////////
+    //when adding enemies to the various arrays, the proper tiles must be accounted for in the Tiled Map Editor
     //========================================NEB=============================================
     public static NPC[] NEB_enemies = {
-        new NPC('l',"Welcome to the New Engineering Building", "l7",4160,780),
-        new NPC('r',"What time does class start?", "r11", 5050,580),
+        new NPC('l',"Welcome to the New Engineering Building", "l7",65*MAP_RESOLUTION,12*MAP_RESOLUTION),
+        new NPC('r',"What time does class start?", "r11", 79*MAP_RESOLUTION,9*MAP_RESOLUTION),
 
     };
     //========================================================================================
@@ -111,10 +112,16 @@ public class Utils {
     //========================================================================================
     //========================================Dorm============================================
     public static NPC[] Dorm_enemies = {
-        new NPC('u',"Welcome to UF, this is your dorm room.", "u10",575,1280),
-        new NPC('d',"You better not steal anything", "d9",1090,1535),
-        new NPC('l',"I have no idea how to play the piano","l11",1600,770),
-        new NPC('r',"If you ever feel tired just return here","r7",650,200)
+            new NPC('u',"Welcome to UF, this is your dorm room.", "u10",9*MAP_RESOLUTION,20*MAP_RESOLUTION),
+            new NPC('d',"You better not steal anything", "d9",17*MAP_RESOLUTION,24*MAP_RESOLUTION),
+            new NPC('l',"I have no idea how to play the piano","l11",25*MAP_RESOLUTION,12*MAP_RESOLUTION),
+            new NPC('r',"If you ever feel tired just return here","r7",10*MAP_RESOLUTION,3*MAP_RESOLUTION),
+            new NPC('r',"I'm just a filler","r9",17*MAP_RESOLUTION,9*MAP_RESOLUTION),
+            new NPC('l',"Also a filler", "l10", 21*MAP_RESOLUTION,9*MAP_RESOLUTION),
+            new NPC('r',"This is my room", "r7", MAP_RESOLUTION,31*MAP_RESOLUTION),
+            new NPC('u',"Hello","u11",20*MAP_RESOLUTION,35*MAP_RESOLUTION),
+            new NPC('r',"Filler", "r11",6*MAP_RESOLUTION,42*MAP_RESOLUTION),
+            new NPC('d',"I'm tired","d9",24*MAP_RESOLUTION,41*MAP_RESOLUTION)
     };
     //========================================================================================
     //========================================Marston=========================================

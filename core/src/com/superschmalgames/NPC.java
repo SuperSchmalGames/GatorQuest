@@ -91,10 +91,10 @@ public class NPC {
 
     public void initiateCombat() {
         System.out.print(script);
-        if (!triggered) {
-            reset();
+        if (!triggered)  {
             triggered = true;
             walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);
         }
+        reset();
     }
 }

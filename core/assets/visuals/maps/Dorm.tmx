@@ -4128,7 +4128,7 @@
     <property name="blocked" value=""/>
     <property name="enemy" value="5"/>
     <property name="event" value="0"/>
-    <property name="number" value=""/>
+    <property name="number" value="4"/>
    </properties>
   </tile>
   <tile id="156">
@@ -4142,7 +4142,7 @@
     <property name="blocked" value=""/>
     <property name="enemy" value="5"/>
     <property name="event" value="0"/>
-    <property name="number" value=""/>
+    <property name="number" value="5"/>
    </properties>
   </tile>
   <tile id="182">
@@ -4156,7 +4156,7 @@
     <property name="blocked" value=""/>
     <property name="enemy" value="5"/>
     <property name="event" value="0"/>
-    <property name="number" value=""/>
+    <property name="number" value="6"/>
    </properties>
   </tile>
   <tile id="208">
@@ -4170,7 +4170,7 @@
     <property name="blocked" value=""/>
     <property name="enemy" value="5"/>
     <property name="event" value="0"/>
-    <property name="number" value=""/>
+    <property name="number" value="7"/>
    </properties>
   </tile>
   <tile id="234">
@@ -4184,7 +4184,21 @@
     <property name="blocked" value=""/>
     <property name="enemy" value="5"/>
     <property name="event" value="0"/>
-    <property name="number" value=""/>
+    <property name="number" value="8"/>
+   </properties>
+  </tile>
+  <tile id="260">
+   <properties>
+    <property name="enemy" value="5"/>
+    <property name="number" value="9"/>
+   </properties>
+  </tile>
+  <tile id="261">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="5"/>
+    <property name="event" value="0"/>
+    <property name="number" value="9"/>
    </properties>
   </tile>
  </tileset>
@@ -4195,7 +4209,7 @@
  </layer>
  <layer name="Collision" width="27" height="60">
   <data encoding="base64" compression="zlib">
-   eJztlDtOAzEQhh0lu1UkWgQHQFABKRCBjscdEEnLCUBKKJAIoQKkFNCEKyQSSFBAhQiPhkfB4wDQEA4BjJW1Yu167BklaZCLT7bHM/NnN7P/qhBihcAuMx6nAGwDdwSwPE69ZC7lBsvj1EtOM0KUgEooxDDQCoS4Aa6AETjPhJ08eR9HxkeROnlfhr4nma7WI+wPM+Zeii1EC4srjqDvg6Zly1XcIHlY3PT8ko3AnTub4sV1ZH+l1SRo9UIz4L3DXjHNoS2XE1foc1gkzmEV6VkkzmGV+d1jz0Wt53z3mJb3DdrMet9I4n2jg/cN7xsY3jeSeN/o4H3D+waGzTfOGTPv8o16aPeNM4cOxzfqjl4uLY5v9Kqlv0OXbxw75tCmoc9hljiHOaRnljiHuUhriIBNi1r/n7WmCUwhWpPE+pyg+/Q9onVLrOf4/DziG/novgD7YtjNj5+V1ofmG5+B/eziycBzOBgtE2tBf7QukLtLPY5o/cL+x3KO8xLd7cG6DxxE59dYjUmLyxtS+z4ALSomrXEkd4LQb93wm1XMpLUQrSWIlYHN6G6RoFUzaNUsWktIn2WCVsOg1bBoYbSBLwOc/6uC+Fy/2RFd7xxL21fJNexb6eSeUi+9O5+iea+kDXXf6eSe6t1/xaY3kA==
+   eJztlj1PAkEQhpfAnQ2JrdFYG61UEolo50dvaYTWQltNwMJEhEpNKLTBvwCJJlpoZQS18aPw4wdoI/4IdTbehXXZ2Z0NhwVe8eR2Z2fm5Y65N7fEGFskULSMy6SBLeCaAJZnU8+ZipjB8mzqOccxxrJA3mWsD6g5jNWBC6Af9kn3J4+fy/D4AFLHz3PQ9yjW1LqD9X5M3ctnE9HC4j4H0PdW0NLl+tSRPCyuun/OumPOnYzYxUV4f1+rStBqh6pj9wzbRTWHulybuI84hxniHBaQnhniHBYs33vsvqj1Nu89phX6Bm1mu8U3VnsYW5Gg/H4Vf+UbxZ7fzzD0DfV9UetD36DFF6R34z/7RpCIvpGEZzwhEbRe6Buhb3TT98apxcybfKPs6n3jxKBj4xtlQy+Tls33Rrta4jM0+cahYQ51GuIcxolzmEB6xolzmPC0egnotKj13aw1TmAM0Rol1icY3advEK0rYr2Nz08jvpHyztOwzrjNfHnva70KvvHm6Pcm7hU8uJ3RUrHsBKN1hpydi3FE6wvWn5q9zCOcReG7aweuu8AeMAj7J6lGpWXLM1L70gEtKiqtYSR3hNBvTfGb/ZhKa8a7ZiGWAza8s1mCVkmhVdJozSF95glaFYVWRaOF0QDeFdj8X3nE54JmmzW9cyiqv3IuYV2Ltq4p9dy7UxGa93IaUPcRbV1TvfsbGrE0mg==
   </data>
  </layer>
  <layer name="Mid" width="27" height="60">
