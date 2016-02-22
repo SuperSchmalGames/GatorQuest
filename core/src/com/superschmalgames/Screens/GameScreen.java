@@ -11,6 +11,8 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -30,6 +32,8 @@ public class GameScreen implements Screen {
     //Flags for handling character movement.
     public boolean lWalk, rWalk, uWalk, dWalk;
 
+    npcDialogue npcDia;
+
     public GameScreen() {
 
         lWalk = false;
@@ -44,6 +48,8 @@ public class GameScreen implements Screen {
         //Initialize the map
         setMap(Utils.dorm, Utils.start_x, Utils.start_y);
 
+        //Create an instance of our character dialogue screen
+        npcDia = new npcDialogue("dialogue test", Utils.dialSkin);
     }
 
     //made a separate method so that the map can be changed and starting coordinates
@@ -68,6 +74,10 @@ public class GameScreen implements Screen {
         //Clear the screen once per refresh.
         Gdx.gl.glClearColor(0, 0, 0.2f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        //Show our little dialogue popup
+        Utils.dialStage.act(delta);
+        Utils.dialStage.draw();
 
         //Log FPS in the console
         Utils.logger.log();
@@ -166,6 +176,8 @@ public class GameScreen implements Screen {
     @Override
     public void show() {
         Utils.gameMusic.play();
+        
+        npcDia.show(Utils.dialStage);
     }
 
 
@@ -192,6 +204,22 @@ public class GameScreen implements Screen {
     @Override
     public void dispose() {
 
+    }
+
+    public static class npcDialogue extends Dialog {
+        public npcDialogue(String title, Skin skin) {
+            super(title, skin);
+        }
+
+        {
+            text("Test for dialogue stuff");
+            button("Ok!");
+        }
+
+        @Override
+        protected void result(Object object) {
+            super.result(object);
+        }
     }
 
 }

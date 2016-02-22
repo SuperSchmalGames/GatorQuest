@@ -11,6 +11,8 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 import java.text.DecimalFormat;
 
@@ -198,6 +200,11 @@ public class Utils {
     public static final Texture hero_degree_tex = new Texture("visuals/Menus/hero_degree_menu.png");
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////CHARACTER DIALOGUE/////////////////////////////////////////////////////////////
+    public static final Stage dialStage = new Stage();
+    public static final Skin dialSkin= new Skin(Gdx.files.internal("visuals/uiskin"));
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //Static method to initialize all required options for the variables fields used above.
     public static void initUtils(){
