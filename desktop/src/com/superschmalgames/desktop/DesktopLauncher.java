@@ -2,7 +2,7 @@ package com.superschmalgames.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.superschmalgames.MainClass;
+import com.superschmalgames.Utilities.MainClass;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {

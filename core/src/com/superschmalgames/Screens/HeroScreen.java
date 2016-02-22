@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.Screens;
 
 //This class is for the Hero screen you see when you hit "H" from the game screen.
 
@@ -6,18 +6,19 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.Utils;
 
 public class HeroScreen implements Screen {
 
     //The camera through which we "see" the game world.
     OrthographicCamera camera;
     private Viewport viewport;
-    String heroPanel;
-    int heroPage;
-    int heroRow;
+    public String heroPanel;
+    public int heroPage;
+    public int heroRow;
 
     public HeroScreen() {
 

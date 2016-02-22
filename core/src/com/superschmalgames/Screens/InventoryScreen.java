@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.Screens;
 
 //This class is for the inventory screen you see when you hit "I" from the game screen.
 
@@ -6,18 +6,21 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.Utils;
+
 
 public class InventoryScreen implements Screen {
 
     //The camera through which we "see" the game world.
     OrthographicCamera camera;
     private Viewport viewport;
-    String invPanel;
-    int invPage;
-    int invRow;
+    public String invPanel;
+    public int invPage;
+    public int invRow;
+
 
     public InventoryScreen() {
 

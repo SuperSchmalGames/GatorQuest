@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.Utilities;
 
 //Class to handle all user input. Allows us to put all the code in one place, and make the render() method in
 //all the other classes much cleaner.
@@ -7,6 +7,9 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.superschmalgames.Screens.GameScreen;
+import com.superschmalgames.Screens.HeroScreen;
+import com.superschmalgames.Screens.InventoryScreen;
 
 public class InputHandler implements InputProcessor {
 
@@ -17,7 +20,7 @@ public class InputHandler implements InputProcessor {
     public int menuIndex;
 
     //The index in the ArrayList of the item currently being hovered over
-    int currentItemIndex;
+    public int currentItemIndex;
 
     public InputHandler() {
         pushed = false;

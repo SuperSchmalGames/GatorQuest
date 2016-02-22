@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.Utilities;
 
 //Utilities class that manages all of the audio and video assets for the game.
 
@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.superschmalgames.NPC;
 
 import java.text.DecimalFormat;
 

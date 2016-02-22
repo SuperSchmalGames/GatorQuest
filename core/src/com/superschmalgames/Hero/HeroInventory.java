@@ -1,6 +1,13 @@
-package com.superschmalgames;
+package com.superschmalgames.Hero;
 
 //Class to represent the character's inventory.
+
+import com.superschmalgames.Inventory.ApparelItem;
+import com.superschmalgames.Inventory.ConsumableItem;
+import com.superschmalgames.Inventory.EquipableItem;
+import com.superschmalgames.Inventory.InventoryItem;
+import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +15,7 @@ import java.util.List;
 public class HeroInventory {
 
     //Character inventory.
-    List<InventoryItem> items;
+    public List<InventoryItem> items;
 
     public HeroInventory(){
         items = new ArrayList<InventoryItem>();
@@ -39,11 +46,11 @@ public class HeroInventory {
         tmpE.addItem(this);
         tmpE = new EquipableItem("Macbook Pro", Utils.macbook_pro_tex, "Software", 1.0, 1);
         tmpE.addItem(this);
-        tmpE = new EquipableItem("Nspire", Utils.nspire_tex, "Math Skillz", 2.0, 1);
+        tmpE = new EquipableItem("Nspire", Utils.nspire_tex, "Math", 2.0, 1);
         tmpE.addItem(this);
         tmpE = new EquipableItem("Soldering Iron", Utils.soldering_iron_tex, "Endurance", 1.0, 1);
         tmpE.addItem(this);
-        tmpE = new EquipableItem("TI-89", Utils.ti_89_tex, "Math Skillz", 1.0, 1);
+        tmpE = new EquipableItem("TI-89", Utils.ti_89_tex, "Math", 1.0, 1);
         tmpE.addItem(this);
         tmpE = new EquipableItem("USB Blaster", Utils.usb_blaster_tex, "Software", 2.0, 1);
         tmpE.addItem(this);

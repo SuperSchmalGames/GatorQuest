@@ -1,11 +1,15 @@
 package com.superschmalgames;
 
+import com.superschmalgames.Utilities.Animator;
+import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.Utils;
+
 public class NPC {
 
-    Animator walk;
+    public Animator walk;
     char direction;
     //used for movement
-    int x_pos,y_pos;
+    public int x_pos,y_pos;
     //used to reset position
     int org_x, org_y;
     boolean triggered;

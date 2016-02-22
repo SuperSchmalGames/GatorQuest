@@ -1,8 +1,9 @@
-package com.superschmalgames;
+package com.superschmalgames.Inventory;
 
 //Inventory item interface for creating and managing items that can be equipped or used by the character.
 
 import com.badlogic.gdx.graphics.Texture;
+import com.superschmalgames.Hero.HeroInventory;
 
 public interface InventoryItem {
     //Method to add an item to the character inventory.
