@@ -71,6 +71,8 @@ public class OpenWorldScreen implements Screen {
                     break;
                 //Turlington
                 case 1 :
+                    MainClass.gameScreen.setMap(Utils.turlington, Utils.turlington_x, Utils.turlington_y);
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
                     break;
                 default:
                     break;
