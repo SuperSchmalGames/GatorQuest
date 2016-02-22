@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.Utilities;
 
 //Utilities class that manages all of the audio and video assets for the game.
 
