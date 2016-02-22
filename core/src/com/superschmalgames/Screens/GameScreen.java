@@ -31,7 +31,9 @@ public class GameScreen implements Screen {
 
     //Flags for handling character movement.
     public boolean lWalk, rWalk, uWalk, dWalk;
+    public boolean dial;
 
+    //Declare the dialogue window.
     npcDialogue npcDia;
 
     public GameScreen() {
@@ -40,6 +42,8 @@ public class GameScreen implements Screen {
         rWalk = false;
         uWalk = false;
         dWalk = false;
+
+        dial = false;
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
@@ -54,7 +58,7 @@ public class GameScreen implements Screen {
 
     //made a separate method so that the map can be changed and starting coordinates
     //can be provided. This allows the gamescreen to handle all of the dungeons without
-    //making seperate screens.
+    //making separate screens.
     public void setMap(TiledMap tiledmap, int x, int y) {
         camera.position.set(x,y,0);
         tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
@@ -74,10 +78,6 @@ public class GameScreen implements Screen {
         //Clear the screen once per refresh.
         Gdx.gl.glClearColor(0, 0, 0.2f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        //Show our little dialogue popup
-        Utils.dialStage.act(delta);
-        Utils.dialStage.draw();
 
         //Log FPS in the console
         Utils.logger.log();
@@ -101,6 +101,28 @@ public class GameScreen implements Screen {
         //The following draw method is weird but allows us to make our hero smaller in order to look like he fits better proportional to objects in the world.
         //The second-to-last and third-to-last args are floats (from 0 to 1.0) that you can tweak to change the character's size.
         MainClass.batch.draw(MainClass.hero.heroAnim.currentFrame, MainClass.hero.xPos, MainClass.hero.yPos, 0, 0, MainClass.hero.heroAnim.currentFrame.getRegionWidth(), MainClass.hero.heroAnim.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
+
+        ////////////////////////////////////////////////////////DIALOGUE TEST//////////////////////////////////////////////////
+        if(lWalk){
+            dial = true;
+        }
+        if(rWalk){
+            dial = false;
+        }
+
+        //Show our little dialogue popup
+        if(dial) {
+            npcDia.show(Utils.dialStage);
+            npcDia.draw(MainClass.batch, 1.0f);
+            //Update the stage
+            Utils.dialStage.act(delta);
+            Utils.dialStage.draw();
+        }
+        if(!dial) {
+            npcDia.hide();
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         MainClass.batch.end();
 
         //draw the layer that appears above the character
@@ -176,8 +198,6 @@ public class GameScreen implements Screen {
     @Override
     public void show() {
         Utils.gameMusic.play();
-        
-        npcDia.show(Utils.dialStage);
     }
 
 

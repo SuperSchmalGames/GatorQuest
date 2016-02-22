@@ -203,7 +203,7 @@ public class Utils {
 
     ///////////////////////////////////////CHARACTER DIALOGUE/////////////////////////////////////////////////////////////
     public static final Stage dialStage = new Stage();
-    public static final Skin dialSkin= new Skin(Gdx.files.internal("visuals/uiskin"));
+    public static final Skin dialSkin= new Skin(Gdx.files.internal("visuals/uiskin.json"));
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //Static method to initialize all required options for the variables fields used above.
