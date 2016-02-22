@@ -13,15 +13,16 @@ public class NPC {
     //used to reset position
     int org_x, org_y;
     boolean triggered;
-    String script;
+    String script, name;
 
     //NPCs will only move in one direction if any
-    public NPC(char dir, String s, String sprite, int x, int y) {
+    public NPC(char dir, String s, String sprite, String n, int x, int y) {
         x_pos = x;
         org_x = x;
         y_pos = y;
         org_y = y;
         script = s;
+        name = n;
         direction = dir;
         walk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_" + sprite + ".png", 0.17f);
         walk.currentFrame = walk.walkAnimation.getKeyFrame(walk.stateTime, true);

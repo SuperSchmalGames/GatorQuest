@@ -95,9 +95,15 @@ public class Utils {
     //when adding enemies to the various arrays, the proper tiles must be accounted for in the Tiled Map Editor
     //========================================NEB=============================================
     public static NPC[] NEB_enemies = {
-        new NPC('l',"Welcome to the New Engineering Building", "l7",65*MAP_RESOLUTION,12*MAP_RESOLUTION),
-        new NPC('r',"What time does class start?", "r11", 79*MAP_RESOLUTION,9*MAP_RESOLUTION),
-
+            new NPC('l',"Welcome to the New Engineering Building", "l7", "a", 65*MAP_RESOLUTION,12*MAP_RESOLUTION),
+            new NPC('r',"What time does class start?", "r11", "b", 79*MAP_RESOLUTION,9*MAP_RESOLUTION),
+            new NPC('r',"Another wild Zubat appeared", "r9", "c", 51*MAP_RESOLUTION, 19*MAP_RESOLUTION),
+            new NPC('d',"as;dfjkdslaf;", "d9", "d", 59*MAP_RESOLUTION, 41*MAP_RESOLUTION),
+            new NPC('l',"as;dfjkdslaf;", "l10", "e", 46*MAP_RESOLUTION, 48*MAP_RESOLUTION),
+            new NPC('r',"as;dfjkdslaf;", "r11", "f", 44*MAP_RESOLUTION, 48*MAP_RESOLUTION),
+            new NPC('l',"abdfsefdscsd", "l7", "g", 48*MAP_RESOLUTION, 54*MAP_RESOLUTION),
+            new NPC('u',"LEAVE ME ALONE", "u11", "h", 47*MAP_RESOLUTION, 82*MAP_RESOLUTION),
+            new NPC('d',"Go away please", "d10", "i", 22*MAP_RESOLUTION, 53*MAP_RESOLUTION)
     };
     //========================================================================================
     //========================================CISE============================================
@@ -112,16 +118,16 @@ public class Utils {
     //========================================================================================
     //========================================Dorm============================================
     public static NPC[] Dorm_enemies = {
-            new NPC('u',"Welcome to UF, this is your dorm room.", "u10",9*MAP_RESOLUTION,20*MAP_RESOLUTION),
-            new NPC('d',"You better not steal anything", "d9",17*MAP_RESOLUTION,24*MAP_RESOLUTION),
-            new NPC('l',"I have no idea how to play the piano","l11",25*MAP_RESOLUTION,12*MAP_RESOLUTION),
-            new NPC('r',"If you ever feel tired just return here","r7",10*MAP_RESOLUTION,3*MAP_RESOLUTION),
-            new NPC('r',"I'm just a filler","r9",17*MAP_RESOLUTION,9*MAP_RESOLUTION),
-            new NPC('l',"Also a filler", "l10", 21*MAP_RESOLUTION,9*MAP_RESOLUTION),
-            new NPC('r',"This is my room", "r7", MAP_RESOLUTION,31*MAP_RESOLUTION),
-            new NPC('u',"Hello","u11",20*MAP_RESOLUTION,35*MAP_RESOLUTION),
-            new NPC('r',"Filler", "r11",6*MAP_RESOLUTION,42*MAP_RESOLUTION),
-            new NPC('d',"I'm tired","d9",24*MAP_RESOLUTION,41*MAP_RESOLUTION)
+            new NPC('u',"Welcome to UF, this is your dorm room.", "u10", "a",9*MAP_RESOLUTION,20*MAP_RESOLUTION),
+            new NPC('d',"You better not steal anything", "d9", "b", 17*MAP_RESOLUTION,24*MAP_RESOLUTION),
+            new NPC('l',"I have no idea how to play the piano","l11", "c", 25*MAP_RESOLUTION,12*MAP_RESOLUTION),
+            new NPC('r',"If you ever feel tired just return here","r7", "d", 10*MAP_RESOLUTION,3*MAP_RESOLUTION),
+            new NPC('r',"I'm just a filler","r9", "e",17*MAP_RESOLUTION,9*MAP_RESOLUTION),
+            new NPC('l',"Also a filler", "l10", "f", 21*MAP_RESOLUTION,9*MAP_RESOLUTION),
+            new NPC('r',"This is my room", "r7", "g", MAP_RESOLUTION,31*MAP_RESOLUTION),
+            new NPC('u',"Hello","u11", "h", 20*MAP_RESOLUTION,35*MAP_RESOLUTION),
+            new NPC('r',"Filler", "r11", "i", 6*MAP_RESOLUTION,42*MAP_RESOLUTION),
+            new NPC('d',"I'm tired","d9", "j", 24*MAP_RESOLUTION,41*MAP_RESOLUTION)
     };
     //========================================================================================
     //========================================Marston=========================================
