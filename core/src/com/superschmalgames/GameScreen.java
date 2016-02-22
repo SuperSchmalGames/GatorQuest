@@ -14,12 +14,13 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
+
 public class GameScreen implements Screen {
 
     //The camera through which we "see" the game world.
     OrthographicCamera camera;
     private Viewport viewport;
-    int current_location;
+    NPC[] enemies;
     //The game map itself.
     TiledMapTileLayer collision;
     TiledMapRenderer tiledmaprenderer;
@@ -62,68 +63,86 @@ public class GameScreen implements Screen {
         background[2] = 2;
         //foreground layer
         foreground[0] = 3;
-        current_location = location;
-    }
-
-    private void drawEnemies() {
-        switch(current_location) {
+        switch(location) {
             //Dorm
             case 5:
+                enemies = Utils.Dorm_enemies;
                 break;
             //Marston
             case 4:
+                enemies = Utils.Marston_enemies;
                 break;
             //NEB
             case 3:
-                for (NPC enemies : Utils.NEB_enemies) {
-                    MainClass.batch.draw(enemies.walk.currentFrame, enemies.x_pos, enemies.y_pos,0,0,enemies.walk.currentFrame.getRegionWidth(), enemies.walk.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
-                }
+                enemies = Utils.NEB_enemies;
                 break;
             //CISE
             case 2:
+                enemies = Utils.CISE_enemies;
                 break;
             //Turlington
             case 1:
-                break;
-            default :
+                enemies = Utils.Turlington_enemies;
                 break;
         }
     }
 
+    //draws enemies...obviously
+    private void drawEnemies() {
+        for (NPC enemy : enemies) {
+            MainClass.batch.draw(enemy.walk.currentFrame, enemy.x_pos, enemy.y_pos,0,0,enemy.walk.currentFrame.getRegionWidth(), enemy.walk.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
+        }
+    }
+
+    //check for line of sight, pauses the player as an npc approaches
     private void checkForEnemy(float delta) {
         if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("enemy")) {
             int temp = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("number"));
-            switch(current_location) {
-                //Dorm
-                case 5:
-                    break;
-                //Marston
-                case 4:
-                    break;
-                //NEB
-                case 3:
-                    if(!Utils.NEB_enemies[temp].getTriggered()) {
-                        lWalk = false;
-                        rWalk = false;
-                        uWalk = false;
-                        dWalk = false;
-                        Utils.NEB_enemies[temp].move(delta, camera.position.x, camera.position.y);
-                        MainClass.hero.setMove(false);
-                    }
-                    else {
-                        MainClass.hero.setMove(true);
-                    }
-                    break;
-                //CISE
-                case 2:
-                    break;
-                //Turlington
-                case 1:
-                    break;
-                default :
-                    break;
+            if(!enemies[temp].getTriggered()) {
+                lWalk = false;
+                rWalk = false;
+                uWalk = false;
+                dWalk = false;
+                enemies[temp].move(delta, camera.position.x, camera.position.y);
+                MainClass.hero.setMove(false);
+            }
+            else {
+                MainClass.hero.setMove(true);
             }
 
+        }
+    }
+
+    //will handle events triggered by interaction between the player and things they are investigating
+    public void interact() {
+        int x = 0;
+        int y = 0;
+        switch(MainClass.hero.lastDir) {
+            case 'L' :
+                x = (int)((camera.position.x - MainClass.hero.width)/Utils.MAP_RESOLUTION);
+                y = (int)(camera.position.y/Utils.MAP_RESOLUTION);
+                break;
+            case 'R' :
+                x = (int)((camera.position.x + MainClass.hero.width)/Utils.MAP_RESOLUTION);
+                y = (int)(camera.position.y/Utils.MAP_RESOLUTION);
+                break;
+            case 'U' :
+                x = (int)(camera.position.x/Utils.MAP_RESOLUTION);
+                y = (int)((camera.position.y + MainClass.hero.height)/ Utils.MAP_RESOLUTION);
+                break;
+            case 'D' :
+                x = (int)(camera.position.x/Utils.MAP_RESOLUTION);
+                y = (int)((camera.position.y - MainClass.hero.height)/ Utils.MAP_RESOLUTION);
+                break;
+        }
+        if(collision.getCell(x,y).getTile().getProperties().containsKey("event")) {
+            int event = Integer.valueOf((String) collision.getCell(x,y).getTile().getProperties().get("event"));
+            switch(event) {
+                //npc event
+                case 0 :
+                    enemies[Integer.valueOf((String) collision.getCell(x,y).getTile().getProperties().get("number"))].initiateCombat();
+                    break;
+            }
         }
     }
 
@@ -149,14 +168,14 @@ public class GameScreen implements Screen {
         MainClass.batch.begin();
 
         ////////////////////////////////////////////////////////TEST PRINTS////////////////////////////////////////////////////////////////////
-        Utils.testFont.draw(MainClass.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y , 0, Utils.GAME_SCREEN_HEIGHT-40);
-        Utils.testFont.draw(MainClass.batch, "GPA: " + Utils.df1.format(MainClass.hero.GPA) + " RedBull Quant: " + MainClass.hero.inventory.items.get(5).getQuantity(), 0, Utils.GAME_SCREEN_HEIGHT - 75);
+        Utils.testFont.draw(MainClass.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y , camera.position.x-Utils.GAME_SCREEN_WIDTH/2, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-10);
+        //Utils.testFont.draw(MainClass.batch, "GPA: " + Utils.df1.format(MainClass.hero.GPA) + " RedBull Quant: " + MainClass.hero.inventory.items.get(5).getQuantity(), 0, Utils.GAME_SCREEN_HEIGHT - 75);
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //The following draw method is weird but allows us to make our hero smaller in order to look like he fits better proportional to objects in the world.
         //The second-to-last and third-to-last args are floats (from 0 to 1.0) that you can tweak to change the character's size.
-        MainClass.batch.draw(MainClass.hero.heroAnim.currentFrame, MainClass.hero.xPos, MainClass.hero.yPos, 0, 0, MainClass.hero.heroAnim.currentFrame.getRegionWidth(), MainClass.hero.heroAnim.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
         drawEnemies();
+        MainClass.batch.draw(MainClass.hero.heroAnim.currentFrame, MainClass.hero.xPos, MainClass.hero.yPos, 0, 0, MainClass.hero.heroAnim.currentFrame.getRegionWidth(), MainClass.hero.heroAnim.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
         MainClass.batch.end();
 
         //draw the layer that appears above the character

@@ -12,14 +12,14 @@ public class NPC {
     String script;
 
     //NPCs will only move in one direction if any
-    public NPC(char dir,String s, int x, int y) {
+    public NPC(char dir, String s, String sprite, int x, int y) {
         x_pos = x;
         org_x = x;
         y_pos = y;
         org_y = y;
         script = s;
         direction = dir;
-        walk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_" + direction +"9.png", 0.17f);
+        walk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_" + sprite + ".png", 0.17f);
         walk.currentFrame = walk.walkAnimation.getKeyFrame(walk.stateTime, true);
         triggered = false;
 
@@ -38,7 +38,7 @@ public class NPC {
                     initiateCombat();
                 break;
             case 'r':
-                if (x_pos < x - MainClass.hero.width/2) {
+                if (x_pos < x - 3*MainClass.hero.width/2) {
                     x_pos += Utils.MOVE_DIST;
                     temp = true;
                 }
@@ -46,7 +46,7 @@ public class NPC {
                     initiateCombat();
                 break;
             case 'u':
-                if (y_pos < y - MainClass.hero.height/2) {
+                if (y_pos < y - 3*MainClass.hero.height/2) {
                     y_pos += Utils.MOVE_DIST;
                     temp = true;
                 }
@@ -87,7 +87,10 @@ public class NPC {
 
     public void initiateCombat() {
         System.out.print(script);
-        reset();
-        triggered = true;
+        if (!triggered) {
+            reset();
+            triggered = true;
+            walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);
+        }
     }
 }
