@@ -4,6 +4,7 @@ package com.superschmalgames.Screens;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.superschmalgames.Utilities.CharacterDialogue;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -31,10 +33,10 @@ public class GameScreen implements Screen {
 
     //Flags for handling character movement.
     public boolean lWalk, rWalk, uWalk, dWalk;
-    public boolean dial;
+    public boolean dial, newDial;
 
-    //Declare the dialogue window.
-    npcDialogue npcDia;
+    //Declare window for dialogue popups
+    public CharacterDialogue dialogue;
 
     public GameScreen() {
 
@@ -44,6 +46,7 @@ public class GameScreen implements Screen {
         dWalk = false;
 
         dial = false;
+        newDial = false;
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
@@ -51,9 +54,6 @@ public class GameScreen implements Screen {
 
         //Initialize the map
         setMap(Utils.dorm, Utils.start_x, Utils.start_y);
-
-        //Create an instance of our character dialogue screen
-        npcDia = new npcDialogue("dialogue test", Utils.dialSkin);
     }
 
     //made a separate method so that the map can be changed and starting coordinates
@@ -103,23 +103,20 @@ public class GameScreen implements Screen {
         MainClass.batch.draw(MainClass.hero.heroAnim.currentFrame, MainClass.hero.xPos, MainClass.hero.yPos, 0, 0, MainClass.hero.heroAnim.currentFrame.getRegionWidth(), MainClass.hero.heroAnim.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
 
         ////////////////////////////////////////////////////////DIALOGUE TEST//////////////////////////////////////////////////
-        if(lWalk){
+        if(newDial){
+            newDial = false;
             dial = true;
+            newDialog();
         }
-        if(rWalk){
-            dial = false;
-        }
-
-        //Show our little dialogue popup
+        //Show our little dialogue popup if dial is true.
         if(dial) {
-            npcDia.show(Utils.dialStage);
-            npcDia.draw(MainClass.batch, 1.0f);
-            //Update the stage
+            if (dialogue.getStage() != null) {
+                dialogue.draw(MainClass.batch, 1.0f);
+                dialogue.key(Input.Keys.K, "kill window");
+            }
+            //Update the stage once per refresh while window is active.
             Utils.dialStage.act(delta);
             Utils.dialStage.draw();
-        }
-        if(!dial) {
-            npcDia.hide();
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -195,11 +192,17 @@ public class GameScreen implements Screen {
             else MainClass.hero.standAnimation();
     }
 
+    //Method to set our dialogue equal to a new window and allow it to be shown on the screen.
+    public void newDialog(){
+        dialogue = new CharacterDialogue("Let's Talk!",Utils.dialSkin);  //Find out if removing windows from stage will free that memory!!!!!!
+        dialogue.show(Utils.dialStage);
+        dialogue.setPosition(Utils.GAME_SCREEN_WIDTH/2-dialogue.getWidth()/2,Utils.GAME_SCREEN_HEIGHT/2-150);
+    }
+
     @Override
     public void show() {
         Utils.gameMusic.play();
     }
-
 
     @Override
     public void resize(int width, int height) {
@@ -224,22 +227,6 @@ public class GameScreen implements Screen {
     @Override
     public void dispose() {
 
-    }
-
-    public static class npcDialogue extends Dialog {
-        public npcDialogue(String title, Skin skin) {
-            super(title, skin);
-        }
-
-        {
-            text("Test for dialogue stuff");
-            button("Ok!");
-        }
-
-        @Override
-        protected void result(Object object) {
-            super.result(object);
-        }
     }
 
 }
