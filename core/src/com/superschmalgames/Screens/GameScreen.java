@@ -102,28 +102,27 @@ public class GameScreen implements Screen {
         //The second-to-last and third-to-last args are floats (from 0 to 1.0) that you can tweak to change the character's size.
         MainClass.batch.draw(MainClass.hero.heroAnim.currentFrame, MainClass.hero.xPos, MainClass.hero.yPos, 0, 0, MainClass.hero.heroAnim.currentFrame.getRegionWidth(), MainClass.hero.heroAnim.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
 
+        MainClass.batch.end();
+
+        //draw the layer that appears above the character
+        tiledmaprenderer.render(foreground);
+
         ////////////////////////////////////////////////////////DIALOGUE TEST//////////////////////////////////////////////////
         if(newDial){
             newDial = false;
             dial = true;
             newDialog();
         }
-        //Show our little dialogue popup if dial is true.
+        //Show our little dialogue popup if dial is true. DONT NEED TO DRAW THE STAGE, JUST THE DIALOGUE ITSELF
         if(dial) {
             if (dialogue.getStage() != null) {
+                MainClass.batch.begin();
                 dialogue.draw(MainClass.batch, 1.0f);
+                MainClass.batch.end();
                 dialogue.key(Input.Keys.K, "kill window");
             }
-            //Update the stage once per refresh while window is active.
-            Utils.dialStage.act(delta);
-            Utils.dialStage.draw();
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        MainClass.batch.end();
-
-        //draw the layer that appears above the character
-        tiledmaprenderer.render(foreground);
 
         //Keyboard input is taken in the InputHandler class, which updates the following walk variables to control
         //how character movement is rendered to the screen
@@ -196,7 +195,7 @@ public class GameScreen implements Screen {
     public void newDialog(){
         dialogue = new CharacterDialogue("Let's Talk!",Utils.dialSkin);  //Find out if removing windows from stage will free that memory!!!!!!
         dialogue.show(Utils.dialStage);
-        dialogue.setPosition(Utils.GAME_SCREEN_WIDTH/2-dialogue.getWidth()/2,Utils.GAME_SCREEN_HEIGHT/2-150);
+        dialogue.setPosition(Utils.GAME_SCREEN_WIDTH/2-dialogue.getWidth()/2,0);
     }
 
     @Override

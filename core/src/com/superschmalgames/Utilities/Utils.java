@@ -14,6 +14,9 @@ import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.utils.Scaling;
+import com.badlogic.gdx.utils.viewport.ScalingViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 import java.text.DecimalFormat;
 
@@ -203,7 +206,8 @@ public class Utils {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ///////////////////////////////////////CHARACTER DIALOGUE/////////////////////////////////////////////////////////////
-    public static final Stage dialStage = new Stage();
+    public static Stage dialStage;
+    public static final ScalingViewport dialPort = new ScalingViewport(Scaling.fit, 1020, 612);
     public static final Skin dialSkin= new Skin(Gdx.files.internal("visuals/uiskin.json"));
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -238,6 +242,8 @@ public class Utils {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //////////////////////////////////DIALOGUE WINDOW//////////////////////////////////////////////////////////////////////
+        dialStage = new Stage(dialPort, MainClass.batch);
+        Gdx.app.log("test","Width: "+dialStage.getWidth()+" Height: "+dialStage.getHeight());
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
