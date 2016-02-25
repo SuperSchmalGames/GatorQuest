@@ -4,6 +4,7 @@ package com.superschmalgames.Screens;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.superschmalgames.Utilities.CharacterDialogue;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -31,8 +33,10 @@ public class GameScreen implements Screen {
 
     //Flags for handling character movement.
     public boolean lWalk, rWalk, uWalk, dWalk;
+    public boolean dial, newDial;
 
-    npcDialogue npcDia;
+    //Declare window for dialogue popups
+    public CharacterDialogue dialogue;
 
     public GameScreen() {
 
@@ -41,20 +45,20 @@ public class GameScreen implements Screen {
         uWalk = false;
         dWalk = false;
 
+        dial = false;
+        newDial = false;
+
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
 
         //Initialize the map
         setMap(Utils.dorm, Utils.start_x, Utils.start_y);
-
-        //Create an instance of our character dialogue screen
-        npcDia = new npcDialogue("dialogue test", Utils.dialSkin);
     }
 
     //made a separate method so that the map can be changed and starting coordinates
     //can be provided. This allows the gamescreen to handle all of the dungeons without
-    //making seperate screens.
+    //making separate screens.
     public void setMap(TiledMap tiledmap, int x, int y) {
         camera.position.set(x,y,0);
         tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
@@ -74,10 +78,6 @@ public class GameScreen implements Screen {
         //Clear the screen once per refresh.
         Gdx.gl.glClearColor(0, 0, 0.2f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        //Show our little dialogue popup
-        Utils.dialStage.act(delta);
-        Utils.dialStage.draw();
 
         //Log FPS in the console
         Utils.logger.log();
@@ -101,10 +101,28 @@ public class GameScreen implements Screen {
         //The following draw method is weird but allows us to make our hero smaller in order to look like he fits better proportional to objects in the world.
         //The second-to-last and third-to-last args are floats (from 0 to 1.0) that you can tweak to change the character's size.
         MainClass.batch.draw(MainClass.hero.heroAnim.currentFrame, MainClass.hero.xPos, MainClass.hero.yPos, 0, 0, MainClass.hero.heroAnim.currentFrame.getRegionWidth(), MainClass.hero.heroAnim.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
+
         MainClass.batch.end();
 
         //draw the layer that appears above the character
         tiledmaprenderer.render(foreground);
+
+        ////////////////////////////////////////////////////////DIALOGUE TEST//////////////////////////////////////////////////
+        if(newDial){
+            newDial = false;
+            dial = true;
+            newDialog();
+        }
+        //Show our little dialogue popup if dial is true. DONT NEED TO DRAW THE STAGE, JUST THE DIALOGUE ITSELF
+        if(dial) {
+            if (dialogue.getStage() != null) {
+                MainClass.batch.begin();
+                dialogue.draw(MainClass.batch, 1.0f);
+                MainClass.batch.end();
+                dialogue.key(Input.Keys.K, "kill window");
+            }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //Keyboard input is taken in the InputHandler class, which updates the following walk variables to control
         //how character movement is rendered to the screen
@@ -173,12 +191,17 @@ public class GameScreen implements Screen {
             else MainClass.hero.standAnimation();
     }
 
+    //Method to set our dialogue equal to a new window and allow it to be shown on the screen.
+    public void newDialog(){
+        dialogue = new CharacterDialogue("Let's Talk!",Utils.dialSkin);  //Find out if removing windows from stage will free that memory!!!!!!
+        dialogue.show(Utils.dialStage);
+        dialogue.setPosition(Utils.GAME_SCREEN_WIDTH/2-dialogue.getWidth()/2,0);
+    }
+
     @Override
     public void show() {
         Utils.gameMusic.play();
-        npcDia.show(Utils.dialStage);
     }
-
 
     @Override
     public void resize(int width, int height) {
@@ -203,22 +226,6 @@ public class GameScreen implements Screen {
     @Override
     public void dispose() {
 
-    }
-
-    public static class npcDialogue extends Dialog {
-        public npcDialogue(String title, Skin skin) {
-            super(title, skin);
-        }
-
-        {
-            text("Test for dialogue stuff");
-            button("Ok!");
-        }
-
-        @Override
-        protected void result(Object object) {
-            super.result(object);
-        }
     }
 
 }
