@@ -176,7 +176,6 @@ public class GameScreen implements Screen {
     @Override
     public void show() {
         Utils.gameMusic.play();
-        
         npcDia.show(Utils.dialStage);
     }
 
