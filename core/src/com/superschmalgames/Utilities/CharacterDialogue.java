@@ -2,24 +2,23 @@ package com.superschmalgames.Utilities;
 
 //This class handles the popup window that shows when there is dialogue between characters
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 
-public class CharacterDialogue extends Dialog{
+public class CharacterDialogue{
 
-    public CharacterDialogue(String title, Skin skin) {
-        super(title, skin);
-        text("This test will be for a test for dialogue stuff\ninvolving longer strings which should hopefully\nboth require and allow for some sort of scrolling or text wrapping");
-        button("K: Ok!");
+    public GlyphLayout dialog;
+
+    public CharacterDialogue() {
+        dialog = new GlyphLayout(Utils.font_small, "");
+        Utils.window.setPosition(0,0);
     }
 
-    //This method is called when we hit "ok" in our dialogue window. It hides the window and removes it from the Stage.
-    @Override
-    protected void result(Object object) {
-        //Clear flag so window disappears
-        MainClass.gameScreen.dial = false;
-        //Give control back to InputHandler
-        Gdx.input.setInputProcessor(MainClass.inputHandler);
-    }
 }
+
+
+
+//Need Sprite to act as the window our text is in   (Plain blue with white order?)
+//Need GlyphLayout to hold each sentence that gets displayed to the screen
+//Need to reuse menuIcon Sprite
+//Need a separate GlyphLayout/string to hold either "ok" or "ok  cancel" selection options at bottom right of window
+//Need some sort of border to go around where the npc portraits will be displayed

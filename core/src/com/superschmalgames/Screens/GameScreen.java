@@ -6,6 +6,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -36,7 +37,7 @@ public class GameScreen implements Screen {
     public boolean dial, newDial;
 
     //Declare window for dialogue popups
-    public CharacterDialogue dialogue;
+    public CharacterDialogue window;
 
     public GameScreen() {
 
@@ -115,12 +116,10 @@ public class GameScreen implements Screen {
         }
         //Show our little dialogue popup if dial is true. DONT NEED TO DRAW THE STAGE, JUST THE DIALOGUE ITSELF
         if(dial) {
-            if (dialogue.getStage() != null) {
-                MainClass.batch.begin();
-                dialogue.draw(MainClass.batch, 1.0f);
-                MainClass.batch.end();
-                dialogue.key(Input.Keys.K, "kill window");
-            }
+            MainClass.batch.begin();
+            Utils.window.draw(MainClass.batch);
+            Utils.font_small.draw(MainClass.batch, window.dialog, 20, 190);
+            MainClass.batch.end();
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -193,10 +192,8 @@ public class GameScreen implements Screen {
 
     //Method to set our dialogue equal to a new window and allow it to be shown on the screen.
     public void newDialog(){
-        dialogue = new CharacterDialogue("Let's Talk!",Utils.dialSkin);  //Find out if removing windows from stage will free that memory!!!!!!
-        dialogue.show(Utils.dialStage);
-        dialogue.setPosition(0,0);
-        dialogue.setSize(510.0f,204.0f);
+        window = new CharacterDialogue();                              //8=left align, true=wrap, null=truncate
+        window.dialog.setText(Utils.font_small, Utils.testDial3, Color.WHITE, 500, 8, true);
     }
 
     @Override
