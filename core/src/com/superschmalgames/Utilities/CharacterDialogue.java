@@ -10,7 +10,7 @@ public class CharacterDialogue extends Dialog{
 
     public CharacterDialogue(String title, Skin skin) {
         super(title, skin);
-        text("Test for dialogue stuff");
+        text("This test will be for a test for dialogue stuff\ninvolving longer strings which should hopefully\nboth require and allow for some sort of scrolling or text wrapping");
         button("K: Ok!");
     }
 

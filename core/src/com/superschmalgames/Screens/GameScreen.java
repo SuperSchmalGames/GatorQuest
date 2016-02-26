@@ -195,7 +195,8 @@ public class GameScreen implements Screen {
     public void newDialog(){
         dialogue = new CharacterDialogue("Let's Talk!",Utils.dialSkin);  //Find out if removing windows from stage will free that memory!!!!!!
         dialogue.show(Utils.dialStage);
-        dialogue.setPosition(Utils.GAME_SCREEN_WIDTH/2-dialogue.getWidth()/2,0);
+        dialogue.setPosition(0,0);
+        dialogue.setSize(510.0f,204.0f);
     }
 
     @Override

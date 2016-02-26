@@ -9,6 +9,7 @@
 },
 "com.badlogic.gdx.graphics.g2d.BitmapFont": {
 	"font_cour_16pt_bold": { "file": "font_cour_16pt_bold.fnt" },
+	"font_pixel": {"file": "RosesAreFF0_small.fnt"},
 	"default-font": { "file": "default.fnt" }
 },
 "com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable": {
@@ -22,14 +23,14 @@
 },
 "com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle": {
 	"default": {
-		"font": "default-font",
+		"font": "font_pixel",
 		"fontColor": { "a": 1, "b": 1, "g": 1, "r": 1 },
 		"disabledFontColor": { "a": 1, "b": 0.8, "g": 0.8, "r": 0.8 },
 		"up": "default-round",
 		"down": "default-round-down"
 	},
 	"toggle": {
-		"font": "default-font",
+		"font": "font_pixel",
 		"fontColor": { "a": 1, "b": 1, "g": 1, "r": 1 },
 		"downFontColor": { "a": 1, "r": 1 },
 		"up": "default-round",
@@ -54,19 +55,19 @@
 "com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle": {
 	"default": {
 		"background": "default-window",
-		"titleFont": "default-font",
+		"titleFont": "font_pixel",
 		"titleFontColor": { "a": 1, "b": 1, "g": 1, "r": 1 }
 	},
 	"dialog": {
 		"background": "default-window",
-		"titleFont": "default-font",
+		"titleFont": "font_pixel",
 		"titleFontColor": { "a": 1, "b": 1, "g": 1, "r": 1 },
 		"stageBackground": "dialogDim"
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle": {
 	"default": {
-		"font": "default-font",
+		"font": "font_pixel",
 		"fontColor": { "a": 1, "b": 1, "g": 1, "r": 1 },
 		"background": "textfield",
 		"cursor": "cursor",
@@ -84,31 +85,31 @@
 },
 "com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
 	"optional": {
-		"font": "default-font",
+		"font": "font_pixel",
 		"fontColor": { "a": 1, "b": 0.7, "g": 0.7, "r": 0.7 }
 	},
 	"default": {
-		"font": "default-font",
+		"font": "font_pixel",
 		"fontColor": { "a": 1, "b": 1, "g": 1, "r": 1 }
 	},
 	"error": {
-		"font": "default-font",
+		"font": "font_pixel",
 		"fontColor": { "a": 1, "r": 1 }
 	},
 	"title": {
-		"font": "default-font",
+		"font": "font_pixel",
 		"fontColor": { "a": 1, "b": 0.8, "g": 0.8, "r": 0.8 }
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle": {
 	"default": {
-		"font": "default-font",
+		"font": "font_pixel",
 		"fontColorSelected": { "a": 1, "b": 1, "g": 1, "r": 1 },
 		"fontColorUnselected": { "a": 1, "b": 1, "g": 1, "r": 1 },
 		"selection": "selection"
 	},
 	"dimmed": {
-		"font": "default-font",
+		"font": "font_pixel",
 		"fontColorSelected": { "a": 1, "b": 1, "g": 1, "r": 1 },
 		"fontColorUnselected": { "a": 1, "b": 1, "g": 1, "r": 1 },
 		"selection": "selection",
@@ -119,7 +120,7 @@
 	"default": {
 		"checkboxOn": "check-on",
 		"checkboxOff": "check-off",
-		"font": "default-font",
+		"font": "font_pixel",
 		"fontColor": { "a": 1, "b": 1, "g": 1, "r": 1 }
 	}
 },
@@ -132,7 +133,7 @@
 },
 "com.badlogic.gdx.scenes.scene2d.ui.SelectBox$SelectBoxStyle": {
 	"default": {
-		"font": "default-font",
+		"font": "font_pixel",
 		"fontColor": { "a": 1, "b": 1, "g": 1, "r": 1 },
 		"background": "default-select",
 		"scrollStyle": "default",
