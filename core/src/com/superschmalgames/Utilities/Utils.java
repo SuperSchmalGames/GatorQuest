@@ -9,7 +9,6 @@ import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.maps.Map;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.superschmalgames.NPC;
@@ -94,16 +93,69 @@ public class Utils {
     //////////////////////////////////////DUNGEON ENEMIES//////////////////////////////////////////////////////////////////////
     //when adding enemies to the various arrays, the proper tiles must be accounted for in the Tiled Map Editor
     //========================================NEB=============================================
+    //89
     public static NPC[] NEB_enemies = {
-            new NPC('l',"Welcome to the New Engineering Building", "l7", "a", 65*MAP_RESOLUTION,12*MAP_RESOLUTION),
-            new NPC('r',"What time does class start?", "r11", "b", 79*MAP_RESOLUTION,9*MAP_RESOLUTION),
-            new NPC('r',"Another wild Zubat appeared", "r9", "c", 51*MAP_RESOLUTION, 19*MAP_RESOLUTION),
-            new NPC('d',"as;dfjkdslaf;", "d9", "d", 59*MAP_RESOLUTION, 41*MAP_RESOLUTION),
-            new NPC('l',"as;dfjkdslaf;", "l10", "e", 46*MAP_RESOLUTION, 48*MAP_RESOLUTION),
-            new NPC('r',"as;dfjkdslaf;", "r11", "f", 44*MAP_RESOLUTION, 48*MAP_RESOLUTION),
-            new NPC('l',"abdfsefdscsd", "l7", "g", 48*MAP_RESOLUTION, 54*MAP_RESOLUTION),
-            new NPC('u',"LEAVE ME ALONE", "u11", "h", 47*MAP_RESOLUTION, 82*MAP_RESOLUTION),
-            new NPC('d',"Go away please", "d10", "i", 22*MAP_RESOLUTION, 53*MAP_RESOLUTION)
+            new NPC('l',"Welcome to the New Engineering Building", "l7", 65*MAP_RESOLUTION,12*MAP_RESOLUTION), //0
+            new NPC('r',"What time does class start?", "r11", 79*MAP_RESOLUTION,9*MAP_RESOLUTION),
+            new NPC('r',"Another wild Zubat appeared", "r9", 51*MAP_RESOLUTION, 19*MAP_RESOLUTION),
+            new NPC('d',"as;dfjkdslaf;", "d9", 59*MAP_RESOLUTION, 41*MAP_RESOLUTION),
+            new NPC('l',"as;dfjkdslaf;", "l10", 46*MAP_RESOLUTION, 48*MAP_RESOLUTION),
+            new NPC('r',"as;dfjkdslaf;", "r11", 44*MAP_RESOLUTION, 48*MAP_RESOLUTION),
+            new NPC('l',"abdfsefdscsd", "l7", 48*MAP_RESOLUTION, 54*MAP_RESOLUTION),
+            new NPC('u',"LEAVE ME ALONE", "u11", 47*MAP_RESOLUTION, 82*MAP_RESOLUTION),
+            new NPC('d',"Go away please", "d10", 22*MAP_RESOLUTION, 53*MAP_RESOLUTION),
+            new NPC('l',"adsfds", "l10", 45*MAP_RESOLUTION, 7*MAP_RESOLUTION),
+            new NPC('d',"asdf", "d10", 41*MAP_RESOLUTION, 23*MAP_RESOLUTION),
+            new NPC('l',"asdfsdf", "l9", 49*MAP_RESOLUTION, 32*MAP_RESOLUTION),
+            new NPC('d',"asdfsd", "d10", 30*MAP_RESOLUTION, 27*MAP_RESOLUTION),
+            new NPC('l',"asdfsadf","l11", 24*MAP_RESOLUTION, 20*MAP_RESOLUTION),
+            new NPC('r',"sadfdsf","r7", 28*MAP_RESOLUTION, (89-54)*MAP_RESOLUTION),
+            new NPC('d',"gasdefds","d7", 16*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
+            new NPC('d',"asfddsf","d11",3*MAP_RESOLUTION, (89-66)*MAP_RESOLUTION),
+            new NPC('u',"asddfs", "u10",3*MAP_RESOLUTION, (89-49)*MAP_RESOLUTION),  //17
+            new NPC('r',"baddsf", "r7", 3*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 16*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d11", 27*MAP_RESOLUTION, (89-37)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d10", 45*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u9", 68*MAP_RESOLUTION, (89-6)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r9", 96*MAP_RESOLUTION, (89-72)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u9", 97*MAP_RESOLUTION, (89-50)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r9", 110*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 122*MAP_RESOLUTION, (89-62)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r9", 121*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 112*MAP_RESOLUTION, (89-33)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l9", 125*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r9", 118*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION), //30
+            new NPC('d', "aassdf", "d9", 133*MAP_RESOLUTION, (89-4)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l9", 140*MAP_RESOLUTION, (89-19)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u9", 140*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 149*MAP_RESOLUTION, (89-19)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l9", 170*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 137*MAP_RESOLUTION, (89-80)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u9", 143*MAP_RESOLUTION, (89-57)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 165*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u9", 160*MAP_RESOLUTION, (89-83)*MAP_RESOLUTION), //39
+            new NPC('r', "aassdf", "r9", 187*MAP_RESOLUTION, (89-68)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u9", 190*MAP_RESOLUTION, (89-50)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u9", 202*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 214*MAP_RESOLUTION, (89-66)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r9", 211*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u9", 229*MAP_RESOLUTION, (89-58)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l9", 224*MAP_RESOLUTION, (89-52)*MAP_RESOLUTION), //46
+            new NPC('r', "aassdf", "r9", 187*MAP_RESOLUTION, (89-24)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l9", 205*MAP_RESOLUTION, (89-24)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 212*MAP_RESOLUTION, (89-24)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 229*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION), //50
+            new NPC('r', "aassdf", "r9", 246*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u9", 258*MAP_RESOLUTION, (89-26)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 283*MAP_RESOLUTION, (89-16)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 284*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l9", 276*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 287*MAP_RESOLUTION, (89-70)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 269*MAP_RESOLUTION, (89-61)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u9", 262*MAP_RESOLUTION, (89-54)*MAP_RESOLUTION), //58
+            new NPC('d', "aassdf", "d9", 262*MAP_RESOLUTION, (89-37)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r9", 248*MAP_RESOLUTION, (89-46)*MAP_RESOLUTION),
     };
     //========================================================================================
     //========================================CISE============================================
@@ -118,16 +170,16 @@ public class Utils {
     //========================================================================================
     //========================================Dorm============================================
     public static NPC[] Dorm_enemies = {
-            new NPC('u',"Welcome to UF, this is your dorm room.", "u10", "a",9*MAP_RESOLUTION,20*MAP_RESOLUTION),
-            new NPC('d',"You better not steal anything", "d9", "b", 17*MAP_RESOLUTION,24*MAP_RESOLUTION),
-            new NPC('l',"I have no idea how to play the piano","l11", "c", 25*MAP_RESOLUTION,12*MAP_RESOLUTION),
-            new NPC('r',"If you ever feel tired just return here","r7", "d", 10*MAP_RESOLUTION,3*MAP_RESOLUTION),
-            new NPC('r',"I'm just a filler","r9", "e",17*MAP_RESOLUTION,9*MAP_RESOLUTION),
-            new NPC('l',"Also a filler", "l10", "f", 21*MAP_RESOLUTION,9*MAP_RESOLUTION),
-            new NPC('r',"This is my room", "r7", "g", MAP_RESOLUTION,31*MAP_RESOLUTION),
-            new NPC('u',"Hello","u11", "h", 20*MAP_RESOLUTION,35*MAP_RESOLUTION),
-            new NPC('r',"Filler", "r11", "i", 6*MAP_RESOLUTION,42*MAP_RESOLUTION),
-            new NPC('d',"I'm tired","d9", "j", 24*MAP_RESOLUTION,41*MAP_RESOLUTION)
+            new NPC('u',"Welcome to UF, this is your dorm room.", "u10",9*MAP_RESOLUTION,20*MAP_RESOLUTION),
+            new NPC('d',"You better not steal anything", "d9", 17*MAP_RESOLUTION,24*MAP_RESOLUTION),
+            new NPC('l',"I have no idea how to play the piano","l11", 25*MAP_RESOLUTION,12*MAP_RESOLUTION),
+            new NPC('r',"If you ever feel tired just return here","r7", 10*MAP_RESOLUTION,3*MAP_RESOLUTION),
+            new NPC('r',"I'm just a filler","r9",17*MAP_RESOLUTION,9*MAP_RESOLUTION),
+            new NPC('l',"Also a filler", "l10", 21*MAP_RESOLUTION,9*MAP_RESOLUTION),
+            new NPC('r',"This is my room", "r7", MAP_RESOLUTION,31*MAP_RESOLUTION),
+            new NPC('u',"Hello","u11", 20*MAP_RESOLUTION,35*MAP_RESOLUTION),
+            new NPC('r',"Filler", "r11", 6*MAP_RESOLUTION,42*MAP_RESOLUTION),
+            new NPC('d',"I'm tired","d9", 24*MAP_RESOLUTION,41*MAP_RESOLUTION)
     };
     //========================================================================================
     //========================================Marston=========================================
