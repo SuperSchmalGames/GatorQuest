@@ -170,16 +170,16 @@ public class Utils {
     //========================================================================================
     //========================================Dorm============================================
     public static NPC[] Dorm_enemies = {
-            new NPC('u',"Welcome to UF, this is your dorm room.", "u10",9*MAP_RESOLUTION,20*MAP_RESOLUTION),
-            new NPC('d',"You better not steal anything", "d9", 17*MAP_RESOLUTION,24*MAP_RESOLUTION),
-            new NPC('l',"I have no idea how to play the piano","l11", 25*MAP_RESOLUTION,12*MAP_RESOLUTION),
-            new NPC('r',"If you ever feel tired just return here","r7", 10*MAP_RESOLUTION,3*MAP_RESOLUTION),
-            new NPC('r',"I'm just a filler","r9",17*MAP_RESOLUTION,9*MAP_RESOLUTION),
-            new NPC('l',"Also a filler", "l10", 21*MAP_RESOLUTION,9*MAP_RESOLUTION),
-            new NPC('r',"This is my room", "r7", MAP_RESOLUTION,31*MAP_RESOLUTION),
-            new NPC('u',"Hello","u11", 20*MAP_RESOLUTION,35*MAP_RESOLUTION),
-            new NPC('r',"Filler", "r11", 6*MAP_RESOLUTION,42*MAP_RESOLUTION),
-            new NPC('d',"I'm tired","d9", 24*MAP_RESOLUTION,41*MAP_RESOLUTION)
+            new NPC('u',"Welcome to UF, this is your dorm room.", "u3",9*MAP_RESOLUTION,20*MAP_RESOLUTION),
+            new NPC('d',"You better not steal anything", "d5", 17*MAP_RESOLUTION,24*MAP_RESOLUTION),
+            new NPC('l',"I have no idea how to play the piano","l1", 25*MAP_RESOLUTION,12*MAP_RESOLUTION),
+            new NPC('r',"If you ever feel tired just return here","r8", 10*MAP_RESOLUTION,3*MAP_RESOLUTION),
+            new NPC('r',"I'm just a filler","r13",17*MAP_RESOLUTION,9*MAP_RESOLUTION),
+            new NPC('l',"Also a filler", "l12", 21*MAP_RESOLUTION,9*MAP_RESOLUTION),
+            new NPC('r',"This is my room", "r2", MAP_RESOLUTION,31*MAP_RESOLUTION),
+            new NPC('u',"Hello","u14", 20*MAP_RESOLUTION,35*MAP_RESOLUTION),
+            new NPC('r',"Filler", "r6", 6*MAP_RESOLUTION,42*MAP_RESOLUTION),
+            new NPC('d',"I'm tired","d4", 24*MAP_RESOLUTION,41*MAP_RESOLUTION)
     };
     //========================================================================================
     //========================================Marston=========================================
