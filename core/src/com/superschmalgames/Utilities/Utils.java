@@ -17,10 +17,10 @@ import java.text.DecimalFormat;
 public class Utils {
 
     ////////////////////////////////////MAIN CLASS/////////////////////////////////////////////////////////////////////////////
-    public static final int GAME_SCREEN_WIDTH = 2040;
-    public static final int GAME_SCREEN_HEIGHT = 1224;
+    public static final int GAME_SCREEN_WIDTH = 1020;
+    public static final int GAME_SCREEN_HEIGHT = 612;
     public static final int MAP_RESOLUTION = 64;
-    public static final int MOVE_DIST = 5;
+    public static final int MOVE_DIST = 10;
     public static final int N_MOVE_DIST = - MOVE_DIST;
     public static final BitmapFont font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
     public static final BitmapFont font_large = new BitmapFont(Gdx.files.internal("RosesAreFF0_large.fnt"));
@@ -218,6 +218,20 @@ public class Utils {
     //========================================================================================
     //========================================Marston=========================================
     public static NPC[] Marston_enemies = {
+            new NPC('r', "aassdf", "r1", 45*MAP_RESOLUTION, (45-18)*MAP_RESOLUTION), //0
+            new NPC('d', "aassdf", "d2", 48*MAP_RESOLUTION, (45-14)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u3", 45*MAP_RESOLUTION, (45-30)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r4", 40*MAP_RESOLUTION, (45-16)*MAP_RESOLUTION),
+            new NPC('l', "You may study and get supplies here", "l5", 37*MAP_RESOLUTION, (45-35)*MAP_RESOLUTION),
+            new NPC('u', "Welcome to the Marston Library", "u6", 24*MAP_RESOLUTION, (45-26)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l7", 5*MAP_RESOLUTION, (45-26)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r8", 2*MAP_RESOLUTION, (45-15)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r9", 13*MAP_RESOLUTION, (45-21)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l10", 23*MAP_RESOLUTION, (45-16)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d11", 20*MAP_RESOLUTION, (45-7)*MAP_RESOLUTION), //10
+            new NPC('d', "aassdf", "d12", 28*MAP_RESOLUTION, (45-10)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l13", 22*MAP_RESOLUTION, (45-3)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u14", 32*MAP_RESOLUTION, (45-6)*MAP_RESOLUTION),
             //new NPC
     };
     //========================================================================================

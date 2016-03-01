@@ -141,8 +141,12 @@ public class GameScreen implements Screen {
             int event = Integer.valueOf((String) collision.getCell(x,y).getTile().getProperties().get("event"));
             switch(event) {
                 //npc event
-                case 0 :
-                    enemies[Integer.valueOf((String) collision.getCell(x,y).getTile().getProperties().get("number"))].initiateCombat();
+                case 0:
+                    enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateCombat();
+                    break;
+                //shop
+                case 1:
+                    System.out.print("This is the shop event");
                     break;
             }
         }

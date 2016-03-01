@@ -98,8 +98,8 @@ public class OpenWorldScreen implements Screen {
 
         MainClass.batch.setProjectionMatrix(camera.combined);
         MainClass.batch.begin();
-        MainClass.batch.draw(crosshair, camera.position.x, camera.position.y);
-        Utils.testFont.draw(MainClass.batch, "Map data ©2016 Google Imagery ©2016, DigitalGlobe, U.S. Geological Survey", 0, Utils.GAME_SCREEN_HEIGHT - 10);
+        MainClass.batch.draw(crosshair, camera.position.x-35, camera.position.y-35);
+        Utils.testFont.draw(MainClass.batch, "Map data ©2016 Google Imagery ©2016, DigitalGlobe, U.S. Geological Survey", camera.position.x-Utils.GAME_SCREEN_WIDTH/2, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-10);
         MainClass.batch.end();
 
         move();
