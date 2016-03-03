@@ -148,6 +148,10 @@ public class GameScreen implements Screen {
                 case 1:
                     System.out.print("This is the shop event");
                     break;
+                //Boss trigger
+                case 2:
+                    enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateCombat();
+                    break;
             }
         }
     }
