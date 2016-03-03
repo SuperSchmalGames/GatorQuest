@@ -4056,6 +4056,151 @@
  </tileset>
  <tileset firstgid="1664" name="Door" tilewidth="64" tileheight="64" tilecount="676">
   <image source="Door.png" width="1664" height="1664"/>
+  <tile id="0">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="26">
+   <properties>
+    <property name="enemy" value="5"/>
+    <property name="number" value="0"/>
+   </properties>
+  </tile>
+  <tile id="27">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="5"/>
+    <property name="event" value="0"/>
+    <property name="number" value="0"/>
+   </properties>
+  </tile>
+  <tile id="52">
+   <properties>
+    <property name="enemy" value="5"/>
+    <property name="number" value="1"/>
+   </properties>
+  </tile>
+  <tile id="53">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="5"/>
+    <property name="event" value="0"/>
+    <property name="number" value="1"/>
+   </properties>
+  </tile>
+  <tile id="78">
+   <properties>
+    <property name="enemy" value="5"/>
+    <property name="number" value="2"/>
+   </properties>
+  </tile>
+  <tile id="79">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="5"/>
+    <property name="event" value="0"/>
+    <property name="number" value="2"/>
+   </properties>
+  </tile>
+  <tile id="104">
+   <properties>
+    <property name="enemy" value="5"/>
+    <property name="number" value="3"/>
+   </properties>
+  </tile>
+  <tile id="105">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="5"/>
+    <property name="event" value="0"/>
+    <property name="number" value="3"/>
+   </properties>
+  </tile>
+  <tile id="130">
+   <properties>
+    <property name="enemy" value="5"/>
+    <property name="number" value="4"/>
+   </properties>
+  </tile>
+  <tile id="131">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="5"/>
+    <property name="event" value="0"/>
+    <property name="number" value="4"/>
+   </properties>
+  </tile>
+  <tile id="156">
+   <properties>
+    <property name="enemy" value="5"/>
+    <property name="number" value="5"/>
+   </properties>
+  </tile>
+  <tile id="157">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="5"/>
+    <property name="event" value="0"/>
+    <property name="number" value="5"/>
+   </properties>
+  </tile>
+  <tile id="182">
+   <properties>
+    <property name="enemy" value="5"/>
+    <property name="number" value="6"/>
+   </properties>
+  </tile>
+  <tile id="183">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="5"/>
+    <property name="event" value="0"/>
+    <property name="number" value="6"/>
+   </properties>
+  </tile>
+  <tile id="208">
+   <properties>
+    <property name="enemy" value="5"/>
+    <property name="number" value="7"/>
+   </properties>
+  </tile>
+  <tile id="209">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="5"/>
+    <property name="event" value="0"/>
+    <property name="number" value="7"/>
+   </properties>
+  </tile>
+  <tile id="234">
+   <properties>
+    <property name="enemy" value="5"/>
+    <property name="number" value="8"/>
+   </properties>
+  </tile>
+  <tile id="235">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="5"/>
+    <property name="event" value="0"/>
+    <property name="number" value="8"/>
+   </properties>
+  </tile>
+  <tile id="260">
+   <properties>
+    <property name="enemy" value="5"/>
+    <property name="number" value="9"/>
+   </properties>
+  </tile>
+  <tile id="261">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="5"/>
+    <property name="event" value="0"/>
+    <property name="number" value="9"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Background" width="27" height="60">
   <data encoding="base64" compression="zlib">
@@ -4064,7 +4209,7 @@
  </layer>
  <layer name="Collision" width="27" height="60">
   <data encoding="base64" compression="zlib">
-   eJztlDtOw0AQhtfyo4pEi+AACCqCC0Sg43EHRNxygiAlFEiEUAFSCrhFIkEJFSIBGlLxOABUcAhgVt6VLXtnMyvHTbTFJ+/OzsxvJ7P/HmNsl8CpYTxLHTgGnghgeSb1nHVnPFieST3nxmOsCbQDxmaBgc/YELgH5mC/GsR5/DwLj88jdfy8BX2vvURrBOtLT91LcoRoYXHJFfR9SWnpciVDJA+Lq76fc+CPz11zzOJpeH+p1SdoFaHvm/2GRVHNoS7XJC5Jz2FEnMMO0jMizmHH8N5j30WtN7n3mJb1DdrMWt/IY30jxvqG9Q0M6xt5rG/EWN+wvoFhfSPPtPtGhTiHIdKzQpzDUGjNENBpUeunWWuFQBXRWibWh4zu08+I1iOx3sTnNxB/qInzOqyjIMnP7qXWZ8o3vnz9vuhdLltr35+M1i1ydpeOI1p/sP7V7LO8irMzeJ4DF2L/lqlRaZnyjtR+lKBVZDYWkdwlQr+G4p1lTKW1KZ5NiLWAQ3G2RdDqKrS6Gq1tpM8OQaun0OpptMr8v9qIz02aE5Z454Krf3IeYD1w82tKPffumkPzXs431P24+TXVu/8B6WYyOA==
+   eJztlj1PAkEQhpfAnQ2JrdFYG61UEolo50dvaYTWQltNwMJEhEpNKLTBvwCJJlpoZQS18aPw4wdoI/4IdTbehXXZ2Z0NhwVe8eR2Z2fm5Y65N7fEGFskULSMy6SBLeCaAJZnU8+ZipjB8mzqOccxxrJA3mWsD6g5jNWBC6Af9kn3J4+fy/D4AFLHz3PQ9yjW1LqD9X5M3ctnE9HC4j4H0PdW0NLl+tSRPCyuun/OumPOnYzYxUV4f1+rStBqh6pj9wzbRTWHulybuI84hxniHBaQnhniHBYs33vsvqj1Nu89phX6Bm1mu8U3VnsYW5Gg/H4Vf+UbxZ7fzzD0DfV9UetD36DFF6R34z/7RpCIvpGEZzwhEbRe6Buhb3TT98apxcybfKPs6n3jxKBj4xtlQy+Tls33Rrta4jM0+cahYQ51GuIcxolzmEB6xolzmPC0egnotKj13aw1TmAM0Rol1icY3advEK0rYr2Nz08jvpHyztOwzrjNfHnva70KvvHm6Pcm7hU8uJ3RUrHsBKN1hpydi3FE6wvWn5q9zCOcReG7aweuu8AeMAj7J6lGpWXLM1L70gEtKiqtYSR3hNBvTfGb/ZhKa8a7ZiGWAza8s1mCVkmhVdJozSF95glaFYVWRaOF0QDeFdj8X3nE54JmmzW9cyiqv3IuYV2Ltq4p9dy7UxGa93IaUPcRbV1TvfsbGrE0mg==
   </data>
  </layer>
  <layer name="Mid" width="27" height="60">
