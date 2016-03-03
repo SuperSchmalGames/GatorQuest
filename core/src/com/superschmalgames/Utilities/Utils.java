@@ -21,7 +21,7 @@ public class Utils {
     public static final int GAME_SCREEN_WIDTH = 1020;
     public static final int GAME_SCREEN_HEIGHT = 612;
     public static final int MAP_RESOLUTION = 64;
-    public static final int MOVE_DIST = 20;
+    public static final int MOVE_DIST = 5;
     public static final int N_MOVE_DIST = - MOVE_DIST;
     public static final BitmapFont font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
     public static final BitmapFont font_large = new BitmapFont(Gdx.files.internal("RosesAreFF0_large.fnt"));
@@ -262,6 +262,9 @@ public class Utils {
             new NPC('u', "aassdf", "u13", 334*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION),
             new NPC('d', "aassdf", "d14", 349*MAP_RESOLUTION, (128-19)*MAP_RESOLUTION),
             new NPC('r', "aassdf", "r1", 353*MAP_RESOLUTION, (128-30)*MAP_RESOLUTION), //56
+            new BOSS('d', "I am Chui", "chui", 46*MAP_RESOLUTION, (128-27)*MAP_RESOLUTION),
+            new BOSS('d', "I am Horton", "horton", 170*MAP_RESOLUTION, (128-122)*MAP_RESOLUTION),
+            new BOSS('d', "I am Small", "small", 362*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION),
     };
     //========================================================================================
     //========================================Dorm============================================
