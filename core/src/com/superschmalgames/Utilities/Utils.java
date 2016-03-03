@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.superschmalgames.BOSS;
 import com.superschmalgames.NPC;
 import java.text.DecimalFormat;
 
@@ -20,7 +21,7 @@ public class Utils {
     public static final int GAME_SCREEN_WIDTH = 1020;
     public static final int GAME_SCREEN_HEIGHT = 612;
     public static final int MAP_RESOLUTION = 64;
-    public static final int MOVE_DIST = 10;
+    public static final int MOVE_DIST = 20;
     public static final int N_MOVE_DIST = - MOVE_DIST;
     public static final BitmapFont font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
     public static final BitmapFont font_large = new BitmapFont(Gdx.files.internal("RosesAreFF0_large.fnt"));
@@ -194,6 +195,8 @@ public class Utils {
             new NPC('l', "aassdf", "l3", 217*MAP_RESOLUTION, (66-32)*MAP_RESOLUTION),
             new NPC('l', "aassdf", "l4", 213*MAP_RESOLUTION, (66-42)*MAP_RESOLUTION),
             new NPC('u', "aassdf", "u5", 199*MAP_RESOLUTION, (66-58)*MAP_RESOLUTION),
+            new BOSS('d', "I am Dobbins", "dobbins", 2*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION),
+            new BOSS('d', "I am Schmalz", "schmalz", 168*MAP_RESOLUTION, (66-4)*MAP_RESOLUTION)
 
     };
     //========================================================================================
