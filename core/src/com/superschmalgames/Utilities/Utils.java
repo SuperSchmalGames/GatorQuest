@@ -124,7 +124,7 @@ public class Utils {
             new NPC('r', "aassdf", "r1", 110*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
             new NPC('d', "aassdf", "d11", 122*MAP_RESOLUTION, (89-62)*MAP_RESOLUTION),
             new NPC('r', "aassdf", "r12", 121*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "d3", 112*MAP_RESOLUTION, (89-33)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l3", 113*MAP_RESOLUTION, (89-38)*MAP_RESOLUTION),
             new NPC('l', "aassdf", "l7", 125*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION),
             new NPC('r', "aassdf", "r10", 118*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION), //30
             new NPC('d', "aassdf", "d14", 133*MAP_RESOLUTION, (89-4)*MAP_RESOLUTION),
@@ -157,6 +157,9 @@ public class Utils {
             new NPC('u', "aassdf", "u12", 262*MAP_RESOLUTION, (89-54)*MAP_RESOLUTION), //58
             new NPC('d', "aassdf", "d13", 262*MAP_RESOLUTION, (89-37)*MAP_RESOLUTION),
             new NPC('r', "aassdf", "r14", 248*MAP_RESOLUTION, (89-46)*MAP_RESOLUTION),
+            new BOSS('d', "I am Srivastava", "srivastava", 112*MAP_RESOLUTION, (89-33)*MAP_RESOLUTION),
+            new BOSS('d', "I am Wong", "wong", 211*MAP_RESOLUTION, (89-55)*MAP_RESOLUTION),
+            new BOSS('d', "I am Gugel", "gugel", 287*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION),
     };
     //========================================================================================
     //========================================CISE============================================
