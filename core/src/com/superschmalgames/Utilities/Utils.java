@@ -199,7 +199,63 @@ public class Utils {
     //========================================================================================
     //========================================Turlington======================================
     public static NPC[] Turlington_enemies = {
-            //new NPC
+            new NPC('u', "aassdf", "u1", 17*MAP_RESOLUTION, (128-116)*MAP_RESOLUTION),  //0
+            new NPC('u', "aassdf", "u2", 32*MAP_RESOLUTION, (128-123)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r3", 47*MAP_RESOLUTION, (128-109)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d4", 82*MAP_RESOLUTION, (128-121)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l5", 95*MAP_RESOLUTION, (128-98)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l6", 111*MAP_RESOLUTION, (128-90)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d7", 79*MAP_RESOLUTION, (128-85)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u8", 32*MAP_RESOLUTION, (128-71)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 8*MAP_RESOLUTION, (128-80)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l10", 46*MAP_RESOLUTION, (128-47)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u11", 56*MAP_RESOLUTION, (128-50)*MAP_RESOLUTION), //10
+            new NPC('l', "aassdf", "l12", 48*MAP_RESOLUTION, (128-35)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d13", 73*MAP_RESOLUTION, (128-24)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r14", 86*MAP_RESOLUTION, (128-34)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d1", 100*MAP_RESOLUTION, (128-29)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d2", 107*MAP_RESOLUTION, (128-57)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r3", 74*MAP_RESOLUTION, (128-10)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u4", 89*MAP_RESOLUTION, (128-15)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l5", 106*MAP_RESOLUTION, (128-13)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r6", 132*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u7", 152*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION), //20
+            new NPC('l', "aassdf", "l8", 164*MAP_RESOLUTION, (128-28)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u9", 139*MAP_RESOLUTION, (128-45)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l10", 155*MAP_RESOLUTION, (128-42)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d11", 174*MAP_RESOLUTION, (128-48)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l12", 182*MAP_RESOLUTION, (128-22)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u13", 193*MAP_RESOLUTION, (128-31)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u14", 211*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d1", 225*MAP_RESOLUTION, (128-18)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l2", 233*MAP_RESOLUTION, (128-38)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r3", 136*MAP_RESOLUTION, (128-58)*MAP_RESOLUTION), //30
+            new NPC('r', "aassdf", "r4", 125*MAP_RESOLUTION, (128-77)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r5", 135*MAP_RESOLUTION, (128-92)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d6", 159*MAP_RESOLUTION, (128-65)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u7", 146*MAP_RESOLUTION, (128-97)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r8", 168*MAP_RESOLUTION, (128-102)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d9", 151*MAP_RESOLUTION, (128-121)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l10", 169*MAP_RESOLUTION, (128-113)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u11", 274*MAP_RESOLUTION, (128-125)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l12", 292*MAP_RESOLUTION, (128-113)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r13", 261*MAP_RESOLUTION, (128-92)*MAP_RESOLUTION), //40
+            new NPC('u', "aassdf", "u14", 271*MAP_RESOLUTION, (128-95)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r1", 291*MAP_RESOLUTION, (128-91)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r2", 259*MAP_RESOLUTION, (128-44)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r3", 255*MAP_RESOLUTION, (128-60)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u4", 270*MAP_RESOLUTION, (128-47)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d5", 291*MAP_RESOLUTION, (128-50)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l6", 274*MAP_RESOLUTION, (128-71)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r7", 291*MAP_RESOLUTION, (128-65)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r8", 249*MAP_RESOLUTION, (128-20)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r9", 270*MAP_RESOLUTION, (128-22)*MAP_RESOLUTION), //50
+            new NPC('u', "aassdf", "u10", 288*MAP_RESOLUTION, (128-24)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l11", 301*MAP_RESOLUTION, (128-28)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l12", 320*MAP_RESOLUTION, (128-22)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u13", 334*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d14", 349*MAP_RESOLUTION, (128-19)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r1", 353*MAP_RESOLUTION, (128-30)*MAP_RESOLUTION), //56
     };
     //========================================================================================
     //========================================Dorm============================================

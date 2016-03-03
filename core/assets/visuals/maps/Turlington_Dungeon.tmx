@@ -7650,6 +7650,34 @@
     <property name="default" value=""/>
    </properties>
   </tile>
+  <tile id="4">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="49"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="49"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="50"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="50"/>
+   </properties>
+  </tile>
   <tile id="26">
    <properties>
     <property name="door" value=""/>
@@ -7669,6 +7697,34 @@
     <property name="exit" value=""/>
    </properties>
   </tile>
+  <tile id="30">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="48"/>
+   </properties>
+  </tile>
+  <tile id="31">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="48"/>
+   </properties>
+  </tile>
+  <tile id="32">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="51"/>
+   </properties>
+  </tile>
+  <tile id="33">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="51"/>
+   </properties>
+  </tile>
   <tile id="52">
    <properties>
     <property name="door" value=""/>
@@ -7683,15 +7739,1023 @@
     <property name="y" value="0"/>
    </properties>
   </tile>
+  <tile id="54">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="0"/>
+   </properties>
+  </tile>
+  <tile id="55">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="0"/>
+   </properties>
+  </tile>
+  <tile id="56">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="47"/>
+   </properties>
+  </tile>
+  <tile id="57">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="47"/>
+   </properties>
+  </tile>
+  <tile id="58">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="52"/>
+   </properties>
+  </tile>
+  <tile id="59">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="52"/>
+   </properties>
+  </tile>
+  <tile id="80">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="1"/>
+   </properties>
+  </tile>
+  <tile id="81">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="1"/>
+   </properties>
+  </tile>
+  <tile id="82">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="46"/>
+   </properties>
+  </tile>
+  <tile id="83">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="46"/>
+   </properties>
+  </tile>
+  <tile id="84">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="53"/>
+   </properties>
+  </tile>
+  <tile id="85">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="53"/>
+   </properties>
+  </tile>
+  <tile id="106">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="2"/>
+   </properties>
+  </tile>
+  <tile id="107">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="2"/>
+   </properties>
+  </tile>
+  <tile id="108">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="45"/>
+   </properties>
+  </tile>
+  <tile id="109">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="45"/>
+   </properties>
+  </tile>
+  <tile id="110">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="54"/>
+   </properties>
+  </tile>
+  <tile id="111">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="54"/>
+   </properties>
+  </tile>
+  <tile id="132">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="3"/>
+   </properties>
+  </tile>
+  <tile id="133">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="3"/>
+   </properties>
+  </tile>
+  <tile id="134">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="44"/>
+   </properties>
+  </tile>
+  <tile id="135">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="44"/>
+   </properties>
+  </tile>
+  <tile id="136">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="55"/>
+   </properties>
+  </tile>
+  <tile id="137">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="55"/>
+   </properties>
+  </tile>
+  <tile id="158">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="4"/>
+   </properties>
+  </tile>
+  <tile id="159">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="4"/>
+   </properties>
+  </tile>
+  <tile id="160">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="43"/>
+   </properties>
+  </tile>
+  <tile id="161">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="43"/>
+   </properties>
+  </tile>
+  <tile id="162">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="56"/>
+   </properties>
+  </tile>
+  <tile id="163">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="56"/>
+   </properties>
+  </tile>
+  <tile id="184">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="5"/>
+   </properties>
+  </tile>
+  <tile id="185">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="5"/>
+   </properties>
+  </tile>
+  <tile id="186">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="42"/>
+   </properties>
+  </tile>
+  <tile id="187">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="42"/>
+   </properties>
+  </tile>
+  <tile id="188">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="189">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="210">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="6"/>
+   </properties>
+  </tile>
+  <tile id="211">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="6"/>
+   </properties>
+  </tile>
+  <tile id="212">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="41"/>
+   </properties>
+  </tile>
+  <tile id="213">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="41"/>
+   </properties>
+  </tile>
+  <tile id="214">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="215">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="236">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="7"/>
+   </properties>
+  </tile>
+  <tile id="237">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="7"/>
+   </properties>
+  </tile>
+  <tile id="238">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="40"/>
+   </properties>
+  </tile>
+  <tile id="239">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="40"/>
+   </properties>
+  </tile>
+  <tile id="240">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="241">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="262">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="8"/>
+   </properties>
+  </tile>
+  <tile id="263">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="8"/>
+   </properties>
+  </tile>
+  <tile id="264">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="39"/>
+   </properties>
+  </tile>
+  <tile id="265">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="39"/>
+   </properties>
+  </tile>
+  <tile id="266">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="267">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="288">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="9"/>
+   </properties>
+  </tile>
+  <tile id="289">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="9"/>
+   </properties>
+  </tile>
+  <tile id="290">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="38"/>
+   </properties>
+  </tile>
+  <tile id="291">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="38"/>
+   </properties>
+  </tile>
+  <tile id="292">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="293">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="314">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="10"/>
+   </properties>
+  </tile>
+  <tile id="315">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="10"/>
+   </properties>
+  </tile>
+  <tile id="316">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="37"/>
+   </properties>
+  </tile>
+  <tile id="317">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="37"/>
+   </properties>
+  </tile>
+  <tile id="318">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="319">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="340">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="11"/>
+   </properties>
+  </tile>
+  <tile id="341">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="11"/>
+   </properties>
+  </tile>
+  <tile id="342">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="36"/>
+   </properties>
+  </tile>
+  <tile id="343">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="36"/>
+   </properties>
+  </tile>
+  <tile id="344">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="345">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="366">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="12"/>
+   </properties>
+  </tile>
+  <tile id="367">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="12"/>
+   </properties>
+  </tile>
+  <tile id="368">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="35"/>
+   </properties>
+  </tile>
+  <tile id="369">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="35"/>
+   </properties>
+  </tile>
+  <tile id="370">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="371">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="392">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="13"/>
+   </properties>
+  </tile>
+  <tile id="393">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="13"/>
+   </properties>
+  </tile>
+  <tile id="394">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="34"/>
+   </properties>
+  </tile>
+  <tile id="395">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="34"/>
+   </properties>
+  </tile>
+  <tile id="396">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="397">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="418">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="14"/>
+   </properties>
+  </tile>
+  <tile id="419">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="14"/>
+   </properties>
+  </tile>
+  <tile id="420">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="33"/>
+   </properties>
+  </tile>
+  <tile id="421">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="33"/>
+   </properties>
+  </tile>
+  <tile id="422">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="423">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="444">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="15"/>
+   </properties>
+  </tile>
+  <tile id="445">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="15"/>
+   </properties>
+  </tile>
+  <tile id="446">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="32"/>
+   </properties>
+  </tile>
+  <tile id="447">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="32"/>
+   </properties>
+  </tile>
+  <tile id="448">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="449">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="470">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="16"/>
+   </properties>
+  </tile>
+  <tile id="471">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="16"/>
+   </properties>
+  </tile>
+  <tile id="472">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="31"/>
+   </properties>
+  </tile>
+  <tile id="473">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="31"/>
+   </properties>
+  </tile>
+  <tile id="474">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="475">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="496">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="17"/>
+   </properties>
+  </tile>
+  <tile id="497">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="17"/>
+   </properties>
+  </tile>
+  <tile id="498">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="30 "/>
+   </properties>
+  </tile>
+  <tile id="499">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="30"/>
+   </properties>
+  </tile>
+  <tile id="500">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="501">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="522">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="18"/>
+   </properties>
+  </tile>
+  <tile id="523">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="18"/>
+   </properties>
+  </tile>
+  <tile id="524">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="29"/>
+   </properties>
+  </tile>
+  <tile id="525">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="29"/>
+   </properties>
+  </tile>
+  <tile id="526">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="527">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="548">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="19"/>
+   </properties>
+  </tile>
+  <tile id="549">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="19"/>
+   </properties>
+  </tile>
+  <tile id="550">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="28"/>
+   </properties>
+  </tile>
+  <tile id="551">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="28"/>
+   </properties>
+  </tile>
+  <tile id="552">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="553">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="574">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="20"/>
+   </properties>
+  </tile>
+  <tile id="575">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="20"/>
+   </properties>
+  </tile>
+  <tile id="576">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="27"/>
+   </properties>
+  </tile>
+  <tile id="577">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="27"/>
+   </properties>
+  </tile>
+  <tile id="578">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="579">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="600">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="21"/>
+   </properties>
+  </tile>
+  <tile id="601">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="21"/>
+   </properties>
+  </tile>
+  <tile id="602">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="26"/>
+   </properties>
+  </tile>
+  <tile id="603">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="26"/>
+   </properties>
+  </tile>
+  <tile id="604">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="605">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="626">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="22"/>
+   </properties>
+  </tile>
+  <tile id="627">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="22"/>
+   </properties>
+  </tile>
+  <tile id="628">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="25"/>
+   </properties>
+  </tile>
+  <tile id="629">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="25"/>
+   </properties>
+  </tile>
+  <tile id="630">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="631">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="652">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="23"/>
+   </properties>
+  </tile>
+  <tile id="653">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="23"/>
+   </properties>
+  </tile>
+  <tile id="654">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value="24"/>
+   </properties>
+  </tile>
+  <tile id="655">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value="24"/>
+   </properties>
+  </tile>
+  <tile id="656">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="1"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
+  <tile id="657">
+   <properties>
+    <property name="enemy" value="1"/>
+    <property name="number" value=""/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Background" width="365" height="129">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="Collision" width="365" height="129">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="Mid" width="365" height="129">
@@ -7701,12 +8765,7 @@
  </layer>
  <layer name="Foreground" width="365" height="129">
   <data encoding="base64" compression="zlib">
-   eJzt3WFu2jAYBmDaSutddoUeYh3rdfjTc3Ce7Vor0tCi1gSS2Nif/UR6/mRzcPOiD0xi5/3bbvcOsMDT7qvafQIg7Xn3dXueqN0/AP77fqFm1+4XAF/9TtTs2n0CIO3lQc0GAADo0a+P8d3PGfvJ+O/1377Dwv9/yWFFm7dGxqOnYfJjI31B3gAAAAAAAAAAAAAAAAAAAACUlVqnZT9ZozO1bkpqnZYSbebWhLml7bVjLDlOK+vDlMr7/O9Lssvd5lre19remvctx+klb8Zx3mr3A+jX3Gdvypo2uY5T+1xdo2YDAAA1/DAOGYq8AYBLfE/Ib+t1EHnH0nLeAAAAozA2G4u8AQAAgFa5L2Ms8qYV95qrf691AUodoxfyHitvAAAAAACIZM3v+kueNbHm+sDS117TZu6ax5K/r3Z+AABAOannA95q7rl716Set/fwse8pkFOft7aXdxwR8wYAAAAAgEhS1zFy3Md3yHy8a9cEHhu7LlI6t9QaN9a96Ze8AQBut/ZeK/N4YpI3AAAAAAAAAAAAAABAP8yhHou8AYARbZkbbV51PPIe05Z1EEq8J7xPgN4dP6ndHwAuU6sB4lCzAeJQswHiULMB4lCzAeJQs8fS0jNdzYuTN8up2bQkxzPvt9zPv1dX5N04NTsec4zK+dPgOZI3U/eq2Tk+T9d4DPa+9fkJzJl+Jr8Fq289UrMB4lCzAeJQs4FctvwmXbvvUajZAHHUqNm7SteHa5/rkckb8mjpe/Z5q90PgFa1VLMBmKdmA8ShZgPQIr+Vj0XeAAAAAAAAAFBX6vlOruf3S94AAAD0yPMBxyJv4LNaW+2/e1SyBgAAgPqMlwHiULMB5qXmWKT21eoL8gYAAKjJ2AWgvC3zpMyZAgAAAAAAAACAcW2518h9SvHIuw/uzwYAgDKmY5n95Hv3a6Z5O5eUeq03YwcAAAAAAKjiabfeqf3W6w7n7XTd4ZDYt+X4tc9ti2rnfe7HNO/pPnkDAAAAAAAAAACjOTbQBwBuo2YDxKFmA8ShZgPEoWYDxKFmA8ShZgPEoWYDxKFmQ/9yPTsx57Faea3a2Sx1j5rdco61z3+P5A3l+J4NjO64wNb2OdQ+X0A5fwHFweYS
-  </data>
- </layer>
- <layer name="delete" width="365" height="129">
-  <data encoding="base64" compression="zlib">
-   eJztwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8G7f0gAB
+   eJzt3dtt2zAUBmAnAdpdukKHaOpmHb9kjszTrtUIqFEhoS/U7fCIn4DvxYlkSr9zLEYi9frlcHgFqPB0+Cy6TQCUfT18Xr6ORLcPgP++XajZ0e0C4LPfhZod3SYAyr4/qNkAAAB79Ou9f/fziuOo//f877VT5e9fcpqwzksj/dGhm/zYSFuQNwAAAAAAAAAAAAAAAAAAAADrKs3TchzN0VmaN6U0T8sa61ybE+aedW9to2Y7rcwPs1be55/XZLf0OrfyvrXuvXnfs5295E0/zkt0O4D9uvbdWzJlnaW2E32sblGzAQCACD/0Q7oibwDgEucJy5t7HUTeubScNwAAQC/0zfoibwAAAKBV7svoi7xpxVZj9beaF2CtbeyFvPvKGwAAAAAAMpnyf/2aZ01MuT5Q+95T1rl2zaNm/6LzAwAA1lN6PuC9rj1375bS8/Ye3l97SmRo89z15Z1HxrwBAAAAACCT0nWMJe7jOy28vVvXBB4buy6ydm6lOW7Me7Nf8gYAuN/Ue62M48lJ3gAAAAAAAAAAAAAAAPthDHVf5A0A9GjO2GjjqvORd5/mzIOwxmfC5wTYu7cPotsDwGVqNUAeajaQ1dZL9P4O1GwgMzUbIA81GyAPNZs9a+mZrsbFyXsJajbEWeKZ93Pu5z828nfZi2xL9PEaqNn5GGO0nj8NHiN5X7flEr2vg61q9hLnT1M8NnKca/KIbgNksuUSva+D8XfySyNt6pmaDXV6q9m0Rc2GOmo2kdRsqKNmXzbnf9LRbc9CzYY6ajaRImr2YcZ38RzRx7pne8p7yyU6N9rT0nm2zykZqNlEaqlmQwZqNpHUbKijZhNJzQagRc5b+iJvAAAAAAAAAIhVer6T6/n7JW8AAAD2yPMB+yJv4KOoJXq/eyVrAAAAiKe/DJCHmg1wXWmMRem1qLYgbwAAgEj6LgDrmzNOypgpAAAAAAAAAADo15x7jdynlI+898H92QAAsI5xX+Y4Ou9+XmjcziVrvdeLvgMAAAAAAIR4Okw3rD/3usN5Ga47nAqvzdl+9LFtUXTe53aM8x6/Jm8AAAAAAAAAAKA3bw20AYD7qNkAeajZAHmo2QB5qNkAeajZAHmo2QB5qNkAeajZsH9LPTtxyW218l7R2dTaoma3nGP08d8jecN6nGcDvXurMHf9JUQfL2A9fwFCpANI
   </data>
  </layer>
 </map>

@@ -40,13 +40,13 @@ public class OpenWorldScreen implements Screen {
     //Handles movement around the map, allows for sideways motion
     public void move() {
         if(uwalk && !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION + 1).getTile().getProperties().containsKey("blocked"))
-            camera.translate(0f,5f);
+            camera.translate(0f,Utils.MOVE_DIST);
         if(dwalk && !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION - 1).getTile().getProperties().containsKey("blocked"))
-            camera.translate(0f,-5f);
+            camera.translate(0f,-1*Utils.MOVE_DIST);
         if(lwalk && !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION - 1, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
-            camera.translate(-5f,0f);
+            camera.translate(-1*Utils.MOVE_DIST,0f);
         if(rwalk && !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION + 1, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
-            camera.translate(5f,0f);
+            camera.translate(Utils.MOVE_DIST,0f);
     }
 
     //Handles the moving from open world into a selected dungeon
@@ -101,7 +101,6 @@ public class OpenWorldScreen implements Screen {
         MainClass.batch.draw(crosshair, camera.position.x-35, camera.position.y-35);
         Utils.testFont.draw(MainClass.batch, "Map data ©2016 Google Imagery ©2016, DigitalGlobe, U.S. Geological Survey", camera.position.x-Utils.GAME_SCREEN_WIDTH/2, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-10);
         MainClass.batch.end();
-
         move();
     }
 
