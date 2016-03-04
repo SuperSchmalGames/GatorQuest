@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.superschmalgames.BOSS;
 import com.superschmalgames.NPC;
 import java.text.DecimalFormat;
 
@@ -20,7 +21,7 @@ public class Utils {
     public static final int GAME_SCREEN_WIDTH = 1020;
     public static final int GAME_SCREEN_HEIGHT = 612;
     public static final int MAP_RESOLUTION = 64;
-    public static final int MOVE_DIST = 10;
+    public static final int MOVE_DIST = 5;
     public static final int N_MOVE_DIST = - MOVE_DIST;
     public static final BitmapFont font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
     public static final BitmapFont font_large = new BitmapFont(Gdx.files.internal("RosesAreFF0_large.fnt"));
@@ -126,7 +127,7 @@ public class Utils {
             new NPC('r', "aassdf", "r1", 110*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
             new NPC('d', "aassdf", "d11", 122*MAP_RESOLUTION, (89-62)*MAP_RESOLUTION),
             new NPC('r', "aassdf", "r12", 121*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "d3", 112*MAP_RESOLUTION, (89-33)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l3", 113*MAP_RESOLUTION, (89-38)*MAP_RESOLUTION),
             new NPC('l', "aassdf", "l7", 125*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION),
             new NPC('r', "aassdf", "r10", 118*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION), //30
             new NPC('d', "aassdf", "d14", 133*MAP_RESOLUTION, (89-4)*MAP_RESOLUTION),
@@ -159,6 +160,9 @@ public class Utils {
             new NPC('u', "aassdf", "u12", 262*MAP_RESOLUTION, (89-54)*MAP_RESOLUTION), //58
             new NPC('d', "aassdf", "d13", 262*MAP_RESOLUTION, (89-37)*MAP_RESOLUTION),
             new NPC('r', "aassdf", "r14", 248*MAP_RESOLUTION, (89-46)*MAP_RESOLUTION),
+            new BOSS('d', "I am Srivastava", "srivastava", 112*MAP_RESOLUTION, (89-33)*MAP_RESOLUTION),
+            new BOSS('d', "I am Wong", "wong", 211*MAP_RESOLUTION, (89-55)*MAP_RESOLUTION),
+            new BOSS('d', "I am Gugel", "gugel", 287*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION),
     };
     //========================================================================================
     //========================================CISE============================================
@@ -197,6 +201,8 @@ public class Utils {
             new NPC('l', "aassdf", "l3", 217*MAP_RESOLUTION, (66-32)*MAP_RESOLUTION),
             new NPC('l', "aassdf", "l4", 213*MAP_RESOLUTION, (66-42)*MAP_RESOLUTION),
             new NPC('u', "aassdf", "u5", 199*MAP_RESOLUTION, (66-58)*MAP_RESOLUTION),
+            new BOSS('d', "I am Dobbins", "dobbins", 2*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION),
+            new BOSS('d', "I am Schmalz", "schmalz", 168*MAP_RESOLUTION, (66-4)*MAP_RESOLUTION)
 
     };
     //========================================================================================
@@ -259,6 +265,9 @@ public class Utils {
             new NPC('u', "aassdf", "u13", 334*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION),
             new NPC('d', "aassdf", "d14", 349*MAP_RESOLUTION, (128-19)*MAP_RESOLUTION),
             new NPC('r', "aassdf", "r1", 353*MAP_RESOLUTION, (128-30)*MAP_RESOLUTION), //56
+            new BOSS('d', "I am Chui", "chui", 46*MAP_RESOLUTION, (128-27)*MAP_RESOLUTION),
+            new BOSS('d', "I am Horton", "horton", 170*MAP_RESOLUTION, (128-122)*MAP_RESOLUTION),
+            new BOSS('d', "I am Small", "small", 362*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION),
     };
     //========================================================================================
     //========================================Dorm============================================
