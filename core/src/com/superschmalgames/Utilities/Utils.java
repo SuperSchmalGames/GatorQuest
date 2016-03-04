@@ -88,6 +88,9 @@ public class Utils {
     public static final TiledMap turlington = new TmxMapLoader().load("visuals/maps/Turlington_Dungeon.tmx");
     public static final int turlington_x = 7264;
     public static final int turlington_y = 3560;
+    public static final TiledMap bookstore = new TmxMapLoader().load("visuals/maps/Bookstore.tmx");
+    public static final int bookstore_x = 2090;
+    public static final int bookstore_y = 3840;
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////////////DUNGEON ENEMIES//////////////////////////////////////////////////////////////////////
@@ -289,6 +292,11 @@ public class Utils {
             new NPC('l', "aassdf", "l13", 22*MAP_RESOLUTION, (45-3)*MAP_RESOLUTION),
             new NPC('u', "aassdf", "u14", 32*MAP_RESOLUTION, (45-6)*MAP_RESOLUTION),
             //new NPC
+    };
+    //========================================================================================
+    //========================================Bookstore=======================================
+    public static NPC[] Bookstore_enemies = {
+
     };
     //========================================================================================
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
