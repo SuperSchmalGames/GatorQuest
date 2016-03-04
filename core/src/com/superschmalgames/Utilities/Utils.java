@@ -89,6 +89,9 @@ public class Utils {
     public static final TiledMap turlington = new TmxMapLoader().load("visuals/maps/Turlington_Dungeon.tmx");
     public static final int turlington_x = 7264;
     public static final int turlington_y = 3560;
+    public static final TiledMap bookstore = new TmxMapLoader().load("visuals/maps/Bookstore.tmx");
+    public static final int bookstore_x = 2090;
+    public static final int bookstore_y = 3840;
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////////////DUNGEON ENEMIES//////////////////////////////////////////////////////////////////////
@@ -298,6 +301,24 @@ public class Utils {
             new NPC('l', "aassdf", "l13", 22*MAP_RESOLUTION, (45-3)*MAP_RESOLUTION),
             new NPC('u', "aassdf", "u14", 32*MAP_RESOLUTION, (45-6)*MAP_RESOLUTION),
             //new NPC
+    };
+    //========================================================================================
+    //========================================Bookstore=======================================
+    public static NPC[] Bookstore_enemies = {
+            new NPC('d', "aassdf", "d1", 25*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION), //0
+            new NPC('d', "aassdf", "d2", 22*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d3", 19*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u4", 5*MAP_RESOLUTION, (64-10)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u5", 24*MAP_RESOLUTION, (64-13)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l6", 32*MAP_RESOLUTION, (64-17)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r7", 28*MAP_RESOLUTION, (64-32)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l8", 33*MAP_RESOLUTION, (64-38)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u9", 24*MAP_RESOLUTION, (64-49)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u10", 18*MAP_RESOLUTION, (64-49)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u11", 16*MAP_RESOLUTION, (64-44)*MAP_RESOLUTION), //10
+            new NPC('r', "aassdf", "r12", 6*MAP_RESOLUTION, (64-33)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d13", 14*MAP_RESOLUTION, (64-30)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d14", 9*MAP_RESOLUTION, (64-21)*MAP_RESOLUTION),
     };
     //========================================================================================
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

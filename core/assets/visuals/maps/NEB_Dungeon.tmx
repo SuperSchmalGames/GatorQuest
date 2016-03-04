@@ -1790,6 +1790,11 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="918">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
   <tile id="961">
    <properties>
     <property name="exit" value=""/>

@@ -66,6 +66,10 @@ public class GameScreen implements Screen {
         //foreground layer
         foreground[0] = 3;
         switch(location) {
+            //Bookstore
+            case 6:
+                enemies = Utils.Bookstore_enemies;
+                break;
             //Dorm
             case 5:
                 enemies = Utils.Dorm_enemies;

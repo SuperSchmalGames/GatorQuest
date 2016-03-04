@@ -54,6 +54,11 @@ public class OpenWorldScreen implements Screen {
         if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("level")) {
             location = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("level"));
             switch(location) {
+                //Bookstore
+                case 6 :
+                    MainClass.gameScreen.setMap(Utils.bookstore, Utils.bookstore_x, Utils.bookstore_y, 6);
+                    ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+                    break;
                 //Dorms
                 case 5 :
                     MainClass.gameScreen.setMap(Utils.dorm, Utils.dorm_x, Utils.dorm_y, 5);
