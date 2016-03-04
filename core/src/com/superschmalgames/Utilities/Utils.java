@@ -305,7 +305,20 @@ public class Utils {
     //========================================================================================
     //========================================Bookstore=======================================
     public static NPC[] Bookstore_enemies = {
-
+            new NPC('d', "aassdf", "d1", 25*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION), //0
+            new NPC('d', "aassdf", "d2", 22*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d3", 19*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u4", 5*MAP_RESOLUTION, (64-10)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u5", 24*MAP_RESOLUTION, (64-13)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l6", 32*MAP_RESOLUTION, (64-17)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r7", 28*MAP_RESOLUTION, (64-32)*MAP_RESOLUTION),
+            new NPC('l', "aassdf", "l8", 33*MAP_RESOLUTION, (64-38)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u9", 24*MAP_RESOLUTION, (64-49)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u10", 18*MAP_RESOLUTION, (64-49)*MAP_RESOLUTION),
+            new NPC('u', "aassdf", "u11", 16*MAP_RESOLUTION, (64-44)*MAP_RESOLUTION), //10
+            new NPC('r', "aassdf", "r12", 6*MAP_RESOLUTION, (64-33)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d13", 14*MAP_RESOLUTION, (64-30)*MAP_RESOLUTION),
+            new NPC('d', "aassdf", "d14", 9*MAP_RESOLUTION, (64-21)*MAP_RESOLUTION),
     };
     //========================================================================================
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
