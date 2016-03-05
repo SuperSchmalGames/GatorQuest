@@ -118,7 +118,7 @@ public class GameScreen implements Screen {
         if(dial) {
             MainClass.batch.begin();
             Utils.window.draw(MainClass.batch);
-            Utils.font_small.draw(MainClass.batch, window.dialog, 20, 190);
+            Utils.font_small.draw(MainClass.batch, window.dialog, 25, 180);
             MainClass.batch.end();
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -192,8 +192,8 @@ public class GameScreen implements Screen {
 
     //Method to set our dialogue equal to a new window and allow it to be shown on the screen.
     public void newDialog(){
-        window = new CharacterDialogue();                              //8=left align, true=wrap, null=truncate
-        window.dialog.setText(Utils.font_small, Utils.testDial3, Color.WHITE, 500, 8, true);
+        window = new CharacterDialogue();                     //480=text block width, 8=left align, true=wrap
+        window.dialog.setText(Utils.font_small, Utils.testDial3, Color.BLUE, 480, 8, true);
     }
 
     @Override
