@@ -49,6 +49,11 @@ public class GameScreen implements Screen {
         dial = false;
         newDial = false;
 
+        //Reset info for the menuIcon to use for dialogue windows
+        Utils.menuIcon.setColor(Color.BLUE);
+        Utils.menuIcon.setPosition(440, 26);    //440 and 380ish
+        Utils.menuIcon.setScale(1.5f);
+
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
@@ -114,11 +119,14 @@ public class GameScreen implements Screen {
             dial = true;
             newDialog();
         }
-        //Show our little dialogue popup if dial is true. DONT NEED TO DRAW THE STAGE, JUST THE DIALOGUE ITSELF
+        //Show our little dialogue popup if dial is true.
         if(dial) {
             MainClass.batch.begin();
             Utils.window.draw(MainClass.batch);
             Utils.font_small.draw(MainClass.batch, window.dialog, 25, 180);
+            //Utils.font_small.draw(MainClass.batch, window.ok, 460, 45);
+            Utils.font_small.draw(MainClass.batch, window.okNo, 400, 45);
+            Utils.menuIcon.draw(MainClass.batch);
             MainClass.batch.end();
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -18,12 +18,14 @@ public class MainClass extends Game {
 	public static InventoryScreen inventoryScreen;
 	public static HeroScreen heroScreen;
 	public static InputHandler inputHandler;
+	public static DialogueInputHandler dialogueInputHandler;
 	public static OpenWorldScreen openWorldScreen;
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 
+		dialogueInputHandler = new DialogueInputHandler();
 		inputHandler = new InputHandler();
 		Gdx.input.setInputProcessor(inputHandler);
 
