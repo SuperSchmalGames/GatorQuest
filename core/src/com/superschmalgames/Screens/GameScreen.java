@@ -51,7 +51,6 @@ public class GameScreen implements Screen {
 
         //Reset info for the menuIcon to use for dialogue windows
         Utils.menuIcon.setColor(Color.BLUE);
-        Utils.menuIcon.setPosition(440, 26);    //440 and 380ish
         Utils.menuIcon.setScale(1.5f);
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
@@ -220,9 +219,9 @@ public class GameScreen implements Screen {
         if(dial) {
             MainClass.batch.begin();
             Utils.window.draw(MainClass.batch);
-            Utils.font_small.draw(MainClass.batch, window.dialog, 25, 180);
-            //Utils.font_small.draw(MainClass.batch, window.ok, 460, 45);
-            Utils.font_small.draw(MainClass.batch, window.okNo, 400, 45);
+            Utils.font_small.draw(MainClass.batch, window.dialog, window.DIAL_X_OFFSET, window.DIAL_Y_OFFSET);
+            Utils.font_small.draw(MainClass.batch, window.ok, window.OK_X_OFFSET, window.OK_Y_OFFSET);
+            //Utils.font_small.draw(MainClass.batch, window.okNo, window.OKNO_X_OFFSET, window.OKNO_Y_OFFSET);
             Utils.menuIcon.draw(MainClass.batch);
             MainClass.batch.end();
         }
@@ -300,8 +299,49 @@ public class GameScreen implements Screen {
 
     //Method to set our dialogue equal to a new window and allow it to be shown on the screen.
     public void newDialog(){
-        window = new CharacterDialogue();                     //480=text block width, 8=left align, true=wrap
-        window.dialog.setText(Utils.font_small, Utils.testDial3, Color.BLUE, 480, 8, true);
+        //Find out where we are and if we're facing an NPC.
+        int x = 0;
+        int y = 0;
+        switch(MainClass.hero.lastDir) {
+            case 'L' :
+                x = (int)((camera.position.x - MainClass.hero.width)/Utils.MAP_RESOLUTION);
+                y = (int)(camera.position.y/Utils.MAP_RESOLUTION);
+                break;
+            case 'R' :
+                x = (int)((camera.position.x + MainClass.hero.width)/Utils.MAP_RESOLUTION);
+                y = (int)(camera.position.y/Utils.MAP_RESOLUTION);
+                break;
+            case 'U' :
+                x = (int)(camera.position.x/Utils.MAP_RESOLUTION);
+                y = (int)((camera.position.y + MainClass.hero.height)/ Utils.MAP_RESOLUTION);
+                break;
+            case 'D' :
+                x = (int)(camera.position.x/Utils.MAP_RESOLUTION);
+                y = (int)((camera.position.y - MainClass.hero.height)/ Utils.MAP_RESOLUTION);
+                break;
+        }
+        //If there's an NPC to interact with, continue.
+        if(collision.getCell(x,y).getTile().getProperties().containsKey("event")) {
+            //Stop character movement, if we're moving.
+            MainClass.gameScreen.lWalk = false;
+            MainClass.gameScreen.rWalk = false;
+            MainClass.gameScreen.uWalk = false;
+            MainClass.gameScreen.dWalk = false;
+            //Give input control to the dialogue input handler.
+            Gdx.input.setInputProcessor(MainClass.dialogueInputHandler);
+            //Create new dialogue window containing the dialogue of the NPC we're talking to.
+            window = new CharacterDialogue();
+            window.dialog.setText(Utils.font_small,
+                    enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].getScript(),
+                    Color.BLUE, 480, 8, true);  //480=text block width, 8=left align, true=wrap
+            Utils.menuIcon.setPosition(window.ICON_X_OFFSET, window.ICON_Y_OFFSET);
+            //Set the NPC's triggered field to true, since we'll have talked to him already.
+            enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].setTriggered(true);
+        }
+        //If no NPC to talk to, set dial back to false and return.
+        else{
+            dial = false;
+        }
     }
 
     @Override

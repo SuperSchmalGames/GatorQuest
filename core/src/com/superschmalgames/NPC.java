@@ -7,13 +7,13 @@ import com.superschmalgames.Utilities.Utils;
 public class NPC {
 
     public Animator walk;
-    char direction;
+    public char direction;
     //used for movement
     public int x_pos,y_pos;
     //used to reset position
-    int org_x, org_y;
-    boolean triggered;
-    String script;
+    public int org_x, org_y;
+    public boolean triggered;
+    public String script;
 
     //NPCs will only move in one direction if any
     public NPC(char dir, String s, String sprite, int x, int y) {

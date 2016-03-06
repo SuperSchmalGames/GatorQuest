@@ -127,8 +127,6 @@ public class InputHandler implements InputProcessor {
                     MainClass.heroScreen.heroPanel = "Statistics";
                     MainClass.heroScreen.heroPage = 0;
                     MainClass.heroScreen.heroRow = 0;
-                } else if ((keycode == Input.Keys.ENTER)) {
-                    MainClass.gameScreen.interact();
                 }
                 ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
                 else if (keycode == Input.Keys.R && !Utils.isPaused) {
@@ -146,18 +144,10 @@ public class InputHandler implements InputProcessor {
                         (Gdx.app.getApplicationListener()).resume();
                     }
                 }
-                else if(keycode == Input.Keys.D){
+                else if(keycode == Input.Keys.ENTER){
                     //Set the necessary flag to pop up the dialogue window
                     MainClass.gameScreen.newDial = true;
 
-                    //Stop character movement, if we're moving.
-                    MainClass.gameScreen.lWalk = false;
-                    MainClass.gameScreen.rWalk = false;
-                    MainClass.gameScreen.uWalk = false;
-                    MainClass.gameScreen.dWalk = false;
-
-                    //Set the input processor to take input from the stage, so the buttons in the window will work.
-                    Gdx.input.setInputProcessor(MainClass.dialogueInputHandler);
                 }
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////

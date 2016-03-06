@@ -436,10 +436,6 @@ public class Utils {
 
     ///////////////////////////////////////CHARACTER DIALOGUE/////////////////////////////////////////////////////////////
     public static Sprite window = new Sprite(new Texture("visuals/Menus/dialogue_window.png"));
-    public static String testDial1 = "Basic test string!";
-    public static String testDial2 = "Basic test string, but now it's longer so maybe it will wrap around the window!";
-    public static String testDial3 = "Hi! Would you like a class ring to value your time here at UF forever? Each ring contains a beautiful gem and it will be a constant " +
-                                      "reminder of your amazing adventures here. Would you like to buy one? A class ring costs 300.";
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //Static method to initialize all required options for the variables fields used above.
