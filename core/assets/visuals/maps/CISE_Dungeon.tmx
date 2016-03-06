@@ -2382,123 +2382,32 @@
     <property name="y" value="-1"/>
    </properties>
   </tile>
-  <tile id="9">
+  <tile id="2">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="0"/>
    </properties>
   </tile>
-  <tile id="10">
+  <tile id="3">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="0"/>
    </properties>
   </tile>
-  <tile id="11">
+  <tile id="4">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="12">
+  <tile id="5">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="13">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="14">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="15">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="16">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="17">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="18">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="19">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="20">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="21">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="22">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="23">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="24">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="25">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
   <tile id="26">
@@ -2515,123 +2424,32 @@
     <property name="y" value="-5"/>
    </properties>
   </tile>
-  <tile id="35">
+  <tile id="28">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="1"/>
    </properties>
   </tile>
-  <tile id="36">
+  <tile id="29">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="1"/>
    </properties>
   </tile>
-  <tile id="37">
+  <tile id="30">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="38">
+  <tile id="31">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="39">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="40">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="41">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="42">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="43">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="44">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="45">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="46">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="47">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="48">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="49">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="50">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="51">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
   <tile id="52">
@@ -2648,3574 +2466,686 @@
     <property name="y" value="-8"/>
    </properties>
   </tile>
-  <tile id="61">
+  <tile id="54">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="2"/>
    </properties>
   </tile>
-  <tile id="62">
+  <tile id="55">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="2"/>
    </properties>
   </tile>
-  <tile id="63">
+  <tile id="56">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="64">
+  <tile id="57">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="65">
+  <tile id="78">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="default" value=""/>
    </properties>
   </tile>
-  <tile id="66">
+  <tile id="79">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="default" value=""/>
    </properties>
   </tile>
-  <tile id="67">
+  <tile id="80">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="3"/>
    </properties>
   </tile>
-  <tile id="68">
+  <tile id="81">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="3"/>
    </properties>
   </tile>
-  <tile id="69">
+  <tile id="82">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="70">
+  <tile id="83">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="71">
+  <tile id="106">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="4"/>
    </properties>
   </tile>
-  <tile id="72">
+  <tile id="107">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="4"/>
    </properties>
   </tile>
-  <tile id="73">
+  <tile id="108">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="74">
+  <tile id="109">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="75">
+  <tile id="132">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="5"/>
    </properties>
   </tile>
-  <tile id="76">
+  <tile id="133">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="5"/>
    </properties>
   </tile>
-  <tile id="77">
+  <tile id="134">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="87">
+  <tile id="135">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="88">
+  <tile id="158">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="6"/>
    </properties>
   </tile>
-  <tile id="89">
+  <tile id="159">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="6"/>
    </properties>
   </tile>
-  <tile id="90">
+  <tile id="160">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="91">
+  <tile id="161">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="92">
+  <tile id="184">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="7"/>
    </properties>
   </tile>
-  <tile id="93">
+  <tile id="185">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="7"/>
    </properties>
   </tile>
-  <tile id="94">
+  <tile id="186">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="95">
+  <tile id="187">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="96">
+  <tile id="210">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="8"/>
    </properties>
   </tile>
-  <tile id="97">
+  <tile id="211">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="8"/>
    </properties>
   </tile>
-  <tile id="98">
+  <tile id="212">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="99">
+  <tile id="213">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="100">
+  <tile id="236">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="101">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="102">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="103">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="113">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="114">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="115">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="116">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="117">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="118">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="119">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="120">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="121">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="122">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="123">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="124">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="125">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="126">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="127">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="128">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="129">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="139">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="140">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="141">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="142">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="143">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="144">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="145">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="146">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="147">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="148">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="149">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="150">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="151">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="152">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="153">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="154">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="155">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="165">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="166">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="167">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="168">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="169">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="170">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="171">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="172">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="173">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="174">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="175">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="176">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="177">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="178">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="179">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="180">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="181">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="191">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="192">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="193">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="194">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="195">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="196">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="197">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="198">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="199">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="200">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="201">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="202">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="203">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="204">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="205">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="206">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="207">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="217">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="218">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="219">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="220">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="221">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="222">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="223">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="224">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="225">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="226">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="227">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="228">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="229">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="230">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="231">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="232">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="233">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="9"/>
    </properties>
   </tile>
   <tile id="237">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="9"/>
    </properties>
   </tile>
   <tile id="238">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
   <tile id="239">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="240">
+  <tile id="262">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="241">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="242">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="243">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="244">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="245">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="246">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="247">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="248">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="249">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="250">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="251">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="252">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="253">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="254">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="255">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="256">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="257">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="258">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="259">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="10"/>
    </properties>
   </tile>
   <tile id="263">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="10"/>
    </properties>
   </tile>
   <tile id="264">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
   <tile id="265">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="266">
+  <tile id="288">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="267">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="268">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="269">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="270">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="271">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="272">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="273">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="274">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="275">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="276">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="277">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="278">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="279">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="280">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="281">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="282">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="283">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="284">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="285">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="11"/>
    </properties>
   </tile>
   <tile id="289">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="11"/>
    </properties>
   </tile>
   <tile id="290">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
   <tile id="291">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="292">
+  <tile id="314">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="293">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="294">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="295">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="296">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="297">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="298">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="299">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="300">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="301">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="302">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="303">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="304">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="305">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="306">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="307">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="308">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="309">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="310">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="311">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="12"/>
    </properties>
   </tile>
   <tile id="315">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="12"/>
    </properties>
   </tile>
   <tile id="316">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
   <tile id="317">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="318">
+  <tile id="340">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="319">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="320">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="321">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="322">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="323">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="324">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="325">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="326">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="327">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="328">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="329">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="330">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="331">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="332">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="333">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="334">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="335">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="336">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="337">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="13"/>
    </properties>
   </tile>
   <tile id="341">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="13"/>
    </properties>
   </tile>
   <tile id="342">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
   <tile id="343">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="344">
+  <tile id="366">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="345">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="346">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="347">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="348">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="349">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="350">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="351">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="352">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="353">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="354">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="355">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="356">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="357">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="358">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="359">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="360">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="361">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="362">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="363">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="14"/>
    </properties>
   </tile>
   <tile id="367">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="14"/>
    </properties>
   </tile>
   <tile id="368">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
   <tile id="369">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="370">
+  <tile id="392">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="371">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="372">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="373">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="374">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="375">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="376">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="377">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="378">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="379">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="380">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="381">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="382">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="383">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="384">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="385">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="386">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="387">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="388">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="389">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="15"/>
    </properties>
   </tile>
   <tile id="393">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="15"/>
    </properties>
   </tile>
   <tile id="394">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
   <tile id="395">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
-  <tile id="396">
+  <tile id="418">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="397">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="398">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="399">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="400">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="401">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="402">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="403">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="404">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="405">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="406">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="407">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="408">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="409">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="410">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="411">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="412">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="413">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="414">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="415">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="16"/>
    </properties>
   </tile>
   <tile id="419">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="16"/>
    </properties>
   </tile>
   <tile id="420">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
   <tile id="421">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="2"/>
+    <property name="number" value="35"/>
    </properties>
   </tile>
-  <tile id="422">
+  <tile id="444">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="423">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="424">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="425">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="426">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="427">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="428">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="429">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="430">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="431">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="432">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="433">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="434">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="435">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="436">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="437">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="438">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="439">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="440">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="441">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="17"/>
    </properties>
   </tile>
   <tile id="445">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="17"/>
    </properties>
   </tile>
   <tile id="446">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value=""/>
    </properties>
   </tile>
   <tile id="447">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="2"/>
+    <property name="number" value="34"/>
    </properties>
   </tile>
-  <tile id="448">
+  <tile id="470">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="449">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="450">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="451">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="452">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="453">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="454">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="455">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="456">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="457">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="458">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="459">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="460">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="461">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="462">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="463">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="464">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="465">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="466">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="467">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="18"/>
    </properties>
   </tile>
   <tile id="471">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="18"/>
    </properties>
   </tile>
   <tile id="472">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="33"/>
    </properties>
   </tile>
   <tile id="473">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="33"/>
    </properties>
   </tile>
-  <tile id="474">
+  <tile id="496">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="475">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="476">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="477">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="478">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="479">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="480">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="481">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="482">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="483">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="484">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="485">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="486">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="487">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="488">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="489">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="490">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="491">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="492">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="493">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="19"/>
    </properties>
   </tile>
   <tile id="497">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="19"/>
    </properties>
   </tile>
   <tile id="498">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="32"/>
    </properties>
   </tile>
   <tile id="499">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="32"/>
    </properties>
   </tile>
-  <tile id="500">
+  <tile id="522">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="501">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="502">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="503">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="504">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="505">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="506">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="507">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="508">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="509">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="510">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="511">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="512">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="513">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="514">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="515">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="516">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="517">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="518">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="519">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="20"/>
    </properties>
   </tile>
   <tile id="523">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="20"/>
    </properties>
   </tile>
   <tile id="524">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="31"/>
    </properties>
   </tile>
   <tile id="525">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="31"/>
    </properties>
   </tile>
-  <tile id="526">
+  <tile id="548">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="527">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="528">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="529">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="530">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="531">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="532">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="533">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="534">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="535">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="536">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="537">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="538">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="539">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="540">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="541">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="542">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="543">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="544">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="545">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="21"/>
    </properties>
   </tile>
   <tile id="549">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="21"/>
    </properties>
   </tile>
   <tile id="550">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="30"/>
    </properties>
   </tile>
   <tile id="551">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="30"/>
    </properties>
   </tile>
-  <tile id="552">
+  <tile id="574">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="553">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="554">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="555">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="556">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="557">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="558">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="559">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="560">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="561">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="562">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="563">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="564">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="565">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="566">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="567">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="568">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="569">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="570">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="571">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="22"/>
    </properties>
   </tile>
   <tile id="575">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="22"/>
    </properties>
   </tile>
   <tile id="576">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="29"/>
    </properties>
   </tile>
   <tile id="577">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="29"/>
    </properties>
   </tile>
-  <tile id="578">
+  <tile id="600">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="579">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="580">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="581">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="582">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="583">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="584">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="585">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="586">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="587">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="588">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="589">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="590">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="591">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="592">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="593">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="594">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="595">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="596">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="597">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="23"/>
    </properties>
   </tile>
   <tile id="601">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="23"/>
    </properties>
   </tile>
   <tile id="602">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="28"/>
    </properties>
   </tile>
   <tile id="603">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="28"/>
    </properties>
   </tile>
-  <tile id="604">
+  <tile id="626">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="605">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="606">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="607">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="608">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="609">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="610">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="611">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="612">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="613">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="614">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="615">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="616">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="617">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="618">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="619">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="620">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="621">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="622">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="623">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="24"/>
    </properties>
   </tile>
   <tile id="627">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="24"/>
    </properties>
   </tile>
   <tile id="628">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="27"/>
    </properties>
   </tile>
   <tile id="629">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="27"/>
    </properties>
   </tile>
-  <tile id="630">
+  <tile id="652">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="631">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="632">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="633">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="634">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="635">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="636">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="637">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="638">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="639">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="640">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="641">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="642">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="643">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="644">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="645">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="646">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="647">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="648">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="649">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="25"/>
    </properties>
   </tile>
   <tile id="653">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="25"/>
    </properties>
   </tile>
   <tile id="654">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="number" value="26"/>
    </properties>
   </tile>
   <tile id="655">
    <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="656">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="657">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="658">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="659">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="660">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="661">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="662">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="663">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="664">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="665">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="666">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="667">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="668">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="669">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="670">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="671">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="672">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="673">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="674">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
-   </properties>
-  </tile>
-  <tile id="675">
-   <properties>
-    <property name="door" value=""/>
-    <property name="x" value=""/>
-    <property name="y" value=""/>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="2"/>
+    <property name="event" value="0"/>
+    <property name="number" value="26"/>
    </properties>
   </tile>
  </tileset>
@@ -6226,7 +3156,7 @@
  </layer>
  <layer name="Collision" width="222" height="67">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="Mid" width="222" height="67">

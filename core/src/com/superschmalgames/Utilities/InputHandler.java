@@ -29,6 +29,9 @@ public class InputHandler implements InputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //                                           TITLESCREEN
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.titleScreen) {
                 if (keycode == Input.Keys.DOWN && Utils.menuReady && menuIndex < 2) {
                     //Play the sound effect when player pushes the button.
@@ -53,6 +56,10 @@ public class InputHandler implements InputProcessor {
                         Utils.errTone.play(0.5f);
                 }
             }
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                           AVATARSCREEN
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.avatarScreen) {
                 if (keycode == Input.Keys.NUM_1) {
                     MainClass.hero.outfitNum = 7;
@@ -83,17 +90,25 @@ public class InputHandler implements InputProcessor {
                 }
 
             }
-            else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen) {
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                           GAMESCREEN
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.gameScreen && MainClass.hero.canMove()) {
                 //Take keyboard input from user for character movement. Character actually stays centered on screen, and the
                 //camera is translated about the map to give illusion of character movement.
                 if (keycode == Input.Keys.LEFT && !Utils.isPaused) {
                     MainClass.gameScreen.lWalk = true;
+                    MainClass.hero.lastDir = 'L';
                 } else if (keycode == Input.Keys.RIGHT && !Utils.isPaused) {
                     MainClass.gameScreen.rWalk = true;
+                    MainClass.hero.lastDir = 'R';
                 } else if (keycode == Input.Keys.UP && !Utils.isPaused) {
                     MainClass.gameScreen.uWalk = true;
+                    MainClass.hero.lastDir = 'U';
                 } else if (keycode == Input.Keys.DOWN && !Utils.isPaused) {
                     MainClass.gameScreen.dWalk = true;
+                    MainClass.hero.lastDir = 'D';
                 } else if ((keycode == Input.Keys.I && !Utils.isPaused)) {
                     //Play the sound effect when player pushes the button.
                     Utils.inventoryScreenSelectionSound.play();
@@ -112,6 +127,8 @@ public class InputHandler implements InputProcessor {
                     MainClass.heroScreen.heroPanel = "Statistics";
                     MainClass.heroScreen.heroPage = 0;
                     MainClass.heroScreen.heroRow = 0;
+                } else if ((keycode == Input.Keys.ENTER)) {
+                    MainClass.gameScreen.interact();
                 }
                 ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
                 else if (keycode == Input.Keys.R && !Utils.isPaused) {
@@ -316,7 +333,7 @@ public class InputHandler implements InputProcessor {
                             MainClass.heroScreen.heroRow += 1;
                     }
                     else if (MainClass.heroScreen.heroPage * 8 + MainClass.heroScreen.heroRow + 1 < 18
-                            && MainClass.heroScreen.heroPanel == "Moves") {
+                            && "Moves".equals(MainClass.heroScreen.heroPanel)) {
                         if ((MainClass.heroScreen.heroRow + 1) % 8 == 0) {
                             MainClass.heroScreen.heroPage += 1;
                             MainClass.heroScreen.heroRow = 0;
@@ -384,9 +401,7 @@ public class InputHandler implements InputProcessor {
     }
 
     @Override
-    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        return false;
-    }
+    public boolean touchDown(int screenX, int screenY, int pointer, int button) { return false; }
 
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) { return false; }

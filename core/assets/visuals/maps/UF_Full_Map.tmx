@@ -1912,6 +1912,21 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="3172">
+   <properties>
+    <property name="level" value="6"/>
+   </properties>
+  </tile>
+  <tile id="3173">
+   <properties>
+    <property name="level" value="6"/>
+   </properties>
+  </tile>
+  <tile id="3174">
+   <properties>
+    <property name="level" value="6"/>
+   </properties>
+  </tile>
   <tile id="3202">
    <properties>
     <property name="blocked" value=""/>
@@ -1945,6 +1960,21 @@
   <tile id="3250">
    <properties>
     <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="3262">
+   <properties>
+    <property name="level" value="6"/>
+   </properties>
+  </tile>
+  <tile id="3263">
+   <properties>
+    <property name="level" value="6"/>
+   </properties>
+  </tile>
+  <tile id="3264">
+   <properties>
+    <property name="level" value="6"/>
    </properties>
   </tile>
   <tile id="3292">

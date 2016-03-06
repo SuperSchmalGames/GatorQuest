@@ -4,7 +4,6 @@ package com.superschmalgames.Screens;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -13,9 +12,10 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.superschmalgames.Utilities.CharacterDialogue;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
+import com.superschmalgames.NPC;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -23,7 +23,8 @@ public class GameScreen implements Screen {
 
     //The camera through which we "see" the game world.
     OrthographicCamera camera;
-
+    private Viewport viewport;
+    NPC[] enemies;
     //The game map itself.
     public TiledMapTileLayer collision;
     public TiledMapRenderer tiledmaprenderer;
@@ -40,7 +41,6 @@ public class GameScreen implements Screen {
     public CharacterDialogue window;
 
     public GameScreen() {
-
         lWalk = false;
         rWalk = false;
         uWalk = false;
@@ -56,16 +56,18 @@ public class GameScreen implements Screen {
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
+        viewport = new FitViewport(Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT, camera);
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
 
         //Initialize the map
-        setMap(Utils.dorm, Utils.start_x, Utils.start_y);
+        setMap(Utils.dorm, Utils.start_x, Utils.start_y, 5);
     }
 
     //made a separate method so that the map can be changed and starting coordinates
     //can be provided. This allows the gamescreen to handle all of the dungeons without
+
     //making separate screens.
-    public void setMap(TiledMap tiledmap, int x, int y) {
+    public void setMap(TiledMap tiledmap, int x, int y, int location) {
         camera.position.set(x,y,0);
         tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
         collision = (TiledMapTileLayer) tiledmap.getLayers().get("Collision");
@@ -77,6 +79,99 @@ public class GameScreen implements Screen {
         background[2] = 2;
         //foreground layer
         foreground[0] = 3;
+        switch(location) {
+            //Bookstore
+            case 6:
+                enemies = Utils.Bookstore_enemies;
+                break;
+            //Dorm
+            case 5:
+                enemies = Utils.Dorm_enemies;
+                break;
+            //Marston
+            case 4:
+                enemies = Utils.Marston_enemies;
+                break;
+            //NEB
+            case 3:
+                enemies = Utils.NEB_enemies;
+                break;
+            //CISE
+            case 2:
+                enemies = Utils.CISE_enemies;
+                break;
+            //Turlington
+            case 1:
+                enemies = Utils.Turlington_enemies;
+                break;
+        }
+    }
+
+    //draws enemies...obviously
+    private void drawEnemies() {
+        for (NPC enemy : enemies) {
+            MainClass.batch.draw(enemy.walk.currentFrame, enemy.x_pos, enemy.y_pos,0,0,enemy.walk.currentFrame.getRegionWidth(), enemy.walk.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
+        }
+    }
+
+    //check for line of sight, pauses the player as an npc approaches
+    private void checkForEnemy(float delta) {
+        if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("enemy")) {
+            int temp = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("number"));
+            if(!enemies[temp].getTriggered()) {
+                lWalk = false;
+                rWalk = false;
+                uWalk = false;
+                dWalk = false;
+                enemies[temp].move(delta, camera.position.x, camera.position.y);
+                MainClass.hero.setMove(false);
+            }
+            else {
+                MainClass.hero.setMove(true);
+            }
+
+        }
+    }
+
+    //will handle events triggered by interaction between the player and things they are investigating
+    public void interact() {
+        int x = 0;
+        int y = 0;
+        switch(MainClass.hero.lastDir) {
+            case 'L' :
+                x = (int)((camera.position.x - MainClass.hero.width)/Utils.MAP_RESOLUTION);
+                y = (int)(camera.position.y/Utils.MAP_RESOLUTION);
+                break;
+            case 'R' :
+                x = (int)((camera.position.x + MainClass.hero.width)/Utils.MAP_RESOLUTION);
+                y = (int)(camera.position.y/Utils.MAP_RESOLUTION);
+                break;
+            case 'U' :
+                x = (int)(camera.position.x/Utils.MAP_RESOLUTION);
+                y = (int)((camera.position.y + MainClass.hero.height)/ Utils.MAP_RESOLUTION);
+                break;
+            case 'D' :
+                x = (int)(camera.position.x/Utils.MAP_RESOLUTION);
+                y = (int)((camera.position.y - MainClass.hero.height)/ Utils.MAP_RESOLUTION);
+                break;
+        }
+        if(collision.getCell(x,y).getTile().getProperties().containsKey("event")) {
+            int event = Integer.valueOf((String) collision.getCell(x,y).getTile().getProperties().get("event"));
+            switch(event) {
+                //npc event
+                case 0:
+                    enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateCombat();
+                    break;
+                //shop
+                case 1:
+                    System.out.print("This is the shop event");
+                    break;
+                //Boss trigger
+                case 2:
+                    enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateCombat();
+                    break;
+            }
+        }
     }
 
     @Override
@@ -97,15 +192,17 @@ public class GameScreen implements Screen {
         tiledmaprenderer.render(background);
 
         //Draw to our batch each refresh. The batch is then rendered to the screen.
+        MainClass.batch.setProjectionMatrix(camera.combined);
         MainClass.batch.begin();
 
         ////////////////////////////////////////////////////////TEST PRINTS////////////////////////////////////////////////////////////////////
-        Utils.testFont.draw(MainClass.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y , 0, Utils.GAME_SCREEN_HEIGHT-40);
-        Utils.testFont.draw(MainClass.batch, "GPA: " + Utils.df1.format(MainClass.hero.GPA) + " RedBull Quant: " + MainClass.hero.inventory.items.get(5).getQuantity(), 0, Utils.GAME_SCREEN_HEIGHT - 75);
+        Utils.testFont.draw(MainClass.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y , camera.position.x-Utils.GAME_SCREEN_WIDTH/2, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-10);
+        //Utils.testFont.draw(MainClass.batch, "GPA: " + Utils.df1.format(MainClass.hero.GPA) + " RedBull Quant: " + MainClass.hero.inventory.items.get(5).getQuantity(), 0, Utils.GAME_SCREEN_HEIGHT - 75);
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //The following draw method is weird but allows us to make our hero smaller in order to look like he fits better proportional to objects in the world.
         //The second-to-last and third-to-last args are floats (from 0 to 1.0) that you can tweak to change the character's size.
+        drawEnemies();
         MainClass.batch.draw(MainClass.hero.heroAnim.currentFrame, MainClass.hero.xPos, MainClass.hero.yPos, 0, 0, MainClass.hero.heroAnim.currentFrame.getRegionWidth(), MainClass.hero.heroAnim.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
 
         MainClass.batch.end();
@@ -134,6 +231,7 @@ public class GameScreen implements Screen {
         //Keyboard input is taken in the InputHandler class, which updates the following walk variables to control
         //how character movement is rendered to the screen
         walk(delta);
+        checkForEnemy(delta);
     }
 
     //checks if one of the walk booleans has been triggered, then checks if the blocks that the character would move into are considered blocked using the collision layer of the maps
@@ -141,9 +239,9 @@ public class GameScreen implements Screen {
     //After that, if the character has moved up or down an additional check is needed to determine if the character is leaving the dungeon to the open world
     public void walk(float delta){
             if(lWalk &&
-               !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-5)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-               !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-5)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")) {
-                camera.translate(-5f, 0f);
+               !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-Utils.MOVE_DIST)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+               !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-Utils.MOVE_DIST)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")) {
+                camera.translate(Utils.N_MOVE_DIST, 0f);
                 MainClass.hero.walkAnimation('L', delta);
                 if(collision.getCell((int)(camera.position.x-MainClass.hero.width/2)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("exit")) {
                     lWalk = false;
@@ -151,10 +249,10 @@ public class GameScreen implements Screen {
                 }
             }
             else if(rWalk &&
-                    !collision.getCell((int)(camera.position.x+MainClass.hero.width/2+5)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x+MainClass.hero.width/2+5)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
+                    !collision.getCell((int)(camera.position.x+MainClass.hero.width/2+Utils.MOVE_DIST)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                    !collision.getCell((int)(camera.position.x+MainClass.hero.width/2+Utils.MOVE_DIST)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
             {
-                camera.translate(5f,0f);
+                camera.translate(Utils.MOVE_DIST,0f);
                 MainClass.hero.walkAnimation('R', delta);
                 if(collision.getCell((int)(camera.position.x+MainClass.hero.width/2)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("exit")) {
                     rWalk = false;
@@ -162,11 +260,11 @@ public class GameScreen implements Screen {
                 }
             }
             else if(uWalk &&
-                    !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y+5)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x-MainClass.hero.width/2)/Utils.MAP_RESOLUTION, (int) (camera.position.y+5)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x+MainClass.hero.width/2)/Utils.MAP_RESOLUTION, (int) (camera.position.y+5)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
+                    !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y+Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                    !collision.getCell((int)(camera.position.x-MainClass.hero.width/2)/Utils.MAP_RESOLUTION, (int) (camera.position.y+Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                    !collision.getCell((int)(camera.position.x+MainClass.hero.width/2)/Utils.MAP_RESOLUTION, (int) (camera.position.y+Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
             {
-                camera.translate(0f,5f);
+                camera.translate(0f,Utils.MOVE_DIST);
                 MainClass.hero.walkAnimation('U', delta);
                 if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("door")) {
                     int x = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("x"));
@@ -179,11 +277,11 @@ public class GameScreen implements Screen {
                 }
             }
             else if(dWalk &&
-                    !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2-5)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x-MainClass.hero.width/2)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2-5)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
-                    !collision.getCell((int)(camera.position.x+MainClass.hero.width/2)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2-5)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
+                    !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2-Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                    !collision.getCell((int)(camera.position.x-MainClass.hero.width/2)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2-Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
+                    !collision.getCell((int)(camera.position.x+MainClass.hero.width/2)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2-Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked"))
             {
-                camera.translate(0f,-5f);
+                camera.translate(0f,Utils.N_MOVE_DIST);
                 MainClass.hero.walkAnimation('D', delta);
                 if (collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("door")) {
                     int x = Integer.valueOf((String) collision.getCell((int) camera.position.x / Utils.MAP_RESOLUTION, (int) camera.position.y / Utils.MAP_RESOLUTION).getTile().getProperties().get("x"));
@@ -196,6 +294,8 @@ public class GameScreen implements Screen {
                 }
             }
             else MainClass.hero.standAnimation();
+            MainClass.hero.setPosition(camera.position.x, camera.position.y);
+
     }
 
     //Method to set our dialogue equal to a new window and allow it to be shown on the screen.
@@ -211,7 +311,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-
+        viewport.update(width, height);
     }
 
     @Override

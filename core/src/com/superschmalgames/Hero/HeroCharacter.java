@@ -49,6 +49,7 @@ public class HeroCharacter {
     //Animators that take care of walking in each direction.
     public Animator leftWalk, rightWalk, upWalk, downWalk;
     public char lastDir;
+    public boolean canMove;
 
     //Main animator that handles switching between all different direction the character can walk.
     public Animator heroAnim;
@@ -78,6 +79,8 @@ public class HeroCharacter {
 
         //#Semesters completed. Each named professor beaten increments this by 1.
         semester = 8;
+
+        canMove = true;
     }
 
     public void initAnimations(){
@@ -131,4 +134,17 @@ public class HeroCharacter {
         }
     }
 
+    //sets position of character
+    public void setPosition(float x, float y) {
+        xPos = x-width/2;
+        yPos = y-height/2;
+    }
+
+    public void setMove(boolean set) {
+        canMove = set;
+    }
+
+    public boolean canMove() {
+        return canMove;
+    }
 }
