@@ -43,7 +43,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateCombat();
+                    initiateDialogue(1);
                 break;
             case 'r':
                 if (x_pos < x - 3*MainClass.hero.width/2) {
@@ -51,7 +51,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateCombat();
+                    initiateDialogue(1);
                 break;
             case 'u':
                 if (y_pos < y - 3*MainClass.hero.height/2) {
@@ -59,7 +59,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateCombat();
+                    initiateDialogue(1);
                 break;
             case 'd':
                 if (y_pos > y + MainClass.hero.height/2) {
@@ -67,7 +67,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateCombat();
+                    initiateDialogue(1);
                 break;
         }
         if(temp) {
@@ -94,6 +94,9 @@ public class NPC {
     }
 
     public void initiateDialogue(int event){
+        ////////////////////////////////////
+        if(!MainClass.gameScreen.dial) MainClass.gameScreen.dial = true;
+        ////////////////////////////////////
 
         //Stop character movement, if we're moving.
         MainClass.gameScreen.lWalk = false;
@@ -130,11 +133,15 @@ public class NPC {
                 break;
         }
 
-        //Set the position 
+        //Set the position
         Utils.menuIcon.setPosition(MainClass.gameScreen.window.ICON_X_OFFSET, MainClass.gameScreen.window.ICON_Y_OFFSET);
 
         //Set the NPC's triggered field to true, since we'll have talked to him already.
-        triggered = true;
+        if (!triggered)  {
+            triggered = true;
+            walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);
+        }
+        reset();
     }
 
     public void initiateCombat() {
