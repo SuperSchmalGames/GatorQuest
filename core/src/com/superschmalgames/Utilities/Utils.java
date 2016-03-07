@@ -307,7 +307,7 @@ public class Utils {
     public static NPC[] Bookstore_enemies = {
             new NPC('d', "aassdf", "d1", 25*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION), //0
             new NPC('d', "aassdf", "d2", 22*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "d3", 19*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r3", 19*MAP_RESOLUTION, (64-5)*MAP_RESOLUTION),
             new NPC('u', "aassdf", "u4", 5*MAP_RESOLUTION, (64-10)*MAP_RESOLUTION),
             new NPC('u', "aassdf", "u5", 24*MAP_RESOLUTION, (64-13)*MAP_RESOLUTION),
             new NPC('l', "aassdf", "l6", 32*MAP_RESOLUTION, (64-17)*MAP_RESOLUTION),
