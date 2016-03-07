@@ -8,6 +8,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
@@ -156,10 +157,12 @@ public class GameScreen implements Screen {
         }
         if(collision.getCell(x,y).getTile().getProperties().containsKey("event")) {
             int event = Integer.valueOf((String) collision.getCell(x,y).getTile().getProperties().get("event"));
-            switch(event) {
+            enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateDialogue(event);
+
+            /*switch(event) {
                 //npc event
                 case 0:
-                    enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateCombat();
+                    enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateDialogue();
                     break;
                 //shop
                 case 1:
@@ -167,9 +170,12 @@ public class GameScreen implements Screen {
                     break;
                 //Boss trigger
                 case 2:
-                    enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateCombat();
+                    enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateDialogue();
                     break;
-            }
+            }*/
+        }
+        else{
+            dial = false;
         }
     }
 
@@ -213,15 +219,15 @@ public class GameScreen implements Screen {
         if(newDial){
             newDial = false;
             dial = true;
-            newDialog();
+            //newDialog();
+            interact();
         }
         //Show our little dialogue popup if dial is true.
         if(dial) {
             MainClass.batch.begin();
             Utils.window.draw(MainClass.batch);
             Utils.font_small.draw(MainClass.batch, window.dialog, window.DIAL_X_OFFSET, window.DIAL_Y_OFFSET);
-            Utils.font_small.draw(MainClass.batch, window.ok, window.OK_X_OFFSET, window.OK_Y_OFFSET);
-            //Utils.font_small.draw(MainClass.batch, window.okNo, window.OKNO_X_OFFSET, window.OKNO_Y_OFFSET);
+            Utils.font_small.draw(MainClass.batch, window.decision, window.decOffsetX, window.decOffsetY);
             Utils.menuIcon.draw(MainClass.batch);
             MainClass.batch.end();
         }
@@ -331,9 +337,32 @@ public class GameScreen implements Screen {
             Gdx.input.setInputProcessor(MainClass.dialogueInputHandler);
             //Create new dialogue window containing the dialogue of the NPC we're talking to.
             window = new CharacterDialogue();
+
             window.dialog.setText(Utils.font_small,
                     enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].getScript(),
                     Color.BLUE, 480, 8, true);  //480=text block width, 8=left align, true=wrap
+            int event = Integer.valueOf((String) collision.getCell(x,y).getTile().getProperties().get("event"));
+            switch(event) {
+                //NPC Event
+                case 0:
+                    window.decision = window.ok;
+                    window.decOffsetX = window.OK_X_OFFSET;
+                    window.decOffsetY = window.OK_Y_OFFSET;
+                    break;
+                //Shop
+                case 1:
+                    window.decision = window.okNo;
+                    window.decOffsetX = window.OKNO_X_OFFSET;
+                    window.decOffsetY = window.OKNO_Y_OFFSET;
+                    break;
+                //Boss Trigger
+                case 2:
+                    window.decision = window.okNo;
+                    window.decOffsetX = window.OKNO_X_OFFSET;
+                    window.decOffsetY = window.OKNO_Y_OFFSET;
+                    break;
+            }
+
             Utils.menuIcon.setPosition(window.ICON_X_OFFSET, window.ICON_Y_OFFSET);
             //Set the NPC's triggered field to true, since we'll have talked to him already.
             enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].setTriggered(true);

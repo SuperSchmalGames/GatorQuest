@@ -21,11 +21,14 @@ public class CharacterDialogue{
     public GlyphLayout dialog;
     public GlyphLayout ok;
     public GlyphLayout okNo;
+    public GlyphLayout decision;
     public boolean proceed;
+    public float decOffsetX, decOffsetY;
 
     public CharacterDialogue() {
         proceed = false;
         dialog = new GlyphLayout(Utils.font_small, "");
+        decision = new GlyphLayout();
         ok = new GlyphLayout(Utils.font_small, "ok!", Color.BLUE, 100, 8, true);
         okNo = new GlyphLayout(Utils.font_small, "ok!  no!", Color.BLUE, 200, 8, true);
         Utils.window.setPosition(WINDOW_X_OFFSET, WINDOW_Y_OFFSET);

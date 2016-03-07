@@ -1,6 +1,9 @@
 package com.superschmalgames;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.superschmalgames.Utilities.Animator;
+import com.superschmalgames.Utilities.CharacterDialogue;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -14,6 +17,7 @@ public class NPC {
     public int org_x, org_y;
     public boolean triggered;
     public String script;
+    public boolean los;
 
     //NPCs will only move in one direction if any
     public NPC(char dir, String s, String sprite, int x, int y) {
@@ -26,7 +30,7 @@ public class NPC {
         walk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_" + sprite + ".png", 0.17f);
         walk.currentFrame = walk.walkAnimation.getKeyFrame(walk.stateTime, true);
         triggered = false;
-
+        los = true;
     }
 
     //move to players location.
@@ -89,8 +93,53 @@ public class NPC {
         triggered = set;
     }
 
+    public void initiateDialogue(int event){
+
+        //Stop character movement, if we're moving.
+        MainClass.gameScreen.lWalk = false;
+        MainClass.gameScreen.rWalk = false;
+        MainClass.gameScreen.uWalk = false;
+        MainClass.gameScreen.dWalk = false;
+
+        //Give input control to the dialogue input handler.
+        Gdx.input.setInputProcessor(MainClass.dialogueInputHandler);
+
+        //Create new dialogue window containing the dialogue of the NPC we're talking to.
+        MainClass.gameScreen.window = new CharacterDialogue();    //480=text block width, 8=left align, true=wrap
+        MainClass.gameScreen.window.dialog.setText(Utils.font_small, script, Color.BLUE, 480, 8, true);
+
+        //Set certain parts of the dialogue window to certain values depending on the event type.
+        switch(event) {
+            //NPC Event
+            case 0:
+                MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
+                MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OK_X_OFFSET;
+                MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;
+                break;
+            //Shop Event
+            case 1:
+                MainClass.gameScreen.window.decision = MainClass.gameScreen.window.okNo;
+                MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OKNO_X_OFFSET;
+                MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OKNO_Y_OFFSET;
+                break;
+            //Boss Event
+            case 2:
+                MainClass.gameScreen.window.decision = MainClass.gameScreen.window.okNo;
+                MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OKNO_X_OFFSET;
+                MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OKNO_Y_OFFSET;
+                break;
+        }
+
+        //Set the position 
+        Utils.menuIcon.setPosition(MainClass.gameScreen.window.ICON_X_OFFSET, MainClass.gameScreen.window.ICON_Y_OFFSET);
+
+        //Set the NPC's triggered field to true, since we'll have talked to him already.
+        triggered = true;
+    }
+
     public void initiateCombat() {
-        System.out.print(script);
+        //System.out.print(script);
+        MainClass.gameScreen.newDial = true;
         if (!triggered)  {
             triggered = true;
             walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);
