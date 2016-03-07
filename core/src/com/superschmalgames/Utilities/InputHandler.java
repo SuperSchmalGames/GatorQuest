@@ -127,8 +127,6 @@ public class InputHandler implements InputProcessor {
                     MainClass.heroScreen.heroPanel = "Statistics";
                     MainClass.heroScreen.heroPage = 0;
                     MainClass.heroScreen.heroRow = 0;
-                } else if ((keycode == Input.Keys.ENTER)) {
-                    MainClass.gameScreen.interact();
                 }
                 ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
                 else if (keycode == Input.Keys.R && !Utils.isPaused) {
@@ -145,6 +143,11 @@ public class InputHandler implements InputProcessor {
                         Utils.isPaused = false;
                         (Gdx.app.getApplicationListener()).resume();
                     }
+                }
+                else if(keycode == Input.Keys.ENTER){
+                    //Set the necessary flag to pop up the dialogue window
+                    MainClass.gameScreen.newDial = true;
+
                 }
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
