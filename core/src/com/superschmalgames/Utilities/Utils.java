@@ -307,7 +307,7 @@ public class Utils {
     public static NPC[] Bookstore_enemies = {
             new NPC('d', "aassdf", "d1", 25*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION), //0
             new NPC('d', "aassdf", "d2", 22*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "d3", 19*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION),
+            new NPC('r', "aassdf", "r3", 19*MAP_RESOLUTION, (64-5)*MAP_RESOLUTION),
             new NPC('u', "aassdf", "u4", 5*MAP_RESOLUTION, (64-10)*MAP_RESOLUTION),
             new NPC('u', "aassdf", "u5", 24*MAP_RESOLUTION, (64-13)*MAP_RESOLUTION),
             new NPC('l', "aassdf", "l6", 32*MAP_RESOLUTION, (64-17)*MAP_RESOLUTION),
@@ -437,6 +437,191 @@ public class Utils {
     ///////////////////////////////////////CHARACTER DIALOGUE/////////////////////////////////////////////////////////////
     public static Sprite window = new Sprite(new Texture("visuals/Menus/dialogue_window.png"));
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //////////////////////NPC DIALOGUE START///////////////////////////////////////////////////////////////////////////////////////
+    public static final String dormA = "Hi! I’m a freshman too. Are you in The Good Life too? I’ve heard it’s really hard!";
+    public static final String dormB = "Don’t forget to look at your Degree Audit! It’s in your bag, and it will tell you " +
+            "the order of the classes you have to complete.";
+    public static final String dormC = "Your Campus Map will tell you where all of the buildings on campus are.";
+    public static final String dormD = "This dining hall food is giving me some serious stomach issues…*belch* Oops!";
+    public static final String dormEInitial = "Will you proofread my essay for me? I’m nervous that I’m going to get a bad " +
+            "grade on my first college paper…";
+    public static final String dormEYes = "Your Reading Comprehension and Writing Skill increased by 1.";
+    public static final String dormENo = "Okay fine.";
+    public static final String dormEUsed = "I got a B on that paper.";
+    public static final String dormF = "It seems like there are so many classes I have to take! How am I going to fit all of this into 8 semesters???";
+    public static final String dormGInitial = "Is it just me, or does this dorm feel like a jail cell?";
+    public static final String dormGYes = "Your Social Skills increased by 1.";
+    public static final String dormGNo = "Y i k e s.";
+    public static final String dormGUsed = "This place is a jail!";
+
+    public static final String worldH = "UF is a great place to go to school. We have so many great Alumni like GloZell, Ryan Lochte and even Dan Bilzerian!";
+    public static final String worldI = "College is so easy. I was an IB Student in high school and that was WAY harder. Yes, I’m a business major. " +
+            "Why do you ask? What does that have to do with this?";
+    public static final String worldJ = "I’m late I’m late I’m late I’m late\"";
+    public static final String worldK = "I just missed my RTS bus and the next one doesn’t come for another 15 minutes.";
+    public static final String worldL = "Jimmy Johns just brought me my sandwich in 3 and a half minutes. That really is freaky fast delivery.";
+    public static final String worldM = "The Reitz construction is finally done! Bless. Up.";
+    public static final String worldNInitial = "I love math! It’s the universal language, you know? Do you want me to teach you a trick I learned today in class?";
+    public static final String worldNYes = "Your Math Skills increased by 1.";
+    public static final String worldNNo = "I mean...Okay.";
+    public static final String worldNUsed = "I hope that trick comes in handy.";
+    public static final String worldO = "I’m reading Siddhartha and I really think it’s opened my eyes. I feel so enlightened. Come here, " +
+            "I want you to be in my Snap Story.";
+    public static final String worldP = "Well, I’m technically a junior by credits. No, I mean, this is my first " +
+            "semester at college. If you factor in my AP classes, though...";
+    public static final String worldQ = "You should never let your GPA drop to 0.00! When that happened to me, I woke up back in my down with a " +
+            "ton of Gator Bucks missing.";
+    public static final String worldRInitial = "I’m having a really tough time finding my next class. It’s in Turlington. Can you point me in the\n" +
+            "                right direction?";
+    public static final String worldRYes = "Your Social Skills increased by 1.";
+    public static final String worldRNo = "K bye.";
+    public static final String worldRUsed = "I can do this!";
+    public static final String worldRRInitial = "I heard that some professors are suckers for particular types of moves. Do you have to take Calc 2?";
+    public static final String worldRRYes = "Ryan taught you how to utilize Extra Credit";
+    public static final String worldRRNo = "Ah, you're lucky.";
+    public static final String worldRRUsed = "Good luck with Calc 2.";
+    public static final String worldS = "I heard that there are kids who will tutor you in Marston library, but some of them charge way\n" +
+            "                too many Gator Bucks for me...";
+    public static final String worldT = "TA’s and professors will challenge you if you walk around in one of the class buildings!";
+    public static final String worldUInitial = "Do you have to take Dr. Wong?";
+    public static final String worldUYes = "Uke taught you how to use 5 Lines Matlab Code";
+    public static final String worldUNo = "Ohh, I understand.";
+    public static final String worldUUsed = "Have fun!";
+    public static final String worldV = "College is hard, but I think it’s worth it.";
+    public static final String worldWInitial = "Look at what I just learned how to do!?";
+    public static final String worldWYes = "Wanda taught you how to use F2 Solve";
+    public static final String worldWNo = "Fine. Rude.";
+    public static final String worldWUsed = "Isn't that a cool trick?";
+    public static final String worldX = "I’m overwhelmed with all of these assignments, and I don’t think all of this coffee is helping my anxiety!";
+    public static final String worldYInitial = "Oh, you’re an engineer? Maybe you would have some use for this? Would you like to buy my old TI-89?\n" +
+            "                I’ll sell it to you for 80 Gator Bucks.";
+    public static final String worldYYesInsfFunds = "You need more money.";
+    public static final String worldYYesSuffFunds = "Here you go. You receive a TI-89.";
+    public static final String worldYNo = "Fine, then.";
+    public static final String worldYUsed = "Hope it helps you.";
+    public static final String worldZInitial = "You’re a gator fan too, huh? Want to buy a Gator Hat for 30 Gator bucks?";
+    public static final String worldZYesInsfFunds = "Get that money up, brother.";
+    public static final String worldZYesSuffFunds = "Alright, sweet. You receive a Gator Hat.";
+    public static final String worldZNo = "Nevermind, then.";
+    public static final String worldZUsed = "It will look good on you!";
+
+    public static final String turlingtonAPre = "Haven’t you ever heard of trig sub?";
+    public static final String turlingtonAWin = "You’ll need to review your unit circle...";
+    public static final String turlingtonALose = "It would seem that you’ve gotten the hang of this...";
+    public static final String turlingtonBPre = "You need to integrate math into your life. Get it?";
+    public static final String turlingtonBWin = "Perhaps you should review those theorems.";
+    public static final String turlingtonBLose = "Good job! I’m proud of you.";
+    public static final String turlingtonCPre = "It’s called a cardioid because it looks like a heart. Can’t you see?";
+    public static final String turlingtonCWin = "You’ll have to take another look at those homeworks...";
+    public static final String turlingtonCLose = "It would appear that you get the picture.";
+    public static final String turlingtonDPre = "There will be no texting in my class!";
+    public static final String turlingtonDWin = "You should have been paying more attention.";
+    public static final String turlingtonDLose = "I guess your focus paid off.";
+    public static final String turlingtonEPre = "Make sure to keep track of your pointers.";
+    public static final String turlingtonEWin = "You’re having an error.";
+    public static final String turlingtonELose = "Flawless code. Good work.";
+    public static final String turlingtonFPre = "I love group projects!";
+    public static final String turlingtonFWin = "You have to be a team player.";
+    public static final String turlingtonFLose = "Collaboration is your strong-suit.";
+    public static final String turlingtonGPre = "Why am I here?";
+    public static final String turlingtonGWin = "I literally hate every college student.";
+    public static final String turlingtonGLose = "I literally hate every college student.";
+    public static final String turlingtonHPre = "What do you mean you’ve never worked with a binary search tree?";
+    public static final String turlingtonHWin = "Do you even know who Djikstra is?";
+    public static final String turlingtonHLose = "You found the shortest path. I commend you.";
+    public static final String turlingtonIPre = "Linked lists are your friend!";
+    public static final String turlingtonIWin = "It seems like your links got broken...!";
+    public static final String turlingtonILose = "Your chain of links held strong!";
+
+    public static final String ciseJPre = "Coding is fun! I like working in Python.";
+    public static final String ciseJWin = "Maybe you should start with some online tutorials...";
+    public static final String ciseJLose = "I think you’ve got the hang of this!";
+    public static final String ciseKPre = "Have you ever heard of recursion?";
+    public static final String ciseKWin = "Maybe you got lost in the branches?";
+    public static final String ciseKLose = "All of your outputs looked right!";
+    public static final String ciseLPre = "Int, Boolean, Double, Char...You need to know the difference!";
+    public static final String ciseLWin = "Maybe a little more review was needed.";
+    public static final String ciseLLose = "You seem to have everything in order.";
+    public static final String ciseMPre = "My research is everything to me.";
+    public static final String ciseMWin = "You forgot your bibliography!";
+    public static final String ciseMLose = "This is a solid paper.";
+    public static final String ciseNPre = "I love working with other engineers. Iron sharpens iron.";
+    public static final String ciseNWin = "This collaboration just didn’t work out.";
+    public static final String ciseNLose = "You all clearly worked well together!";
+    public static final String ciseOPre = "Show me the data and I’ll believe it.";
+    public static final String ciseOWin = "This methodology is flawed.";
+    public static final String ciseOLose = "I think we should try to publish this!";
+
+    public static final String cisePPre = "Make sure that your circuit is grounded.";
+    public static final String cisePWin = "Your nodal analysis is off.";
+    public static final String cisePLose = "Good work. This is the correct voltage.";
+    public static final String ciseQPre = "Kirchoff’s law is an invaluable tool for you.";
+    public static final String ciseQWin = "This doesn’t add up!";
+    public static final String ciseQLose = "Everything balances out.";
+    public static final String ciseRPre = "You should try using a wheatstone bridge.";
+    public static final String ciseRWin = "You need to review your electrical engineering history.";
+    public static final String ciseRLose = "Good work on finding the missing value.";
+    public static final String ciseSPre = "Signals are all around us!";
+    public static final String ciseSWin = "You should try to learn about your surroundings.";
+    public static final String ciseSLose = "We’re on the same frequency, it would seem.";
+    public static final String ciseTPre = "Have you heard of a fourier transform?";
+    public static final String ciseTWin = "These calculations don’t seem right.";
+    public static final String ciseTLose = "You got the right answer!";
+    public static final String ciseUPre = "Matlab is a valuable tool in our industry.";
+    public static final String ciseUWin = "You should have utilized the help option if you were confused.";
+    public static final String ciseULose = "All of your functions are correct.";
+    public static final String ciseVPre = "You have to be familiar with low-true logic.";
+    public static final String ciseVWin = "You’re missing some inverters.";
+    public static final String ciseVLose = "Nice diagramming!";
+    public static final String ciseWPre = "If you did your lab then you should have no problem with this quiz.";
+    public static final String ciseWWin = "Are you sure you built this circuit yourself?";
+    public static final String ciseWLose = "Your stoplight works! Good work.";
+    public static final String ciseXPre = "Make sure to minimize the states in your UML.";
+    public static final String ciseXWin = "You’re missing some signals in your diagram.";
+    public static final String ciseXLose = "You did it in the least amount of states possible!";
+
+    public static final String marstonA = "I came here to study, but it seems like everyone else just came\n" +
+            "                to socialize...Why are they at the library?";
+    public static final String marstonB = "Sorority recruitment is such a nightmare. I can’t believe\n" +
+            "                they want us to wear heels the whole day!";
+    public static final String marstonC = "I’m here to meet up with people for a group project but I’m the only\n" +
+            "                one that showed up. They did mean 10:30AM...Right?";
+    public static final String marstonD = "I hate coming to the library, but I never get stuff done at home. I guess I’m stuck here...";
+    public static final String marstonE = "There are so many books here, but I don’t think I’ve ever used any of\n" +
+            "                them. I just go on my laptop when I’m here.";
+    public static final String marstonF = "I’m calculating the lowest grade that I can get on this final that will\n" +
+            "                still let me pass the class. It looks like I need a 99%...That can’t be right.";
+    public static final String marstonG = "I’m studying for pre-calc right now. This is the hardest class ever! I aced it in\n" +
+            "                high school, but it’s just so different here...";
+    public static final String marstonH = "The library always stresses me out because everyone else seems stressed\n" +
+            "                out. I think it might be contagious...";
+    public static final String marstonI = "I’m tired of reading! I already read 45 pages about Ancient Civilizations today. Can I stop now?";
+    public static final String marstonJ = "Don’t bother me! I’m studying.";
+    public static final String marstonKUnused = "Oh, you’re a computer engineer? You can have this old thing. I switched my\n" +
+            "                major to Business, so I won’t be needing it… Avatar receives a Soldering Iron";
+    public static final String marstonKUsed = "Enjoy that soldering iron. Try not to burn yourself.";
+    public static final String marstonLUnused = "I’m getting my PhD in mathematics at UF, so I can tutor you if you want. It’s $300 per session.";
+    public static final String marstonLYesInsfFunds = "Sorry, you don't have the money...";
+    public static final String marstonLNo = "Let me know if you change your mind.";
+    public static final String marstonLSuffFunds = "Alright, let's get started. Your Math Skills increase by 1 and you pay 300GB.";
+    public static final String marstonLUsed = "I hope that helped.";
+    public static final String marstonMUnused = "I need someone with a Software Skill of at least 4 to help me with this Java 1 project! Will you help me?";
+    public static final String marstonMYesInsfSkill = "I don't think you have the skills required...";
+    public static final String marstonMNo = "I'll have tp figure it out on my own.";
+    public static final String marstonMYesSuffSkill = "Thanks! It compiled this time. You eared 200 GB.";
+    public static final String marstonMUsed = "Thanks for the help!";
+    public static final String marstonNUnused = "Hi! Would you like a class ring to value your time here at UF forever? Each ring contains a beautiful gem and it will be a constant\n" +
+            "                reminder of your amazing adventures here. Would you like to buy one? A class ring costs 300.";
+    public static final String marstonNYesInsfFunds = "Sorry, you'll need more money than that.";
+    public static final String marstonNNo = "Thanks! Here's your ring. Received Class Ring.";
+    public static final String marstonNSuffFunds = "Maybe next time?";
+    public static final String marstonNUsed = "Enjoy your ring!";
+    public static final String marstonOUnused = "Do you want to buy my USB Blaster? I’m selling it for only 50GB. That’s a steal!";
+    public static final String marstonOYesInsfFunds = "Erm, it costs 50GB.";
+    public static final String marstonONo = "Understandable.";
+    public static final String marstonOSuffFunds = "Here you go! You receive a USB Blaster.";
+    public static final String marstonOUsed = "Thanks for taking it off my hands.";
 
     //Static method to initialize all required options for the variables fields used above.
     public static void initUtils(){

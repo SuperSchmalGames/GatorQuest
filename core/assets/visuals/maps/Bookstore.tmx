@@ -7632,7 +7632,7 @@
    <properties>
     <property name="blocked" value=""/>
     <property name="enemy" value="6"/>
-    <property name="event" value="0"/>
+    <property name="event" value="1"/>
     <property name="number" value="0"/>
    </properties>
   </tile>
@@ -7640,7 +7640,7 @@
    <properties>
     <property name="blocked" value=""/>
     <property name="enemy" value="6"/>
-    <property name="event" value="0"/>
+    <property name="event" value="1"/>
     <property name="number" value="1"/>
    </properties>
   </tile>
@@ -7836,7 +7836,7 @@
  </layer>
  <layer name="Collision" width="37" height="65">
   <data encoding="base64" compression="zlib">
-   eJztmk1Og0AUgAeRzhkw9RrGpVaXao1uewCtHsJFL1B11YWn6MKdrdpEF2LiEfyJXXgFEx8phBEYYP6YaTuLL/OAlPlm3mOggTOE0KlBnAN9INDAyEVo7GbjfsSOUz/f4DB1s3HshBoIXQjw7s3agNg3JOJB1H545eeS5fQEffmRkx8xJOJB1D5zOu0B+0R7ALQFnVngmaff1QRTnGiei+J0krM+XXPUk6zcuQ7bPE0V1ImoUx2UOW1CfFTAcYU+goouVZ0+PXodia5PK5h+rGqN10l6/F8efz11SrZ5cRr5Th0Kspx86G4N/d/X9oqdVM/TFnS3TTg1sX6nF+julXGeVOeuBWvArsPmpHqe8uBx+sFqnWJ05Y7HSVXuaGMlxyzipArrJOZUlvcq10BZDdLiuudpWZ3eCp7VZDuprqcNvFi5u2XMjQn1pIK660nEyeR6WnanQ6ynnuZtnqyTHKdFqKcbifegebq3mOLUNMAnZJ1wmsD/9TtgBIyBe+AhFecdj9twfw8n249ecs4uzv4u71yTiNhJxhh7lFrvMl4DMp1kkXaqsoaojq2TdbJO1sk68TuZQOhzifR/y0NyhWbvZHR810MjfD/U0vBNTxHh+6E/hnqidQ==
+   eJztmj1OwzAUgB1C6jMElWsgRiiMQBGsPQAUDgFSL1Bg6sApGNhogUowUCSOwI/owBWQeFET1SRxHP/Fbuvhk18SNf7s9+q0ck4QQscWcQp0gZEB+j5CAz8bd2O2vOr5Boexn40TJ1RD6EyC92DSnhPnboi4F7cfAfteqpyeoK8Q2se4DWOnJO7F7bOg0w6wS7R7QLOk20hybKLz9Ls8RbZ/nblT6Wfa6ShnfboSqCdVufM9vnkaa6gTWacqYDmtQ3xQwGGJPnjXAZbTZ0CvI571KY8lTL9WtsarJD3+r0C8nlqMY1G8Wr5Ti4IqpxC6W0H/zzWDYifd87QB3W0STnVs3ukFunvlnCfduWvAGrDt8Tnpnqc8RJx+sF6nBFO5E3HSlTvaWMkxyzjpwjnJObHyXuY7wKpBWlz1PC2q01vBbzXVTrrraQ3PV+5uOXNjQz3poOp6knGyuZ4W3Wkfm6mnWZsn56TGaR7q6VrhM2iWni22ONUt8IlYJZyG8H/9DugDA+AeeEjFedeTNjrfwdPjaN8luWcbZz+Xd69hTOKkYowdSq23Ob8DKp1UkXYqs4bojp2Tc3JOzsk5iTvZQORzgcy/y0NyiSZ7Mibe66ER7Q81DLzTU0S0P/QHzxGiaw==
   </data>
  </layer>
  <layer name="Mid" width="37" height="65">
