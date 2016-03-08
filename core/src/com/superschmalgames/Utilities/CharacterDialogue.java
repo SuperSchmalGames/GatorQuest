@@ -22,7 +22,7 @@ public class CharacterDialogue{
     public GlyphLayout ok;
     public GlyphLayout okNo;
     public GlyphLayout decision;
-    public boolean proceed;
+    public boolean proceed, decLock;
     public float decOffsetX, decOffsetY;
 
     public CharacterDialogue() {

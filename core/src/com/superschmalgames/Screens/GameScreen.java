@@ -107,17 +107,18 @@ public class GameScreen implements Screen {
         }
     }
 
-    //draws enemies...obviously
+    //Draws NPCs contained in the currently loaded location-specific array of NPC objects.
     private void drawEnemies() {
         for (NPC enemy : enemies) {
             MainClass.batch.draw(enemy.walk.currentFrame, enemy.x_pos, enemy.y_pos,0,0,enemy.walk.currentFrame.getRegionWidth(), enemy.walk.currentFrame.getRegionHeight(), 2.0f, 2.0f, 0f);
         }
     }
 
-    //check for line of sight, pauses the player as an npc approaches
+    //Check for line of sight, pauses the player as an npc approaches
     private void checkForEnemy(float delta) {
         if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("enemy")) {
             int temp = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("number"));
+            MainClass.hero.lastInteracted = enemies[temp];
             if(!enemies[temp].getTriggered()) {
                 lWalk = false;
                 rWalk = false;
@@ -133,7 +134,7 @@ public class GameScreen implements Screen {
         }
     }
 
-    //will handle events triggered by interaction between the player and things they are investigating
+    //Will handle events triggered by interaction between the player and things they are investigating
     public void interact() {
         int x = 0;
         int y = 0;
@@ -157,25 +158,8 @@ public class GameScreen implements Screen {
         }
         if(collision.getCell(x,y).getTile().getProperties().containsKey("event")) {
             int event = Integer.valueOf((String) collision.getCell(x,y).getTile().getProperties().get("event"));
+            MainClass.hero.lastInteracted = enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))];
             enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateDialogue(event);
-
-            /*switch(event) {
-                //npc event
-                case 0:
-                    enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateDialogue();
-                    break;
-                //shop
-                case 1:
-                    System.out.print("This is the shop event");
-                    break;
-                //Boss trigger
-                case 2:
-                    enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateDialogue();
-                    break;
-            }*/
-        }
-        else{
-            dial = false;
         }
     }
 
@@ -212,16 +196,9 @@ public class GameScreen implements Screen {
 
         MainClass.batch.end();
 
-        //draw the layer that appears above the character
+        //Draw the layer that appears above the character
         tiledmaprenderer.render(foreground);
 
-        ////////////////////////////////////////////////////////DIALOGUE TEST//////////////////////////////////////////////////
-        if(newDial){
-            newDial = false;
-            dial = true;
-            //newDialog();
-            interact();
-        }
         //Show our little dialogue popup if dial is true.
         if(dial) {
             MainClass.batch.begin();
@@ -231,7 +208,6 @@ public class GameScreen implements Screen {
             Utils.menuIcon.draw(MainClass.batch);
             MainClass.batch.end();
         }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //Keyboard input is taken in the InputHandler class, which updates the following walk variables to control
         //how character movement is rendered to the screen
@@ -301,76 +277,6 @@ public class GameScreen implements Screen {
             else MainClass.hero.standAnimation();
             MainClass.hero.setPosition(camera.position.x, camera.position.y);
 
-    }
-
-    //Method to set our dialogue equal to a new window and allow it to be shown on the screen.
-    public void newDialog(){
-        //Find out where we are and if we're facing an NPC.
-        int x = 0;
-        int y = 0;
-        switch(MainClass.hero.lastDir) {
-            case 'L' :
-                x = (int)((camera.position.x - MainClass.hero.width)/Utils.MAP_RESOLUTION);
-                y = (int)(camera.position.y/Utils.MAP_RESOLUTION);
-                break;
-            case 'R' :
-                x = (int)((camera.position.x + MainClass.hero.width)/Utils.MAP_RESOLUTION);
-                y = (int)(camera.position.y/Utils.MAP_RESOLUTION);
-                break;
-            case 'U' :
-                x = (int)(camera.position.x/Utils.MAP_RESOLUTION);
-                y = (int)((camera.position.y + MainClass.hero.height)/ Utils.MAP_RESOLUTION);
-                break;
-            case 'D' :
-                x = (int)(camera.position.x/Utils.MAP_RESOLUTION);
-                y = (int)((camera.position.y - MainClass.hero.height)/ Utils.MAP_RESOLUTION);
-                break;
-        }
-        //If there's an NPC to interact with, continue.
-        if(collision.getCell(x,y).getTile().getProperties().containsKey("event")) {
-            //Stop character movement, if we're moving.
-            MainClass.gameScreen.lWalk = false;
-            MainClass.gameScreen.rWalk = false;
-            MainClass.gameScreen.uWalk = false;
-            MainClass.gameScreen.dWalk = false;
-            //Give input control to the dialogue input handler.
-            Gdx.input.setInputProcessor(MainClass.dialogueInputHandler);
-            //Create new dialogue window containing the dialogue of the NPC we're talking to.
-            window = new CharacterDialogue();
-
-            window.dialog.setText(Utils.font_small,
-                    enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].getScript(),
-                    Color.BLUE, 480, 8, true);  //480=text block width, 8=left align, true=wrap
-            int event = Integer.valueOf((String) collision.getCell(x,y).getTile().getProperties().get("event"));
-            switch(event) {
-                //NPC Event
-                case 0:
-                    window.decision = window.ok;
-                    window.decOffsetX = window.OK_X_OFFSET;
-                    window.decOffsetY = window.OK_Y_OFFSET;
-                    break;
-                //Shop
-                case 1:
-                    window.decision = window.okNo;
-                    window.decOffsetX = window.OKNO_X_OFFSET;
-                    window.decOffsetY = window.OKNO_Y_OFFSET;
-                    break;
-                //Boss Trigger
-                case 2:
-                    window.decision = window.okNo;
-                    window.decOffsetX = window.OKNO_X_OFFSET;
-                    window.decOffsetY = window.OKNO_Y_OFFSET;
-                    break;
-            }
-
-            Utils.menuIcon.setPosition(window.ICON_X_OFFSET, window.ICON_Y_OFFSET);
-            //Set the NPC's triggered field to true, since we'll have talked to him already.
-            enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].setTriggered(true);
-        }
-        //If no NPC to talk to, set dial back to false and return.
-        else{
-            dial = false;
-        }
     }
 
     @Override

@@ -128,14 +128,22 @@ public class InputHandler implements InputProcessor {
                     MainClass.heroScreen.heroPage = 0;
                     MainClass.heroScreen.heroRow = 0;
                 }
+                else if(keycode == Input.Keys.ENTER){
+                    //Interact with the intended NPC.
+                    MainClass.gameScreen.interact();
+                }
+
                 ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
                 else if (keycode == Input.Keys.R && !Utils.isPaused) {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.RED_BULL);
-                } else if ((keycode == Input.Keys.T && !Utils.isPaused)) {
+                }
+                else if ((keycode == Input.Keys.T && !Utils.isPaused)) {
                     MainClass.hero.inventory.useItem(Utils.INV_ITEMS.RED_BULL);
-                } else if (keycode == Input.Keys.Y && !Utils.isPaused) {
+                }
+                else if (keycode == Input.Keys.Y && !Utils.isPaused) {
                     MainClass.hero.inventory.removeEffect(Utils.INV_ITEMS.RED_BULL);
-                } else if (keycode == Input.Keys.P) {
+                }
+                else if (keycode == Input.Keys.P) {
                     if (!Utils.isPaused) {
                         Utils.isPaused = true;
                         (Gdx.app.getApplicationListener()).pause();
@@ -143,11 +151,6 @@ public class InputHandler implements InputProcessor {
                         Utils.isPaused = false;
                         (Gdx.app.getApplicationListener()).resume();
                     }
-                }
-                else if(keycode == Input.Keys.ENTER){
-                    //Set the necessary flag to pop up the dialogue window
-                    MainClass.gameScreen.newDial = true;
-
                 }
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -14,16 +14,15 @@ public class DialogueInputHandler implements InputProcessor {
 
     }
 
-
     @Override
     public boolean keyDown(int keycode) {
-        if(keycode == Input.Keys.LEFT){
+        if(keycode == Input.Keys.LEFT && !MainClass.gameScreen.window.decLock){
             if(!MainClass.gameScreen.window.proceed) {
                 MainClass.gameScreen.window.proceed = true;
                 Utils.menuIcon.translateX(-58);
             }
         }
-        else if(keycode == Input.Keys.RIGHT){
+        else if(keycode == Input.Keys.RIGHT && !MainClass.gameScreen.window.decLock){
             if(MainClass.gameScreen.window.proceed) {
                 MainClass.gameScreen.window.proceed = false;
                 Utils.menuIcon.translateX(58);
@@ -31,6 +30,7 @@ public class DialogueInputHandler implements InputProcessor {
         }
         else if(keycode == Input.Keys.ENTER){
             MainClass.gameScreen.dial = false;
+            MainClass.hero.lastInteracted.reset();
             Gdx.input.setInputProcessor(MainClass.inputHandler);
         }
         return false;

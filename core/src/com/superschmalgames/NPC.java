@@ -43,7 +43,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateDialogue(1);
+                    initiateDialogue(0);
                 break;
             case 'r':
                 if (x_pos < x - 3*MainClass.hero.width/2) {
@@ -51,7 +51,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateDialogue(1);
+                    initiateDialogue(0);
                 break;
             case 'u':
                 if (y_pos < y - 3*MainClass.hero.height/2) {
@@ -59,7 +59,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateDialogue(1);
+                    initiateDialogue(0);
                 break;
             case 'd':
                 if (y_pos > y + MainClass.hero.height/2) {
@@ -67,7 +67,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateDialogue(1);
+                    initiateDialogue(0);
                 break;
         }
         if(temp) {
@@ -94,9 +94,9 @@ public class NPC {
     }
 
     public void initiateDialogue(int event){
-        ////////////////////////////////////
-        if(!MainClass.gameScreen.dial) MainClass.gameScreen.dial = true;
-        ////////////////////////////////////
+
+        //Set the dialogue flag true so the window will render to the game screen.
+        MainClass.gameScreen.dial = true;
 
         //Stop character movement, if we're moving.
         MainClass.gameScreen.lWalk = false;
@@ -115,18 +115,21 @@ public class NPC {
         switch(event) {
             //NPC Event
             case 0:
+                MainClass.gameScreen.window.decLock = true;
                 MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
                 MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OK_X_OFFSET;
                 MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;
                 break;
             //Shop Event
             case 1:
+                MainClass.gameScreen.window.decLock = false;
                 MainClass.gameScreen.window.decision = MainClass.gameScreen.window.okNo;
                 MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OKNO_X_OFFSET;
                 MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OKNO_Y_OFFSET;
                 break;
             //Boss Event
             case 2:
+                MainClass.gameScreen.window.decLock = false;
                 MainClass.gameScreen.window.decision = MainClass.gameScreen.window.okNo;
                 MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OKNO_X_OFFSET;
                 MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OKNO_Y_OFFSET;
@@ -141,12 +144,10 @@ public class NPC {
             triggered = true;
             walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);
         }
-        reset();
     }
 
     public void initiateCombat() {
-        //System.out.print(script);
-        MainClass.gameScreen.newDial = true;
+
         if (!triggered)  {
             triggered = true;
             walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);

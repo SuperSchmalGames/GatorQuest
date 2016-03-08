@@ -4,6 +4,7 @@ package com.superschmalgames.Hero;
 
 import com.superschmalgames.Inventory.ApparelItem;
 import com.superschmalgames.Inventory.EquipableItem;
+import com.superschmalgames.NPC;
 import com.superschmalgames.Utilities.Animator;
 
 public class HeroCharacter {
@@ -50,6 +51,8 @@ public class HeroCharacter {
     public Animator leftWalk, rightWalk, upWalk, downWalk;
     public char lastDir;
     public boolean canMove;
+
+    public NPC lastInteracted;
 
     //Main animator that handles switching between all different direction the character can walk.
     public Animator heroAnim;
