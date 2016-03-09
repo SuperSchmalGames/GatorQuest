@@ -19,6 +19,7 @@ public class MainClass extends Game {
 	public static HeroScreen heroScreen;
 	public static InputHandler inputHandler;
 	public static DialogueInputHandler dialogueInputHandler;
+    public static ShopInputHandler shopInputHandler;
 	public static OpenWorldScreen openWorldScreen;
 	
 	@Override
@@ -26,6 +27,7 @@ public class MainClass extends Game {
 		batch = new SpriteBatch();
 
 		dialogueInputHandler = new DialogueInputHandler();
+        shopInputHandler = new ShopInputHandler();
 		inputHandler = new InputHandler();
 		Gdx.input.setInputProcessor(inputHandler);
 

@@ -286,27 +286,27 @@ public class Utils {
     //========================================================================================
     //========================================Marston=========================================
     public static NPC[] Marston_enemies = {
-            new NPC('r', "aassdf", "r1", 45*MAP_RESOLUTION, (45-18)*MAP_RESOLUTION), //0
-            new NPC('d', "aassdf", "d2", 48*MAP_RESOLUTION, (45-14)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "u3", 45*MAP_RESOLUTION, (45-30)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "r4", 40*MAP_RESOLUTION, (45-16)*MAP_RESOLUTION),
-            new NPC('l', "You may study and get supplies here", "l5", 37*MAP_RESOLUTION, (45-35)*MAP_RESOLUTION),
-            new NPC('u', "Welcome to the Marston Library", "u6", 24*MAP_RESOLUTION, (45-26)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "l7", 5*MAP_RESOLUTION, (45-26)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "r8", 2*MAP_RESOLUTION, (45-15)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "r9", 13*MAP_RESOLUTION, (45-21)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "l10", 23*MAP_RESOLUTION, (45-16)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "d11", 20*MAP_RESOLUTION, (45-7)*MAP_RESOLUTION), //10
-            new NPC('d', "aassdf", "d12", 28*MAP_RESOLUTION, (45-10)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "l13", 22*MAP_RESOLUTION, (45-3)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "u14", 32*MAP_RESOLUTION, (45-6)*MAP_RESOLUTION),
+            new NPC('r', "Redbull $100\n\nStarbucks $300", "r1", 45*MAP_RESOLUTION, (45-18)*MAP_RESOLUTION), //0
+            new NPC('d', "aassd@@@@@@@@@@@@@@@@@@@@f", "d2", 48*MAP_RESOLUTION, (45-14)*MAP_RESOLUTION),
+            new NPC('u', "aass@@@@@@@@@@@@@@@@@@@@@@@df", "u3", 45*MAP_RESOLUTION, (45-30)*MAP_RESOLUTION),
+            new NPC('r', "aas@@@@@@@@@@@@@@@@@@sdf1", "r4", 40*MAP_RESOLUTION, (45-16)*MAP_RESOLUTION),
+            new NPC('l', "You may study and get supplies here@@@@@@", "l5", 37*MAP_RESOLUTION, (45-35)*MAP_RESOLUTION),
+            new NPC('u', "Welcome to the Marston Library@@@@@@@@@@@@@@", "u6", 24*MAP_RESOLUTION, (45-26)*MAP_RESOLUTION),
+            new NPC('l', "aa@@@@@@@@@@@@@@@@@@@@@@ssdf", "l7", 5*MAP_RESOLUTION, (45-26)*MAP_RESOLUTION),
+            new NPC('r', "aassd@@@@@@@@@@@@@@f2", "r8", 2*MAP_RESOLUTION, (45-15)*MAP_RESOLUTION),
+            new NPC('r', "aass@@@@@@@@@@@df3", "r9", 13*MAP_RESOLUTION, (45-21)*MAP_RESOLUTION),
+            new NPC('l', "aa@@@@@@@@@@@@@@@@@@@@@ssdf", "l10", 23*MAP_RESOLUTION, (45-16)*MAP_RESOLUTION),
+            new NPC('d', "aas@@@@@@@@@@@@@sdf", "d11", 20*MAP_RESOLUTION, (45-7)*MAP_RESOLUTION), //10
+            new NPC('d', "aas@@@@@@@@@@@@@@@@@sdf", "d12", 28*MAP_RESOLUTION, (45-10)*MAP_RESOLUTION),
+            new NPC('l', "aas@@@@@@@@@@@@@@@@@@sdf", "l13", 22*MAP_RESOLUTION, (45-3)*MAP_RESOLUTION),
+            new NPC('u', "aas@@@@@@@@@@@@@@@@@sdf", "u14", 32*MAP_RESOLUTION, (45-6)*MAP_RESOLUTION),
             //new NPC
     };
     //========================================================================================
     //========================================Bookstore=======================================
     public static NPC[] Bookstore_enemies = {
-            new NPC('d', "aassdf", "d1", 25*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION), //0
-            new NPC('d', "aassdf", "d2", 22*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION),
+            new NPC('d', "Biz Cas Attire $500\n\nClass Ring $1000\n\nGator Hat $400\n\nGrad Gown $1200\n\nSuit and Tie $2000", "d1", 25*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION), //0
+            new NPC('d', "Cyclone $700\n\nDAD Board $900\n\nMacbook Pro $2500\n\nNSpire $650\n\nSoldering Iron $350\n\nTI89 $500", "d2", 22*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION),
             new NPC('r', "aassdf", "r3", 19*MAP_RESOLUTION, (64-5)*MAP_RESOLUTION),
             new NPC('u', "aassdf", "u4", 5*MAP_RESOLUTION, (64-10)*MAP_RESOLUTION),
             new NPC('u', "aassdf", "u5", 24*MAP_RESOLUTION, (64-13)*MAP_RESOLUTION),
@@ -317,8 +317,8 @@ public class Utils {
             new NPC('u', "aassdf", "u10", 18*MAP_RESOLUTION, (64-49)*MAP_RESOLUTION),
             new NPC('u', "aassdf", "u11", 16*MAP_RESOLUTION, (64-44)*MAP_RESOLUTION), //10
             new NPC('r', "aassdf", "r12", 6*MAP_RESOLUTION, (64-33)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "d13", 14*MAP_RESOLUTION, (64-30)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "d14", 9*MAP_RESOLUTION, (64-21)*MAP_RESOLUTION),
+            new NPC('d', "aassdf555", "d13", 14*MAP_RESOLUTION, (64-30)*MAP_RESOLUTION),
+            new NPC('d', "aassdf666", "d14", 9*MAP_RESOLUTION, (64-21)*MAP_RESOLUTION),
     };
     //========================================================================================
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -436,6 +436,8 @@ public class Utils {
 
     ///////////////////////////////////////CHARACTER DIALOGUE/////////////////////////////////////////////////////////////
     public static Sprite window = new Sprite(new Texture("visuals/Menus/dialogue_window.png"));
+    public static Sprite shop_window = new Sprite(new Texture("visuals/Menus/shop_window.png"));
+    public static final Sound kaching = Gdx.audio.newSound(Gdx.files.internal("sound/effects/kaching.mp3"));
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////NPC DIALOGUE START///////////////////////////////////////////////////////////////////////////////////////

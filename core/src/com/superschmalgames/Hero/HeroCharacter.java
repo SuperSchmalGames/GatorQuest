@@ -27,6 +27,7 @@ public class HeroCharacter {
 
     //Represents numbers of semester completed. Each named professor beaten will increase this by 1.
     public int semester;
+    public int gatorBucks;
 
     //Character stats.
     public double Software;
@@ -82,6 +83,7 @@ public class HeroCharacter {
 
         //#Semesters completed. Each named professor beaten increments this by 1.
         semester = 8;
+        gatorBucks = 10000;
 
         canMove = true;
     }
