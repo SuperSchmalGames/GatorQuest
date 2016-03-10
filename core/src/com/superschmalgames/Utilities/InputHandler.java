@@ -7,6 +7,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.superschmalgames.Screens.CombatScreen;
 import com.superschmalgames.Screens.GameScreen;
 import com.superschmalgames.Screens.HeroScreen;
 import com.superschmalgames.Screens.InventoryScreen;
@@ -134,14 +135,10 @@ public class InputHandler implements InputProcessor {
                 }
 
                 ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
-                else if (keycode == Input.Keys.R && !Utils.isPaused) {
-                    MainClass.hero.inventory.incItem(Utils.INV_ITEMS.RED_BULL);
-                }
-                else if ((keycode == Input.Keys.T && !Utils.isPaused)) {
-                    MainClass.hero.inventory.useItem(Utils.INV_ITEMS.RED_BULL);
-                }
-                else if (keycode == Input.Keys.Y && !Utils.isPaused) {
-                    MainClass.hero.inventory.removeEffect(Utils.INV_ITEMS.RED_BULL);
+                else if(keycode == Input.Keys.C){
+                    Utils.gameMusic.stop();
+                    MainClass.combatScreen = new CombatScreen();
+                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.combatScreen);
                 }
                 else if (keycode == Input.Keys.P) {
                     if (!Utils.isPaused) {

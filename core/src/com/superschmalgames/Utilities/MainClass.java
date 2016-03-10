@@ -21,6 +21,7 @@ public class MainClass extends Game {
 	public static DialogueInputHandler dialogueInputHandler;
     public static ShopInputHandler shopInputHandler;
 	public static OpenWorldScreen openWorldScreen;
+	public static CombatScreen combatScreen;
 	
 	@Override
 	public void create () {
@@ -74,6 +75,7 @@ public class MainClass extends Game {
 		if(avatarScreen != null) avatarScreen.dispose();
 		if(gameScreen != null) gameScreen.dispose();
 		if(openWorldScreen != null) openWorldScreen.dispose();
+		if(combatScreen != null) combatScreen.dispose();
 	}
 
 }
