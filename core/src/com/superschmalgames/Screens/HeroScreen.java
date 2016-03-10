@@ -179,7 +179,6 @@ public class HeroScreen implements Screen {
             }
         }
 
-        Utils.testFont.draw(MainClass.batch, "heroRow " + MainClass.heroScreen.heroRow + " heroPage "+MainClass.heroScreen.heroPage, 0, Utils.GAME_SCREEN_HEIGHT - 75);
         MainClass.batch.end();
     }
 

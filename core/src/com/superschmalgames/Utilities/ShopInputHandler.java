@@ -46,9 +46,9 @@ public class ShopInputHandler implements InputProcessor {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.RED_BULL);
                     MainClass.hero.gatorBucks -= 100;
                     Utils.kaching.play();
-                } else if (MainClass.gameScreen.shop_window.currIndex == 1 && MainClass.hero.gatorBucks >= 200) {
+                } else if (MainClass.gameScreen.shop_window.currIndex == 1 && MainClass.hero.gatorBucks >= 300) {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.STARBUCKS);
-                    MainClass.hero.gatorBucks -= 200;
+                    MainClass.hero.gatorBucks -= 300;
                     Utils.kaching.play();
                 } else {
                     Utils.oob_error.play();

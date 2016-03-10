@@ -234,9 +234,10 @@ public class GameScreen implements Screen {
             MainClass.batch.begin();
             Utils.menuIcon.setColor(Color.WHITE);
             Utils.shop_window.draw(MainClass.batch);
-            Utils.font_small.draw(MainClass.batch, "Reminder: Press Q to quit menu" , camera.position.x-Utils.GAME_SCREEN_WIDTH/2+580, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-565);
+            Utils.font_small.draw(MainClass.batch, shop_window.quit, camera.position.x-Utils.GAME_SCREEN_WIDTH/2+645, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-565);
             Utils.font.draw(MainClass.batch, shop_window.dialog, shop_window.DIAL_X_OFFSET, shop_window.DIAL_Y_OFFSET);
             Utils.menuIcon.draw(MainClass.batch);
+            Utils.font_small.draw(MainClass.batch, "Gatorbucks:\n$" + MainClass.hero.gatorBucks, camera.position.x-Utils.GAME_SCREEN_WIDTH/2+860, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-40);
             MainClass.batch.end();
         }
 
