@@ -476,7 +476,7 @@ public class Utils {
             new NPC('u', worldI, "u4", 5*MAP_RESOLUTION, (64-10)*MAP_RESOLUTION),
             new NPC('u', worldJ, "u5", 24*MAP_RESOLUTION, (64-13)*MAP_RESOLUTION),
             new NPC('l', worldK, "l6", 32*MAP_RESOLUTION, (64-17)*MAP_RESOLUTION),
-            new NPC('r', worldL, "r7", 28*MAP_RESOLUTION, (64-32)*MAP_RESOLUTION),
+            new NPC('r', worldL, "r7", 28*MAP_RESOLUTION, (64-31)*MAP_RESOLUTION),
             new NPC('l', worldM, "l8", 33*MAP_RESOLUTION, (64-38)*MAP_RESOLUTION),
             new NPC('u', "Can I help you?", "u9", 24*MAP_RESOLUTION, (64-49)*MAP_RESOLUTION),
             new NPC('u', "What do you need?", "u10", 18*MAP_RESOLUTION, (64-49)*MAP_RESOLUTION),
