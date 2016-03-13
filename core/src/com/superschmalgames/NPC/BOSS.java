@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.NPC;
 
 
 import com.badlogic.gdx.Gdx;
@@ -7,6 +7,7 @@ import com.superschmalgames.Hero.Move;
 import com.superschmalgames.Utilities.CharacterDialogue;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
+
 
 public class BOSS extends ENEMY{
 

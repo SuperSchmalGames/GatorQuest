@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.NPC;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;

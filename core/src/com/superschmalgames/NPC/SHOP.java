@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.NPC;
 
 
 import com.badlogic.gdx.Gdx;
@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.ShopMenu;
 import com.superschmalgames.Utilities.Utils;
+
 
 public class SHOP extends NPC {
     char shop;

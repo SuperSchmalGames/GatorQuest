@@ -11,10 +11,10 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.superschmalgames.BOSS;
-import com.superschmalgames.ENEMY;
-import com.superschmalgames.NPC;
-import com.superschmalgames.SHOP;
+import com.superschmalgames.NPC.BOSS;
+import com.superschmalgames.NPC.ENEMY;
+import com.superschmalgames.NPC.NPC;
+import com.superschmalgames.NPC.SHOP;
 import com.superschmalgames.Hero.Move;
 import java.text.DecimalFormat;
 

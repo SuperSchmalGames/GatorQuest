@@ -4,7 +4,7 @@ package com.superschmalgames.Hero;
 
 import com.superschmalgames.Inventory.ApparelItem;
 import com.superschmalgames.Inventory.EquipableItem;
-import com.superschmalgames.NPC;
+import com.superschmalgames.NPC.NPC;
 import com.superschmalgames.Utilities.Animator;
 
 public class HeroCharacter {
