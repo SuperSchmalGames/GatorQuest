@@ -67,6 +67,7 @@ public class ENEMY extends NPC {
 
         //Set the NPC's triggered field to true, since we'll have talked to him already.
         if (!triggered)  {
+            combat();
             triggered = true;
             walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);
         }
@@ -74,5 +75,9 @@ public class ENEMY extends NPC {
 
     public void combat_result(boolean t) {
         triggered = t;
+    }
+
+    public void combat() {
+
     }
 }
