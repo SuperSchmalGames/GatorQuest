@@ -1,4 +1,4 @@
-package com.superschmalgames.Utilities;
+package com.superschmalgames.InputHandlers;
 
 //Class to handle all user input. Allows us to put all the code in one place, and make the render() method in
 //all the other classes much cleaner.
@@ -11,6 +11,8 @@ import com.superschmalgames.Screens.CombatScreen;
 import com.superschmalgames.Screens.GameScreen;
 import com.superschmalgames.Screens.HeroScreen;
 import com.superschmalgames.Screens.InventoryScreen;
+import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.Utils;
 
 public class InputHandler implements InputProcessor {
 
@@ -136,7 +138,9 @@ public class InputHandler implements InputProcessor {
 
                 ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
                 else if(keycode == Input.Keys.C){
-                    Utils.gameMusic.stop();
+                    //Give input control to the combat input handler.
+                    Gdx.input.setInputProcessor(MainClass.combatInputHandler);
+                    //Create combat screen and set is as the current screen.
                     MainClass.combatScreen = new CombatScreen();
                     ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.combatScreen);
                 }

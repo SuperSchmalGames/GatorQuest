@@ -11,8 +11,8 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.superschmalgames.BOSS;
-import com.superschmalgames.NPC;
+import com.superschmalgames.NonPlayerChars.BOSS;
+import com.superschmalgames.NonPlayerChars.NPC;
 import java.text.DecimalFormat;
 
 public class Utils {
@@ -404,9 +404,9 @@ public class Utils {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////INVENTORY ITEM SOUNDS///////////////////////////////////////////////////////////////
-    static final Sound rustling = Gdx.audio.newSound(Gdx.files.internal("sound/effects/rustling.mp3"));
-    static final Sound page = Gdx.audio.newSound(Gdx.files.internal("sound/effects/page.wav"));
-    static final Sound oob_error = Gdx.audio.newSound(Gdx.files.internal("sound/effects/oob_error.wav"));
+    public static final Sound rustling = Gdx.audio.newSound(Gdx.files.internal("sound/effects/rustling.mp3"));
+    public static final Sound page = Gdx.audio.newSound(Gdx.files.internal("sound/effects/page.wav"));
+    public static final Sound oob_error = Gdx.audio.newSound(Gdx.files.internal("sound/effects/oob_error.wav"));
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

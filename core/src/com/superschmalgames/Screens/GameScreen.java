@@ -8,7 +8,6 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
@@ -16,7 +15,7 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.superschmalgames.Utilities.CharacterDialogue;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.superschmalgames.NPC;
+import com.superschmalgames.NonPlayerChars.NPC;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.ShopMenu;
 import com.superschmalgames.Utilities.Utils;
@@ -52,10 +51,6 @@ public class GameScreen implements Screen {
         dial = false;
         newDial = false;
         store = false;
-
-        //Reset info for the menuIcon to use for dialogue windows
-        Utils.menuIcon.setColor(Color.BLUE);
-        Utils.menuIcon.setScale(1.5f);
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
@@ -332,7 +327,8 @@ public class GameScreen implements Screen {
 
     @Override
     public void hide() {
-
+        //Stop the normal game world music so we can play another screen's music.
+        Utils.gameMusic.stop();
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.NonPlayerChars;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -164,7 +164,11 @@ public class NPC {
                 break;
         }
 
-        //Set the position
+        //Reset info for the menuIcon to use for dialogue windows
+        Utils.menuIcon.setColor(Color.BLUE);
+        Utils.menuIcon.setScale(1.5f);
+
+        //Set the position.
         Utils.menuIcon.setPosition(MainClass.gameScreen.window.ICON_X_OFFSET, MainClass.gameScreen.window.ICON_Y_OFFSET);
 
         //Set the NPC's triggered field to true, since we'll have talked to him already.
