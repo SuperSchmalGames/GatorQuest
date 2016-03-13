@@ -152,4 +152,5 @@ public class HeroCharacter {
     public boolean canMove() {
         return canMove;
     }
+
 }

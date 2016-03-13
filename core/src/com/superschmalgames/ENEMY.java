@@ -8,10 +8,27 @@ import com.superschmalgames.Utilities.CharacterDialogue;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
-public class BOSS extends ENEMY{
-
-    public BOSS(char dir, String s, String win, String sprite, int x, int y, int sw, int h, int w, int e, int sc, int m, int f, Move[] a) {
-        super(dir,s,win,sprite,x,y,sw,h,w,e,sc,m,f, a);
+public class ENEMY extends NPC {
+    public double Software;
+    public double Hardware;
+    public double Writing;
+    public double Endurance;
+    public double Social;
+    public double Math;
+    public double Focus;
+    Move[] attacks;
+    String win_script;
+    public ENEMY(char dir, String s, String win, String sprite, int x, int y, int sw, int h, int w, int e, int sc, int m, int f, Move[] a) {
+        super(dir,s,sprite,x,y);
+        Software = sw;
+        Hardware = h;
+        Writing = w;
+        Endurance = e;
+        Social = sc;
+        Math = m;
+        Focus = f;
+        win_script = win;
+        attacks = a;
     }
 
     public void initiateDialogue(int event){
@@ -32,14 +49,13 @@ public class BOSS extends ENEMY{
         MainClass.gameScreen.window = new CharacterDialogue();    //480=text block width, 8=left align, true=wrap
         if(!triggered) {
             MainClass.gameScreen.window.dialog.setText(Utils.font_small, script, Color.BLUE, 480, 8, true);
-            MainClass.gameScreen.window.decLock = false;
         }
         else {
             MainClass.gameScreen.window.dialog.setText(Utils.font_small, win_script, Color.BLUE, 480, 8, true);
-            MainClass.gameScreen.window.decLock = true;
         }
 
         //Set certain parts of the dialogue window to certain values depending on the event type.
+        MainClass.gameScreen.window.decLock = true;
         MainClass.gameScreen.window.decision = MainClass.gameScreen.window.okNo;
         MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OKNO_X_OFFSET;
         MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OKNO_Y_OFFSET;
@@ -54,6 +70,7 @@ public class BOSS extends ENEMY{
         }
     }
 
+    public void combat_result(boolean t) {
+        triggered = t;
+    }
 }
-
-
