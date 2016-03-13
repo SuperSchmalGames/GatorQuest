@@ -597,6 +597,16 @@ public class Utils {
     public static final Texture white_sq_tex = new Texture("visuals/Menus/white_sq.png");
     public static final Texture hero_degree_tex = new Texture("visuals/Menus/hero_degree_menu.png");
 
+    public static final Texture av1_tex = new Texture("visuals/sprite_sheets/sprite_walk_d7.png");
+    public static final Texture av2_tex = new Texture("visuals/sprite_sheets/sprite_walk_d11.png");
+    public static final Texture av3_tex = new Texture("visuals/sprite_sheets/sprite_walk_d10.png");
+    public static final Texture av4_tex = new Texture("visuals/sprite_sheets/sprite_walk_d9.png");
+
+    public static final Sprite av1_sprite = new Sprite(av1_tex);
+    public static final Sprite av2_sprite = new Sprite(av2_tex);
+    public static final Sprite av3_sprite = new Sprite(av3_tex);
+    public static final Sprite av4_sprite = new Sprite(av4_tex);
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ///////////////////////////////////////CHARACTER DIALOGUE/////////////////////////////////////////////////////////////
