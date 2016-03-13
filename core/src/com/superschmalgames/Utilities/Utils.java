@@ -13,6 +13,7 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.oracle.xmlns.internal.webservices.jaxws_databinding.JavaWsdlMappingType;
 import com.superschmalgames.BOSS;
+import com.superschmalgames.ENEMY;
 import com.superschmalgames.NPC;
 import com.superschmalgames.SHOP;
 import com.superschmalgames.Hero.Move;
@@ -124,6 +125,7 @@ public class Utils {
     private static final Move[] Chui_attacks = {Java_Function};
     private static final Move[] Horton_attacks = {Java_Function};
     private static final Move[] Small_attacks = {Java_Function};
+    private static final Move[] Cise_A_attacks = {Java_Function};
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////NPC DIALOGUE START///////////////////////////////////////////////////////////////////////////////////////
     public static final String dormA = "Hi! I’m a freshman too. Are you in The Good Life too? I’ve heard it’s really hard!";
@@ -399,7 +401,10 @@ public class Utils {
             new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l4.png", 213*MAP_RESOLUTION, (66-42)*MAP_RESOLUTION),
             new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u5.png", 199*MAP_RESOLUTION, (66-58)*MAP_RESOLUTION),
             new BOSS('d', "I am Dobbins", "Congratulations on passing the course", "visuals/Professors/dobbins/dobbins_d.png", 2*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION, 1,1,1,1,1,1,1, Dobbins_attacks),
-            new BOSS('d', "I am Schmalz", "Congratulations on passing the course", "visuals/Professors/schmalz/schmalz_d.png", 168*MAP_RESOLUTION, (66-4)*MAP_RESOLUTION, 1,1,1,1,1,1,1, Schmalz_attacks)
+            new BOSS('d', "I am Schmalz", "Congratulations on passing the course", "visuals/Professors/schmalz/schmalz_d.png", 168*MAP_RESOLUTION, (66-4)*MAP_RESOLUTION, 1,1,1,1,1,1,1, Schmalz_attacks),
+            new ENEMY('d', "fight","win", "visuals/sprite_sheets/sprite_walk_d6.png",33*MAP_RESOLUTION, (66-28)*MAP_RESOLUTION, 1,1,1,1,1,1,1, Cise_A_attacks),
+            new ENEMY('l', "fight","win", "visuals/sprite_sheets/sprite_walk_l7.png",19*MAP_RESOLUTION, (66-31)*MAP_RESOLUTION, 1,1,1,1,1,1,1, Cise_A_attacks),
+            new ENEMY('r', "fight","win", "visuals/sprite_sheets/sprite_walk_r8.png",8*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 1,1,1,1,1,1,1, Cise_A_attacks)
 
     };
     //========================================================================================
@@ -483,7 +488,7 @@ public class Utils {
     //========================================================================================
     //========================================Marston=========================================
     public static NPC[] Marston_enemies = {
-            new SHOP('r', "visuals/sprite_sheets/sprite_walk_r1.png", 45*MAP_RESOLUTION, (45-18)*MAP_RESOLUTION), //0
+            new SHOP('r', "visuals/sprite_sheets/sprite_walk_r1.png", 45*MAP_RESOLUTION, (45-18)*MAP_RESOLUTION, 'a'), //0
             new NPC('d', marstonA, "visuals/sprite_sheets/sprite_walk_d2.png", 48*MAP_RESOLUTION, (45-14)*MAP_RESOLUTION),
             new NPC('u', marstonC, "visuals/sprite_sheets/sprite_walk_u3.png", 45*MAP_RESOLUTION, (45-30)*MAP_RESOLUTION),
             new NPC('r', marstonB, "visuals/sprite_sheets/sprite_walk_r4.png", 40*MAP_RESOLUTION, (45-16)*MAP_RESOLUTION),
@@ -502,8 +507,8 @@ public class Utils {
     //========================================================================================
     //========================================Bookstore=======================================
     public static NPC[] Bookstore_enemies = {
-            new SHOP('d', "visuals/sprite_sheets/sprite_walk_d1.png", 25*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION), //0
-            new SHOP('d', "visuals/sprite_sheets/sprite_walk_d2.png", 22*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION),
+            new SHOP('d', "visuals/sprite_sheets/sprite_walk_d1.png", 25*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION, 'b'), //0
+            new SHOP('d', "visuals/sprite_sheets/sprite_walk_d2.png", 22*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION, 'c'),
             new NPC('r', worldH, "visuals/sprite_sheets/sprite_walk_r3.png", 19*MAP_RESOLUTION, (64-5)*MAP_RESOLUTION),
             new NPC('u', worldI, "visuals/sprite_sheets/sprite_walk_u4.png", 5*MAP_RESOLUTION, (64-10)*MAP_RESOLUTION),
             new NPC('u', worldJ, "visuals/sprite_sheets/sprite_walk_u5.png", 24*MAP_RESOLUTION, (64-13)*MAP_RESOLUTION),

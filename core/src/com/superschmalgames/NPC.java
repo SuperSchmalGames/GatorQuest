@@ -44,7 +44,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateDialogue(0);
+                    initiate();
                 break;
             case 'r':
                 if (x_pos < x - 3*MainClass.hero.width/2) {
@@ -52,7 +52,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateDialogue(0);
+                    initiate();
                 break;
             case 'u':
                 if (y_pos < y - 3*MainClass.hero.height/2) {
@@ -60,7 +60,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateDialogue(0);
+                    initiate();
                 break;
             case 'd':
                 if (y_pos > y + MainClass.hero.height/2) {
@@ -68,7 +68,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateDialogue(0);
+                    initiate();
                 break;
         }
         if(temp) {
@@ -94,11 +94,7 @@ public class NPC {
         triggered = set;
     }
 
-    public void initiateShop()
-    {
-    }
-
-    public void initiateDialogue(int event){
+    public void initiate(){
 
         //Set the dialogue flag true so the window will render to the game screen.
         MainClass.gameScreen.dial = true;

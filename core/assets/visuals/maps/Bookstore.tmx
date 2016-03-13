@@ -7634,6 +7634,7 @@
     <property name="enemy" value="6"/>
     <property name="event" value="1"/>
     <property name="number" value="0"/>
+    <property name="shop" value="2"/>
    </properties>
   </tile>
   <tile id="52">
@@ -7642,6 +7643,7 @@
     <property name="enemy" value="6"/>
     <property name="event" value="1"/>
     <property name="number" value="1"/>
+    <property name="shop" value="3"/>
    </properties>
   </tile>
   <tile id="78">

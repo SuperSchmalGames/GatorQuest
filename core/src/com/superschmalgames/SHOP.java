@@ -8,11 +8,13 @@ import com.superschmalgames.Utilities.ShopMenu;
 import com.superschmalgames.Utilities.Utils;
 
 public class SHOP extends NPC {
-    public SHOP(char dir, String sprite, int x, int y) {
-        super(dir, "", sprite, x, y);
+    char shop;
+    public SHOP(char dir, String s, String sprite, int x, int y, char s) {
+        super(dir, s, sprite, x, y);
+        shop = s;
     }
 
-    public void initiateShop()
+    public void initiate()
     {
         //Set the store flag true so the store window will render to the game screen
         MainClass.gameScreen.store = true;

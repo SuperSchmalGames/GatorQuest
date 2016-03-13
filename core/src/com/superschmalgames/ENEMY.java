@@ -31,7 +31,7 @@ public class ENEMY extends NPC {
         attacks = a;
     }
 
-    public void initiateDialogue(int event){
+    public void initiate(){
 
         //Set the dialogue flag true so the window will render to the game screen.
         MainClass.gameScreen.dial = true;
@@ -56,9 +56,9 @@ public class ENEMY extends NPC {
 
         //Set certain parts of the dialogue window to certain values depending on the event type.
         MainClass.gameScreen.window.decLock = true;
-        MainClass.gameScreen.window.decision = MainClass.gameScreen.window.okNo;
-        MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OKNO_X_OFFSET;
-        MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OKNO_Y_OFFSET;
+        MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
+        MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OK_X_OFFSET;
+        MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;
 
         //Set the position
         Utils.menuIcon.setPosition(MainClass.gameScreen.window.ICON_X_OFFSET, MainClass.gameScreen.window.ICON_Y_OFFSET);

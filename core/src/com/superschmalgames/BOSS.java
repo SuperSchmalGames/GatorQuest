@@ -14,7 +14,7 @@ public class BOSS extends ENEMY{
         super(dir,s,win,sprite,x,y,sw,h,w,e,sc,m,f, a);
     }
 
-    public void initiateDialogue(int event){
+    public void initiate(){
 
         //Set the dialogue flag true so the window will render to the game screen.
         MainClass.gameScreen.dial = true;
@@ -33,16 +33,17 @@ public class BOSS extends ENEMY{
         if(!triggered) {
             MainClass.gameScreen.window.dialog.setText(Utils.font_small, script, Color.BLUE, 480, 8, true);
             MainClass.gameScreen.window.decLock = false;
+            MainClass.gameScreen.window.decision = MainClass.gameScreen.window.okNo;
+            MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OKNO_X_OFFSET;
+            MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OKNO_Y_OFFSET;
         }
         else {
             MainClass.gameScreen.window.dialog.setText(Utils.font_small, win_script, Color.BLUE, 480, 8, true);
             MainClass.gameScreen.window.decLock = true;
+            MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
+            MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OK_X_OFFSET;
+            MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;
         }
-
-        //Set certain parts of the dialogue window to certain values depending on the event type.
-        MainClass.gameScreen.window.decision = MainClass.gameScreen.window.okNo;
-        MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OKNO_X_OFFSET;
-        MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OKNO_Y_OFFSET;
 
         //Set the position
         Utils.menuIcon.setPosition(MainClass.gameScreen.window.ICON_X_OFFSET, MainClass.gameScreen.window.ICON_Y_OFFSET);
