@@ -18,7 +18,8 @@ public class ENEMY extends NPC {
     public double Focus;
     Move[] attacks;
     String win_script;
-    public ENEMY(char dir, String s, String win, String sprite, int x, int y, int sw, int h, int w, int e, int sc, int m, int f, Move[] a) {
+    String lose_script;
+    public ENEMY(char dir, String s, String win, String lose, String sprite, int x, int y, int sw, int h, int w, int e, int sc, int m, int f, Move[] a) {
         super(dir,s,sprite,x,y);
         Software = sw;
         Hardware = h;
@@ -28,6 +29,7 @@ public class ENEMY extends NPC {
         Math = m;
         Focus = f;
         win_script = win;
+        lose_script = lose;
         attacks = a;
     }
 

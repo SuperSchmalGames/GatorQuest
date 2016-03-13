@@ -9,9 +9,8 @@ import com.superschmalgames.Utilities.Utils;
 
 public class SHOP extends NPC {
     char shop;
-    public SHOP(char dir, String s, String sprite, int x, int y, char s) {
+    public SHOP(char dir, String s, String sprite, int x, int y) {
         super(dir, s, sprite, x, y);
-        shop = s;
     }
 
     public void initiate()
