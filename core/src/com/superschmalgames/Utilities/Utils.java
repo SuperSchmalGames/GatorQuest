@@ -96,25 +96,68 @@ public class Utils {
     public static final int bookstore_x = 2090;
     public static final int bookstore_y = 3840;
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////HERO MOVE TEXTURES///////////////////////////////////////////////////////////////
+    public static final Texture boolean_logic_tex = new Texture("visuals/hero_moves/boolean_logic.png");
+    public static final Texture code_testing_tex = new Texture("visuals/hero_moves/code_testing.png");
+    public static final Texture commented_code_tex = new Texture("visuals/hero_moves/commented_code.png");
+    public static final Texture cpp_skills_tex = new Texture("visuals/hero_moves/cpp_skills.png");
+    public static final Texture documentation_tex = new Texture("visuals/hero_moves/documentation.png");
+    public static final Texture double_integration_tex = new Texture("visuals/hero_moves/double_integration.png");
+    public static final Texture extra_credit_tex = new Texture("visuals/hero_moves/extra_credit.png");
+    public static final Texture f2_solve_tex = new Texture("visuals/hero_moves/f2_solve.png");
+    public static final Texture f_lines_matlab_code_tex = new Texture("visuals/hero_moves/f_lines_matlab_code.png");
+    public static final Texture java_function_tex = new Texture("visuals/hero_moves/java_function.png");
+    public static final Texture karnaugh_map_tex = new Texture("visuals/hero_moves/karnaugh_map.png");
+    public static final Texture nodal_analysis_tex = new Texture("visuals/hero_moves/nodal_analysis.png");
+    public static final Texture perfect_presentation_tex = new Texture("visuals/hero_moves/perfect_presentation.png");
+    public static final Texture practice_test_tex = new Texture("visuals/hero_moves/practice_test.png");
+    public static final Texture recursive_function_tex = new Texture("visuals/hero_moves/recursive_function.png");
+    public static final Texture set_equal_to_0_tex = new Texture("visuals/hero_moves/set_equal_to_0.png");
+    public static final Texture soldering_skills_tex = new Texture("visuals/hero_moves/soldering_skills.png");
+    public static final Texture stack_overflow_tex = new Texture("visuals/hero_moves/stack_overflow.png");
+
+    //ADDITIONAL HERO SCREEN TEXTURES
+    public static final Texture checkbox_tex = new Texture("visuals/Menus/checkbox.png");
+    public static final Texture checkbox2_tex = new Texture("visuals/Menus/checkbox2.png");
+
+    public static final Texture hero_stats_tex = new Texture("visuals/Menus/hero_statistics_menu.png");
+    public static final Texture hero_moves_tex = new Texture("visuals/Menus/hero_moves_menu.png");
+    public static final Texture sel_item_tex = new Texture("visuals/Menus/Selected Item Box.png");
+    public static final Texture white_sq_tex = new Texture("visuals/Menus/white_sq.png");
+    public static final Texture hero_degree_tex = new Texture("visuals/Menus/hero_degree_menu.png");
+
+    public static final Texture av1_tex = new Texture("visuals/sprite_sheets/sprite_walk_d7.png");
+    public static final Texture av2_tex = new Texture("visuals/sprite_sheets/sprite_walk_d11.png");
+    public static final Texture av3_tex = new Texture("visuals/sprite_sheets/sprite_walk_d10.png");
+    public static final Texture av4_tex = new Texture("visuals/sprite_sheets/sprite_walk_d9.png");
+
+    public static final Sprite av1_sprite = new Sprite(av1_tex);
+    public static final Sprite av2_sprite = new Sprite(av2_tex);
+    public static final Sprite av3_sprite = new Sprite(av3_tex);
+    public static final Sprite av4_sprite = new Sprite(av4_tex);
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 ////////////////////////////////////////////////////MOVES///////////////////////////////////////////////////////////////////////
-    public static final Move Java_Function = new Move("Java Function", Utils.java_function_tex, "A move that benefits\nfrom improved Software \nskill.", true);
-    public static final Move Recursive_Loop = new Move("Recursive Loop",Utils.recursive_function_tex, "A move that benefits\nfrom improved Software \nskill.", true);
-    public static final Move Stack_Overflow = new Move("Stack Overflow",Utils.stack_overflow_tex, "A move that benefits\nfrom improved Software \nand Read/Write skills.", true);
-    public static final Move Commented_Code = new Move("Commented Code",Utils.commented_code_tex, "A move that benefits\nfrom improved Software\nand Read/Write skills.", true);
-    public static final Move Double_Integration = new Move("Double Integration",Utils.double_integration_tex, "A move that benefits\nfrom improved Math \nskills.", true);
-    public static final Move Set_Equal_to_0 = new Move("Set Equal to 0",Utils.set_equal_to_0_tex, "A move that benefits\nfrom improved Math \nskills.", true);
-    public static final Move Practice_Test = new Move("Practice Test",Utils.practice_test_tex, "A move that benefits\nfrom improved Focus \nskill.", true);
-    public static final Move Extra_Credit = new Move("Extra Credit",Utils.extra_credit_tex, "A move that does not\nbenefit from your\nstats. Pure luck.", true);
-    public static final Move CPP_Skills = new Move("C++ Skills",Utils.cpp_skills_tex, "A move that benefits\nfrom improved Software\nskill.", true);
-    public static final Move Nodal_Analysis = new Move("Nodal Analysis",Utils.nodal_analysis_tex, "A move that benefits\nfrom improved Hardware\nskill.", true);
-    public static final Move F2_Solve = new Move("F2 Solve",Utils.f2_solve_tex, "A move that benefits\nfrom improved Math\nand Focus skills.", true);
-    public static final Move _5_Lines_Matlab_Code = new Move("5 Lines Matlab Code",Utils.f_lines_matlab_code_tex, "A move that benefits\nfrom improved Software\nand Math skills.", true);
-    public static final Move Karnaugh_Map = new Move("Karnaugh Map",Utils.karnaugh_map_tex, "A move that benefits\nfrom improved\nEndurance and\nHardware skills.", true);
-    public static final Move Soldering_Skills = new Move("Soldering Skills",Utils.soldering_skills_tex, "A move that benefits\nfrom improved\nEndurance and\nFocus skills.", true);
-    public static final Move Boolean_Logic = new Move("Boolean Logic",Utils.boolean_logic_tex, "A move that benefits\nfrom improved Math,\nFocus and Hardware\nskills.", true);
-    public static final Move Documentation = new Move("Documentation",Utils.documentation_tex, "A move that benefits\nfrom improved\nRead/Write skills.", true);
-    public static final Move Code_Testing = new Move("Code Testing",Utils.code_testing_tex, "A move that benefits\nfrom improved Software\nand Focus skills.", true);
-    public static final Move Perf_Presentation = new Move("Perf. Presentation",Utils.perfect_presentation_tex, "A move that benefits\nfrom improved Social\nskill.", true);
+    public static final Move Java_Function = new Move("Java Function", java_function_tex, "A move that benefits\nfrom improved Software \nskill.", true);
+    public static final Move Recursive_Loop = new Move("Recursive Loop",recursive_function_tex, "A move that benefits\nfrom improved Software \nskill.", true);
+    public static final Move Stack_Overflow = new Move("Stack Overflow",stack_overflow_tex, "A move that benefits\nfrom improved Software \nand Read/Write skills.", true);
+    public static final Move Commented_Code = new Move("Commented Code",commented_code_tex, "A move that benefits\nfrom improved Software\nand Read/Write skills.", true);
+    public static final Move Double_Integration = new Move("Double Integration",double_integration_tex, "A move that benefits\nfrom improved Math \nskills.", true);
+    public static final Move Set_Equal_to_0 = new Move("Set Equal to 0",set_equal_to_0_tex, "A move that benefits\nfrom improved Math \nskills.", true);
+    public static final Move Practice_Test = new Move("Practice Test",practice_test_tex, "A move that benefits\nfrom improved Focus \nskill.", true);
+    public static final Move Extra_Credit = new Move("Extra Credit",extra_credit_tex, "A move that does not\nbenefit from your\nstats. Pure luck.", true);
+    public static final Move CPP_Skills = new Move("C++ Skills",cpp_skills_tex, "A move that benefits\nfrom improved Software\nskill.", true);
+    public static final Move Nodal_Analysis = new Move("Nodal Analysis",nodal_analysis_tex, "A move that benefits\nfrom improved Hardware\nskill.", true);
+    public static final Move F2_Solve = new Move("F2 Solve",f2_solve_tex, "A move that benefits\nfrom improved Math\nand Focus skills.", true);
+    public static final Move _5_Lines_Matlab_Code = new Move("5 Lines Matlab Code",f_lines_matlab_code_tex, "A move that benefits\nfrom improved Software\nand Math skills.", true);
+    public static final Move Karnaugh_Map = new Move("Karnaugh Map",karnaugh_map_tex, "A move that benefits\nfrom improved\nEndurance and\nHardware skills.", true);
+    public static final Move Soldering_Skills = new Move("Soldering Skills",soldering_skills_tex, "A move that benefits\nfrom improved\nEndurance and\nFocus skills.", true);
+    public static final Move Boolean_Logic = new Move("Boolean Logic",boolean_logic_tex, "A move that benefits\nfrom improved Math,\nFocus and Hardware\nskills.", true);
+    public static final Move Documentation = new Move("Documentation",documentation_tex, "A move that benefits\nfrom improved\nRead/Write skills.", true);
+    public static final Move Code_Testing = new Move("Code Testing",code_testing_tex, "A move that benefits\nfrom improved Software\nand Focus skills.", true);
+    public static final Move Perf_Presentation = new Move("Perf. Presentation",perfect_presentation_tex, "A move that benefits\nfrom improved Social\nskill.", true);
     private static final Move[] Sriv_attacks = {Java_Function};
     private static final Move[] Wong_attacks = {Java_Function};
     private static final Move[] Gugel_attacks = {Java_Function};
@@ -637,48 +680,6 @@ public class Utils {
     static final Sound rustling = Gdx.audio.newSound(Gdx.files.internal("sound/effects/rustling.mp3"));
     static final Sound page = Gdx.audio.newSound(Gdx.files.internal("sound/effects/page.wav"));
     static final Sound oob_error = Gdx.audio.newSound(Gdx.files.internal("sound/effects/oob_error.wav"));
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    /////////////////////////////////HERO MOVE TEXTURES///////////////////////////////////////////////////////////////
-    public static final Texture boolean_logic_tex = new Texture("visuals/hero_moves/boolean_logic.png");
-    public static final Texture code_testing_tex = new Texture("visuals/hero_moves/code_testing.png");
-    public static final Texture commented_code_tex = new Texture("visuals/hero_moves/commented_code.png");
-    public static final Texture cpp_skills_tex = new Texture("visuals/hero_moves/cpp_skills.png");
-    public static final Texture documentation_tex = new Texture("visuals/hero_moves/documentation.png");
-    public static final Texture double_integration_tex = new Texture("visuals/hero_moves/double_integration.png");
-    public static final Texture extra_credit_tex = new Texture("visuals/hero_moves/extra_credit.png");
-    public static final Texture f2_solve_tex = new Texture("visuals/hero_moves/f2_solve.png");
-    public static final Texture f_lines_matlab_code_tex = new Texture("visuals/hero_moves/f_lines_matlab_code.png");
-    public static final Texture java_function_tex = new Texture("visuals/hero_moves/java_function.png");
-    public static final Texture karnaugh_map_tex = new Texture("visuals/hero_moves/karnaugh_map.png");
-    public static final Texture nodal_analysis_tex = new Texture("visuals/hero_moves/nodal_analysis.png");
-    public static final Texture perfect_presentation_tex = new Texture("visuals/hero_moves/perfect_presentation.png");
-    public static final Texture practice_test_tex = new Texture("visuals/hero_moves/practice_test.png");
-    public static final Texture recursive_function_tex = new Texture("visuals/hero_moves/recursive_function.png");
-    public static final Texture set_equal_to_0_tex = new Texture("visuals/hero_moves/set_equal_to_0.png");
-    public static final Texture soldering_skills_tex = new Texture("visuals/hero_moves/soldering_skills.png");
-    public static final Texture stack_overflow_tex = new Texture("visuals/hero_moves/stack_overflow.png");
-
-    //ADDITIONAL HERO SCREEN TEXTURES
-    public static final Texture checkbox_tex = new Texture("visuals/Menus/checkbox.png");
-    public static final Texture checkbox2_tex = new Texture("visuals/Menus/checkbox2.png");
-
-    public static final Texture hero_stats_tex = new Texture("visuals/Menus/hero_statistics_menu.png");
-    public static final Texture hero_moves_tex = new Texture("visuals/Menus/hero_moves_menu.png");
-    public static final Texture sel_item_tex = new Texture("visuals/Menus/Selected Item Box.png");
-    public static final Texture white_sq_tex = new Texture("visuals/Menus/white_sq.png");
-    public static final Texture hero_degree_tex = new Texture("visuals/Menus/hero_degree_menu.png");
-
-    public static final Texture av1_tex = new Texture("visuals/sprite_sheets/sprite_walk_d7.png");
-    public static final Texture av2_tex = new Texture("visuals/sprite_sheets/sprite_walk_d11.png");
-    public static final Texture av3_tex = new Texture("visuals/sprite_sheets/sprite_walk_d10.png");
-    public static final Texture av4_tex = new Texture("visuals/sprite_sheets/sprite_walk_d9.png");
-
-    public static final Sprite av1_sprite = new Sprite(av1_tex);
-    public static final Sprite av2_sprite = new Sprite(av2_tex);
-    public static final Sprite av3_sprite = new Sprite(av3_tex);
-    public static final Sprite av4_sprite = new Sprite(av4_tex);
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
