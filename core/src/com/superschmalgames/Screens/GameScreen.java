@@ -8,7 +8,6 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
@@ -16,7 +15,7 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.superschmalgames.Utilities.CharacterDialogue;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.superschmalgames.NPC;
+import com.superschmalgames.NPC.NPC;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.ShopMenu;
 import com.superschmalgames.Utilities.Utils;
@@ -163,24 +162,8 @@ public class GameScreen implements Screen {
             int event = Integer.valueOf((String) collision.getCell(x,y).getTile().getProperties().get("event"));
             MainClass.hero.lastInteracted = enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))];
             if(event == 1)
-            {
-                if (enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].x_pos == 45*Utils.MAP_RESOLUTION)
-                {
-                    MainClass.shopInputHandler.shop = 'a';
-                }
-                else if(enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].x_pos == 25*Utils.MAP_RESOLUTION)
-                {
-                    MainClass.shopInputHandler.shop = 'b';
-                }
-                else if(enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].x_pos == 22*Utils.MAP_RESOLUTION)
-                {
-                    MainClass.shopInputHandler.shop = 'c';
-                }
-                enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateShop();
-            }
-            else {
-                enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateDialogue(event);
-            }
+                MainClass.shopInputHandler.shop = Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("shop"));
+            enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiate();
         }
     }
 

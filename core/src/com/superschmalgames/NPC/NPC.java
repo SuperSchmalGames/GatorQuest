@@ -1,4 +1,4 @@
-package com.superschmalgames;
+package com.superschmalgames.NPC;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -28,7 +28,7 @@ public class NPC {
         org_y = y;
         script = s;
         direction = dir;
-        walk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_" + sprite + ".png", 0.17f);
+        walk = new Animator(4, 1, sprite, 0.17f);
         walk.currentFrame = walk.walkAnimation.getKeyFrame(walk.stateTime, true);
         triggered = false;
         los = true;
@@ -44,7 +44,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateDialogue(0);
+                    initiate();
                 break;
             case 'r':
                 if (x_pos < x - 3*MainClass.hero.width/2) {
@@ -52,7 +52,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateDialogue(0);
+                    initiate();
                 break;
             case 'u':
                 if (y_pos < y - 3*MainClass.hero.height/2) {
@@ -60,7 +60,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateDialogue(0);
+                    initiate();
                 break;
             case 'd':
                 if (y_pos > y + MainClass.hero.height/2) {
@@ -68,7 +68,7 @@ public class NPC {
                     temp = true;
                 }
                 else
-                    initiateDialogue(0);
+                    initiate();
                 break;
         }
         if(temp) {
@@ -94,35 +94,7 @@ public class NPC {
         triggered = set;
     }
 
-    public void initiateShop()
-    {
-        //Set the store flag true so the store window will render to the game screen
-        MainClass.gameScreen.store = true;
-
-        //Stop character movement, if we're moving.
-        MainClass.gameScreen.lWalk = false;
-        MainClass.gameScreen.rWalk = false;
-        MainClass.gameScreen.uWalk = false;
-        MainClass.gameScreen.dWalk = false;
-
-        //Give input control to the dialogue input handler.
-        Gdx.input.setInputProcessor(MainClass.shopInputHandler);
-
-        //Create new dialogue window containing the shop of the NPC we're talking to.
-        MainClass.gameScreen.shop_window = new ShopMenu();    //480=text block width, 8=left align, true=wrap
-        MainClass.gameScreen.shop_window.dialog.setText(Utils.font, script, Color.WHITE, 480, 8, true);
-
-        MainClass.gameScreen.shop_window.decLock = false;
-        MainClass.gameScreen.shop_window.quitPrompt = MainClass.gameScreen.shop_window.quit;
-       // MainClass.gameScreen.shop_window.decision = MainClass.gameScreen.shop_window.okNo;
-        MainClass.gameScreen.shop_window.decOffsetX = MainClass.gameScreen.shop_window.OKNO_X_OFFSET;
-        MainClass.gameScreen.shop_window.decOffsetY = MainClass.gameScreen.shop_window.OKNO_Y_OFFSET;
-
-        Utils.menuIcon.setPosition(MainClass.gameScreen.shop_window.ICON_X_OFFSET, MainClass.gameScreen.shop_window.ICON_Y_OFFSET);
-
-    }
-
-    public void initiateDialogue(int event){
+    public void initiate(){
 
         //Set the dialogue flag true so the window will render to the game screen.
         MainClass.gameScreen.dial = true;
@@ -141,29 +113,10 @@ public class NPC {
         MainClass.gameScreen.window.dialog.setText(Utils.font_small, script, Color.BLUE, 480, 8, true);
 
         //Set certain parts of the dialogue window to certain values depending on the event type.
-        switch(event) {
-            //NPC Event
-            case 0:
-                MainClass.gameScreen.window.decLock = true;
-                MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
-                MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OK_X_OFFSET;
-                MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;
-                break;
-            //Shop Event
-            case 1:
-                MainClass.gameScreen.window.decLock = false;
-                MainClass.gameScreen.window.decision = MainClass.gameScreen.window.okNo;
-                MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OKNO_X_OFFSET;
-                MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OKNO_Y_OFFSET;
-                break;
-            //Boss Event
-            case 2:
-                MainClass.gameScreen.window.decLock = false;
-                MainClass.gameScreen.window.decision = MainClass.gameScreen.window.okNo;
-                MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OKNO_X_OFFSET;
-                MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OKNO_Y_OFFSET;
-                break;
-        }
+        MainClass.gameScreen.window.decLock = true;
+        MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
+        MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OK_X_OFFSET;
+        MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;
 
         //Set the position
         Utils.menuIcon.setPosition(MainClass.gameScreen.window.ICON_X_OFFSET, MainClass.gameScreen.window.ICON_Y_OFFSET);
