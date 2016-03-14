@@ -19,19 +19,19 @@ public class CombatScreen implements Screen {
     OrthographicCamera camera;
     public Viewport viewport;
     public GlyphLayout rootList;
-    public int movePane;
+    public int movePane, itemPane, p2index, temp;
 
     public CombatScreen(){
-        //Set up the combat background
+        //Set up the combat background.
         Utils.combatBackground.setSize(Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
 
-        //Set up the sprites being rendered
+        //Set up the sprites being rendered.
         Utils.tempHero.setPosition(40, (Utils.GAME_SCREEN_HEIGHT/3)*2-40);
         Utils.tempHero.setScale(3.0f);
         Utils.tempNPC.setPosition(Utils.GAME_SCREEN_WIDTH-80, (Utils.GAME_SCREEN_HEIGHT/3)*2-40);
         Utils.tempNPC.setScale(3.0f);
 
-        //Set up the combat ui
+        //Set up the combat ui.
         Utils.combatBorder.setSize(Utils.GAME_SCREEN_WIDTH,Utils.GAME_SCREEN_HEIGHT/3+60);
         Utils.combatBorder.setPosition(0,10);
         rootList = new GlyphLayout(Utils.font,"Moves\n\nItems",Color.BLUE,200,8,true);
@@ -59,7 +59,10 @@ public class CombatScreen implements Screen {
 
         //Initialize some control variables.
         movePane = 0;
-        MainClass.combatInputHandler.moveIndex = 0;
+        itemPane = 0;
+        p2index = 0;
+        temp = 0;
+        MainClass.combatInputHandler.index = 0;
 
         //Change font color to blue
         Utils.font.setColor(Color.BLUE);
@@ -90,8 +93,8 @@ public class CombatScreen implements Screen {
 
         //If the player chooses to make a move, show the move list.
         else if(MainClass.combatInputHandler.moveMenu){
-            int temp = 0;
-            int p2index = 0;
+            temp = 0;
+            p2index = 0;
             if(movePane==0) {
                 for (int i = 0; i < 18; i++) {
                     if(MainClass.hero.moves.attacks[i].obtained && temp < 4) {
@@ -127,8 +130,39 @@ public class CombatScreen implements Screen {
                 }
                 for(int i= p2index; i<18; i++) {
                     if(MainClass.hero.moves.attacks[i].obtained && temp < 12) {
-                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(),
-                                95, 223 - 45 * (temp-8));
+                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(), 95, 223 - 45 * (temp-8));
+                        temp +=1;
+                    }
+                }
+            }
+            else if(movePane==3) {
+                for (int i = 0; i < 18; i++) {
+                    if(MainClass.hero.moves.attacks[i].obtained && temp < 12) {
+                        if(temp == 11) {
+                            p2index = i+1;
+                        }
+                        temp +=1;
+                    }
+                }
+                for(int i= p2index; i<18; i++) {
+                    if(MainClass.hero.moves.attacks[i].obtained && temp < 16) {
+                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(), 95, 223 - 45 * (temp-12));
+                        temp +=1;
+                    }
+                }
+            }
+            else if(movePane==4) {
+                for (int i = 0; i < 18; i++) {
+                    if(MainClass.hero.moves.attacks[i].obtained && temp < 16) {
+                        if(temp == 15) {
+                            p2index = i+1;
+                        }
+                        temp +=1;
+                    }
+                }
+                for(int i= p2index; i<18; i++) {
+                    if(MainClass.hero.moves.attacks[i].obtained && temp < 20) {
+                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(), 95, 223 - 45 * (temp-16));
                         temp +=1;
                     }
                 }
@@ -137,7 +171,45 @@ public class CombatScreen implements Screen {
 
         //If the player chooses to use an item, show the item list.
         else if(MainClass.combatInputHandler.itemMenu){
-
+            temp = 0;
+            p2index = 0;
+            if(itemPane == 0) {
+                for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
+                    if (MainClass.hero.inventory.items.get(i) != null &&
+                            MainClass.hero.inventory.items.get(i).getQuantity() > 0 &&
+                            MainClass.hero.inventory.items.get(i).getItemType() == 'c' &&
+                            temp < 4) {
+                        Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
+                                        + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
+                                95, 223 - 45 * temp);
+                        temp += 1;
+                    }
+                }
+            }
+            else if(itemPane == 1) {
+                for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
+                    if(MainClass.hero.inventory.items.get(i) != null &&
+                            MainClass.hero.inventory.items.get(i).getQuantity() > 0 &&
+                            MainClass.hero.inventory.items.get(i).getItemType() == 'c' &&
+                            temp < 4) {
+                        if(temp == 3) {
+                            p2index = i+1;
+                        }
+                        temp +=1;
+                    }
+                }
+                for(int i= p2index; i < MainClass.hero.inventory.items.size(); i++) {
+                    if(MainClass.hero.inventory.items.get(i) != null &&
+                            MainClass.hero.inventory.items.get(i).getQuantity() > 0 &&
+                            MainClass.hero.inventory.items.get(i).getItemType() == 'c' &&
+                            temp < 8) {
+                        Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
+                                        + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
+                                95, 223 - 45 * (temp-4));
+                        temp +=1;
+                    }
+                }
+            }
         }
 
         MainClass.batch.end();
