@@ -168,21 +168,21 @@ public class HeroScreen implements Screen {
             Utils.font.draw(MainClass.batch,"GatorBucks:\n"+MainClass.hero.gatorBucks, 50 ,385);
             if(MainClass.hero.outfitNum == 7)
             {
-                Utils.av1_sprite.setScale(1.5f);
+                Utils.av1_sprite.setScale(2.5f);
                 Utils.av1_sprite.draw(MainClass.batch);
-                Utils.av4_sprite.setPosition(150,200);
+                Utils.av1_sprite.setPosition(150,200);
             }
             else if(MainClass.hero.outfitNum == 11)
             {
-                Utils.av2_sprite.setScale(1.5f);
+                Utils.av2_sprite.setScale(2.5f);
                 Utils.av2_sprite.draw(MainClass.batch);
-                Utils.av4_sprite.setPosition(150,200);
+                Utils.av2_sprite.setPosition(150,200);
             }
             else if(MainClass.hero.outfitNum == 10)
             {
-                Utils.av3_sprite.setScale(1.5f);
+                Utils.av3_sprite.setScale(2.5f);
                 Utils.av3_sprite.draw(MainClass.batch);
-                Utils.av4_sprite.setPosition(150,200);
+                Utils.av3_sprite.setPosition(150,200);
             }
             else if(MainClass.hero.outfitNum == 9)
             {
