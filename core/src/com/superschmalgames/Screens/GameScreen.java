@@ -15,7 +15,7 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.superschmalgames.Utilities.CharacterDialogue;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.superschmalgames.NonPlayerChars.NPC;
+import com.superschmalgames.NPC.NPC;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.ShopMenu;
 import com.superschmalgames.Utilities.Utils;
@@ -158,24 +158,8 @@ public class GameScreen implements Screen {
             int event = Integer.valueOf((String) collision.getCell(x,y).getTile().getProperties().get("event"));
             MainClass.hero.lastInteracted = enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))];
             if(event == 1)
-            {
-                if (enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].x_pos == 45*Utils.MAP_RESOLUTION)
-                {
-                    MainClass.shopInputHandler.shop = 'a';
-                }
-                else if(enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].x_pos == 25*Utils.MAP_RESOLUTION)
-                {
-                    MainClass.shopInputHandler.shop = 'b';
-                }
-                else if(enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].x_pos == 22*Utils.MAP_RESOLUTION)
-                {
-                    MainClass.shopInputHandler.shop = 'c';
-                }
-                enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateShop();
-            }
-            else {
-                enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiateDialogue(event);
-            }
+                MainClass.shopInputHandler.shop = Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("shop"));
+            enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiate();
         }
     }
 
@@ -227,11 +211,11 @@ public class GameScreen implements Screen {
 
         if(store){//Change this section to render the actual stuff for the store
             MainClass.batch.begin();
-            Utils.menuIcon.setColor(Color.WHITE);
             Utils.shop_window.draw(MainClass.batch);
-            Utils.font_small.draw(MainClass.batch, "Reminder: Press Q to quit menu" , camera.position.x-Utils.GAME_SCREEN_WIDTH/2+580, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-565);
+            Utils.font_small.draw(MainClass.batch, shop_window.quit, camera.position.x-Utils.GAME_SCREEN_WIDTH/2+645, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-565);
             Utils.font.draw(MainClass.batch, shop_window.dialog, shop_window.DIAL_X_OFFSET, shop_window.DIAL_Y_OFFSET);
             Utils.menuIcon.draw(MainClass.batch);
+            Utils.font_small.draw(MainClass.batch, "Gatorbucks:\n$" + MainClass.hero.gatorBucks, camera.position.x-Utils.GAME_SCREEN_WIDTH/2+860, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-40);
             MainClass.batch.end();
         }
 

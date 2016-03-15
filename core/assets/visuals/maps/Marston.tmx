@@ -3164,6 +3164,7 @@
     <property name="enemy" value="4"/>
     <property name="event" value="1"/>
     <property name="number" value="0"/>
+    <property name="shop" value="1"/>
    </properties>
   </tile>
   <tile id="27">

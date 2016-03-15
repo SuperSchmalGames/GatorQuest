@@ -20,15 +20,17 @@ public class ShopMenu{
 
     public GlyphLayout dialog;
     public GlyphLayout ok;
+    public GlyphLayout quit;
     public GlyphLayout okNo;
-    public GlyphLayout decision;
+    public GlyphLayout quitPrompt;
     public boolean proceed, decLock;
     public float decOffsetX, decOffsetY;
 
     public ShopMenu() {
         proceed = false;
         dialog = new GlyphLayout(Utils.font, "");
-        decision = new GlyphLayout();
+        quitPrompt = new GlyphLayout();
+        quit = new GlyphLayout(Utils.font_small, "Press Q to quit menu", Color.BLUE, 300, 300, true);
         ok = new GlyphLayout(Utils.font, "ok!", Color.WHITE, 100, 8, true);
         okNo = new GlyphLayout(Utils.font, "ok!  no!", Color.WHITE, 200, 8, true);
         Utils.shop_window.setPosition(WINDOW_X_OFFSET, WINDOW_Y_OFFSET);

@@ -164,22 +164,48 @@ public class HeroScreen implements Screen {
         if("Degree Audit".equals(heroPanel))
         {
             MainClass.batch.draw(Utils.hero_degree_tex, 0, 0);
-            Utils.font.draw(MainClass.batch,"Programming I: Dobbins", 100,505);
-            Utils.font.draw(MainClass.batch,"Calculus II: Chui", 100,440);
-            Utils.font.draw(MainClass.batch,"Programming II: Horton", 100, 385);
-            Utils.font.draw(MainClass.batch,"Circuits I: Srivastava", 100,325);
-            Utils.font.draw(MainClass.batch,"Signals and Systems: Wong", 100,265);
-            Utils.font.draw(MainClass.batch,"Digital Logic: Gugel", 100, 205);
-            Utils.font.draw(MainClass.batch,"Operating Systems: Small", 100, 140);
-            Utils.font.draw(MainClass.batch,"Senior Design: Schmalz", 100, 80);
+            Utils.font.draw(MainClass.batch,"Name:\n"+MainClass.hero.name, 50 ,505);
+            Utils.font.draw(MainClass.batch,"GatorBucks:\n"+MainClass.hero.gatorBucks, 50 ,385);
+            if(MainClass.hero.outfitNum == 7)
+            {
+                Utils.av1_sprite.setScale(2.5f);
+                Utils.av1_sprite.draw(MainClass.batch);
+                Utils.av1_sprite.setPosition(150,200);
+            }
+            else if(MainClass.hero.outfitNum == 11)
+            {
+                Utils.av2_sprite.setScale(2.5f);
+                Utils.av2_sprite.draw(MainClass.batch);
+                Utils.av2_sprite.setPosition(150,200);
+            }
+            else if(MainClass.hero.outfitNum == 10)
+            {
+                Utils.av3_sprite.setScale(2.5f);
+                Utils.av3_sprite.draw(MainClass.batch);
+                Utils.av3_sprite.setPosition(150,200);
+            }
+            else if(MainClass.hero.outfitNum == 9)
+            {
+                Utils.av4_sprite.setScale(2.5f);
+                Utils.av4_sprite.draw(MainClass.batch);
+                Utils.av4_sprite.setPosition(150,200);
+            }
+
+            Utils.font.draw(MainClass.batch,"Programming I: Dobbins", 420,505);
+            Utils.font.draw(MainClass.batch,"Calculus II: Chui", 420,440);
+            Utils.font.draw(MainClass.batch,"Programming II: Horton", 420, 385);
+            Utils.font.draw(MainClass.batch,"Circuits I: Srivastava", 420,325);
+            Utils.font.draw(MainClass.batch,"Sigs & Systems: Wong", 420,265);
+            Utils.font.draw(MainClass.batch,"Digital Logic: Gugel", 420, 205);
+            Utils.font.draw(MainClass.batch,"Operating Sys: Small", 420, 140);
+            Utils.font.draw(MainClass.batch,"Senior Design: Schmalz", 420, 80);
 
             for(int i=0; i<MainClass.hero.semester; i++)
             {
-                MainClass.batch.draw(Utils.checkbox2_tex, 845, 475-60*i, 50, 50);
+                MainClass.batch.draw(Utils.checkbox2_tex, 905, 475-60*i, 50, 50);
             }
         }
 
-        Utils.testFont.draw(MainClass.batch, "heroRow " + MainClass.heroScreen.heroRow + " heroPage "+MainClass.heroScreen.heroPage, 0, Utils.GAME_SCREEN_HEIGHT - 75);
         MainClass.batch.end();
     }
 

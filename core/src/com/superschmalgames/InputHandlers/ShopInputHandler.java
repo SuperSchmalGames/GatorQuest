@@ -11,7 +11,7 @@ import com.superschmalgames.Utilities.Utils;
 
 public class ShopInputHandler implements InputProcessor {
 
-    public char shop = 'o'; //Will be set to a, b or c based on which of the 3 shopkeepers you are talking to.
+    public int shop = 0; //Will be set to a, b or c based on which of the 3 shopkeepers you are talking to.
 
     public ShopInputHandler(){
 
@@ -19,44 +19,44 @@ public class ShopInputHandler implements InputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
-        if(shop == 'a' && keycode == Input.Keys.DOWN && MainClass.gameScreen.shop_window.currIndex < 1){
+        if(shop == 1 && keycode == Input.Keys.DOWN && MainClass.gameScreen.shop_window.currIndex < 1){
             Utils.menuIcon.translateY(-65);
             MainClass.gameScreen.shop_window.currIndex += 1;
         }
-        else if(shop == 'a' && keycode == Input.Keys.UP && MainClass.gameScreen.shop_window.currIndex > 0){
+        else if(shop == 1 && keycode == Input.Keys.UP && MainClass.gameScreen.shop_window.currIndex > 0){
             Utils.menuIcon.translateY(65);
             MainClass.gameScreen.shop_window.currIndex -= 1;
-        }else if(shop == 'b' && keycode == Input.Keys.DOWN && MainClass.gameScreen.shop_window.currIndex < 4){
+        }else if(shop == 2 && keycode == Input.Keys.DOWN && MainClass.gameScreen.shop_window.currIndex < 4){
             Utils.menuIcon.translateY(-65);
             MainClass.gameScreen.shop_window.currIndex += 1;
         }
-        else if(shop == 'b' && keycode == Input.Keys.UP && MainClass.gameScreen.shop_window.currIndex > 0){
+        else if(shop == 2 && keycode == Input.Keys.UP && MainClass.gameScreen.shop_window.currIndex > 0){
             Utils.menuIcon.translateY(65);
             MainClass.gameScreen.shop_window.currIndex -= 1;
-        }else if(shop == 'c' && keycode == Input.Keys.DOWN && MainClass.gameScreen.shop_window.currIndex < 5){
+        }else if(shop == 3 && keycode == Input.Keys.DOWN && MainClass.gameScreen.shop_window.currIndex < 5){
             Utils.menuIcon.translateY(-65);
             MainClass.gameScreen.shop_window.currIndex += 1;
         }
-        else if(shop == 'c' && keycode == Input.Keys.UP && MainClass.gameScreen.shop_window.currIndex > 0){
+        else if(shop == 3 && keycode == Input.Keys.UP && MainClass.gameScreen.shop_window.currIndex > 0){
             Utils.menuIcon.translateY(65);
             MainClass.gameScreen.shop_window.currIndex -= 1;
         }
         else if(keycode == Input.Keys.ENTER)
         {
-            if(shop == 'a') {
+            if(shop == 1) {
                 if (MainClass.gameScreen.shop_window.currIndex == 0 && MainClass.hero.gatorBucks >= 100) {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.RED_BULL);
                     MainClass.hero.gatorBucks -= 100;
                     Utils.kaching.play();
-                } else if (MainClass.gameScreen.shop_window.currIndex == 1 && MainClass.hero.gatorBucks >= 200) {
+                } else if (MainClass.gameScreen.shop_window.currIndex == 1 && MainClass.hero.gatorBucks >= 300) {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.STARBUCKS);
-                    MainClass.hero.gatorBucks -= 200;
+                    MainClass.hero.gatorBucks -= 300;
                     Utils.kaching.play();
                 } else {
                     Utils.oob_error.play();
                 }
             }
-            else if(shop == 'b')
+            else if(shop == 2)
             {
                 if (MainClass.gameScreen.shop_window.currIndex == 0 && MainClass.hero.gatorBucks >= 500) {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.BIZ_CAS_ATTIRE);
@@ -82,7 +82,7 @@ public class ShopInputHandler implements InputProcessor {
                     Utils.oob_error.play();
                 }
             }
-            else if(shop == 'c')
+            else if(shop == 3)
             {
                 if (MainClass.gameScreen.shop_window.currIndex == 0 && MainClass.hero.gatorBucks >= 700) {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.CYCLONE);
