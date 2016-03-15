@@ -1,11 +1,12 @@
-package com.superschmalgames.Utilities;
+package com.superschmalgames.InputHandlers;
 
 //This class handles input for controlling selections within the character dialogue window.
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
-import com.superschmalgames.Screens.GameScreen;
+import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.Utils;
 
 public class DialogueInputHandler implements InputProcessor {
 

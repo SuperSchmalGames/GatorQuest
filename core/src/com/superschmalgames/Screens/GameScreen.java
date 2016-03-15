@@ -52,10 +52,6 @@ public class GameScreen implements Screen {
         newDial = false;
         store = false;
 
-        //Reset info for the menuIcon to use for dialogue windows
-        Utils.menuIcon.setColor(Color.BLUE);
-        Utils.menuIcon.setScale(1.5f);
-
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
         viewport = new FitViewport(Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT, camera);
@@ -215,7 +211,6 @@ public class GameScreen implements Screen {
 
         if(store){//Change this section to render the actual stuff for the store
             MainClass.batch.begin();
-            Utils.menuIcon.setColor(Color.WHITE);
             Utils.shop_window.draw(MainClass.batch);
             Utils.font_small.draw(MainClass.batch, shop_window.quit, camera.position.x-Utils.GAME_SCREEN_WIDTH/2+645, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-565);
             Utils.font.draw(MainClass.batch, shop_window.dialog, shop_window.DIAL_X_OFFSET, shop_window.DIAL_Y_OFFSET);
@@ -316,7 +311,8 @@ public class GameScreen implements Screen {
 
     @Override
     public void hide() {
-
+        //Stop the normal game world music so we can play another screen's music.
+        Utils.gameMusic.stop();
     }
 
     @Override

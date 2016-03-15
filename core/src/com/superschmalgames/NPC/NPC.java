@@ -118,6 +118,10 @@ public class NPC {
         MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OK_X_OFFSET;
         MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;
 
+        //Reset info for the menuIcon to use for npc dialogue windows
+        Utils.menuIcon.setColor(Color.BLUE);
+        Utils.menuIcon.setScale(1.5f);
+
         //Set the position
         Utils.menuIcon.setPosition(MainClass.gameScreen.window.ICON_X_OFFSET, MainClass.gameScreen.window.ICON_Y_OFFSET);
 

@@ -6,6 +6,10 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.superschmalgames.Hero.HeroCharacter;
+import com.superschmalgames.InputHandlers.CombatInputHandler;
+import com.superschmalgames.InputHandlers.DialogueInputHandler;
+import com.superschmalgames.InputHandlers.InputHandler;
+import com.superschmalgames.InputHandlers.ShopInputHandler;
 import com.superschmalgames.Screens.*;
 
 public class MainClass extends Game {
@@ -20,7 +24,9 @@ public class MainClass extends Game {
 	public static InputHandler inputHandler;
 	public static DialogueInputHandler dialogueInputHandler;
     public static ShopInputHandler shopInputHandler;
+	public static CombatInputHandler combatInputHandler;
 	public static OpenWorldScreen openWorldScreen;
+	public static CombatScreen combatScreen;
 	
 	@Override
 	public void create () {
@@ -28,6 +34,7 @@ public class MainClass extends Game {
 
 		dialogueInputHandler = new DialogueInputHandler();
         shopInputHandler = new ShopInputHandler();
+		combatInputHandler = new CombatInputHandler();
 		inputHandler = new InputHandler();
 		Gdx.input.setInputProcessor(inputHandler);
 
@@ -74,6 +81,7 @@ public class MainClass extends Game {
 		if(avatarScreen != null) avatarScreen.dispose();
 		if(gameScreen != null) gameScreen.dispose();
 		if(openWorldScreen != null) openWorldScreen.dispose();
+		if(combatScreen != null) combatScreen.dispose();
 	}
 
 }

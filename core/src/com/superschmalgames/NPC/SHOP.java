@@ -38,6 +38,11 @@ public class SHOP extends NPC {
         MainClass.gameScreen.shop_window.decOffsetX = MainClass.gameScreen.shop_window.OKNO_X_OFFSET;
         MainClass.gameScreen.shop_window.decOffsetY = MainClass.gameScreen.shop_window.OKNO_Y_OFFSET;
 
+        //Reset info for the menuIcon to use for shop windows.
+        Utils.menuIcon.setColor(Color.WHITE);
+        Utils.menuIcon.setScale(3);
+
+        //Set the position.
         Utils.menuIcon.setPosition(MainClass.gameScreen.shop_window.ICON_X_OFFSET, MainClass.gameScreen.shop_window.ICON_Y_OFFSET);
 
     }
