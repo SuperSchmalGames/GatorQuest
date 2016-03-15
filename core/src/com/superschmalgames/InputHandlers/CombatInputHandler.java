@@ -12,7 +12,7 @@ import com.superschmalgames.Utilities.Utils;
 public class CombatInputHandler implements InputProcessor{
 
     public boolean rootMenu, moveMenu, itemMenu;
-    public int index;    //MOVE ALL OF THESE TO COMBATLOGIC EVENTUALLY!!
+    public int index;
 
     public CombatInputHandler(){
 
@@ -45,22 +45,22 @@ public class CombatInputHandler implements InputProcessor{
             }
         }
         else if(moveMenu){
-            if (keycode == Input.Keys.UP && index > 0) {
+            if (keycode == Input.Keys.UP && index > 0) {    //If UP is pressed and we're not at the top of the list.
                 if (index % 4 == 0) {
                     index--;
                     MainClass.combatScreen.movePane -= 1;   //Switch view to the next 4 Moves in the list.
-                    Utils.menuIcon.setPosition(50,65);      //Reset menu icon back to original position
+                    Utils.menuIcon.setPosition(50,65);      //Reset menu icon back to original position.
                 }
                 else {
                     index--;
                     Utils.menuIcon.translateY(45);         //Translate menu icon up to previous Move in list.
                 }
             }
-            else if (keycode == Input.Keys.DOWN) {
+            else if (keycode == Input.Keys.DOWN && index < MainClass.hero.moves.getNum()-1) {
                 if ((index + 1) % 4 == 0) {
                     index++;
                     MainClass.combatScreen.movePane += 1;   //Switch view to the next 4 Moves in the list.
-                    Utils.menuIcon.setPosition(50,200);     //Reset menu icon back to original position
+                    Utils.menuIcon.setPosition(50,200);     //Reset menu icon back to original position.
                 }
                 else {
                     index++;
@@ -68,14 +68,14 @@ public class CombatInputHandler implements InputProcessor{
                 }
             }
             else if (keycode == Input.Keys.ENTER) {
-                Gdx.app.log("test", "Moves don't work yet!\n");
+                Gdx.app.log("test", "Moves don't work yet!\n");  //Pressing ENTER will use the selected Move.
             }
             else if(keycode == Input.Keys.ESCAPE){
-                moveMenu = false;
+                moveMenu = false;                             //Reset the flags to root being true.
                 rootMenu = true;
-                MainClass.combatScreen.movePane = 0;
+                MainClass.combatScreen.movePane = 0;         //Reset our move panes and index for next time.
                 index = 0;
-                Utils.menuIcon.setPosition(50,200);
+                Utils.menuIcon.setPosition(50,200);          //Reset the menu icon to the top of the list.
             }
         }
         else if(itemMenu){
