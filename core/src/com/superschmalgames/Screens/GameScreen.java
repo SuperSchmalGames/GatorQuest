@@ -311,8 +311,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void hide() {
-        //Stop the normal game world music so we can play another screen's music.
-        Utils.gameMusic.stop();
+
     }
 
     @Override

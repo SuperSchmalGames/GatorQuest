@@ -12,7 +12,7 @@ import com.superschmalgames.Utilities.Utils;
 public class CombatInputHandler implements InputProcessor{
 
     public boolean rootMenu, moveMenu, itemMenu;
-    public int index;
+    public int index, selection;
 
     public CombatInputHandler(){
 
@@ -24,22 +24,26 @@ public class CombatInputHandler implements InputProcessor{
             if (keycode == Input.Keys.UP && index > 0) {
                 Utils.menuIcon.translateY(65);
                 index--;
+                MainClass.combatScreen.description = "Select a move to \nuse against the enemy.";
             }
             else if (keycode == Input.Keys.DOWN && index < 1) {
                 Utils.menuIcon.translateY(-65);
                 index++;
+                MainClass.combatScreen.description = "Select a consumable \ninventory item to use.";
             }
             else if (keycode == Input.Keys.ENTER) {
                 if(index == 0) {
                     rootMenu = false;
                     moveMenu = true;
                     Utils.menuIcon.setPosition(50, 200);
+                    MainClass.combatScreen.description = MainClass.hero.moves.attacks[MainClass.hero.moves.getCurrentMove()].getDescription();
                 }
                 else{
                     rootMenu = false;
                     itemMenu = true;
                     index = 0;
                     Utils.menuIcon.setPosition(50, 200);
+                    MainClass.combatScreen.description = "Item descriptions \ncoming soon!";
                 }
             }
         }
@@ -54,6 +58,7 @@ public class CombatInputHandler implements InputProcessor{
                     index--;
                     Utils.menuIcon.translateY(45);         //Translate menu icon up to previous Move in list.
                 }
+                MainClass.combatScreen.description = MainClass.hero.moves.attacks[MainClass.hero.moves.getCurrentMove()].getDescription();
             }
             else if (keycode == Input.Keys.DOWN && index < MainClass.hero.moves.getNum()-1) {
                 if ((index + 1) % 4 == 0) {
@@ -65,6 +70,7 @@ public class CombatInputHandler implements InputProcessor{
                     index++;
                     Utils.menuIcon.translateY(-45);         //Translate menu icon down to next move in list.
                 }
+                MainClass.combatScreen.description = MainClass.hero.moves.attacks[MainClass.hero.moves.getCurrentMove()].getDescription();
             }
             else if (keycode == Input.Keys.ENTER) {
                 //Pressing ENTER will choose to make the selected move.
@@ -76,6 +82,7 @@ public class CombatInputHandler implements InputProcessor{
                 MainClass.combatScreen.movePane = 0;         //Reset our move panes and index for next time.
                 index = 0;
                 Utils.menuIcon.setPosition(50,200);          //Reset the menu icon to the top of the list.
+                MainClass.combatScreen.description = "Select a move to \nuse against the enemy.";
             }
         }
         else if(itemMenu){
@@ -110,7 +117,7 @@ public class CombatInputHandler implements InputProcessor{
                 MainClass.combatScreen.itemPane = 0;
                 index = 0;
                 Utils.menuIcon.setPosition(50,200);
-
+                MainClass.combatScreen.description = "Select a move to \nuse against the enemy.";
             }
         }
         return false;

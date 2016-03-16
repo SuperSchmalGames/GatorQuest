@@ -18,8 +18,9 @@ public class CombatScreen implements Screen {
     //The camera through which we "see" the game world.
     OrthographicCamera camera;
     public Viewport viewport;
-    public GlyphLayout rootList;
+    public GlyphLayout rootList, moveDesc;
     public int movePane, itemPane, p2index, temp;
+    public String description;
 
     public CombatScreen(){
         //Set up the combat background.
@@ -35,6 +36,7 @@ public class CombatScreen implements Screen {
         Utils.combatBorder.setSize(Utils.GAME_SCREEN_WIDTH,Utils.GAME_SCREEN_HEIGHT/3+60);
         Utils.combatBorder.setPosition(0,10);
         rootList = new GlyphLayout(Utils.font,"Moves\n\nItems",Color.BLUE,200,8,true);
+        moveDesc = new GlyphLayout(Utils.font_medsmall, "",Color.BLUE,200,8,true);
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
@@ -44,13 +46,16 @@ public class CombatScreen implements Screen {
 
     @Override
     public void show() {
-        //Play the combat music.
+        //Play the combat music, and stop the gameScreen music.
+        Utils.gameMusic.stop();
         Utils.combatScreenMusic.play();
 
         //Set the menu icon to the proper color and starting place.
         Utils.menuIcon.setPosition(50,200);
         Utils.menuIcon.setColor(Color.BLUE);
         Utils.menuIcon.setScale(3.0f);
+
+        description = "Select a move to \nuse against the enemy.";
 
         //Every time the combat is entered, reinitialize these control variables for the combat input handler.
         MainClass.combatInputHandler.rootMenu = true;
@@ -63,9 +68,11 @@ public class CombatScreen implements Screen {
         p2index = 0;
         temp = 0;
         MainClass.combatInputHandler.index = 0;
+        MainClass.combatInputHandler.selection = 0;
 
         //Change font color to blue
         Utils.font.setColor(Color.BLUE);
+        Utils.font_medsmall.setColor(Color.BLUE);
     }
 
     @Override
@@ -89,6 +96,9 @@ public class CombatScreen implements Screen {
         //When combat first begin, show the option to choose a move or a list.
         if(MainClass.combatInputHandler.rootMenu){
             Utils.font.draw(MainClass.batch, rootList, 95, 223);
+
+            //Draw the description for the current menu selection.
+            Utils.font_medsmall.draw(MainClass.batch, description, 530, 223);
         }
 
         //If the player chooses to make a move, show the move list.
@@ -167,6 +177,9 @@ public class CombatScreen implements Screen {
                     }
                 }
             }
+
+            //Draw the description for the currently selected Hero Move.
+            Utils.font_medsmall.draw(MainClass.batch, description, 530, 223);
         }
 
         //If the player chooses to use an item, show the item list.
@@ -210,6 +223,9 @@ public class CombatScreen implements Screen {
                     }
                 }
             }
+
+            //Draw the description for the currently selected Consumable Item.
+            Utils.font_medsmall.draw(MainClass.batch, description, 530, 223);
         }
 
         MainClass.batch.end();
@@ -233,6 +249,7 @@ public class CombatScreen implements Screen {
     @Override
     public void hide() {
         Utils.font.setColor(Color.WHITE);
+        Utils.font_medsmall.setColor(Color.WHITE);
     }
 
     @Override
