@@ -2,8 +2,6 @@ package com.superschmalgames.Hero;
 
 //Class to represent all of the possible moves of the character
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 
 public class Move {
