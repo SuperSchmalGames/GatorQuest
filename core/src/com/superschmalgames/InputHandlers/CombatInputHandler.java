@@ -40,7 +40,6 @@ public class CombatInputHandler implements InputProcessor{
                     itemMenu = true;
                     index = 0;
                     Utils.menuIcon.setPosition(50, 200);
-                    //Gdx.app.log("test","Items dont work yet!\n");
                 }
             }
         }
@@ -68,7 +67,8 @@ public class CombatInputHandler implements InputProcessor{
                 }
             }
             else if (keycode == Input.Keys.ENTER) {
-                Gdx.app.log("test", "Moves don't work yet!\n");  //Pressing ENTER will use the selected Move.
+                //Pressing ENTER will choose to make the selected move.
+                Gdx.app.log("Combat-Hero Moves" ,"Move Selected: " + MainClass.hero.moves.attacks[MainClass.hero.moves.getCurrentMove()].getMoveName());
             }
             else if(keycode == Input.Keys.ESCAPE){
                 moveMenu = false;                             //Reset the flags to root being true.
@@ -102,7 +102,7 @@ public class CombatInputHandler implements InputProcessor{
                 }
             }
             else if (keycode == Input.Keys.ENTER) {
-                Gdx.app.log("test","Items dont work yet!\n");
+                Gdx.app.log("Combat-Hero Items","Items don't work yet!");
             }
             else if(keycode == Input.Keys.ESCAPE){
                 itemMenu = false;
