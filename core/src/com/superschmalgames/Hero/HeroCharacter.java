@@ -53,6 +53,7 @@ public class HeroCharacter {
     public char lastDir;
     public boolean canMove;
 
+    //Tracks the NPC we just talked to, so we can reference him when in combat, etc.
     public NPC lastInteracted;
 
     //Main animator that handles switching between all different direction the character can walk.
