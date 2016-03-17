@@ -2,6 +2,8 @@ package com.superschmalgames.Hero;
 
 //Class to represent the character's inventory.
 
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 import com.superschmalgames.Inventory.ApparelItem;
 import com.superschmalgames.Inventory.ConsumableItem;
 import com.superschmalgames.Inventory.EquipableItem;
@@ -86,30 +88,42 @@ public class HeroInventory {
     public int getCurrentItemIndex(){
         int relIndex = 0;
         int overallIndex = 0;
+
+        //If we're in the combat screen, use itemPane and index to find current Item.
+        if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.combatScreen){
+            while (relIndex <= MainClass.combatInputHandler.index) {
+                if (MainClass.hero.inventory.items.get(overallIndex).getQuantity() > 0
+                        && MainClass.hero.inventory.items.get(overallIndex).getItemType() == 'c') {
+                    relIndex += 1;
+                }
+                overallIndex += 1;
+            }
+            return overallIndex-1;
+        }
+
+        //If we're not in combat, use invRow and invPage to find current Item.
         if("Consumable".equals(MainClass.inventoryScreen.invPanel) && MainClass.hero.inventory.getNum('c') > 0)
         {
-            if(MainClass.inventoryScreen.invRow== 0 && MainClass.inventoryScreen.invPage == 0)
-            {
+            if (MainClass.inventoryScreen.invRow == 0 && MainClass.inventoryScreen.invPage == 0) {
                 boolean wait = true;
-                while(wait)
-                {
-                    if(MainClass.hero.inventory.items.get(overallIndex).getQuantity()>0
+                while (wait) {
+                    if (MainClass.hero.inventory.items.get(overallIndex).getQuantity() > 0
                             && MainClass.hero.inventory.items.get(overallIndex).getItemType() == 'c') {
                         wait = false;
                     }
                     overallIndex = overallIndex + 1;
                 }
             }
-            else{
-                while(relIndex < (1+MainClass.inventoryScreen.invRow + MainClass.inventoryScreen.invPage*8)){
-
-                    if(MainClass.hero.inventory.items.get(overallIndex).getQuantity()>0
+            else {
+                while (relIndex < (1 + MainClass.inventoryScreen.invRow + MainClass.inventoryScreen.invPage * 8)) {
+                    if (MainClass.hero.inventory.items.get(overallIndex).getQuantity() > 0
                             && MainClass.hero.inventory.items.get(overallIndex).getItemType() == 'c') {
                         relIndex += 1;
                     }
-                    overallIndex+=1;
+                    overallIndex += 1;
                 }
             }
+
         }
         else if("Equipment".equals(MainClass.inventoryScreen.invPanel) && MainClass.hero.inventory.getNum('e') > 0)
         {

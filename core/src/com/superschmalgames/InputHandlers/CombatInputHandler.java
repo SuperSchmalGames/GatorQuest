@@ -74,7 +74,9 @@ public class CombatInputHandler implements InputProcessor{
             }
             else if (keycode == Input.Keys.ENTER) {
                 //Pressing ENTER will choose to make the selected move.
-                Gdx.app.log("Combat-Hero Moves" ,"Move Selected: " + MainClass.hero.moves.attacks[MainClass.hero.moves.getCurrentMove()].getMoveName());
+                selection = MainClass.hero.moves.getCurrentMove();
+                Gdx.app.log("Combat-Hero Moves" ,"Move Selected: " + MainClass.hero.moves.attacks[selection].getMoveName());
+                //We will make the call to useMove() here...apparently we're not using H_Moves though. Gotta fix!!!
             }
             else if(keycode == Input.Keys.ESCAPE){
                 moveMenu = false;                             //Reset the flags to root being true.
@@ -96,6 +98,7 @@ public class CombatInputHandler implements InputProcessor{
                     index--;
                     Utils.menuIcon.translateY(45);          //Translate menu icon down to next Item in list.
                 }
+                MainClass.combatScreen.description = MainClass.hero.inventory.items.get(MainClass.hero.inventory.getCurrentItemIndex()).getItemName();       //!!!!!!!Add item descriptions!!!!!!!!!!!!!!!!
             }
             else if (keycode == Input.Keys.DOWN && index < (MainClass.hero.inventory.getNum('c')-1)) {
                 if ((index + 1) % 4 == 0) {
@@ -109,7 +112,9 @@ public class CombatInputHandler implements InputProcessor{
                 }
             }
             else if (keycode == Input.Keys.ENTER) {
-                Gdx.app.log("Combat-Hero Items","Items don't work yet!");
+                selection = MainClass.hero.inventory.getCurrentItemIndex();
+                Gdx.app.log("Combat-Hero Items","Item Selected: " + MainClass.hero.inventory.items.get(selection).getItemName());
+                //MainClass.hero.inventory.items.get(selection).activateItem();       <======= We will "use" the item here (make sure this code is ready!
             }
             else if(keycode == Input.Keys.ESCAPE){
                 itemMenu = false;

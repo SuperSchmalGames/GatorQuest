@@ -50,7 +50,7 @@ public class HeroMoves {
 
         //If we're in the combat screen, use movePane and index to find current move.
         if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.combatScreen){
-            while (relIndex < MainClass.combatInputHandler.index){                                      // - MainClass.combatScreen.movePane * 4) + MainClass.combatScreen.movePane * 4)) {
+            while (relIndex < MainClass.combatInputHandler.index){
                 if (MainClass.hero.moves.attacks[overallIndex].obtained) {
                     relIndex += 1;
                 }
