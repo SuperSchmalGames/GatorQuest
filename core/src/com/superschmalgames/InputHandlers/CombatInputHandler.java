@@ -110,6 +110,7 @@ public class CombatInputHandler implements InputProcessor{
                     index++;
                     Utils.menuIcon.translateY(-45);         //Translate menu icon down to next Item in list.
                 }
+                MainClass.combatScreen.description = MainClass.hero.inventory.items.get(MainClass.hero.inventory.getCurrentItemIndex()).getItemName();       //!!!!!!!Add item descriptions!!!!!!!!!!!!!!!!
             }
             else if (keycode == Input.Keys.ENTER) {
                 selection = MainClass.hero.inventory.getCurrentItemIndex();

@@ -27,10 +27,10 @@ public class CombatScreen implements Screen {
         Utils.combatBackground.setSize(Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
 
         //Set up the sprites being rendered.
-        Utils.tempHero.setPosition(40, (Utils.GAME_SCREEN_HEIGHT/3)*2-40);
-        Utils.tempHero.setScale(3.0f);
-        Utils.tempNPC.setPosition(Utils.GAME_SCREEN_WIDTH-80, (Utils.GAME_SCREEN_HEIGHT/3)*2-40);
-        Utils.tempNPC.setScale(3.0f);
+        MainClass.hero.combatSprite.setPosition(40, (Utils.GAME_SCREEN_HEIGHT/3)*2-40);
+        MainClass.hero.combatSprite.setScale(3.0f);
+        MainClass.hero.lastInteracted.combatSprite.setPosition(Utils.GAME_SCREEN_WIDTH-80, (Utils.GAME_SCREEN_HEIGHT/3)*2-40);
+        MainClass.hero.lastInteracted.combatSprite.setScale(3.0f);
 
         //Set up the combat ui.
         Utils.combatBorder.setSize(Utils.GAME_SCREEN_WIDTH,Utils.GAME_SCREEN_HEIGHT/3+60);
@@ -87,13 +87,13 @@ public class CombatScreen implements Screen {
 
         //Open our spritebatch and draw to it.
         MainClass.batch.begin();
-        Utils.combatBackground.draw(MainClass.batch);
-        Utils.tempHero.draw(MainClass.batch);
-        Utils.tempNPC.draw(MainClass.batch);
-        Utils.combatBorder.draw(MainClass.batch);
-        Utils.menuIcon.draw(MainClass.batch);
+        Utils.combatBackground.draw(MainClass.batch);                        //Draw the map we're fighting on.
+        MainClass.hero.combatSprite.draw(MainClass.batch);                   //Draw the hero character.
+        MainClass.hero.lastInteracted.combatSprite.draw(MainClass.batch);    //Draw the NPC we're fighting.
+        Utils.combatBorder.draw(MainClass.batch);                            //Draw the UI window containing moves/items/etc.
+        Utils.menuIcon.draw(MainClass.batch);                                //Draw the icon used to select menu options.
 
-        //When combat first begin, show the option to choose a move or a list.
+        //When combat first begins, show the option to choose a move or a list.
         if(MainClass.combatInputHandler.rootMenu){
             Utils.font.draw(MainClass.batch, rootList, 95, 223);
 
@@ -227,6 +227,8 @@ public class CombatScreen implements Screen {
             //Draw the description for the currently selected Consumable Item.
             Utils.font_medsmall.draw(MainClass.batch, description, 530, 223);
         }
+
+
 
         MainClass.batch.end();
     }
