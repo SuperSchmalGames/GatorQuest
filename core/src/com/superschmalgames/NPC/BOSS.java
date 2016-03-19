@@ -3,6 +3,8 @@ package com.superschmalgames.NPC;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.superschmalgames.Hero.Move;
 import com.superschmalgames.Utilities.CharacterDialogue;
 import com.superschmalgames.Utilities.MainClass;
@@ -11,8 +13,10 @@ import com.superschmalgames.Utilities.Utils;
 
 public class BOSS extends ENEMY{
 
-    public BOSS(char dir, String s, String win, String lose, String sprite, int x, int y, int sw, int h, int w, int e, int sc, int m, int f, Move[] a) {
+    public BOSS(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int sw, int h, int w, int e, int sc, int m, int f, Move[] a) {
         super(dir,s,win,lose,sprite,x,y,sw,h,w,e,sc,m,f, a);
+
+        combatSprite = new Sprite(new Texture(combat));
     }
 
     public void initiate(){
