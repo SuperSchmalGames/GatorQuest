@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.superschmalgames.Utilities.Animator;
 import com.superschmalgames.Utilities.CharacterDialogue;
-import com.superschmalgames.Utilities.ShopMenu;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -67,7 +66,6 @@ public class NPC {
         Animator tWalk = new Animator(4, 1, tSprite, 0.17f);
         tWalk.currentFrame = tWalk.walkAnimation.getKeyFrame(tWalk.stateTime, true);
         combatSprite = new Sprite(tWalk.currentFrame);
-
     }
 
     //move to players location.
@@ -178,13 +176,5 @@ public class NPC {
             walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);
         }
         reset();
-    }
-
-    public ENEMY getEnemy(){
-        return null;
-    }
-
-    public BOSS getBoss(){
-        return null;
     }
 }

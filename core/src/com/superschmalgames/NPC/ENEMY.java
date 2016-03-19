@@ -9,33 +9,19 @@ import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
 public class ENEMY extends NPC {
-    public double Software;
-    public double Hardware;
-    public double Writing;
-    public double Endurance;
-    public double Social;
-    public double Math;
-    public double Focus;
+
     Move[] attacks;
     String win_script;
     String lose_script;
-
     public int enemyLife;
 
-    public ENEMY(char dir, String s, String win, String lose, String sprite, int x, int y, int sw, int h, int w, int e, int sc, int m, int f, Move[] a) {
+    public ENEMY(char dir, String s, String win, String lose, String sprite, int x, int y, int h, Move[] a) {
         super(dir,s,sprite,x,y);
-        Software = sw;
-        Hardware = h;
-        Writing = w;
-        Endurance = e;
-        Social = sc;
-        Math = m;
-        Focus = f;
+
         win_script = win;
         lose_script = lose;
         attacks = a;
-
-        enemyLife = 25;
+        enemyLife = h;
     }
 
     public void initiate(){

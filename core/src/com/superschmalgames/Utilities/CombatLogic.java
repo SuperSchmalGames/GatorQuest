@@ -9,8 +9,7 @@ public class CombatLogic {
     //Also need: state machine for handling turns, logic for player victory, logic for player death, npc decision-making
     //logic, etc. Have a boolean or some variable in the hero class that tracks if we have a shield up, a defense boost,
     //etc. Using an item that activates one of those effects will simply switch the bool to true, then we can check it
-    //here to see if we need to reduce/avoid damage that would've been done by the enemy. Still need to have "number of
-    //assignments" as life bar for enemies and bosses.
+    //here to see if we need to reduce/avoid damage that would've been done by the enemy. 
 
     //The base damage done by a move. Damage is calculated using hero stats.
     public double heroBaseDmg;
