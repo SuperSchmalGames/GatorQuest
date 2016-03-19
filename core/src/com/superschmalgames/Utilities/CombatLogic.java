@@ -29,7 +29,7 @@ public class CombatLogic {
 
         //Initialize the amount of life the hero and enemy have.
         MainClass.combatScreen.heroLife = "Your GPA: " + MainClass.hero.GPA;
-        MainClass.combatScreen.enemyLife = "Coming Soon!";
+        MainClass.combatScreen.enemyLife = "Assignments: " + MainClass.hero.lastEnemy.enemyLife;
 
         //Every time the combat is entered, reinitialize these control variables for the combat input handler.
         MainClass.combatInputHandler.rootMenu = true;

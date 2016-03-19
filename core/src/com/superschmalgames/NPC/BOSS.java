@@ -16,13 +16,18 @@ public class BOSS extends ENEMY{
     public BOSS(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int sw, int h, int w, int e, int sc, int m, int f, Move[] a) {
         super(dir,s,win,lose,sprite,x,y,sw,h,w,e,sc,m,f, a);
 
+        //Initialize Boss-specific fields;
         combatSprite = new Sprite(new Texture(combat));
+        enemyLife = 40;
     }
 
     public void initiate(){
 
         //Set the dialogue flag true so the window will render to the game screen.
         MainClass.gameScreen.dial = true;
+
+        //Set this as the last Boss(Enemy) the Hero has interacted with.
+        MainClass.hero.lastEnemy = this;
 
         //Stop character movement, if we're moving.
         MainClass.gameScreen.lWalk = false;

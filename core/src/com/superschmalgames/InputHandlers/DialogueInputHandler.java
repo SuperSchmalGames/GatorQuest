@@ -31,7 +31,14 @@ public class DialogueInputHandler implements InputProcessor {
         }
         else if(keycode == Input.Keys.ENTER){
             MainClass.gameScreen.dial = false;
-            MainClass.hero.lastInteracted.reset();
+
+            //Reset the NPC to the position they were at before walking over to us.
+            if(MainClass.hero.lastEnemy != null)
+                MainClass.hero.lastEnemy.reset();
+            if(MainClass.hero.lastNPC != null)
+                MainClass.hero.lastNPC.reset();
+
+            //Give control back to the main input handler.
             Gdx.input.setInputProcessor(MainClass.inputHandler);
         }
         return false;

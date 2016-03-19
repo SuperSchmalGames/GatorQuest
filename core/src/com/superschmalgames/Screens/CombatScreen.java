@@ -30,8 +30,8 @@ public class CombatScreen implements Screen {
         //Set up the sprites being rendered.
         MainClass.hero.combatSprite.setPosition(40, (Utils.GAME_SCREEN_HEIGHT/3)*2-40);
         MainClass.hero.combatSprite.setScale(3.0f);
-        MainClass.hero.lastInteracted.combatSprite.setPosition(Utils.GAME_SCREEN_WIDTH-80, (Utils.GAME_SCREEN_HEIGHT/3)*2-40);
-        MainClass.hero.lastInteracted.combatSprite.setScale(3.0f);
+        MainClass.hero.lastEnemy.combatSprite.setPosition(Utils.GAME_SCREEN_WIDTH-80, (Utils.GAME_SCREEN_HEIGHT/3)*2-40);
+        MainClass.hero.lastEnemy.combatSprite.setScale(3.0f);
 
         //Set up the combat ui.
         Utils.combatBorder.setSize(Utils.GAME_SCREEN_WIDTH,Utils.GAME_SCREEN_HEIGHT/3+60);
@@ -69,13 +69,13 @@ public class CombatScreen implements Screen {
         MainClass.batch.begin();
         Utils.combatBackground.draw(MainClass.batch);                        //Draw the map we're fighting on.
         MainClass.hero.combatSprite.draw(MainClass.batch);                   //Draw the hero character.
-        MainClass.hero.lastInteracted.combatSprite.draw(MainClass.batch);    //Draw the NPC we're fighting.
+        MainClass.hero.lastEnemy.combatSprite.draw(MainClass.batch);         //Draw the NPC we're fighting.
         Utils.combatBorder.draw(MainClass.batch);                            //Draw the UI window containing moves/items/etc.
         Utils.menuIcon.draw(MainClass.batch);                                //Draw the icon used to select menu options.
 
         //Display the remaining hero and enemy life.
         Utils.font.draw(MainClass.batch, heroLife, 20, Utils.GAME_SCREEN_HEIGHT - 50);
-        Utils.font.draw(MainClass.batch, enemyLife, Utils.GAME_SCREEN_WIDTH - 300, Utils.GAME_SCREEN_HEIGHT - 50);
+        Utils.font.draw(MainClass.batch, enemyLife, Utils.GAME_SCREEN_WIDTH - 350, Utils.GAME_SCREEN_HEIGHT - 50);
 
         //When combat first begins, show the option to choose a move or a list.
         if(MainClass.combatInputHandler.rootMenu){

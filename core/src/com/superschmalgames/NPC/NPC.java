@@ -54,12 +54,12 @@ public class NPC {
         if(( (int)sprite.charAt(sprite.length() - 6)) > 47 && (int)sprite.charAt(sprite.length() - 6) < 58){
             dNum = sprite.substring(sprite.length() - 6, sprite.length() - 4);
             tSprite = "visuals/sprite_sheets/sprite_walk_l" + dNum + ".png";
-            Gdx.app.log("NPC sprite substring", "Sprite number = " + dNum);
+            //Gdx.app.log("NPC sprite substring", "Sprite number = " + dNum);
         }
         else{
             sNum = sprite.charAt(sprite.length() - 5);
             tSprite = "visuals/sprite_sheets/sprite_walk_l" + sNum + ".png";
-            Gdx.app.log("NPC sprite char", "Sprite number = " + sNum);
+            //Gdx.app.log("NPC sprite char", "Sprite number = " + sNum);
         }
 
         //Create a new animator using the new sprite string, then grab the first frame of it, which will be the NPC,
@@ -134,6 +134,9 @@ public class NPC {
 
         //Set the dialogue flag true so the window will render to the game screen.
         MainClass.gameScreen.dial = true;
+
+        //Set this as the last friendly NPC the Hero has interacted with.
+        MainClass.hero.lastNPC = this;
 
         //Stop character movement, if we're moving.
         MainClass.gameScreen.lWalk = false;

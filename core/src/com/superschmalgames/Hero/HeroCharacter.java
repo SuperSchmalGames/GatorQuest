@@ -6,7 +6,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.superschmalgames.Inventory.ApparelItem;
 import com.superschmalgames.Inventory.EquipableItem;
+import com.superschmalgames.NPC.BOSS;
+import com.superschmalgames.NPC.ENEMY;
 import com.superschmalgames.NPC.NPC;
+import com.superschmalgames.NPC.SHOP;
 import com.superschmalgames.Utilities.Animator;
 
 public class HeroCharacter {
@@ -56,7 +59,8 @@ public class HeroCharacter {
     public boolean canMove;
 
     //Tracks the NPC we just talked to, so we can reference him when in combat, etc.
-    public NPC lastInteracted;
+    public NPC lastNPC;
+    public ENEMY lastEnemy;
 
     //Sprite that's shown for the hero during combat.
     public Sprite combatSprite;

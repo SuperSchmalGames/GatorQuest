@@ -19,6 +19,9 @@ public class ENEMY extends NPC {
     Move[] attacks;
     String win_script;
     String lose_script;
+
+    public int enemyLife;
+
     public ENEMY(char dir, String s, String win, String lose, String sprite, int x, int y, int sw, int h, int w, int e, int sc, int m, int f, Move[] a) {
         super(dir,s,sprite,x,y);
         Software = sw;
@@ -31,12 +34,17 @@ public class ENEMY extends NPC {
         win_script = win;
         lose_script = lose;
         attacks = a;
+
+        enemyLife = 25;
     }
 
     public void initiate(){
 
         //Set the dialogue flag true so the window will render to the game screen.
         MainClass.gameScreen.dial = true;
+
+        //Set this as the last Enemy the Hero has interacted with.
+        MainClass.hero.lastEnemy = this;
 
         //Stop character movement, if we're moving.
         MainClass.gameScreen.lWalk = false;
