@@ -10,10 +10,10 @@ import com.superschmalgames.Utilities.Utils;
 public class HeroMoves {
 
     //Character inventory.
-    public Move[] attacks;
+    public H_Move[] attacks;
 
     public HeroMoves(){
-        attacks = new Move[18];
+        attacks = new H_Move[18];
         attacks[0] = Utils.Java_Function;
         attacks[1] = Utils.Recursive_Loop;
         attacks[2] = Utils.Stack_Overflow;
@@ -34,14 +34,14 @@ public class HeroMoves {
         attacks[17] = Utils.Perf_Presentation;
     }
 
-    public int calc_dmg(){
+    /*public int calc_dmg(){
         return 1;
     }
 
     public void generateMoves(Move[] moves)
     {
 
-    }
+    }*/
 
     public int getCurrentMove()
     {

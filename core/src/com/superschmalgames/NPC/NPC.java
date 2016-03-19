@@ -44,6 +44,11 @@ public class NPC {
         char sNum;
         String dNum, tSprite;
 
+        //If initializing a boss, use the separate boss sprite that's passed in to its constructor.
+        if(( (int)sprite.charAt(sprite.length() - 5)) < 47 || (int)sprite.charAt(sprite.length() - 5) > 58){
+            return;
+        }
+
         //If the char at string.length-6 is a number, we know to grab length-6 and length-5 for the sprite number,
         //otherwise just use length-5 for single digit number.
         if(( (int)sprite.charAt(sprite.length() - 6)) > 47 && (int)sprite.charAt(sprite.length() - 6) < 58){
@@ -170,5 +175,13 @@ public class NPC {
             walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);
         }
         reset();
+    }
+
+    public ENEMY getEnemy(){
+        return null;
+    }
+
+    public BOSS getBoss(){
+        return null;
     }
 }

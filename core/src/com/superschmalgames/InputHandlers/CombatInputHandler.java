@@ -76,7 +76,11 @@ public class CombatInputHandler implements InputProcessor{
                 //Pressing ENTER will choose to make the selected move.
                 selection = MainClass.hero.moves.getCurrentMove();
                 Gdx.app.log("Combat-Hero Moves" ,"Move Selected: " + MainClass.hero.moves.attacks[selection].getMoveName());
-                //We will make the call to useMove() here...apparently we're not using H_Moves though. Gotta fix!!!
+
+                //We will make the call to use() here. The returned value will be assigned to a base damage variable
+                //contained in CombatLogic.
+                MainClass.combatLogic.heroBaseDmg = MainClass.hero.moves.attacks[selection].use(MainClass.combatLogic.stats);
+                Gdx.app.log("Hero Damage Test", "Damage Done: "+ MainClass.combatLogic.heroBaseDmg);
             }
             else if(keycode == Input.Keys.ESCAPE){
                 moveMenu = false;                             //Reset the flags to root being true.
@@ -113,9 +117,12 @@ public class CombatInputHandler implements InputProcessor{
                 MainClass.combatScreen.description = MainClass.hero.inventory.items.get(MainClass.hero.inventory.getCurrentItemIndex()).getItemName();       //!!!!!!!Add item descriptions!!!!!!!!!!!!!!!!
             }
             else if (keycode == Input.Keys.ENTER) {
+                //Get the actual array index of the Item we selected.
                 selection = MainClass.hero.inventory.getCurrentItemIndex();
                 Gdx.app.log("Combat-Hero Items","Item Selected: " + MainClass.hero.inventory.items.get(selection).getItemName());
-                //MainClass.hero.inventory.items.get(selection).activateItem();       <======= We will "use" the item here (make sure this code is ready!
+
+                //Make the call to activate the Item we've selected.
+                MainClass.hero.inventory.items.get(selection).activateItem();
             }
             else if(keycode == Input.Keys.ESCAPE){
                 itemMenu = false;

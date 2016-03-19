@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.superschmalgames.Utilities.CombatLogic;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -20,7 +21,7 @@ public class CombatScreen implements Screen {
     public Viewport viewport;
     public GlyphLayout rootList, moveDesc;
     public int movePane, itemPane, p2index, temp;
-    public String description;
+    public String description, heroLife, enemyLife;
 
     public CombatScreen(){
         //Set up the combat background.
@@ -50,29 +51,8 @@ public class CombatScreen implements Screen {
         Utils.gameMusic.stop();
         Utils.combatScreenMusic.play();
 
-        //Set the menu icon to the proper color and starting place.
-        Utils.menuIcon.setPosition(50,200);
-        Utils.menuIcon.setColor(Color.BLUE);
-        Utils.menuIcon.setScale(3.0f);
-
-        description = "Select a move to \nuse against the enemy.";
-
-        //Every time the combat is entered, reinitialize these control variables for the combat input handler.
-        MainClass.combatInputHandler.rootMenu = true;
-        MainClass.combatInputHandler.moveMenu = false;
-        MainClass.combatInputHandler.itemMenu = false;
-
-        //Initialize some control variables.
-        movePane = 0;
-        itemPane = 0;
-        p2index = 0;
-        temp = 0;
-        MainClass.combatInputHandler.index = 0;
-        MainClass.combatInputHandler.selection = 0;
-
-        //Change font color to blue
-        Utils.font.setColor(Color.BLUE);
-        Utils.font_medsmall.setColor(Color.BLUE);
+        //Create new combat logic object for this specific fight.
+        MainClass.combatLogic = new CombatLogic();
     }
 
     @Override
@@ -92,6 +72,10 @@ public class CombatScreen implements Screen {
         MainClass.hero.lastInteracted.combatSprite.draw(MainClass.batch);    //Draw the NPC we're fighting.
         Utils.combatBorder.draw(MainClass.batch);                            //Draw the UI window containing moves/items/etc.
         Utils.menuIcon.draw(MainClass.batch);                                //Draw the icon used to select menu options.
+
+        //Display the remaining hero and enemy life.
+        Utils.font.draw(MainClass.batch, heroLife, 20, Utils.GAME_SCREEN_HEIGHT - 50);
+        Utils.font.draw(MainClass.batch, enemyLife, Utils.GAME_SCREEN_WIDTH - 300, Utils.GAME_SCREEN_HEIGHT - 50);
 
         //When combat first begins, show the option to choose a move or a list.
         if(MainClass.combatInputHandler.rootMenu){

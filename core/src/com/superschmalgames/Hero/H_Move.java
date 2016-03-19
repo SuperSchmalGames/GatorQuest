@@ -28,8 +28,7 @@ public class H_Move extends Move {
         damage_5 = d5;
     }
 
-    //must pass in an array of the stats: order = [software, hardware, writing, endurance, social, math, focus]
-    //use({hero.Software_buf,hero.Hardware_buf,hero.Writing_buf,hero.Endurance_buf,hero.Social_buf,hero.Math_buf,hero.Focus_buf});
+    //Must pass in an array of the stats: order = [software, hardware, writing, endurance, social, math, focus]
     public int use(double[] stats) {
         if(stats[first_stat] <= first_1 || stats[second_stat] <= second_1) {
             return damage_1;

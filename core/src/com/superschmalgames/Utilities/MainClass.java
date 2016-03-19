@@ -27,6 +27,7 @@ public class MainClass extends Game {
 	public static CombatInputHandler combatInputHandler;
 	public static OpenWorldScreen openWorldScreen;
 	public static CombatScreen combatScreen;
+	public static CombatLogic combatLogic;
 	
 	@Override
 	public void create () {
