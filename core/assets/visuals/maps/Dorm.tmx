@@ -4201,6 +4201,14 @@
     <property name="number" value="9"/>
    </properties>
   </tile>
+  <tile id="287">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="enemy" value="5"/>
+    <property name="event" value="0"/>
+    <property name="number" value="10"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Background" width="27" height="60">
   <data encoding="base64" compression="zlib">
@@ -4209,12 +4217,12 @@
  </layer>
  <layer name="Collision" width="27" height="60">
   <data encoding="base64" compression="zlib">
-   eJztlj1PAkEQhpfAnQ2JrdFYG61UEolo50dvaYTWQltNwMJEhEpNKLTBvwCJJlpoZQS18aPw4wdoI/4IdTbehXXZ2Z0NhwVe8eR2Z2fm5Y65N7fEGFskULSMy6SBLeCaAJZnU8+ZipjB8mzqOccxxrJA3mWsD6g5jNWBC6Af9kn3J4+fy/D4AFLHz3PQ9yjW1LqD9X5M3ctnE9HC4j4H0PdW0NLl+tSRPCyuun/OumPOnYzYxUV4f1+rStBqh6pj9wzbRTWHulybuI84hxniHBaQnhniHBYs33vsvqj1Nu89phX6Bm1mu8U3VnsYW5Gg/H4Vf+UbxZ7fzzD0DfV9UetD36DFF6R34z/7RpCIvpGEZzwhEbRe6Buhb3TT98apxcybfKPs6n3jxKBj4xtlQy+Tls33Rrta4jM0+cahYQ51GuIcxolzmEB6xolzmPC0egnotKj13aw1TmAM0Rol1icY3advEK0rYr2Nz08jvpHyztOwzrjNfHnva70KvvHm6Pcm7hU8uJ3RUrHsBKN1hpydi3FE6wvWn5q9zCOcReG7aweuu8AeMAj7J6lGpWXLM1L70gEtKiqtYSR3hNBvTfGb/ZhKa8a7ZiGWAza8s1mCVkmhVdJozSF95glaFYVWRaOF0QDeFdj8X3nE54JmmzW9cyiqv3IuYV2Ltq4p9dy7UxGa93IaUPcRbV1TvfsbGrE0mg==
+   eJztlj1PAkEQhpfAHQ2JrdFYG61UEolo50dvaYTWQltNwMJEhEpNKLTRgj8AiSZaaGUEtfGj8OMHaCP+CHU23oVz2dmdDYdRvOLJ7c7OzMsdcy/MM8bmCBQM4yIpYB24JIDlmdRzxkN6sDyTes5hhLEMkLMZ6waqFmM14AzogX3C/srj5yI83ovU8fMs9D2INLRuYL0TkfdyWUO0sLjLLvS99mipcl1qSB4Wl90/Z8XS546FzOJeeH9Xq0LQaoWKZfYMW0U2h6pck7iLdw7TxDnMIz3TxDnMG7732H1R603ee0wr8A3azHaKbyxFGVsUoHx+GT/lG4Xo92cY+Ib8vqj1gW/Q4rPCu/GffcNPvL6RgGc8KuC3XuAbf9c3Ss48tNs3uE5JM3u/5f/GscHM63xjz1b7xpFGx8Q39jS9dFom/zda1fI+Q51v7GvmUKXhncMY0TfiSM8YcQ7jjlYXAZUWtb6TtUYIDCNaQ8T6OKP79BWidUGsN/H5CcQ3ks55CtZpu5Ev7l2tZ49vvFjqvY5bCXd2e7RkLFj+aJ0gZ6feOKL1Aet3xV7kHs7C8Nu3CdctYBvog/2DUCPTMuURqX1qgxYVmdYAkjtI6Lcs+cxuTKY16VwzEMsCq87ZFEGrKNEqKrSmkT4zBK2yRKus0MKoA68STL6vHOJzfrPBGt7ZH1ZfOeewroab15R67t3JEM17OXWoews3r6ne/Qm55DSn
   </data>
  </layer>
  <layer name="Mid" width="27" height="60">
   <data encoding="base64" compression="zlib">
-   eJxjYBgc4AUrfnlHJgSbg42BgZONtu4ZBaNgFAxecA5aXtgAywFbILYjsjwgVM6MglEwCkYGeE1kWXAOTZ0CsKxRBGKl0TbIKBgFwxawAPM3KxCzIeVzUtoPL5HURgDNiATiqNEyYxSMglEwCoYF2EZCffAIqJYJWP4z46kDzEfrh1EwCkbBKBiSAADtdwsY
+   eJxjYBgc4AUrfnlHJgSbg42BgZONtu4ZBaNgFAxecA5aXtgAywFbILYjsjwgVM6MglEwCkYGeE1kWXAOTZ0CsKxRBGKl0TbIKBgFwxawAPM3KxCzIeVzUtoPL5HURgDNiATiqEFQZlSw0Mees0B7ptDJrlEwCkbBKKA32EZCffAIqJYJWP4z46kDzAdB/TAKRsEoGAWjgHQAAN7qDP0=
   </data>
  </layer>
  <layer name="Foreground" width="27" height="60">

@@ -156,6 +156,7 @@ public class HeroCharacter {
 
     public void fillGPA() {
         GPA = 4.0;
+        System.out.print("GPA filled");
     }
 
     public void restoreGPA(double x) {
