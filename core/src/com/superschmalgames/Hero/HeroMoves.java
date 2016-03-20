@@ -59,4 +59,14 @@ public class HeroMoves {
         return overallIndex;
     }
 
+    public int getNum(){
+        int temp = 0;
+        for(int i = 0; i < attacks.length; i++){
+            if(attacks[i].obtained){
+                temp++;
+            }
+        }
+        return temp;
+    }
+
 }

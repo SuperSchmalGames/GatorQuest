@@ -1,4 +1,4 @@
-package com.superschmalgames.Utilities;
+package com.superschmalgames.InputHandlers;
 
 //Class to handle all user input. Allows us to put all the code in one place, and make the render() method in
 //all the other classes much cleaner.
@@ -7,9 +7,12 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.superschmalgames.Screens.CombatScreen;
 import com.superschmalgames.Screens.GameScreen;
 import com.superschmalgames.Screens.HeroScreen;
 import com.superschmalgames.Screens.InventoryScreen;
+import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.Utils;
 
 public class InputHandler implements InputProcessor {
 
@@ -134,14 +137,12 @@ public class InputHandler implements InputProcessor {
                 }
 
                 ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
-                else if (keycode == Input.Keys.R && !Utils.isPaused) {
-                    MainClass.hero.inventory.incItem(Utils.INV_ITEMS.RED_BULL);
-                }
-                else if ((keycode == Input.Keys.T && !Utils.isPaused)) {
-                    MainClass.hero.inventory.useItem(Utils.INV_ITEMS.RED_BULL);
-                }
-                else if (keycode == Input.Keys.Y && !Utils.isPaused) {
-                    MainClass.hero.inventory.removeEffect(Utils.INV_ITEMS.RED_BULL);
+                else if(keycode == Input.Keys.C){
+                    //Give input control to the combat input handler.
+                    Gdx.input.setInputProcessor(MainClass.combatInputHandler);
+                    //Create combat screen and set is as the current screen.
+                    MainClass.combatScreen = new CombatScreen();
+                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.combatScreen);
                 }
                 else if (keycode == Input.Keys.P) {
                     if (!Utils.isPaused) {
