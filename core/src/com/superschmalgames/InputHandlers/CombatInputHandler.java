@@ -79,8 +79,12 @@ public class CombatInputHandler implements InputProcessor{
 
                 //We will make the call to use() here. The returned value will be assigned to a base damage variable
                 //contained in CombatLogic.
-                MainClass.combatLogic.heroBaseDmg = MainClass.hero.moves.attacks[selection].use(MainClass.combatLogic.stats);
+                MainClass.combatLogic.heroBaseDmg = MainClass.hero.moves.attacks[selection].use(MainClass.combatLogic.heroStats);
                 Gdx.app.log("Hero Damage Test", "Damage Done: "+ MainClass.combatLogic.heroBaseDmg);
+
+                //Once the Move has been selected, start this round of combat. Control will return to the player once
+                //the enemy has made a move.
+                MainClass.combatLogic.execCombat();
             }
             else if(keycode == Input.Keys.ESCAPE){
                 moveMenu = false;                             //Reset the flags to root being true.

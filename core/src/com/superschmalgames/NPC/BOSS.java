@@ -5,7 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.superschmalgames.Hero.Move;
+import com.superschmalgames.Hero.E_Move;
 import com.superschmalgames.Utilities.CharacterDialogue;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
@@ -13,7 +13,7 @@ import com.superschmalgames.Utilities.Utils;
 
 public class BOSS extends ENEMY{
 
-    public BOSS(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, Move[] a) {
+    public BOSS(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a) {
         super(dir,s,win,lose,sprite,x,y,h,a);
 
         //Initialize Boss-specific fields;

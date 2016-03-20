@@ -3,19 +3,19 @@ package com.superschmalgames.NPC;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.superschmalgames.Hero.Move;
+import com.superschmalgames.Hero.E_Move;
 import com.superschmalgames.Utilities.CharacterDialogue;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
 public class ENEMY extends NPC {
 
-    Move[] attacks;
-    String win_script;
-    String lose_script;
+    public E_Move[] attacks;
+    public String win_script;
+    public String lose_script;
     public int enemyLife;
 
-    public ENEMY(char dir, String s, String win, String lose, String sprite, int x, int y, int h, Move[] a) {
+    public ENEMY(char dir, String s, String win, String lose, String sprite, int x, int y, int h, E_Move[] a) {
         super(dir,s,sprite,x,y);
 
         win_script = win;
