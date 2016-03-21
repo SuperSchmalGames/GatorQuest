@@ -8,8 +8,9 @@ public class E_Move extends Move{
     private int second_1,second_2,second_3,second_4;
     private double damage_1,damage_2,damage_3,damage_4,damage_5;
 
-    public E_Move(int f, int s, int f1, int f2, int f3, int f4, int s1, int s2, int s3, int s4, double d1, double d2, double d3, double d4, double d5) {
+    public E_Move(String name, int f, int s, int f1, int f2, int f3, int f4, int s1, int s2, int s3, int s4, double d1, double d2, double d3, double d4, double d5) {
         super();
+        moveName = name;
         first_stat = f;
         second_stat = s;
         first_1 = f1;

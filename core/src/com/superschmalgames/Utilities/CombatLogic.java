@@ -9,20 +9,31 @@ import com.badlogic.gdx.graphics.Color;
 public class CombatLogic {
 
     //Also need: state machine for handling turns, logic for player victory, logic for player death, npc decision-making
-    //logic, etc. Have a boolean or some variable in the hero class that tracks if we have a shield up, a defense boost,
+    //logic, etc. Have a state TRANSITION that holds a loop running while things in the combat screen transition for a second
+    //or two, then have combat screen change the state so that the loop breaks, allowing the next combat state to occur.
+    //
+    //May have to use a current_state as well as a previous_state in order to properly track everything.
+    //
+    //Have a boolean or some variable in the hero class that tracks if we have a shield up, a defense boost,
     //etc. Using an item that activates one of those effects will simply switch the bool to true, then we can check it
-    //here to see if we need to reduce/avoid damage that would've been done by the enemy. Have some flag that controls
-    //if the player can make a selection (use it to prevent button presses during combat transitions/animations).
+    //here to see if we need to reduce/avoid damage that would've been done by the enemy. ACTUALLY, we can have just a
+    //double that acts as a multiplier for incoming damage. It's normally set to 1.0, but damage reducers will sub like
+    //0.5 from that, and shields will subtract the full 1.0 for some number of turns.
+    //
+    //Use a string to display the Enemy's winning String if the Hero oses the fight.
+    //
+    //Make sure game doesn't crash if hitting enter on item list when we have no items.
 
     //The base damage done by a move. Damage is calculated using hero stats.
     public double heroBaseDmg, enemyBaseDmg;
 
     public enum combat_state{
-        PLAYER_TURN,
-        ENEMY_TURN,
-        PLAYER_WIN,
-        PLAYER_LOSE,
-        EXIT_COMBAT
+        PLAYER_TURN,          //Player makes a selection and the effects are applied.
+        ENEMY_TURN,           //Enemy makes a selection and the effects are applied.
+        PLAYER_WIN,           //Enemy health reaches zero. Victory effects are applied, move to exit_combat.
+        PLAYER_LOSE,          //Hero health reaches zero. Loss effects are applied, move to exit_combat.
+        EXIT_COMBAT,          //End-of-combat cleanup is done, combat is exited.
+        TRANSITION            //Transitionary state to allow for combat animations.
     }
     public combat_state CURRENT_STATE;
 
@@ -91,7 +102,7 @@ public class CombatLogic {
             //Some logic for randomly picking moves.
             enemyBaseDmg = MainClass.hero.lastEnemy.attacks[0].use(heroStats);
             MainClass.hero.GPA -= enemyBaseDmg;
-            Gdx.app.log("Enemy Turn", "Move Selected :" + MainClass.hero.lastEnemy.attacks[0].getMoveName());
+            Gdx.app.log("Enemy Turn", "Move Selected: " + MainClass.hero.lastEnemy.attacks[0].getMoveName());
             Gdx.app.log("Enemy Damage Test", "Damage Done: "+ enemyBaseDmg);
 
             //Set state back to player turn.
@@ -120,6 +131,9 @@ public class CombatLogic {
         if(CURRENT_STATE == combat_state.EXIT_COMBAT){
             //Stop the combat music.
             Utils.combatScreenMusic.stop();
+
+            //Lock player input (within the CombatInputHandler) until next fight starts.
+            MainClass.combatInputHandler.playerControl = false;
 
             //Reset the enemy back to his original position.
             MainClass.hero.lastEnemy.reset();

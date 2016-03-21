@@ -53,6 +53,9 @@ public class CombatScreen implements Screen {
 
         //Create new combat logic object for this specific fight.
         MainClass.combatLogic = new CombatLogic();
+
+        //Allow the player to make selections in the combat screen's move menu and item menu.
+        MainClass.combatInputHandler.playerControl = true;
     }
 
     @Override

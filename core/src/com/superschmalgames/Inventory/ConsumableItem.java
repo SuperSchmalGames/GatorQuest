@@ -53,6 +53,10 @@ public class ConsumableItem implements InventoryItem {
             } catch (Exception e) {
                 Gdx.app.log("test", "Something wrong in activateItem()!");
             }
+            if(MainClass.hero.GPA > 4.0){
+                //If the consumable item boosts the GPA over 4.0, cap it at 4.0.
+                MainClass.hero.GPA = 4.0;
+            }
         }
         else{
             Utils.errTone.play();
