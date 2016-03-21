@@ -43,7 +43,7 @@ public class CombatLogic {
 
     public CombatLogic(){
         //Set the menu icon to the proper color and starting place.
-        Utils.menuIcon.setPosition(50,200);
+        Utils.menuIcon.setPosition(40,200);
         Utils.menuIcon.setColor(Color.BLUE);
         Utils.menuIcon.setScale(3.0f);
 
