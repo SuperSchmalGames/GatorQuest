@@ -165,4 +165,19 @@ public class HeroCharacter {
         return canMove;
     }
 
+    public void fillGPA() {
+        GPA = 4.0;
+        System.out.print("GPA filled");
+    }
+
+    public void restoreGPA(double x) {
+        GPA += x;
+    }
+
+    public boolean decrementGPA(double x) {
+        GPA -= x;
+        if (GPA > 0) return true;
+        else return false;
+    }
+
 }

@@ -414,6 +414,7 @@ public class Utils {
             new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d11.png", 122*MAP_RESOLUTION, (89-62)*MAP_RESOLUTION),
             new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r12.png", 121*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
             new ENEMY('l', nebPPre, nebPWin, nebPLose, "visuals/sprite_sheets/sprite_walk_l3.png", 113*MAP_RESOLUTION, (89-38)*MAP_RESOLUTION, 25, Neb_A_attacks),
+
             new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l7.png", 125*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION),
             new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r10.png", 118*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION), //30
             new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d14.png", 133*MAP_RESOLUTION, (89-4)*MAP_RESOLUTION),
@@ -483,6 +484,7 @@ public class Utils {
             new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l7.png", 123*MAP_RESOLUTION, (66-55)*MAP_RESOLUTION),
             new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d8.png", 130*MAP_RESOLUTION, (66-60)*MAP_RESOLUTION),
             new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d9.png", 143*MAP_RESOLUTION, (66-43)*MAP_RESOLUTION),
+
             new ENEMY('d', ciseOPre,ciseOWin,ciseOLose,"visuals/sprite_sheets/sprite_walk_d10.png", 175*MAP_RESOLUTION, (66-7)*MAP_RESOLUTION, 25, Cise_D_attacks),
             new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l11.png", 202*MAP_RESOLUTION, (66-12)*MAP_RESOLUTION),
             new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d13.png", 213*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION),
@@ -585,7 +587,8 @@ public class Utils {
             new NPC('r',worldO, "visuals/sprite_sheets/sprite_walk_r2.png", MAP_RESOLUTION,31*MAP_RESOLUTION),
             new NPC('u',dormC,"visuals/sprite_sheets/sprite_walk_u14.png", 20*MAP_RESOLUTION,35*MAP_RESOLUTION),
             new NPC('r', dormD, "visuals/sprite_sheets/sprite_walk_r6.png", 6*MAP_RESOLUTION,42*MAP_RESOLUTION),
-            new NPC('d',worldX,"visuals/sprite_sheets/sprite_walk_d4.png", 24*MAP_RESOLUTION,41*MAP_RESOLUTION)
+            new NPC('d',worldX,"visuals/sprite_sheets/sprite_walk_d4.png", 24*MAP_RESOLUTION,41*MAP_RESOLUTION),
+            new REST('d',"You've rested in bed.\nGPA has been restored.", "visuals/sprite_sheets/RestingNPC.png",2*MAP_RESOLUTION,(59-24)*MAP_RESOLUTION) //10
     };
     //========================================================================================
     //========================================Marston=========================================
@@ -595,7 +598,7 @@ public class Utils {
             new NPC('u', marstonC, "visuals/sprite_sheets/sprite_walk_u3.png", 45*MAP_RESOLUTION, (45-30)*MAP_RESOLUTION),
             new NPC('r', marstonB, "visuals/sprite_sheets/sprite_walk_r4.png", 40*MAP_RESOLUTION, (45-16)*MAP_RESOLUTION),
             new NPC('l', marstonD, "visuals/sprite_sheets/sprite_walk_l5.png", 37*MAP_RESOLUTION, (45-35)*MAP_RESOLUTION),
-            new NPC('u', "Do you need something from me?", "visuals/sprite_sheets/sprite_walk_u6.png", 24*MAP_RESOLUTION, (45-26)*MAP_RESOLUTION),
+            new REST('u', "Thank you for studying at the\nMarston Library!\nYour GPA has been replenished", "visuals/sprite_sheets/sprite_walk_u6.png", 24*MAP_RESOLUTION, (45-26)*MAP_RESOLUTION),
             new NPC('l', marstonF, "visuals/sprite_sheets/sprite_walk_l7.png", 5*MAP_RESOLUTION, (45-26)*MAP_RESOLUTION),
             new NPC('r', marstonG, "visuals/sprite_sheets/sprite_walk_r8.png", 2*MAP_RESOLUTION, (45-15)*MAP_RESOLUTION),
             new NPC('r', marstonH, "visuals/sprite_sheets/sprite_walk_r9.png", 13*MAP_RESOLUTION, (45-21)*MAP_RESOLUTION),

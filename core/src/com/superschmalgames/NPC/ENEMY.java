@@ -17,7 +17,6 @@ public class ENEMY extends NPC {
 
     public ENEMY(char dir, String s, String win, String lose, String sprite, int x, int y, int h, E_Move[] a) {
         super(dir,s,sprite,x,y);
-
         win_script = win;
         lose_script = lose;
         attacks = a;
