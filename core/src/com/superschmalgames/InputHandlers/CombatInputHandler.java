@@ -20,16 +20,19 @@ public class CombatInputHandler implements InputProcessor{
 
     @Override
     public boolean keyDown(int keycode) {
+        Gdx.app.log("C Input Test", "Pushed Up, Maybe Something Wrong");
         if(rootMenu) {
             if (keycode == Input.Keys.UP && index > 0) {
                 Utils.menuIcon.translateY(65);
                 index--;
                 MainClass.combatScreen.description = "Select a move to \nuse against the enemy.";
+                Gdx.app.log("C Input Test", "Pushed Up");
             }
             else if (keycode == Input.Keys.DOWN && index < 1) {
                 Utils.menuIcon.translateY(-65);
                 index++;
                 MainClass.combatScreen.description = "Select a consumable \ninventory item to use.";
+                Gdx.app.log("C Input Test", "Pushed Down");
             }
             else if (keycode == Input.Keys.ENTER) {
                 if(index == 0) {
@@ -127,6 +130,10 @@ public class CombatInputHandler implements InputProcessor{
 
                 //Make the call to activate the Item we've selected.
                 MainClass.hero.inventory.items.get(selection).activateItem();
+
+                //Once the Item has been selected, start this round of combat. Control will return to the player once
+                //the enemy has made a move.
+                MainClass.combatLogic.execCombat();
             }
             else if(keycode == Input.Keys.ESCAPE){
                 itemMenu = false;

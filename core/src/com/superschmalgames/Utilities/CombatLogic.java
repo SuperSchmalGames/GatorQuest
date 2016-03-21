@@ -41,6 +41,8 @@ public class CombatLogic {
         //Initialize the amount of life the hero and enemy have.
         MainClass.combatScreen.heroLife = "Your GPA: " + MainClass.hero.GPA;
         MainClass.combatScreen.enemyLife = "Assignments: " + MainClass.hero.lastEnemy.enemyLife;
+        heroBaseDmg = 0;
+        enemyBaseDmg = 0;
 
         //Every time the combat is entered, reinitialize these control variables for the combat input handler.
         MainClass.combatInputHandler.rootMenu = true;
@@ -80,6 +82,8 @@ public class CombatLogic {
                 CURRENT_STATE = combat_state.PLAYER_WIN;
             }
 
+            //Update the Hero life displayed to the screen.
+            MainClass.combatScreen.heroLife = "Your GPA: " + Utils.df1.format(MainClass.hero.GPA);    //MainClass.hero.GPA
             //Update the enemy life displayed to the screen.
             MainClass.combatScreen.enemyLife = "Assignments: " + MainClass.hero.lastEnemy.enemyLife;
         }
@@ -100,7 +104,7 @@ public class CombatLogic {
             }
 
             //Update the Hero life displayed to the screen.
-            MainClass.combatScreen.heroLife = "Your GPA: " + MainClass.hero.GPA;
+            MainClass.combatScreen.heroLife = "Your GPA: " + Utils.df1.format(MainClass.hero.GPA);
         }
         if(CURRENT_STATE == combat_state.PLAYER_WIN){
             //Some stuff handling the player winning, getting exp, etc.
@@ -114,10 +118,15 @@ public class CombatLogic {
             CURRENT_STATE = combat_state.EXIT_COMBAT;
         }
         if(CURRENT_STATE == combat_state.EXIT_COMBAT){
-            //Clean up and switch back to the game screen.
+            //Stop the combat music.
+            Utils.combatScreenMusic.stop();
+
+            //Reset the enemy back to his original position.
+            MainClass.hero.lastEnemy.reset();
+
+            //Give control back to the main input handler, and switch back to GameScreen.
             Gdx.input.setInputProcessor(MainClass.inputHandler);
             ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
-            Utils.combatScreenMusic.stop();
         }
     }
 }

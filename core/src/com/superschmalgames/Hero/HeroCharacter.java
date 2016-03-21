@@ -2,14 +2,11 @@ package com.superschmalgames.Hero;
 
 //This class will represent our main playable character.
 
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.superschmalgames.Inventory.ApparelItem;
 import com.superschmalgames.Inventory.EquipableItem;
-import com.superschmalgames.NPC.BOSS;
 import com.superschmalgames.NPC.ENEMY;
 import com.superschmalgames.NPC.NPC;
-import com.superschmalgames.NPC.SHOP;
 import com.superschmalgames.Utilities.Animator;
 
 public class HeroCharacter {

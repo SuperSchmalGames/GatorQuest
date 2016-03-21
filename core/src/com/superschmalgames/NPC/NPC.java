@@ -151,6 +151,7 @@ public class NPC {
 
         //Set certain parts of the dialogue window to certain values depending on the event type.
         MainClass.gameScreen.window.decLock = true;
+        MainClass.gameScreen.window.enemy = false;
         MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
         MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OK_X_OFFSET;
         MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;

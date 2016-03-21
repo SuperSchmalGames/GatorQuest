@@ -42,6 +42,7 @@ public class BOSS extends ENEMY{
         if(!triggered) {
             MainClass.gameScreen.window.dialog.setText(Utils.font_small, script, Color.BLUE, 480, 8, true);
             MainClass.gameScreen.window.decLock = false;
+            MainClass.gameScreen.window.enemy = true;
             MainClass.gameScreen.window.decision = MainClass.gameScreen.window.okNo;
             MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OKNO_X_OFFSET;
             MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OKNO_Y_OFFSET;
@@ -49,6 +50,7 @@ public class BOSS extends ENEMY{
         else {
             MainClass.gameScreen.window.dialog.setText(Utils.font_small, win_script, Color.BLUE, 480, 8, true);
             MainClass.gameScreen.window.decLock = true;
+            MainClass.gameScreen.window.enemy = false;
             MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
             MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OK_X_OFFSET;
             MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;

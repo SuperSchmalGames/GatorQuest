@@ -53,6 +53,8 @@ public class CombatScreen implements Screen {
 
         //Create new combat logic object for this specific fight.
         MainClass.combatLogic = new CombatLogic();
+
+        Gdx.app.log("TESTTESTTEST",Gdx.input.getInputProcessor().toString());
     }
 
     @Override

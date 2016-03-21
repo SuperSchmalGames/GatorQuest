@@ -2,9 +2,11 @@ package com.superschmalgames.InputHandlers;
 
 //This class handles input for controlling selections within the character dialogue window.
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.superschmalgames.Screens.CombatScreen;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -18,23 +20,35 @@ public class DialogueInputHandler implements InputProcessor {
     @Override
     public boolean keyDown(int keycode) {
         if(keycode == Input.Keys.LEFT && !MainClass.gameScreen.window.decLock){
-            if(!MainClass.gameScreen.window.proceed) {
-                MainClass.gameScreen.window.proceed = true;
+            if(MainClass.gameScreen.window.proceed) {
+                MainClass.gameScreen.window.proceed = false;
                 Utils.menuIcon.translateX(-58);
+                Gdx.app.log("D Input Test", "Pushed Left");
             }
         }
         else if(keycode == Input.Keys.RIGHT && !MainClass.gameScreen.window.decLock){
-            if(MainClass.gameScreen.window.proceed) {
-                MainClass.gameScreen.window.proceed = false;
+            if(!MainClass.gameScreen.window.proceed) {
+                MainClass.gameScreen.window.proceed = true;
                 Utils.menuIcon.translateX(58);
+                Gdx.app.log("D Input Test", "Pushed Right");
             }
         }
         else if(keycode == Input.Keys.ENTER){
             MainClass.gameScreen.dial = false;
 
+            //If we're talking to an enemy, call the combat() function to potentially start fighting. Otherwise, continue.
+            if(MainClass.gameScreen.window.enemy){
+                if(MainClass.gameScreen.window.proceed){
+                    //Give input control to the combat input handler.
+                    Gdx.input.setInputProcessor(MainClass.combatInputHandler);
+
+                    //Create combat screen and set is as the current screen.
+                    MainClass.combatScreen = new CombatScreen();
+                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.combatScreen);
+                }
+            }
+
             //Reset the NPC to the position they were at before walking over to us.
-            if(MainClass.hero.lastEnemy != null)
-                MainClass.hero.lastEnemy.reset();
             if(MainClass.hero.lastNPC != null)
                 MainClass.hero.lastNPC.reset();
 

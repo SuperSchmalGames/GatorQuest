@@ -31,7 +31,7 @@ public class Utils {
     public static final BitmapFont testFont = new BitmapFont();
     public static boolean isPaused;
     public static final FPSLogger logger = new FPSLogger();
-    public static final DecimalFormat df1 = new DecimalFormat("0.0#");
+    public static final DecimalFormat df1 = new DecimalFormat("0.0");
     //Enum for holding state info for fade-in/fade-out animation
     public enum fader{
         FADING_IN,

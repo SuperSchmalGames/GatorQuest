@@ -52,6 +52,7 @@ public class ENEMY extends NPC {
 
         //Set certain parts of the dialogue window to certain values depending on the event type.
         MainClass.gameScreen.window.decLock = true;
+        MainClass.gameScreen.window.enemy = true;
         MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
         MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OK_X_OFFSET;
         MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;
@@ -65,7 +66,7 @@ public class ENEMY extends NPC {
 
         //Set the NPC's triggered field to true, since we'll have talked to him already.
         if (!triggered)  {
-            combat();
+            //combat();
             triggered = true;
             walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);
         }
@@ -76,6 +77,17 @@ public class ENEMY extends NPC {
     }
 
     public void combat() {
+        /*if(MainClass.gameScreen.window.proceed){
+            //Give input control to the combat input handler.
+            Gdx.input.setInputProcessor(MainClass.combatInputHandler);
 
+            //Create combat screen and set is as the current screen.
+            MainClass.combatScreen = new CombatScreen();
+            ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.combatScreen);
+        }
+        else{
+            //Give control back to the main input handler if we're not fighting.
+            Gdx.input.setInputProcessor(MainClass.inputHandler);
+        }*/
     }
 }
