@@ -39,7 +39,7 @@ public class CombatLogic {
         MainClass.combatScreen.description = "Select a move to \nuse against the enemy.";
 
         //Initialize the amount of life the hero and enemy have.
-        MainClass.combatScreen.heroLife = "Your GPA: " + MainClass.hero.GPA;
+        MainClass.combatScreen.heroLife = "Your GPA: " + Utils.df1.format(MainClass.hero.GPA);
         MainClass.combatScreen.enemyLife = "Assignments: " + MainClass.hero.lastEnemy.enemyLife;
         heroBaseDmg = 0;
         enemyBaseDmg = 0;

@@ -25,13 +25,11 @@ public class CombatInputHandler implements InputProcessor{
                 Utils.menuIcon.translateY(65);
                 index--;
                 MainClass.combatScreen.description = "Select a move to \nuse against the enemy.";
-                Gdx.app.log("C Input Test", "Pushed Up");
             }
             else if (keycode == Input.Keys.DOWN && index < 1) {
                 Utils.menuIcon.translateY(-65);
                 index++;
                 MainClass.combatScreen.description = "Select a consumable \ninventory item to use.";
-                Gdx.app.log("C Input Test", "Pushed Down");
             }
             else if (keycode == Input.Keys.ENTER) {
                 if(index == 0) {

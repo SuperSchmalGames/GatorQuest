@@ -2,11 +2,9 @@ package com.superschmalgames.InputHandlers;
 
 //This class handles input for controlling selections within the character dialogue window.
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
-import com.superschmalgames.Screens.CombatScreen;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -38,14 +36,7 @@ public class DialogueInputHandler implements InputProcessor {
 
             //If we're talking to an enemy, call the combat() function to potentially start fighting. Otherwise, continue.
             if(MainClass.gameScreen.window.enemy){
-                if(MainClass.gameScreen.window.proceed){
-                    //Give input control to the combat input handler.
-                    Gdx.input.setInputProcessor(MainClass.combatInputHandler);
-
-                    //Create combat screen and set is as the current screen.
-                    MainClass.combatScreen = new CombatScreen();
-                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.combatScreen);
-                }
+                MainClass.hero.lastEnemy.combat();
             }
             //If we just talked to a friendly NPC, we don't start combat.
             else {
