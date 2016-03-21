@@ -47,13 +47,13 @@ public class DialogueInputHandler implements InputProcessor {
                     ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.combatScreen);
                 }
             }
-
-            //Reset the NPC to the position they were at before walking over to us.
-            if(MainClass.hero.lastNPC != null)
+            //If we just talked to a friendly NPC, we don't start combat.
+            else {
+                //Reset the NPC to the position they were at before walking over to us.
                 MainClass.hero.lastNPC.reset();
-
-            //Give control back to the main input handler.
-            Gdx.input.setInputProcessor(MainClass.inputHandler);
+                //Give control back to the main input handler.
+                Gdx.input.setInputProcessor(MainClass.inputHandler);
+            }
         }
         return false;
     }

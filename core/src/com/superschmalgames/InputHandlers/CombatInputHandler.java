@@ -20,7 +20,6 @@ public class CombatInputHandler implements InputProcessor{
 
     @Override
     public boolean keyDown(int keycode) {
-        Gdx.app.log("C Input Test", "Pushed Up, Maybe Something Wrong");
         if(rootMenu) {
             if (keycode == Input.Keys.UP && index > 0) {
                 Utils.menuIcon.translateY(65);
