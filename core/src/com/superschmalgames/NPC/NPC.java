@@ -2,9 +2,9 @@ package com.superschmalgames.NPC;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.superschmalgames.Utilities.Animator;
 import com.superschmalgames.Utilities.CharacterDialogue;
-import com.superschmalgames.Utilities.ShopMenu;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -20,6 +20,9 @@ public class NPC {
     public String script;
     public boolean los;
 
+    //Sprite that's shown for the hero during combat.
+    public Sprite combatSprite;
+
     //NPCs will only move in one direction if any
     public NPC(char dir, String s, String sprite, int x, int y) {
         x_pos = x;
@@ -32,6 +35,37 @@ public class NPC {
         walk.currentFrame = walk.walkAnimation.getKeyFrame(walk.stateTime, true);
         triggered = false;
         los = true;
+
+        initCombatSprite(sprite);
+    }
+
+    public void initCombatSprite(String sprite){
+        char sNum;
+        String dNum, tSprite;
+
+        //If initializing a boss, use the separate boss sprite that's passed in to its constructor.
+        if(( (int)sprite.charAt(sprite.length() - 5)) < 47 || (int)sprite.charAt(sprite.length() - 5) > 58){
+            return;
+        }
+
+        //If the char at string.length-6 is a number, we know to grab length-6 and length-5 for the sprite number,
+        //otherwise just use length-5 for single digit number.
+        if(( (int)sprite.charAt(sprite.length() - 6)) > 47 && (int)sprite.charAt(sprite.length() - 6) < 58){
+            dNum = sprite.substring(sprite.length() - 6, sprite.length() - 4);
+            tSprite = "visuals/sprite_sheets/sprite_walk_l" + dNum + ".png";
+            //Gdx.app.log("NPC sprite substring", "Sprite number = " + dNum);
+        }
+        else{
+            sNum = sprite.charAt(sprite.length() - 5);
+            tSprite = "visuals/sprite_sheets/sprite_walk_l" + sNum + ".png";
+            //Gdx.app.log("NPC sprite char", "Sprite number = " + sNum);
+        }
+
+        //Create a new animator using the new sprite string, then grab the first frame of it, which will be the NPC,
+        //standing still, facing left.
+        Animator tWalk = new Animator(4, 1, tSprite, 0.17f);
+        tWalk.currentFrame = tWalk.walkAnimation.getKeyFrame(tWalk.stateTime, true);
+        combatSprite = new Sprite(tWalk.currentFrame);
     }
 
     //move to players location.
@@ -99,6 +133,9 @@ public class NPC {
         //Set the dialogue flag true so the window will render to the game screen.
         MainClass.gameScreen.dial = true;
 
+        //Set this as the last friendly NPC the Hero has interacted with.
+        MainClass.hero.lastNPC = this;
+
         //Stop character movement, if we're moving.
         MainClass.gameScreen.lWalk = false;
         MainClass.gameScreen.rWalk = false;
@@ -114,6 +151,7 @@ public class NPC {
 
         //Set certain parts of the dialogue window to certain values depending on the event type.
         MainClass.gameScreen.window.decLock = true;
+        MainClass.gameScreen.window.enemy = false;
         MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
         MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OK_X_OFFSET;
         MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;

@@ -2,16 +2,18 @@ package com.superschmalgames.Hero;
 
 //Class to represent the character's inventory.
 
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
 public class HeroMoves {
 
     //Character inventory.
-    public Move[] attacks;
+    public H_Move[] attacks;
 
     public HeroMoves(){
-        attacks = new Move[18];
+        attacks = new H_Move[18];
         attacks[0] = Utils.Java_Function;
         attacks[1] = Utils.Recursive_Loop;
         attacks[2] = Utils.Stack_Overflow;
@@ -32,33 +34,45 @@ public class HeroMoves {
         attacks[17] = Utils.Perf_Presentation;
     }
 
-    public int calc_dmg(){
+    /*public int calc_dmg(){
         return 1;
     }
 
     public void generateMoves(Move[] moves)
     {
 
-    }
+    }*/
 
     public int getCurrentMove()
     {
         int overallIndex = 0;
         int relIndex = 0;
 
-        while(relIndex < (MainClass.heroScreen.heroRow + MainClass.heroScreen.heroPage*8))
-        {
-            if(MainClass.hero.moves.attacks[overallIndex].obtained)
-            {
-                relIndex+=1;
-            }
+        //If we're in the combat screen, use movePane and index to find current move.
+        if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.combatScreen){
+            while (relIndex < MainClass.combatInputHandler.index){
+                if (MainClass.hero.moves.attacks[overallIndex].obtained) {
+                    relIndex += 1;
+                }
 
-            overallIndex+=1;
+                overallIndex += 1;
+            }
+        }
+        //If not in combat, use heroRow and heroPage to find current move.
+        else {
+            while (relIndex < (MainClass.heroScreen.heroRow + MainClass.heroScreen.heroPage * 8)) {
+                if (MainClass.hero.moves.attacks[overallIndex].obtained) {
+                    relIndex += 1;
+                }
+
+                overallIndex += 1;
+            }
         }
 
         return overallIndex;
     }
 
+    //Return the total number of moves the Hero has in his arsenal.
     public int getNum(){
         int temp = 0;
         for(int i = 0; i < attacks.length; i++){

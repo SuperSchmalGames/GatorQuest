@@ -116,7 +116,6 @@ public class ShopInputHandler implements InputProcessor {
         else if(keycode == Input.Keys.Q){
             MainClass.gameScreen.dial = false;
             MainClass.gameScreen.store = false;
-            MainClass.hero.lastInteracted.reset();
             Gdx.input.setInputProcessor(MainClass.inputHandler);
         }
         else

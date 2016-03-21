@@ -2,8 +2,10 @@ package com.superschmalgames.Hero;
 
 //This class will represent our main playable character.
 
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.superschmalgames.Inventory.ApparelItem;
 import com.superschmalgames.Inventory.EquipableItem;
+import com.superschmalgames.NPC.ENEMY;
 import com.superschmalgames.NPC.NPC;
 import com.superschmalgames.Utilities.Animator;
 
@@ -54,7 +56,11 @@ public class HeroCharacter {
     public boolean canMove;
 
     //Tracks the NPC we just talked to, so we can reference him when in combat, etc.
-    public NPC lastInteracted;
+    public NPC lastNPC;
+    public ENEMY lastEnemy;
+
+    //Sprite that's shown for the hero during combat.
+    public Sprite combatSprite;
 
     //Main animator that handles switching between all different direction the character can walk.
     public Animator heroAnim;
@@ -96,6 +102,11 @@ public class HeroCharacter {
         rightWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_r"+outfitNum+".png", 0.17f);
         upWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_u"+outfitNum+".png", 0.17f);
         downWalk = new Animator(4, 1, "visuals/sprite_sheets/sprite_walk_d"+outfitNum+".png", 0.17f);
+
+        //Grab the texture region for our hero facing right, so that we can use it to render him/her in combat.
+        heroAnim = rightWalk;
+        heroAnim.currentFrame = rightWalk.walkAnimation.getKeyFrame(rightWalk.stateTime, true);
+        combatSprite = new Sprite(heroAnim.currentFrame);
 
         //Set up the initial frame that will be rendered to the screen before any input is given.
         heroAnim = downWalk;

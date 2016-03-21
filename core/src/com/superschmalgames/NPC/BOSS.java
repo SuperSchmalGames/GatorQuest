@@ -3,7 +3,9 @@ package com.superschmalgames.NPC;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.superschmalgames.Hero.Move;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.superschmalgames.Hero.E_Move;
 import com.superschmalgames.Utilities.CharacterDialogue;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
@@ -11,14 +13,20 @@ import com.superschmalgames.Utilities.Utils;
 
 public class BOSS extends ENEMY{
 
-    public BOSS(char dir, String s, String win, String lose, String sprite, int x, int y, Move[] a) {
-        super(dir,s,win,lose,sprite,x,y,a);
+    public BOSS(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a) {
+        super(dir,s,win,lose,sprite,x,y,h,a);
+
+        //Initialize Boss-specific fields;
+        combatSprite = new Sprite(new Texture(combat));
     }
 
     public void initiate(){
 
         //Set the dialogue flag true so the window will render to the game screen.
         MainClass.gameScreen.dial = true;
+
+        //Set this as the last Boss(Enemy) the Hero has interacted with.
+        MainClass.hero.lastEnemy = this;
 
         //Stop character movement, if we're moving.
         MainClass.gameScreen.lWalk = false;
@@ -34,6 +42,7 @@ public class BOSS extends ENEMY{
         if(!triggered) {
             MainClass.gameScreen.window.dialog.setText(Utils.font_small, script, Color.BLUE, 480, 8, true);
             MainClass.gameScreen.window.decLock = false;
+            MainClass.gameScreen.window.enemy = true;
             MainClass.gameScreen.window.decision = MainClass.gameScreen.window.okNo;
             MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OKNO_X_OFFSET;
             MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OKNO_Y_OFFSET;
@@ -41,6 +50,7 @@ public class BOSS extends ENEMY{
         else {
             MainClass.gameScreen.window.dialog.setText(Utils.font_small, win_script, Color.BLUE, 480, 8, true);
             MainClass.gameScreen.window.decLock = true;
+            MainClass.gameScreen.window.enemy = false;
             MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
             MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OK_X_OFFSET;
             MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;

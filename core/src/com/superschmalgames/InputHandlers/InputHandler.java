@@ -139,10 +139,10 @@ public class InputHandler implements InputProcessor {
                 ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
                 else if(keycode == Input.Keys.C){
                     //Give input control to the combat input handler.
-                    Gdx.input.setInputProcessor(MainClass.combatInputHandler);
+                    /*Gdx.input.setInputProcessor(MainClass.combatInputHandler);
                     //Create combat screen and set is as the current screen.
                     MainClass.combatScreen = new CombatScreen();
-                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.combatScreen);
+                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.combatScreen);*/
                 }
                 else if (keycode == Input.Keys.P) {
                     if (!Utils.isPaused) {

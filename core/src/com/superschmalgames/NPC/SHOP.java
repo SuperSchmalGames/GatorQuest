@@ -33,8 +33,8 @@ public class SHOP extends NPC {
         MainClass.gameScreen.shop_window.dialog.setText(Utils.font, script, Color.WHITE, 480, 8, true);
 
         MainClass.gameScreen.shop_window.decLock = false;
+        MainClass.gameScreen.window.enemy = false;
         MainClass.gameScreen.shop_window.quitPrompt = MainClass.gameScreen.shop_window.quit;
-        // MainClass.gameScreen.shop_window.decision = MainClass.gameScreen.shop_window.okNo;
         MainClass.gameScreen.shop_window.decOffsetX = MainClass.gameScreen.shop_window.OKNO_X_OFFSET;
         MainClass.gameScreen.shop_window.decOffsetY = MainClass.gameScreen.shop_window.OKNO_Y_OFFSET;
 

@@ -116,7 +116,6 @@ public class GameScreen implements Screen {
     private void checkForEnemy(float delta) {
         if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("enemy")) {
             int temp = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("number"));
-            MainClass.hero.lastInteracted = enemies[temp];
             if(!enemies[temp].getTriggered()) {
                 lWalk = false;
                 rWalk = false;
@@ -156,7 +155,6 @@ public class GameScreen implements Screen {
         }
         if(collision.getCell(x,y).getTile().getProperties().containsKey("event")) {
             int event = Integer.valueOf((String) collision.getCell(x,y).getTile().getProperties().get("event"));
-            MainClass.hero.lastInteracted = enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))];
             if(event == 1)
                 MainClass.shopInputHandler.shop = Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("shop"));
             enemies[Integer.valueOf((String) collision.getCell(x, y).getTile().getProperties().get("number"))].initiate();
@@ -311,8 +309,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void hide() {
-        //Stop the normal game world music so we can play another screen's music.
-        Utils.gameMusic.stop();
+
     }
 
     @Override

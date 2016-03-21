@@ -12,7 +12,7 @@ import com.superschmalgames.Utilities.Utils;
 public class CombatInputHandler implements InputProcessor{
 
     public boolean rootMenu, moveMenu, itemMenu;
-    public int index;
+    public int index, selection;
 
     public CombatInputHandler(){
 
@@ -24,23 +24,28 @@ public class CombatInputHandler implements InputProcessor{
             if (keycode == Input.Keys.UP && index > 0) {
                 Utils.menuIcon.translateY(65);
                 index--;
+                MainClass.combatScreen.description = "Select a move to \nuse against the enemy.";
+                Gdx.app.log("C Input Test", "Pushed Up");
             }
             else if (keycode == Input.Keys.DOWN && index < 1) {
                 Utils.menuIcon.translateY(-65);
                 index++;
+                MainClass.combatScreen.description = "Select a consumable \ninventory item to use.";
+                Gdx.app.log("C Input Test", "Pushed Down");
             }
             else if (keycode == Input.Keys.ENTER) {
                 if(index == 0) {
                     rootMenu = false;
                     moveMenu = true;
                     Utils.menuIcon.setPosition(50, 200);
+                    MainClass.combatScreen.description = MainClass.hero.moves.attacks[MainClass.hero.moves.getCurrentMove()].getDescription();
                 }
                 else{
                     rootMenu = false;
                     itemMenu = true;
                     index = 0;
                     Utils.menuIcon.setPosition(50, 200);
-                    //Gdx.app.log("test","Items dont work yet!\n");
+                    MainClass.combatScreen.description = "Item descriptions \ncoming soon!";
                 }
             }
         }
@@ -55,6 +60,7 @@ public class CombatInputHandler implements InputProcessor{
                     index--;
                     Utils.menuIcon.translateY(45);         //Translate menu icon up to previous Move in list.
                 }
+                MainClass.combatScreen.description = MainClass.hero.moves.attacks[MainClass.hero.moves.getCurrentMove()].getDescription();
             }
             else if (keycode == Input.Keys.DOWN && index < MainClass.hero.moves.getNum()-1) {
                 if ((index + 1) % 4 == 0) {
@@ -66,9 +72,21 @@ public class CombatInputHandler implements InputProcessor{
                     index++;
                     Utils.menuIcon.translateY(-45);         //Translate menu icon down to next move in list.
                 }
+                MainClass.combatScreen.description = MainClass.hero.moves.attacks[MainClass.hero.moves.getCurrentMove()].getDescription();
             }
             else if (keycode == Input.Keys.ENTER) {
-                Gdx.app.log("test", "Moves don't work yet!\n");  //Pressing ENTER will use the selected Move.
+                //Pressing ENTER will choose to make the selected move.
+                selection = MainClass.hero.moves.getCurrentMove();
+                Gdx.app.log("Combat-Hero Moves" ,"Move Selected: " + MainClass.hero.moves.attacks[selection].getMoveName());
+
+                //We will make the call to use() here. The returned value will be assigned to a base damage variable
+                //contained in CombatLogic.
+                MainClass.combatLogic.heroBaseDmg = MainClass.hero.moves.attacks[selection].use(MainClass.combatLogic.heroStats);
+                Gdx.app.log("Hero Damage Test", "Damage Done: "+ MainClass.combatLogic.heroBaseDmg);
+
+                //Once the Move has been selected, start this round of combat. Control will return to the player once
+                //the enemy has made a move.
+                MainClass.combatLogic.execCombat();
             }
             else if(keycode == Input.Keys.ESCAPE){
                 moveMenu = false;                             //Reset the flags to root being true.
@@ -76,6 +94,7 @@ public class CombatInputHandler implements InputProcessor{
                 MainClass.combatScreen.movePane = 0;         //Reset our move panes and index for next time.
                 index = 0;
                 Utils.menuIcon.setPosition(50,200);          //Reset the menu icon to the top of the list.
+                MainClass.combatScreen.description = "Select a move to \nuse against the enemy.";
             }
         }
         else if(itemMenu){
@@ -89,6 +108,7 @@ public class CombatInputHandler implements InputProcessor{
                     index--;
                     Utils.menuIcon.translateY(45);          //Translate menu icon down to next Item in list.
                 }
+                MainClass.combatScreen.description = MainClass.hero.inventory.items.get(MainClass.hero.inventory.getCurrentItemIndex()).getItemName();       //!!!!!!!Add item descriptions!!!!!!!!!!!!!!!!
             }
             else if (keycode == Input.Keys.DOWN && index < (MainClass.hero.inventory.getNum('c')-1)) {
                 if ((index + 1) % 4 == 0) {
@@ -100,9 +120,19 @@ public class CombatInputHandler implements InputProcessor{
                     index++;
                     Utils.menuIcon.translateY(-45);         //Translate menu icon down to next Item in list.
                 }
+                MainClass.combatScreen.description = MainClass.hero.inventory.items.get(MainClass.hero.inventory.getCurrentItemIndex()).getItemName();       //!!!!!!!Add item descriptions!!!!!!!!!!!!!!!!
             }
             else if (keycode == Input.Keys.ENTER) {
-                Gdx.app.log("test","Items dont work yet!\n");
+                //Get the actual array index of the Item we selected.
+                selection = MainClass.hero.inventory.getCurrentItemIndex();
+                Gdx.app.log("Combat-Hero Items","Item Selected: " + MainClass.hero.inventory.items.get(selection).getItemName());
+
+                //Make the call to activate the Item we've selected.
+                MainClass.hero.inventory.items.get(selection).activateItem();
+
+                //Once the Item has been selected, start this round of combat. Control will return to the player once
+                //the enemy has made a move.
+                MainClass.combatLogic.execCombat();
             }
             else if(keycode == Input.Keys.ESCAPE){
                 itemMenu = false;
@@ -110,7 +140,7 @@ public class CombatInputHandler implements InputProcessor{
                 MainClass.combatScreen.itemPane = 0;
                 index = 0;
                 Utils.menuIcon.setPosition(50,200);
-
+                MainClass.combatScreen.description = "Select a move to \nuse against the enemy.";
             }
         }
         return false;
