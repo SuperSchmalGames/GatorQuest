@@ -56,12 +56,15 @@ public class BOSS extends ENEMY{
             MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;
         }
 
+        //Reset info for the menuIcon to use for enemy dialogue windows
+        Utils.menuIcon.setColor(Color.BLUE);
+        Utils.menuIcon.setScale(1.5f);
+
         //Set the position
         Utils.menuIcon.setPosition(MainClass.gameScreen.window.ICON_X_OFFSET, MainClass.gameScreen.window.ICON_Y_OFFSET);
 
         //Set the NPC's triggered field to true, since we'll have talked to him already.
         if (!triggered)  {
-            triggered = true;
             walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);
         }
     }

@@ -1,9 +1,11 @@
 package com.superschmalgames.NPC;
 
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.superschmalgames.Hero.E_Move;
+import com.superschmalgames.Screens.CombatScreen;
 import com.superschmalgames.Utilities.CharacterDialogue;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
@@ -65,8 +67,6 @@ public class ENEMY extends NPC {
 
         //Set the NPC's triggered field to true, since we'll have talked to him already.
         if (!triggered)  {
-            //combat();
-            triggered = true;
             walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);
         }
     }
@@ -76,7 +76,9 @@ public class ENEMY extends NPC {
     }
 
     public void combat() {
-        /*if(MainClass.gameScreen.window.proceed){
+        if(MainClass.gameScreen.window.proceed && !triggered){
+            triggered = true;
+
             //Give input control to the combat input handler.
             Gdx.input.setInputProcessor(MainClass.combatInputHandler);
 
@@ -87,6 +89,6 @@ public class ENEMY extends NPC {
         else{
             //Give control back to the main input handler if we're not fighting.
             Gdx.input.setInputProcessor(MainClass.inputHandler);
-        }*/
+        }
     }
 }

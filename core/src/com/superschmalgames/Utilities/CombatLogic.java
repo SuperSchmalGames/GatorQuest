@@ -32,14 +32,14 @@ public class CombatLogic {
 
     public CombatLogic(){
         //Set the menu icon to the proper color and starting place.
-        Utils.menuIcon.setPosition(50,200);
+        Utils.menuIcon.setPosition(40,200);
         Utils.menuIcon.setColor(Color.BLUE);
         Utils.menuIcon.setScale(3.0f);
 
         MainClass.combatScreen.description = "Select a move to \nuse against the enemy.";
 
         //Initialize the amount of life the hero and enemy have.
-        MainClass.combatScreen.heroLife = "Your GPA: " + MainClass.hero.GPA;
+        MainClass.combatScreen.heroLife = "Your GPA: " + Utils.df1.format(MainClass.hero.GPA);
         MainClass.combatScreen.enemyLife = "Assignments: " + MainClass.hero.lastEnemy.enemyLife;
         heroBaseDmg = 0;
         enemyBaseDmg = 0;

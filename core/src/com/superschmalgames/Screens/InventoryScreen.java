@@ -156,7 +156,7 @@ public class InventoryScreen implements Screen {
 
             int populatedEquipments = 0;
             int invIndex = 0;
-            if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNum('c') > 0)
+            if(invRow == 0 && invPage == 0 && MainClass.hero.inventory.getNum('e') > 0)
             {
                 MainClass.batch.draw(Utils.white_sq_tex, 505, 435, 94, 94);
 
@@ -263,11 +263,11 @@ public class InventoryScreen implements Screen {
         MainClass.batch.draw(Utils.sel_item_tex, 35,480-65*invRow);
 
         if ("Consumable".equals(invPanel) && MainClass.hero.inventory.getNum('c') == 0)
-            Utils.font.draw(MainClass.batch, "No items of this type!", 50,515);
+            Utils.font.draw(MainClass.batch, "None of this type!", 50,515);
         else if ("Apparel".equals(invPanel) && MainClass.hero.inventory.getNum('a') == 0)
-            Utils.font.draw(MainClass.batch, "No items of this type!", 50,515);
+            Utils.font.draw(MainClass.batch, "None of this type!", 50,515);
         else if ("Equipment".equals(invPanel) && MainClass.hero.inventory.getNum('e') == 0)
-            Utils.font.draw(MainClass.batch, "No items of this type!", 50,515);
+            Utils.font.draw(MainClass.batch, "None of this type!", 50,515);
 
         //If we currently have apparel equipped.
         if(MainClass.hero.heroApparel != null)

@@ -35,7 +35,11 @@ public class CombatScreen implements Screen {
 
         //Set up the combat ui.
         Utils.combatBorder.setSize(Utils.GAME_SCREEN_WIDTH,Utils.GAME_SCREEN_HEIGHT/3+60);
-        Utils.combatBorder.setPosition(0,10);
+        Utils.combatBorder.setPosition(0, 10);
+        Utils.hpBack.setSize(350,100);
+        Utils.hpBack.setPosition(10, 490);
+        Utils.hpBack2.setSize(385,100);
+        Utils.hpBack2.setPosition(630, 490);
         rootList = new GlyphLayout(Utils.font,"Moves\n\nItems",Color.BLUE,200,8,true);
         moveDesc = new GlyphLayout(Utils.font_medsmall, "",Color.BLUE,200,8,true);
 
@@ -53,8 +57,6 @@ public class CombatScreen implements Screen {
 
         //Create new combat logic object for this specific fight.
         MainClass.combatLogic = new CombatLogic();
-
-        Gdx.app.log("TESTTESTTEST",Gdx.input.getInputProcessor().toString());
     }
 
     @Override
@@ -76,12 +78,14 @@ public class CombatScreen implements Screen {
         Utils.menuIcon.draw(MainClass.batch);                                //Draw the icon used to select menu options.
 
         //Display the remaining hero and enemy life.
-        Utils.font.draw(MainClass.batch, heroLife, 20, Utils.GAME_SCREEN_HEIGHT - 50);
-        Utils.font.draw(MainClass.batch, enemyLife, Utils.GAME_SCREEN_WIDTH - 350, Utils.GAME_SCREEN_HEIGHT - 50);
+        Utils.hpBack.draw(MainClass.batch);
+        Utils.hpBack2.draw(MainClass.batch);
+        Utils.font.draw(MainClass.batch, heroLife, 30, Utils.GAME_SCREEN_HEIGHT - 50);
+        Utils.font.draw(MainClass.batch, enemyLife, Utils.GAME_SCREEN_WIDTH - 360, Utils.GAME_SCREEN_HEIGHT - 50);
 
         //When combat first begins, show the option to choose a move or a list.
         if(MainClass.combatInputHandler.rootMenu){
-            Utils.font.draw(MainClass.batch, rootList, 95, 223);
+            Utils.font.draw(MainClass.batch, rootList, 85, 223);
 
             //Draw the description for the current menu selection.
             Utils.font_medsmall.draw(MainClass.batch, description, 530, 223);
@@ -94,7 +98,7 @@ public class CombatScreen implements Screen {
             if(movePane==0) {
                 for (int i = 0; i < 18; i++) {
                     if(MainClass.hero.moves.attacks[i].obtained && temp < 4) {
-                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(), 95, 223 - 45 * temp);
+                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(), 85, 223 - 45 * temp);
                         temp +=1;
                     }
                 }
@@ -110,7 +114,7 @@ public class CombatScreen implements Screen {
                 }
                 for(int i= p2index; i<18; i++) {
                     if(MainClass.hero.moves.attacks[i].obtained && temp < 8) {
-                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(), 95, 223 - 45 * (temp-4));
+                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(), 85, 223 - 45 * (temp-4));
                         temp +=1;
                     }
                 }
@@ -126,7 +130,7 @@ public class CombatScreen implements Screen {
                 }
                 for(int i= p2index; i<18; i++) {
                     if(MainClass.hero.moves.attacks[i].obtained && temp < 12) {
-                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(), 95, 223 - 45 * (temp-8));
+                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(), 85, 223 - 45 * (temp-8));
                         temp +=1;
                     }
                 }
@@ -142,7 +146,7 @@ public class CombatScreen implements Screen {
                 }
                 for(int i= p2index; i<18; i++) {
                     if(MainClass.hero.moves.attacks[i].obtained && temp < 16) {
-                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(), 95, 223 - 45 * (temp-12));
+                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(), 85, 223 - 45 * (temp-12));
                         temp +=1;
                     }
                 }
@@ -158,7 +162,7 @@ public class CombatScreen implements Screen {
                 }
                 for(int i= p2index; i<18; i++) {
                     if(MainClass.hero.moves.attacks[i].obtained && temp < 20) {
-                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(), 95, 223 - 45 * (temp-16));
+                        Utils.font.draw(MainClass.batch, MainClass.hero.moves.attacks[i].getMoveName(), 85, 223 - 45 * (temp-16));
                         temp +=1;
                     }
                 }
@@ -180,7 +184,7 @@ public class CombatScreen implements Screen {
                             temp < 4) {
                         Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
                                         + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
-                                95, 223 - 45 * temp);
+                                85, 223 - 45 * temp);
                         temp += 1;
                     }
                 }
@@ -204,7 +208,7 @@ public class CombatScreen implements Screen {
                             temp < 8) {
                         Utils.font.draw(MainClass.batch, (MainClass.hero.inventory.items.get(i)).getItemName()
                                         + " x" + MainClass.hero.inventory.items.get(i).getQuantity(),
-                                95, 223 - 45 * (temp-4));
+                                85, 223 - 45 * (temp-4));
                         temp +=1;
                     }
                 }
