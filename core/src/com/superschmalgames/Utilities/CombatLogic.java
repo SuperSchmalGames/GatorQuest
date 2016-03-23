@@ -112,7 +112,7 @@ public class CombatLogic {
 
             //Reset the enemy back to his original position.
             MainClass.hero.lastEnemy.reset();
-            
+
             CURRENT_STATE = combat_state.EXIT_COMBAT;
         }
         if(CURRENT_STATE == combat_state.PLAYER_LOSE){
@@ -124,6 +124,7 @@ public class CombatLogic {
 
             MainClass.hero.GPA = 4.0;
             MainClass.gameScreen.setMap(Utils.dorm, Utils.start_x, Utils.start_y, 5);
+            MainClass.openWorldScreen.camera.position.set(2700f,830f,0f);
             CURRENT_STATE = combat_state.EXIT_COMBAT;
         }
         if(CURRENT_STATE == combat_state.EXIT_COMBAT){

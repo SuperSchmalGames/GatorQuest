@@ -17,7 +17,7 @@ import com.superschmalgames.Utilities.Utils;
 
 public class OpenWorldScreen implements Screen {
 
-    OrthographicCamera camera;
+    public OrthographicCamera camera;
     private Viewport viewport;
     TiledMapRenderer tiledmaprenderer;
     TiledMapTileLayer collision;

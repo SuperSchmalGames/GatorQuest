@@ -4,8 +4,11 @@ package com.superschmalgames.NPC;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.superschmalgames.Hero.E_Move;
 import com.superschmalgames.Screens.CombatScreen;
+import com.superschmalgames.Utilities.Animator;
 import com.superschmalgames.Utilities.CharacterDialogue;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
@@ -15,14 +18,19 @@ public class ENEMY extends NPC {
     public E_Move[] attacks;
     public String win_script;
     public String lose_script;
-    public int enemyLife;
+    public int enemyLife, exp, money;
+    //Sprite that's shown for the hero during combat.
+    public Sprite combatSprite;
 
-    public ENEMY(char dir, String s, String win, String lose, String sprite, int x, int y, int h, E_Move[] a) {
+    public ENEMY(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a, int e, int m) {
         super(dir,s,sprite,x,y);
         win_script = win;
         lose_script = lose;
         attacks = a;
         enemyLife = h;
+        exp = e;
+        money = m;
+        combatSprite = new Sprite(new Texture(combat));
     }
 
     public void initiate(){
