@@ -16,6 +16,9 @@ public class REST extends NPC{
         //Set the dialogue flag true so the window will render to the game screen.
         MainClass.gameScreen.dial = true;
 
+        //Set this as the last friendly NPC the Hero has interacted with.
+        MainClass.hero.lastNPC = this;
+
         //Stop character movement, if we're moving.
         MainClass.gameScreen.lWalk = false;
         MainClass.gameScreen.rWalk = false;
