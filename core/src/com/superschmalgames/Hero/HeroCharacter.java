@@ -181,6 +181,7 @@ public class HeroCharacter {
         if (experience >= expCap)
             level();
     }
+
     //needs to be finished
     public void level() {
         lvl++;

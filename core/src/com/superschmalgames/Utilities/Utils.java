@@ -217,7 +217,7 @@ public class Utils {
     private static final E_Move[] Turlington_I_attacks = {New_Syntax};
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////NPC DIALOGUE START///////////////////////////////////////////////////////////////////////////////////////
-    public static final String dormA = "Hi! I’m a freshman too. Are you in The Good Life too? I’ve heard it’s really hard!";
+    public static final String dormA = "Open up your inventory with I. You can equip and remove items here using E and R respectively and view your consumables.";
     public static final String dormB = "Don’t forget to look at your Degree Audit! Press h to see it in the Hero menu, and it will tell you the order of the classes you have to complete.";
     public static final String dormC = "Your Campus Map will tell you where all of the buildings on campus are.";
     public static final String dormD = "This dining hall food is giving me some serious stomach issues…*belch* Oops!";
@@ -353,7 +353,7 @@ public class Utils {
     public static final String marstonA = "I came here to study, but it seems like everyone else just came to socialize...Why are they at the library?";
     public static final String marstonB = "Sorority recruitment is such a nightmare. I can’t believe they want us to wear heels the whole day!";
     public static final String marstonC = "I’m here to meet up with people for a group project but I’m the only one that showed up. They did mean 10:30AM...Right?";
-    public static final String marstonD = "I hate coming to the library, but I never get stuff done at home. I guess I’m stuck here...";
+    public static final String marstonD = "Welcome to the Marston Library, talk to the lady at the main desk to restore your GPA, or visit the Starbucks to get some supplies";
     public static final String marstonE = "There are so many books here, but I don’t think I’ve ever used any of them. I just go on my laptop when I’m here.";
     public static final String marstonF = "I’m calculating the lowest grade that I can get on this final that will still let me pass the class. It looks like I need a 99%...That can’t be right.";
     public static final String marstonG = "I’m studying for pre-calc right now. This is the hardest class ever! I aced it in high school, but it’s just so different here...";
@@ -726,10 +726,10 @@ public class Utils {
     //========================================================================================
     //========================================Dorm============================================
     public static NPC[] Dorm_enemies = {
-            new NPC('u',"Welcome to UF, this is your dorm room.", "visuals/sprite_sheets/sprite_walk_u3.png",9*MAP_RESOLUTION,20*MAP_RESOLUTION),
-            new NPC('d',"You better not steal anything", "visuals/sprite_sheets/sprite_walk_d5.png", 17*MAP_RESOLUTION,24*MAP_RESOLUTION),
+            new NPC('u',"Welcome to UF, this is your dorm room. Return here whenever you want to restore your GPA.", "visuals/sprite_sheets/sprite_walk_u3.png",9*MAP_RESOLUTION,20*MAP_RESOLUTION),
+            new NPC('d',"Open up your hero screen with H. You can view your stats, progress, and moves.", "visuals/sprite_sheets/sprite_walk_d5.png", 17*MAP_RESOLUTION,24*MAP_RESOLUTION),
             new NPC('l',"I have no idea how to play the piano","visuals/sprite_sheets/sprite_walk_l1.png", 25*MAP_RESOLUTION,12*MAP_RESOLUTION),
-            new NPC('r',"If you ever feel tired just return here","visuals/sprite_sheets/sprite_walk_r8.png", 10*MAP_RESOLUTION,3*MAP_RESOLUTION),
+            new NPC('r',"When leaving a building you will bring up the world map. Just move the pin to the building you want to visit and hit enter","visuals/sprite_sheets/sprite_walk_r8.png", 10*MAP_RESOLUTION,3*MAP_RESOLUTION),
             new NPC('r',dormA,"visuals/sprite_sheets/sprite_walk_r13.png",17*MAP_RESOLUTION,9*MAP_RESOLUTION),
             new NPC('l',dormB, "visuals/sprite_sheets/sprite_walk_l12.png", 21*MAP_RESOLUTION,9*MAP_RESOLUTION),
             new NPC('r',worldO, "visuals/sprite_sheets/sprite_walk_r2.png", MAP_RESOLUTION,31*MAP_RESOLUTION),
