@@ -30,6 +30,9 @@ public class HeroCharacter {
     //Represents numbers of semester completed. Each named professor beaten will increase this by 1.
     public int semester;
     public int gatorBucks;
+    public int experience;
+    private int expCap;
+    private int lvl;
 
     //Character stats.
     public double Software;
@@ -91,6 +94,8 @@ public class HeroCharacter {
         //#Semesters completed. Each named professor beaten increments this by 1.
         semester = 8;
         gatorBucks = 10000;
+        experience = 0;
+        expCap = 100;
 
         canMove = true;
     }
@@ -170,14 +175,18 @@ public class HeroCharacter {
         System.out.print("GPA filled");
     }
 
-    public void restoreGPA(double x) {
-        GPA += x;
+    public void winCombat(int e, int money) {
+        gatorBucks += money;
+        experience += e;
+        if (experience >= expCap)
+            level();
     }
-
-    public boolean decrementGPA(double x) {
-        GPA -= x;
-        if (GPA > 0) return true;
-        else return false;
+    //needs to be finished
+    public void level() {
+        lvl++;
+        //make leveling nonlinear, or comment out for linear leveling
+        expCap += 10*lvl;
+        //need a way to select skill to level;
     }
 
 }

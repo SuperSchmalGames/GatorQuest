@@ -135,12 +135,4 @@ public class NPC {
         }
     }
 
-    public void initiateCombat() {
-
-        if (!triggered)  {
-            triggered = true;
-            walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);
-        }
-        reset();
-    }
 }

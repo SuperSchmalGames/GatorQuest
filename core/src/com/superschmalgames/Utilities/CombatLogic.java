@@ -109,7 +109,7 @@ public class CombatLogic {
         if(CURRENT_STATE == combat_state.PLAYER_WIN){
             //Some stuff handling the player winning, getting exp, etc.
             Gdx.app.log("Combat Finish", "Gratz, we won!");
-
+            MainClass.hero.winCombat(MainClass.hero.lastEnemy.exp,MainClass.hero.lastEnemy.money);
             //Reset the enemy back to his original position.
             MainClass.hero.lastEnemy.reset();
 
