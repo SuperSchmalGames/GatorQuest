@@ -19,6 +19,9 @@ public class SHOP extends NPC {
         //Set the store flag true so the store window will render to the game screen
         MainClass.gameScreen.store = true;
 
+        //Set this as the last friendly NPC the Hero has interacted with.
+        MainClass.hero.lastNPC = this;
+
         //Stop character movement, if we're moving.
         MainClass.gameScreen.lWalk = false;
         MainClass.gameScreen.rWalk = false;

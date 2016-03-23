@@ -13,11 +13,9 @@ import com.superschmalgames.Utilities.Utils;
 
 public class BOSS extends ENEMY{
 
-    public BOSS(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a) {
-        super(dir,s,win,lose,sprite,x,y,h,a);
+    public BOSS(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a, int e, int m) {
+        super(dir,s,win,lose,sprite,combat,x,y,h,a,e,m);
 
-        //Initialize Boss-specific fields;
-        combatSprite = new Sprite(new Texture(combat));
     }
 
     public void initiate(){
@@ -48,7 +46,7 @@ public class BOSS extends ENEMY{
             MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OKNO_Y_OFFSET;
         }
         else {
-            MainClass.gameScreen.window.dialog.setText(Utils.font_small, win_script, Color.BLUE, 480, 8, true);
+            MainClass.gameScreen.window.dialog.setText(Utils.font_small, lose_script, Color.BLUE, 480, 8, true);
             MainClass.gameScreen.window.decLock = true;
             MainClass.gameScreen.window.enemy = false;
             MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
