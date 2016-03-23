@@ -115,6 +115,7 @@ public class CombatLogic {
             //Some stuff for player "passing out", relocating to dorm, healing back to 4.0, etc.
             Gdx.app.log("Combat Finish", "Boo, we lost!");
             MainClass.hero.GPA = 4.0;
+            MainClass.gameScreen.setMap(Utils.dorm, Utils.start_x, Utils.start_y, 5);
             CURRENT_STATE = combat_state.EXIT_COMBAT;
         }
         if(CURRENT_STATE == combat_state.EXIT_COMBAT){

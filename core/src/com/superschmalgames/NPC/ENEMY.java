@@ -46,7 +46,7 @@ public class ENEMY extends NPC {
             MainClass.gameScreen.window.dialog.setText(Utils.font_small, script, Color.BLUE, 480, 8, true);
         }
         else {
-            MainClass.gameScreen.window.dialog.setText(Utils.font_small, win_script, Color.BLUE, 480, 8, true);
+            MainClass.gameScreen.window.dialog.setText(Utils.font_small, lose_script, Color.BLUE, 480, 8, true);
         }
 
         //Set certain parts of the dialogue window to certain values depending on the event type.
