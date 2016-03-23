@@ -2,6 +2,7 @@ package com.superschmalgames.Screens;
 
 //This class is for the main screen we see when moving through the game world.
 
+import java.util.Random;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -12,6 +13,7 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.superschmalgames.NPC.ENEMY;
 import com.superschmalgames.Utilities.CharacterDialogue;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -26,6 +28,7 @@ public class GameScreen implements Screen {
     OrthographicCamera camera;
     private Viewport viewport;
     NPC[] enemies;
+    ENEMY[] randoms;
     //The game map itself.
     public TiledMapTileLayer collision;
     public TiledMapRenderer tiledmaprenderer;
@@ -37,6 +40,9 @@ public class GameScreen implements Screen {
     //Flags for handling character movement.
     public boolean lWalk, rWalk, uWalk, dWalk;
     public boolean dial, newDial, store;
+    private boolean attackable,safe;
+    private int recently_attacked;
+    Random random = new Random();
 
     //Declare window for dialogue popups
     public CharacterDialogue window;
@@ -81,26 +87,38 @@ public class GameScreen implements Screen {
             //Bookstore
             case 6:
                 enemies = Utils.Bookstore_enemies;
+                safe = true;
+                attackable = false;
                 break;
             //Dorm
             case 5:
                 enemies = Utils.Dorm_enemies;
+                safe = true;
+                attackable = false;
                 break;
             //Marston
             case 4:
                 enemies = Utils.Marston_enemies;
+                safe = true;
+                attackable = false;
                 break;
             //NEB
             case 3:
                 enemies = Utils.NEB_enemies;
+                randoms = Utils.NEB_randoms;
+                safe = false;
                 break;
             //CISE
             case 2:
                 enemies = Utils.CISE_enemies;
+                randoms = Utils.Cise_randoms;
+                safe = false;
                 break;
             //Turlington
             case 1:
                 enemies = Utils.Turlington_enemies;
+                randoms = Utils.Turlington_randoms;
+                safe = false;
                 break;
         }
     }
@@ -117,6 +135,7 @@ public class GameScreen implements Screen {
         if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("enemy")) {
             int temp = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("number"));
             if(!enemies[temp].getTriggered()) {
+                attackable = false;
                 lWalk = false;
                 rWalk = false;
                 uWalk = false;
@@ -227,6 +246,8 @@ public class GameScreen implements Screen {
     //if able, the "character" moves (actually the camera is moved, and the character is linked to the camera). A check is made to see if the character has entered a "door" to another floor.
     //After that, if the character has moved up or down an additional check is needed to determine if the character is leaving the dungeon to the open world
     public void walk(float delta){
+            if(!safe)
+                attackable = true;
             if(lWalk &&
                !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-Utils.MOVE_DIST)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
                !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-Utils.MOVE_DIST)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")) {
@@ -236,6 +257,10 @@ public class GameScreen implements Screen {
                     lWalk = false;
                     ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openWorldScreen);
                 }
+                if(recently_attacked != 0)
+                    recently_attacked--;
+                if(attackable && recently_attacked == 0)
+                randomEncounter();
             }
             else if(rWalk &&
                     !collision.getCell((int)(camera.position.x+MainClass.hero.width/2+Utils.MOVE_DIST)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -247,6 +272,10 @@ public class GameScreen implements Screen {
                     rWalk = false;
                     ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openWorldScreen);
                 }
+                if(recently_attacked != 0)
+                    recently_attacked--;
+                if(attackable && recently_attacked == 0)
+                randomEncounter();
             }
             else if(uWalk &&
                     !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y+Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -264,6 +293,10 @@ public class GameScreen implements Screen {
                     uWalk = false;
                     ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openWorldScreen);
                 }
+                if(recently_attacked != 0)
+                    recently_attacked--;
+                if(attackable && recently_attacked == 0)
+                randomEncounter();
             }
             else if(dWalk &&
                     !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2-Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -281,10 +314,20 @@ public class GameScreen implements Screen {
                     dWalk = false;
                     ((Game)Gdx.app.getApplicationListener()).setScreen(MainClass.openWorldScreen);
                 }
+                if(recently_attacked != 0)
+                    recently_attacked--;
+                if(attackable && recently_attacked == 0)
+                    randomEncounter();
             }
             else MainClass.hero.standAnimation();
             MainClass.hero.setPosition(camera.position.x, camera.position.y);
+    }
 
+    public void randomEncounter() {
+        if(random.nextInt(2000) < 10 ) {
+            recently_attacked = 400;
+            randoms[random.nextInt(randoms.length)].combat();
+        }
     }
 
     @Override

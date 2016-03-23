@@ -197,6 +197,34 @@ public class Utils {
     private static final E_Move[] Cise_D_attacks = {New_Syntax};
     private static final E_Move[] Cise_E_attacks = {New_Syntax};
     private static final E_Move[] Cise_F_attacks = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_1 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_2 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_3 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_4 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_5 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_6 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_7 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_8 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_9 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_10 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_11 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_12 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_13 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_14 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_15 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_16 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_17 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_18 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_19 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_20 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_21 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_22 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_23 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_24 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_25 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_26 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_27 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_28 = {New_Syntax};
     private static final E_Move[] Neb_A_attacks = {New_Syntax};
     private static final E_Move[] Neb_B_attacks = {New_Syntax};
     private static final E_Move[] Neb_C_attacks = {New_Syntax};
@@ -206,6 +234,34 @@ public class Utils {
     private static final E_Move[] Neb_G_attacks = {New_Syntax};
     private static final E_Move[] Neb_H_attacks = {New_Syntax};
     private static final E_Move[] Neb_I_attacks = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_1 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_2 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_3 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_4 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_5 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_6 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_7 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_8 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_9 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_10 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_11 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_12 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_13 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_14 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_15 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_16 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_17 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_18 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_19 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_20 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_21 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_22 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_23 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_24 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_25 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_26 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_27 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_28 = {New_Syntax};
     private static final E_Move[] Turlington_A_attacks = {New_Syntax};
     private static final E_Move[] Turlington_B_attacks = {New_Syntax};
     private static final E_Move[] Turlington_C_attacks = {New_Syntax};
@@ -215,6 +271,34 @@ public class Utils {
     private static final E_Move[] Turlington_G_attacks = {New_Syntax};
     private static final E_Move[] Turlington_H_attacks = {New_Syntax};
     private static final E_Move[] Turlington_I_attacks = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_1 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_2 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_3 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_4 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_5 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_6 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_7 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_8 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_9 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_10 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_11 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_12 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_13 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_14 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_15 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_16 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_17 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_18 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_19 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_20 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_21 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_22 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_23 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_24 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_25 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_26 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_27 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_28 = {New_Syntax};
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////NPC DIALOGUE START///////////////////////////////////////////////////////////////////////////////////////
     public static final String dormA = "Open up your inventory with I. You can equip and remove items here using E and R respectively and view your consumables.";
@@ -602,7 +686,38 @@ public class Utils {
             new ENEMY('l', nebRPre, nebRWin, nebRLose, "visuals/sprite_sheets/sprite_walk_l2.png", "visuals/sprite_sheets/sprite_l2.png", 112*MAP_RESOLUTION, (89-44)*MAP_RESOLUTION, 25, Neb_C_attacks, 10, 10),
             new ENEMY('l', nebTPre, nebTWin, nebTLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 220*MAP_RESOLUTION, (89-48)*MAP_RESOLUTION, 25, Neb_E_attacks, 10, 10),
             new ENEMY('r', nebUPre, nebUWin, nebULose, "visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l4.png", 229*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION, 25, Neb_F_attacks, 10, 10),
-            new ENEMY('l', nebWPre, nebWWin, nebWLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 281*MAP_RESOLUTION, (89-30)*MAP_RESOLUTION, 25, Neb_H_attacks, 10, 10),
+            new ENEMY('l', nebWPre, nebWWin, nebWLose, "visuals/sprite_sheets/sprite_walk_l5.png", "visuals/sprite_sheets/sprite_l5.png", 281*MAP_RESOLUTION, (89-30)*MAP_RESOLUTION, 25, Neb_H_attacks, 10, 10),
+    };
+    
+    public static ENEMY[] NEB_randoms = {
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Neb_random_attacks_1, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Neb_random_attacks_2, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Neb_random_attacks_3, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Neb_random_attacks_4, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Neb_random_attacks_5, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Neb_random_attacks_6, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Neb_random_attacks_7, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Neb_random_attacks_8, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Neb_random_attacks_9, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Neb_random_attacks_10, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Neb_random_attacks_11, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Neb_random_attacks_12, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Neb_random_attacks_13, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Neb_random_attacks_14, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Neb_random_attacks_15, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Neb_random_attacks_16, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Neb_random_attacks_17, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Neb_random_attacks_18, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Neb_random_attacks_19, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Neb_random_attacks_20, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Neb_random_attacks_21, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Neb_random_attacks_22, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Neb_random_attacks_23, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Neb_random_attacks_24, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Neb_random_attacks_15, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Neb_random_attacks_26, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Neb_random_attacks_27, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Neb_random_attacks_28, 10, 10),
     };
     //========================================================================================
     //========================================CISE============================================
@@ -650,6 +765,37 @@ public class Utils {
             new ENEMY('r', ciseMPre,ciseMWin,ciseMLose,"visuals/sprite_sheets/sprite_walk_r9.png", "visuals/sprite_sheets/sprite_l9.png",177*MAP_RESOLUTION, (66-13)*MAP_RESOLUTION, 25, Cise_E_attacks, 10, 10),
             new ENEMY('l', ciseNPre,ciseNWin,ciseNLose,"visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png",182*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 25, Cise_F_attacks, 10, 10), //40
 
+    };
+
+    public static ENEMY[] Cise_randoms = {
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Cise_random_attacks_1, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Cise_random_attacks_2, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Cise_random_attacks_3, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Cise_random_attacks_4, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Cise_random_attacks_5, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Cise_random_attacks_6, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Cise_random_attacks_7, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Cise_random_attacks_8, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Cise_random_attacks_9, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Cise_random_attacks_10, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Cise_random_attacks_11, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Cise_random_attacks_12, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Cise_random_attacks_13, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Cise_random_attacks_14, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Cise_random_attacks_15, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Cise_random_attacks_16, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Cise_random_attacks_17, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Cise_random_attacks_18, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Cise_random_attacks_19, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Cise_random_attacks_20, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Cise_random_attacks_21, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Cise_random_attacks_22, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Cise_random_attacks_23, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Cise_random_attacks_24, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Cise_random_attacks_15, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Cise_random_attacks_26, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Cise_random_attacks_27, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Cise_random_attacks_28, 10, 10),
     };
     //========================================================================================
     //========================================Turlington======================================
@@ -722,6 +868,37 @@ public class Utils {
             new ENEMY('d', turlingtonGPre,turlingtonGWin,turlingtonGLose,"visuals/sprite_sheets/sprite_walk_d7.png", "visuals/sprite_sheets/sprite_l7.png", 342*MAP_RESOLUTION, (128-35)*MAP_RESOLUTION, 25, Turlington_G_attacks, 10, 10),
             new ENEMY('r', turlingtonHPre,turlingtonHWin,turlingtonHLose,"visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l8.png", 347*MAP_RESOLUTION, (128-25)*MAP_RESOLUTION, 25, Turlington_H_attacks, 10, 10),
 
+    };
+
+    public static ENEMY[] Turlington_randoms = {
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Turlington_random_attacks_1, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Turlington_random_attacks_2, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Turlington_random_attacks_3, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Turlington_random_attacks_4, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Turlington_random_attacks_5, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Turlington_random_attacks_6, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Turlington_random_attacks_7, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Turlington_random_attacks_8, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Turlington_random_attacks_9, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Turlington_random_attacks_10, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Turlington_random_attacks_11, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Turlington_random_attacks_12, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Turlington_random_attacks_13, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Turlington_random_attacks_14, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Turlington_random_attacks_15, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Turlington_random_attacks_16, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Turlington_random_attacks_17, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Turlington_random_attacks_18, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Turlington_random_attacks_19, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Turlington_random_attacks_20, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Turlington_random_attacks_21, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Turlington_random_attacks_22, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Turlington_random_attacks_23, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Turlington_random_attacks_24, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Turlington_random_attacks_15, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Turlington_random_attacks_26, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Turlington_random_attacks_27, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Turlington_random_attacks_28, 10, 10),
     };
     //========================================================================================
     //========================================Dorm============================================
