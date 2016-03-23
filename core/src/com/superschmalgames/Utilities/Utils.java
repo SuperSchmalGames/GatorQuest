@@ -611,6 +611,7 @@ public class Utils {
     public static final String tur52 = "I packed my lunch today! I’ve been trying to do meal prep more consistently. Today, I have greek yogurt and a roast beef sandwich.";
     public static final String tur53 = "Flannels are so nice, but they’re too warm to wear very often in Florida. I sometimes wish it could be a little cooler here.";
     public static final String tur54 = "Gainesville is so muggy! I’m covered in sweat.";
+    public static final String tur55 = "I prefer mechanical pencils over pens.";
 
     //////////////////////////////////////DUNGEON ENEMIES//////////////////////////////////////////////////////////////////////
     //when adding enemies to the various arrays, the proper tiles must be accounted for in the Tiled Map Editor
@@ -856,7 +857,7 @@ public class Utils {
             new NPC('l', tur53, "visuals/sprite_sheets/sprite_walk_l12.png", 320*MAP_RESOLUTION, (128-22)*MAP_RESOLUTION),
             new NPC('u', tur54, "visuals/sprite_sheets/sprite_walk_u13.png", 334*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION),
             new ENEMY('d', turlingtonIPre,turlingtonIWin,turlingtonILose, "visuals/sprite_sheets/sprite_walk_d14.png", "visuals/sprite_sheets/sprite_l14.png", 349*MAP_RESOLUTION, (128-19)*MAP_RESOLUTION, 25, Turlington_I_attacks, 10, 10),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r1.png", 353*MAP_RESOLUTION, (128-30)*MAP_RESOLUTION), //56
+            new NPC('r', tur55, "visuals/sprite_sheets/sprite_walk_r1.png", 353*MAP_RESOLUTION, (128-30)*MAP_RESOLUTION), //56
             new BOSS('d', "I am Chui", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/chui/chui_d.png", "visuals/Professors/chui/chui_l.png", 46*MAP_RESOLUTION, (128-27)*MAP_RESOLUTION, 45, Chui_attacks, 10, 10),
             new BOSS('d', "I am Horton", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/horton/horton_d.png", "visuals/Professors/horton/horton_l.png", 170*MAP_RESOLUTION, (128-122)*MAP_RESOLUTION, 45, Horton_attacks, 10, 10),
             new BOSS('d', "I am Small", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/small/small_d.png", "visuals/Professors/small/small_l.png", 362*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION, 45, Small_attacks, 10, 10),
