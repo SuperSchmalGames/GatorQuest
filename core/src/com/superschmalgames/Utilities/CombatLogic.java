@@ -109,11 +109,19 @@ public class CombatLogic {
         if(CURRENT_STATE == combat_state.PLAYER_WIN){
             //Some stuff handling the player winning, getting exp, etc.
             Gdx.app.log("Combat Finish", "Gratz, we won!");
+
+            //Reset the enemy back to his original position.
+            MainClass.hero.lastEnemy.reset();
+            
             CURRENT_STATE = combat_state.EXIT_COMBAT;
         }
         if(CURRENT_STATE == combat_state.PLAYER_LOSE){
             //Some stuff for player "passing out", relocating to dorm, healing back to 4.0, etc.
             Gdx.app.log("Combat Finish", "Boo, we lost!");
+
+            //Reset the enemy back to his original position.
+            MainClass.hero.lastEnemy.reset();
+
             MainClass.hero.GPA = 4.0;
             MainClass.gameScreen.setMap(Utils.dorm, Utils.start_x, Utils.start_y, 5);
             CURRENT_STATE = combat_state.EXIT_COMBAT;
@@ -122,11 +130,9 @@ public class CombatLogic {
             //Stop the combat music.
             Utils.combatScreenMusic.stop();
 
-            //Reset the enemy back to his original position.
-            MainClass.hero.lastEnemy.reset();
-
             //Give control back to the main input handler, and switch back to GameScreen.
             Gdx.input.setInputProcessor(MainClass.inputHandler);
+            MainClass.hero.canMove = true;
             ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
         }
     }
