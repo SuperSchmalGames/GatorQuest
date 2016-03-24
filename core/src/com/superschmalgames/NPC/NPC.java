@@ -76,11 +76,6 @@ public class NPC {
         }
     }
 
-    public void reset() {
-        x_pos = org_x;
-        y_pos = org_y;
-    }
-
     public String getScript() {
         return script;
     }

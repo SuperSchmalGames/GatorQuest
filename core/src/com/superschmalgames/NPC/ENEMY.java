@@ -18,16 +18,17 @@ public class ENEMY extends NPC {
     public E_Move[] attacks;
     public String win_script;
     public String lose_script;
-    public int enemyLife, exp, money;
+    public int enemyLife, exp, money, origLife;
     //Sprite that's shown for the hero during combat.
     public Sprite combatSprite;
 
-    public ENEMY(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a, int e, int m) {
+    public ENEMY(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, int origH, E_Move[] a, int e, int m) {
         super(dir,s,sprite,x,y);
         win_script = win;
         lose_script = lose;
         attacks = a;
         enemyLife = h;
+        origLife = origH;
         exp = e;
         money = m;
         combatSprite = new Sprite(new Texture(combat));
@@ -81,6 +82,12 @@ public class ENEMY extends NPC {
 
     public void combat_result(boolean t) {
         triggered = t;
+    }
+
+    public void reset() {
+        x_pos = org_x;
+        y_pos = org_y;
+        MainClass.hero.lastEnemy.enemyLife = MainClass.hero.lastEnemy.origLife;
     }
 
     public void combat() {

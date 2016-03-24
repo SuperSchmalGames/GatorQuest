@@ -41,7 +41,6 @@ public class DialogueInputHandler implements InputProcessor {
             //If we just talked to a friendly NPC, we don't start combat.
             else {
                 //Reset the NPC to the position they were at before walking over to us.
-                MainClass.hero.lastNPC.reset();
                 //Give control back to the main input handler.
                 Gdx.input.setInputProcessor(MainClass.inputHandler);
             }

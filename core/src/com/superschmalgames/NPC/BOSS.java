@@ -13,8 +13,8 @@ import com.superschmalgames.Utilities.Utils;
 
 public class BOSS extends ENEMY{
 
-    public BOSS(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a, int e, int m) {
-        super(dir,s,win,lose,sprite,combat,x,y,h,a,e,m);
+    public BOSS(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, int origH, E_Move[] a, int e, int m) {
+        super(dir,s,win,lose,sprite,combat,x,y,h,origH,a,e,m);
 
     }
 
