@@ -89,6 +89,9 @@ public class CombatInputHandler implements InputProcessor{
                     MainClass.combatLogic.heroBaseDmg = MainClass.hero.moves.attacks[selection].use(MainClass.combatLogic.heroStats);
                     Gdx.app.log("Hero Damage Test", "Damage Done: " + MainClass.combatLogic.heroBaseDmg);
 
+                    //Set the hero's move string that will be displayed on the combat screen.
+                    MainClass.combatScreen.hMovDesc = MainClass.hero.name + " used " + MainClass.hero.moves.attacks[selection].moveName + "!";
+
                     //Once move has been selected, back us out to the root menu for our next turn.
                     moveMenu = false;                             //Reset the flags to root being true.
                     rootMenu = true;
@@ -142,6 +145,9 @@ public class CombatInputHandler implements InputProcessor{
 
                     //Make the call to activate the Item we've selected.
                     MainClass.hero.inventory.items.get(selection).activateItem();
+
+                    //Set the hero's move string that will be displayed on the combat screen.
+                    MainClass.combatScreen.hMovDesc = MainClass.hero.name + " used a " + MainClass.hero.inventory.items.get(selection).getItemName() + "!";
 
                     //Once the item has been selected, back us out to the root menu for our next turn.
                     itemMenu = false;

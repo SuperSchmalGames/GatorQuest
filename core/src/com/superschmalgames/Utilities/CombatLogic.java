@@ -12,7 +12,8 @@ public class CombatLogic {
     //logic, etc. Have a state TRANSITION that holds a loop running while things in the combat screen transition for a second
     //or two, then have combat screen change the state so that the loop breaks, allowing the next combat state to occur.
     //
-    //May have to use a current_state as well as a previous_state in order to properly track everything.
+    //Maybe make the removal/addition of health point their own methods. Calling in proper order could fix the issue
+    //of having health update too quickly when trying to show that the hero used a restorative item.
     //
     //Have a boolean or some variable in the hero class that tracks if we have a shield up, a defense boost,
     //etc. Using an item that activates one of those effects will simply switch the bool to true, then we can check it
@@ -27,13 +28,14 @@ public class CombatLogic {
     //The base damage done by a move. Damage is calculated using hero stats.
     public double heroBaseDmg, enemyBaseDmg;
 
+    //Boolean used to determine when we're transitioning from one state to another.
+    public boolean transition, hDone, eDone, hWin, eWin;
+
     public enum combat_state{
         PLAYER_TURN,          //Player makes a selection and the effects are applied.
         ENEMY_TURN,           //Enemy makes a selection and the effects are applied.
         PLAYER_WIN,           //Enemy health reaches zero. Victory effects are applied, move to exit_combat.
         PLAYER_LOSE,          //Hero health reaches zero. Loss effects are applied, move to exit_combat.
-        EXIT_COMBAT,          //End-of-combat cleanup is done, combat is exited.
-        TRANSITION            //Transitionary state to allow for combat animations.
     }
     public combat_state CURRENT_STATE;
 
@@ -74,9 +76,19 @@ public class CombatLogic {
 
         //Initialize current_state to be player turn whenever new combat starts.
         CURRENT_STATE = combat_state.PLAYER_TURN;
+        transition = false;
+        hDone = false;
+        eDone = false;
+        hWin = false;
+        eWin = false;
     }
 
     public void execCombat(){
+        //Tell the combat screen to display transition to next combat state, and restrict player input during transition.
+        MainClass.combatInputHandler.playerControl = false;
+        transition = true;
+
+        //Series of states to control combat logic flow.
         if(CURRENT_STATE == combat_state.PLAYER_TURN){
             //Subtract health from enemy equal to hero damage.
             MainClass.hero.lastEnemy.enemyLife -= heroBaseDmg;
@@ -89,15 +101,13 @@ public class CombatLogic {
 
             //If enemy life drops to 0, set state to player win.
             if(MainClass.hero.lastEnemy.enemyLife <= 0){
-                MainClass.combatScreen.enemyLife = "Assignments: 0";
                 CURRENT_STATE = combat_state.PLAYER_WIN;
             }
 
-            //Update the Hero life displayed to the screen.
-            MainClass.combatScreen.heroLife = "Your GPA: " + Utils.df1.format(MainClass.hero.GPA);    //MainClass.hero.GPA
-            //Update the enemy life displayed to the screen.
-            MainClass.combatScreen.enemyLife = "Assignments: " + MainClass.hero.lastEnemy.enemyLife;
+            //Signify we successfully completed the Hero's part of this combat round.
+            hDone = true;
         }
+
         if(CURRENT_STATE == combat_state.ENEMY_TURN){
             //Some logic for randomly picking moves.
             enemyBaseDmg = MainClass.hero.lastEnemy.attacks[0].use(heroStats);
@@ -105,42 +115,75 @@ public class CombatLogic {
             Gdx.app.log("Enemy Turn", "Move Selected: " + MainClass.hero.lastEnemy.attacks[0].getMoveName());
             Gdx.app.log("Enemy Damage Test", "Damage Done: "+ enemyBaseDmg);
 
+            //Set the enemy's combat string that will be displayed on the combat screen.
+            MainClass.combatScreen.eMovDesc = "Enemy used " + MainClass.hero.lastEnemy.attacks[0].getMoveName();
+
             //Set state back to player turn.
             CURRENT_STATE = combat_state.PLAYER_TURN;
 
             //If Hero GPA drops to 0, set state to player lose.
             if(MainClass.hero.GPA <= 0){
-                MainClass.combatScreen.heroLife = "Your GPA: 0.0";
                 CURRENT_STATE = combat_state.PLAYER_LOSE;
             }
 
-            //Update the Hero life displayed to the screen.
-            MainClass.combatScreen.heroLife = "Your GPA: " + Utils.df1.format(MainClass.hero.GPA);
+            //Signify we successfully completed the Enemy's part of this round of combat.
+            eDone = true;
         }
+
         if(CURRENT_STATE == combat_state.PLAYER_WIN){
             //Some stuff handling the player winning, getting exp, etc.
+            MainClass.combatScreen.eMovDesc = MainClass.hero.name + " won the battle!";
+
+            //Signify the Hero has won and we need to end combat.
+            hWin = true;
+
             Gdx.app.log("Combat Finish", "Gratz, we won!");
-            CURRENT_STATE = combat_state.EXIT_COMBAT;
         }
         if(CURRENT_STATE == combat_state.PLAYER_LOSE){
             //Some stuff for player "passing out", relocating to dorm, healing back to 4.0, etc.
-            Gdx.app.log("Combat Finish", "Boo, we lost!");
+            MainClass.combatScreen.description = MainClass.hero.name + " was defeated!";
+
+            //Signify the Enemy has won and we need to end combat.
+            eWin = true;
+
+            //Transport Hero back to his dorm room and heal him back to 4.0.
             MainClass.hero.GPA = 4.0;
-            CURRENT_STATE = combat_state.EXIT_COMBAT;
+            //transport hero here
+
+            Gdx.app.log("Combat Finish", "Boo, we lost!");
         }
-        if(CURRENT_STATE == combat_state.EXIT_COMBAT){
-            //Stop the combat music.
-            Utils.combatScreenMusic.stop();
+    }
 
-            //Lock player input (within the CombatInputHandler) until next fight starts.
-            MainClass.combatInputHandler.playerControl = false;
-
-            //Reset the enemy back to his original position.
-            MainClass.hero.lastEnemy.reset();
-
-            //Give control back to the main input handler, and switch back to GameScreen.
-            Gdx.input.setInputProcessor(MainClass.inputHandler);
-            ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+    public void updateHero(){
+        //Update the Hero life displayed to the screen.
+        if(MainClass.hero.GPA <= 0.0){
+            MainClass.combatScreen.heroLife = "Your GPA: 0.0";
         }
+        else
+            MainClass.combatScreen.heroLife = "Your GPA: " + Utils.df1.format(MainClass.hero.GPA);
+    }
+
+    public void updateEnemy(){
+        //Update the enemy life displayed to the screen.
+        if(MainClass.hero.lastEnemy.enemyLife <= 0){
+            MainClass.combatScreen.enemyLife = "Assignments: 0";
+        }
+        else
+            MainClass.combatScreen.enemyLife = "Assignments: " + MainClass.hero.lastEnemy.enemyLife;
+    }
+
+    public void exitCombat(){
+        //Stop the combat music.
+        Utils.combatScreenMusic.stop();
+
+        //Lock player input (within the CombatInputHandler) until next fight starts.
+        MainClass.combatInputHandler.playerControl = false;
+
+        //Reset the enemy back to his original position.
+        MainClass.hero.lastEnemy.reset();
+
+        //Give control back to the main input handler, and switch back to GameScreen.
+        Gdx.input.setInputProcessor(MainClass.inputHandler);
+        ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
     }
 }
