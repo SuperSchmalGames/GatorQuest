@@ -104,7 +104,7 @@ public class CombatScreen implements Screen {
             if(MainClass.combatLogic.hDone){
 
                 //Display hMoveDesc here
-                Utils.font_medsmall.draw(MainClass.batch, hMovDesc, 85, 223);
+                Utils.font.draw(MainClass.batch, hMovDesc, 55, 223);
 
                 //Update the amount of hero/enemy health shown.
                 if(!statusUpdate){
@@ -126,7 +126,7 @@ public class CombatScreen implements Screen {
             else if(MainClass.combatLogic.eDone){
 
                 //Display the eMovDesc here.
-                Utils.font_medsmall.draw(MainClass.batch, eMovDesc, 530, 223);
+                Utils.font.draw(MainClass.batch, eMovDesc, 55, 223);
 
                 //Update the amount of hero health shown.
                 if(!statusUpdate){
@@ -154,7 +154,7 @@ public class CombatScreen implements Screen {
             else if(MainClass.combatLogic.hWin){
 
                 //Display the win message. We use eMovDesc here since the enemy didn't need it.
-                Utils.font_medsmall.draw(MainClass.batch, eMovDesc, 530, 223);
+                Utils.font.draw(MainClass.batch, eMovDesc, 55, 223);
 
                 //After displaying the win message for 2 seconds, call method to exit combat.
                 if(waitTime > 2) {
@@ -165,7 +165,7 @@ public class CombatScreen implements Screen {
             else if(MainClass.combatLogic.eWin){
 
                 //Display the win message. We use description here since it won't be needed for anything else.
-                Utils.font_medsmall.draw(MainClass.batch, description, 85, 223);
+                Utils.font.draw(MainClass.batch, description, 55, 223);
 
                 //After displaying the lose message for 2 seconds, call method to exit combat.
                 if(waitTime > 2) {

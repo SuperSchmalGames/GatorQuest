@@ -119,7 +119,7 @@ public class CombatLogic {
             Gdx.app.log("Enemy Damage Test", "Damage Done: "+ enemyBaseDmg);
 
             //Set the enemy's combat string that will be displayed on the combat screen.
-            MainClass.combatScreen.eMovDesc = "Enemy used " + MainClass.hero.lastEnemy.attacks[0].getMoveName();
+            MainClass.combatScreen.eMovDesc = "Enemy used " + MainClass.hero.lastEnemy.attacks[0].getMoveName() + "!";
 
             //Set state back to player turn.
             CURRENT_STATE = combat_state.PLAYER_TURN;
