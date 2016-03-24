@@ -21,7 +21,10 @@ public class CombatLogic {
     //double that acts as a multiplier for incoming damage. It's normally set to 1.0, but damage reducers will sub like
     //0.5 from that, and shields will subtract the full 1.0 for some number of turns.
     //
-    //Use a string to display the Enemy's winning String if the Hero oses the fight.
+    //Have the amount of health lost/gained show up under the hero.enemy health in combat screen in green/red in order
+    //to show what's happening to those stats.
+    //
+    //Use a string to display the Enemy's winning String if the Hero loses the fight.
     //
     //Make sure game doesn't crash if hitting enter on item list when we have no items.
 
