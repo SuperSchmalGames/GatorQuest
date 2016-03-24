@@ -17,7 +17,7 @@ import com.superschmalgames.Utilities.Utils;
 
 public class OpenWorldScreen implements Screen {
 
-    OrthographicCamera camera;
+    public OrthographicCamera camera;
     private Viewport viewport;
     TiledMapRenderer tiledmaprenderer;
     TiledMapTileLayer collision;
@@ -52,6 +52,10 @@ public class OpenWorldScreen implements Screen {
     //Handles the moving from open world into a selected dungeon
     public int select() {
         if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("level")) {
+            lwalk = false;
+            rwalk = false;
+            dwalk = false;
+            uwalk = false;
             location = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("level"));
             switch(location) {
                 //Bookstore

@@ -135,6 +135,9 @@ public class CombatLogic {
 
         if(CURRENT_STATE == combat_state.PLAYER_WIN){
             //Some stuff handling the player winning, getting exp, etc.
+            MainClass.hero.winCombat(MainClass.hero.lastEnemy.exp,MainClass.hero.lastEnemy.money);
+
+            //Display a message that we won the battle.
             MainClass.combatScreen.eMovDesc = MainClass.hero.name + " won the battle!";
 
             //Signify the Hero has won and we need to end combat.
@@ -149,9 +152,12 @@ public class CombatLogic {
             //Signify the Enemy has won and we need to end combat.
             eWin = true;
 
-            //Transport Hero back to his dorm room and heal him back to 4.0.
+            //Heal Hero back to 4.0.
             MainClass.hero.GPA = 4.0;
-            //transport hero here
+
+            //Transport hero back to his dorm room.
+            MainClass.gameScreen.setMap(Utils.dorm, Utils.start_x, Utils.start_y, 5);
+            MainClass.openWorldScreen.camera.position.set(2700f,830f,0f);
 
             Gdx.app.log("Combat Finish", "Boo, we lost!");
         }
@@ -187,6 +193,7 @@ public class CombatLogic {
 
         //Give control back to the main input handler, and switch back to GameScreen.
         Gdx.input.setInputProcessor(MainClass.inputHandler);
+        MainClass.hero.canMove = true;
         ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
     }
 }

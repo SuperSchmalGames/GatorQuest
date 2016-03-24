@@ -165,30 +165,31 @@ public class HeroScreen implements Screen {
         {
             MainClass.batch.draw(Utils.hero_degree_tex, 0, 0);
             Utils.font.draw(MainClass.batch,"Name:\n"+MainClass.hero.name, 50 ,505);
-            Utils.font.draw(MainClass.batch,"GatorBucks:\n"+MainClass.hero.gatorBucks, 50 ,385);
+            Utils.font.draw(MainClass.batch,"GPA: "+MainClass.hero.GPA, 50 ,405);
+            Utils.font.draw(MainClass.batch,"GatorBucks:\n"+MainClass.hero.gatorBucks, 50 ,345);
             if(MainClass.hero.outfitNum == 7)
             {
                 Utils.av1_sprite.setScale(2.5f);
                 Utils.av1_sprite.draw(MainClass.batch);
-                Utils.av1_sprite.setPosition(150,200);
+                Utils.av1_sprite.setPosition(150,160);
             }
             else if(MainClass.hero.outfitNum == 11)
             {
                 Utils.av2_sprite.setScale(2.5f);
                 Utils.av2_sprite.draw(MainClass.batch);
-                Utils.av2_sprite.setPosition(150,200);
+                Utils.av2_sprite.setPosition(150,160);
             }
             else if(MainClass.hero.outfitNum == 10)
             {
                 Utils.av3_sprite.setScale(2.5f);
                 Utils.av3_sprite.draw(MainClass.batch);
-                Utils.av3_sprite.setPosition(150,200);
+                Utils.av3_sprite.setPosition(150,160);
             }
             else if(MainClass.hero.outfitNum == 9)
             {
                 Utils.av4_sprite.setScale(2.5f);
                 Utils.av4_sprite.draw(MainClass.batch);
-                Utils.av4_sprite.setPosition(150,200);
+                Utils.av4_sprite.setPosition(150,160);
             }
 
             Utils.font.draw(MainClass.batch,"Programming I: Dobbins", 420,505);

@@ -197,6 +197,34 @@ public class Utils {
     private static final E_Move[] Cise_D_attacks = {New_Syntax};
     private static final E_Move[] Cise_E_attacks = {New_Syntax};
     private static final E_Move[] Cise_F_attacks = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_1 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_2 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_3 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_4 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_5 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_6 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_7 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_8 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_9 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_10 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_11 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_12 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_13 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_14 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_15 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_16 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_17 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_18 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_19 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_20 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_21 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_22 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_23 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_24 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_25 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_26 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_27 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_28 = {New_Syntax};
     private static final E_Move[] Neb_A_attacks = {New_Syntax};
     private static final E_Move[] Neb_B_attacks = {New_Syntax};
     private static final E_Move[] Neb_C_attacks = {New_Syntax};
@@ -206,6 +234,34 @@ public class Utils {
     private static final E_Move[] Neb_G_attacks = {New_Syntax};
     private static final E_Move[] Neb_H_attacks = {New_Syntax};
     private static final E_Move[] Neb_I_attacks = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_1 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_2 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_3 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_4 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_5 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_6 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_7 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_8 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_9 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_10 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_11 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_12 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_13 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_14 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_15 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_16 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_17 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_18 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_19 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_20 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_21 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_22 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_23 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_24 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_25 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_26 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_27 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_28 = {New_Syntax};
     private static final E_Move[] Turlington_A_attacks = {New_Syntax};
     private static final E_Move[] Turlington_B_attacks = {New_Syntax};
     private static final E_Move[] Turlington_C_attacks = {New_Syntax};
@@ -215,9 +271,37 @@ public class Utils {
     private static final E_Move[] Turlington_G_attacks = {New_Syntax};
     private static final E_Move[] Turlington_H_attacks = {New_Syntax};
     private static final E_Move[] Turlington_I_attacks = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_1 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_2 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_3 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_4 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_5 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_6 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_7 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_8 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_9 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_10 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_11 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_12 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_13 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_14 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_15 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_16 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_17 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_18 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_19 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_20 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_21 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_22 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_23 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_24 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_25 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_26 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_27 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_28 = {New_Syntax};
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////NPC DIALOGUE START///////////////////////////////////////////////////////////////////////////////////////
-    public static final String dormA = "Hi! I’m a freshman too. Are you in The Good Life too? I’ve heard it’s really hard!";
+    public static final String dormA = "Open up your inventory with I. You can equip and remove items here using E and R respectively and view your consumables.";
     public static final String dormB = "Don’t forget to look at your Degree Audit! Press h to see it in the Hero menu, and it will tell you the order of the classes you have to complete.";
     public static final String dormC = "Your Campus Map will tell you where all of the buildings on campus are.";
     public static final String dormD = "This dining hall food is giving me some serious stomach issues…*belch* Oops!";
@@ -353,7 +437,7 @@ public class Utils {
     public static final String marstonA = "I came here to study, but it seems like everyone else just came to socialize...Why are they at the library?";
     public static final String marstonB = "Sorority recruitment is such a nightmare. I can’t believe they want us to wear heels the whole day!";
     public static final String marstonC = "I’m here to meet up with people for a group project but I’m the only one that showed up. They did mean 10:30AM...Right?";
-    public static final String marstonD = "I hate coming to the library, but I never get stuff done at home. I guess I’m stuck here...";
+    public static final String marstonD = "Welcome to the Marston Library, talk to the lady at the main desk to restore your GPA, or visit the Starbucks to get some supplies";
     public static final String marstonE = "There are so many books here, but I don’t think I’ve ever used any of them. I just go on my laptop when I’m here.";
     public static final String marstonF = "I’m calculating the lowest grade that I can get on this final that will still let me pass the class. It looks like I need a 99%...That can’t be right.";
     public static final String marstonG = "I’m studying for pre-calc right now. This is the hardest class ever! I aced it in high school, but it’s just so different here...";
@@ -382,6 +466,153 @@ public class Utils {
     //public static final String marstonONo = "Understandable.";
     //public static final String marstonOSuffFunds = "Here you go! You receive a USB Blaster.";
     //public static final String marstonOUsed = "Thanks for taking it off my hands.";
+
+    public static final String neb1 = "I’m in Digital Integrated Circuits right now and it’s great.";
+    public static final String neb2 = "I’m loving this #HarrisRotunda. #Harris is such a good company. #Sponsored #PayMeHarris";
+    public static final String neb3 = "Dr. Turner is just the best. Such a nice guy, and he actually likes teaching. What a concept, huh?";
+    public static final String neb4 = "I hate it when a professor just blasts through 70 powerpoint slides and then calls it a lecture. How is that helpful? How is that teaching?";
+    public static final String neb5 = "I survive on coffee.";
+    public static final String neb6 = "Oh yea? Well I only got 2 hours of sleep last night. Top THAT.";
+    public static final String neb7 = "I’m pretty stoked about being an engineer. I love feeling employable.";
+    public static final String neb8 = "I’m in Digital Design right now and it’s actually really cool. It’s like Digital Logic but more code-y, and you get to do more stuff.";
+    public static final String neb9 = "Wire wrapping is hell on earth.";
+    public static final String neb10 = "Dr. Stitt is a champion. Nice, professional, and a good teacher. ";
+    public static final String neb11 = "I lost my toolbox!";
+    public static final String neb12 = "Yes! I just got an A on a test!";
+    public static final String neb13 = "Engineering is all about beating the curve. It doesn’t matter if you got a 65 if the average on the test was a 57. Just beat the curve, and you’ll succeed here as a Gator Engineer.";
+    public static final String neb14 = "I like that we get a lot of hands-on learning here at UF. The labs are tough, and they take up a lot of time, but I really feel like I’m learning.";
+    public static final String neb15 = "I’m beginning to realize that I’m going to graduate soon. I’m not ready to be part of the real world!";
+    public static final String neb16 = "My name is Julio Chavez. Nope, not like that Julio Chavez ;)";
+    public static final String neb17 = "Have you heard about Scala? It’s this great programming language. You’re a total newb if you don’t use it.";
+    public static final String neb18 = "Yep, I’m the TA for Senior Design. No, I haven’t taken Senior Design.";
+    public static final String neb19 = "These engineers stress me out. I mean, I get that these classes are hard but...Chill? A little? Please?";
+    public static final String neb20 = "This is stressful.";
+    public static final String neb21 = "I think that there’s a real problem with the unattainable expectations we set for women in today’s society.";
+    public static final String neb22 = "I need to visit a dentist. I have a molar that hurts when I chew hot foods.";
+    public static final String neb23 = "I accidently sat on my glasses yesterday and they snapped! I’m wearing my contacts right now.";
+    public static final String neb24 = "I got sunburned at the lake the other day. I put a little aloe vera yesterday and it’s better today, but it still hurts a little.";
+    public static final String neb25 = "I hate how cold they keep the inside of these class buildings! I go from sweating outside in shorts and a tank to shivering when I’m in class.";
+    public static final String neb26 = "I think I’m getting sick. I woke up with a sore throat.";
+    public static final String neb27 = "UF is always under construction. They’re building a new chemistry building on the north side of campus, and they just finished a new dorm over by the business school.";
+    public static final String neb28 = "I think I want to get my nose pierced.";
+    public static final String neb29 = "Relish has the best burgers ever.";
+    public static final String neb30 = "I can’t wait for the summer! I have an internship lined up.";
+    public static final String neb31 = "I’m a senior, so I’ll be out of here in no time. It’s such a bittersweet feeling.";
+    public static final String neb32 = "My phone is at 11% and it’s only noon. This is insane! I need to carry a charger with me everywhere I go.";
+    public static final String neb33 = "If the UF wifi knocks me off one more time I am actually going to scream.";
+    public static final String neb34 = "I haven’t worn my retainer in almost a month and I’m worried that my teeth are shifting. I don’t want to have to wear braces again!";
+    public static final String neb35 = "I want to travel the world! Germany is at the top of my list.";
+    public static final String neb36 = "I did yoga this morning and now I’m feeling limber and energized.";
+    public static final String neb37 = "Choosing my major is making me feel so lost. I don’t know what I want for lunch. How am I supposed to decide what job I want for my whole life?";
+    public static final String neb38 = "Facebook is pretty much dead. Instagram and Snapchat have taken over.";
+    public static final String neb39 = "I hope my teacher doesn’t give us any more projects. I have enough work to do as it is!";
+    public static final String neb40 = "Online homework is the worst. I always leave it until the last minute and, since it’s due at midnight, that means I’m working late.";
+    public static final String neb41 = "Being smart is nice, but being nice is more important.";
+    public static final String neb42 = "The UF infirmary is a joke. The RN there wouldn’t give me anything.";
+    public static final String neb43 = "It’s pretty tough to graduate in only 4 years with all of these classes they keep adding.";
+    public static final String neb44 = "I’m debating whether I should be an electrical engineer or a computer engineer. There aren’t too many differences from what I can tell, but it seems like an important decision.";
+    public static final String neb45 = "GPD has given me 4 parking tickets in the last year. This is absurd.";
+    public static final String neb46 = "I’m getting sick of these professors who want to give no notice for quizzes and tests. Have a syllabus and follow it.";
+    public static final String neb47 = "I love the smoothies from Little Hall Express. They’re so tasty!";
+    public static final String neb48 = "I’m learning to enjoy red wine now that I’m finally 21. It seems like such a classy drink to me.";
+    public static final String neb49 = "I was up all night studying for a test... Could really use some rest.";
+    public static final String neb50 = "I'm so tired of having to repeat classes... It's getting to pricey.";
+    public static final String neb51 = "Oh crap, I'm late turning in this assignment and my computer won't connect to the school's wifi.";
+    public static final String neb52 = "I tried the sushi at the store here... It was a mistake.";
+    public static final String neb53 = "Have you ever seen the senior design presentations done here?";
+    public static final String neb54 = "Balancing school and work is getting to be too tiring.";
+    public static final String neb55 = "Have you thought about joining any of the engineering societies?";
+
+    public static final String cise1 = "No Southern Accent is actually a lot of fun. Our album is dropping on iTunes this week.";
+    public static final String cise2 = "I’m taking Object Oriented Programming with Dave Small because I enjoy feeling pain.";
+    public static final String cise3 = "So many noobs at this school. Like, how do you not know how to write a simple Perl script? How can you not understand simple Javascript? I have a poor relationship with my father.";
+    public static final String cise4 = "I’m in Discrete Math and I like the logic based stuff.";
+    public static final String cise5 = "I love Dr. Williamson. Linear Algebra is so easy and fun.";
+    public static final String cise6 = "Programming 1 is in Java but Programming 2 is in C++. ";
+    public static final String cise7 = "I’m CS in the LAS college so I have to do a minor. Should I do a math minor or a history minor?";
+    public static final String cise8 = "I don’t really understand the choices some people make.";
+    public static final String cise9 = "This Buzzfeed quiz told me I’m destined to marry Bieber.";
+    public static final String cise10 = "Should I vote for Bernie or Hillary? Trump is out since I’m not a racist.";
+    public static final String cise11 = "I’m a crossfit pro.";
+    public static final String cise12 = "Freshman girls should stay away from Pike.";
+    public static final String cise13 = "Mac or PC? What about Linux?";
+    public static final String cise14 = "My Smash Bros main is Cloud. Probably Zero Suit if I have to choose from non-DLC characters.";
+    public static final String cise15 = "What’s your favorite anime?";
+    public static final String cise16 = "The Good Wife is the best show on television. You need to watch it as soon as possible.";
+    public static final String cise17 = "I just chugged a monster and took an exam. Hopefully my writing was legible. My hand was shaking a little bit.";
+    public static final String cise18 = "I have an OS test tomorrow and I couldn’t be more nervous. This is too stressful.";
+    public static final String cise19 = "You can get your Ethics requirement by taking Intro to ECE. Lifehack.";
+    public static final String cise20 = "It’s pretty hard to graduate in 4 years as an engineer these days. My major has 14 more required credits than my roommate’s.";
+    public static final String cise21 = "I love Gator football.";
+    public static final String cise22 = "We send more kids to the Olympics than any other school.";
+    public static final String cise23 = "I really like volleyball. It’s all about that bump-set-spike.";
+    public static final String cise24 = "I love seeing athletes out at bars. They can’t hide because they’re all like 6’5”.";
+    public static final String cise25 = "I’m so nauseous. I think I drank too much last night.";
+    public static final String cise26 = "You look like a friend I knew in high school.";
+    public static final String cise27 = "Do you live in a dorm? I’m in Lakeside which is kinda a dorm.";
+    public static final String cise28 = "Did you rush? I thought about it, but eventually decided it wasn’t for me.";
+    public static final String cise29 = "I’m a chemistry major, but I decided to explore campus a little today.";
+    public static final String cise30 = "I think I want to work in academia down the road. I guess that means I need a PhD.";
+    public static final String cise31 = "Job security is nice, but is this my real passion?";
+    public static final String cise32 = "Have you ever been to Rockey’s? I like singing along to all of the throwbacks.";
+    public static final String cise33 = "The Gator Nation is everywhere. I visited a friend all the way in California and saw a Gator flag flying on some dude’s house.";
+
+    public static final String tur1 = "This is the most confusing building on our entire campus.";
+    public static final String tur2 = "This is such an interesting building. It’s in the heart of campus. Definitely a part of UF history.";
+    public static final String tur3 = "Classes of all disciplines are held in this building. I think that’s really neat.";
+    public static final String tur4 = "I need to find my lecture hall, but none of them have a sign for it.";
+    public static final String tur5 = "The bathrooms in this building are absolutely disgusting.";
+    public static final String tur6 = "The artwork in the plaza looks like a potato.";
+    public static final String tur7 = "There are always the most random people at the tables in Turlington Plaza. Don’t these people have class? Or jobs? Ambitions?";
+    public static final String tur8 = "I donated $1 to get a free donut in Turlington Plaza. The money is going to save puppies.";
+    public static final String tur9 = "Managerial accounting is the worst.";
+    public static final String tur10 = "Hello, my name is Patrick and I’m the Director of UF CURBS which is the Center for Undergraduate Research. We are a very important organization which works with the department to mentor students on how they can obtain a research position at the University. We try to match potential students with ...where are you going?";
+    public static final String tur11 = "This building is a nightmare.";
+    public static final String tur12 = "I only have classes on Mondays and Fridays.";
+    public static final String tur13 = "I’m shooting a video to apply for a Buzzfeed internship. I want to be a director some day. I’m going to make a movie about JFK that takes place in the early 2000s.";
+    public static final String tur14 = "I’m only here to take a picture for my sorority. Yea, they make us get points. I’m Ariel. No, sorry, I’m busy.";
+    public static final String tur15 = "Hey ya I’m Dustin. Haha yea.";
+    public static final String tur16 = "I love that we have like 3 Chick-Fil-A’s on Campus. That’s wild.";
+    public static final String tur17 = "I really like going to the UF Gymnastics matches.";
+    public static final String tur18 = "I’m in an Organic Chemistry class. I feel so fancy and educated.";
+    public static final String tur19 = "Pre-Med isn’t actually a major these days. You can be Pre-Med with any major as long as you take the required classes for the MCAT.";
+    public static final String tur20 = "I’m really into The Weeknd these days. What type of music do you like?";
+    public static final String tur21 = "I like trying different types of food. Recently I tried Thai food for the first time, and it was actually really good! They use a lot of coconut and peanut flavors.";
+    public static final String tur22 = "I’m trying to get into shape this semester. I’m monitoring my calorie intake and hitting the gym at least 3 times a week. I love how I feel!";
+    public static final String tur23 = "I just got a haircut. I got 8 inches taken off! Do you think it looks good?";
+    public static final String tur24 = "I like that one vending machine right outside of Library West with the healthy snacks. It’s so nice to be able to snack on edamame instead of Doritos some of the time.";
+    public static final String tur25 = "Have you every had a frozen lemonade from Chick-Fil-A? So good.";
+    public static final String tur26 = "I’m an art major. I love my classes!";
+    public static final String tur27 = "I like listening to country music. It’s so soothing to me! It’s just a preference.";
+    public static final String tur28 = "My favorite show is Breaking Bad. I just finished watching it. I’m late, I know, but that ending…";
+    public static final String tur29 = "Do you watch TV on your laptop or live? I just hate viewing the commercials.";
+    public static final String tur30 = "I want to be tumblr famous.";
+    public static final String tur31 = "My last insta is flopping. Only 49 likes. Will you follow me? I need to at least hit 50.";
+    public static final String tur32 = "I feel like I can speak an entirely different language with my engineering friends. My other friends don’t even know what we’re saying. There are so many acronyms!";
+    public static final String tur33 = "I’m beginning to hit my afternoon crash period. I feel great in the morning after I drink my coffee, but later in the day I always wish I could take a nap.";
+    public static final String tur34 = "I’m turning 21 tomorrow! I’m so excited.";
+    public static final String tur35 = "Have you heard the new Ariana Grande song? It puts me in such a good mood.";
+    public static final String tur36 = "Make sure you join at least one student organization at UF. It’s important to stay involved for your resume, and it’s also a great way to make friends.";
+    public static final String tur37 = "It’s not always just what you know. Who you know can sometimes matter just as much, if not more.";
+    public static final String tur38 = "I just got summoned for jury duty. What a pain!";
+    public static final String tur39 = "I need to get a haircut. It’s getting so unruly.";
+    public static final String tur40 = "I just cleaned my whole apartment. I mopped, swept and even dusted.";
+    public static final String tur41 = "My friend bought me a flask for my birthday. How nice!";
+    public static final String tur42 = "I’ve been working out a lot lately. Today was leg day. I love seeing how much I can squat.";
+    public static final String tur43 = "It seems like everyone is so smart here. I’m proud to be a Florida Gator.";
+    public static final String tur44 = "I’m feeling a little nostalgic lately. I like having social media so that I can go back through all of my old pictures.";
+    public static final String tur45 = "I like using those little Tide Pods. They look cool and they’re easier to use than the detergent that you have to pour.";
+    public static final String tur46 = "Amazon always has great deals. I got my latest tennis shoes just a few days ago and they were at half price.";
+    public static final String tur47 = "I have so much laundry to do!";
+    public static final String tur48 = "Getting all dressed up is so fun. Wearing a suit and tie really boosts my confidence.";
+    public static final String tur49 = "I always bring my umbrella on the days that it doesn’t end up raining, but I forget it on the days when it really pours.";
+    public static final String tur50 = "Home Depot has a lot of good plants to choose from. I recently picked up a golden pothos and a snake plant. They’re meant to clean the air in my room.";
+    public static final String tur51 = "I love jamming out with my Bluetooth speaker.";
+    public static final String tur52 = "I packed my lunch today! I’ve been trying to do meal prep more consistently. Today, I have greek yogurt and a roast beef sandwich.";
+    public static final String tur53 = "Flannels are so nice, but they’re too warm to wear very often in Florida. I sometimes wish it could be a little cooler here.";
+    public static final String tur54 = "Gainesville is so muggy! I’m covered in sweat.";
+    public static final String tur55 = "I prefer mechanical pencils over pens.";
+
     //////////////////////////////////////DUNGEON ENEMIES//////////////////////////////////////////////////////////////////////
     //when adding enemies to the various arrays, the proper tiles must be accounted for in the Tiled Map Editor
     //========================================NEB=============================================
@@ -389,201 +620,294 @@ public class Utils {
     public static NPC[] NEB_enemies = {
             new NPC('l',"Welcome to the New Engineering Building", "visuals/sprite_sheets/sprite_walk_l7.png", 65*MAP_RESOLUTION,12*MAP_RESOLUTION), //0
             new NPC('r',"What time does class start?", "visuals/sprite_sheets/sprite_walk_r11.png", 79*MAP_RESOLUTION,9*MAP_RESOLUTION),
-            new NPC('r',"Another wild Zubat appeared", "visuals/sprite_sheets/sprite_walk_r9.png", 51*MAP_RESOLUTION, 19*MAP_RESOLUTION),
-            new NPC('d',"as;dfjkdslaf;", "visuals/sprite_sheets/sprite_walk_d1.png", 59*MAP_RESOLUTION, 41*MAP_RESOLUTION),
-            new NPC('l',"as;dfjkdslaf;", "visuals/sprite_sheets/sprite_walk_l3.png", 46*MAP_RESOLUTION, 48*MAP_RESOLUTION),
-            new NPC('r',"as;dfjkdslaf;", "visuals/sprite_sheets/sprite_walk_r6.png", 44*MAP_RESOLUTION, 48*MAP_RESOLUTION),
-            new NPC('l',"abdfsefdscsd", "visuals/sprite_sheets/sprite_walk_l14.png", 48*MAP_RESOLUTION, 54*MAP_RESOLUTION),
-            new NPC('u',"LEAVE ME ALONE", "visuals/sprite_sheets/sprite_walk_u12.png", 47*MAP_RESOLUTION, 82*MAP_RESOLUTION),
-            new NPC('d',"Go away please", "visuals/sprite_sheets/sprite_walk_d9.png", 22*MAP_RESOLUTION, 53*MAP_RESOLUTION),
-            new NPC('l',"adsfds", "visuals/sprite_sheets/sprite_walk_l10.png", 45*MAP_RESOLUTION, 7*MAP_RESOLUTION),
-            new NPC('d',"asdf", "visuals/sprite_sheets/sprite_walk_d13.png", 41*MAP_RESOLUTION, 23*MAP_RESOLUTION),
-            new NPC('l',"asdfsdf", "visuals/sprite_sheets/sprite_walk_l12.png", 49*MAP_RESOLUTION, 32*MAP_RESOLUTION),
-            new NPC('d',"asdfsd", "visuals/sprite_sheets/sprite_walk_d3.png", 30*MAP_RESOLUTION, 27*MAP_RESOLUTION),
-            new NPC('l',"asdfsadf","visuals/sprite_sheets/sprite_walk_l11.png", 24*MAP_RESOLUTION, 20*MAP_RESOLUTION),
-            new NPC('r',"sadfdsf","visuals/sprite_sheets/sprite_walk_r7.png", 28*MAP_RESOLUTION, (89-54)*MAP_RESOLUTION),
-            new NPC('d',"gasdefds","visuals/sprite_sheets/sprite_walk_d5.png", 16*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
-            new NPC('d',"asfddsf","visuals/sprite_sheets/sprite_walk_d4.png",3*MAP_RESOLUTION, (89-66)*MAP_RESOLUTION),
-            new NPC('u',"asddfs", "visuals/sprite_sheets/sprite_walk_u9.png",3*MAP_RESOLUTION, (89-49)*MAP_RESOLUTION),  //17
-            new NPC('r',"baddsf", "visuals/sprite_sheets/sprite_walk_r1.png", 3*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d14.png", 16*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d2.png", 27*MAP_RESOLUTION, (89-37)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d6.png", 45*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u8.png", 68*MAP_RESOLUTION, (89-6)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r9.png", 96*MAP_RESOLUTION, (89-72)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u3.png", 97*MAP_RESOLUTION, (89-50)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r1.png", 110*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d11.png", 122*MAP_RESOLUTION, (89-62)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r12.png", 121*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
-            new ENEMY('l', nebPPre, nebPWin, nebPLose, "visuals/sprite_sheets/sprite_walk_l3.png", 113*MAP_RESOLUTION, (89-38)*MAP_RESOLUTION, 25, Neb_A_attacks),
+            new NPC('r',neb1, "visuals/sprite_sheets/sprite_walk_r9.png", 51*MAP_RESOLUTION, 19*MAP_RESOLUTION),
+            new NPC('d',neb2, "visuals/sprite_sheets/sprite_walk_d1.png", 59*MAP_RESOLUTION, 41*MAP_RESOLUTION),
+            new NPC('l',neb3, "visuals/sprite_sheets/sprite_walk_l3.png", 46*MAP_RESOLUTION, 48*MAP_RESOLUTION),
+            new NPC('r',neb4, "visuals/sprite_sheets/sprite_walk_r6.png", 44*MAP_RESOLUTION, 48*MAP_RESOLUTION),
+            new NPC('l',neb5, "visuals/sprite_sheets/sprite_walk_l14.png", 48*MAP_RESOLUTION, 54*MAP_RESOLUTION),
+            new NPC('u',neb6, "visuals/sprite_sheets/sprite_walk_u12.png", 47*MAP_RESOLUTION, 82*MAP_RESOLUTION),
+            new NPC('d',neb7, "visuals/sprite_sheets/sprite_walk_d9.png", 22*MAP_RESOLUTION, 53*MAP_RESOLUTION),
+            new NPC('l',neb8, "visuals/sprite_sheets/sprite_walk_l10.png", 45*MAP_RESOLUTION, 7*MAP_RESOLUTION),
+            new NPC('d',neb9, "visuals/sprite_sheets/sprite_walk_d13.png", 41*MAP_RESOLUTION, 23*MAP_RESOLUTION),
+            new NPC('l',neb10, "visuals/sprite_sheets/sprite_walk_l12.png", 49*MAP_RESOLUTION, 32*MAP_RESOLUTION),
+            new NPC('d',neb11, "visuals/sprite_sheets/sprite_walk_d3.png", 30*MAP_RESOLUTION, 27*MAP_RESOLUTION),
+            new NPC('l',neb12,"visuals/sprite_sheets/sprite_walk_l11.png", 24*MAP_RESOLUTION, 20*MAP_RESOLUTION),
+            new NPC('r',neb13,"visuals/sprite_sheets/sprite_walk_r7.png", 28*MAP_RESOLUTION, (89-54)*MAP_RESOLUTION),
+            new NPC('d',neb14,"visuals/sprite_sheets/sprite_walk_d5.png", 16*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
+            new NPC('d',neb15,"visuals/sprite_sheets/sprite_walk_d4.png",3*MAP_RESOLUTION, (89-66)*MAP_RESOLUTION),
+            new NPC('u',neb16, "visuals/sprite_sheets/sprite_walk_u9.png",3*MAP_RESOLUTION, (89-49)*MAP_RESOLUTION),  //17
+            new NPC('r',neb17, "visuals/sprite_sheets/sprite_walk_r1.png", 3*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION),
+            new NPC('d', neb18, "visuals/sprite_sheets/sprite_walk_d14.png", 16*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION),
+            new NPC('d', neb19, "visuals/sprite_sheets/sprite_walk_d2.png", 27*MAP_RESOLUTION, (89-37)*MAP_RESOLUTION),
+            new NPC('d', neb20, "visuals/sprite_sheets/sprite_walk_d6.png", 45*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION),
+            new NPC('u', neb21, "visuals/sprite_sheets/sprite_walk_u8.png", 68*MAP_RESOLUTION, (89-6)*MAP_RESOLUTION),
+            new NPC('r', neb22, "visuals/sprite_sheets/sprite_walk_r9.png", 96*MAP_RESOLUTION, (89-72)*MAP_RESOLUTION),
+            new NPC('u', neb23, "visuals/sprite_sheets/sprite_walk_u3.png", 97*MAP_RESOLUTION, (89-50)*MAP_RESOLUTION),
+            new NPC('r', neb24, "visuals/sprite_sheets/sprite_walk_r1.png", 110*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
+            new NPC('d', neb25, "visuals/sprite_sheets/sprite_walk_d11.png", 122*MAP_RESOLUTION, (89-62)*MAP_RESOLUTION),
+            new NPC('r', neb26, "visuals/sprite_sheets/sprite_walk_r12.png", 121*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
+            new ENEMY('l', nebPPre, nebPWin, nebPLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 113*MAP_RESOLUTION, (89-38)*MAP_RESOLUTION, 25, Neb_A_attacks, 10, 10),
 
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l7.png", 125*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r10.png", 118*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION), //30
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d14.png", 133*MAP_RESOLUTION, (89-4)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l9.png", 140*MAP_RESOLUTION, (89-19)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u8.png", 140*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d7.png", 149*MAP_RESOLUTION, (89-19)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l6.png", 170*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d5.png", 137*MAP_RESOLUTION, (89-80)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u4.png", 143*MAP_RESOLUTION, (89-57)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d3.png", 165*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u2.png", 160*MAP_RESOLUTION, (89-83)*MAP_RESOLUTION), //39
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r1.png", 187*MAP_RESOLUTION, (89-68)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u14.png", 190*MAP_RESOLUTION, (89-50)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u13.png", 202*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d12.png", 214*MAP_RESOLUTION, (89-66)*MAP_RESOLUTION),
-            new ENEMY('r', nebSPre, nebSWin, nebSLose, "visuals/sprite_sheets/sprite_walk_r11.png", 211*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION, 25, Neb_D_attacks),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u10.png", 229*MAP_RESOLUTION, (89-58)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l9.png", 224*MAP_RESOLUTION, (89-52)*MAP_RESOLUTION), //46
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r1.png", 187*MAP_RESOLUTION, (89-24)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l2.png", 205*MAP_RESOLUTION, (89-24)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d3.png", 212*MAP_RESOLUTION, (89-24)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d4.png", 229*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION), //50
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r5.png", 246*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u6.png", 258*MAP_RESOLUTION, (89-26)*MAP_RESOLUTION),
-            new ENEMY('d', nebXPre, nebXWin, nebXLose, "visuals/sprite_sheets/sprite_walk_d7.png", 283*MAP_RESOLUTION, (89-16)*MAP_RESOLUTION, 25, Neb_I_attacks),
-            new ENEMY('d', nebVPre, nebVWin, nebVLose, "visuals/sprite_sheets/sprite_walk_d8.png", 284*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION, 25, Neb_G_attacks),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l9.png", 276*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d10.png", 287*MAP_RESOLUTION, (89-70)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d11.png", 269*MAP_RESOLUTION, (89-61)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u12.png", 262*MAP_RESOLUTION, (89-54)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d13.png", 262*MAP_RESOLUTION, (89-37)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r14.png", 248*MAP_RESOLUTION, (89-46)*MAP_RESOLUTION), //60
-            new BOSS('d', "I am Srivastava", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/srivastava/srivastava_d.png", "visuals/Professors/srivastava/srivastava_l.png", 112*MAP_RESOLUTION, (89-33)*MAP_RESOLUTION, 45, Sriv_attacks),
-            new BOSS('d', "I am Wong", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/wong/wong_d.png", "visuals/Professors/wong/wong_l.png", 211*MAP_RESOLUTION, (89-55)*MAP_RESOLUTION, 45, Wong_attacks),
-            new BOSS('d', "I am Gugel", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/gugel/gugel_d.png", "visuals/Professors/gugel/gugel_l.png", 287*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION, 45, Gugel_attacks),
-            new ENEMY('r', nebQPre, nebQWin, nebQLose, "visuals/sprite_sheets/sprite_walk_r1.png", 110*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION, 25, Neb_B_attacks),
-            new ENEMY('l', nebRPre, nebRWin, nebRLose, "visuals/sprite_sheets/sprite_walk_l2.png", 112*MAP_RESOLUTION, (89-44)*MAP_RESOLUTION, 25, Neb_C_attacks),
-            new ENEMY('l', nebTPre, nebTWin, nebTLose, "visuals/sprite_sheets/sprite_walk_l3.png", 220*MAP_RESOLUTION, (89-48)*MAP_RESOLUTION, 25, Neb_E_attacks),
-            new ENEMY('r', nebUPre, nebUWin, nebULose, "visuals/sprite_sheets/sprite_walk_r4.png", 229*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION, 25, Neb_F_attacks),
-            new ENEMY('l', nebWPre, nebWWin, nebWLose, "visuals/sprite_sheets/sprite_walk_l3.png", 281*MAP_RESOLUTION, (89-30)*MAP_RESOLUTION, 25, Neb_H_attacks),
+            new NPC('l', neb27, "visuals/sprite_sheets/sprite_walk_l7.png", 125*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION),
+            new NPC('r', neb28, "visuals/sprite_sheets/sprite_walk_r10.png", 118*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION), //30
+            new NPC('d', neb29, "visuals/sprite_sheets/sprite_walk_d14.png", 133*MAP_RESOLUTION, (89-4)*MAP_RESOLUTION),
+            new NPC('l', neb30, "visuals/sprite_sheets/sprite_walk_l9.png", 140*MAP_RESOLUTION, (89-19)*MAP_RESOLUTION),
+            new NPC('u', neb31, "visuals/sprite_sheets/sprite_walk_u8.png", 140*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION),
+            new NPC('d', neb32, "visuals/sprite_sheets/sprite_walk_d7.png", 149*MAP_RESOLUTION, (89-19)*MAP_RESOLUTION),
+            new NPC('l', neb33, "visuals/sprite_sheets/sprite_walk_l6.png", 170*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION),
+            new NPC('d', neb34, "visuals/sprite_sheets/sprite_walk_d5.png", 137*MAP_RESOLUTION, (89-80)*MAP_RESOLUTION),
+            new NPC('u', neb35, "visuals/sprite_sheets/sprite_walk_u4.png", 143*MAP_RESOLUTION, (89-57)*MAP_RESOLUTION),
+            new NPC('d', neb36, "visuals/sprite_sheets/sprite_walk_d3.png", 165*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
+            new NPC('u', neb37, "visuals/sprite_sheets/sprite_walk_u2.png", 160*MAP_RESOLUTION, (89-83)*MAP_RESOLUTION), //39
+            new NPC('r', neb38, "visuals/sprite_sheets/sprite_walk_r1.png", 187*MAP_RESOLUTION, (89-68)*MAP_RESOLUTION),
+            new NPC('u', neb39, "visuals/sprite_sheets/sprite_walk_u14.png", 190*MAP_RESOLUTION, (89-50)*MAP_RESOLUTION),
+            new NPC('u', neb40, "visuals/sprite_sheets/sprite_walk_u13.png", 202*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
+            new NPC('d', neb41, "visuals/sprite_sheets/sprite_walk_d12.png", 214*MAP_RESOLUTION, (89-66)*MAP_RESOLUTION),
+            new ENEMY('r', nebSPre, nebSWin, nebSLose, "visuals/sprite_sheets/sprite_walk_r11.png", "visuals/sprite_sheets/sprite_l11.png", 211*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION, 25, Neb_D_attacks, 10, 10),
+            new NPC('u', neb42, "visuals/sprite_sheets/sprite_walk_u10.png", 229*MAP_RESOLUTION, (89-58)*MAP_RESOLUTION),
+            new NPC('l', neb43, "visuals/sprite_sheets/sprite_walk_l9.png", 224*MAP_RESOLUTION, (89-52)*MAP_RESOLUTION), //46
+            new NPC('r', neb44, "visuals/sprite_sheets/sprite_walk_r1.png", 187*MAP_RESOLUTION, (89-24)*MAP_RESOLUTION),
+            new NPC('l', neb45, "visuals/sprite_sheets/sprite_walk_l2.png", 205*MAP_RESOLUTION, (89-24)*MAP_RESOLUTION),
+            new NPC('d', neb46, "visuals/sprite_sheets/sprite_walk_d3.png", 212*MAP_RESOLUTION, (89-24)*MAP_RESOLUTION),
+            new NPC('d', neb47, "visuals/sprite_sheets/sprite_walk_d4.png", 229*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION), //50
+            new NPC('r', neb48, "visuals/sprite_sheets/sprite_walk_r5.png", 246*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION),
+            new NPC('u', neb49, "visuals/sprite_sheets/sprite_walk_u6.png", 258*MAP_RESOLUTION, (89-26)*MAP_RESOLUTION),
+            new ENEMY('d', nebXPre, nebXWin, nebXLose, "visuals/sprite_sheets/sprite_walk_d7.png", "visuals/sprite_sheets/sprite_l7.png", 283*MAP_RESOLUTION, (89-16)*MAP_RESOLUTION, 25, Neb_I_attacks, 10, 10),
+            new ENEMY('d', nebVPre, nebVWin, nebVLose, "visuals/sprite_sheets/sprite_walk_d8.png", "visuals/sprite_sheets/sprite_l8.png", 284*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION, 25, Neb_G_attacks, 10, 10),
+            new NPC('l', neb50, "visuals/sprite_sheets/sprite_walk_l9.png", 276*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
+            new NPC('d', neb51, "visuals/sprite_sheets/sprite_walk_d10.png", 287*MAP_RESOLUTION, (89-70)*MAP_RESOLUTION),
+            new NPC('d', neb52, "visuals/sprite_sheets/sprite_walk_d11.png", 269*MAP_RESOLUTION, (89-61)*MAP_RESOLUTION),
+            new NPC('u', neb53, "visuals/sprite_sheets/sprite_walk_u12.png", 262*MAP_RESOLUTION, (89-54)*MAP_RESOLUTION),
+            new NPC('d', neb54, "visuals/sprite_sheets/sprite_walk_d13.png", 262*MAP_RESOLUTION, (89-37)*MAP_RESOLUTION),
+            new NPC('r', neb55, "visuals/sprite_sheets/sprite_walk_r14.png", 248*MAP_RESOLUTION, (89-46)*MAP_RESOLUTION), //60
+            new BOSS('d', "I am Srivastava", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/srivastava/srivastava_d.png", "visuals/Professors/srivastava/srivastava_l.png", 112*MAP_RESOLUTION, (89-33)*MAP_RESOLUTION, 45, Sriv_attacks, 10, 10),
+            new BOSS('d', "I am Wong", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/wong/wong_d.png", "visuals/Professors/wong/wong_l.png", 211*MAP_RESOLUTION, (89-55)*MAP_RESOLUTION, 45, Wong_attacks, 10, 10),
+            new BOSS('d', "I am Gugel", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/gugel/gugel_d.png", "visuals/Professors/gugel/gugel_l.png", 287*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION, 45, Gugel_attacks, 10, 10),
+            new ENEMY('r', nebQPre, nebQWin, nebQLose, "visuals/sprite_sheets/sprite_walk_r1.png", "visuals/sprite_sheets/sprite_l1.png", 110*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION, 25, Neb_B_attacks, 10, 10),
+            new ENEMY('l', nebRPre, nebRWin, nebRLose, "visuals/sprite_sheets/sprite_walk_l2.png", "visuals/sprite_sheets/sprite_l2.png", 112*MAP_RESOLUTION, (89-44)*MAP_RESOLUTION, 25, Neb_C_attacks, 10, 10),
+            new ENEMY('l', nebTPre, nebTWin, nebTLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 220*MAP_RESOLUTION, (89-48)*MAP_RESOLUTION, 25, Neb_E_attacks, 10, 10),
+            new ENEMY('r', nebUPre, nebUWin, nebULose, "visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l4.png", 229*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION, 25, Neb_F_attacks, 10, 10),
+            new ENEMY('l', nebWPre, nebWWin, nebWLose, "visuals/sprite_sheets/sprite_walk_l5.png", "visuals/sprite_sheets/sprite_l5.png", 281*MAP_RESOLUTION, (89-30)*MAP_RESOLUTION, 25, Neb_H_attacks, 10, 10),
+    };
+    
+    public static ENEMY[] NEB_randoms = {
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Neb_random_attacks_1, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Neb_random_attacks_2, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Neb_random_attacks_3, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Neb_random_attacks_4, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Neb_random_attacks_5, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Neb_random_attacks_6, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Neb_random_attacks_7, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Neb_random_attacks_8, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Neb_random_attacks_9, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Neb_random_attacks_10, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Neb_random_attacks_11, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Neb_random_attacks_12, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Neb_random_attacks_13, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Neb_random_attacks_14, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Neb_random_attacks_15, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Neb_random_attacks_16, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Neb_random_attacks_17, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Neb_random_attacks_18, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Neb_random_attacks_19, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Neb_random_attacks_20, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Neb_random_attacks_21, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Neb_random_attacks_22, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Neb_random_attacks_23, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Neb_random_attacks_24, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Neb_random_attacks_15, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Neb_random_attacks_26, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Neb_random_attacks_27, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Neb_random_attacks_28, 10, 10),
     };
     //========================================================================================
     //========================================CISE============================================
     public static NPC[] CISE_enemies = {
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r1.png", 5*MAP_RESOLUTION, (66-8)*MAP_RESOLUTION),  //0
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d2.png", 21*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u3.png", 3*MAP_RESOLUTION, (66-24)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d4.png", 28*MAP_RESOLUTION, (66-22)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r5.png", /*1**/MAP_RESOLUTION, (66-32)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l6.png", 48*MAP_RESOLUTION, (66-8)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r5.png", 33*MAP_RESOLUTION, (66-22)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l6.png", 17*MAP_RESOLUTION, (66-41)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r7.png", 18*MAP_RESOLUTION, (66-55)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l8.png", 31*MAP_RESOLUTION, (66-44)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u9.png", 44*MAP_RESOLUTION, (66-44)*MAP_RESOLUTION),  //10
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l10.png", 88*MAP_RESOLUTION, (66-61)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d11.png", 75*MAP_RESOLUTION, (66-39)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u12.png", 77*MAP_RESOLUTION, (66-22)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d13.png", 72*MAP_RESOLUTION, (66-9)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u14.png", 101*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d1.png", 124*MAP_RESOLUTION, (66-6)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r2.png", 130*MAP_RESOLUTION, (66-12)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l3.png", 146*MAP_RESOLUTION, (66-6)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d4.png", 109*MAP_RESOLUTION, (66-29)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r5.png", 130*MAP_RESOLUTION, (66-28)*MAP_RESOLUTION), //20
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r6.png", 101*MAP_RESOLUTION, (66-47)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l7.png", 123*MAP_RESOLUTION, (66-55)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d8.png", 130*MAP_RESOLUTION, (66-60)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d9.png", 143*MAP_RESOLUTION, (66-43)*MAP_RESOLUTION),
+            new NPC('r', cise1, "visuals/sprite_sheets/sprite_walk_r1.png", 5*MAP_RESOLUTION, (66-8)*MAP_RESOLUTION),  //0
+            new NPC('d', cise2, "visuals/sprite_sheets/sprite_walk_d2.png", 21*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION),
+            new NPC('u', cise3, "visuals/sprite_sheets/sprite_walk_u3.png", 3*MAP_RESOLUTION, (66-24)*MAP_RESOLUTION),
+            new NPC('d', cise4, "visuals/sprite_sheets/sprite_walk_d4.png", 28*MAP_RESOLUTION, (66-22)*MAP_RESOLUTION),
+            new NPC('r', cise5, "visuals/sprite_sheets/sprite_walk_r5.png", /*1**/MAP_RESOLUTION, (66-32)*MAP_RESOLUTION),
+            new NPC('l', cise6, "visuals/sprite_sheets/sprite_walk_l6.png", 48*MAP_RESOLUTION, (66-8)*MAP_RESOLUTION),
+            new NPC('r', cise7, "visuals/sprite_sheets/sprite_walk_r5.png", 33*MAP_RESOLUTION, (66-22)*MAP_RESOLUTION),
+            new NPC('l', cise8, "visuals/sprite_sheets/sprite_walk_l6.png", 17*MAP_RESOLUTION, (66-41)*MAP_RESOLUTION),
+            new NPC('r', cise9, "visuals/sprite_sheets/sprite_walk_r7.png", 18*MAP_RESOLUTION, (66-55)*MAP_RESOLUTION),
+            new NPC('l', cise10, "visuals/sprite_sheets/sprite_walk_l8.png", 31*MAP_RESOLUTION, (66-44)*MAP_RESOLUTION),
+            new NPC('u', cise11, "visuals/sprite_sheets/sprite_walk_u9.png", 44*MAP_RESOLUTION, (66-44)*MAP_RESOLUTION),  //10
+            new NPC('l', cise12, "visuals/sprite_sheets/sprite_walk_l10.png", 88*MAP_RESOLUTION, (66-61)*MAP_RESOLUTION),
+            new NPC('d', cise13, "visuals/sprite_sheets/sprite_walk_d11.png", 75*MAP_RESOLUTION, (66-39)*MAP_RESOLUTION),
+            new NPC('u', cise14, "visuals/sprite_sheets/sprite_walk_u12.png", 77*MAP_RESOLUTION, (66-22)*MAP_RESOLUTION),
+            new NPC('d', cise15, "visuals/sprite_sheets/sprite_walk_d13.png", 72*MAP_RESOLUTION, (66-9)*MAP_RESOLUTION),
+            new NPC('u', cise16, "visuals/sprite_sheets/sprite_walk_u14.png", 101*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION),
+            new NPC('d', cise17, "visuals/sprite_sheets/sprite_walk_d1.png", 124*MAP_RESOLUTION, (66-6)*MAP_RESOLUTION),
+            new NPC('r', cise18, "visuals/sprite_sheets/sprite_walk_r2.png", 130*MAP_RESOLUTION, (66-12)*MAP_RESOLUTION),
+            new NPC('l', cise19, "visuals/sprite_sheets/sprite_walk_l3.png", 146*MAP_RESOLUTION, (66-6)*MAP_RESOLUTION),
+            new NPC('d', cise20, "visuals/sprite_sheets/sprite_walk_d4.png", 109*MAP_RESOLUTION, (66-29)*MAP_RESOLUTION),
+            new NPC('r', cise21, "visuals/sprite_sheets/sprite_walk_r5.png", 130*MAP_RESOLUTION, (66-28)*MAP_RESOLUTION), //20
+            new NPC('r', cise22, "visuals/sprite_sheets/sprite_walk_r6.png", 101*MAP_RESOLUTION, (66-47)*MAP_RESOLUTION),
+            new NPC('l', cise23, "visuals/sprite_sheets/sprite_walk_l7.png", 123*MAP_RESOLUTION, (66-55)*MAP_RESOLUTION),
+            new NPC('d', cise24, "visuals/sprite_sheets/sprite_walk_d8.png", 130*MAP_RESOLUTION, (66-60)*MAP_RESOLUTION),
+            new NPC('d', cise25, "visuals/sprite_sheets/sprite_walk_d9.png", 143*MAP_RESOLUTION, (66-43)*MAP_RESOLUTION),
 
-            new ENEMY('d', ciseOPre,ciseOWin,ciseOLose,"visuals/sprite_sheets/sprite_walk_d10.png", 175*MAP_RESOLUTION, (66-7)*MAP_RESOLUTION, 25, Cise_D_attacks),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l11.png", 202*MAP_RESOLUTION, (66-12)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d13.png", 213*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r14.png", 168*MAP_RESOLUTION, (66-34)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u1.png", 167*MAP_RESOLUTION, (66-47)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u2.png", 202*MAP_RESOLUTION, (66-30)*MAP_RESOLUTION), //30
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l3.png", 217*MAP_RESOLUTION, (66-32)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l4.png", 213*MAP_RESOLUTION, (66-42)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u5.png", 199*MAP_RESOLUTION, (66-58)*MAP_RESOLUTION),
-            new BOSS('d', "I am Dobbins", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/dobbins/dobbins_d.png", "visuals/Professors/dobbins/dobbins_l.png", 2*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION, 45, Dobbins_attacks),
-            new BOSS('d', "I am Schmalz", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/schmalz/schmalz_d.png", "visuals/Professors/schmalz/schmalz_l.png", 168*MAP_RESOLUTION, (66-4)*MAP_RESOLUTION, 45, Schmalz_attacks),
-            new ENEMY('d', ciseJPre,ciseJWin,ciseJLose,"visuals/sprite_sheets/sprite_walk_d6.png",33*MAP_RESOLUTION, (66-28)*MAP_RESOLUTION, 25, Cise_A_attacks),
-            new ENEMY('l', ciseKPre,ciseKWin,ciseKLose,"visuals/sprite_sheets/sprite_walk_l7.png",19*MAP_RESOLUTION, (66-31)*MAP_RESOLUTION, 25, Cise_B_attacks),
-            new ENEMY('r', ciseLPre,ciseLWin,ciseLLose,"visuals/sprite_sheets/sprite_walk_r8.png",8*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 25, Cise_C_attacks),
-            new ENEMY('r', ciseMPre,ciseMWin,ciseMLose,"visuals/sprite_sheets/sprite_walk_r9.png",177*MAP_RESOLUTION, (66-13)*MAP_RESOLUTION, 25, Cise_E_attacks),
-            new ENEMY('l', ciseNPre,ciseNWin,ciseNLose,"visuals/sprite_sheets/sprite_walk_l10.png",182*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 25, Cise_F_attacks), //40
+            new ENEMY('d', ciseOPre,ciseOWin,ciseOLose,"visuals/sprite_sheets/sprite_walk_d10.png", "visuals/sprite_sheets/sprite_l10.png", 175*MAP_RESOLUTION, (66-7)*MAP_RESOLUTION, 25, Cise_D_attacks, 10, 10),
+            new NPC('l', cise26, "visuals/sprite_sheets/sprite_walk_l11.png", 202*MAP_RESOLUTION, (66-12)*MAP_RESOLUTION),
+            new NPC('d', cise27, "visuals/sprite_sheets/sprite_walk_d13.png", 213*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION),
+            new NPC('r', cise28, "visuals/sprite_sheets/sprite_walk_r14.png", 168*MAP_RESOLUTION, (66-34)*MAP_RESOLUTION),
+            new NPC('u', cise29, "visuals/sprite_sheets/sprite_walk_u1.png", 167*MAP_RESOLUTION, (66-47)*MAP_RESOLUTION),
+            new NPC('u', cise30, "visuals/sprite_sheets/sprite_walk_u2.png", 202*MAP_RESOLUTION, (66-30)*MAP_RESOLUTION), //30
+            new NPC('l', cise31, "visuals/sprite_sheets/sprite_walk_l3.png", 217*MAP_RESOLUTION, (66-32)*MAP_RESOLUTION),
+            new NPC('l', cise32, "visuals/sprite_sheets/sprite_walk_l4.png", 213*MAP_RESOLUTION, (66-42)*MAP_RESOLUTION),
+            new NPC('u', cise33, "visuals/sprite_sheets/sprite_walk_u5.png", 199*MAP_RESOLUTION, (66-58)*MAP_RESOLUTION),
+            new BOSS('d', "I am Dobbins", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/dobbins/dobbins_d.png", "visuals/Professors/dobbins/dobbins_l.png", 2*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION, 45, Dobbins_attacks, 10, 10),
+            new BOSS('d', "I am Schmalz", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/schmalz/schmalz_d.png", "visuals/Professors/schmalz/schmalz_l.png", 168*MAP_RESOLUTION, (66-4)*MAP_RESOLUTION, 45, Schmalz_attacks, 10, 10),
+            new ENEMY('d', ciseJPre,ciseJWin,ciseJLose,"visuals/sprite_sheets/sprite_walk_d6.png", "visuals/sprite_sheets/sprite_l6.png",33*MAP_RESOLUTION, (66-28)*MAP_RESOLUTION, 25, Cise_A_attacks, 10, 10),
+            new ENEMY('l', ciseKPre,ciseKWin,ciseKLose,"visuals/sprite_sheets/sprite_walk_l7.png", "visuals/sprite_sheets/sprite_l7.png",19*MAP_RESOLUTION, (66-31)*MAP_RESOLUTION, 25, Cise_B_attacks, 10, 10),
+            new ENEMY('r', ciseLPre,ciseLWin,ciseLLose,"visuals/sprite_sheets/sprite_walk_r8.png", "visuals/sprite_sheets/sprite_l8.png",8*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 25, Cise_C_attacks, 10, 10),
+            new ENEMY('r', ciseMPre,ciseMWin,ciseMLose,"visuals/sprite_sheets/sprite_walk_r9.png", "visuals/sprite_sheets/sprite_l9.png",177*MAP_RESOLUTION, (66-13)*MAP_RESOLUTION, 25, Cise_E_attacks, 10, 10),
+            new ENEMY('l', ciseNPre,ciseNWin,ciseNLose,"visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png",182*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 25, Cise_F_attacks, 10, 10), //40
 
+    };
+
+    public static ENEMY[] Cise_randoms = {
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Cise_random_attacks_1, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Cise_random_attacks_2, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Cise_random_attacks_3, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Cise_random_attacks_4, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Cise_random_attacks_5, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Cise_random_attacks_6, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Cise_random_attacks_7, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Cise_random_attacks_8, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Cise_random_attacks_9, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Cise_random_attacks_10, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Cise_random_attacks_11, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Cise_random_attacks_12, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Cise_random_attacks_13, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Cise_random_attacks_14, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Cise_random_attacks_15, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Cise_random_attacks_16, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Cise_random_attacks_17, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Cise_random_attacks_18, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Cise_random_attacks_19, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Cise_random_attacks_20, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Cise_random_attacks_21, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Cise_random_attacks_22, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Cise_random_attacks_23, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Cise_random_attacks_24, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Cise_random_attacks_15, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Cise_random_attacks_26, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Cise_random_attacks_27, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Cise_random_attacks_28, 10, 10),
     };
     //========================================================================================
     //========================================Turlington======================================
     public static NPC[] Turlington_enemies = {
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u1.png", 17*MAP_RESOLUTION, (128-116)*MAP_RESOLUTION),  //0
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u2.png", 32*MAP_RESOLUTION, (128-123)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r3.png", 47*MAP_RESOLUTION, (128-109)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d4.png", 82*MAP_RESOLUTION, (128-121)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l5.png", 95*MAP_RESOLUTION, (128-98)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l6.png", 111*MAP_RESOLUTION, (128-90)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d7.png", 79*MAP_RESOLUTION, (128-85)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u8.png", 32*MAP_RESOLUTION, (128-71)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d9.png", 8*MAP_RESOLUTION, (128-80)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l10.png", 46*MAP_RESOLUTION, (128-47)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u11.png", 56*MAP_RESOLUTION, (128-50)*MAP_RESOLUTION), //10
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l12.png", 48*MAP_RESOLUTION, (128-35)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d13.png", 73*MAP_RESOLUTION, (128-24)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r14.png", 86*MAP_RESOLUTION, (128-34)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d1.png", 100*MAP_RESOLUTION, (128-29)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d2.png", 107*MAP_RESOLUTION, (128-57)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r3.png", 74*MAP_RESOLUTION, (128-10)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u4.png", 89*MAP_RESOLUTION, (128-15)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l5.png", 106*MAP_RESOLUTION, (128-13)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r6.png", 132*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u7.png", 152*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION), //20
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l8.png", 164*MAP_RESOLUTION, (128-28)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u9.png", 139*MAP_RESOLUTION, (128-45)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l10.png", 155*MAP_RESOLUTION, (128-42)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d11.png", 174*MAP_RESOLUTION, (128-48)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l12.png", 182*MAP_RESOLUTION, (128-22)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u13.png", 193*MAP_RESOLUTION, (128-31)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u14.png", 211*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d1.png", 225*MAP_RESOLUTION, (128-18)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l2.png", 233*MAP_RESOLUTION, (128-38)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r3.png", 136*MAP_RESOLUTION, (128-58)*MAP_RESOLUTION), //30
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r4.png", 125*MAP_RESOLUTION, (128-77)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r5.png", 135*MAP_RESOLUTION, (128-92)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d6.png", 159*MAP_RESOLUTION, (128-65)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u7.png", 146*MAP_RESOLUTION, (128-97)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r8.png", 168*MAP_RESOLUTION, (128-102)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d9.png", 151*MAP_RESOLUTION, (128-121)*MAP_RESOLUTION),
-            new ENEMY('l', turlingtonFPre,turlingtonFWin,turlingtonFLose, "visuals/sprite_sheets/sprite_walk_l10.png", 169*MAP_RESOLUTION, (128-113)*MAP_RESOLUTION, 25, Turlington_F_attacks),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u11.png", 274*MAP_RESOLUTION, (128-125)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l12.png", 292*MAP_RESOLUTION, (128-113)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r13.png", 261*MAP_RESOLUTION, (128-92)*MAP_RESOLUTION), //40
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u14.png", 271*MAP_RESOLUTION, (128-95)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r1.png", 291*MAP_RESOLUTION, (128-91)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r2.png", 259*MAP_RESOLUTION, (128-44)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r3.png", 255*MAP_RESOLUTION, (128-60)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u4.png", 270*MAP_RESOLUTION, (128-47)*MAP_RESOLUTION),
-            new NPC('d', "aassdf", "visuals/sprite_sheets/sprite_walk_d5.png", 291*MAP_RESOLUTION, (128-50)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l6.png", 274*MAP_RESOLUTION, (128-71)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r7.png", 291*MAP_RESOLUTION, (128-65)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r8.png", 249*MAP_RESOLUTION, (128-20)*MAP_RESOLUTION),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r9.png", 270*MAP_RESOLUTION, (128-22)*MAP_RESOLUTION), //50
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u10.png", 288*MAP_RESOLUTION, (128-24)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l11.png", 301*MAP_RESOLUTION, (128-28)*MAP_RESOLUTION),
-            new NPC('l', "aassdf", "visuals/sprite_sheets/sprite_walk_l12.png", 320*MAP_RESOLUTION, (128-22)*MAP_RESOLUTION),
-            new NPC('u', "aassdf", "visuals/sprite_sheets/sprite_walk_u13.png", 334*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION),
-            new ENEMY('d', turlingtonIPre,turlingtonIWin,turlingtonILose, "visuals/sprite_sheets/sprite_walk_d14.png", 349*MAP_RESOLUTION, (128-19)*MAP_RESOLUTION, 25, Turlington_I_attacks),
-            new NPC('r', "aassdf", "visuals/sprite_sheets/sprite_walk_r1.png", 353*MAP_RESOLUTION, (128-30)*MAP_RESOLUTION), //56
-            new BOSS('d', "I am Chui", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/chui/chui_d.png", "visuals/Professors/chui/chui_l.png", 46*MAP_RESOLUTION, (128-27)*MAP_RESOLUTION, 45, Chui_attacks),
-            new BOSS('d', "I am Horton", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/horton/horton_d.png", "visuals/Professors/horton/horton_l.png", 170*MAP_RESOLUTION, (128-122)*MAP_RESOLUTION, 45, Horton_attacks),
-            new BOSS('d', "I am Small", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/small/small_d.png", "visuals/Professors/small/small_l.png", 362*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION, 45, Small_attacks),
-            new ENEMY('d', turlingtonAPre,turlingtonAWin,turlingtonALose,"visuals/sprite_sheets/sprite_walk_d2.png",63*MAP_RESOLUTION, (128-36)*MAP_RESOLUTION, 25, Turlington_A_attacks), //60
-            new ENEMY('l', turlingtonBPre,turlingtonBWin,turlingtonBLose,"visuals/sprite_sheets/sprite_walk_l3.png",49*MAP_RESOLUTION, (128-40)*MAP_RESOLUTION, 25, Turlington_B_attacks),
-            new ENEMY('r', turlingtonCPre,turlingtonCWin,turlingtonCLose,"visuals/sprite_sheets/sprite_walk_r4.png",43*MAP_RESOLUTION, (128-37)*MAP_RESOLUTION, 25, Turlington_C_attacks),
-            new ENEMY('r', turlingtonDPre,turlingtonDWin,turlingtonDLose,"visuals/sprite_sheets/sprite_walk_r5.png",173*MAP_RESOLUTION, (128-106)*MAP_RESOLUTION, 25, Turlington_D_attacks),
-            new ENEMY('r', turlingtonEPre,turlingtonEWin,turlingtonELose,"visuals/sprite_sheets/sprite_walk_r6.png",158*MAP_RESOLUTION, (128-110)*MAP_RESOLUTION, 25, Turlington_E_attacks),
-            new ENEMY('d', turlingtonGPre,turlingtonGWin,turlingtonGLose,"visuals/sprite_sheets/sprite_walk_d7.png",342*MAP_RESOLUTION, (128-35)*MAP_RESOLUTION, 25, Turlington_G_attacks),
-            new ENEMY('r', turlingtonHPre,turlingtonHWin,turlingtonHLose,"visuals/sprite_sheets/sprite_walk_r4.png",347*MAP_RESOLUTION, (128-25)*MAP_RESOLUTION, 25, Turlington_H_attacks),
+            new NPC('u', tur1, "visuals/sprite_sheets/sprite_walk_u1.png", 17*MAP_RESOLUTION, (128-116)*MAP_RESOLUTION),  //0
+            new NPC('u', tur2, "visuals/sprite_sheets/sprite_walk_u2.png", 32*MAP_RESOLUTION, (128-123)*MAP_RESOLUTION),
+            new NPC('r', tur3, "visuals/sprite_sheets/sprite_walk_r3.png", 47*MAP_RESOLUTION, (128-109)*MAP_RESOLUTION),
+            new NPC('d', tur4, "visuals/sprite_sheets/sprite_walk_d4.png", 82*MAP_RESOLUTION, (128-121)*MAP_RESOLUTION),
+            new NPC('l', tur5, "visuals/sprite_sheets/sprite_walk_l5.png", 95*MAP_RESOLUTION, (128-98)*MAP_RESOLUTION),
+            new NPC('l', tur6, "visuals/sprite_sheets/sprite_walk_l6.png", 111*MAP_RESOLUTION, (128-90)*MAP_RESOLUTION),
+            new NPC('d', tur7, "visuals/sprite_sheets/sprite_walk_d7.png", 79*MAP_RESOLUTION, (128-85)*MAP_RESOLUTION),
+            new NPC('u', tur8, "visuals/sprite_sheets/sprite_walk_u8.png", 32*MAP_RESOLUTION, (128-71)*MAP_RESOLUTION),
+            new NPC('d', tur9, "visuals/sprite_sheets/sprite_walk_d9.png", 8*MAP_RESOLUTION, (128-80)*MAP_RESOLUTION),
+            new NPC('l', tur10, "visuals/sprite_sheets/sprite_walk_l10.png", 46*MAP_RESOLUTION, (128-47)*MAP_RESOLUTION),
+            new NPC('u', tur11, "visuals/sprite_sheets/sprite_walk_u11.png", 56*MAP_RESOLUTION, (128-50)*MAP_RESOLUTION), //10
+            new NPC('l', tur12, "visuals/sprite_sheets/sprite_walk_l12.png", 48*MAP_RESOLUTION, (128-35)*MAP_RESOLUTION),
+            new NPC('d', tur13, "visuals/sprite_sheets/sprite_walk_d13.png", 73*MAP_RESOLUTION, (128-24)*MAP_RESOLUTION),
+            new NPC('r', tur14, "visuals/sprite_sheets/sprite_walk_r14.png", 86*MAP_RESOLUTION, (128-34)*MAP_RESOLUTION),
+            new NPC('d', tur15, "visuals/sprite_sheets/sprite_walk_d1.png", 100*MAP_RESOLUTION, (128-29)*MAP_RESOLUTION),
+            new NPC('d', tur16, "visuals/sprite_sheets/sprite_walk_d2.png", 107*MAP_RESOLUTION, (128-57)*MAP_RESOLUTION),
+            new NPC('r', tur17, "visuals/sprite_sheets/sprite_walk_r3.png", 74*MAP_RESOLUTION, (128-10)*MAP_RESOLUTION),
+            new NPC('u', tur18, "visuals/sprite_sheets/sprite_walk_u4.png", 89*MAP_RESOLUTION, (128-15)*MAP_RESOLUTION),
+            new NPC('l', tur19, "visuals/sprite_sheets/sprite_walk_l5.png", 106*MAP_RESOLUTION, (128-13)*MAP_RESOLUTION),
+            new NPC('r', tur20, "visuals/sprite_sheets/sprite_walk_r6.png", 132*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION),
+            new NPC('u', tur21, "visuals/sprite_sheets/sprite_walk_u7.png", 152*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION), //20
+            new NPC('l', tur22, "visuals/sprite_sheets/sprite_walk_l8.png", 164*MAP_RESOLUTION, (128-28)*MAP_RESOLUTION),
+            new NPC('u', tur23, "visuals/sprite_sheets/sprite_walk_u9.png", 139*MAP_RESOLUTION, (128-45)*MAP_RESOLUTION),
+            new NPC('l', tur24, "visuals/sprite_sheets/sprite_walk_l10.png", 155*MAP_RESOLUTION, (128-42)*MAP_RESOLUTION),
+            new NPC('d', tur25, "visuals/sprite_sheets/sprite_walk_d11.png", 174*MAP_RESOLUTION, (128-48)*MAP_RESOLUTION),
+            new NPC('l', tur26, "visuals/sprite_sheets/sprite_walk_l12.png", 182*MAP_RESOLUTION, (128-22)*MAP_RESOLUTION),
+            new NPC('u', tur27, "visuals/sprite_sheets/sprite_walk_u13.png", 193*MAP_RESOLUTION, (128-31)*MAP_RESOLUTION),
+            new NPC('u', tur28, "visuals/sprite_sheets/sprite_walk_u14.png", 211*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION),
+            new NPC('d', tur29, "visuals/sprite_sheets/sprite_walk_d1.png", 225*MAP_RESOLUTION, (128-18)*MAP_RESOLUTION),
+            new NPC('l', tur30, "visuals/sprite_sheets/sprite_walk_l2.png", 233*MAP_RESOLUTION, (128-38)*MAP_RESOLUTION),
+            new NPC('r', tur31, "visuals/sprite_sheets/sprite_walk_r3.png", 136*MAP_RESOLUTION, (128-58)*MAP_RESOLUTION), //30
+            new NPC('r', tur32, "visuals/sprite_sheets/sprite_walk_r4.png", 125*MAP_RESOLUTION, (128-77)*MAP_RESOLUTION),
+            new NPC('r', tur33, "visuals/sprite_sheets/sprite_walk_r5.png", 135*MAP_RESOLUTION, (128-92)*MAP_RESOLUTION),
+            new NPC('d', tur34, "visuals/sprite_sheets/sprite_walk_d6.png", 159*MAP_RESOLUTION, (128-65)*MAP_RESOLUTION),
+            new NPC('u', tur35, "visuals/sprite_sheets/sprite_walk_u7.png", 146*MAP_RESOLUTION, (128-97)*MAP_RESOLUTION),
+            new NPC('r', tur36, "visuals/sprite_sheets/sprite_walk_r8.png", 168*MAP_RESOLUTION, (128-102)*MAP_RESOLUTION),
+            new NPC('d', tur37, "visuals/sprite_sheets/sprite_walk_d9.png", 151*MAP_RESOLUTION, (128-121)*MAP_RESOLUTION),
+            new ENEMY('l', turlingtonFPre,turlingtonFWin,turlingtonFLose, "visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png", 169*MAP_RESOLUTION, (128-113)*MAP_RESOLUTION, 25, Turlington_F_attacks, 10, 10),
+            new NPC('u', tur38, "visuals/sprite_sheets/sprite_walk_u11.png", 274*MAP_RESOLUTION, (128-125)*MAP_RESOLUTION),
+            new NPC('l', tur39, "visuals/sprite_sheets/sprite_walk_l12.png", 292*MAP_RESOLUTION, (128-113)*MAP_RESOLUTION),
+            new NPC('r', tur40, "visuals/sprite_sheets/sprite_walk_r13.png", 261*MAP_RESOLUTION, (128-92)*MAP_RESOLUTION), //40
+            new NPC('u', tur41, "visuals/sprite_sheets/sprite_walk_u14.png", 271*MAP_RESOLUTION, (128-95)*MAP_RESOLUTION),
+            new NPC('r', tur42, "visuals/sprite_sheets/sprite_walk_r1.png", 291*MAP_RESOLUTION, (128-91)*MAP_RESOLUTION),
+            new NPC('r', tur43, "visuals/sprite_sheets/sprite_walk_r2.png", 259*MAP_RESOLUTION, (128-44)*MAP_RESOLUTION),
+            new NPC('r', tur44, "visuals/sprite_sheets/sprite_walk_r3.png", 255*MAP_RESOLUTION, (128-60)*MAP_RESOLUTION),
+            new NPC('u', tur45, "visuals/sprite_sheets/sprite_walk_u4.png", 270*MAP_RESOLUTION, (128-47)*MAP_RESOLUTION),
+            new NPC('d', tur46, "visuals/sprite_sheets/sprite_walk_d5.png", 291*MAP_RESOLUTION, (128-50)*MAP_RESOLUTION),
+            new NPC('l', tur47, "visuals/sprite_sheets/sprite_walk_l6.png", 274*MAP_RESOLUTION, (128-71)*MAP_RESOLUTION),
+            new NPC('r', tur48, "visuals/sprite_sheets/sprite_walk_r7.png", 291*MAP_RESOLUTION, (128-65)*MAP_RESOLUTION),
+            new NPC('r', tur49, "visuals/sprite_sheets/sprite_walk_r8.png", 249*MAP_RESOLUTION, (128-20)*MAP_RESOLUTION),
+            new NPC('r', tur50, "visuals/sprite_sheets/sprite_walk_r9.png", 270*MAP_RESOLUTION, (128-22)*MAP_RESOLUTION), //50
+            new NPC('u', tur51, "visuals/sprite_sheets/sprite_walk_u10.png", 288*MAP_RESOLUTION, (128-24)*MAP_RESOLUTION),
+            new NPC('l', tur52, "visuals/sprite_sheets/sprite_walk_l11.png", 301*MAP_RESOLUTION, (128-28)*MAP_RESOLUTION),
+            new NPC('l', tur53, "visuals/sprite_sheets/sprite_walk_l12.png", 320*MAP_RESOLUTION, (128-22)*MAP_RESOLUTION),
+            new NPC('u', tur54, "visuals/sprite_sheets/sprite_walk_u13.png", 334*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION),
+            new ENEMY('d', turlingtonIPre,turlingtonIWin,turlingtonILose, "visuals/sprite_sheets/sprite_walk_d14.png", "visuals/sprite_sheets/sprite_l14.png", 349*MAP_RESOLUTION, (128-19)*MAP_RESOLUTION, 25, Turlington_I_attacks, 10, 10),
+            new NPC('r', tur55, "visuals/sprite_sheets/sprite_walk_r1.png", 353*MAP_RESOLUTION, (128-30)*MAP_RESOLUTION), //56
+            new BOSS('d', "I am Chui", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/chui/chui_d.png", "visuals/Professors/chui/chui_l.png", 46*MAP_RESOLUTION, (128-27)*MAP_RESOLUTION, 45, Chui_attacks, 10, 10),
+            new BOSS('d', "I am Horton", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/horton/horton_d.png", "visuals/Professors/horton/horton_l.png", 170*MAP_RESOLUTION, (128-122)*MAP_RESOLUTION, 45, Horton_attacks, 10, 10),
+            new BOSS('d', "I am Small", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/small/small_d.png", "visuals/Professors/small/small_l.png", 362*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION, 45, Small_attacks, 10, 10),
+            new ENEMY('d', turlingtonAPre,turlingtonAWin,turlingtonALose,"visuals/sprite_sheets/sprite_walk_d2.png", "visuals/sprite_sheets/sprite_l2.png", 63*MAP_RESOLUTION, (128-36)*MAP_RESOLUTION, 25, Turlington_A_attacks, 10, 10), //60
+            new ENEMY('l', turlingtonBPre,turlingtonBWin,turlingtonBLose,"visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 49*MAP_RESOLUTION, (128-40)*MAP_RESOLUTION, 25, Turlington_B_attacks, 10, 10),
+            new ENEMY('r', turlingtonCPre,turlingtonCWin,turlingtonCLose,"visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l4.png", 43*MAP_RESOLUTION, (128-37)*MAP_RESOLUTION, 25, Turlington_C_attacks, 10, 10),
+            new ENEMY('r', turlingtonDPre,turlingtonDWin,turlingtonDLose,"visuals/sprite_sheets/sprite_walk_r5.png", "visuals/sprite_sheets/sprite_l5.png", 173*MAP_RESOLUTION, (128-106)*MAP_RESOLUTION, 25, Turlington_D_attacks, 10, 10),
+            new ENEMY('r', turlingtonEPre,turlingtonEWin,turlingtonELose,"visuals/sprite_sheets/sprite_walk_r6.png", "visuals/sprite_sheets/sprite_l6.png", 158*MAP_RESOLUTION, (128-110)*MAP_RESOLUTION, 25, Turlington_E_attacks, 10, 10),
+            new ENEMY('d', turlingtonGPre,turlingtonGWin,turlingtonGLose,"visuals/sprite_sheets/sprite_walk_d7.png", "visuals/sprite_sheets/sprite_l7.png", 342*MAP_RESOLUTION, (128-35)*MAP_RESOLUTION, 25, Turlington_G_attacks, 10, 10),
+            new ENEMY('r', turlingtonHPre,turlingtonHWin,turlingtonHLose,"visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l8.png", 347*MAP_RESOLUTION, (128-25)*MAP_RESOLUTION, 25, Turlington_H_attacks, 10, 10),
 
+    };
+
+    public static ENEMY[] Turlington_randoms = {
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Turlington_random_attacks_1, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Turlington_random_attacks_2, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Turlington_random_attacks_3, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Turlington_random_attacks_4, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Turlington_random_attacks_5, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Turlington_random_attacks_6, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Turlington_random_attacks_7, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Turlington_random_attacks_8, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Turlington_random_attacks_9, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Turlington_random_attacks_10, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Turlington_random_attacks_11, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Turlington_random_attacks_12, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Turlington_random_attacks_13, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Turlington_random_attacks_14, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Turlington_random_attacks_15, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Turlington_random_attacks_16, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Turlington_random_attacks_17, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Turlington_random_attacks_18, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Turlington_random_attacks_19, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Turlington_random_attacks_20, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Turlington_random_attacks_21, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Turlington_random_attacks_22, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Turlington_random_attacks_23, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Turlington_random_attacks_24, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Turlington_random_attacks_15, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Turlington_random_attacks_26, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Turlington_random_attacks_27, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Turlington_random_attacks_28, 10, 10),
     };
     //========================================================================================
     //========================================Dorm============================================
     public static NPC[] Dorm_enemies = {
-            new NPC('u',"Welcome to UF, this is your dorm room.", "visuals/sprite_sheets/sprite_walk_u3.png",9*MAP_RESOLUTION,20*MAP_RESOLUTION),
-            new NPC('d',"You better not steal anything", "visuals/sprite_sheets/sprite_walk_d5.png", 17*MAP_RESOLUTION,24*MAP_RESOLUTION),
+            new NPC('u',"Welcome to UF, this is your dorm room. Return here whenever you want to restore your GPA.", "visuals/sprite_sheets/sprite_walk_u3.png",9*MAP_RESOLUTION,20*MAP_RESOLUTION),
+            new NPC('d',"Open up your hero screen with H. You can view your stats, progress, and moves.", "visuals/sprite_sheets/sprite_walk_d5.png", 17*MAP_RESOLUTION,24*MAP_RESOLUTION),
             new NPC('l',"I have no idea how to play the piano","visuals/sprite_sheets/sprite_walk_l1.png", 25*MAP_RESOLUTION,12*MAP_RESOLUTION),
-            new NPC('r',"If you ever feel tired just return here","visuals/sprite_sheets/sprite_walk_r8.png", 10*MAP_RESOLUTION,3*MAP_RESOLUTION),
+            new NPC('r',"When leaving a building you will bring up the world map. Just move the pin to the building you want to visit and hit enter","visuals/sprite_sheets/sprite_walk_r8.png", 10*MAP_RESOLUTION,3*MAP_RESOLUTION),
             new NPC('r',dormA,"visuals/sprite_sheets/sprite_walk_r13.png",17*MAP_RESOLUTION,9*MAP_RESOLUTION),
             new NPC('l',dormB, "visuals/sprite_sheets/sprite_walk_l12.png", 21*MAP_RESOLUTION,9*MAP_RESOLUTION),
             new NPC('r',worldO, "visuals/sprite_sheets/sprite_walk_r2.png", MAP_RESOLUTION,31*MAP_RESOLUTION),
