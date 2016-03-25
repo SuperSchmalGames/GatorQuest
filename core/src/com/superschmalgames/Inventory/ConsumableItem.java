@@ -5,7 +5,6 @@ package com.superschmalgames.Inventory;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
-import com.superschmalgames.Hero.HeroInventory;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -19,8 +18,9 @@ public class ConsumableItem implements InventoryItem {
     public double boostAmt;        //How much is the stat changed.
     public int boostDuration;      //How long (in combat turns) will the boost last (if isTemp is true).
     public char itemType;          //Defines the item by Apparel, Equipment or Consumable by chars 'a', 'e' or 'c' respectively
+    public String description;
 
-    public ConsumableItem(String name, Texture tex, String stat, double boost, int dur, int initQuant, boolean isTemporary){
+    public ConsumableItem(String name, Texture tex, String stat, double boost, int dur, int initQuant, boolean isTemporary, String des){
         itemName = name;
         texture = tex;
         statBoosted = stat;
@@ -29,17 +29,7 @@ public class ConsumableItem implements InventoryItem {
         quantity += initQuant;
         isTemp = isTemporary;
         itemType = 'c';
-    }
-
-    @Override
-    public void addItem(HeroInventory inv) {
-        for(InventoryItem i : inv.items){
-            if(this.itemName.equals(i.getItemName())){
-                i.setQuantity(i.getQuantity()+1);
-                return;
-            }
-        }
-        inv.items.add(this);
+        description = des;
     }
 
     @Override
@@ -52,6 +42,10 @@ public class ConsumableItem implements InventoryItem {
                 quantity--;
             } catch (Exception e) {
                 Gdx.app.log("test", "Something wrong in activateItem()!");
+            }
+            if(MainClass.hero.GPA > 4.0){
+                //If the consumable item boosts the GPA over 4.0, cap it at 4.0.
+                MainClass.hero.GPA = 4.0;
             }
         }
         else{
@@ -76,8 +70,8 @@ public class ConsumableItem implements InventoryItem {
     }
 
     @Override
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public String getItemDes() {
+        return description;
     }
 
     @Override
@@ -96,18 +90,8 @@ public class ConsumableItem implements InventoryItem {
     }
 
     @Override
-    public void setStatBoosted(String stat) {
-        statBoosted = stat;
-    }
-
-    @Override
     public double getBoostAmt() {
         return boostAmt;
-    }
-
-    @Override
-    public void setBoostAmt(double boost) {
-        boostAmt = boost;
     }
 
     @Override

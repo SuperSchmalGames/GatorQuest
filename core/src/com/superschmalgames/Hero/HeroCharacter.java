@@ -9,6 +9,8 @@ import com.superschmalgames.NPC.ENEMY;
 import com.superschmalgames.NPC.NPC;
 import com.superschmalgames.Utilities.Animator;
 
+import java.util.Random;
+
 public class HeroCharacter {
 
     public int outfitNum;
@@ -31,8 +33,8 @@ public class HeroCharacter {
     public int semester;
     public int gatorBucks;
     public int experience;
-    private int expCap;
-    private int lvl;
+    public int expCap;
+    public int lvl;
 
     //Character stats.
     public double Software;
@@ -95,6 +97,7 @@ public class HeroCharacter {
         semester = 8;
         gatorBucks = 10000;
         experience = 0;
+        lvl = 1;
         expCap = 100;
 
         canMove = true;
@@ -185,9 +188,67 @@ public class HeroCharacter {
     //needs to be finished
     public void level() {
         lvl++;
+        experience = 0;
         //make leveling nonlinear, or comment out for linear leveling
         expCap += 10*lvl;
         //need a way to select skill to level;
+        Random rand = new Random();
+        int n = rand.nextInt(5) + 1;
+        if(n==5)
+        {
+            if(Software < STAT_CAP) {
+                Software += 1;
+                Software_buf+=1;
+            }
+        }
+        n = rand.nextInt(5) + 1;
+        if(n==5)
+        {
+            if(Hardware < STAT_CAP) {
+                Hardware += 1;
+                Hardware_buf+=1;
+            }
+        }
+        n = rand.nextInt(5) + 1;
+        if(n==5)
+        {
+            if(Writing < STAT_CAP) {
+                Writing_buf+=1;
+                Writing += 1;
+            }
+        }
+        n = rand.nextInt(5) + 1;
+        if(n==5)
+        {
+            if(Endurance < STAT_CAP) {
+                Endurance += 1;
+                Endurance_buf += 1;
+            }
+        }
+        n = rand.nextInt(5) + 1;
+        if(n==5)
+        {
+            if(Social < STAT_CAP) {
+                Social += 1;
+                Social_buf += 1;
+            }
+        }
+        n = rand.nextInt(5) + 1;
+        if(n==5)
+        {
+            if(Math < STAT_CAP) {
+                Math += 1;
+                Math_buf += 1;
+            }
+        }
+        n = rand.nextInt(5) + 1;
+        if(n==5)
+        {
+            if(Focus < STAT_CAP) {
+                Focus += 1;
+                Focus_buf += 1;
+            }
+        }
     }
 
 }
