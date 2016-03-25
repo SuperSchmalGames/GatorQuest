@@ -32,7 +32,7 @@ public class CombatLogic {
     public double heroBaseDmg, enemyBaseDmg;
 
     //Boolean used to determine when we're transitioning from one state to another.
-    public boolean transition, hDone, eDone, hWin, eWin;
+    public boolean transition, hDone, eDone, hWin, eWin, move;
 
     public enum combat_state{
         PLAYER_TURN,          //Player makes a selection and the effects are applied.
@@ -94,16 +94,16 @@ public class CombatLogic {
         //Series of states to control combat logic flow.
         if(CURRENT_STATE == combat_state.PLAYER_TURN){
             //Subtract health from enemy equal to hero damage.
-            MainClass.hero.lastEnemy.enemyLife -= heroBaseDmg;
+            //MainClass.hero.lastEnemy.enemyLife -= heroBaseDmg;
 
             //Reset hero damage for next turn.
-            heroBaseDmg = 0;
+            //heroBaseDmg = 0;
 
             //Set state to enemy turn.
             CURRENT_STATE = combat_state.ENEMY_TURN;
 
             //If enemy life drops to 0, set state to player win.
-            if(MainClass.hero.lastEnemy.enemyLife <= 0){
+            if(MainClass.hero.lastEnemy.enemyLife - heroBaseDmg <= 0){
                 CURRENT_STATE = combat_state.PLAYER_WIN;
             }
 
@@ -114,7 +114,7 @@ public class CombatLogic {
         if(CURRENT_STATE == combat_state.ENEMY_TURN){
             //Some logic for randomly picking moves.
             enemyBaseDmg = MainClass.hero.lastEnemy.attacks[0].use(heroStats);
-            MainClass.hero.GPA -= enemyBaseDmg;
+            //MainClass.hero.GPA -= enemyBaseDmg;
             Gdx.app.log("Enemy Turn", "Move Selected: " + MainClass.hero.lastEnemy.attacks[0].getMoveName());
             Gdx.app.log("Enemy Damage Test", "Damage Done: "+ enemyBaseDmg);
 
@@ -125,7 +125,7 @@ public class CombatLogic {
             CURRENT_STATE = combat_state.PLAYER_TURN;
 
             //If Hero GPA drops to 0, set state to player lose.
-            if(MainClass.hero.GPA <= 0){
+            if(MainClass.hero.GPA - enemyBaseDmg <= 0){
                 CURRENT_STATE = combat_state.PLAYER_LOSE;
             }
 
@@ -163,7 +163,15 @@ public class CombatLogic {
         }
     }
 
-    public void updateHero(){
+    public void updateHero(int timesCalled){
+        //If this is the second time we've called this, we know we can sub enemy dmg from hero health. Otherwise, we
+        //just update the amount of health shown on screen to show health boost if we used an item.
+        if(timesCalled == 2) {
+            //Subtract Enemy damage from Hero life
+            MainClass.hero.GPA -= enemyBaseDmg;
+            enemyBaseDmg = 0; //Zero this out so we don't accidentally subtract too much health.
+        }
+
         //Update the Hero life displayed to the screen.
         if(MainClass.hero.GPA <= 0.0){
             MainClass.combatScreen.heroLife = "Your GPA: 0.0";
@@ -173,6 +181,10 @@ public class CombatLogic {
     }
 
     public void updateEnemy(){
+        //Subtract Hero damage from Enemy life
+        MainClass.hero.lastEnemy.enemyLife -= heroBaseDmg;
+        heroBaseDmg = 0;
+
         //Update the enemy life displayed to the screen.
         if(MainClass.hero.lastEnemy.enemyLife <= 0){
             MainClass.combatScreen.enemyLife = "Assignments: 0";

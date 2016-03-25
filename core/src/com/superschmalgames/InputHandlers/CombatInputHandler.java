@@ -80,6 +80,9 @@ public class CombatInputHandler implements InputProcessor{
                     MainClass.combatScreen.description = MainClass.hero.moves.attacks[MainClass.hero.moves.getCurrentMove()].getDescription();
                 }
                 else if (keycode == Input.Keys.ENTER) {
+                    //Let the combat logic handler know that we used a move, not an item.
+                    MainClass.combatLogic.move = true;
+
                     //Pressing ENTER will choose to make the selected move.
                     selection = MainClass.hero.moves.getCurrentMove();
                     Gdx.app.log("Combat-Hero Moves", "Move Selected: " + MainClass.hero.moves.attacks[selection].getMoveName());
@@ -139,6 +142,9 @@ public class CombatInputHandler implements InputProcessor{
                     MainClass.combatScreen.description = MainClass.hero.inventory.items.get(MainClass.hero.inventory.getCurrentItemIndex()).getItemName();       //!!!!!!!Add item descriptions!!!!!!!!!!!!!!!!
                 }
                 else if (keycode == Input.Keys.ENTER) {
+                    //Let the combat logic handler know that we used an item, not a move.
+                    MainClass.combatLogic.move = false;
+
                     //Get the actual array index of the Item we selected.
                     selection = MainClass.hero.inventory.getCurrentItemIndex();
                     Gdx.app.log("Combat-Hero Items", "Item Selected: " + MainClass.hero.inventory.items.get(selection).getItemName());

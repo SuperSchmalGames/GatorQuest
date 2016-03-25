@@ -106,10 +106,13 @@ public class CombatScreen implements Screen {
                 //Display hMoveDesc here
                 Utils.font.draw(MainClass.batch, hMovDesc, 55, 223);
 
+                //We'll draw the add/sub for health here  <===================================================================
+
                 //Update the amount of hero/enemy health shown.
                 if(!statusUpdate){
                     statusUpdate = true;
-                    MainClass.combatLogic.updateEnemy();
+                    MainClass.combatLogic.updateHero(1);   //Update Hero to show added health from item
+                    MainClass.combatLogic.updateEnemy();  //Update enemy to show reduced health from hero attack
                 }
 
                 if(waitTime > 2) {
@@ -131,7 +134,7 @@ public class CombatScreen implements Screen {
                 //Update the amount of hero health shown.
                 if(!statusUpdate){
                     statusUpdate = true;
-                    MainClass.combatLogic.updateHero();
+                    MainClass.combatLogic.updateHero(2);
                 }
 
                 if(waitTime > 2) {
