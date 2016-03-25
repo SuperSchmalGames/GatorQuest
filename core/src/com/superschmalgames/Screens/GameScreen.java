@@ -267,8 +267,8 @@ public class GameScreen implements Screen {
                 }
                 if(recently_attacked != 0)
                     recently_attacked--;
-                if(attackable && recently_attacked == 0)
-                randomEncounter();
+                if(attackable && recently_attacked == 0){}
+                    //randomEncounter();
             }
             else if(rWalk &&
                     !collision.getCell((int)(camera.position.x+MainClass.hero.width/2+Utils.MOVE_DIST)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -282,8 +282,8 @@ public class GameScreen implements Screen {
                 }
                 if(recently_attacked != 0)
                     recently_attacked--;
-                if(attackable && recently_attacked == 0)
-                randomEncounter();
+                if(attackable && recently_attacked == 0){}
+                    //randomEncounter();
             }
             else if(uWalk &&
                     !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y+Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -303,8 +303,8 @@ public class GameScreen implements Screen {
                 }
                 if(recently_attacked != 0)
                     recently_attacked--;
-                if(attackable && recently_attacked == 0)
-                randomEncounter();
+                if(attackable && recently_attacked == 0){}
+                    //randomEncounter();
             }
             else if(dWalk &&
                     !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2-Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -324,8 +324,8 @@ public class GameScreen implements Screen {
                 }
                 if(recently_attacked != 0)
                     recently_attacked--;
-                if(attackable && recently_attacked == 0)
-                    randomEncounter();
+                if(attackable && recently_attacked == 0){}
+                    //randomEncounter();
             }
             else MainClass.hero.standAnimation();
             MainClass.hero.setPosition(camera.position.x, camera.position.y);
