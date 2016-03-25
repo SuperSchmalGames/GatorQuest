@@ -22,13 +22,13 @@ public class ENEMY extends NPC {
     //Sprite that's shown for the hero during combat.
     public Sprite combatSprite;
 
-    public ENEMY(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, int origH, E_Move[] a, int e, int m) {
+    public ENEMY(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a, int e, int m) {
         super(dir,s,sprite,x,y);
         win_script = win;
         lose_script = lose;
         attacks = a;
         enemyLife = h;
-        origLife = origH;
+        origLife = h;
         exp = e;
         money = m;
         combatSprite = new Sprite(new Texture(combat));
