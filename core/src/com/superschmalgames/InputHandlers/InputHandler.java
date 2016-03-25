@@ -253,8 +253,12 @@ public class InputHandler implements InputProcessor {
                         (Gdx.app.getApplicationListener()).pause();
                     } else {
                         Utils.isPaused = false;
+                        Utils.isPaused = false;
                         (Gdx.app.getApplicationListener()).resume();
                     }
+                }
+                else if (keycode == Input.Keys.A) {
+                    MainClass.gameScreen.advising = !MainClass.gameScreen.advising;
                 }
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////

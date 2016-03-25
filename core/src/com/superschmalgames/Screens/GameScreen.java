@@ -39,7 +39,7 @@ public class GameScreen implements Screen {
 
     //Flags for handling character movement.
     public boolean lWalk, rWalk, uWalk, dWalk;
-    public boolean dial, newDial, store;
+    public boolean dial, newDial, store, advising;
     private boolean attackable,safe;
     private int recently_attacked;
     Random random = new Random();
@@ -57,6 +57,7 @@ public class GameScreen implements Screen {
         dial = false;
         newDial = false;
         store = false;
+        advising = false;
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
@@ -233,6 +234,12 @@ public class GameScreen implements Screen {
             Utils.font.draw(MainClass.batch, shop_window.dialog, shop_window.DIAL_X_OFFSET, shop_window.DIAL_Y_OFFSET);
             Utils.menuIcon.draw(MainClass.batch);
             Utils.font_small.draw(MainClass.batch, "Gatorbucks:\n$" + MainClass.hero.gatorBucks, camera.position.x-Utils.GAME_SCREEN_WIDTH/2+860, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-40);
+            MainClass.batch.end();
+        }
+
+        if(advising){
+            MainClass.batch.begin();
+            Utils.font_small.draw(MainClass.batch, "FROM: Allison\n\nDear " + MainClass.hero.name+",\n"+Utils.advText[MainClass.hero.semester]+"\n\nSincerely,\nAllison", camera.position.x-Utils.GAME_SCREEN_WIDTH/2+560, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-40);
             MainClass.batch.end();
         }
 

@@ -626,6 +626,21 @@ public class Utils {
     public static final String tur54 = "Gainesville is so muggy! I’m covered in sweat.";
     public static final String tur55 = "I prefer mechanical pencils over pens.";
 
+
+    //////////////////////////////////////ADVISING//////////////////////////////////////////////////////////////////////
+    public static final String[] advText = {
+            "Your first class will be Java 1 with\nDr. Dobbins. Go meet him\n in the bottom of CISE",
+            "Your next class will be Calc 2 with\nDr. Chui. Go meet her\nin the bottom of Turlington",
+            "Your third class will be Programming 2\nwith Dr. Horton. Go meet\n him in the top of\nTurlington",
+            "Your next class will be Circuits I with\nDr. Srivastava. Go meet him\nin the NEB",
+            "Your next class will be Signals with\nDr. Wong. Go meet him\nin the NEB",
+            "Your next class will be Digital Logic with\nDr. Gugel. Go meet him\nin the NEB",
+            "Your next class will be Operating Systems with\nDr. Small. Go meet him\nin Turlington",
+            "Your next class will be Senior Design with\nDr. Schmalz. Go meet him\nin the CISE",
+            "You've completed all your classes. \n\nCongrats, you're a Gator Alum!"
+    };
+    //////////////////////////////////////END ADVISING//////////////////////////////////////////////////////////////////////
+
     //////////////////////////////////////DUNGEON ENEMIES//////////////////////////////////////////////////////////////////////
     //when adding enemies to the various arrays, the proper tiles must be accounted for in the Tiled Map Editor
     //========================================NEB=============================================
@@ -1056,6 +1071,7 @@ public class Utils {
     public static Sprite shop_window = new Sprite(new Texture("visuals/Menus/shop_window.png"));
     public static final Sound kaching = Gdx.audio.newSound(Gdx.files.internal("sound/effects/kaching.mp3"));
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     //Static method to initialize all required options for the variables fields used above.
     public static void initUtils(){
         ///////////////////////////////////MAIN CLASS//////////////////////////////////////////////////////////////////////////
