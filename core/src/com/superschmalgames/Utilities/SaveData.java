@@ -1,9 +1,5 @@
 package com.superschmalgames.Utilities;
 
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.superschmalgames.Hero.HeroInventory;
-import com.superschmalgames.Hero.HeroMoves;
-
 /**
  * Created by Cory on 3/25/2016.
  */
@@ -34,6 +30,14 @@ public class SaveData implements java.io.Serializable {
     public double Math_buf;
     public double Focus_buf;
 
-    //hero inventory
+    //hero inventory - only quantities needed
+    int[] quantities;
 
+    //enemies - only triggered flag (randoms excluded)
+    boolean[] neb;
+    boolean[] cise;
+    boolean[] turlington;
+    boolean[] dorm;
+    boolean[] marston;
+    boolean[] bookstore;
 }
