@@ -32,6 +32,9 @@ public class SaveData implements java.io.Serializable {
 
     //hero inventory - only quantities needed
     public int[] quantities = new int[18];
+    public int apparel;
+    public int equipped;
+
 
     //enemies - only triggered flag (randoms excluded)
     public boolean[] neb = new boolean[69];
