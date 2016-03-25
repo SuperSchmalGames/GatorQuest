@@ -23,6 +23,8 @@ public interface InventoryItem {
 
     double getBoostAmt();
 
+    String getItemDes();
+
     char getItemType();
 
     Texture getTexture();

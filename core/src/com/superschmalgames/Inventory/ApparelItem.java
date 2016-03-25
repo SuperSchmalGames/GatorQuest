@@ -14,14 +14,16 @@ public class ApparelItem implements InventoryItem {
     public String statBoosted;     //Which stat is affected by equipping/using the item.
     public double boostAmt;         //How much is the stat changed.
     public char itemType;          //Defines the item by Apparel, Equipment or Consumable by chars 'a', 'e' or 'c' respectively
+    public String description;
 
-    public ApparelItem(String name, Texture tex, String stat, double boost, int initQuant){
+    public ApparelItem(String name, Texture tex, String stat, double boost, int initQuant, String des){
         itemName = name;
         texture = tex;
         statBoosted = stat;
         boostAmt = boost;
         quantity += initQuant;
         itemType = 'a';
+        description = des;
     }
 
     //Method to equip the apparel and apply the appropriate boost.
@@ -57,6 +59,11 @@ public class ApparelItem implements InventoryItem {
     @Override
     public String getItemName() {
         return itemName;
+    }
+
+    @Override
+    public String getItemDes() {
+        return description;
     }
 
     @Override
