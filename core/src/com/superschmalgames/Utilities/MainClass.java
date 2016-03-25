@@ -55,6 +55,7 @@ public class MainClass extends Game {
 		//there was a noticeable speed delay in loading screens)
 		openWorldScreen = new OpenWorldScreen();
 		titleScreen = new TitleScreen();
+		combatScreen = new CombatScreen();
 
 		//Set the screen as the title screen.
 		this.setScreen(titleScreen);
