@@ -7,6 +7,8 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.superschmalgames.Inventory.ApparelItem;
+import com.superschmalgames.Inventory.EquipableItem;
 import com.superschmalgames.Screens.GameScreen;
 import com.superschmalgames.Utilities.DataManager;
 import com.superschmalgames.Utilities.MainClass;
@@ -79,6 +81,12 @@ public class InputHandler implements InputProcessor {
                             MainClass.hero.Focus_buf = data.Focus_buf;
                             for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
                                 MainClass.hero.inventory.items.get(i).setQuantity(data.quantities[i]);
+                                if(i == data.apparel) {
+                                    MainClass.hero.heroApparel = (ApparelItem) MainClass.hero.inventory.items.get(i);
+                                }
+                                if(i == data.equipped) {
+                                    MainClass.hero.heroEquipment = (EquipableItem) MainClass.hero.inventory.items.get(i);
+                                }
                             }
                             for (int i = 0; i < Utils.NEB_enemies.length; i++) {
                                  Utils.NEB_enemies[i].triggered = data.neb[i];
@@ -217,8 +225,16 @@ public class InputHandler implements InputProcessor {
                     data.Social_buf = MainClass.hero.Social_buf;
                     data.Math_buf = MainClass.hero.Math_buf;
                     data.Focus_buf = MainClass.hero.Focus_buf;
+                    data.apparel = 300;     //set to unequippable range
+                    data.equipped = 300;
                     for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
                         data.quantities[i] = MainClass.hero.inventory.items.get(i).getQuantity();
+                        if(MainClass.hero.inventory.items.get(i) == MainClass.hero.heroApparel) {
+                            data.apparel = i;
+                        }
+                        if(MainClass.hero.inventory.items.get(i) == MainClass.hero.heroEquipment) {
+                            data.equipped = i;
+                        }
                     }
                     for (int i = 0; i < Utils.NEB_enemies.length; i++) {
                         data.neb[i] = Utils.NEB_enemies[i].triggered;
