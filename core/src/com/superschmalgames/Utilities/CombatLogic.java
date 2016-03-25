@@ -195,5 +195,6 @@ public class CombatLogic {
         Gdx.input.setInputProcessor(MainClass.inputHandler);
         MainClass.hero.canMove = true;
         ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+
     }
 }

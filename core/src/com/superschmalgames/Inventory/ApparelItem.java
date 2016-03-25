@@ -4,7 +4,6 @@ package com.superschmalgames.Inventory;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
-import com.superschmalgames.Hero.HeroInventory;
 import com.superschmalgames.Utilities.MainClass;
 
 public class ApparelItem implements InventoryItem {
@@ -25,17 +24,6 @@ public class ApparelItem implements InventoryItem {
         quantity += initQuant;
         itemType = 'a';
         description = des;
-    }
-
-    @Override
-    public void addItem(HeroInventory inv) {
-        for(InventoryItem i : inv.items){
-            if(this.itemName.equals(i.getItemName())){
-                i.setQuantity(i.getQuantity()+1);
-                return;
-            }
-        }
-        inv.items.add(this);
     }
 
     //Method to equip the apparel and apply the appropriate boost.
@@ -79,11 +67,6 @@ public class ApparelItem implements InventoryItem {
     }
 
     @Override
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
-    @Override
     public int getQuantity() {
         return quantity;
     }
@@ -99,18 +82,8 @@ public class ApparelItem implements InventoryItem {
     }
 
     @Override
-    public void setStatBoosted(String stat) {
-        statBoosted = stat;
-    }
-
-    @Override
     public double getBoostAmt() {
         return boostAmt;
-    }
-
-    @Override
-    public void setBoostAmt(double boost) {
-        boostAmt = boost;
     }
 
     @Override

@@ -6,8 +6,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.superschmalgames.Hero.HeroInventory;
 
 public interface InventoryItem {
-    //Method to add an item to the character inventory.
-    void addItem(HeroInventory inv);
 
     //Method to effectively use/equip an item in the player's inventory
     void activateItem();
@@ -17,16 +15,13 @@ public interface InventoryItem {
     void disableItem();
 
     String getItemName();
-    void setItemName(String itemName);
 
     int getQuantity();
     void setQuantity(int quant);
 
     String getStatBoosted();
-    void setStatBoosted(String stat);
 
     double getBoostAmt();
-    void setBoostAmt(double boost);
 
     String getItemDes();
 

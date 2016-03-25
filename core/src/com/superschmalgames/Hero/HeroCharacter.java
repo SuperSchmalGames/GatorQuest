@@ -32,7 +32,6 @@ public class HeroCharacter {
     //Represents numbers of semester completed. Each named professor beaten will increase this by 1.
     public int semester;
     public int gatorBucks;
-    public int level;
     public int experience;
     public int expCap;
     public int lvl;
