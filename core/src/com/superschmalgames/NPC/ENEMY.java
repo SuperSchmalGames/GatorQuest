@@ -55,8 +55,7 @@ public class ENEMY extends NPC {
         Gdx.input.setInputProcessor(MainClass.dialogueInputHandler);
 
         //Create new dialogue window containing the dialogue of the NPC we're talking to.
-        if (MainClass.gameScreen.window == null)
-            MainClass.gameScreen.window = new CharacterDialogue();    //480=text block width, 8=left align, true=wrap
+        MainClass.gameScreen.window = new CharacterDialogue();    //480=text block width, 8=left align, true=wrap
         if(!triggered) {
             MainClass.gameScreen.window.dialog.setText(Utils.font_small, script, Color.BLUE, 480, 8, true);
         }
