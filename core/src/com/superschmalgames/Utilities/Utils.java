@@ -971,7 +971,8 @@ public class Utils {
     //Consumable
     public static final Texture redbull_tex = new Texture("visuals/inv_items/consume/redbull.png");
     public static final Texture starbucks_tex = new Texture("visuals/inv_items/consume/starbucks.png");
-
+    public static final Texture chegg_tex = new Texture("visuals/inv_items/consume/chegg.png");
+    public static final Texture tutoringzone_tex = new Texture("visuals/inv_items/consume/tutoringzone.png");
     //Apparel
     public static final Texture business_casual_attire_tex = new Texture("visuals/inv_items/apparel/business_casual_attire.png");
     public static final Texture class_ring_tex = new Texture("visuals/inv_items/apparel/class_ring.png");
@@ -999,15 +1000,17 @@ public class Utils {
         SUIT_TIE (4),
         RED_BULL (5),
         STARBUCKS (6),
-        DRAGON (7),
-        CYCLONE (8),
-        DAD (9),
-        MACBOOK (10),
-        NSPIRE (11),
-        SOLDER (12),
-        TI89 (13),
-        USB_BLASTER (14),
-        WIRE_KIT (15);
+        CHEGG (7),
+        TUTORINGZONE (8),
+        DRAGON (9),
+        CYCLONE (10),
+        DAD (11),
+        MACBOOK (12),
+        NSPIRE (13),
+        SOLDER (14),
+        TI89 (15),
+        USB_BLASTER (16),
+        WIRE_KIT (17);
 
         private int numVal;
 

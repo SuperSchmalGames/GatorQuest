@@ -19,8 +19,9 @@ public class ConsumableItem implements InventoryItem {
     public double boostAmt;        //How much is the stat changed.
     public int boostDuration;      //How long (in combat turns) will the boost last (if isTemp is true).
     public char itemType;          //Defines the item by Apparel, Equipment or Consumable by chars 'a', 'e' or 'c' respectively
+    public String description;
 
-    public ConsumableItem(String name, Texture tex, String stat, double boost, int dur, int initQuant, boolean isTemporary){
+    public ConsumableItem(String name, Texture tex, String stat, double boost, int dur, int initQuant, boolean isTemporary, String des){
         itemName = name;
         texture = tex;
         statBoosted = stat;
@@ -29,6 +30,7 @@ public class ConsumableItem implements InventoryItem {
         quantity += initQuant;
         isTemp = isTemporary;
         itemType = 'c';
+        description = des;
     }
 
     @Override
@@ -77,6 +79,11 @@ public class ConsumableItem implements InventoryItem {
     @Override
     public String getItemName() {
         return itemName;
+    }
+
+    @Override
+    public String getItemDes() {
+        return description;
     }
 
     @Override
