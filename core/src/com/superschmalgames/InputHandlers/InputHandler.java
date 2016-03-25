@@ -116,7 +116,6 @@ public class InputHandler implements InputProcessor {
                     //Play the sound effect when player pushes the button.
                     Utils.inventoryScreenSelectionSound.play();
                     //Set the gamescreen to be the inventory game screen.
-                    MainClass.inventoryScreen = new InventoryScreen();
                     ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.inventoryScreen);
                     MainClass.inventoryScreen.invPanel = "Consumable";
                     MainClass.inventoryScreen.invPage = 0;
@@ -125,7 +124,6 @@ public class InputHandler implements InputProcessor {
                     //Play the sound effect when player pushes the button.
                     Utils.inventoryScreenSelectionSound.play();
                     //Set the gamescreen to be the inventory game screen.
-                    MainClass.heroScreen = new HeroScreen();
                     ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.heroScreen);
                     MainClass.heroScreen.heroPanel = "Statistics";
                     MainClass.heroScreen.heroPage = 0;

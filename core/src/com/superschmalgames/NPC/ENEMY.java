@@ -91,6 +91,7 @@ public class ENEMY extends NPC {
         x_pos = org_x;
         y_pos = org_y;
         MainClass.hero.lastEnemy.enemyLife = MainClass.hero.lastEnemy.origLife;
+        MainClass.combatScreen.dispose();
     }
 
     public void combat() {
@@ -100,7 +101,8 @@ public class ENEMY extends NPC {
             //Give input control to the combat input handler.
             Gdx.input.setInputProcessor(MainClass.combatInputHandler);
 
-            //Set screen as combat screen
+            //Create combat screen and set is as the current screen.
+            MainClass.combatScreen = new CombatScreen();
             ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.combatScreen);
         }
         else{
