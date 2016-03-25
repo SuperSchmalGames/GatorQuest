@@ -239,6 +239,7 @@ public class GameScreen implements Screen {
 
         if(advising){
             MainClass.batch.begin();
+            MainClass.batch.draw(Utils.advising_tex, camera.position.x-Utils.GAME_SCREEN_WIDTH/2, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-612, 1020, 612);
             Utils.font_small.draw(MainClass.batch, "FROM: Allison\n\nDear " + MainClass.hero.name+",\n"+Utils.advText[MainClass.hero.semester]+"\n\nSincerely,\nAllison", camera.position.x-Utils.GAME_SCREEN_WIDTH/2+560, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-40);
             MainClass.batch.end();
         }

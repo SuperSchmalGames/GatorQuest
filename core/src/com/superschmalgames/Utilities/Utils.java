@@ -628,6 +628,8 @@ public class Utils {
 
 
     //////////////////////////////////////ADVISING//////////////////////////////////////////////////////////////////////
+    public static final Texture advising_tex = new Texture("visuals/Menus/advising_tex.png");
+
     public static final String[] advText = {
             "Your first class will be Java 1 with\nDr. Dobbins. Go meet him\n in the bottom of CISE",
             "Your next class will be Calc 2 with\nDr. Chui. Go meet her\nin the bottom of Turlington",
