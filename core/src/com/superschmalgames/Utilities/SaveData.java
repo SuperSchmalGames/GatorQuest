@@ -35,6 +35,7 @@ public class SaveData implements java.io.Serializable {
     public int apparel;
     public int equipped;
 
+
     //enemies - only triggered flag (randoms excluded)
     public boolean[] neb = new boolean[69];
     public boolean[] cise = new boolean[41];
