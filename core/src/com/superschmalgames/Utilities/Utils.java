@@ -36,6 +36,7 @@ public class Utils {
     public static boolean isPaused;
     public static final FPSLogger logger = new FPSLogger();
     public static final DecimalFormat df1 = new DecimalFormat("0.0");
+    public static final String savefile = "GatorQuest.save";
     //Enum for holding state info for fade-in/fade-out animation
     public enum fader{
         FADING_IN,
@@ -727,7 +728,7 @@ public class Utils {
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Neb_random_attacks_22, Sriv_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Neb_random_attacks_23, Sriv_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Neb_random_attacks_24, Sriv_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Neb_random_attacks_15, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Neb_random_attacks_25, Wong_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Neb_random_attacks_26, Wong_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Neb_random_attacks_27, Wong_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Neb_random_attacks_28, Gugel_weakness, 10, 10),
@@ -805,7 +806,7 @@ public class Utils {
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Cise_random_attacks_22, Schmalz_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Cise_random_attacks_23, Schmalz_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Cise_random_attacks_24, Schmalz_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Cise_random_attacks_15, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Cise_random_attacks_25, Dobbins_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Cise_random_attacks_26, Dobbins_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Cise_random_attacks_27, Dobbins_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Cise_random_attacks_28, Dobbins_weakness, 10, 10),
@@ -908,7 +909,7 @@ public class Utils {
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Turlington_random_attacks_22, Small_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Turlington_random_attacks_23, Chui_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Turlington_random_attacks_24, Chui_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Turlington_random_attacks_15, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Turlington_random_attacks_25, Chui_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Turlington_random_attacks_26, Chui_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Turlington_random_attacks_27, Horton_weakness, 10, 10),
             new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Turlington_random_attacks_28, Horton_weakness, 10, 10),
@@ -917,7 +918,7 @@ public class Utils {
     //========================================Dorm============================================
     public static NPC[] Dorm_enemies = {
             new NPC('u',"Welcome to UF, this is your dorm room. Return here whenever you want to restore your GPA.", "visuals/sprite_sheets/sprite_walk_u3.png",9*MAP_RESOLUTION,20*MAP_RESOLUTION),
-            new NPC('d',"Open up your hero screen with H. You can view your stats, progress, and moves.", "visuals/sprite_sheets/sprite_walk_d5.png", 17*MAP_RESOLUTION,24*MAP_RESOLUTION),
+            new NPC('d',"Press F1 while in the gamescreen to save!", "visuals/sprite_sheets/sprite_walk_d5.png", 17*MAP_RESOLUTION,24*MAP_RESOLUTION),
             new NPC('l',"I have no idea how to play the piano","visuals/sprite_sheets/sprite_walk_l1.png", 25*MAP_RESOLUTION,12*MAP_RESOLUTION),
             new NPC('r',"When leaving a building you will bring up the world map. Just move the pin to the building you want to visit and hit enter","visuals/sprite_sheets/sprite_walk_r8.png", 10*MAP_RESOLUTION,3*MAP_RESOLUTION),
             new NPC('r',dormA,"visuals/sprite_sheets/sprite_walk_r13.png",17*MAP_RESOLUTION,9*MAP_RESOLUTION),
