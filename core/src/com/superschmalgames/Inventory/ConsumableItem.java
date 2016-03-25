@@ -5,7 +5,6 @@ package com.superschmalgames.Inventory;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
-import com.superschmalgames.Hero.HeroInventory;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -29,17 +28,6 @@ public class ConsumableItem implements InventoryItem {
         quantity += initQuant;
         isTemp = isTemporary;
         itemType = 'c';
-    }
-
-    @Override
-    public void addItem(HeroInventory inv) {
-        for(InventoryItem i : inv.items){
-            if(this.itemName.equals(i.getItemName())){
-                i.setQuantity(i.getQuantity()+1);
-                return;
-            }
-        }
-        inv.items.add(this);
     }
 
     @Override
@@ -80,11 +68,6 @@ public class ConsumableItem implements InventoryItem {
     }
 
     @Override
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
-    @Override
     public int getQuantity() {
         return quantity;
     }
@@ -100,18 +83,8 @@ public class ConsumableItem implements InventoryItem {
     }
 
     @Override
-    public void setStatBoosted(String stat) {
-        statBoosted = stat;
-    }
-
-    @Override
     public double getBoostAmt() {
         return boostAmt;
-    }
-
-    @Override
-    public void setBoostAmt(double boost) {
-        boostAmt = boost;
     }
 
     @Override
