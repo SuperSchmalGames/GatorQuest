@@ -143,7 +143,7 @@ public class CombatLogic {
 
             //Signify the Enemy has won and we need to end combat.
             eWin = true;
-
+            MainClass.hero.lastEnemy.triggered = false;
             //Heal Hero back to 4.0.
             MainClass.hero.GPA = 4.0;
 
@@ -226,5 +226,6 @@ public class CombatLogic {
         Gdx.input.setInputProcessor(MainClass.inputHandler);
         MainClass.hero.canMove = true;
         ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+
     }
 }

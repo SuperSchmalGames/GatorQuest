@@ -1,6 +1,6 @@
 package com.superschmalgames.Utilities;
 
-//This class handles the popup window that shows when there is dialogue between characters
+//This class handles the popup window that shows when there is a shop open
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
@@ -38,5 +38,3 @@ public class ShopMenu{
     }
 
 }
-
-//Need some sort of border to go around where the npc portraits will be displayed

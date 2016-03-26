@@ -55,6 +55,8 @@ public class MainClass extends Game {
 		//there was a noticeable speed delay in loading screens)
 		openWorldScreen = new OpenWorldScreen();
 		titleScreen = new TitleScreen();
+		heroScreen = new HeroScreen();
+		inventoryScreen = new InventoryScreen();
 
 		//Set the screen as the title screen.
 		this.setScreen(titleScreen);
@@ -83,6 +85,8 @@ public class MainClass extends Game {
 		if(gameScreen != null) gameScreen.dispose();
 		if(openWorldScreen != null) openWorldScreen.dispose();
 		if(combatScreen != null) combatScreen.dispose();
+		if(heroScreen != null) heroScreen.dispose();
+		if(inventoryScreen != null) inventoryScreen.dispose();
 	}
 
 }

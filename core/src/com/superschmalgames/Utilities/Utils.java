@@ -11,10 +11,14 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.scenes.scene2d.Group;
+import com.sun.media.sound.FFT;
 import com.superschmalgames.NPC.*;
 import com.superschmalgames.Hero.*;
 
+import javax.print.Doc;
 import java.text.DecimalFormat;
+import java.util.Set;
 
 public class Utils {
 
@@ -32,6 +36,7 @@ public class Utils {
     public static boolean isPaused;
     public static final FPSLogger logger = new FPSLogger();
     public static final DecimalFormat df1 = new DecimalFormat("0.0");
+    public static final String savefile = "GatorQuest.save";
     //Enum for holding state info for fade-in/fade-out animation
     public enum fader{
         FADING_IN,
@@ -182,121 +187,129 @@ public class Utils {
     public static final E_Move Colloquialisms = new E_Move("Colloquialisms", 6, 6, 2,4,6,8, 2,4,6,8, 1.1,.9,.7,.5,.3);
     public static final E_Move Trig_sub_it = new E_Move("Trig Substitution", 5,5, 3,5,7,9, 3,5,7,9, .9,.7,.5,.3,.1);
     private static final E_Move[] Sriv_attacks = {Build_the_Circuit,Partner_Up,Complex_Equation,Find_the_Algorithm};
+    private static final H_Move[] Sriv_weakness = {Nodal_Analysis,F2_Solve,Set_Equal_to_0};
     private static final E_Move[] Wong_attacks = {Ambiguous_Test_Question,Complex_Equation,New_Syntax,FFT_it};
+    private static final H_Move[] Wong_weakness = {F2_Solve, Practice_Test, _5_Lines_Matlab_Code};
     private static final E_Move[] Gugel_attacks = {Insurmountable_Workload,Build_the_Circuit,Memory_Map_It,Off_by_One};
+    private static final H_Move[] Gugel_weakness = {Karnaugh_Map,Soldering_Skills,Boolean_Logic};
     private static final E_Move[] Dobbins_attacks = {New_Syntax,Find_the_Algorithm,Uncompilable_Code,Debug_Error};
+    private static final H_Move[] Dobbins_weakness = {Java_Function,Recursive_Loop,Stack_Overflow,Commented_Code};
     private static final E_Move[] Schmalz_attacks = {Essay,Group_Project,Colloquialisms,Uncompilable_Code};
+    private static final H_Move[] Schmalz_weakness = {Code_Testing,Perf_Presentation};
     private static final E_Move[] Chui_attacks = {Complex_Equation,Find_the_Algorithm,Trig_sub_it,Off_by_One};
+    private static final H_Move[] Chui_weakness = {Double_Integration, Set_Equal_to_0,Practice_Test,Extra_Credit};
     private static final E_Move[] Horton_attacks = {New_Syntax,Uncompilable_Code,Group_Project,Ambiguous_Test_Question};
+    private static final H_Move[] Horton_weakness = {CPP_Skills,Stack_Overflow,Extra_Credit};
     private static final E_Move[] Small_attacks = {Uncompilable_Code,Insurmountable_Workload,Simultaneous_Deadlines,Debug_Error};
-    private static final E_Move[] Cise_A_attacks = {New_Syntax};
-    private static final E_Move[] Cise_B_attacks = {New_Syntax};
-    private static final E_Move[] Cise_C_attacks = {New_Syntax};
-    private static final E_Move[] Cise_D_attacks = {New_Syntax};
-    private static final E_Move[] Cise_E_attacks = {New_Syntax};
-    private static final E_Move[] Cise_F_attacks = {New_Syntax};
+    private static final H_Move[] Small_weakness = {Documentation,Code_Testing};
+    private static final E_Move[] Cise_A_attacks = {New_Syntax, Find_the_Algorithm};
+    private static final E_Move[] Cise_B_attacks = {Find_the_Algorithm, Uncompilable_Code};
+    private static final E_Move[] Cise_C_attacks = {Uncompilable_Code, Debug_Error};
+    private static final E_Move[] Cise_D_attacks = {Essay, Group_Project};
+    private static final E_Move[] Cise_E_attacks = {Group_Project,Colloquialisms};
+    private static final E_Move[] Cise_F_attacks = {Colloquialisms,Uncompilable_Code};
     private static final E_Move[] Cise_random_attacks_1 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_2 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_3 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_4 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_5 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_6 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_7 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_8 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_2 = {Find_the_Algorithm};
+    private static final E_Move[] Cise_random_attacks_3 = {Uncompilable_Code};
+    private static final E_Move[] Cise_random_attacks_4 = {Debug_Error};
+    private static final E_Move[] Cise_random_attacks_5 = {Essay};
+    private static final E_Move[] Cise_random_attacks_6 = {Group_Project};
+    private static final E_Move[] Cise_random_attacks_7 = {Colloquialisms};
+    private static final E_Move[] Cise_random_attacks_8 = {Uncompilable_Code};
     private static final E_Move[] Cise_random_attacks_9 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_10 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_11 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_12 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_13 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_14 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_15 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_16 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_10 = {Find_the_Algorithm};
+    private static final E_Move[] Cise_random_attacks_11 = {Uncompilable_Code};
+    private static final E_Move[] Cise_random_attacks_12 = {Debug_Error};
+    private static final E_Move[] Cise_random_attacks_13 = {Essay};
+    private static final E_Move[] Cise_random_attacks_14 = {Group_Project};
+    private static final E_Move[] Cise_random_attacks_15 = {Colloquialisms};
+    private static final E_Move[] Cise_random_attacks_16 = {Uncompilable_Code};
     private static final E_Move[] Cise_random_attacks_17 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_18 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_19 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_20 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_21 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_22 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_23 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_18 = {Find_the_Algorithm};
+    private static final E_Move[] Cise_random_attacks_19 = {Uncompilable_Code};
+    private static final E_Move[] Cise_random_attacks_20 = {Debug_Error};
+    private static final E_Move[] Cise_random_attacks_21 = {Essay};
+    private static final E_Move[] Cise_random_attacks_22 = {Group_Project};
+    private static final E_Move[] Cise_random_attacks_23 = {Colloquialisms};
     private static final E_Move[] Cise_random_attacks_24 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_25 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_26 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_27 = {New_Syntax};
-    private static final E_Move[] Cise_random_attacks_28 = {New_Syntax};
-    private static final E_Move[] Neb_A_attacks = {New_Syntax};
-    private static final E_Move[] Neb_B_attacks = {New_Syntax};
-    private static final E_Move[] Neb_C_attacks = {New_Syntax};
-    private static final E_Move[] Neb_D_attacks = {New_Syntax};
-    private static final E_Move[] Neb_E_attacks = {New_Syntax};
-    private static final E_Move[] Neb_F_attacks = {New_Syntax};
-    private static final E_Move[] Neb_G_attacks = {New_Syntax};
-    private static final E_Move[] Neb_H_attacks = {New_Syntax};
-    private static final E_Move[] Neb_I_attacks = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_1 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_2 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_3 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_4 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_5 = {New_Syntax};
+    private static final E_Move[] Cise_random_attacks_25 = {Find_the_Algorithm};
+    private static final E_Move[] Cise_random_attacks_26 = {Debug_Error};
+    private static final E_Move[] Cise_random_attacks_27 = {Essay};
+    private static final E_Move[] Cise_random_attacks_28 = {Group_Project};
+    private static final E_Move[] Neb_A_attacks = {Build_the_Circuit,Partner_Up};
+    private static final E_Move[] Neb_B_attacks = {Partner_Up,Complex_Equation};
+    private static final E_Move[] Neb_C_attacks = {Complex_Equation,Find_the_Algorithm};
+    private static final E_Move[] Neb_D_attacks = {Ambiguous_Test_Question,Complex_Equation};
+    private static final E_Move[] Neb_E_attacks = {Complex_Equation,New_Syntax};
+    private static final E_Move[] Neb_F_attacks = {New_Syntax,FFT_it};
+    private static final E_Move[] Neb_G_attacks = {Insurmountable_Workload,Build_the_Circuit};
+    private static final E_Move[] Neb_H_attacks = {Build_the_Circuit,Memory_Map_It};
+    private static final E_Move[] Neb_I_attacks = {Memory_Map_It,Off_by_One};
+    private static final E_Move[] Neb_random_attacks_1 = {Build_the_Circuit};
+    private static final E_Move[] Neb_random_attacks_2 = {Partner_Up};
+    private static final E_Move[] Neb_random_attacks_3 = {Complex_Equation};
+    private static final E_Move[] Neb_random_attacks_4 = {Find_the_Algorithm};
+    private static final E_Move[] Neb_random_attacks_5 = {Ambiguous_Test_Question};
     private static final E_Move[] Neb_random_attacks_6 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_7 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_8 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_9 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_10 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_11 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_12 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_13 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_14 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_15 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_7 = {FFT_it};
+    private static final E_Move[] Neb_random_attacks_8 = {Insurmountable_Workload};
+    private static final E_Move[] Neb_random_attacks_9 = {Memory_Map_It};
+    private static final E_Move[] Neb_random_attacks_10 = {Off_by_One};
+    private static final E_Move[] Neb_random_attacks_11 = {Build_the_Circuit};
+    private static final E_Move[] Neb_random_attacks_12 = {Partner_Up};
+    private static final E_Move[] Neb_random_attacks_13 = {Complex_Equation};
+    private static final E_Move[] Neb_random_attacks_14 = {Find_the_Algorithm};
+    private static final E_Move[] Neb_random_attacks_15 = {Ambiguous_Test_Question};
     private static final E_Move[] Neb_random_attacks_16 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_17 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_18 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_19 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_20 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_21 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_22 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_23 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_24 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_25 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_17 = {FFT_it};
+    private static final E_Move[] Neb_random_attacks_18 = {Insurmountable_Workload};
+    private static final E_Move[] Neb_random_attacks_19 = {Memory_Map_It};
+    private static final E_Move[] Neb_random_attacks_20 = {Off_by_One};
+    private static final E_Move[] Neb_random_attacks_21 = {Build_the_Circuit};
+    private static final E_Move[] Neb_random_attacks_22 = {Partner_Up};
+    private static final E_Move[] Neb_random_attacks_23 = {Complex_Equation};
+    private static final E_Move[] Neb_random_attacks_24 = {Find_the_Algorithm};
+    private static final E_Move[] Neb_random_attacks_25 = {Ambiguous_Test_Question};
     private static final E_Move[] Neb_random_attacks_26 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_27 = {New_Syntax};
-    private static final E_Move[] Neb_random_attacks_28 = {New_Syntax};
-    private static final E_Move[] Turlington_A_attacks = {New_Syntax};
-    private static final E_Move[] Turlington_B_attacks = {New_Syntax};
-    private static final E_Move[] Turlington_C_attacks = {New_Syntax};
-    private static final E_Move[] Turlington_D_attacks = {New_Syntax};
-    private static final E_Move[] Turlington_E_attacks = {New_Syntax};
-    private static final E_Move[] Turlington_F_attacks = {New_Syntax};
-    private static final E_Move[] Turlington_G_attacks = {New_Syntax};
-    private static final E_Move[] Turlington_H_attacks = {New_Syntax};
-    private static final E_Move[] Turlington_I_attacks = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_1 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_2 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_3 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_4 = {New_Syntax};
+    private static final E_Move[] Neb_random_attacks_27 = {FFT_it};
+    private static final E_Move[] Neb_random_attacks_28 = {Insurmountable_Workload};
+    private static final E_Move[] Turlington_A_attacks = {Complex_Equation, Find_the_Algorithm};
+    private static final E_Move[] Turlington_B_attacks = {Find_the_Algorithm,Trig_sub_it};
+    private static final E_Move[] Turlington_C_attacks = {Trig_sub_it, Off_by_One};
+    private static final E_Move[] Turlington_D_attacks = {New_Syntax,Uncompilable_Code};
+    private static final E_Move[] Turlington_E_attacks = {Uncompilable_Code,Group_Project};
+    private static final E_Move[] Turlington_F_attacks = {Group_Project,Ambiguous_Test_Question};
+    private static final E_Move[] Turlington_G_attacks = {Uncompilable_Code,Insurmountable_Workload};
+    private static final E_Move[] Turlington_H_attacks = {Insurmountable_Workload,Simultaneous_Deadlines};
+    private static final E_Move[] Turlington_I_attacks = {Simultaneous_Deadlines,Debug_Error};
+    private static final E_Move[] Turlington_random_attacks_1 = {Complex_Equation};
+    private static final E_Move[] Turlington_random_attacks_2 = {Find_the_Algorithm};
+    private static final E_Move[] Turlington_random_attacks_3 = {Trig_sub_it};
+    private static final E_Move[] Turlington_random_attacks_4 = {Off_by_One};
     private static final E_Move[] Turlington_random_attacks_5 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_6 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_7 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_8 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_9 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_10 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_11 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_12 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_13 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_14 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_15 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_16 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_17 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_18 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_19 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_20 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_21 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_22 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_23 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_24 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_25 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_26 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_27 = {New_Syntax};
-    private static final E_Move[] Turlington_random_attacks_28 = {New_Syntax};
+    private static final E_Move[] Turlington_random_attacks_6 = {Uncompilable_Code};
+    private static final E_Move[] Turlington_random_attacks_7 = {Group_Project};
+    private static final E_Move[] Turlington_random_attacks_8 = {Ambiguous_Test_Question};
+    private static final E_Move[] Turlington_random_attacks_9 = {Uncompilable_Code};
+    private static final E_Move[] Turlington_random_attacks_10 = {Insurmountable_Workload};
+    private static final E_Move[] Turlington_random_attacks_11 = {Simultaneous_Deadlines};
+    private static final E_Move[] Turlington_random_attacks_12 = {Debug_Error};
+    private static final E_Move[] Turlington_random_attacks_13 = {Complex_Equation};
+    private static final E_Move[] Turlington_random_attacks_14 = {Find_the_Algorithm};
+    private static final E_Move[] Turlington_random_attacks_15 = {Trig_sub_it};
+    private static final E_Move[] Turlington_random_attacks_16 = {Off_by_One};
+    private static final E_Move[] Turlington_random_attacks_17 = {Uncompilable_Code};
+    private static final E_Move[] Turlington_random_attacks_18 = {Group_Project};
+    private static final E_Move[] Turlington_random_attacks_19 = {Ambiguous_Test_Question};
+    private static final E_Move[] Turlington_random_attacks_20 = {Insurmountable_Workload};
+    private static final E_Move[] Turlington_random_attacks_21 = {Simultaneous_Deadlines};
+    private static final E_Move[] Turlington_random_attacks_22 = {Debug_Error};
+    private static final E_Move[] Turlington_random_attacks_23 = {Complex_Equation};
+    private static final E_Move[] Turlington_random_attacks_24 = {Find_the_Algorithm};
+    private static final E_Move[] Turlington_random_attacks_25 = {Trig_sub_it};
+    private static final E_Move[] Turlington_random_attacks_26 = {Off_by_One};
+    private static final E_Move[] Turlington_random_attacks_27 = {Group_Project};
+    private static final E_Move[] Turlington_random_attacks_28 = {Ambiguous_Test_Question};
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////NPC DIALOGUE START///////////////////////////////////////////////////////////////////////////////////////
     public static final String dormA = "Open up your inventory with I. You can equip and remove items here using E and R respectively and view your consumables.";
@@ -611,6 +624,23 @@ public class Utils {
     public static final String tur54 = "Gainesville is so muggy! I’m covered in sweat.";
     public static final String tur55 = "I prefer mechanical pencils over pens.";
 
+
+    //////////////////////////////////////ADVISING//////////////////////////////////////////////////////////////////////
+    public static final Texture advising_tex = new Texture("visuals/Menus/advising_tex.png");
+
+    public static final String[] advText = {
+            "Your first class will be Java 1 with\nDr. Dobbins. Go meet him\n in the bottom of CISE",
+            "Your next class will be Calc 2 with\nDr. Chui. Go meet her\nin the bottom of Turlington",
+            "Your third class will be Programming 2\nwith Dr. Horton. Go meet\n him in the top of\nTurlington",
+            "Your next class will be Circuits I with\nDr. Srivastava. Go meet him\nin the NEB",
+            "Your next class will be Signals with\nDr. Wong. Go meet him\nin the NEB",
+            "Your next class will be Digital Logic with\nDr. Gugel. Go meet him\nin the NEB",
+            "Your next class will be Operating Systems with\nDr. Small. Go meet him\nin Turlington",
+            "Your next class will be Senior Design with\nDr. Schmalz. Go meet him\nin the CISE",
+            "You've completed all your classes. \n\nCongrats, you're a Gator Alum!"
+    };
+    //////////////////////////////////////END ADVISING//////////////////////////////////////////////////////////////////////
+
     //////////////////////////////////////DUNGEON ENEMIES//////////////////////////////////////////////////////////////////////
     //when adding enemies to the various arrays, the proper tiles must be accounted for in the Tiled Map Editor
     //========================================NEB=============================================
@@ -644,7 +674,7 @@ public class Utils {
             new NPC('r', neb24, "visuals/sprite_sheets/sprite_walk_r1.png", 110*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
             new NPC('d', neb25, "visuals/sprite_sheets/sprite_walk_d11.png", 122*MAP_RESOLUTION, (89-62)*MAP_RESOLUTION),
             new NPC('r', neb26, "visuals/sprite_sheets/sprite_walk_r12.png", 121*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
-            new ENEMY('l', nebPPre, nebPWin, nebPLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 113*MAP_RESOLUTION, (89-38)*MAP_RESOLUTION, 25, 25, Neb_A_attacks, 10, 10),
+            new ENEMY('l', nebPPre, nebPWin, nebPLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 113*MAP_RESOLUTION, (89-38)*MAP_RESOLUTION, 25, Neb_A_attacks, Sriv_weakness, 10, 10),
 
             new NPC('l', neb27, "visuals/sprite_sheets/sprite_walk_l7.png", 125*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION),
             new NPC('r', neb28, "visuals/sprite_sheets/sprite_walk_r10.png", 118*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION), //30
@@ -661,7 +691,7 @@ public class Utils {
             new NPC('u', neb39, "visuals/sprite_sheets/sprite_walk_u14.png", 190*MAP_RESOLUTION, (89-50)*MAP_RESOLUTION),
             new NPC('u', neb40, "visuals/sprite_sheets/sprite_walk_u13.png", 202*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
             new NPC('d', neb41, "visuals/sprite_sheets/sprite_walk_d12.png", 214*MAP_RESOLUTION, (89-66)*MAP_RESOLUTION),
-            new ENEMY('r', nebSPre, nebSWin, nebSLose, "visuals/sprite_sheets/sprite_walk_r11.png", "visuals/sprite_sheets/sprite_l11.png", 211*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION, 25, 25, Neb_D_attacks, 10, 10),
+            new ENEMY('r', nebSPre, nebSWin, nebSLose, "visuals/sprite_sheets/sprite_walk_r11.png", "visuals/sprite_sheets/sprite_l11.png", 211*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION, 25, Neb_D_attacks, Wong_weakness, 10, 10),
             new NPC('u', neb42, "visuals/sprite_sheets/sprite_walk_u10.png", 229*MAP_RESOLUTION, (89-58)*MAP_RESOLUTION),
             new NPC('l', neb43, "visuals/sprite_sheets/sprite_walk_l9.png", 224*MAP_RESOLUTION, (89-52)*MAP_RESOLUTION), //46
             new NPC('r', neb44, "visuals/sprite_sheets/sprite_walk_r1.png", 187*MAP_RESOLUTION, (89-24)*MAP_RESOLUTION),
@@ -670,53 +700,53 @@ public class Utils {
             new NPC('d', neb47, "visuals/sprite_sheets/sprite_walk_d4.png", 229*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION), //50
             new NPC('r', neb48, "visuals/sprite_sheets/sprite_walk_r5.png", 246*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION),
             new NPC('u', neb49, "visuals/sprite_sheets/sprite_walk_u6.png", 258*MAP_RESOLUTION, (89-26)*MAP_RESOLUTION),
-            new ENEMY('d', nebXPre, nebXWin, nebXLose, "visuals/sprite_sheets/sprite_walk_d7.png", "visuals/sprite_sheets/sprite_l7.png", 283*MAP_RESOLUTION, (89-16)*MAP_RESOLUTION, 25, 25, Neb_I_attacks, 10, 10),
-            new ENEMY('d', nebVPre, nebVWin, nebVLose, "visuals/sprite_sheets/sprite_walk_d8.png", "visuals/sprite_sheets/sprite_l8.png", 284*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION, 25, 25, Neb_G_attacks, 10, 10),
+            new ENEMY('d', nebXPre, nebXWin, nebXLose, "visuals/sprite_sheets/sprite_walk_d7.png", "visuals/sprite_sheets/sprite_l7.png", 283*MAP_RESOLUTION, (89-16)*MAP_RESOLUTION, 25, Neb_I_attacks, Gugel_weakness, 10, 10),
+            new ENEMY('d', nebVPre, nebVWin, nebVLose, "visuals/sprite_sheets/sprite_walk_d8.png", "visuals/sprite_sheets/sprite_l8.png", 284*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION, 25, Neb_G_attacks, Gugel_weakness, 10, 10),
             new NPC('l', neb50, "visuals/sprite_sheets/sprite_walk_l9.png", 276*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
             new NPC('d', neb51, "visuals/sprite_sheets/sprite_walk_d10.png", 287*MAP_RESOLUTION, (89-70)*MAP_RESOLUTION),
             new NPC('d', neb52, "visuals/sprite_sheets/sprite_walk_d11.png", 269*MAP_RESOLUTION, (89-61)*MAP_RESOLUTION),
             new NPC('u', neb53, "visuals/sprite_sheets/sprite_walk_u12.png", 262*MAP_RESOLUTION, (89-54)*MAP_RESOLUTION),
             new NPC('d', neb54, "visuals/sprite_sheets/sprite_walk_d13.png", 262*MAP_RESOLUTION, (89-37)*MAP_RESOLUTION),
             new NPC('r', neb55, "visuals/sprite_sheets/sprite_walk_r14.png", 248*MAP_RESOLUTION, (89-46)*MAP_RESOLUTION), //60
-            new BOSS('d', "I am Srivastava", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/srivastava/srivastava_d.png", "visuals/Professors/srivastava/srivastava_l.png", 112*MAP_RESOLUTION, (89-33)*MAP_RESOLUTION, 45, 45, Sriv_attacks, 10, 10),
-            new BOSS('d', "I am Wong", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/wong/wong_d.png", "visuals/Professors/wong/wong_l.png", 211*MAP_RESOLUTION, (89-55)*MAP_RESOLUTION, 45, 45, Wong_attacks, 10, 10),
-            new BOSS('d', "I am Gugel", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/gugel/gugel_d.png", "visuals/Professors/gugel/gugel_l.png", 287*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION, 45, 45, Gugel_attacks, 10, 10),
-            new ENEMY('r', nebQPre, nebQWin, nebQLose, "visuals/sprite_sheets/sprite_walk_r1.png", "visuals/sprite_sheets/sprite_l1.png", 110*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION, 25, 25, Neb_B_attacks, 10, 10),
-            new ENEMY('l', nebRPre, nebRWin, nebRLose, "visuals/sprite_sheets/sprite_walk_l2.png", "visuals/sprite_sheets/sprite_l2.png", 112*MAP_RESOLUTION, (89-44)*MAP_RESOLUTION, 25, 25, Neb_C_attacks, 10, 10),
-            new ENEMY('l', nebTPre, nebTWin, nebTLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 220*MAP_RESOLUTION, (89-48)*MAP_RESOLUTION, 25, 25, Neb_E_attacks, 10, 10),
-            new ENEMY('r', nebUPre, nebUWin, nebULose, "visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l4.png", 229*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION, 25, 25, Neb_F_attacks, 10, 10),
-            new ENEMY('l', nebWPre, nebWWin, nebWLose, "visuals/sprite_sheets/sprite_walk_l5.png", "visuals/sprite_sheets/sprite_l5.png", 281*MAP_RESOLUTION, (89-30)*MAP_RESOLUTION, 25, 25, Neb_H_attacks, 10, 10),
+            new BOSS('d', "I am Srivastava", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/srivastava/srivastava_d.png", "visuals/Professors/srivastava/srivastava_l.png", 112*MAP_RESOLUTION, (89-33)*MAP_RESOLUTION, 45, Sriv_attacks, Sriv_weakness, 10, 10),
+            new BOSS('d', "I am Wong", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/wong/wong_d.png", "visuals/Professors/wong/wong_l.png", 211*MAP_RESOLUTION, (89-55)*MAP_RESOLUTION, 45, Wong_attacks, Wong_weakness, 10, 10),
+            new BOSS('d', "I am Gugel", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/gugel/gugel_d.png", "visuals/Professors/gugel/gugel_l.png", 287*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION, 45, Gugel_attacks, Gugel_weakness, 10, 10),
+            new ENEMY('r', nebQPre, nebQWin, nebQLose, "visuals/sprite_sheets/sprite_walk_r1.png", "visuals/sprite_sheets/sprite_l1.png", 110*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION, 25, Neb_B_attacks, Sriv_weakness, 10, 10),
+            new ENEMY('l', nebRPre, nebRWin, nebRLose, "visuals/sprite_sheets/sprite_walk_l2.png", "visuals/sprite_sheets/sprite_l2.png", 112*MAP_RESOLUTION, (89-44)*MAP_RESOLUTION, 25, Neb_C_attacks, Sriv_weakness, 10, 10),
+            new ENEMY('l', nebTPre, nebTWin, nebTLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 220*MAP_RESOLUTION, (89-48)*MAP_RESOLUTION, 25, Neb_E_attacks, Wong_weakness, 10, 10),
+            new ENEMY('r', nebUPre, nebUWin, nebULose, "visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l4.png", 229*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION, 25, Neb_F_attacks, Wong_weakness, 10, 10),
+            new ENEMY('l', nebWPre, nebWWin, nebWLose, "visuals/sprite_sheets/sprite_walk_l5.png", "visuals/sprite_sheets/sprite_l5.png", 281*MAP_RESOLUTION, (89-30)*MAP_RESOLUTION, 25, Neb_H_attacks, Gugel_weakness, 10, 10),
     };
     
     public static ENEMY[] NEB_randoms = {
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, 15, Neb_random_attacks_1, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, 15, Neb_random_attacks_2, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, 15, Neb_random_attacks_3, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, 15, Neb_random_attacks_4, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, 15, Neb_random_attacks_5, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, 15, Neb_random_attacks_6, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, 15, Neb_random_attacks_7, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, 15, Neb_random_attacks_8, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, 15, Neb_random_attacks_9, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, 15, Neb_random_attacks_10, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, 15, Neb_random_attacks_11, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, 15, Neb_random_attacks_12, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, 15, Neb_random_attacks_13, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, 15, Neb_random_attacks_14, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, 15, Neb_random_attacks_15, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, 15, Neb_random_attacks_16, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, 15, Neb_random_attacks_17, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, 15, Neb_random_attacks_18, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, 15, Neb_random_attacks_19, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, 15, Neb_random_attacks_20, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, 15, Neb_random_attacks_21, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, 15, Neb_random_attacks_22, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, 15, Neb_random_attacks_23, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, 15, Neb_random_attacks_24, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, 15, Neb_random_attacks_15, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, 15, Neb_random_attacks_26, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, 15, Neb_random_attacks_27, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, 15, Neb_random_attacks_28, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Neb_random_attacks_1, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Neb_random_attacks_2, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Neb_random_attacks_3, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Neb_random_attacks_4, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Neb_random_attacks_5, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Neb_random_attacks_6, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Neb_random_attacks_7, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Neb_random_attacks_8, Gugel_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Neb_random_attacks_9, Gugel_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Neb_random_attacks_10, Gugel_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Neb_random_attacks_11, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Neb_random_attacks_12, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Neb_random_attacks_13, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Neb_random_attacks_14, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Neb_random_attacks_15, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Neb_random_attacks_16, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Neb_random_attacks_17, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Neb_random_attacks_18, Gugel_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Neb_random_attacks_19, Gugel_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Neb_random_attacks_20, Gugel_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Neb_random_attacks_21, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Neb_random_attacks_22, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Neb_random_attacks_23, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Neb_random_attacks_24, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Neb_random_attacks_25, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Neb_random_attacks_26, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Neb_random_attacks_27, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Neb_random_attacks_28, Gugel_weakness, 10, 10),
     };
     //========================================================================================
     //========================================CISE============================================
@@ -747,7 +777,7 @@ public class Utils {
             new NPC('d', cise24, "visuals/sprite_sheets/sprite_walk_d8.png", 130*MAP_RESOLUTION, (66-60)*MAP_RESOLUTION),
             new NPC('d', cise25, "visuals/sprite_sheets/sprite_walk_d9.png", 143*MAP_RESOLUTION, (66-43)*MAP_RESOLUTION),
 
-            new ENEMY('d', ciseOPre,ciseOWin,ciseOLose,"visuals/sprite_sheets/sprite_walk_d10.png", "visuals/sprite_sheets/sprite_l10.png", 175*MAP_RESOLUTION, (66-7)*MAP_RESOLUTION, 25, 25, Cise_D_attacks, 10, 10),
+            new ENEMY('d', ciseOPre,ciseOWin,ciseOLose,"visuals/sprite_sheets/sprite_walk_d10.png", "visuals/sprite_sheets/sprite_l10.png", 175*MAP_RESOLUTION, (66-7)*MAP_RESOLUTION, 25, Cise_D_attacks, Schmalz_weakness, 10, 10),
             new NPC('l', cise26, "visuals/sprite_sheets/sprite_walk_l11.png", 202*MAP_RESOLUTION, (66-12)*MAP_RESOLUTION),
             new NPC('d', cise27, "visuals/sprite_sheets/sprite_walk_d13.png", 213*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION),
             new NPC('r', cise28, "visuals/sprite_sheets/sprite_walk_r14.png", 168*MAP_RESOLUTION, (66-34)*MAP_RESOLUTION),
@@ -756,45 +786,45 @@ public class Utils {
             new NPC('l', cise31, "visuals/sprite_sheets/sprite_walk_l3.png", 217*MAP_RESOLUTION, (66-32)*MAP_RESOLUTION),
             new NPC('l', cise32, "visuals/sprite_sheets/sprite_walk_l4.png", 213*MAP_RESOLUTION, (66-42)*MAP_RESOLUTION),
             new NPC('u', cise33, "visuals/sprite_sheets/sprite_walk_u5.png", 199*MAP_RESOLUTION, (66-58)*MAP_RESOLUTION),
-            new BOSS('d', "I am Dobbins", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/dobbins/dobbins_d.png", "visuals/Professors/dobbins/dobbins_l.png", 2*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION, 45, 45, Dobbins_attacks, 10, 10),
-            new BOSS('d', "I am Schmalz", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/schmalz/schmalz_d.png", "visuals/Professors/schmalz/schmalz_l.png", 168*MAP_RESOLUTION, (66-4)*MAP_RESOLUTION, 45, 45, Schmalz_attacks, 10, 10),
-            new ENEMY('d', ciseJPre,ciseJWin,ciseJLose,"visuals/sprite_sheets/sprite_walk_d6.png", "visuals/sprite_sheets/sprite_l6.png",33*MAP_RESOLUTION, (66-28)*MAP_RESOLUTION, 25, 25, Cise_A_attacks, 10, 10),
-            new ENEMY('l', ciseKPre,ciseKWin,ciseKLose,"visuals/sprite_sheets/sprite_walk_l7.png", "visuals/sprite_sheets/sprite_l7.png",19*MAP_RESOLUTION, (66-31)*MAP_RESOLUTION, 25, 25, Cise_B_attacks, 10, 10),
-            new ENEMY('r', ciseLPre,ciseLWin,ciseLLose,"visuals/sprite_sheets/sprite_walk_r8.png", "visuals/sprite_sheets/sprite_l8.png",8*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 25, 25, Cise_C_attacks, 10, 10),
-            new ENEMY('r', ciseMPre,ciseMWin,ciseMLose,"visuals/sprite_sheets/sprite_walk_r9.png", "visuals/sprite_sheets/sprite_l9.png",177*MAP_RESOLUTION, (66-13)*MAP_RESOLUTION, 25, 25, Cise_E_attacks, 10, 10),
-            new ENEMY('l', ciseNPre,ciseNWin,ciseNLose,"visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png",182*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 25, 25, Cise_F_attacks, 10, 10), //40
+            new BOSS('d', "I am Dobbins", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/dobbins/dobbins_d.png", "visuals/Professors/dobbins/dobbins_l.png", 2*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION, 45, Dobbins_attacks, Dobbins_weakness, 10, 10),
+            new BOSS('d', "I am Schmalz", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/schmalz/schmalz_d.png", "visuals/Professors/schmalz/schmalz_l.png", 168*MAP_RESOLUTION, (66-4)*MAP_RESOLUTION, 45, Schmalz_attacks, Schmalz_weakness, 10, 10),
+            new ENEMY('d', ciseJPre,ciseJWin,ciseJLose,"visuals/sprite_sheets/sprite_walk_d6.png", "visuals/sprite_sheets/sprite_l6.png",33*MAP_RESOLUTION, (66-28)*MAP_RESOLUTION, 25, Cise_A_attacks, Dobbins_weakness, 10, 10),
+            new ENEMY('l', ciseKPre,ciseKWin,ciseKLose,"visuals/sprite_sheets/sprite_walk_l7.png", "visuals/sprite_sheets/sprite_l7.png",19*MAP_RESOLUTION, (66-31)*MAP_RESOLUTION, 25, Cise_B_attacks, Dobbins_weakness, 10, 10),
+            new ENEMY('r', ciseLPre,ciseLWin,ciseLLose,"visuals/sprite_sheets/sprite_walk_r8.png", "visuals/sprite_sheets/sprite_l8.png",8*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 25, Cise_C_attacks, Dobbins_weakness, 10, 10),
+            new ENEMY('r', ciseMPre,ciseMWin,ciseMLose,"visuals/sprite_sheets/sprite_walk_r9.png", "visuals/sprite_sheets/sprite_l9.png",177*MAP_RESOLUTION, (66-13)*MAP_RESOLUTION, 25, Cise_E_attacks, Schmalz_weakness, 10, 10),
+            new ENEMY('l', ciseNPre,ciseNWin,ciseNLose,"visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png",182*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 25, Cise_F_attacks, Schmalz_weakness, 10, 10), //40
 
     };
 
     public static ENEMY[] Cise_randoms = {
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, 15, Cise_random_attacks_1, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, 15, Cise_random_attacks_2, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, 15, Cise_random_attacks_3, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, 15, Cise_random_attacks_4, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, 15, Cise_random_attacks_5, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, 15, Cise_random_attacks_6, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, 15, Cise_random_attacks_7, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, 15, Cise_random_attacks_8, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, 15, Cise_random_attacks_9, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, 15, Cise_random_attacks_10, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, 15, Cise_random_attacks_11, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, 15, Cise_random_attacks_12, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, 15, Cise_random_attacks_13, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, 15, Cise_random_attacks_14, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, 15, Cise_random_attacks_15, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, 15, Cise_random_attacks_16, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, 15, Cise_random_attacks_17, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, 15, Cise_random_attacks_18, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, 15, Cise_random_attacks_19, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, 15, Cise_random_attacks_20, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, 15, Cise_random_attacks_21, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, 15, Cise_random_attacks_22, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, 15, Cise_random_attacks_23, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, 15, Cise_random_attacks_24, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, 15, Cise_random_attacks_15, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, 15, Cise_random_attacks_26, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, 15, Cise_random_attacks_27, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, 15, Cise_random_attacks_28, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Cise_random_attacks_1, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Cise_random_attacks_2, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Cise_random_attacks_3, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Cise_random_attacks_4, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Cise_random_attacks_5, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Cise_random_attacks_6, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Cise_random_attacks_7, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Cise_random_attacks_8, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Cise_random_attacks_9, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Cise_random_attacks_10, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Cise_random_attacks_11, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Cise_random_attacks_12, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Cise_random_attacks_13, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Cise_random_attacks_14, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Cise_random_attacks_15, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Cise_random_attacks_16, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Cise_random_attacks_17, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Cise_random_attacks_18, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Cise_random_attacks_19, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Cise_random_attacks_20, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Cise_random_attacks_21, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Cise_random_attacks_22, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Cise_random_attacks_23, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Cise_random_attacks_24, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Cise_random_attacks_25, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Cise_random_attacks_26, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Cise_random_attacks_27, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Cise_random_attacks_28, Dobbins_weakness, 10, 10),
     };
     //========================================================================================
     //========================================Turlington======================================
@@ -836,7 +866,7 @@ public class Utils {
             new NPC('u', tur35, "visuals/sprite_sheets/sprite_walk_u7.png", 146*MAP_RESOLUTION, (128-97)*MAP_RESOLUTION),
             new NPC('r', tur36, "visuals/sprite_sheets/sprite_walk_r8.png", 168*MAP_RESOLUTION, (128-102)*MAP_RESOLUTION),
             new NPC('d', tur37, "visuals/sprite_sheets/sprite_walk_d9.png", 151*MAP_RESOLUTION, (128-121)*MAP_RESOLUTION),
-            new ENEMY('l', turlingtonFPre,turlingtonFWin,turlingtonFLose, "visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png", 169*MAP_RESOLUTION, (128-113)*MAP_RESOLUTION, 25, 25, Turlington_F_attacks, 10, 10),
+            new ENEMY('l', turlingtonFPre,turlingtonFWin,turlingtonFLose, "visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png", 169*MAP_RESOLUTION, (128-113)*MAP_RESOLUTION, 25, Turlington_F_attacks, Horton_weakness, 10, 10),
             new NPC('u', tur38, "visuals/sprite_sheets/sprite_walk_u11.png", 274*MAP_RESOLUTION, (128-125)*MAP_RESOLUTION),
             new NPC('l', tur39, "visuals/sprite_sheets/sprite_walk_l12.png", 292*MAP_RESOLUTION, (128-113)*MAP_RESOLUTION),
             new NPC('r', tur40, "visuals/sprite_sheets/sprite_walk_r13.png", 261*MAP_RESOLUTION, (128-92)*MAP_RESOLUTION), //40
@@ -854,56 +884,56 @@ public class Utils {
             new NPC('l', tur52, "visuals/sprite_sheets/sprite_walk_l11.png", 301*MAP_RESOLUTION, (128-28)*MAP_RESOLUTION),
             new NPC('l', tur53, "visuals/sprite_sheets/sprite_walk_l12.png", 320*MAP_RESOLUTION, (128-22)*MAP_RESOLUTION),
             new NPC('u', tur54, "visuals/sprite_sheets/sprite_walk_u13.png", 334*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION),
-            new ENEMY('d', turlingtonIPre,turlingtonIWin,turlingtonILose, "visuals/sprite_sheets/sprite_walk_d14.png", "visuals/sprite_sheets/sprite_l14.png", 349*MAP_RESOLUTION, (128-19)*MAP_RESOLUTION, 25, 25, Turlington_I_attacks, 10, 10),
+            new ENEMY('d', turlingtonIPre,turlingtonIWin,turlingtonILose, "visuals/sprite_sheets/sprite_walk_d14.png", "visuals/sprite_sheets/sprite_l14.png", 349*MAP_RESOLUTION, (128-19)*MAP_RESOLUTION, 25, Turlington_I_attacks, Small_weakness, 10, 10),
             new NPC('r', tur55, "visuals/sprite_sheets/sprite_walk_r1.png", 353*MAP_RESOLUTION, (128-30)*MAP_RESOLUTION), //56
-            new BOSS('d', "I am Chui", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/chui/chui_d.png", "visuals/Professors/chui/chui_l.png", 46*MAP_RESOLUTION, (128-27)*MAP_RESOLUTION, 45, 45, Chui_attacks, 10, 10),
-            new BOSS('d', "I am Horton", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/horton/horton_d.png", "visuals/Professors/horton/horton_l.png", 170*MAP_RESOLUTION, (128-122)*MAP_RESOLUTION, 45, 45, Horton_attacks, 10, 10),
-            new BOSS('d', "I am Small", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/small/small_d.png", "visuals/Professors/small/small_l.png", 362*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION, 45, 45, Small_attacks, 10, 10),
-            new ENEMY('d', turlingtonAPre,turlingtonAWin,turlingtonALose,"visuals/sprite_sheets/sprite_walk_d2.png", "visuals/sprite_sheets/sprite_l2.png", 63*MAP_RESOLUTION, (128-36)*MAP_RESOLUTION, 25, 25, Turlington_A_attacks, 10, 10), //60
-            new ENEMY('l', turlingtonBPre,turlingtonBWin,turlingtonBLose,"visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 49*MAP_RESOLUTION, (128-40)*MAP_RESOLUTION, 25, 25, Turlington_B_attacks, 10, 10),
-            new ENEMY('r', turlingtonCPre,turlingtonCWin,turlingtonCLose,"visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l4.png", 43*MAP_RESOLUTION, (128-37)*MAP_RESOLUTION, 25, 25, Turlington_C_attacks, 10, 10),
-            new ENEMY('r', turlingtonDPre,turlingtonDWin,turlingtonDLose,"visuals/sprite_sheets/sprite_walk_r5.png", "visuals/sprite_sheets/sprite_l5.png", 173*MAP_RESOLUTION, (128-106)*MAP_RESOLUTION, 25, 25, Turlington_D_attacks, 10, 10),
-            new ENEMY('r', turlingtonEPre,turlingtonEWin,turlingtonELose,"visuals/sprite_sheets/sprite_walk_r6.png", "visuals/sprite_sheets/sprite_l6.png", 158*MAP_RESOLUTION, (128-110)*MAP_RESOLUTION, 25, 25, Turlington_E_attacks, 10, 10),
-            new ENEMY('d', turlingtonGPre,turlingtonGWin,turlingtonGLose,"visuals/sprite_sheets/sprite_walk_d7.png", "visuals/sprite_sheets/sprite_l7.png", 342*MAP_RESOLUTION, (128-35)*MAP_RESOLUTION, 25, 25, Turlington_G_attacks, 10, 10),
-            new ENEMY('r', turlingtonHPre,turlingtonHWin,turlingtonHLose,"visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l8.png", 347*MAP_RESOLUTION, (128-25)*MAP_RESOLUTION, 25, 25, Turlington_H_attacks, 10, 10),
+            new BOSS('d', "I am Chui", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/chui/chui_d.png", "visuals/Professors/chui/chui_l.png", 46*MAP_RESOLUTION, (128-27)*MAP_RESOLUTION, 45, Chui_attacks, Chui_weakness, 10, 10),
+            new BOSS('d', "I am Horton", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/horton/horton_d.png", "visuals/Professors/horton/horton_l.png", 170*MAP_RESOLUTION, (128-122)*MAP_RESOLUTION, 45, Horton_attacks, Horton_weakness, 10, 10),
+            new BOSS('d', "I am Small", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/small/small_d.png", "visuals/Professors/small/small_l.png", 362*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION, 45, Small_attacks, Small_weakness, 10, 10),
+            new ENEMY('d', turlingtonAPre,turlingtonAWin,turlingtonALose,"visuals/sprite_sheets/sprite_walk_d2.png", "visuals/sprite_sheets/sprite_l2.png", 63*MAP_RESOLUTION, (128-36)*MAP_RESOLUTION, 25, Turlington_A_attacks, Chui_weakness, 10, 10), //60
+            new ENEMY('l', turlingtonBPre,turlingtonBWin,turlingtonBLose,"visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 49*MAP_RESOLUTION, (128-40)*MAP_RESOLUTION, 25, Turlington_B_attacks, Chui_weakness, 10, 10),
+            new ENEMY('r', turlingtonCPre,turlingtonCWin,turlingtonCLose,"visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l4.png", 43*MAP_RESOLUTION, (128-37)*MAP_RESOLUTION, 25, Turlington_C_attacks, Chui_weakness, 10, 10),
+            new ENEMY('r', turlingtonDPre,turlingtonDWin,turlingtonDLose,"visuals/sprite_sheets/sprite_walk_r5.png", "visuals/sprite_sheets/sprite_l5.png", 173*MAP_RESOLUTION, (128-106)*MAP_RESOLUTION, 25, Turlington_D_attacks, Horton_weakness, 10, 10),
+            new ENEMY('r', turlingtonEPre,turlingtonEWin,turlingtonELose,"visuals/sprite_sheets/sprite_walk_r6.png", "visuals/sprite_sheets/sprite_l6.png", 158*MAP_RESOLUTION, (128-110)*MAP_RESOLUTION, 25, Turlington_E_attacks, Horton_weakness, 10, 10),
+            new ENEMY('d', turlingtonGPre,turlingtonGWin,turlingtonGLose,"visuals/sprite_sheets/sprite_walk_d7.png", "visuals/sprite_sheets/sprite_l7.png", 342*MAP_RESOLUTION, (128-35)*MAP_RESOLUTION, 25, Turlington_G_attacks, Small_weakness, 10, 10),
+            new ENEMY('r', turlingtonHPre,turlingtonHWin,turlingtonHLose,"visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l8.png", 347*MAP_RESOLUTION, (128-25)*MAP_RESOLUTION, 25, Turlington_H_attacks, Small_weakness, 10, 10),
 
     };
 
     public static ENEMY[] Turlington_randoms = {
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, 15, Turlington_random_attacks_1, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, 15, Turlington_random_attacks_2, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, 15, Turlington_random_attacks_3, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, 15, Turlington_random_attacks_4, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, 15, Turlington_random_attacks_5, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, 15, Turlington_random_attacks_6, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, 15, Turlington_random_attacks_7, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, 15, Turlington_random_attacks_8, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, 15, Turlington_random_attacks_9, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, 15, Turlington_random_attacks_10, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, 15, Turlington_random_attacks_11, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, 15, Turlington_random_attacks_12, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, 15, Turlington_random_attacks_13, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, 15, Turlington_random_attacks_14, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, 15, Turlington_random_attacks_15, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, 15, Turlington_random_attacks_16, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, 15, Turlington_random_attacks_17, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, 15, Turlington_random_attacks_18, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, 15, Turlington_random_attacks_19, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, 15, Turlington_random_attacks_20, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, 15, Turlington_random_attacks_21, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, 15, Turlington_random_attacks_22, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, 15, Turlington_random_attacks_23, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, 15, Turlington_random_attacks_24, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, 15, Turlington_random_attacks_15, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, 15, Turlington_random_attacks_26, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, 15, Turlington_random_attacks_27, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, 15, Turlington_random_attacks_28, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Turlington_random_attacks_1, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Turlington_random_attacks_2, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Turlington_random_attacks_3, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Turlington_random_attacks_4, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Turlington_random_attacks_5, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Turlington_random_attacks_6, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Turlington_random_attacks_7, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Turlington_random_attacks_8, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Turlington_random_attacks_9, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Turlington_random_attacks_10, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Turlington_random_attacks_11, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Turlington_random_attacks_12, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Turlington_random_attacks_13, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Turlington_random_attacks_14, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Turlington_random_attacks_15, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Turlington_random_attacks_16, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Turlington_random_attacks_17, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Turlington_random_attacks_18, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Turlington_random_attacks_19, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Turlington_random_attacks_20, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Turlington_random_attacks_21, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Turlington_random_attacks_22, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Turlington_random_attacks_23, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Turlington_random_attacks_24, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Turlington_random_attacks_25, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Turlington_random_attacks_26, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Turlington_random_attacks_27, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Turlington_random_attacks_28, Horton_weakness, 10, 10),
     };
     //========================================================================================
     //========================================Dorm============================================
     public static NPC[] Dorm_enemies = {
             new NPC('u',"Welcome to UF, this is your dorm room. Return here whenever you want to restore your GPA.", "visuals/sprite_sheets/sprite_walk_u3.png",9*MAP_RESOLUTION,20*MAP_RESOLUTION),
-            new NPC('d',"Open up your hero screen with H. You can view your stats, progress, and moves.", "visuals/sprite_sheets/sprite_walk_d5.png", 17*MAP_RESOLUTION,24*MAP_RESOLUTION),
+            new NPC('d',"Press F1 while in the gamescreen to save!", "visuals/sprite_sheets/sprite_walk_d5.png", 17*MAP_RESOLUTION,24*MAP_RESOLUTION),
             new NPC('l',"I have no idea how to play the piano","visuals/sprite_sheets/sprite_walk_l1.png", 25*MAP_RESOLUTION,12*MAP_RESOLUTION),
             new NPC('r',"When leaving a building you will bring up the world map. Just move the pin to the building you want to visit and hit enter","visuals/sprite_sheets/sprite_walk_r8.png", 10*MAP_RESOLUTION,3*MAP_RESOLUTION),
             new NPC('r',dormA,"visuals/sprite_sheets/sprite_walk_r13.png",17*MAP_RESOLUTION,9*MAP_RESOLUTION),
@@ -969,7 +999,8 @@ public class Utils {
     //Consumable
     public static final Texture redbull_tex = new Texture("visuals/inv_items/consume/redbull.png");
     public static final Texture starbucks_tex = new Texture("visuals/inv_items/consume/starbucks.png");
-
+    public static final Texture chegg_tex = new Texture("visuals/inv_items/consume/chegg.png");
+    public static final Texture tutoringzone_tex = new Texture("visuals/inv_items/consume/tutoringzone.png");
     //Apparel
     public static final Texture business_casual_attire_tex = new Texture("visuals/inv_items/apparel/business_casual_attire.png");
     public static final Texture class_ring_tex = new Texture("visuals/inv_items/apparel/class_ring.png");
@@ -997,15 +1028,17 @@ public class Utils {
         SUIT_TIE (4),
         RED_BULL (5),
         STARBUCKS (6),
-        DRAGON (7),
-        CYCLONE (8),
-        DAD (9),
-        MACBOOK (10),
-        NSPIRE (11),
-        SOLDER (12),
-        TI89 (13),
-        USB_BLASTER (14),
-        WIRE_KIT (15);
+        CHEGG (7),
+        TUTORINGZONE (8),
+        DRAGON (9),
+        CYCLONE (10),
+        DAD (11),
+        MACBOOK (12),
+        NSPIRE (13),
+        SOLDER (14),
+        TI89 (15),
+        USB_BLASTER (16),
+        WIRE_KIT (17);
 
         private int numVal;
 
@@ -1038,6 +1071,7 @@ public class Utils {
     public static Sprite shop_window = new Sprite(new Texture("visuals/Menus/shop_window.png"));
     public static final Sound kaching = Gdx.audio.newSound(Gdx.files.internal("sound/effects/kaching.mp3"));
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     //Static method to initialize all required options for the variables fields used above.
     public static void initUtils(){
         ///////////////////////////////////MAIN CLASS//////////////////////////////////////////////////////////////////////////

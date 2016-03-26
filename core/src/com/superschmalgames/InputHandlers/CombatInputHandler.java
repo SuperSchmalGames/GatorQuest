@@ -2,8 +2,10 @@ package com.superschmalgames.InputHandlers;
 
 //Class to handle input from player during combat scenarios.
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.superschmalgames.Hero.H_Move;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -12,6 +14,7 @@ public class CombatInputHandler implements InputProcessor{
 
     //Bools to tell which combat sub-menu we're currently in.
     public boolean rootMenu, moveMenu, itemMenu;
+    private boolean crit_hit;
 
     //Indexes to tell what move/item we're selecting.
     public int index, selection;
@@ -88,6 +91,22 @@ public class CombatInputHandler implements InputProcessor{
                     //We will make the call to use() here. The returned value will be assigned to a base damage variable
                     //contained in CombatLogic.
                     MainClass.combatLogic.heroBaseDmg = MainClass.hero.moves.attacks[selection].use(MainClass.combatLogic.heroStats);
+
+                    //check for weakness:
+                    for(H_Move move : MainClass.hero.lastEnemy.weakness) {
+                        if (MainClass.hero.moves.attacks[selection].getMoveName().equals(move.getMoveName())) {
+                            crit_hit = true;
+                            break;
+                        }
+                        crit_hit = false;
+                    }
+                    if (crit_hit) {
+                        MainClass.combatLogic.heroBaseDmg *= 2;
+                        Gdx.app.log("Hero Damage Test", "Critical Damage Done: " + MainClass.combatLogic.heroBaseDmg);
+                    }
+                    else
+                        Gdx.app.log("Hero Damage Test", "Damage Done: " + MainClass.combatLogic.heroBaseDmg);
+
 
                     //Set the hero's move string that will be displayed on the combat screen.
                     MainClass.combatScreen.hMovDesc = MainClass.hero.name + " used " + MainClass.hero.moves.attacks[selection].moveName + "!";

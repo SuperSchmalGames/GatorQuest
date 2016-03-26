@@ -39,7 +39,7 @@ public class GameScreen implements Screen {
 
     //Flags for handling character movement.
     public boolean lWalk, rWalk, uWalk, dWalk;
-    public boolean dial, newDial, store;
+    public boolean dial, newDial, store, advising;
     private boolean attackable,safe;
     private int recently_attacked;
     Random random = new Random();
@@ -57,6 +57,7 @@ public class GameScreen implements Screen {
         dial = false;
         newDial = false;
         store = false;
+        advising = false;
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
@@ -236,6 +237,13 @@ public class GameScreen implements Screen {
             MainClass.batch.end();
         }
 
+        if(advising){
+            MainClass.batch.begin();
+            MainClass.batch.draw(Utils.advising_tex, camera.position.x-Utils.GAME_SCREEN_WIDTH/2, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-612, 1020, 612);
+            Utils.font_small.draw(MainClass.batch, "FROM: Allison\n\nDear " + MainClass.hero.name+",\n"+Utils.advText[MainClass.hero.semester]+"\n\nSincerely,\nAllison", camera.position.x-Utils.GAME_SCREEN_WIDTH/2+560, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-40);
+            MainClass.batch.end();
+        }
+
         //Keyboard input is taken in the InputHandler class, which updates the following walk variables to control
         //how character movement is rendered to the screen
         walk(delta);
@@ -259,8 +267,8 @@ public class GameScreen implements Screen {
                 }
                 if(recently_attacked != 0)
                     recently_attacked--;
-                if(attackable && recently_attacked == 0)
-                randomEncounter();
+                if(attackable && recently_attacked == 0){}
+                    //randomEncounter();
             }
             else if(rWalk &&
                     !collision.getCell((int)(camera.position.x+MainClass.hero.width/2+Utils.MOVE_DIST)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -274,8 +282,8 @@ public class GameScreen implements Screen {
                 }
                 if(recently_attacked != 0)
                     recently_attacked--;
-                if(attackable && recently_attacked == 0)
-                randomEncounter();
+                if(attackable && recently_attacked == 0){}
+                    //randomEncounter();
             }
             else if(uWalk &&
                     !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y+Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -295,8 +303,8 @@ public class GameScreen implements Screen {
                 }
                 if(recently_attacked != 0)
                     recently_attacked--;
-                if(attackable && recently_attacked == 0)
-                randomEncounter();
+                if(attackable && recently_attacked == 0){}
+                    //randomEncounter();
             }
             else if(dWalk &&
                     !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2-Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -316,8 +324,8 @@ public class GameScreen implements Screen {
                 }
                 if(recently_attacked != 0)
                     recently_attacked--;
-                if(attackable && recently_attacked == 0)
-                    randomEncounter();
+                if(attackable && recently_attacked == 0){}
+                    //randomEncounter();
             }
             else MainClass.hero.standAnimation();
             MainClass.hero.setPosition(camera.position.x, camera.position.y);

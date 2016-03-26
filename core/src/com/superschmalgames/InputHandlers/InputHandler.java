@@ -7,11 +7,12 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
-import com.superschmalgames.Screens.CombatScreen;
+import com.superschmalgames.Inventory.ApparelItem;
+import com.superschmalgames.Inventory.EquipableItem;
 import com.superschmalgames.Screens.GameScreen;
-import com.superschmalgames.Screens.HeroScreen;
-import com.superschmalgames.Screens.InventoryScreen;
+import com.superschmalgames.Utilities.DataManager;
 import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.SaveData;
 import com.superschmalgames.Utilities.Utils;
 
 public class InputHandler implements InputProcessor {
@@ -53,7 +54,75 @@ public class InputHandler implements InputProcessor {
                         Utils.titleScreenMusic.stop();
                         Utils.titleScreenSelectionSound.play();
                         MainClass.titleScreen.titleDone = true;
-                    } else if (menuIndex == 2) {
+                    } else if (menuIndex == 1){
+                        try {
+                            SaveData data = (SaveData) DataManager.load(Utils.savefile);
+                            MainClass.hero.outfitNum = data.outfitNum;
+                            MainClass.hero.name = data.name;
+                            MainClass.hero.GPA = data.GPA;
+                            MainClass.hero.semester = data.semester;
+                            MainClass.hero.gatorBucks = data.gatorBucks;
+                            MainClass.hero.lvl = data.lvl;
+                            MainClass.hero.experience = data.experience;
+                            MainClass.hero.expCap = data.expCap;
+                            MainClass.hero.Software = data.Software;
+                            MainClass.hero.Hardware = data.Hardware;
+                            MainClass.hero.Writing = data.Writing;
+                            MainClass.hero.Endurance = data.Endurance;
+                            MainClass.hero.Social = data.Social;
+                            MainClass.hero.Math = data.Math;
+                            MainClass.hero.Focus =  data.Focus;
+                            MainClass.hero.Software_buf = data.Software_buf;
+                            MainClass.hero.Hardware_buf = data.Hardware_buf;
+                            MainClass.hero.Writing_buf = data.Writing_buf;
+                            MainClass.hero.Endurance_buf = data.Endurance_buf;
+                            MainClass.hero.Social_buf = data.Social_buf;
+                            MainClass.hero.Math_buf = data.Math_buf;
+                            MainClass.hero.Focus_buf = data.Focus_buf;
+                            for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
+                                MainClass.hero.inventory.items.get(i).setQuantity(data.quantities[i]);
+                                if(i == data.apparel) {
+                                    MainClass.hero.heroApparel = (ApparelItem) MainClass.hero.inventory.items.get(i);
+                                }
+                                if(i == data.equipped) {
+                                    MainClass.hero.heroEquipment = (EquipableItem) MainClass.hero.inventory.items.get(i);
+                                }
+                            }
+                            for (int i = 0; i < Utils.NEB_enemies.length; i++) {
+                                 Utils.NEB_enemies[i].triggered = data.neb[i];
+                            }
+                            for (int i = 0; i < Utils.CISE_enemies.length; i++) {
+                                Utils.CISE_enemies[i].triggered = data.cise[i];
+                            }
+                            for (int i = 0; i < Utils.Turlington_enemies.length; i++) {
+                                Utils.Turlington_enemies[i].triggered = data.turlington[i];
+                            }
+                            for (int i = 0; i < Utils.Dorm_enemies.length; i++) {
+                                Utils.Dorm_enemies[i].triggered = data.dorm[i];
+                            }
+                            for (int i = 0; i < Utils.Marston_enemies.length; i++) {
+                                Utils.Marston_enemies[i].triggered = data.marston[i];
+                            }
+                            for (int i = 0; i < Utils.Bookstore_enemies.length; i++) {
+                                Utils.Bookstore_enemies[i].triggered = data.bookstore[i];
+                            }
+                            Utils.titleScreenMusic.stop();
+                            MainClass.hero.initAnimations();
+
+                            //Play the "selection" sound effect.
+                            Utils.avatarScreenSelectionSound.play(0.4f);
+
+                            //Set game screen to be the main game screen.
+                            MainClass.gameScreen = new GameScreen();
+                            ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+                            MainClass.avatarScreen.dispose();
+                        } catch (Exception e) {
+                            System.out.print("Unable to load savefile");
+                            Utils.titleScreenMusic.stop();
+                            Utils.titleScreenSelectionSound.play();
+                            MainClass.titleScreen.titleDone = true;
+                        }
+                    }else if (menuIndex == 2) {
                         Gdx.app.exit();
                     } else
                         Utils.errTone.play(0.5f);
@@ -116,7 +185,6 @@ public class InputHandler implements InputProcessor {
                     //Play the sound effect when player pushes the button.
                     Utils.inventoryScreenSelectionSound.play();
                     //Set the gamescreen to be the inventory game screen.
-                    MainClass.inventoryScreen = new InventoryScreen();
                     ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.inventoryScreen);
                     MainClass.inventoryScreen.invPanel = "Consumable";
                     MainClass.inventoryScreen.invPage = 0;
@@ -125,33 +193,88 @@ public class InputHandler implements InputProcessor {
                     //Play the sound effect when player pushes the button.
                     Utils.inventoryScreenSelectionSound.play();
                     //Set the gamescreen to be the inventory game screen.
-                    MainClass.heroScreen = new HeroScreen();
                     ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.heroScreen);
                     MainClass.heroScreen.heroPanel = "Statistics";
                     MainClass.heroScreen.heroPage = 0;
                     MainClass.heroScreen.heroRow = 0;
-                }
-                else if(keycode == Input.Keys.ENTER){
+                } else if(keycode == Input.Keys.ENTER){
                     //Interact with the intended NPC.
                     MainClass.gameScreen.interact();
+                } else if(keycode == Input.Keys.F1) {
+                    //saving
+                    SaveData data = new SaveData();
+                    data.outfitNum = MainClass.hero.outfitNum;
+                    data.name = MainClass.hero.name;
+                    data.GPA = MainClass.hero.GPA;
+                    data.semester = MainClass.hero.semester;
+                    data.gatorBucks = MainClass.hero.gatorBucks;
+                    data.lvl = MainClass.hero.lvl;
+                    data.experience = MainClass.hero.experience;
+                    data.expCap = MainClass.hero.expCap;
+                    data.Software = MainClass.hero.Software;
+                    data.Hardware = MainClass.hero.Hardware;
+                    data.Writing = MainClass.hero.Writing;
+                    data.Endurance = MainClass.hero.Endurance;
+                    data.Social = MainClass.hero.Social;
+                    data.Math = MainClass.hero.Math;
+                    data.Focus = MainClass.hero.Focus;
+                    data.Software_buf = MainClass.hero.Software_buf;
+                    data.Hardware_buf = MainClass.hero.Hardware_buf;
+                    data.Writing_buf = MainClass.hero.Writing_buf;
+                    data.Endurance_buf = MainClass.hero.Endurance_buf;
+                    data.Social_buf = MainClass.hero.Social_buf;
+                    data.Math_buf = MainClass.hero.Math_buf;
+                    data.Focus_buf = MainClass.hero.Focus_buf;
+                    data.apparel = 300;     //set to unequippable range
+                    data.equipped = 300;
+                    for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
+                        data.quantities[i] = MainClass.hero.inventory.items.get(i).getQuantity();
+                        if(MainClass.hero.inventory.items.get(i) == MainClass.hero.heroApparel) {
+                            data.apparel = i;
+                        }
+                        if(MainClass.hero.inventory.items.get(i) == MainClass.hero.heroEquipment) {
+                            data.equipped = i;
+                        }
+                    }
+                    for (int i = 0; i < Utils.NEB_enemies.length; i++) {
+                        data.neb[i] = Utils.NEB_enemies[i].triggered;
+                    }
+                    for (int i = 0; i < Utils.CISE_enemies.length; i++) {
+                        data.cise[i] = Utils.CISE_enemies[i].triggered;
+                    }
+                    for (int i = 0; i < Utils.Turlington_enemies.length; i++) {
+                        data.turlington[i] = Utils.Turlington_enemies[i].triggered;
+                    }
+                    for (int i = 0; i < Utils.Dorm_enemies.length; i++) {
+                        data.dorm[i] = Utils.Dorm_enemies[i].triggered;
+                    }
+                    for (int i = 0; i < Utils.Marston_enemies.length; i++) {
+                        data.marston[i] = Utils.Marston_enemies[i].triggered;
+                    }
+                    for (int i = 0; i < Utils.Bookstore_enemies.length; i++) {
+                        data.bookstore[i] = Utils.Bookstore_enemies[i].triggered;
+                    }
+                    try {
+                        DataManager.save(data, Utils.savefile);
+                        System.out.print("Save successful");
+                    } catch (Exception e) {
+                        System.out.print("Unable to save data\n");
+                    }
                 }
 
                 ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
-                else if(keycode == Input.Keys.C){
-                    //Give input control to the combat input handler.
-                    /*Gdx.input.setInputProcessor(MainClass.combatInputHandler);
-                    //Create combat screen and set is as the current screen.
-                    MainClass.combatScreen = new CombatScreen();
-                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.combatScreen);*/
-                }
                 else if (keycode == Input.Keys.P) {
                     if (!Utils.isPaused) {
                         Utils.isPaused = true;
                         (Gdx.app.getApplicationListener()).pause();
                     } else {
                         Utils.isPaused = false;
+                        Utils.isPaused = false;
                         (Gdx.app.getApplicationListener()).resume();
                     }
+                }
+                else if (keycode == Input.Keys.A) {
+                    MainClass.gameScreen.advising = !MainClass.gameScreen.advising;
                 }
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
