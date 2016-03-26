@@ -19,13 +19,9 @@ public class CombatLogic {
     //Check a string in combatinputhandler to see if the item used boosts health or is a defense/shield item. In combatscreen,
     //only show the health update if a health boost item was used.
     //
-    //Have the amount of health lost/gained show up under the hero.enemy health in combat screen in green/red in order
-    //to show what's happening to those stats.
-    //Need: ints to serve as x-pos that will change depending on which character is getting affected
-    //
     //Use a string to display the Enemy's winning String if the Hero loses the fight.
     //
-    //MOve the bit of code responsible for healing/transporting after a loss from the combatexec method to combatexit.
+    //Ensure that only creating a single combat screen won't break any of my previous logic.
 
 
     //The base damage done by a move. Damage is calculated using hero stats.
@@ -34,6 +30,7 @@ public class CombatLogic {
     //Boolean used to determine when we're transitioning from one state to another.
     public boolean transition, hDone, eDone, hWin, eWin, move;
 
+    //Enumeration of possible combat states.
     public enum combat_state{
         PLAYER_TURN,          //Player makes a selection and the effects are applied.
         ENEMY_TURN,           //Enemy makes a selection and the effects are applied.
@@ -46,6 +43,7 @@ public class CombatLogic {
     public double[] heroStats = {MainClass.hero.Software_buf,MainClass.hero.Hardware_buf,MainClass.hero.Writing_buf,
             MainClass.hero.Endurance_buf,MainClass.hero.Social_buf,MainClass.hero.Math_buf,MainClass.hero.Focus_buf};
 
+    //Constructor.
     public CombatLogic(){
         //Set the menu icon to the proper color and starting place.
         Utils.menuIcon.setPosition(40,200);
@@ -75,6 +73,7 @@ public class CombatLogic {
 
         //Change font color to blue
         Utils.font.setColor(Color.BLUE);
+        Utils.font_small.setColor(Color.BLUE);
         Utils.font_medsmall.setColor(Color.BLUE);
 
         //Initialize current_state to be player turn whenever new combat starts.
@@ -86,7 +85,10 @@ public class CombatLogic {
         eWin = false;
     }
 
+    //Method gets called every time the Hero makes a Move or uses an Item. Handles flow of logic, transition between
+    //Hero and Enemy turn, and overall combat outcome.
     public void execCombat(){
+
         //Tell the combat screen to display transition to next combat state, and restrict player input during transition.
         MainClass.combatInputHandler.playerControl = false;
         transition = true;
@@ -105,7 +107,6 @@ public class CombatLogic {
             //Signify we successfully completed the Hero's part of this combat round.
             hDone = true;
         }
-
         if(CURRENT_STATE == combat_state.ENEMY_TURN){
 
             //Some logic for randomly picking moves.
@@ -125,11 +126,17 @@ public class CombatLogic {
             //Signify we successfully completed the Enemy's part of this round of combat.
             eDone = true;
         }
-
         if(CURRENT_STATE == combat_state.PLAYER_WIN){
 
             //Some stuff handling the player winning, getting exp, etc.
             MainClass.hero.winCombat(MainClass.hero.lastEnemy.exp,MainClass.hero.lastEnemy.money);
+
+            //Set the combat ending text.
+            MainClass.combatScreen.combatEndScript = "Experience gained: "+ MainClass.hero.lastEnemy.exp +
+                    "\n\nGatorbucks earned: " + MainClass.hero.lastEnemy.money;
+
+            //Set the Enemy's ending combat script to their losing script.
+            MainClass.combatScreen.enemyScript = "Enemy: " + MainClass.hero.lastEnemy.lose_script;
 
             //Display a message that we won the battle.
             MainClass.combatScreen.eMovDesc = MainClass.hero.name + " won the battle!";
@@ -138,21 +145,22 @@ public class CombatLogic {
             hWin = true;
         }
         if(CURRENT_STATE == combat_state.PLAYER_LOSE){
-            //Some stuff for player "passing out", relocating to dorm, healing back to 4.0, etc.
+
+            //Change the description to inform the play the Hero lost the battle.
             MainClass.combatScreen.description = MainClass.hero.name + " was defeated!";
+
+            //Set the combat ending text.
+            MainClass.combatScreen.combatEndScript = "The stress of your low GPA makes you pass out!";
+
+            //Set the Enemy's ending combat script to their winning script.
+            MainClass.combatScreen.enemyScript = "Enemy: " + MainClass.hero.lastEnemy.win_script;
 
             //Signify the Enemy has won and we need to end combat.
             eWin = true;
-            MainClass.hero.lastEnemy.triggered = false;
-            //Heal Hero back to 4.0.
-            MainClass.hero.GPA = 4.0;
-
-            //Transport hero back to his dorm room.
-            MainClass.gameScreen.setMap(Utils.dorm, Utils.start_x, Utils.start_y, 5);
-            MainClass.openWorldScreen.camera.position.set(2700f,830f,0f);
         }
     }
 
+    //Method to update te amount of health the Hero has.
     public void updateHero(int timesCalled){
         //If this is the second time we've called this, we know we can sub enemy dmg from hero health. Otherwise, we
         //just update the amount of health shown on screen to show health boost if we used an item.
@@ -170,6 +178,7 @@ public class CombatLogic {
             MainClass.combatScreen.heroLife = "Your GPA: " + Utils.df1.format(MainClass.hero.GPA);
     }
 
+    //Method to update the amount of health the Enemy has.
     public void updateEnemy(){
         //Subtract Hero damage from Enemy life
         MainClass.hero.lastEnemy.enemyLife -= heroBaseDmg;
@@ -209,7 +218,21 @@ public class CombatLogic {
         }
     }
 
+    //Method to handle cleaning up and resetting the last few necessary things before combat fully exits.
     public void exitCombat(){
+        //If we lost the fight.
+        if(eWin){
+            //Keep the enemy from being triggered so we'll fight him again.
+            MainClass.hero.lastEnemy.triggered = false;
+
+            //Heal Hero back to 4.0.
+            MainClass.hero.GPA = 4.0;
+
+            //Transport hero back to his dorm room.
+            MainClass.gameScreen.setMap(Utils.dorm, Utils.start_x, Utils.start_y, 5);
+            MainClass.openWorldScreen.camera.position.set(2700f,830f,0f);
+        }
+
         //Stop the combat music.
         Utils.combatScreenMusic.stop();
 
@@ -226,6 +249,5 @@ public class CombatLogic {
         Gdx.input.setInputProcessor(MainClass.inputHandler);
         MainClass.hero.canMove = true;
         ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
-
     }
 }

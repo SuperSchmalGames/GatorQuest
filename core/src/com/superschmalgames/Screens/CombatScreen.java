@@ -24,7 +24,7 @@ public class CombatScreen implements Screen {
     public GlyphLayout rootList, moveDesc;
     public int movePane, itemPane, p2index, temp;
     public String description, heroLife, enemyLife;
-    public String hMovDesc, eMovDesc;
+    public String hMovDesc, eMovDesc, enemyScript, combatEndScript;
 
     //Variables for displaying the red/green health change indicators during combat transitions.
     public String healthChangeDesc;
@@ -53,8 +53,8 @@ public class CombatScreen implements Screen {
         Utils.hpBack2.setPosition(630, 490);
         rootList = new GlyphLayout(Utils.font,"Moves\n\nItems",Color.BLUE,200,8,true);
         moveDesc = new GlyphLayout(Utils.font_medsmall, "",Color.BLUE,200,8,true);
-        waitTime = 0;
-        statusUpdate = false;
+        //waitTime = 0;
+        //statusUpdate = false;
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
@@ -67,6 +67,10 @@ public class CombatScreen implements Screen {
         //Play the combat music, and stop the gameScreen music.
         Utils.gameMusic.stop();
         Utils.combatScreenMusic.play();
+
+        //Reinitialize some combat screen transition control variables.
+        waitTime = 0;
+        statusUpdate = false;
 
         //Create new combat logic object for this specific fight.
         MainClass.combatLogic = new CombatLogic();
@@ -98,13 +102,13 @@ public class CombatScreen implements Screen {
         Utils.font.draw(MainClass.batch, heroLife, 30, Utils.GAME_SCREEN_HEIGHT - 50);
         Utils.font.draw(MainClass.batch, enemyLife, Utils.GAME_SCREEN_WIDTH - 360, Utils.GAME_SCREEN_HEIGHT - 50);
 
-        //If we're transitioning from one state to another. SET IT FALSE AT END OF EVERY POSSIBLE BRANCH HERE
+        //If we're transitioning from one state to another.
         if(MainClass.combatLogic.transition){
 
             //Update wait time if we're in the middle of a transition
             waitTime += delta;
 
-            //Conditional here for transition from hero to enemy turn.
+            //Conditional here for transition from hero turn to enemy turn.
             if(MainClass.combatLogic.hDone){
 
                 //Display hMoveDesc here
@@ -141,7 +145,7 @@ public class CombatScreen implements Screen {
                     }
                 }
             }
-            //Conditional here for transition from enemy to hero turn.
+            //Conditional here for transition from enemy turn to hero turn.
             else if(MainClass.combatLogic.eDone){
 
                 //Display the eMovDesc here.
@@ -171,6 +175,7 @@ public class CombatScreen implements Screen {
                     MainClass.combatLogic.eDone = false;
                     waitTime = 0;
                     statusUpdate = false;
+                    Utils.font_small.setColor(Color.BLUE);
 
                     if(MainClass.combatLogic.eWin) {
                         //If enemy won, move to the enemy win state and ake sure hWin is false.
@@ -183,25 +188,49 @@ public class CombatScreen implements Screen {
                     }
                 }
             }
-            //Conditional here for transition from hero to hero victory.
+            //Conditional here for transition from hero turn to hero victory.
             else if(MainClass.combatLogic.hWin){
 
                 //Display the win message. We use eMovDesc here since the enemy didn't need it.
-                Utils.font.draw(MainClass.batch, eMovDesc, 55, 223);
+                if(waitTime < 2) {
+                    Utils.font.draw(MainClass.batch, eMovDesc, 55, 223);
+                }
+
+                //Display what the Enemy says about the combat result.
+                if(waitTime >= 2 && waitTime < 4){
+                    Utils.font.draw(MainClass.batch, enemyScript, 55, 223);
+                }
+
+                //Display the final combat result string showing earned exp and money.
+                if(waitTime >= 4 && waitTime < 6){
+                    Utils.font.draw(MainClass.batch, combatEndScript, 55, 223);
+                }
 
                 //After displaying the win message for 2 seconds, call method to exit combat.
-                if(waitTime > 2) {
+                if(waitTime >= 6) {
                     MainClass.combatLogic.exitCombat();
                 }
             }
-            //Conditional here for transition from enemy to enemy victory.
+            //Conditional here for transition from enemy turn to enemy victory.
             else if(MainClass.combatLogic.eWin){
 
-                //Display the win message. We use description here since it won't be needed for anything else.
-                Utils.font.draw(MainClass.batch, description, 55, 223);
+                //Display the lose message. We use description here since the enemy didn't need it.
+                if(waitTime < 2) {
+                    Utils.font.draw(MainClass.batch, description, 55, 223);
+                }
+
+                //Display what the Enemy says about the combat result.
+                if(waitTime >= 2 && waitTime < 4){
+                    Utils.font.draw(MainClass.batch, enemyScript, 55, 223);
+                }
+
+                //Display the final combat result string saying that the Hero passed out.
+                if(waitTime >= 4 && waitTime < 6){
+                    Utils.font.draw(MainClass.batch, combatEndScript, 55, 223);
+                }
 
                 //After displaying the lose message for 2 seconds, call method to exit combat.
-                if(waitTime > 2) {
+                if(waitTime >= 6) {
                     MainClass.combatLogic.exitCombat();
                 }
             }
@@ -209,7 +238,10 @@ public class CombatScreen implements Screen {
 
         //If we're in the player's turn and not transitioning.
         else {
-            Utils.menuIcon.draw(MainClass.batch);                          //Draw the icon used to select menu options.
+
+            //Draw the icon used to select menu options.
+            Utils.menuIcon.draw(MainClass.batch);
+
             //When combat first begins, show the option to choose a move or a list.
             if (MainClass.combatInputHandler.rootMenu) {
                 Utils.font.draw(MainClass.batch, rootList, 85, 223);
@@ -337,7 +369,7 @@ public class CombatScreen implements Screen {
                 }
 
                 //Draw the description for the currently selected Consumable Item.
-                Utils.font_medsmall.draw(MainClass.batch, description, 530, 223);
+                Utils.font_small.draw(MainClass.batch, description, 530, 223);
             }
         }
 

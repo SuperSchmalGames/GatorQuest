@@ -14,7 +14,7 @@ public class CombatInputHandler implements InputProcessor{
 
     //Bools to tell which combat sub-menu we're currently in.
     public boolean rootMenu, moveMenu, itemMenu;
-    private boolean crit_hit;
+    public boolean crit_hit;
 
     //Indexes to tell what move/item we're selecting.
     public int index, selection;
@@ -52,7 +52,7 @@ public class CombatInputHandler implements InputProcessor{
                         itemMenu = true;
                         index = 0;
                         Utils.menuIcon.setPosition(50, 200);
-                        MainClass.combatScreen.description = "Item descriptions \ncoming soon!";
+                        MainClass.combatScreen.description = MainClass.hero.inventory.items.get(MainClass.hero.inventory.getCurrentItemIndex()).getItemDes();
                     }
                 }
             }
@@ -107,9 +107,11 @@ public class CombatInputHandler implements InputProcessor{
                     else
                         Gdx.app.log("Hero Damage Test", "Damage Done: " + MainClass.combatLogic.heroBaseDmg);
 
-
                     //Set the hero's move string that will be displayed on the combat screen.
                     MainClass.combatScreen.hMovDesc = MainClass.hero.name + " used " + MainClass.hero.moves.attacks[selection].moveName + "!";
+                    if(crit_hit){
+                        MainClass.combatScreen.hMovDesc += " It's hella effective!";
+                    }
 
                     //Once move has been selected, back us out to the root menu for our next turn.
                     moveMenu = false;                             //Reset the flags to root being true.
@@ -143,7 +145,7 @@ public class CombatInputHandler implements InputProcessor{
                         index--;
                         Utils.menuIcon.translateY(45);          //Translate menu icon down to next Item in list.
                     }
-                    MainClass.combatScreen.description = MainClass.hero.inventory.items.get(MainClass.hero.inventory.getCurrentItemIndex()).getItemName();       //!!!!!!!Add item descriptions!!!!!!!!!!!!!!!!
+                    MainClass.combatScreen.description = MainClass.hero.inventory.items.get(MainClass.hero.inventory.getCurrentItemIndex()).getItemDes();       //!!!!!!!Add item descriptions!!!!!!!!!!!!!!!!
                 }
                 else if (keycode == Input.Keys.DOWN && index < (MainClass.hero.inventory.getNum('c') - 1)) {
                     if ((index + 1) % 4 == 0) {
@@ -155,7 +157,7 @@ public class CombatInputHandler implements InputProcessor{
                         index++;
                         Utils.menuIcon.translateY(-45);         //Translate menu icon down to next Item in list.
                     }
-                    MainClass.combatScreen.description = MainClass.hero.inventory.items.get(MainClass.hero.inventory.getCurrentItemIndex()).getItemName();       //!!!!!!!Add item descriptions!!!!!!!!!!!!!!!!
+                    MainClass.combatScreen.description = MainClass.hero.inventory.items.get(MainClass.hero.inventory.getCurrentItemIndex()).getItemDes();       //!!!!!!!Add item descriptions!!!!!!!!!!!!!!!!
                 }
                 else if (keycode == Input.Keys.ENTER) {
                     //Only let player select an Item if there are actual Items to choose from.

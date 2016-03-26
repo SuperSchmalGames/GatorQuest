@@ -9,7 +9,6 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.superschmalgames.Hero.E_Move;
 import com.superschmalgames.Hero.H_Move;
 import com.superschmalgames.Screens.CombatScreen;
-import com.superschmalgames.Utilities.Animator;
 import com.superschmalgames.Utilities.CharacterDialogue;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
