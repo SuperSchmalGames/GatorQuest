@@ -26,6 +26,10 @@ public class CombatScreen implements Screen {
     public String description, heroLife, enemyLife;
     public String hMovDesc, eMovDesc;
 
+    //Variables for displaying the red/green health change indicators during combat transitions.
+    public String healthChangeDesc;
+    public int healthChangeXPos;
+
     //Control variables for combat animations/transitions.
     public boolean statusUpdate;
     public double waitTime;
@@ -106,16 +110,28 @@ public class CombatScreen implements Screen {
                 //Display hMoveDesc here
                 Utils.font.draw(MainClass.batch, hMovDesc, 55, 223);
 
-                //We'll draw the add/sub for health here  <===================================================================
-
-                //Update the amount of hero/enemy health shown.
-                if(!statusUpdate){
-                    statusUpdate = true;
-                    MainClass.combatLogic.updateHero(1);   //Update Hero to show added health from item
-                    MainClass.combatLogic.updateEnemy();  //Update enemy to show reduced health from hero attack
+                //We'll draw the post-hMove add/sub for health here.
+                if(waitTime < 1.5){
+                    if(!statusUpdate){
+                        statusUpdate = true;
+                        MainClass.combatLogic.healthChanges('h');
+                    }
+                    Utils.font_small.draw(MainClass.batch, healthChangeDesc, healthChangeXPos, Utils.GAME_SCREEN_HEIGHT - 90);
+                }
+                else{
+                    statusUpdate = false;
                 }
 
-                if(waitTime > 2) {
+                //Update the amount of hero/enemy health shown.
+                if(waitTime >= 1.5 && waitTime < 3){
+                    if(!statusUpdate) {
+                        statusUpdate = true;
+                        MainClass.combatLogic.updateHero(1);   //Update Hero to show added health from item
+                        MainClass.combatLogic.updateEnemy();  //Update enemy to show reduced health from hero attack
+                    }
+                }
+
+                if(waitTime >= 3) {
                     MainClass.combatLogic.hDone = false;
                     waitTime = 0;
                     statusUpdate = false;
@@ -131,13 +147,27 @@ public class CombatScreen implements Screen {
                 //Display the eMovDesc here.
                 Utils.font.draw(MainClass.batch, eMovDesc, 55, 223);
 
-                //Update the amount of hero health shown.
-                if(!statusUpdate){
-                    statusUpdate = true;
-                    MainClass.combatLogic.updateHero(2);
+                //We'll draw the post-hMove add/sub for health here.
+                if(waitTime < 1.5){
+                    if(!statusUpdate){
+                        statusUpdate = true;
+                        MainClass.combatLogic.healthChanges('e');
+                    }
+                    Utils.font_small.draw(MainClass.batch, healthChangeDesc, healthChangeXPos, Utils.GAME_SCREEN_HEIGHT - 90);
+                }
+                else{
+                    statusUpdate = false;
                 }
 
-                if(waitTime > 2) {
+                //Update the amount of hero health shown.
+                if(waitTime >= 1.5 && waitTime < 3){
+                    if(!statusUpdate) {
+                        statusUpdate = true;
+                        MainClass.combatLogic.updateHero(2);
+                    }
+                }
+
+                if(waitTime >= 3) {
                     MainClass.combatLogic.eDone = false;
                     waitTime = 0;
                     statusUpdate = false;

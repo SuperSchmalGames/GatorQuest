@@ -73,8 +73,6 @@ public class Utils {
     public static final Sprite combatBorder = new Sprite(new Texture("visuals/menus/combat_border.png"));
     public static final Sprite hpBack = new Sprite(new Texture("visuals/menus/hp_back.png"));
     public static final Sprite hpBack2 = new Sprite(new Texture("visuals/menus/hp_back.png"));
-    public static final Sprite tempHero = new Sprite(new Texture("visuals/professors/Horton/horton_r.png"));
-    public static final Sprite tempNPC = new Sprite(new Texture("visuals/professors/Horton/horton_l.png"));
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////GAME SCREEN////////////////////////////////////////////////////////////////////////////

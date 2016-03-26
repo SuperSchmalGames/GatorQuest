@@ -8,12 +8,7 @@ import com.badlogic.gdx.graphics.Color;
 
 public class CombatLogic {
 
-    //Also need: state machine for handling turns, logic for player victory, logic for player death, npc decision-making
-    //logic, etc. Have a state TRANSITION that holds a loop running while things in the combat screen transition for a second
-    //or two, then have combat screen change the state so that the loop breaks, allowing the next combat state to occur.
-    //
-    //Maybe make the removal/addition of health point their own methods. Calling in proper order could fix the issue
-    //of having health update too quickly when trying to show that the hero used a restorative item.
+    //Need some logic to have NPC randomly pick a move in his arsenal.
     //
     //Have a boolean or some variable in the hero class that tracks if we have a shield up, a defense boost,
     //etc. Using an item that activates one of those effects will simply switch the bool to true, then we can check it
@@ -21,15 +16,20 @@ public class CombatLogic {
     //double that acts as a multiplier for incoming damage. It's normally set to 1.0, but damage reducers will sub like
     //0.5 from that, and shields will subtract the full 1.0 for some number of turns.
     //
+    //Check a string in combatinputhandler to see if the item used boosts health or is a defense/shield item. In combatscreen,
+    //only show the health update if a health boost item was used.
+    //
     //Have the amount of health lost/gained show up under the hero.enemy health in combat screen in green/red in order
     //to show what's happening to those stats.
+    //Need: ints to serve as x-pos that will change depending on which character is getting affected
     //
     //Use a string to display the Enemy's winning String if the Hero loses the fight.
     //
-    //Make sure game doesn't crash if hitting enter on item list when we have no items.
+    //MOve the bit of code responsible for healing/transporting after a loss from the combatexec method to combatexit.
+
 
     //The base damage done by a move. Damage is calculated using hero stats.
-    public double heroBaseDmg, enemyBaseDmg;
+    public double heroBaseDmg, enemyBaseDmg, heroHeal;
 
     //Boolean used to determine when we're transitioning from one state to another.
     public boolean transition, hDone, eDone, hWin, eWin, move;
@@ -93,11 +93,6 @@ public class CombatLogic {
 
         //Series of states to control combat logic flow.
         if(CURRENT_STATE == combat_state.PLAYER_TURN){
-            //Subtract health from enemy equal to hero damage.
-            //MainClass.hero.lastEnemy.enemyLife -= heroBaseDmg;
-
-            //Reset hero damage for next turn.
-            //heroBaseDmg = 0;
 
             //Set state to enemy turn.
             CURRENT_STATE = combat_state.ENEMY_TURN;
@@ -112,11 +107,9 @@ public class CombatLogic {
         }
 
         if(CURRENT_STATE == combat_state.ENEMY_TURN){
+
             //Some logic for randomly picking moves.
             enemyBaseDmg = MainClass.hero.lastEnemy.attacks[0].use(heroStats);
-            //MainClass.hero.GPA -= enemyBaseDmg;
-            Gdx.app.log("Enemy Turn", "Move Selected: " + MainClass.hero.lastEnemy.attacks[0].getMoveName());
-            Gdx.app.log("Enemy Damage Test", "Damage Done: "+ enemyBaseDmg);
 
             //Set the enemy's combat string that will be displayed on the combat screen.
             MainClass.combatScreen.eMovDesc = "Enemy used " + MainClass.hero.lastEnemy.attacks[0].getMoveName() + "!";
@@ -134,6 +127,7 @@ public class CombatLogic {
         }
 
         if(CURRENT_STATE == combat_state.PLAYER_WIN){
+
             //Some stuff handling the player winning, getting exp, etc.
             MainClass.hero.winCombat(MainClass.hero.lastEnemy.exp,MainClass.hero.lastEnemy.money);
 
@@ -142,8 +136,6 @@ public class CombatLogic {
 
             //Signify the Hero has won and we need to end combat.
             hWin = true;
-
-            Gdx.app.log("Combat Finish", "Gratz, we won!");
         }
         if(CURRENT_STATE == combat_state.PLAYER_LOSE){
             //Some stuff for player "passing out", relocating to dorm, healing back to 4.0, etc.
@@ -158,8 +150,6 @@ public class CombatLogic {
             //Transport hero back to his dorm room.
             MainClass.gameScreen.setMap(Utils.dorm, Utils.start_x, Utils.start_y, 5);
             MainClass.openWorldScreen.camera.position.set(2700f,830f,0f);
-
-            Gdx.app.log("Combat Finish", "Boo, we lost!");
         }
     }
 
@@ -193,9 +183,38 @@ public class CombatLogic {
             MainClass.combatScreen.enemyLife = "Assignments: " + MainClass.hero.lastEnemy.enemyLife;
     }
 
+    //Method to set the necessary variables to display the additions/subtractions to character health in red/green
+    public void healthChanges(char turn){
+        //If we're showing updates immediately after the Hero's turn.
+        if(turn == 'h'){
+            //If Hero used an attack, show the drop in Enemy's health in red, beneath Enemy's remaining life.
+            if(move){
+                Utils.font_small.setColor(Color.RED);
+                MainClass.combatScreen.healthChangeXPos = Utils.GAME_SCREEN_WIDTH - 85;
+                MainClass.combatScreen.healthChangeDesc = "-" + heroBaseDmg;
+            }
+            //If hero used an Item, show boost in Hero's health in green, beneath Hero's remaining life.
+            else{
+                Utils.font_small.setColor(Color.GREEN);
+                MainClass.combatScreen.healthChangeXPos = 255;
+                MainClass.combatScreen.healthChangeDesc = "+" + heroHeal;
+            }
+        }
+        //If we're showing updates immediately after the Enemy's turn
+        else if(turn == 'e'){
+            //Show the drop in Hero's health in red, beneath Hero's remaining life.
+            Utils.font_small.setColor(Color.RED);
+            MainClass.combatScreen.healthChangeXPos = 255;
+            MainClass.combatScreen.healthChangeDesc = "-" + enemyBaseDmg;
+        }
+    }
+
     public void exitCombat(){
         //Stop the combat music.
         Utils.combatScreenMusic.stop();
+
+        //Reset font_small color to white.
+        Utils.font_small.setColor(Color.WHITE);
 
         //Lock player input (within the CombatInputHandler) until next fight starts.
         MainClass.combatInputHandler.playerControl = false;
