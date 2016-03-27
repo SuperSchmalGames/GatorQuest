@@ -55,6 +55,12 @@ public class HeroCharacter {
     public double Math_buf;
     public double Focus_buf;
 
+    //Character stats used while in combat in order to boost damage dealt or reduce damage received.
+    public double Attack;
+    public int attack_dur;
+    public double Defense;
+    public int defense_dur;
+
     //Animators that take care of walking in each direction.
     public Animator leftWalk, rightWalk, upWalk, downWalk;
     public char lastDir;
@@ -87,6 +93,11 @@ public class HeroCharacter {
         Social_buf = 1.0;
         Math_buf = 1.0;
         Focus_buf = 1.0;
+
+        Attack = 1;
+        Defense = 1;
+        attack_dur = 0;
+        defense_dur = 0;
 
         //Create and initialize hero character's inventory.
         inventory = new HeroInventory();

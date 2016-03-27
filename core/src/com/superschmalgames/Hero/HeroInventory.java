@@ -36,9 +36,9 @@ public class HeroInventory {
         items.add(tmpA);
         tmpA = new ApparelItem("Suit and Tie", Utils.suit_and_tie_tex, "Social", 3.0, 1, "Get fancy. Career Showcase\nattire.");
         items.add(tmpA);
-        tmpC = new ConsumableItem("Redbull",Utils.redbull_tex,"GPA",0.8,3,5,true, "Ups your assignment destroying\npower.");
+        tmpC = new ConsumableItem("Redbull",Utils.redbull_tex,"Attack",0.5,3,5,true, "Ups your assignment destroying\npower.");
         items.add(tmpC);
-        tmpC = new ConsumableItem("Starbucks",Utils.starbucks_tex,"GPA",1.2,3,5,true, "Take less damage from your\nworkload.");
+        tmpC = new ConsumableItem("Starbucks",Utils.starbucks_tex,"Defense",-0.5,3,5,true, "Take less damage from your\nworkload.");
         items.add(tmpC);
         tmpC = new ConsumableItem("Chegg Login",Utils.chegg_tex,"GPA",1.2,3,5,true, "This site has tons of\nassignment answers.");
         items.add(tmpC);

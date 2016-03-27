@@ -31,7 +31,7 @@ public class CombatScreen implements Screen {
     public int healthChangeXPos;
 
     //Control variables for combat animations/transitions.
-    public boolean statusUpdate;
+    public boolean statusUpdate, buff;
     public double waitTime;
 
     public CombatScreen(){
@@ -116,8 +116,8 @@ public class CombatScreen implements Screen {
                 //Display hMoveDesc here
                 Utils.font_medsmall.draw(MainClass.batch, hMovDesc, 55, 223);
 
-                //We'll draw the post-hMove add/sub for health here.
-                if(waitTime < 1.5){
+                //We'll draw the post-hMove add/sub for health here, as long as we didn't just use a buff Item.
+                if(waitTime < 1.5 && !buff){
                     if(!statusUpdate){
                         statusUpdate = true;
                         MainClass.combatLogic.healthChanges('h');

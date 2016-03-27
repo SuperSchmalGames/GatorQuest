@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.Color;
 import java.util.Random;
 
 public class CombatLogic {
-    
+
     //Have a boolean or some variable in the hero class that tracks if we have a shield up, a defense boost,
     //etc. Using an item that activates one of those effects will simply switch the bool to true, then we can check it
     //here to see if we need to reduce/avoid damage that would've been done by the enemy. ACTUALLY, we can have just a
@@ -20,6 +20,8 @@ public class CombatLogic {
     //only show the health update if a health boost item was used.
     //
     //Add sound effects for scrolling menus, "combat" sounds, and play the victory song when win.
+    //
+    //Slide players forward/back when moves happen.
 
 
     //The base damage done by a move. Damage is calculated using hero stats.
@@ -61,6 +63,12 @@ public class CombatLogic {
         heroBaseDmg = 0;
         enemyBaseDmg = 0;
 
+        //Reset the buffs the Hero has.
+        MainClass.hero.Attack = 1;
+        MainClass.hero.Defense = 1;
+        MainClass.hero.attack_dur = 0;
+        MainClass.hero.defense_dur = 0;
+
         //Every time the combat is entered, reinitialize these control variables for the combat input handler.
         MainClass.combatInputHandler.rootMenu = true;
         MainClass.combatInputHandler.moveMenu = false;
@@ -99,6 +107,17 @@ public class CombatLogic {
         //Series of states to control combat logic flow.
         if(CURRENT_STATE == combat_state.PLAYER_TURN){
 
+            //Multiply base damage times our attack rating.
+            heroBaseDmg *= MainClass.hero.Attack;
+
+            //In each turn, decrement the remaining duration of the Attack buff. If it hits 0, reset the Attack rating.
+            if(MainClass.hero.attack_dur > 0){
+                MainClass.hero.attack_dur--;
+                if(MainClass.hero.attack_dur < 1){
+                    MainClass.hero.Attack = 1;
+                }
+            }
+
             //Set state to enemy turn.
             CURRENT_STATE = combat_state.ENEMY_TURN;
 
@@ -120,6 +139,17 @@ public class CombatLogic {
 
             //Use the random number to pick which move the Enemy will use.
             enemyBaseDmg = MainClass.hero.lastEnemy.attacks[eMoveIndex].use(heroStats);
+
+            //Multiply Enemy base damage times Hero's Defense rating.
+            enemyBaseDmg *= MainClass.hero.Defense;
+
+            //In each turn, decrement the remaining duration of the Defense buff. If it hits 0, reset the Defense rating.
+            if(MainClass.hero.defense_dur > 0){
+                MainClass.hero.defense_dur--;
+                if(MainClass.hero.defense_dur == 0){
+                    MainClass.hero.Defense = 1;
+                }
+            }
 
             //Set the enemy's combat string that will be displayed on the combat screen.
             MainClass.combatScreen.eMovDesc = "Enemy used " + MainClass.hero.lastEnemy.attacks[eMoveIndex].getMoveName() + "!";

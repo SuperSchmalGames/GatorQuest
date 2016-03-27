@@ -93,6 +93,7 @@ public class CombatInputHandler implements InputProcessor{
                 else if (keycode == Input.Keys.ENTER) {
                     //Let the combat logic handler know that we used a move, not an item.
                     MainClass.combatLogic.move = true;
+                    MainClass.combatScreen.buff = false;
 
                     //Pressing ENTER will choose to make the selected move.
                     selection = MainClass.hero.moves.getCurrentMove();
@@ -101,7 +102,7 @@ public class CombatInputHandler implements InputProcessor{
                     //contained in CombatLogic.
                     MainClass.combatLogic.heroBaseDmg = MainClass.hero.moves.attacks[selection].use(MainClass.combatLogic.heroStats);
 
-                    //check for weakness:
+                    //Check for weakness:
                     for(H_Move move : MainClass.hero.lastEnemy.weakness) {
                         if (MainClass.hero.moves.attacks[selection].getMoveName().equals(move.getMoveName())) {
                             crit_hit = true;
@@ -181,6 +182,27 @@ public class CombatInputHandler implements InputProcessor{
                         //Make the call to activate the Item we've selected.
                         MainClass.hero.inventory.items.get(selection).activateItem();
                         MainClass.combatLogic.heroHeal = MainClass.hero.inventory.items.get(selection).getBoostAmt();
+
+                        //If the Item used buffs Attack or Defense, change logic so health update doesn't show in combat screen
+                        if(MainClass.hero.inventory.items.get(selection).getStatBoosted().equals("Attack") ||
+                                MainClass.hero.inventory.items.get(selection).getStatBoosted().equals("Defense")){
+
+                            //Tell combatscreen tht we used a buff, so don't show a health-based item update during transition.
+                            MainClass.combatScreen.buff = true;
+
+                            //If buff was for Attack, set the proper buff duration.
+                            if(MainClass.hero.inventory.items.get(selection).getStatBoosted().equals("Attack")){
+                                //This is 4 since it's dec'd by 1 before we get our next attack. Gives 3 turns worth of boost.
+                                MainClass.hero.attack_dur += 4;
+                            }
+                            //If buff was for Defense, set the proper buff duration.
+                            else{
+                                MainClass.hero.defense_dur += 3;
+                            }
+                        }
+                        else{
+                            MainClass.combatScreen.buff = false;
+                        }
 
                         //Set the hero's move string that will be displayed on the combat screen.
                         MainClass.combatScreen.hMovDesc = MainClass.hero.name + " used a " + MainClass.hero.inventory.items.get(selection).getItemName() + "!";
