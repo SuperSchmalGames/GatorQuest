@@ -28,6 +28,15 @@ public class CombatInputHandler implements InputProcessor{
 
     @Override
     public boolean keyDown(int keycode) {
+        //If it's during transition, we can hit enter to move to the next thing being displayed.
+        if(MainClass.combatLogic.transition && (MainClass.combatScreen.waitTime/(MainClass.combatScreen.cont+1)) > 2){
+            if(keycode == Input.Keys.ENTER){
+                MainClass.combatScreen.cont++;
+                //MainClass.combatScreen.waitTime = 0;
+            }
+        }
+
+        //If it's the player's turn, not during transition, and we have control to pick a Move/Item
         if(playerControl) {
             if (rootMenu) {
                 if (keycode == Input.Keys.UP && index > 0) {

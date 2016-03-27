@@ -18,10 +18,8 @@ public class CombatLogic {
     //
     //Check a string in combatinputhandler to see if the item used boosts health or is a defense/shield item. In combatscreen,
     //only show the health update if a health boost item was used.
-    //
-    //Use a string to display the Enemy's winning String if the Hero loses the fight.
-    //
-    //Ensure that only creating a single combat screen won't break any of my previous logic.
+    
+
 
 
     //The base damage done by a move. Damage is calculated using hero stats.

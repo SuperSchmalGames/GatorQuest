@@ -76,6 +76,7 @@ public class Utils {
     public static final Sprite combatBackground = new Sprite(new Texture("visuals/backgrounds/cise_battle.png"));
     public static final Music combatScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Fight.ogg"));
     public static final Sprite combatBorder = new Sprite(new Texture("visuals/menus/combat_border.png"));
+    public static final Sprite transBorder = new Sprite(new Texture("visuals/menus/combat_border_noline.png"));
     public static final Sprite hpBack = new Sprite(new Texture("visuals/menus/hp_back.png"));
     public static final Sprite hpBack2 = new Sprite(new Texture("visuals/menus/hp_back.png"));
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
