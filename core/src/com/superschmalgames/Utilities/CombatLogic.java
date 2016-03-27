@@ -6,10 +6,10 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 
-public class CombatLogic {
+import java.util.Random;
 
-    //Need some logic to have NPC randomly pick a move in his arsenal.
-    //
+public class CombatLogic {
+    
     //Have a boolean or some variable in the hero class that tracks if we have a shield up, a defense boost,
     //etc. Using an item that activates one of those effects will simply switch the bool to true, then we can check it
     //here to see if we need to reduce/avoid damage that would've been done by the enemy. ACTUALLY, we can have just a
@@ -18,8 +18,8 @@ public class CombatLogic {
     //
     //Check a string in combatinputhandler to see if the item used boosts health or is a defense/shield item. In combatscreen,
     //only show the health update if a health boost item was used.
-    
-
+    //
+    //Add sound effects for scrolling menus, "combat" sounds, and play the victory song when win.
 
 
     //The base damage done by a move. Damage is calculated using hero stats.
@@ -27,6 +27,10 @@ public class CombatLogic {
 
     //Boolean used to determine when we're transitioning from one state to another.
     public boolean transition, hDone, eDone, hWin, eWin, move;
+
+    //Random number generator used for picking different Enemy moves.
+    public Random eMoveRand;
+    public int eMoveIndex;
 
     //Enumeration of possible combat states.
     public enum combat_state{
@@ -48,6 +52,7 @@ public class CombatLogic {
         Utils.menuIcon.setColor(Color.BLUE);
         Utils.menuIcon.setScale(3.0f);
 
+        //Initialize what the description string in the combat screen will say upon first entering combat.
         MainClass.combatScreen.description = "Select a move to \nuse against the enemy.";
 
         //Initialize the amount of life the hero and enemy have.
@@ -107,11 +112,17 @@ public class CombatLogic {
         }
         if(CURRENT_STATE == combat_state.ENEMY_TURN){
 
-            //Some logic for randomly picking moves.
-            enemyBaseDmg = MainClass.hero.lastEnemy.attacks[0].use(heroStats);
+            //Reseed the number generator to ensure possibility of different randoms every time.
+            eMoveRand = new Random();
+
+            //Generate random number within the range of Enemy's array of Moves.
+            eMoveIndex = eMoveRand.nextInt(MainClass.hero.lastEnemy.attacks.length);
+
+            //Use the random number to pick which move the Enemy will use.
+            enemyBaseDmg = MainClass.hero.lastEnemy.attacks[eMoveIndex].use(heroStats);
 
             //Set the enemy's combat string that will be displayed on the combat screen.
-            MainClass.combatScreen.eMovDesc = "Enemy used " + MainClass.hero.lastEnemy.attacks[0].getMoveName() + "!";
+            MainClass.combatScreen.eMovDesc = "Enemy used " + MainClass.hero.lastEnemy.attacks[eMoveIndex].getMoveName() + "!";
 
             //Set state back to player turn.
             CURRENT_STATE = combat_state.PLAYER_TURN;
@@ -134,7 +145,7 @@ public class CombatLogic {
                     "\n\nGatorbucks earned: " + MainClass.hero.lastEnemy.money;
 
             //Set the Enemy's ending combat script to their losing script.
-            MainClass.combatScreen.enemyScript = "Enemy: " + MainClass.hero.lastEnemy.lose_script;
+            MainClass.combatScreen.enemyScript.setText(Utils.font_medsmall, "Enemy: " + MainClass.hero.lastEnemy.lose_script, Color.BLUE, 950, 8, true);
 
             //Display a message that we won the battle.
             MainClass.combatScreen.eMovDesc = MainClass.hero.name + " won the battle!";
@@ -151,7 +162,7 @@ public class CombatLogic {
             MainClass.combatScreen.combatEndScript = "The stress of your low GPA makes you pass out!";
 
             //Set the Enemy's ending combat script to their winning script.
-            MainClass.combatScreen.enemyScript = "Enemy: " + MainClass.hero.lastEnemy.win_script;
+            MainClass.combatScreen.enemyScript.setText(Utils.font_medsmall, "Enemy: " + MainClass.hero.lastEnemy.win_script, Color.BLUE, 950, 8, true);
 
             //Signify the Enemy has won and we need to end combat.
             eWin = true;

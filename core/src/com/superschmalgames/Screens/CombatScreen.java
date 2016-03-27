@@ -21,10 +21,10 @@ public class CombatScreen implements Screen {
     public Viewport viewport;
 
     //Variables for displaying combat info to the screen.
-    public GlyphLayout rootList, moveDesc;
+    public GlyphLayout rootList, enemyScript;
     public int movePane, itemPane, p2index, temp, cont;
     public String description, heroLife, enemyLife;
-    public String hMovDesc, eMovDesc, enemyScript, combatEndScript;
+    public String hMovDesc, eMovDesc, combatEndScript;
 
     //Variables for displaying the red/green health change indicators during combat transitions.
     public String healthChangeDesc;
@@ -54,7 +54,7 @@ public class CombatScreen implements Screen {
         Utils.hpBack2.setSize(385,100);
         Utils.hpBack2.setPosition(630, 490);
         rootList = new GlyphLayout(Utils.font,"Moves\n\nItems",Color.BLUE,200,8,true);
-        moveDesc = new GlyphLayout(Utils.font_medsmall, "",Color.BLUE,200,8,true);
+        enemyScript = new GlyphLayout(Utils.font_medsmall, "",Color.BLUE,200,8,true);                            //TWEAK WIDTH HERE!   <==============================================================
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
