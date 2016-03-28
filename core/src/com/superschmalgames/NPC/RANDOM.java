@@ -16,6 +16,7 @@ import com.superschmalgames.Utilities.Utils;
 public class RANDOM extends ENEMY {
     public RANDOM(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a, H_Move[] b, int e, int m) {
         super(dir, s, win, lose, sprite, combat, x, y, h, a, b, e, m);
+        name = "T.A.";
     }
 
     public void combat() {
