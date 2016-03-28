@@ -138,7 +138,7 @@ public class CombatLogic {
             }
 
             //Set the enemy's combat string that will be displayed on the combat screen.
-            MainClass.combatScreen.eMovDesc = "Enemy used " + MainClass.hero.lastEnemy.attacks[eMoveIndex].getMoveName() + "!";
+            MainClass.combatScreen.eMovDesc = MainClass.hero.lastEnemy.name + " used " + MainClass.hero.lastEnemy.attacks[eMoveIndex].getMoveName() + "!";
 
             //Set state back to player turn.
             CURRENT_STATE = combat_state.PLAYER_TURN;

@@ -17,7 +17,8 @@ public class RANDOM extends ENEMY {
     public RANDOM(char dir, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a, H_Move[] b, int e, int m) {
         super(dir, s, win, lose, sprite, combat, x, y, h, a, b, e, m);
         name = "T.A.";
-        lose = "Congratz, it feels like you understand the concept now!";
+        lose_script = "Congratz, it feels like you understand the concept now!";
+        win_script = "Guess we are going to need to do some more studying.";
     }
 
     public void combat() {
