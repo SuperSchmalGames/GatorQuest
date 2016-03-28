@@ -40,16 +40,19 @@ public class CombatInputHandler implements InputProcessor{
         if(playerControl) {
             if (rootMenu) {
                 if (keycode == Input.Keys.UP && index > 0) {
+                    Utils.menuOptionSound.play();
                     Utils.menuIcon.translateY(65);
                     index--;
                     MainClass.combatScreen.description = "Select a move to \nuse against the enemy.";
                 }
                 else if (keycode == Input.Keys.DOWN && index < 1) {
+                    Utils.menuOptionSound.play();
                     Utils.menuIcon.translateY(-65);
                     index++;
                     MainClass.combatScreen.description = "Select a consumable \ninventory item to use.";
                 }
                 else if (keycode == Input.Keys.ENTER) {
+                    Utils.menuOptionSound.play();
                     if (index == 0) {
                         rootMenu = false;
                         moveMenu = true;
@@ -76,6 +79,7 @@ public class CombatInputHandler implements InputProcessor{
                         index--;
                         Utils.menuIcon.translateY(45);         //Translate menu icon up to previous Move in list.
                     }
+                    Utils.menuOptionSound.play();
                     MainClass.combatScreen.description = MainClass.hero.moves.attacks[MainClass.hero.moves.getCurrentMove()].getDescription();
                 }
                 else if (keycode == Input.Keys.DOWN && index < MainClass.hero.moves.getNum() - 1) {
@@ -88,6 +92,7 @@ public class CombatInputHandler implements InputProcessor{
                         index++;
                         Utils.menuIcon.translateY(-45);         //Translate menu icon down to next move in list.
                     }
+                    Utils.menuOptionSound.play();
                     MainClass.combatScreen.description = MainClass.hero.moves.attacks[MainClass.hero.moves.getCurrentMove()].getDescription();
                 }
                 else if (keycode == Input.Keys.ENTER) {
@@ -131,11 +136,15 @@ public class CombatInputHandler implements InputProcessor{
                     Utils.menuIcon.setPosition(50, 200);          //Reset the menu icon to the top of the list.
                     MainClass.combatScreen.description = "Select a move to \nuse against the enemy.";
 
+                    //Play the combat sound effect when the Hero makes a move.
+                    Utils.punchEffect1.play();
+
                     //Everything is now ready, so start this round of combat. Control will return to the player once
                     //the enemy has made a move.
                     MainClass.combatLogic.execCombat();
                 }
                 else if (keycode == Input.Keys.ESCAPE) {
+                    Utils.menuOptionSound.play();
                     moveMenu = false;                             //Reset the flags to root being true.
                     rootMenu = true;
                     MainClass.combatScreen.movePane = 0;         //Reset our move panes and index for next time.
@@ -155,6 +164,7 @@ public class CombatInputHandler implements InputProcessor{
                         index--;
                         Utils.menuIcon.translateY(45);          //Translate menu icon down to next Item in list.
                     }
+                    Utils.menuOptionSound.play();
                     MainClass.combatScreen.description = MainClass.hero.inventory.items.get(MainClass.hero.inventory.getCurrentItemIndex()).getItemDes();       //!!!!!!!Add item descriptions!!!!!!!!!!!!!!!!
                 }
                 else if (keycode == Input.Keys.DOWN && index < (MainClass.hero.inventory.getNum('c') - 1)) {
@@ -167,6 +177,7 @@ public class CombatInputHandler implements InputProcessor{
                         index++;
                         Utils.menuIcon.translateY(-45);         //Translate menu icon down to next Item in list.
                     }
+                    Utils.menuOptionSound.play();
                     MainClass.combatScreen.description = MainClass.hero.inventory.items.get(MainClass.hero.inventory.getCurrentItemIndex()).getItemDes();       //!!!!!!!Add item descriptions!!!!!!!!!!!!!!!!
                 }
                 else if (keycode == Input.Keys.ENTER) {
@@ -193,11 +204,11 @@ public class CombatInputHandler implements InputProcessor{
                             //If buff was for Attack, set the proper buff duration.
                             if(MainClass.hero.inventory.items.get(selection).getStatBoosted().equals("Attack")){
                                 //This is 4 since it's dec'd by 1 before we get our next attack. Gives 3 turns worth of boost.
-                                MainClass.hero.attack_dur += 4;
+                                MainClass.hero.attack_dur += (MainClass.hero.inventory.items.get(selection).getBoostDur()+1);
                             }
                             //If buff was for Defense, set the proper buff duration.
                             else{
-                                MainClass.hero.defense_dur += 3;
+                                MainClass.hero.defense_dur += MainClass.hero.inventory.items.get(selection).getBoostDur();
                             }
                         }
                         else{
@@ -221,6 +232,7 @@ public class CombatInputHandler implements InputProcessor{
                     }
                 }
                 else if (keycode == Input.Keys.ESCAPE) {
+                    Utils.menuOptionSound.play();
                     itemMenu = false;
                     rootMenu = true;
                     MainClass.combatScreen.itemPane = 0;

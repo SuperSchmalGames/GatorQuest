@@ -10,18 +10,9 @@ import java.util.Random;
 
 public class CombatLogic {
 
-    //Have a boolean or some variable in the hero class that tracks if we have a shield up, a defense boost,
-    //etc. Using an item that activates one of those effects will simply switch the bool to true, then we can check it
-    //here to see if we need to reduce/avoid damage that would've been done by the enemy. ACTUALLY, we can have just a
-    //double that acts as a multiplier for incoming damage. It's normally set to 1.0, but damage reducers will sub like
-    //0.5 from that, and shields will subtract the full 1.0 for some number of turns.
-    //
-    //Check a string in combatinputhandler to see if the item used boosts health or is a defense/shield item. In combatscreen,
-    //only show the health update if a health boost item was used.
-    //
-    //Add sound effects for scrolling menus, "combat" sounds, and play the victory song when win.
-    //
     //Slide players forward/back when moves happen.
+    //
+    //Give enemies "names' (TA, Professor, Individual Boss name)
 
 
     //The base damage done by a move. Damage is calculated using hero stats.

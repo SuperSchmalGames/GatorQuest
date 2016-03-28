@@ -47,6 +47,10 @@ public class ConsumableItem implements InventoryItem {
                 //If the consumable item boosts the GPA over 4.0, cap it at 4.0.
                 MainClass.hero.GPA = 4.0;
             }
+            if(MainClass.hero.Defense < 0){
+                //If the Defense rating drops below 0, incoming attacks will actually heal us. Don't allow that.
+                MainClass.hero.Defense = 0;
+            }
         }
         else{
             Utils.errTone.play();
@@ -93,6 +97,9 @@ public class ConsumableItem implements InventoryItem {
     public double getBoostAmt() {
         return boostAmt;
     }
+
+    @Override
+    public int getBoostDur(){return boostDuration;}
 
     @Override
     public char getItemType() {return itemType;}

@@ -40,9 +40,9 @@ public class HeroInventory {
         items.add(tmpC);
         tmpC = new ConsumableItem("Starbucks",Utils.starbucks_tex,"Defense",-0.5,3,5,true, "Take less damage from your\nworkload.");
         items.add(tmpC);
-        tmpC = new ConsumableItem("Chegg Login",Utils.chegg_tex,"GPA",1.2,3,5,true, "This site has tons of\nassignment answers.");
+        tmpC = new ConsumableItem("Chegg Login",Utils.chegg_tex,"GPA",2.0,3,5,true, "This site has tons of\nassignment answers. Sure\nto help your GPA!");
         items.add(tmpC);
-        tmpC = new ConsumableItem("TutorZone Pkt",Utils.tutoringzone_tex,"GPA",1.2,3,5,true, "Get studying! Helps you ace\nassignments.");
+        tmpC = new ConsumableItem("TutorZone Pkt",Utils.tutoringzone_tex,"GPA",1.0,3,5,true, "Get studying! Helps you ace\nassignments. Should boost GPA.");
         items.add(tmpC);
         tmpE = new EquipableItem("AVR Dragon", Utils.avr_dragon_tex, "Hardware", 3.0, 1, "A fancy board suitable for uP.");
         items.add(tmpE);

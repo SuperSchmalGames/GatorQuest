@@ -143,8 +143,16 @@ public class CombatScreen implements Screen {
                     statusUpdate = false;
 
                     if(MainClass.combatLogic.hWin) {
+                        //We've won, so set eDone false so we skip the code that displays the Enemy's turn.
                         MainClass.combatLogic.eDone = false;
                         cont = 0;
+                        //Stop the combat music and play the victory music.
+                        Utils.combatScreenMusic.stop();
+                        Utils.victoryMusic.play();
+                    }
+                    else{
+                        //Play the combat sound effect that goes with the Enemy's attack.
+                        Utils.punchEffect2.play();
                     }
                 }
             }

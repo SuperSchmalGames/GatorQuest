@@ -89,6 +89,8 @@ public class EquipableItem implements InventoryItem {
         return boostAmt;
     }
 
+    @Override
+    public int getBoostDur(){return 0;}
 
     @Override
     public char getItemType() { return itemType; }
