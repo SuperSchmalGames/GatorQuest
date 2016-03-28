@@ -8,6 +8,7 @@ import com.superschmalgames.Inventory.EquipableItem;
 import com.superschmalgames.NPC.ENEMY;
 import com.superschmalgames.NPC.NPC;
 import com.superschmalgames.Utilities.Animator;
+import com.superschmalgames.Utilities.MainClass;
 
 import java.util.Random;
 
@@ -109,7 +110,7 @@ public class HeroCharacter {
         gatorBucks = 10000;
         experience = 0;
         lvl = 1;
-        expCap = 100;
+        expCap = 10;
 
         canMove = true;
     }
@@ -196,70 +197,72 @@ public class HeroCharacter {
             level();
     }
 
+    private void mult_level() {
+        if (experience >= expCap)
+            level();
+    }
+
     //needs to be finished
     public void level() {
+        boolean temp = true;
         lvl++;
-        experience = 0;
-        //make leveling nonlinear, or comment out for linear leveling
-        expCap += 10*lvl;
-        //need a way to select skill to level;
-        Random rand = new Random();
-        int n = rand.nextInt(5) + 1;
-        if(n==5)
-        {
-            if(Software < STAT_CAP) {
-                Software += 1;
-                Software_buf+=1;
+        experience -= expCap;
+        Random rand;
+        while(temp) {
+            rand = new Random();
+            switch (rand.nextInt(7)) {
+                case 6:
+                    if(Software < STAT_CAP) {
+                        Software++;
+                        Software_buf++;
+                        temp = false;
+                    }
+                    break;
+                case 5:
+                    if(Hardware < STAT_CAP) {
+                        Hardware++;
+                        Hardware_buf++;
+                        temp = false;
+                    }
+                    break;
+                case 4:
+                    if(Writing < STAT_CAP) {
+                        Writing++;
+                        Writing_buf++;
+                        temp = false;
+                    }
+                    break;
+                case 3:
+                    if(Endurance < STAT_CAP) {
+                        Endurance++;
+                        Endurance_buf++;
+                        temp = false;
+                    }
+                    break;
+                case 2:
+                    if(Social < STAT_CAP) {
+                        Social++;
+                        Social_buf++;
+                        temp = false;
+                    }
+                    break;
+                case 1:
+                    if(Math < STAT_CAP) {
+                        Math++;
+                        Math_buf++;
+                        temp = false;
+                    }
+                    break;
+                case 0:
+                    if(Focus < STAT_CAP) {
+                        Focus++;
+                        Focus_buf++;
+                        temp = false;
+                    }
+                    break;
             }
         }
-        n = rand.nextInt(5) + 1;
-        if(n==5)
-        {
-            if(Hardware < STAT_CAP) {
-                Hardware += 1;
-                Hardware_buf+=1;
-            }
-        }
-        n = rand.nextInt(5) + 1;
-        if(n==5)
-        {
-            if(Writing < STAT_CAP) {
-                Writing_buf+=1;
-                Writing += 1;
-            }
-        }
-        n = rand.nextInt(5) + 1;
-        if(n==5)
-        {
-            if(Endurance < STAT_CAP) {
-                Endurance += 1;
-                Endurance_buf += 1;
-            }
-        }
-        n = rand.nextInt(5) + 1;
-        if(n==5)
-        {
-            if(Social < STAT_CAP) {
-                Social += 1;
-                Social_buf += 1;
-            }
-        }
-        n = rand.nextInt(5) + 1;
-        if(n==5)
-        {
-            if(Math < STAT_CAP) {
-                Math += 1;
-                Math_buf += 1;
-            }
-        }
-        n = rand.nextInt(5) + 1;
-        if(n==5)
-        {
-            if(Focus < STAT_CAP) {
-                Focus += 1;
-                Focus_buf += 1;
-            }
-        }
+        mult_level();
     }
 
 }

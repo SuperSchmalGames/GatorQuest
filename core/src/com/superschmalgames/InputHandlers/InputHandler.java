@@ -7,6 +7,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.sun.javaws.Main;
 import com.superschmalgames.Inventory.ApparelItem;
 import com.superschmalgames.Inventory.EquipableItem;
 import com.superschmalgames.Screens.GameScreen;
@@ -106,6 +107,32 @@ public class InputHandler implements InputProcessor {
                             for (int i = 0; i < Utils.Bookstore_enemies.length; i++) {
                                 Utils.Bookstore_enemies[i].triggered = data.bookstore[i];
                             }
+                            switch(data.map) {
+                                    //Bookstore
+                                case 6:
+                                    MainClass.gameScreen.setMap(Utils.bookstore,data.cam_x,data.cam_y,data.map);
+                                    break;
+                                //Dorm
+                                case 5:
+                                    MainClass.gameScreen.setMap(Utils.dorm,data.cam_x,data.cam_y,data.map);
+                                    break;
+                                //Marston
+                                case 4:
+                                    MainClass.gameScreen.setMap(Utils.marston,data.cam_x,data.cam_y,data.map);
+                                    break;
+                                //NEB
+                                case 3:
+                                    MainClass.gameScreen.setMap(Utils.neb,data.cam_x,data.cam_y,data.map);
+                                    break;
+                                //CISE
+                                case 2:
+                                    MainClass.gameScreen.setMap(Utils.cise,data.cam_x,data.cam_y,data.map);
+                                    break;
+                                //Turlington
+                                case 1:
+                                    MainClass.gameScreen.setMap(Utils.turlington,data.cam_x,data.cam_y,data.map);
+                                    break;
+                            }
                             Utils.titleScreenMusic.stop();
                             MainClass.hero.initAnimations();
 
@@ -113,7 +140,7 @@ public class InputHandler implements InputProcessor {
                             Utils.avatarScreenSelectionSound.play(0.4f);
 
                             //Set game screen to be the main game screen.
-                            MainClass.gameScreen = new GameScreen();
+                            //MainClass.gameScreen = new GameScreen();
                             ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
                             MainClass.avatarScreen.dispose();
                         } catch (Exception e) {
@@ -156,7 +183,7 @@ public class InputHandler implements InputProcessor {
                     Utils.avatarScreenSelectionSound.play(0.4f);
 
                     //Set game screen to be the main game screen.
-                    MainClass.gameScreen = new GameScreen();
+                    //MainClass.gameScreen = new GameScreen();
                     ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
                     MainClass.avatarScreen.dispose();
                 }
@@ -254,6 +281,9 @@ public class InputHandler implements InputProcessor {
                     for (int i = 0; i < Utils.Bookstore_enemies.length; i++) {
                         data.bookstore[i] = Utils.Bookstore_enemies[i].triggered;
                     }
+                    data.cam_x = (int)MainClass.gameScreen.camera.position.x;
+                    data.cam_y = (int)MainClass.gameScreen.camera.position.y;
+                    data.map = MainClass.gameScreen.location;
                     try {
                         DataManager.save(data, Utils.savefile);
                         System.out.print("Save successful");
