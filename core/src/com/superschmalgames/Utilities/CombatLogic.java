@@ -10,11 +10,6 @@ import java.util.Random;
 
 public class CombatLogic {
 
-    //Slide players forward/back when moves happen.
-    //
-    //Give enemies "names' (TA, Professor, Individual Boss name)
-
-
     //The base damage done by a move. Damage is calculated using hero stats.
     public double heroBaseDmg, enemyBaseDmg, heroHeal;
 

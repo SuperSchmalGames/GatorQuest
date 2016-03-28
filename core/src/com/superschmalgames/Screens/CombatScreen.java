@@ -25,6 +25,7 @@ public class CombatScreen implements Screen {
     public int movePane, itemPane, p2index, temp, cont;
     public String description, heroLife, enemyLife;
     public String hMovDesc, eMovDesc, combatEndScript;
+    public boolean moveOut;
 
     //Variables for displaying the red/green health change indicators during combat transitions.
     public String healthChangeDesc;
@@ -54,7 +55,7 @@ public class CombatScreen implements Screen {
         Utils.hpBack2.setSize(385,100);
         Utils.hpBack2.setPosition(630, 490);
         rootList = new GlyphLayout(Utils.font,"Moves\n\nItems",Color.BLUE,200,8,true);
-        enemyScript = new GlyphLayout(Utils.font_medsmall, "",Color.BLUE,200,8,true);                            //TWEAK WIDTH HERE!   <==============================================================
+        enemyScript = new GlyphLayout(Utils.font_medsmall, "",Color.BLUE,200,8,true);
 
         //Initialize the camera. Set the camera dimensions equal to our game screen height and width.
         camera = new OrthographicCamera();
@@ -69,6 +70,7 @@ public class CombatScreen implements Screen {
         Utils.combatScreenMusic.play();
 
         //Reinitialize some combat screen transition control variables.
+        moveOut = false;
         waitTime = 0;
         statusUpdate = false;
         cont = 0;
@@ -116,6 +118,19 @@ public class CombatScreen implements Screen {
                 //Display hMoveDesc here
                 Utils.font_medsmall.draw(MainClass.batch, hMovDesc, 55, 223);
 
+                //Shift the Hero over and then back to give him a basic fight animation
+                if(!moveOut){
+                    MainClass.hero.combatSprite.translateX(250*delta);
+                    if(MainClass.hero.combatSprite.getX() >= 90){
+                        moveOut = true;
+                    }
+                }
+                else{
+                    if(MainClass.hero.combatSprite.getX() > 40){
+                        MainClass.hero.combatSprite.translateX(-250*delta);
+                    }
+                }
+
                 //We'll draw the post-hMove add/sub for health here, as long as we didn't just use a buff Item.
                 if(waitTime < 1.5 && !buff){
                     if(!statusUpdate){
@@ -140,6 +155,7 @@ public class CombatScreen implements Screen {
                 if(waitTime >= 3) {
                     MainClass.combatLogic.hDone = false;
                     waitTime = 0;
+                    moveOut = false;
                     statusUpdate = false;
 
                     if(MainClass.combatLogic.hWin) {
@@ -161,6 +177,19 @@ public class CombatScreen implements Screen {
 
                 //Display the eMovDesc here.
                 Utils.font_medsmall.draw(MainClass.batch, eMovDesc, 55, 223);
+
+                //Shift the Enemy over and then back to give him a basic fight animation
+                if(!moveOut){
+                    MainClass.hero.lastEnemy.combatSprite.translateX(-250*delta);
+                    if(MainClass.hero.lastEnemy.combatSprite.getX() <= 890){
+                        moveOut = true;
+                    }
+                }
+                else{
+                    if(MainClass.hero.lastEnemy.combatSprite.getX() < 940){
+                        MainClass.hero.lastEnemy.combatSprite.translateX(250*delta);
+                    }
+                }
 
                 //We'll draw the post-hMove add/sub for health here.
                 if(waitTime < 1.5){
@@ -185,6 +214,7 @@ public class CombatScreen implements Screen {
                 if(waitTime >= 3) {
                     MainClass.combatLogic.eDone = false;
                     waitTime = 0;
+                    moveOut = false;
                     statusUpdate = false;
                     Utils.font_small.setColor(Color.BLUE);
 

@@ -9,7 +9,6 @@ import com.superschmalgames.Hero.H_Move;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
-
 public class CombatInputHandler implements InputProcessor{
 
     //Bools to tell which combat sub-menu we're currently in.
