@@ -57,6 +57,7 @@ public class MainClass extends Game {
 		titleScreen = new TitleScreen();
 		heroScreen = new HeroScreen();
 		inventoryScreen = new InventoryScreen();
+		gameScreen = new GameScreen();
 
 		//Set the screen as the title screen.
 		this.setScreen(titleScreen);
