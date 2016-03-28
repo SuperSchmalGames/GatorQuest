@@ -87,6 +87,9 @@ public class ApparelItem implements InventoryItem {
     }
 
     @Override
+    public int getBoostDur(){return 0;}
+
+    @Override
     public char getItemType() { return itemType; }
 
     @Override

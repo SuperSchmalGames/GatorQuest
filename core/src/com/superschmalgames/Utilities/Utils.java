@@ -75,11 +75,13 @@ public class Utils {
     /////////////////////////////////////COMBAT SCREEN/////////////////////////////////////////////////////////////////////////
     public static final Sprite combatBackground = new Sprite(new Texture("visuals/backgrounds/cise_battle.png"));
     public static final Music combatScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Fight.ogg"));
+    public static final Music victoryMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/battle_victory.mp3"));
+    public static final Sound punchEffect1 = Gdx.audio.newSound(Gdx.files.internal("sound/effects/punch1.mp3"));
+    public static final Sound punchEffect2 = Gdx.audio.newSound(Gdx.files.internal("sound/effects/punch2.mp3"));
     public static final Sprite combatBorder = new Sprite(new Texture("visuals/menus/combat_border.png"));
+    public static final Sprite transBorder = new Sprite(new Texture("visuals/menus/combat_border_noline.png"));
     public static final Sprite hpBack = new Sprite(new Texture("visuals/menus/hp_back.png"));
     public static final Sprite hpBack2 = new Sprite(new Texture("visuals/menus/hp_back.png"));
-    public static final Sprite tempHero = new Sprite(new Texture("visuals/professors/Horton/horton_r.png"));
-    public static final Sprite tempNPC = new Sprite(new Texture("visuals/professors/Horton/horton_l.png"));
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////GAME SCREEN////////////////////////////////////////////////////////////////////////////
@@ -347,7 +349,7 @@ public class Utils {
     //public static final String worldRUsed = "I can do this!";
     //public static final String worldRRInitial = "I heard that some professors are suckers for particular types of moves. Do you have to take Calc 2?";
     //public static final String worldRRYes = "Ryan taught you how to utilize Extra Credit";
-    //public static final String worldRRNo = "Ah, you're lucky.";
+    //public static final String worldRRNo = "Ah, you\'re lucky.";
     //public static final String worldRRUsed = "Good luck with Calc 2.";
     public static final String worldS = "I heard that there are kids who will tutor you in Marston library, but some of them charge way too many Gator Bucks for me...";
     public static final String worldT = "TA’s and professors will challenge you if you walk around in one of the class buildings!";
@@ -359,7 +361,7 @@ public class Utils {
     //public static final String worldWInitial = "Look at what I just learned how to do!?";
     //public static final String worldWYes = "Wanda taught you how to use F2 Solve";
     //public static final String worldWNo = "Fine. Rude.";
-    //public static final String worldWUsed = "Isn't that a cool trick?";
+    //public static final String worldWUsed = "Isn\'t that a cool trick?";
     public static final String worldX = "I’m overwhelmed with all of these assignments, and I don’t think all of this coffee is helping my anxiety!";
     //public static final String worldYInitial = "Oh, you’re an engineer? Maybe you would have some use for this? Would you like to buy my old TI-89? I’ll sell it to you for 80 Gator Bucks.";
     //public static final String worldYYesInsfFunds = "You need more money.";
@@ -460,18 +462,18 @@ public class Utils {
     //public static final String marstonKUnused = "Oh, you’re a computer engineer? You can have this old thing. I switched my major to Business, so I won’t be needing it… Avatar receives a Soldering Iron";
     //public static final String marstonKUsed = "Enjoy that soldering iron. Try not to burn yourself.";
     //public static final String marstonLUnused = "I’m getting my PhD in mathematics at UF, so I can tutor you if you want. It’s $300 per session.";
-    //public static final String marstonLYesInsfFunds = "Sorry, you don't have the money...";
+    //public static final String marstonLYesInsfFunds = "Sorry, you don\'t have the money...";
     //public static final String marstonLNo = "Let me know if you change your mind.";
-    //public static final String marstonLSuffFunds = "Alright, let's get started. Your Math Skills increase by 1 and you pay 300GB.";
+    //public static final String marstonLSuffFunds = "Alright, let\'s get started. Your Math Skills increase by 1 and you pay 300GB.";
     //public static final String marstonLUsed = "I hope that helped.";
     //public static final String marstonMUnused = "I need someone with a Software Skill of at least 4 to help me with this Java 1 project! Will you help me?";
-    //public static final String marstonMYesInsfSkill = "I don't think you have the skills required...";
-    //public static final String marstonMNo = "I'll have tp figure it out on my own.";
+    //public static final String marstonMYesInsfSkill = "I don\'t think you have the skills required...";
+    //public static final String marstonMNo = "I\'ll have tp figure it out on my own.";
     //public static final String marstonMYesSuffSkill = "Thanks! It compiled this time. You eared 200 GB.";
     //public static final String marstonMUsed = "Thanks for the help!";
     //public static final String marstonNUnused = "Hi! Would you like a class ring to value your time here at UF forever? Each ring contains a beautiful gem and it will be a constant reminder of your amazing adventures here. Would you like to buy one? A class ring costs 300.";
-    //public static final String marstonNYesInsfFunds = "Sorry, you'll need more money than that.";
-    //public static final String marstonNNo = "Thanks! Here's your ring. Received Class Ring.";
+    //public static final String marstonNYesInsfFunds = "Sorry, you\'ll need more money than that.";
+    //public static final String marstonNNo = "Thanks! Here\'s your ring. Received Class Ring.";
     //public static final String marstonNSuffFunds = "Maybe next time?";
     //public static final String marstonNUsed = "Enjoy your ring!";
     //public static final String marstonOUnused = "Do you want to buy my USB Blaster? I’m selling it for only 50GB. That’s a steal!";
@@ -529,8 +531,8 @@ public class Utils {
     public static final String neb47 = "I love the smoothies from Little Hall Express. They’re so tasty!";
     public static final String neb48 = "I’m learning to enjoy red wine now that I’m finally 21. It seems like such a classy drink to me.";
     public static final String neb49 = "I was up all night studying for a test... Could really use some rest.";
-    public static final String neb50 = "I'm so tired of having to repeat classes... It's getting to pricey.";
-    public static final String neb51 = "Oh crap, I'm late turning in this assignment and my computer won't connect to the school's wifi.";
+    public static final String neb50 = "I\'m so tired of having to repeat classes... It\'s getting to pricey.";
+    public static final String neb51 = "Oh crap, I\'m late turning in this assignment and my computer won\'t connect to the school\'s wifi.";
     public static final String neb52 = "I tried the sushi at the store here... It was a mistake.";
     public static final String neb53 = "Have you ever seen the senior design presentations done here?";
     public static final String neb54 = "Balancing school and work is getting to be too tiring.";
@@ -639,7 +641,7 @@ public class Utils {
             "Your next class will be Digital Logic with\nDr. Gugel. Go meet him\nin the NEB",
             "Your next class will be Operating Systems with\nDr. Small. Go meet him\nin Turlington",
             "Your next class will be Senior Design with\nDr. Schmalz. Go meet him\nin the CISE",
-            "You've completed all your classes. \n\nCongrats, you're a Gator Alum!"
+            "You\'ve completed all your classes. \n\nCongrats, you\'re a Gator Alum!"
     };
     //////////////////////////////////////END ADVISING//////////////////////////////////////////////////////////////////////
 
@@ -944,7 +946,7 @@ public class Utils {
             new NPC('u',dormC,"visuals/sprite_sheets/sprite_walk_u14.png", 20*MAP_RESOLUTION,35*MAP_RESOLUTION),
             new NPC('r', dormD, "visuals/sprite_sheets/sprite_walk_r6.png", 6*MAP_RESOLUTION,42*MAP_RESOLUTION),
             new NPC('d',worldX,"visuals/sprite_sheets/sprite_walk_d4.png", 24*MAP_RESOLUTION,41*MAP_RESOLUTION),
-            new REST('d',"You've rested in bed.\nGPA has been restored.", "visuals/sprite_sheets/RestingNPC.png",2*MAP_RESOLUTION,(59-24)*MAP_RESOLUTION) //10
+            new REST('d',"You\'ve rested in bed.\nGPA has been restored.", "visuals/sprite_sheets/RestingNPC.png",2*MAP_RESOLUTION,(59-24)*MAP_RESOLUTION) //10
     };
     //========================================================================================
     //========================================Marston=========================================
@@ -1096,6 +1098,7 @@ public class Utils {
 
         //////////////////////////////////COMBAT SCREEN////////////////////////////////////////////////////////////////////////
         combatScreenMusic.setLooping(true);
+        victoryMusic.setLooping(false);
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /////////////////////////////////GAME SCREEN///////////////////////////////////////////////////////////////////////////

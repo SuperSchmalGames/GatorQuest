@@ -349,7 +349,7 @@ public class InputHandler implements InputProcessor {
                         currentItemIndex = MainClass.hero.inventory.getCurrentItemIndex();
                         MainClass.inventoryScreen.invPanel = "Apparel";
                     }
-                } else if (keycode == Input.Keys.I) {
+                } else if (keycode == Input.Keys.I || keycode == Input.Keys.ESCAPE) {
                     //Play the sound effect when player pushes the button.
                     Utils.inventoryScreenSelectionSound.play();
                     //Set the gamescreen to be the inventory game screen.
@@ -462,7 +462,7 @@ public class InputHandler implements InputProcessor {
                         MainClass.heroScreen.heroPanel = "Moves";
                     }
                 }
-                else if (keycode == Input.Keys.H) {
+                else if (keycode == Input.Keys.H || keycode == Input.Keys.ESCAPE) {
                     //Play the sound effect when player pushes the button.
                     Utils.inventoryScreenSelectionSound.play();
                     //Set the gamescreen to be the inventory game screen.

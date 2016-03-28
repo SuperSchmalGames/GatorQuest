@@ -1,4 +1,4 @@
-## Java
+## Java*.save
 
 *.class
 *.war
@@ -62,3 +62,4 @@ build/
 
 ## OS Specific
 .DS_Store
+*.save

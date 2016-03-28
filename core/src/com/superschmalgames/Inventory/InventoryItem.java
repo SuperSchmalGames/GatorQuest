@@ -23,6 +23,8 @@ public interface InventoryItem {
 
     double getBoostAmt();
 
+    int getBoostDur();
+
     String getItemDes();
 
     char getItemType();

@@ -113,7 +113,7 @@ public class ShopInputHandler implements InputProcessor {
                 }
             }
         }
-        else if(keycode == Input.Keys.Q){
+        else if(keycode == Input.Keys.Q || keycode == Input.Keys.ESCAPE){
             MainClass.gameScreen.dial = false;
             MainClass.gameScreen.store = false;
             Gdx.input.setInputProcessor(MainClass.inputHandler);
