@@ -40,7 +40,7 @@ public class GameScreen implements Screen {
     //Flags for handling character movement.
     public boolean lWalk, rWalk, uWalk, dWalk;
     public boolean dial, newDial, store, advising;
-    private boolean attackable,safe;
+    private boolean attackable, safe;
     private int recently_attacked;
     Random random = new Random();
 

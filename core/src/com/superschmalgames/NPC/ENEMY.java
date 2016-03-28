@@ -20,6 +20,7 @@ public class ENEMY extends NPC {
     public H_Move[] weakness;
     public String win_script;
     public String lose_script;
+    public String name;
     public int enemyLife, exp, money, origLife;
     //Sprite that's shown for the hero during combat.
     public Sprite combatSprite;
@@ -35,6 +36,7 @@ public class ENEMY extends NPC {
         exp = e;
         money = m;
         combatSprite = new Sprite(new Texture(combat));
+        name = "Professor";
     }
 
     public void initiate(){
