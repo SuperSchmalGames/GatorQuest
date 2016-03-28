@@ -161,7 +161,7 @@ public class CombatLogic {
                     "\n\nGatorbucks earned: " + MainClass.hero.lastEnemy.money;
 
             //Set the Enemy's ending combat script to their losing script.
-            MainClass.combatScreen.enemyScript.setText(Utils.font_medsmall, "Enemy: " + MainClass.hero.lastEnemy.lose_script, Color.BLUE, 950, 8, true);
+            MainClass.combatScreen.enemyScript.setText(Utils.font_medsmall, MainClass.hero.lastEnemy.name + ": " + MainClass.hero.lastEnemy.lose_script, Color.BLUE, 950, 8, true);
 
             //Display a message that we won the battle.
             MainClass.combatScreen.eMovDesc = MainClass.hero.name + " won the battle!";
@@ -178,7 +178,7 @@ public class CombatLogic {
             MainClass.combatScreen.combatEndScript = "The stress of your low GPA makes you pass out!";
 
             //Set the Enemy's ending combat script to their winning script.
-            MainClass.combatScreen.enemyScript.setText(Utils.font_medsmall, "Enemy: " + MainClass.hero.lastEnemy.win_script, Color.BLUE, 950, 8, true);
+            MainClass.combatScreen.enemyScript.setText(Utils.font_medsmall, MainClass.hero.lastEnemy.name + ": " + MainClass.hero.lastEnemy.win_script, Color.BLUE, 950, 8, true);
 
             //Signify the Enemy has won and we need to end combat.
             eWin = true;
