@@ -25,7 +25,7 @@ import com.superschmalgames.Utilities.Utils;
 public class GameScreen implements Screen {
 
     //The camera through which we "see" the game world.
-    OrthographicCamera camera;
+    public OrthographicCamera camera;
     private Viewport viewport;
     NPC[] enemies;
     ENEMY[] randoms;
@@ -40,9 +40,11 @@ public class GameScreen implements Screen {
     //Flags for handling character movement.
     public boolean lWalk, rWalk, uWalk, dWalk;
     public boolean dial, newDial, store, advising;
-    private boolean attackable,safe;
+    private boolean attackable, safe;
     private int recently_attacked;
     Random random = new Random();
+    public int location;
+    public boolean load;
 
     //Declare window for dialogue popups
     public CharacterDialogue window;
@@ -65,14 +67,15 @@ public class GameScreen implements Screen {
         camera.setToOrtho(false, Utils.GAME_SCREEN_WIDTH, Utils.GAME_SCREEN_HEIGHT);
 
         //Initialize the map
-        setMap(Utils.dorm, Utils.start_x, Utils.start_y, 5);
+        if (!load)
+            setMap(Utils.dorm, Utils.start_x, Utils.start_y, 5);
     }
 
     //made a separate method so that the map can be changed and starting coordinates
     //can be provided. This allows the gamescreen to handle all of the dungeons without
 
     //making separate screens.
-    public void setMap(TiledMap tiledmap, int x, int y, int location) {
+    public void setMap(TiledMap tiledmap, int x, int y, int loc) {
         camera.position.set(x,y,0);
         tiledmaprenderer = new OrthogonalTiledMapRenderer(tiledmap);
         collision = (TiledMapTileLayer) tiledmap.getLayers().get("Collision");
@@ -84,6 +87,7 @@ public class GameScreen implements Screen {
         background[2] = 2;
         //foreground layer
         foreground[0] = 3;
+        location = loc;
         switch(location) {
             //Bookstore
             case 6:
@@ -267,8 +271,8 @@ public class GameScreen implements Screen {
                 }
                 if(recently_attacked != 0)
                     recently_attacked--;
-                if(attackable && recently_attacked == 0){}
-                    //randomEncounter();
+                if(attackable && recently_attacked == 0)
+                    randomEncounter();
             }
             else if(rWalk &&
                     !collision.getCell((int)(camera.position.x+MainClass.hero.width/2+Utils.MOVE_DIST)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -282,8 +286,8 @@ public class GameScreen implements Screen {
                 }
                 if(recently_attacked != 0)
                     recently_attacked--;
-                if(attackable && recently_attacked == 0){}
-                    //randomEncounter();
+                if(attackable && recently_attacked == 0)
+                    randomEncounter();
             }
             else if(uWalk &&
                     !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y+Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -303,8 +307,8 @@ public class GameScreen implements Screen {
                 }
                 if(recently_attacked != 0)
                     recently_attacked--;
-                if(attackable && recently_attacked == 0){}
-                    //randomEncounter();
+                if(attackable && recently_attacked == 0)
+                    randomEncounter();
             }
             else if(dWalk &&
                     !collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2-Utils.MOVE_DIST)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
@@ -324,8 +328,8 @@ public class GameScreen implements Screen {
                 }
                 if(recently_attacked != 0)
                     recently_attacked--;
-                if(attackable && recently_attacked == 0){}
-                    //randomEncounter();
+                if(attackable && recently_attacked == 0)
+                    randomEncounter();
             }
             else MainClass.hero.standAnimation();
             MainClass.hero.setPosition(camera.position.x, camera.position.y);

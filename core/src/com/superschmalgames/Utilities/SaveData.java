@@ -43,4 +43,9 @@ public class SaveData implements java.io.Serializable {
     public boolean[] dorm = new boolean[11];
     public boolean[] marston = new boolean[14];
     public boolean[] bookstore = new boolean[14];
+
+    //position
+    public int cam_x;
+    public int cam_y;
+    public int map;
 }
