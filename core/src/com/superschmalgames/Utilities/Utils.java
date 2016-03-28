@@ -75,11 +75,13 @@ public class Utils {
     /////////////////////////////////////COMBAT SCREEN/////////////////////////////////////////////////////////////////////////
     public static final Sprite combatBackground = new Sprite(new Texture("visuals/backgrounds/cise_battle.png"));
     public static final Music combatScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Fight.ogg"));
+    public static final Music victoryMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/battle_victory.mp3"));
+    public static final Sound punchEffect1 = Gdx.audio.newSound(Gdx.files.internal("sound/effects/punch1.mp3"));
+    public static final Sound punchEffect2 = Gdx.audio.newSound(Gdx.files.internal("sound/effects/punch2.mp3"));
     public static final Sprite combatBorder = new Sprite(new Texture("visuals/menus/combat_border.png"));
+    public static final Sprite transBorder = new Sprite(new Texture("visuals/menus/combat_border_noline.png"));
     public static final Sprite hpBack = new Sprite(new Texture("visuals/menus/hp_back.png"));
     public static final Sprite hpBack2 = new Sprite(new Texture("visuals/menus/hp_back.png"));
-    public static final Sprite tempHero = new Sprite(new Texture("visuals/professors/Horton/horton_r.png"));
-    public static final Sprite tempNPC = new Sprite(new Texture("visuals/professors/Horton/horton_l.png"));
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////GAME SCREEN////////////////////////////////////////////////////////////////////////////
@@ -1096,6 +1098,7 @@ public class Utils {
 
         //////////////////////////////////COMBAT SCREEN////////////////////////////////////////////////////////////////////////
         combatScreenMusic.setLooping(true);
+        victoryMusic.setLooping(false);
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /////////////////////////////////GAME SCREEN///////////////////////////////////////////////////////////////////////////
