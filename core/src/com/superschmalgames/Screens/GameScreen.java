@@ -256,7 +256,6 @@ public class GameScreen implements Screen {
     public void walk(float delta){
             if(!safe)
                 attackable = true;
-            System.out.print(safe + " " + attackable + "\n");
             if(lWalk &&
                !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-Utils.MOVE_DIST)/Utils.MAP_RESOLUTION, (int) camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked") &&
                !collision.getCell((int)(camera.position.x-MainClass.hero.width/2-Utils.MOVE_DIST)/Utils.MAP_RESOLUTION, (int) (camera.position.y-MainClass.hero.height/2)/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("blocked")) {
