@@ -155,7 +155,7 @@ public class Utils {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////MOVES///////////////////////////////////////////////////////////////////////
-    public static final H_Move Java_Function = new H_Move("Java Function", java_function_tex, "A move that benefits\nfrom improved Software \nskill.", true, 0, 0, 3,7,10,11, 3,7,10,11, 1,3,5,11,11);
+    public static final H_Move Java_Function = new H_Move("Java Function", java_function_tex, "A move that benefits\nfrom improved Software \nskill.", true, 0, 0, 3,7,10,11, 3,7,10,11, 100,300,500,101,110);
     public static final H_Move Recursive_Loop = new H_Move("Recursive Loop",recursive_function_tex, "A move that benefits\nfrom improved Software \nskill.", true, 0, 0, 5,10,11,11, 5,10,11,11, 4,6,11,11,11);
     public static final H_Move Stack_Overflow = new H_Move("Stack Overflow",stack_overflow_tex, "A move that benefits\nfrom improved Software \nand Read/Write skills.", true, 0, 2, 3,5,8,11, 1,5,7,11, 2,4,6,11,11);
     public static final H_Move Commented_Code = new H_Move("Commented Code",commented_code_tex, "A move that benefits\nfrom improved Software\nand Read/Write skills.", true, 0, 2, 3,5,7,9, 2,4,6,8, 2,3,4,5,6);
@@ -633,13 +633,13 @@ public class Utils {
     public static final Texture advising_tex = new Texture("visuals/Menus/advising_tex.png");
 
     public static final String[] advText = {
-            "Your first class will be Java 1 with\nDr. Dobbins. Go meet him\n in the bottom of CISE",
-            "Your next class will be Calc 2 with\nDr. Chui. Go meet her\nin the bottom of Turlington",
-            "Your third class will be Programming 2\nwith Dr. Horton. Go meet\n him in the top of\nTurlington",
+            "Your first class will be Java 1 with\nDr. Dobbins. Go meet him in the\nbottom of CISE",
+            "Your next class will be Calc 2 with\nDr. Chui. Go meet her in the\nbottom of Turlington",
+            "Your third class will be Programming\n2with Dr. Horton. Go meet\nhim in South part\nof 2nd story Turlington",
             "Your next class will be Circuits I with\nDr. Srivastava. Go meet him\nin the NEB",
             "Your next class will be Signals with\nDr. Wong. Go meet him\nin the NEB",
             "Your next class will be Digital Logic with\nDr. Gugel. Go meet him\nin the NEB",
-            "Your next class will be Operating Systems with\nDr. Small. Go meet him\nin Turlington",
+            "Your next class will be Operating Systems with\nDr. Small. Go meet him on the\n3rd floor of Turlington",
             "Your next class will be Senior Design with\nDr. Schmalz. Go meet him\nin the CISE",
             "You\'ve completed all your classes. \n\nCongrats, you\'re a Gator Alum!"
     };

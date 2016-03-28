@@ -78,7 +78,7 @@ public class HeroCharacter {
     public Animator heroAnim;
 
     public HeroCharacter(){
-        GPA = 4.0;
+        GPA = 400.0;
         Software = 1.0;
         Hardware = 1.0;
         Writing = 1.0;
@@ -106,8 +106,8 @@ public class HeroCharacter {
         moves = new HeroMoves();
 
         //#Semesters completed. Each named professor beaten increments this by 1.
-        semester = 8;
-        gatorBucks = 10000;
+        semester = 0;
+        gatorBucks = 1000;
         experience = 0;
         lvl = 1;
         expCap = 10;

@@ -258,6 +258,11 @@ public class CombatLogic {
             MainClass.openWorldScreen.camera.position.set(2700f,830f,0f);
         }
 
+        if(!MainClass.hero.lastEnemy.name.equals("Professor") && !MainClass.hero.lastEnemy.name.equals("T.A."))
+        {
+            MainClass.hero.semester++;
+        }
+
         //Stop the combat music.
         Utils.combatScreenMusic.stop();
 
