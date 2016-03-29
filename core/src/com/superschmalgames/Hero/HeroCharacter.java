@@ -78,7 +78,7 @@ public class HeroCharacter {
     public Animator heroAnim;
 
     public HeroCharacter(){
-        GPA = 400.0;
+        GPA = 4.0;
         Software = 1.0;
         Hardware = 1.0;
         Writing = 1.0;

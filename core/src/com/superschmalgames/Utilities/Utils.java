@@ -155,7 +155,7 @@ public class Utils {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////MOVES///////////////////////////////////////////////////////////////////////
-    public static final H_Move Java_Function = new H_Move("Java Function", java_function_tex, "A move that benefits\nfrom improved Software \nskill.", true, 0, 0, 3,7,10,11, 3,7,10,11, 100,300,500,101,110);
+    public static final H_Move Java_Function = new H_Move("Java Function", java_function_tex, "A move that benefits\nfrom improved Software \nskill.", true, 0, 0, 3,7,10,11, 3,7,10,11, 1,3,5,11,11);
     public static final H_Move Recursive_Loop = new H_Move("Recursive Loop",recursive_function_tex, "A move that benefits\nfrom improved Software \nskill.", true, 0, 0, 5,10,11,11, 5,10,11,11, 4,6,11,11,11);
     public static final H_Move Stack_Overflow = new H_Move("Stack Overflow",stack_overflow_tex, "A move that benefits\nfrom improved Software \nand Read/Write skills.", true, 0, 2, 3,5,8,11, 1,5,7,11, 2,4,6,11,11);
     public static final H_Move Commented_Code = new H_Move("Commented Code",commented_code_tex, "A move that benefits\nfrom improved Software\nand Read/Write skills.", true, 0, 2, 3,5,7,9, 2,4,6,8, 2,3,4,5,6);
@@ -1005,6 +1005,8 @@ public class Utils {
     public static final Texture starbucks_tex = new Texture("visuals/inv_items/consume/starbucks.png");
     public static final Texture chegg_tex = new Texture("visuals/inv_items/consume/chegg.png");
     public static final Texture tutoringzone_tex = new Texture("visuals/inv_items/consume/tutoringzone.png");
+    public static final Texture quiz_drop_tex = new Texture("visuals/inv_items/consume/quiz_drop.png");
+    public static final Texture test_drop_tex = new Texture("visuals/inv_items/consume/test_drop.png");
     //Apparel
     public static final Texture business_casual_attire_tex = new Texture("visuals/inv_items/apparel/business_casual_attire.png");
     public static final Texture class_ring_tex = new Texture("visuals/inv_items/apparel/class_ring.png");
@@ -1034,15 +1036,17 @@ public class Utils {
         STARBUCKS (6),
         CHEGG (7),
         TUTORINGZONE (8),
-        DRAGON (9),
-        CYCLONE (10),
-        DAD (11),
-        MACBOOK (12),
-        NSPIRE (13),
-        SOLDER (14),
-        TI89 (15),
-        USB_BLASTER (16),
-        WIRE_KIT (17);
+        QUIZ_DROP(9),
+        TEST_DROP(10),
+        DRAGON (11),
+        CYCLONE (12),
+        DAD (13),
+        MACBOOK (14),
+        NSPIRE (15),
+        SOLDER (16),
+        TI89 (17),
+        USB_BLASTER (18),
+        WIRE_KIT (19);
 
         private int numVal;
 
