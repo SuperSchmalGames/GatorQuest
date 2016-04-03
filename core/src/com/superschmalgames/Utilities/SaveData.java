@@ -48,4 +48,6 @@ public class SaveData implements java.io.Serializable {
     public int cam_x;
     public int cam_y;
     public int map;
+    public float open_cam_x;
+    public float open_cam_y;
 }

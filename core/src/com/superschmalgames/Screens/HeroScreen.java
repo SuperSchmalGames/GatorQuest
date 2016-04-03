@@ -205,7 +205,8 @@ public class HeroScreen implements Screen {
 
             for(int i=0; i<MainClass.hero.semester; i++)
             {
-                MainClass.batch.draw(Utils.checkbox2_tex, 905, 475-60*i, 50, 50);
+                if(MainClass.hero.audit[i])
+                    MainClass.batch.draw(Utils.checkbox2_tex, 905, 475-60*i, 50, 50);
             }
         }
 

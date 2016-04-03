@@ -61,6 +61,7 @@ public class HeroCharacter {
     public int attack_dur;
     public double Defense;
     public int defense_dur;
+    public boolean audit[] = {false,false,false,false,false,false,false,false};
 
     //Animators that take care of walking in each direction.
     public Animator leftWalk, rightWalk, upWalk, downWalk;
