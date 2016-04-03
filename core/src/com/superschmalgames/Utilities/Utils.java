@@ -349,7 +349,7 @@ public class Utils {
     //public static final String worldRUsed = "I can do this!";
     //public static final String worldRRInitial = "I heard that some professors are suckers for particular types of moves. Do you have to take Calc 2?";
     //public static final String worldRRYes = "Ryan taught you how to utilize Extra Credit";
-    //public static final String worldRRNo = "Ah, you\'re lucky.";
+    //public static final String worldRRNo = "Ah, you're lucky.";
     //public static final String worldRRUsed = "Good luck with Calc 2.";
     public static final String worldS = "I heard that there are kids who will tutor you in Marston library, but some of them charge way too many Gator Bucks for me...";
     public static final String worldT = "TA’s and professors will challenge you if you walk around in one of the class buildings!";
@@ -361,7 +361,7 @@ public class Utils {
     //public static final String worldWInitial = "Look at what I just learned how to do!?";
     //public static final String worldWYes = "Wanda taught you how to use F2 Solve";
     //public static final String worldWNo = "Fine. Rude.";
-    //public static final String worldWUsed = "Isn\'t that a cool trick?";
+    //public static final String worldWUsed = "Isn't that a cool trick?";
     public static final String worldX = "I’m overwhelmed with all of these assignments, and I don’t think all of this coffee is helping my anxiety!";
     //public static final String worldYInitial = "Oh, you’re an engineer? Maybe you would have some use for this? Would you like to buy my old TI-89? I’ll sell it to you for 80 Gator Bucks.";
     //public static final String worldYYesInsfFunds = "You need more money.";
@@ -374,20 +374,20 @@ public class Utils {
     //public static final String worldZNo = "Nevermind, then.";
     //public static final String worldZUsed = "It will look good on you!";
 
-    public static final String turlingtonAPre = "haven\’t you ever heard of trig sub?";
+    public static final String turlingtonAPre = "haven’t you ever heard of trig sub?";
     public static final String turlingtonAWin = "You’ll need to review your unit circle...";
-    public static final String turlingtonALose = "It would seem that you\’ve gotten the hang of this...";
+    public static final String turlingtonALose = "It would seem that you’ve gotten the hang of this...";
     public static final String turlingtonBPre = "You need to integrate math into your life. Get it?";
     public static final String turlingtonBWin = "Perhaps you should review those theorems.";
     public static final String turlingtonBLose = "Good job! I’m proud of you.";
-    public static final String turlingtonCPre = "It’s called a cardioid because it looks like a heart. Can\’t you see?";
+    public static final String turlingtonCPre = "It’s called a cardioid because it looks like a heart. Can’t you see?";
     public static final String turlingtonCWin = "You’ll have to take another look at those homeworks...";
     public static final String turlingtonCLose = "It would appear that you get the picture.";
     public static final String turlingtonDPre = "There will be no texting in my class!";
     public static final String turlingtonDWin = "You should have been paying more attention.";
     public static final String turlingtonDLose = "I guess your focus paid off.";
     public static final String turlingtonEPre = "Make sure to keep track of your pointers.";
-    public static final String turlingtonEWin = "You\’re having an error.";
+    public static final String turlingtonEWin = "You’re having an error.";
     public static final String turlingtonELose = "Flawless code. Good work.";
     public static final String turlingtonFPre = "I love group projects!";
     public static final String turlingtonFWin = "You have to be a team player.";
@@ -395,7 +395,7 @@ public class Utils {
     public static final String turlingtonGPre = "Why am I here?";
     public static final String turlingtonGWin = "I literally hate every college student.";
     public static final String turlingtonGLose = "I literally hate every college student.";
-    public static final String turlingtonHPre = "What do you mean you\’ve never worked with a binary search tree?";
+    public static final String turlingtonHPre = "What do you mean you’ve never worked with a binary search tree?";
     public static final String turlingtonHWin = "Do you even know who Djikstra is?";
     public static final String turlingtonHLose = "You found the shortest path. I commend you.";
     public static final String turlingtonIPre = "Linked lists are your friend!";
@@ -404,7 +404,7 @@ public class Utils {
 
     public static final String ciseJPre = "Coding is fun! I like working in Python.";
     public static final String ciseJWin = "Maybe you should start with some online tutorials...";
-    public static final String ciseJLose = "I think you\’ve got the hang of this!";
+    public static final String ciseJLose = "I think you’ve got the hang of this!";
     public static final String ciseKPre = "Have you ever heard of recursion?";
     public static final String ciseKWin = "Maybe you got lost in the branches?";
     public static final String ciseKLose = "All of your outputs looked right!";
@@ -415,7 +415,7 @@ public class Utils {
     public static final String ciseMWin = "You forgot your bibliography!";
     public static final String ciseMLose = "This is a solid paper.";
     public static final String ciseNPre = "I love working with other engineers. Iron sharpens iron.";
-    public static final String ciseNWin = "This collaboration just didn\’t work out.";
+    public static final String ciseNWin = "This collaboration just didn’t work out.";
     public static final String ciseNLose = "You all clearly worked well together!";
     public static final String ciseOPre = "Show me the data and I’ll believe it.";
     public static final String ciseOWin = "This methodology is flawed.";
@@ -440,7 +440,7 @@ public class Utils {
     public static final String nebUWin = "You should have utilized the help option if you were confused.";
     public static final String nebULose = "All of your functions are correct.";
     public static final String nebVPre = "You have to be familiar with low-true logic.";
-    public static final String nebVWin = "You\’re missing some inverters.";
+    public static final String nebVWin = "You’re missing some inverters.";
     public static final String nebVLose = "Nice diagramming!";
     public static final String nebWPre = "If you did your lab then you should have no problem with this quiz.";
     public static final String nebWWin = "Are you sure you built this circuit yourself?";
@@ -461,19 +461,19 @@ public class Utils {
     public static final String marstonJ = "Don’t bother me! I’m studying.";
     //public static final String marstonKUnused = "Oh, you’re a computer engineer? You can have this old thing. I switched my major to Business, so I won’t be needing it… Avatar receives a Soldering Iron";
     //public static final String marstonKUsed = "Enjoy that soldering iron. Try not to burn yourself.";
-    //public static final String marstonLUnused = "I’m getting my PhD in mathematics at UF, so I can tutor you if you want. It\’s $300 per session.";
-    //public static final String marstonLYesInsfFunds = "Sorry, you don\'t have the money...";
+    //public static final String marstonLUnused = "I’m getting my PhD in mathematics at UF, so I can tutor you if you want. It's $300 per session.";
+    //public static final String marstonLYesInsfFunds = "Sorry, you don't have the money...";
     //public static final String marstonLNo = "Let me know if you change your mind.";
-    //public static final String marstonLSuffFunds = "Alright, let\'s get started. Your Math Skills increase by 1 and you pay 300GB.";
+    //public static final String marstonLSuffFunds = "Alright, let's get started. Your Math Skills increase by 1 and you pay 300GB.";
     //public static final String marstonLUsed = "I hope that helped.";
     //public static final String marstonMUnused = "I need someone with a Software Skill of at least 4 to help me with this Java 1 project! Will you help me?";
-    //public static final String marstonMYesInsfSkill = "I don\'t think you have the skills required...";
-    //public static final String marstonMNo = "I\'ll have tp figure it out on my own.";
+    //public static final String marstonMYesInsfSkill = "I don't think you have the skills required...";
+    //public static final String marstonMNo = "I'll have tp figure it out on my own.";
     //public static final String marstonMYesSuffSkill = "Thanks! It compiled this time. You eared 200 GB.";
     //public static final String marstonMUsed = "Thanks for the help!";
     //public static final String marstonNUnused = "Hi! Would you like a class ring to value your time here at UF forever? Each ring contains a beautiful gem and it will be a constant reminder of your amazing adventures here. Would you like to buy one? A class ring costs 300.";
-    //public static final String marstonNYesInsfFunds = "Sorry, you\'ll need more money than that.";
-    //public static final String marstonNNo = "Thanks! Here\'s your ring. Received Class Ring.";
+    //public static final String marstonNYesInsfFunds = "Sorry, you'll need more money than that.";
+    //public static final String marstonNNo = "Thanks! Here's your ring. Received Class Ring.";
     //public static final String marstonNSuffFunds = "Maybe next time?";
     //public static final String marstonNUsed = "Enjoy your ring!";
     //public static final String marstonOUnused = "Do you want to buy my USB Blaster? I’m selling it for only 50GB. That’s a steal!";
@@ -482,14 +482,14 @@ public class Utils {
     //public static final String marstonOSuffFunds = "Here you go! You receive a USB Blaster.";
     //public static final String marstonOUsed = "Thanks for taking it off my hands.";
 
-    public static final String neb1 = "I\’m in Digital Integrated Circuits right now and it\’s great.";
+    public static final String neb1 = "I’m in Digital Integrated Circuits right now and it’s great.";
     public static final String neb2 = "I’m loving this #HarrisRotunda. #Harris is such a good company. #Sponsored #PayMeHarris";
     public static final String neb3 = "Dr. Turner is just the best. Such a nice guy, and he actually likes teaching. What a concept, huh?";
     public static final String neb4 = "I hate it when a professor just blasts through 70 powerpoint slides and then calls it a lecture. How is that helpful? How is that teaching?";
     public static final String neb5 = "I survive on coffee.";
     public static final String neb6 = "Oh yea? Well I only got 2 hours of sleep last night. Top THAT.";
     public static final String neb7 = "I’m pretty stoked about being an engineer. I love feeling employable.";
-    public static final String neb8 = "I’m in Digital Design right now and it\’s actually really cool. It\’s like Digital Logic but more code-y, and you get to do more stuff.";
+    public static final String neb8 = "I’m in Digital Design right now and it’s actually really cool. It’s like Digital Logic but more code-y, and you get to do more stuff.";
     public static final String neb9 = "Wire wrapping is hell on earth.";
     public static final String neb10 = "Dr. Stitt is a champion. Nice, professional, and a good teacher. ";
     public static final String neb11 = "I lost my toolbox!";
@@ -498,41 +498,41 @@ public class Utils {
     public static final String neb14 = "I like that we get a lot of hands-on learning here at UF. The labs are tough, and they take up a lot of time, but I really feel like I’m learning.";
     public static final String neb15 = "I’m beginning to realize that I’m going to graduate soon. I’m not ready to be part of the real world!";
     public static final String neb16 = "My name is Julio Chavez. Nope, not like that Julio Chavez ;)";
-    public static final String neb17 = "Have you heard about Scala? It\’s this great programming language. You\’re a total newb if you don’t use it.";
-    public static final String neb18 = "Yep, I’m the TA for Senior Design. No, I haven\’t taken Senior Design.";
+    public static final String neb17 = "Have you heard about Scala? It’s this great programming language. You’re a total newb if you don’t use it.";
+    public static final String neb18 = "Yep, I’m the TA for Senior Design. No, I haven’t taken Senior Design.";
     public static final String neb19 = "These engineers stress me out. I mean, I get that these classes are hard but...Chill? A little? Please?";
     public static final String neb20 = "This is stressful.";
     public static final String neb21 = "I think that there’s a real problem with the unattainable expectations we set for women in today’s society.";
     public static final String neb22 = "I need to visit a dentist. I have a molar that hurts when I chew hot foods.";
     public static final String neb23 = "I accidently sat on my glasses yesterday and they snapped! I’m wearing my contacts right now.";
-    public static final String neb24 = "I got sunburned at the lake the other day. I put a little aloe vera yesterday and it\’s better today, but it still hurts a little.";
+    public static final String neb24 = "I got sunburned at the lake the other day. I put a little aloe vera yesterday and it’s better today, but it still hurts a little.";
     public static final String neb25 = "I hate how cold they keep the inside of these class buildings! I go from sweating outside in shorts and a tank to shivering when I’m in class.";
     public static final String neb26 = "I think I’m getting sick. I woke up with a sore throat.";
     public static final String neb27 = "UF is always under construction. They’re building a new chemistry building on the north side of campus, and they just finished a new dorm over by the business school.";
     public static final String neb28 = "I think I want to get my nose pierced.";
     public static final String neb29 = "Relish has the best burgers ever.";
     public static final String neb30 = "I can’t wait for the summer! I have an internship lined up.";
-    public static final String neb31 = "I’m a senior, so I’ll be out of here in no time. It\’s such a bittersweet feeling.";
-    public static final String neb32 = "My phone is at 11% and it\’s only noon. This is insane! I need to carry a charger with me everywhere I go.";
+    public static final String neb31 = "I’m a senior, so I’ll be out of here in no time. It’s such a bittersweet feeling.";
+    public static final String neb32 = "My phone is at 11% and it’s only noon. This is insane! I need to carry a charger with me everywhere I go.";
     public static final String neb33 = "If the UF wifi knocks me off one more time I am actually going to scream.";
-    public static final String neb34 = "I haven\’t worn my retainer in almost a month and I’m worried that my teeth are shifting. I don’t want to have to wear braces again!";
+    public static final String neb34 = "I haven’t worn my retainer in almost a month and I’m worried that my teeth are shifting. I don’t want to have to wear braces again!";
     public static final String neb35 = "I want to travel the world! Germany is at the top of my list.";
     public static final String neb36 = "I did yoga this morning and now I’m feeling limber and energized.";
     public static final String neb37 = "Choosing my major is making me feel so lost. I don’t know what I want for lunch. How am I supposed to decide what job I want for my whole life?";
     public static final String neb38 = "Facebook is pretty much dead. Instagram and Snapchat have taken over.";
     public static final String neb39 = "I hope my teacher doesn’t give us any more projects. I have enough work to do as it is!";
-    public static final String neb40 = "Online homework is the worst. I always leave it until the last minute and, since it\’s due at midnight, that means I’m working late.";
+    public static final String neb40 = "Online homework is the worst. I always leave it until the last minute and, since it’s due at midnight, that means I’m working late.";
     public static final String neb41 = "Being smart is nice, but being nice is more important.";
     public static final String neb42 = "The UF infirmary is a joke. The RN there wouldn’t give me anything.";
-    public static final String neb43 = "It\’s pretty tough to graduate in only 4 years with all of these classes they keep adding.";
+    public static final String neb43 = "It’s pretty tough to graduate in only 4 years with all of these classes they keep adding.";
     public static final String neb44 = "I’m debating whether I should be an electrical engineer or a computer engineer. There aren’t too many differences from what I can tell, but it seems like an important decision.";
     public static final String neb45 = "GPD has given me 4 parking tickets in the last year. This is absurd.";
     public static final String neb46 = "I’m getting sick of these professors who want to give no notice for quizzes and tests. Have a syllabus and follow it.";
     public static final String neb47 = "I love the smoothies from Little Hall Express. They’re so tasty!";
     public static final String neb48 = "I’m learning to enjoy red wine now that I’m finally 21. It seems like such a classy drink to me.";
     public static final String neb49 = "I was up all night studying for a test... Could really use some rest.";
-    public static final String neb50 = "I\'m so tired of having to repeat classes... It\'s getting to pricey.";
-    public static final String neb51 = "Oh crap, I\'m late turning in this assignment and my computer won\'t connect to the school\'s wifi.";
+    public static final String neb50 = "I'm so tired of having to repeat classes... It's getting to pricey.";
+    public static final String neb51 = "Oh crap, I'm late turning in this assignment and my computer won't connect to the school's wifi.";
     public static final String neb52 = "I tried the sushi at the store here... It was a mistake.";
     public static final String neb53 = "Have you ever seen the senior design presentations done here?";
     public static final String neb54 = "Balancing school and work is getting to be too tiring.";
@@ -557,10 +557,10 @@ public class Utils {
     public static final String cise17 = "I just chugged a monster and took an exam. Hopefully my writing was legible. My hand was shaking a little bit.";
     public static final String cise18 = "I have an OS test tomorrow and I couldn’t be more nervous. This is too stressful.";
     public static final String cise19 = "You can get your Ethics requirement by taking Intro to ECE. Lifehack.";
-    public static final String cise20 = "It\’s pretty hard to graduate in 4 years as an engineer these days. My major has 14 more required credits than my roommate’s.";
+    public static final String cise20 = "It’s pretty hard to graduate in 4 years as an engineer these days. My major has 14 more required credits than my roommate’s.";
     public static final String cise21 = "I love Gator football.";
     public static final String cise22 = "We send more kids to the Olympics than any other school.";
-    public static final String cise23 = "I really like volleyball. It\’s all about that bump-set-spike.";
+    public static final String cise23 = "I really like volleyball. It’s all about that bump-set-spike.";
     public static final String cise24 = "I love seeing athletes out at bars. They can’t hide because they’re all like 6’5”.";
     public static final String cise25 = "I’m so nauseous. I think I drank too much last night.";
     public static final String cise26 = "You look like a friend I knew in high school.";
@@ -573,7 +573,7 @@ public class Utils {
     public static final String cise33 = "The Gator Nation is everywhere. I visited a friend all the way in California and saw a Gator flag flying on some dude’s house.";
 
     public static final String tur1 = "This is the most confusing building on our entire campus.";
-    public static final String tur2 = "This is such an interesting building. It\’s in the heart of campus. Definitely a part of UF history.";
+    public static final String tur2 = "This is such an interesting building. It’s in the heart of campus. Definitely a part of UF history.";
     public static final String tur3 = "Classes of all disciplines are held in this building. I think that’s really neat.";
     public static final String tur4 = "I need to find my lecture hall, but none of them have a sign for it.";
     public static final String tur5 = "The bathrooms in this building are absolutely disgusting.";
@@ -595,10 +595,10 @@ public class Utils {
     public static final String tur21 = "I like trying different types of food. Recently I tried Thai food for the first time, and it was actually really good! They use a lot of coconut and peanut flavors.";
     public static final String tur22 = "I’m trying to get into shape this semester. I’m monitoring my calorie intake and hitting the gym at least 3 times a week. I love how I feel!";
     public static final String tur23 = "I just got a haircut. I got 8 inches taken off! Do you think it looks good?";
-    public static final String tur24 = "I like that one vending machine right outside of Library West with the healthy snacks. It\’s so nice to be able to snack on edamame instead of Doritos some of the time.";
+    public static final String tur24 = "I like that one vending machine right outside of Library West with the healthy snacks. It's so nice to be able to snack on edamame instead of Doritos some of the time.";
     public static final String tur25 = "Have you every had a frozen lemonade from Chick-Fil-A? So good.";
     public static final String tur26 = "I’m an art major. I love my classes!";
-    public static final String tur27 = "I like listening to country music. It\’s so soothing to me! It’s just a preference.";
+    public static final String tur27 = "I like listening to country music. It's so soothing to me! It’s just a preference.";
     public static final String tur28 = "My favorite show is Breaking Bad. I just finished watching it. I’m late, I know, but that ending…";
     public static final String tur29 = "Do you watch TV on your laptop or live? I just hate viewing the commercials.";
     public static final String tur30 = "I want to be tumblr famous.";
@@ -607,14 +607,14 @@ public class Utils {
     public static final String tur33 = "I’m beginning to hit my afternoon crash period. I feel great in the morning after I drink my coffee, but later in the day I always wish I could take a nap.";
     public static final String tur34 = "I’m turning 21 tomorrow! I’m so excited.";
     public static final String tur35 = "Have you heard the new Ariana Grande song? It puts me in such a good mood.";
-    public static final String tur36 = "Make sure you join at least one student organization at UF. It\’s important to stay involved for your resume, and it’s also a great way to make friends.";
-    public static final String tur37 = "It\’s not always just what you know. Who you know can sometimes matter just as much, if not more.";
+    public static final String tur36 = "Make sure you join at least one student organization at UF. It's important to stay involved for your resume, and it’s also a great way to make friends.";
+    public static final String tur37 = "It's not always just what you know. Who you know can sometimes matter just as much, if not more.";
     public static final String tur38 = "I just got summoned for jury duty. What a pain!";
-    public static final String tur39 = "I need to get a haircut. It\’s getting so unruly.";
+    public static final String tur39 = "I need to get a haircut. It's getting so unruly.";
     public static final String tur40 = "I just cleaned my whole apartment. I mopped, swept and even dusted.";
     public static final String tur41 = "My friend bought me a flask for my birthday. How nice!";
-    public static final String tur42 = "I\’ve been working out a lot lately. Today was leg day. I love seeing how much I can squat.";
-    public static final String tur43 = "It seems like everyone is so smart here. I\’m proud to be a Florida Gator.";
+    public static final String tur42 = "I've been working out a lot lately. Today was leg day. I love seeing how much I can squat.";
+    public static final String tur43 = "It seems like everyone is so smart here. I'm proud to be a Florida Gator.";
     public static final String tur44 = "I’m feeling a little nostalgic lately. I like having social media so that I can go back through all of my old pictures.";
     public static final String tur45 = "I like using those little Tide Pods. They look cool and they’re easier to use than the detergent that you have to pour.";
     public static final String tur46 = "Amazon always has great deals. I got my latest tennis shoes just a few days ago and they were at half price.";
@@ -623,7 +623,7 @@ public class Utils {
     public static final String tur49 = "I always bring my umbrella on the days that it doesn’t end up raining, but I forget it on the days when it really pours.";
     public static final String tur50 = "Home Depot has a lot of good plants to choose from. I recently picked up a golden pothos and a snake plant. They’re meant to clean the air in my room.";
     public static final String tur51 = "I love jamming out with my Bluetooth speaker.";
-    public static final String tur52 = "I packed my lunch today! I\’ve been trying to do meal prep more consistently. Today, I have greek yogurt and a roast beef sandwich.";
+    public static final String tur52 = "I packed my lunch today! I've been trying to do meal prep more consistently. Today, I have greek yogurt and a roast beef sandwich.";
     public static final String tur53 = "Flannels are so nice, but they’re too warm to wear very often in Florida. I sometimes wish it could be a little cooler here.";
     public static final String tur54 = "Gainesville is so muggy! I’m covered in sweat.";
     public static final String tur55 = "I prefer mechanical pencils over pens.";
@@ -641,7 +641,7 @@ public class Utils {
             "Your next class will be Digital Logic with\nDr. Gugel. Go meet him\nin the NEB",
             "Your next class will be Operating Systems with\nDr. Small. Go meet him\nin Turlington",
             "Your next class will be Senior Design with\nDr. Schmalz. Go meet him\nin the CISE",
-            "You\'ve completed all your classes. \n\nCongrats, you\'re a Gator Alum!"
+            "You've completed all your classes. \n\nCongrats, you're a Gator Alum!"
     };
     //////////////////////////////////////END ADVISING//////////////////////////////////////////////////////////////////////
 
@@ -898,8 +898,8 @@ public class Utils {
             new ENEMY('r', turlingtonCPre,turlingtonCWin,turlingtonCLose,"visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l4.png", 43*MAP_RESOLUTION, (128-37)*MAP_RESOLUTION, 25, Turlington_C_attacks, Chui_weakness, 10, 10),
             new ENEMY('r', turlingtonDPre,turlingtonDWin,turlingtonDLose,"visuals/sprite_sheets/sprite_walk_r5.png", "visuals/sprite_sheets/sprite_l5.png", 173*MAP_RESOLUTION, (128-106)*MAP_RESOLUTION, 25, Turlington_D_attacks, Horton_weakness, 10, 10),
             new ENEMY('r', turlingtonEPre,turlingtonEWin,turlingtonELose,"visuals/sprite_sheets/sprite_walk_r6.png", "visuals/sprite_sheets/sprite_l6.png", 158*MAP_RESOLUTION, (128-110)*MAP_RESOLUTION, 25, Turlington_E_attacks, Horton_weakness, 10, 10),
-            new ENEMY('d', turlingtonGPre,turlingtonGWin,turlingtonGLose,"visuals/sprite_sheets/sprite_walk_d7.png", "visuals/sprite_sheets/sprite_l7.png", 342*MAP_RESOLUTION, (128-35)*MAP_RESOLUTION, 25, Turlington_G_attacks, Small_weakness, 10, 10),
-            new ENEMY('r', turlingtonHPre,turlingtonHWin,turlingtonHLose,"visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l8.png", 347*MAP_RESOLUTION, (128-25)*MAP_RESOLUTION, 25, Turlington_H_attacks, Small_weakness, 10, 10),
+            new ENEMY('d', turlingtonGPre,turlingtonGWin,turlingtonGLose,"visuals/sprite_sheets/sprite_walk_d7.png", "visuals/sprite_sheets/sprite_l7.png", 341*MAP_RESOLUTION, (128-15)*MAP_RESOLUTION, 25, Turlington_G_attacks, Small_weakness, 10, 10),
+            new ENEMY('l', turlingtonHPre,turlingtonHWin,turlingtonHLose,"visuals/sprite_sheets/sprite_walk_l8.png", "visuals/sprite_sheets/sprite_l8.png", 347*MAP_RESOLUTION, (128-25)*MAP_RESOLUTION, 25, Turlington_H_attacks, Small_weakness, 10, 10),
 
     };
 
@@ -946,7 +946,7 @@ public class Utils {
             new NPC('u',dormC,"visuals/sprite_sheets/sprite_walk_u14.png", 20*MAP_RESOLUTION,35*MAP_RESOLUTION),
             new NPC('r', dormD, "visuals/sprite_sheets/sprite_walk_r6.png", 6*MAP_RESOLUTION,42*MAP_RESOLUTION),
             new NPC('d',worldX,"visuals/sprite_sheets/sprite_walk_d4.png", 24*MAP_RESOLUTION,41*MAP_RESOLUTION),
-            new REST('d',"You\'ve rested in bed.\nGPA has been restored.", "visuals/sprite_sheets/RestingNPC.png",2*MAP_RESOLUTION,(59-24)*MAP_RESOLUTION) //10
+            new REST('d',"You've rested in bed.\nGPA has been restored.", "visuals/sprite_sheets/RestingNPC.png",2*MAP_RESOLUTION,(59-24)*MAP_RESOLUTION) //10
     };
     //========================================================================================
     //========================================Marston=========================================
