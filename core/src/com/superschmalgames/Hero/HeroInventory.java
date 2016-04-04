@@ -44,6 +44,10 @@ public class HeroInventory {
         items.add(tmpC);
         tmpC = new ConsumableItem("TutorZone Pkt",Utils.tutoringzone_tex,"GPA",1.0,3,5,true, "Get studying! Helps you ace\nassignments. Should boost GPA.");
         items.add(tmpC);
+        tmpC = new ConsumableItem("Quiz Drop",Utils.quiz_drop_tex,"Defense",-1.0,2,2,true, "Take less damage from your\nworkload. Save for a\ntough class!");
+        items.add(tmpC);
+        tmpC = new ConsumableItem("Test Drop",Utils.test_drop_tex,"Defense",-1.0,4,2,true, "Take less damage from your\nworkload. Save for a\nreally tough class!");
+        items.add(tmpC);
         tmpE = new EquipableItem("AVR Dragon", Utils.avr_dragon_tex, "Hardware", 3.0, 1, "A fancy board suitable for uP.");
         items.add(tmpE);
         tmpE = new EquipableItem("Cyclone III", Utils.cyclone_III_tex, "Hardware", 2.0, 1, "A good board to use in\nDigital Design.");

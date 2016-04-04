@@ -9,6 +9,7 @@ import com.superschmalgames.NPC.ENEMY;
 import com.superschmalgames.NPC.NPC;
 import com.superschmalgames.Utilities.Animator;
 import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.Utils;
 
 import java.util.Random;
 
@@ -79,7 +80,7 @@ public class HeroCharacter {
     public Animator heroAnim;
 
     public HeroCharacter(){
-        GPA = 4.0;
+        GPA = 400.0;
         Software = 1.0;
         Hardware = 1.0;
         Writing = 1.0;
@@ -108,7 +109,7 @@ public class HeroCharacter {
 
         //#Semesters completed. Each named professor beaten increments this by 1.
         semester = 0;
-        gatorBucks = 2100;
+        gatorBucks = 1000;
         experience = 0;
         lvl = 1;
         expCap = 10;
@@ -207,6 +208,7 @@ public class HeroCharacter {
     public void level() {
         boolean temp = true;
         lvl++;
+        learnMoveLvl();
         experience -= expCap;
         Random rand;
         while(temp) {
@@ -264,6 +266,30 @@ public class HeroCharacter {
             }
         }
         mult_level();
+    }
+
+    public void learnMoveLvl()
+    {
+        switch(lvl) {
+            case 2:
+                Utils.Java_Function.obtained = true;
+                break;
+            case 3:
+                Utils.Recursive_Loop.obtained = true;
+                break;
+            case 5:
+                Utils.CPP_Skills.obtained = true;
+                break;
+            case 7:
+                Utils.Code_Testing.obtained = true;
+                break;
+            case 9:
+                Utils.Nodal_Analysis.obtained = true;
+                break;
+            case 12:
+                Utils.Karnaugh_Map.obtained = true;
+                break;
+        }
     }
 
 }

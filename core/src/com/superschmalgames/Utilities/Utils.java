@@ -155,24 +155,24 @@ public class Utils {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////MOVES///////////////////////////////////////////////////////////////////////
-    public static final H_Move Java_Function = new H_Move("Java Function", java_function_tex, "A move that benefits\nfrom improved Software \nskill.", true, 0, 0, 3,7,10,11, 3,7,10,11, 1,3,5,11,11);
-    public static final H_Move Recursive_Loop = new H_Move("Recursive Loop",recursive_function_tex, "A move that benefits\nfrom improved Software \nskill.", true, 0, 0, 5,10,11,11, 5,10,11,11, 4,6,11,11,11);
+    public static final H_Move Java_Function = new H_Move("Java Function", java_function_tex, "A move that benefits\nfrom improved Software \nskill.", false, 0, 0, 3,7,10,11, 3,7,10,11, 1,3,5,11,11);
+    public static final H_Move Recursive_Loop = new H_Move("Recursive Loop",recursive_function_tex, "A move that benefits\nfrom improved Software \nskill.", false, 0, 0, 5,10,11,11, 5,10,11,11, 4,6,11,11,11);
     public static final H_Move Stack_Overflow = new H_Move("Stack Overflow",stack_overflow_tex, "A move that benefits\nfrom improved Software \nand Read/Write skills.", true, 0, 2, 3,5,8,11, 1,5,7,11, 2,4,6,11,11);
     public static final H_Move Commented_Code = new H_Move("Commented Code",commented_code_tex, "A move that benefits\nfrom improved Software\nand Read/Write skills.", true, 0, 2, 3,5,7,9, 2,4,6,8, 2,3,4,5,6);
     public static final H_Move Double_Integration = new H_Move("Double Integration",double_integration_tex, "A move that benefits\nfrom improved Math \nskills.", true, 5, 5, 2,4,10,11, 2,4,10,11, 2,4,5,11,11);
     public static final H_Move Set_Equal_to_0 = new H_Move("Set Equal to 0",set_equal_to_0_tex, "A move that benefits\nfrom improved Math \nskills.", true, 5, 5, 3,6,10,11, 3,6,10,11, 3,4,5,11,11);
     public static final H_Move Practice_Test = new H_Move("Practice Test",practice_test_tex, "A move that benefits\nfrom improved Focus \nskill.", true, 6, 6, 2,4,6,8, 2,4,6,8, 2,5,8,11,14);
-    public static final H_Move Extra_Credit = new H_Move("Extra Credit",extra_credit_tex, "A move that benefits\nfrom improved Social\nand Focus skills", true, 4, 6, 3,5,7,9, 2,4,6,8, 1,3,5,7,9);
-    public static final H_Move CPP_Skills = new H_Move("C++ Skills",cpp_skills_tex, "A move that benefits\nfrom improved Software\nskill.", true, 0, 0, 2,4,6,8, 2,4,6,8, 2,4,6,8,10);
-    public static final H_Move Nodal_Analysis = new H_Move("Nodal Analysis",nodal_analysis_tex, "A move that benefits\nfrom improved Hardware\nskill.", true, 1, 1, 2,5,9,10, 2,5,9,10, 3,5,6,8,11);
-    public static final H_Move F2_Solve = new H_Move("F2 Solve",f2_solve_tex, "A move that benefits\nfrom improved Math\nand Focus skills.", true, 5, 6, 3,10,10,10, 3,10,10,10, 4,5,5,5,5);
-    public static final H_Move _5_Lines_Matlab_Code = new H_Move("5 Lines Matlab Code",f_lines_matlab_code_tex, "A move that benefits\nfrom improved Software\nand Math skills.", true, 0, 5, 4,6,7,10, 2,4,5,10, 4,5,6,7,11);
-    public static final H_Move Karnaugh_Map = new H_Move("Karnaugh Map",karnaugh_map_tex, "A move that benefits\nfrom improved\nEndurance and\nHardware skills.", true, 1, 3, 2,4,10,10, 3,5,10,10, 4,6,8,11,11);
-    public static final H_Move Soldering_Skills = new H_Move("Soldering Skills",soldering_skills_tex, "A move that benefits\nfrom improved\nEndurance and\nFocus skills.", true, 3, 6, 2,4,10,10, 2,4,10,10, 2,3,5,11,11);
-    public static final H_Move Boolean_Logic = new H_Move("Boolean Logic",boolean_logic_tex, "A move that benefits\nfrom improved Math,\nFocus and Hardware\nskills.", true, 5, 1, 3,6,10,10, 3,6,10,10, 2,4,6,11,11);
-    public static final H_Move Documentation = new H_Move("Documentation",documentation_tex, "A move that benefits\nfrom improved\nRead/Write skills.", true, 2, 2, 4,6,7,10, 4,6,7,10, 2,4,5,7,11);
-    public static final H_Move Code_Testing = new H_Move("Code Testing",code_testing_tex, "A move that benefits\nfrom improved Software\nand Focus skills.", true, 0, 6, 4,6,7,10, 4,5,7,10, 3,4,6,7,11);
-    public static final H_Move Perf_Presentation = new H_Move("Perf. Presentation",perfect_presentation_tex, "A move that benefits\nfrom improved Social\nskill.", true, 4, 4, 3,5,7,9, 3,5,7,9, 2,4,5,6,7);
+    public static final H_Move Extra_Credit = new H_Move("Extra Credit",extra_credit_tex, "A move that benefits\nfrom improved Social\nand Focus skills", false, 4, 6, 3,5,7,9, 2,4,6,8, 1,3,5,7,9);
+    public static final H_Move CPP_Skills = new H_Move("C++ Skills",cpp_skills_tex, "A move that benefits\nfrom improved Software\nskill.", false, 0, 0, 2,4,6,8, 2,4,6,8, 2,4,6,8,10);
+    public static final H_Move Nodal_Analysis = new H_Move("Nodal Analysis",nodal_analysis_tex, "A move that benefits\nfrom improved Hardware\nskill.", false, 1, 1, 2,5,9,10, 2,5,9,10, 3,5,6,8,11);
+    public static final H_Move F2_Solve = new H_Move("F2 Solve",f2_solve_tex, "A move that benefits\nfrom improved Math\nand Focus skills.", false, 5, 6, 3,10,10,10, 3,10,10,10, 4,5,5,5,5);
+    public static final H_Move _5_Lines_Matlab_Code = new H_Move("5 Lines Matlab Code",f_lines_matlab_code_tex, "A move that benefits\nfrom improved Software\nand Math skills.", false, 0, 5, 4,6,7,10, 2,4,5,10, 4,5,6,7,11);
+    public static final H_Move Karnaugh_Map = new H_Move("Karnaugh Map",karnaugh_map_tex, "A move that benefits\nfrom improved\nEndurance and\nHardware skills.", false, 1, 3, 2,4,10,10, 3,5,10,10, 4,6,8,11,11);
+    public static final H_Move Soldering_Skills = new H_Move("Soldering Skills",soldering_skills_tex, "A move that benefits\nfrom improved\nEndurance and\nFocus skills.", false, 3, 6, 2,4,10,10, 2,4,10,10, 2,3,5,11,11);
+    public static final H_Move Boolean_Logic = new H_Move("Boolean Logic",boolean_logic_tex, "A move that benefits\nfrom improved Math,\nFocus and Hardware\nskills.", false, 5, 1, 3,6,10,10, 3,6,10,10, 2,4,6,11,11);
+    public static final H_Move Documentation = new H_Move("Documentation",documentation_tex, "A move that benefits\nfrom improved\nRead/Write skills.", false, 2, 2, 4,6,7,10, 4,6,7,10, 2,4,5,7,11);
+    public static final H_Move Code_Testing = new H_Move("Code Testing",code_testing_tex, "A move that benefits\nfrom improved Software\nand Focus skills.", false, 0, 6, 4,6,7,10, 4,5,7,10, 3,4,6,7,11);
+    public static final H_Move Perf_Presentation = new H_Move("Perf. Presentation",perfect_presentation_tex, "A move that benefits\nfrom improved Social\nskill.", false, 4, 4, 3,5,7,9, 3,5,7,9, 2,4,5,6,7);
     public static final E_Move New_Syntax = new E_Move("New Syntax", 0, 0, 3,7,10,10, 3,7,10,10, .6,.5,.4,.1,.1);
     public static final E_Move Uncompilable_Code = new E_Move("Uncompilable Code", 0, 3, 2,4,6,10, 2,4,6,10, .6,.5,.4,.2,.1);
     public static final E_Move Build_the_Circuit = new E_Move("Build the Circuit", 1, 6, 2,4,6,10, 1,3,5,10, .5,.4,.3,.1,.1);
@@ -317,10 +317,10 @@ public class Utils {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////NPC DIALOGUE START///////////////////////////////////////////////////////////////////////////////////////
     public static final String dormA = "Open up your inventory with I. You can equip and remove items here using E and R respectively and view your consumables.";
-    public static final String dormB = "Don’t forget to look at your Degree Audit! Press h to see it in the Hero menu, and it will tell you the order of the classes you have to complete.";
+    public static final String dormB = "Don\'t forget to look at your Degree Audit! Press h to see it in the Hero menu, and it will tell you the order of the classes you have to complete.";
     public static final String dormC = "Your Campus Map will tell you where all of the buildings on campus are.";
     public static final String dormD = "This dining hall food is giving me some serious stomach issues…*belch* Oops!";
-    //public static final String dormEInitial = "Will you proofread my essay for me? I’m nervous that I’m going to get a bad grade on my first college paper…";
+    //public static final String dormEInitial = "Will you proofread my essay for me? I\'m nervous that I\'m going to get a bad grade on my first college paper…";
     //public static final String dormEYes = "Your Reading Comprehension and Writing Skill increased by 1.";
     //public static final String dormENo = "Okay fine.";
     //public static final String dormEUsed = "I got a B on that paper.";
@@ -331,19 +331,19 @@ public class Utils {
     //public static final String dormGUsed = "This place is a jail!";
 
     public static final String worldH = "UF is a great place to go to school. We have so many great Alumni like GloZell, Ryan Lochte and even Dan Bilzerian!";
-    public static final String worldI = "College is so easy. I was an IB Student in high school and that was WAY harder. Yes, I’m a business major. Why do you ask? What does that have to do with this?";
-    public static final String worldJ = "I’m late I’m late I’m late I’m late";
-    public static final String worldK = "I just missed my RTS bus and the next one doesn’t come for another 15 minutes.";
+    public static final String worldI = "College is so easy. I was an IB Student in high school and that was WAY harder. Yes, I\'m a business major. Why do you ask? What does that have to do with this?";
+    public static final String worldJ = "I\'m late I\'m late I\'m late I\'m late";
+    public static final String worldK = "I just missed my RTS bus and the next one doesn\'t come for another 15 minutes.";
     public static final String worldL = "Jimmy Johns just brought me my sandwich in 3 and a half minutes. That really is freaky fast delivery.";
     public static final String worldM = "The Reitz construction is finally done! Bless. Up.";
-    //public static final String worldNInitial = "I love math! It’s the universal language, you know? Do you want me to teach you a trick I learned today in class?";
+    //public static final String worldNInitial = "I love math! It\'s the universal language, you know? Do you want me to teach you a trick I learned today in class?";
     //public static final String worldNYes = "Your Math Skills increased by 1.";
     //public static final String worldNNo = "I mean...Okay.";
     //public static final String worldNUsed = "I hope that trick comes in handy.";
-    public static final String worldO = "I’m reading Siddhartha and I really think it’s opened my eyes. I feel so enlightened. Come here, I want you to be in my Snap Story.";
-    public static final String worldP = "Well, I’m technically a junior by credits. No, I mean, this is my first semester at college. If you factor in my AP classes, though...";
+    public static final String worldO = "I\'m reading Siddhartha and I really think it\'s opened my eyes. I feel so enlightened. Come here, I want you to be in my Snap Story.";
+    public static final String worldP = "Well, I\'m technically a junior by credits. No, I mean, this is my first semester at college. If you factor in my AP classes, though...";
     public static final String worldQ = "You should never let your GPA drop to 0.00! When that happened to me, I woke up back in my down with a ton of Gator Bucks missing.";
-    //public static final String worldRInitial = "I’m having a really tough time finding my next class. It’s in Turlington. Can you point me in the right direction?";
+    //public static final String worldRInitial = "I\'m having a really tough time finding my next class. It\'s in Turlington. Can you point me in the right direction?";
     //public static final String worldRYes = "Your Social Skills increased by 1.";
     //public static final String worldRNo = "K bye.";
     //public static final String worldRUsed = "I can do this!";
@@ -352,42 +352,41 @@ public class Utils {
     //public static final String worldRRNo = "Ah, you're lucky.";
     //public static final String worldRRUsed = "Good luck with Calc 2.";
     public static final String worldS = "I heard that there are kids who will tutor you in Marston library, but some of them charge way too many Gator Bucks for me...";
-    public static final String worldT = "TA’s and professors will challenge you if you walk around in one of the class buildings!";
+    public static final String worldT = "TA\'s and professors will challenge you if you walk around in one of the class buildings!";
     //public static final String worldUInitial = "Do you have to take Dr. Wong?";
     //public static final String worldUYes = "Uke taught you how to use 5 Lines Matlab Code";
     //public static final String worldUNo = "Ohh, I understand.";
     //public static final String worldUUsed = "Have fun!";
-    public static final String worldV = "College is hard, but I think it’s worth it.";
+    public static final String worldV = "College is hard, but I think it\'s worth it.";
     //public static final String worldWInitial = "Look at what I just learned how to do!?";
     //public static final String worldWYes = "Wanda taught you how to use F2 Solve";
     //public static final String worldWNo = "Fine. Rude.";
-    //public static final String worldWUsed = "Isn't that a cool trick?";
-    public static final String worldX = "I’m overwhelmed with all of these assignments, and I don’t think all of this coffee is helping my anxiety!";
-    //public static final String worldYInitial = "Oh, you’re an engineer? Maybe you would have some use for this? Would you like to buy my old TI-89? I’ll sell it to you for 80 Gator Bucks.";
+    //public static final String worldWUsed = "Isn\'t that a cool trick?";
+    public static final String worldX = "I\'m overwhelmed with all of these assignments, and I don\'t think all of this coffee is helping my anxiety!";
+    //public static final String worldYInitial = "Oh, you\'re an engineer? Maybe you would have some use for this? Would you like to buy my old TI-89? I\'ll sell it to you for 80 Gator Bucks.";
     //public static final String worldYYesInsfFunds = "You need more money.";
     //public static final String worldYYesSuffFunds = "Here you go. You receive a TI-89.";
     //public static final String worldYNo = "Fine, then.";
     //public static final String worldYUsed = "Hope it helps you.";
-    //public static final String worldZInitial = "You’re a gator fan too, huh? Want to buy a Gator Hat for 30 Gator bucks?";
+    //public static final String worldZInitial = "You\'re a gator fan too, huh? Want to buy a Gator Hat for 30 Gator bucks?";
     //public static final String worldZYesInsfFunds = "Get that money up, brother.";
     //public static final String worldZYesSuffFunds = "Alright, sweet. You receive a Gator Hat.";
     //public static final String worldZNo = "Nevermind, then.";
     //public static final String worldZUsed = "It will look good on you!";
-
-    public static final String turlingtonAPre = "haven’t you ever heard of trig sub?";
-    public static final String turlingtonAWin = "You’ll need to review your unit circle...";
-    public static final String turlingtonALose = "It would seem that you’ve gotten the hang of this...";
+    public static final String turlingtonAPre = "haven\'t you ever heard of trig sub?";
+    public static final String turlingtonAWin = "You\'ll need to review your unit circle...";
+    public static final String turlingtonALose = "It would seem that you\'ve gotten the hang of this...";
     public static final String turlingtonBPre = "You need to integrate math into your life. Get it?";
     public static final String turlingtonBWin = "Perhaps you should review those theorems.";
-    public static final String turlingtonBLose = "Good job! I’m proud of you.";
-    public static final String turlingtonCPre = "It’s called a cardioid because it looks like a heart. Can’t you see?";
-    public static final String turlingtonCWin = "You’ll have to take another look at those homeworks...";
+    public static final String turlingtonBLose = "Good job! I\'m proud of you.";
+    public static final String turlingtonCPre = "It\'s called a cardioid because it looks like a heart. Can\'t you see?";
+    public static final String turlingtonCWin = "You\'ll have to take another look at those homeworks...";
     public static final String turlingtonCLose = "It would appear that you get the picture.";
     public static final String turlingtonDPre = "There will be no texting in my class!";
     public static final String turlingtonDWin = "You should have been paying more attention.";
     public static final String turlingtonDLose = "I guess your focus paid off.";
     public static final String turlingtonEPre = "Make sure to keep track of your pointers.";
-    public static final String turlingtonEWin = "You’re having an error.";
+    public static final String turlingtonEWin = "You\'re having an error.";
     public static final String turlingtonELose = "Flawless code. Good work.";
     public static final String turlingtonFPre = "I love group projects!";
     public static final String turlingtonFWin = "You have to be a team player.";
@@ -395,7 +394,7 @@ public class Utils {
     public static final String turlingtonGPre = "Why am I here?";
     public static final String turlingtonGWin = "I literally hate every college student.";
     public static final String turlingtonGLose = "I literally hate every college student.";
-    public static final String turlingtonHPre = "What do you mean you’ve never worked with a binary search tree?";
+    public static final String turlingtonHPre = "What do you mean you\'ve never worked with a binary search tree?";
     public static final String turlingtonHWin = "Do you even know who Djikstra is?";
     public static final String turlingtonHLose = "You found the shortest path. I commend you.";
     public static final String turlingtonIPre = "Linked lists are your friend!";
@@ -404,7 +403,7 @@ public class Utils {
 
     public static final String ciseJPre = "Coding is fun! I like working in Python.";
     public static final String ciseJWin = "Maybe you should start with some online tutorials...";
-    public static final String ciseJLose = "I think you’ve got the hang of this!";
+    public static final String ciseJLose = "I think you\'ve got the hang of this!";
     public static final String ciseKPre = "Have you ever heard of recursion?";
     public static final String ciseKWin = "Maybe you got lost in the branches?";
     public static final String ciseKLose = "All of your outputs looked right!";
@@ -415,54 +414,54 @@ public class Utils {
     public static final String ciseMWin = "You forgot your bibliography!";
     public static final String ciseMLose = "This is a solid paper.";
     public static final String ciseNPre = "I love working with other engineers. Iron sharpens iron.";
-    public static final String ciseNWin = "This collaboration just didn’t work out.";
+    public static final String ciseNWin = "This collaboration just didn\'t work out.";
     public static final String ciseNLose = "You all clearly worked well together!";
-    public static final String ciseOPre = "Show me the data and I’ll believe it.";
+    public static final String ciseOPre = "Show me the data and I\'ll believe it.";
     public static final String ciseOWin = "This methodology is flawed.";
     public static final String ciseOLose = "I think we should try to publish this!";
 
     public static final String nebPPre = "Make sure that your circuit is grounded.";
     public static final String nebPWin = "Your nodal analysis is off.";
     public static final String nebPLose = "Good work. This is the correct voltage.";
-    public static final String nebQPre = "Kirchoff’s law is an invaluable tool for you.";
-    public static final String nebQWin = "This doesn’t add up!";
+    public static final String nebQPre = "Kirchoff\'s law is an invaluable tool for you.";
+    public static final String nebQWin = "This doesn\'t add up!";
     public static final String nebQLose = "Everything balances out.";
     public static final String nebRPre = "You should try using a wheatstone bridge.";
     public static final String nebRWin = "You need to review your electrical engineering history.";
     public static final String nebRLose = "Good work on finding the missing value.";
     public static final String nebSPre = "Signals are all around us!";
     public static final String nebSWin = "You should try to learn about your surroundings.";
-    public static final String nebSLose = "We’re on the same frequency, it would seem.";
+    public static final String nebSLose = "We\'re on the same frequency, it would seem.";
     public static final String nebTPre = "Have you heard of a fourier transform?";
-    public static final String nebTWin = "These calculations don’t seem right.";
+    public static final String nebTWin = "These calculations don\'t seem right.";
     public static final String nebTLose = "You got the right answer!";
     public static final String nebUPre = "Matlab is a valuable tool in our industry.";
     public static final String nebUWin = "You should have utilized the help option if you were confused.";
     public static final String nebULose = "All of your functions are correct.";
     public static final String nebVPre = "You have to be familiar with low-true logic.";
-    public static final String nebVWin = "You’re missing some inverters.";
+    public static final String nebVWin = "You\'re missing some inverters.";
     public static final String nebVLose = "Nice diagramming!";
     public static final String nebWPre = "If you did your lab then you should have no problem with this quiz.";
     public static final String nebWWin = "Are you sure you built this circuit yourself?";
     public static final String nebWLose = "Your stoplight works! Good work.";
     public static final String nebXPre = "Make sure to minimize the states in your UML.";
-    public static final String nebXWin = "You’re missing some signals in your diagram.";
+    public static final String nebXWin = "You\'re missing some signals in your diagram.";
     public static final String nebXLose = "You did it in the least amount of states possible!";
 
     public static final String marstonA = "I came here to study, but it seems like everyone else just came to socialize...Why are they at the library?";
-    public static final String marstonB = "Sorority recruitment is such a nightmare. I can’t believe they want us to wear heels the whole day!";
-    public static final String marstonC = "I’m here to meet up with people for a group project but I’m the only one that showed up. They did mean 10:30AM...Right?";
+    public static final String marstonB = "Sorority recruitment is such a nightmare. I can\'t believe they want us to wear heels the whole day!";
+    public static final String marstonC = "I\'m here to meet up with people for a group project but I\'m the only one that showed up. They did mean 10:30AM...Right?";
     public static final String marstonD = "Welcome to the Marston Library, talk to the lady at the main desk to restore your GPA, or visit the Starbucks to get some supplies";
-    public static final String marstonE = "There are so many books here, but I don’t think I’ve ever used any of them. I just go on my laptop when I’m here.";
-    public static final String marstonF = "I’m calculating the lowest grade that I can get on this final that will still let me pass the class. It looks like I need a 99%...That can’t be right.";
-    public static final String marstonG = "I’m studying for pre-calc right now. This is the hardest class ever! I aced it in high school, but it’s just so different here...";
+    public static final String marstonE = "There are so many books here, but I don\'t think I\'ve ever used any of them. I just go on my laptop when I\'m here.";
+    public static final String marstonF = "I\'m calculating the lowest grade that I can get on this final that will still let me pass the class. It looks like I need a 99%...That can\'t be right.";
+    public static final String marstonG = "I\'m studying for pre-calc right now. This is the hardest class ever! I aced it in high school, but it\'s just so different here...";
     public static final String marstonH = "The library always stresses me out because everyone else seems stressed out. I think it might be contagious...";
-    public static final String marstonI = "I’m tired of reading! I already read 45 pages about Ancient Civilizations today. Can I stop now?";
-    public static final String marstonJ = "Don’t bother me! I’m studying.";
-    //public static final String marstonKUnused = "Oh, you’re a computer engineer? You can have this old thing. I switched my major to Business, so I won’t be needing it… Avatar receives a Soldering Iron";
+    public static final String marstonI = "I\'m tired of reading! I already read 45 pages about Ancient Civilizations today. Can I stop now?";
+    public static final String marstonJ = "Don\'t bother me! I\'m studying.";
+    //public static final String marstonKUnused = "Oh, you\'re a computer engineer? You can have this old thing. I switched my major to Business, so I won\'t be needing it… Avatar receives a Soldering Iron";
     //public static final String marstonKUsed = "Enjoy that soldering iron. Try not to burn yourself.";
-    //public static final String marstonLUnused = "I’m getting my PhD in mathematics at UF, so I can tutor you if you want. It's $300 per session.";
-    //public static final String marstonLYesInsfFunds = "Sorry, you don't have the money...";
+    //public static final String marstonLUnused = "I\'m getting my PhD in mathematics at UF, so I can tutor you if you want. It\\'s $300 per session.";
+    //public static final String marstonLYesInsfFunds = "Sorry, you don\'t have the money...";
     //public static final String marstonLNo = "Let me know if you change your mind.";
     //public static final String marstonLSuffFunds = "Alright, let's get started. Your Math Skills increase by 1 and you pay 300GB.";
     //public static final String marstonLUsed = "I hope that helped.";
@@ -476,60 +475,59 @@ public class Utils {
     //public static final String marstonNNo = "Thanks! Here's your ring. Received Class Ring.";
     //public static final String marstonNSuffFunds = "Maybe next time?";
     //public static final String marstonNUsed = "Enjoy your ring!";
-    //public static final String marstonOUnused = "Do you want to buy my USB Blaster? I’m selling it for only 50GB. That’s a steal!";
+    //public static final String marstonOUnused = "Do you want to buy my USB Blaster? I\'m selling it for only 50GB. That\'s a steal!";
     //public static final String marstonOYesInsfFunds = "Erm, it costs 50GB.";
     //public static final String marstonONo = "Understandable.";
     //public static final String marstonOSuffFunds = "Here you go! You receive a USB Blaster.";
     //public static final String marstonOUsed = "Thanks for taking it off my hands.";
-
-    public static final String neb1 = "I’m in Digital Integrated Circuits right now and it’s great.";
-    public static final String neb2 = "I’m loving this #HarrisRotunda. #Harris is such a good company. #Sponsored #PayMeHarris";
+    public static final String neb1 = "I\'m in Digital Integrated Circuits right now and it\'s great.";
+    public static final String neb2 = "I\'m loving this #HarrisRotunda. #Harris is such a good company. #Sponsored #PayMeHarris";
     public static final String neb3 = "Dr. Turner is just the best. Such a nice guy, and he actually likes teaching. What a concept, huh?";
     public static final String neb4 = "I hate it when a professor just blasts through 70 powerpoint slides and then calls it a lecture. How is that helpful? How is that teaching?";
     public static final String neb5 = "I survive on coffee.";
     public static final String neb6 = "Oh yea? Well I only got 2 hours of sleep last night. Top THAT.";
-    public static final String neb7 = "I’m pretty stoked about being an engineer. I love feeling employable.";
-    public static final String neb8 = "I’m in Digital Design right now and it’s actually really cool. It’s like Digital Logic but more code-y, and you get to do more stuff.";
+    public static final String neb7 = "I\'m pretty stoked about being an engineer. I love feeling employable.";
+    public static final String neb8 = "I\'m in Digital Design right now and it\'s actually really cool. It\'s like Digital Logic but more code-y, and you get to do more stuff.";
     public static final String neb9 = "Wire wrapping is hell on earth.";
     public static final String neb10 = "Dr. Stitt is a champion. Nice, professional, and a good teacher. ";
     public static final String neb11 = "I lost my toolbox!";
     public static final String neb12 = "Yes! I just got an A on a test!";
-    public static final String neb13 = "Engineering is all about beating the curve. It doesn’t matter if you got a 65 if the average on the test was a 57. Just beat the curve, and you’ll succeed here as a Gator Engineer.";
-    public static final String neb14 = "I like that we get a lot of hands-on learning here at UF. The labs are tough, and they take up a lot of time, but I really feel like I’m learning.";
-    public static final String neb15 = "I’m beginning to realize that I’m going to graduate soon. I’m not ready to be part of the real world!";
+    public static final String neb13 = "Engineering is all about beating the curve. It doesn\'t matter if you got a 65 if the average on the test was a 57. Just beat the curve, and you\'ll succeed here as a Gator Engineer.";
+    public static final String neb14 = "I like that we get a lot of hands-on learning here at UF. The labs are tough, and they take up a lot of time, but I really feel like I\'m learning.";
+    public static final String neb15 = "I\'m beginning to realize that I\'m going to graduate soon. I\'m not ready to be part of the real world!";
     public static final String neb16 = "My name is Julio Chavez. Nope, not like that Julio Chavez ;)";
-    public static final String neb17 = "Have you heard about Scala? It’s this great programming language. You’re a total newb if you don’t use it.";
-    public static final String neb18 = "Yep, I’m the TA for Senior Design. No, I haven’t taken Senior Design.";
+    public static final String neb17 = "Have you heard about Scala? It\'s this great programming language. You\'re a total newb if you don\'t use it.";
+    public static final String neb18 = "Yep, I\'m the TA for Senior Design. No, I haven\'t taken Senior Design.";
     public static final String neb19 = "These engineers stress me out. I mean, I get that these classes are hard but...Chill? A little? Please?";
     public static final String neb20 = "This is stressful.";
-    public static final String neb21 = "I think that there’s a real problem with the unattainable expectations we set for women in today’s society.";
+    public static final String neb21 = "I think that there\'s a real problem with the unattainable expectations we set for women in today\'s society.";
     public static final String neb22 = "I need to visit a dentist. I have a molar that hurts when I chew hot foods.";
-    public static final String neb23 = "I accidently sat on my glasses yesterday and they snapped! I’m wearing my contacts right now.";
-    public static final String neb24 = "I got sunburned at the lake the other day. I put a little aloe vera yesterday and it’s better today, but it still hurts a little.";
-    public static final String neb25 = "I hate how cold they keep the inside of these class buildings! I go from sweating outside in shorts and a tank to shivering when I’m in class.";
-    public static final String neb26 = "I think I’m getting sick. I woke up with a sore throat.";
-    public static final String neb27 = "UF is always under construction. They’re building a new chemistry building on the north side of campus, and they just finished a new dorm over by the business school.";
+    public static final String neb23 = "I accidently sat on my glasses yesterday and they snapped! I\'m wearing my contacts right now.";
+    public static final String neb24 = "I got sunburned at the lake the other day. I put a little aloe vera yesterday and it\'s better today, but it still hurts a little.";
+    public static final String neb25 = "I hate how cold they keep the inside of these class buildings! I go from sweating outside in shorts and a tank to shivering when I\'m in class.";
+    public static final String neb26 = "I think I\'m getting sick. I woke up with a sore throat.";
+    public static final String neb27 = "UF is always under construction. They\'re building a new chemistry building on the north side of campus, and they just finished a new dorm over by the business school.";
     public static final String neb28 = "I think I want to get my nose pierced.";
     public static final String neb29 = "Relish has the best burgers ever.";
-    public static final String neb30 = "I can’t wait for the summer! I have an internship lined up.";
-    public static final String neb31 = "I’m a senior, so I’ll be out of here in no time. It’s such a bittersweet feeling.";
-    public static final String neb32 = "My phone is at 11% and it’s only noon. This is insane! I need to carry a charger with me everywhere I go.";
+    public static final String neb30 = "I can\'t wait for the summer! I have an internship lined up.";
+    public static final String neb31 = "I\'m a senior, so I\'ll be out of here in no time. It\'s such a bittersweet feeling.";
+    public static final String neb32 = "My phone is at 11% and it\'s only noon. This is insane! I need to carry a charger with me everywhere I go.";
     public static final String neb33 = "If the UF wifi knocks me off one more time I am actually going to scream.";
-    public static final String neb34 = "I haven’t worn my retainer in almost a month and I’m worried that my teeth are shifting. I don’t want to have to wear braces again!";
+    public static final String neb34 = "I haven\'t worn my retainer in almost a month and I\'m worried that my teeth are shifting. I don\'t want to have to wear braces again!";
     public static final String neb35 = "I want to travel the world! Germany is at the top of my list.";
-    public static final String neb36 = "I did yoga this morning and now I’m feeling limber and energized.";
-    public static final String neb37 = "Choosing my major is making me feel so lost. I don’t know what I want for lunch. How am I supposed to decide what job I want for my whole life?";
+    public static final String neb36 = "I did yoga this morning and now I\'m feeling limber and energized.";
+    public static final String neb37 = "Choosing my major is making me feel so lost. I don\'t know what I want for lunch. How am I supposed to decide what job I want for my whole life?";
     public static final String neb38 = "Facebook is pretty much dead. Instagram and Snapchat have taken over.";
-    public static final String neb39 = "I hope my teacher doesn’t give us any more projects. I have enough work to do as it is!";
-    public static final String neb40 = "Online homework is the worst. I always leave it until the last minute and, since it’s due at midnight, that means I’m working late.";
+    public static final String neb39 = "I hope my teacher doesn\'t give us any more projects. I have enough work to do as it is!";
+    public static final String neb40 = "Online homework is the worst. I always leave it until the last minute and, since it\'s due at midnight, that means I\'m working late.";
     public static final String neb41 = "Being smart is nice, but being nice is more important.";
-    public static final String neb42 = "The UF infirmary is a joke. The RN there wouldn’t give me anything.";
-    public static final String neb43 = "It’s pretty tough to graduate in only 4 years with all of these classes they keep adding.";
-    public static final String neb44 = "I’m debating whether I should be an electrical engineer or a computer engineer. There aren’t too many differences from what I can tell, but it seems like an important decision.";
+    public static final String neb42 = "The UF infirmary is a joke. The RN there wouldn\'t give me anything.";
+    public static final String neb43 = "It\'s pretty tough to graduate in only 4 years with all of these classes they keep adding.";
+    public static final String neb44 = "I\'m debating whether I should be an electrical engineer or a computer engineer. There aren\'t too many differences from what I can tell, but it seems like an important decision.";
     public static final String neb45 = "GPD has given me 4 parking tickets in the last year. This is absurd.";
-    public static final String neb46 = "I’m getting sick of these professors who want to give no notice for quizzes and tests. Have a syllabus and follow it.";
-    public static final String neb47 = "I love the smoothies from Little Hall Express. They’re so tasty!";
-    public static final String neb48 = "I’m learning to enjoy red wine now that I’m finally 21. It seems like such a classy drink to me.";
+    public static final String neb46 = "I\'m getting sick of these professors who want to give no notice for quizzes and tests. Have a syllabus and follow it.";
+    public static final String neb47 = "I love the smoothies from Little Hall Express. They\'re so tasty!";
+    public static final String neb48 = "I\'m learning to enjoy red wine now that I\'m finally 21. It seems like such a classy drink to me.";
     public static final String neb49 = "I was up all night studying for a test... Could really use some rest.";
     public static final String neb50 = "I'm so tired of having to repeat classes... It's getting to pricey.";
     public static final String neb51 = "Oh crap, I'm late turning in this assignment and my computer won't connect to the school's wifi.";
@@ -537,95 +535,93 @@ public class Utils {
     public static final String neb53 = "Have you ever seen the senior design presentations done here?";
     public static final String neb54 = "Balancing school and work is getting to be too tiring.";
     public static final String neb55 = "Have you thought about joining any of the engineering societies?";
-
     public static final String cise1 = "No Southern Accent is actually a lot of fun. Our album is dropping on iTunes this week.";
-    public static final String cise2 = "I’m taking Object Oriented Programming with Dave Small because I enjoy feeling pain.";
+    public static final String cise2 = "I\'m taking Object Oriented Programming with Dave Small because I enjoy feeling pain.";
     public static final String cise3 = "So many noobs at this school. Like, how do you not know how to write a simple Perl script? How can you not understand simple Javascript? I have a poor relationship with my father.";
-    public static final String cise4 = "I’m in Discrete Math and I like the logic based stuff.";
+    public static final String cise4 = "I\'m in Discrete Math and I like the logic based stuff.";
     public static final String cise5 = "I love Dr. Williamson. Linear Algebra is so easy and fun.";
     public static final String cise6 = "Programming 1 is in Java but Programming 2 is in C++. ";
-    public static final String cise7 = "I’m CS in the LAS college so I have to do a minor. Should I do a math minor or a history minor?";
-    public static final String cise8 = "I don’t really understand the choices some people make.";
-    public static final String cise9 = "This Buzzfeed quiz told me I’m destined to marry Bieber.";
-    public static final String cise10 = "Should I vote for Bernie or Hillary? Trump is out since I’m not a racist.";
-    public static final String cise11 = "I’m a crossfit pro.";
+    public static final String cise7 = "I\'m CS in the LAS college so I have to do a minor. Should I do a math minor or a history minor?";
+    public static final String cise8 = "I don\'t really understand the choices some people make.";
+    public static final String cise9 = "This Buzzfeed quiz told me I\'m destined to marry Bieber.";
+    public static final String cise10 = "Should I vote for Bernie or Hillary? Trump is out since I\'m not a racist.";
+    public static final String cise11 = "I\'m a crossfit pro.";
     public static final String cise12 = "Freshman girls should stay away from Pike.";
     public static final String cise13 = "Mac or PC? What about Linux?";
     public static final String cise14 = "My Smash Bros main is Cloud. Probably Zero Suit if I have to choose from non-DLC characters.";
-    public static final String cise15 = "What’s your favorite anime?";
+    public static final String cise15 = "What\'s your favorite anime?";
     public static final String cise16 = "The Good Wife is the best show on television. You need to watch it as soon as possible.";
     public static final String cise17 = "I just chugged a monster and took an exam. Hopefully my writing was legible. My hand was shaking a little bit.";
-    public static final String cise18 = "I have an OS test tomorrow and I couldn’t be more nervous. This is too stressful.";
+    public static final String cise18 = "I have an OS test tomorrow and I couldn\'t be more nervous. This is too stressful.";
     public static final String cise19 = "You can get your Ethics requirement by taking Intro to ECE. Lifehack.";
-    public static final String cise20 = "It’s pretty hard to graduate in 4 years as an engineer these days. My major has 14 more required credits than my roommate’s.";
+    public static final String cise20 = "It\'s pretty hard to graduate in 4 years as an engineer these days. My major has 14 more required credits than my roommate\'s.";
     public static final String cise21 = "I love Gator football.";
     public static final String cise22 = "We send more kids to the Olympics than any other school.";
-    public static final String cise23 = "I really like volleyball. It’s all about that bump-set-spike.";
-    public static final String cise24 = "I love seeing athletes out at bars. They can’t hide because they’re all like 6’5”.";
-    public static final String cise25 = "I’m so nauseous. I think I drank too much last night.";
+    public static final String cise23 = "I really like volleyball. It\'s all about that bump-set-spike.";
+    public static final String cise24 = "I love seeing athletes out at bars. They can\'t hide because they\'re all like 6\'5”.";
+    public static final String cise25 = "I\'m so nauseous. I think I drank too much last night.";
     public static final String cise26 = "You look like a friend I knew in high school.";
-    public static final String cise27 = "Do you live in a dorm? I’m in Lakeside which is kinda a dorm.";
-    public static final String cise28 = "Did you rush? I thought about it, but eventually decided it wasn’t for me.";
-    public static final String cise29 = "I’m a chemistry major, but I decided to explore campus a little today.";
+    public static final String cise27 = "Do you live in a dorm? I\'m in Lakeside which is kinda a dorm.";
+    public static final String cise28 = "Did you rush? I thought about it, but eventually decided it wasn\'t for me.";
+    public static final String cise29 = "I\'m a chemistry major, but I decided to explore campus a little today.";
     public static final String cise30 = "I think I want to work in academia down the road. I guess that means I need a PhD.";
     public static final String cise31 = "Job security is nice, but is this my real passion?";
-    public static final String cise32 = "Have you ever been to Rockey’s? I like singing along to all of the throwbacks.";
-    public static final String cise33 = "The Gator Nation is everywhere. I visited a friend all the way in California and saw a Gator flag flying on some dude’s house.";
-
+    public static final String cise32 = "Have you ever been to Rockey\'s? I like singing along to all of the throwbacks.";
+    public static final String cise33 = "The Gator Nation is everywhere. I visited a friend all the way in California and saw a Gator flag flying on some dude\'s house.";
     public static final String tur1 = "This is the most confusing building on our entire campus.";
-    public static final String tur2 = "This is such an interesting building. It’s in the heart of campus. Definitely a part of UF history.";
-    public static final String tur3 = "Classes of all disciplines are held in this building. I think that’s really neat.";
+    public static final String tur2 = "This is such an interesting building. It\'s in the heart of campus. Definitely a part of UF history.";
+    public static final String tur3 = "Classes of all disciplines are held in this building. I think that\'s really neat.";
     public static final String tur4 = "I need to find my lecture hall, but none of them have a sign for it.";
     public static final String tur5 = "The bathrooms in this building are absolutely disgusting.";
     public static final String tur6 = "The artwork in the plaza looks like a potato.";
-    public static final String tur7 = "There are always the most random people at the tables in Turlington Plaza. Don’t these people have class? Or jobs? Ambitions?";
+    public static final String tur7 = "There are always the most random people at the tables in Turlington Plaza. Don\'t these people have class? Or jobs? Ambitions?";
     public static final String tur8 = "I donated $1 to get a free donut in Turlington Plaza. The money is going to save puppies.";
     public static final String tur9 = "Managerial accounting is the worst.";
-    public static final String tur10 = "Hello, my name is Patrick and I’m the Director of UF CURBS which is the Center for Undergraduate Research. We are a very important organization which works with the department to mentor students on how they can obtain a research position at the University. We try to match potential students with ...where are you going?";
+    public static final String tur10 = "Hello, my name is Patrick and I\'m the Director of UF CURBS which is the Center for Undergraduate Research. We are a very important organization which works with the department to mentor students on how they can obtain a research position at the University. We try to match potential students with ...where are you going?";
     public static final String tur11 = "This building is a nightmare.";
     public static final String tur12 = "I only have classes on Mondays and Fridays.";
-    public static final String tur13 = "I’m shooting a video to apply for a Buzzfeed internship. I want to be a director some day. I’m going to make a movie about JFK that takes place in the early 2000s.";
-    public static final String tur14 = "I’m only here to take a picture for my sorority. Yea, they make us get points. I’m Ariel. No, sorry, I’m busy.";
-    public static final String tur15 = "Hey ya I’m Dustin. Haha yea.";
-    public static final String tur16 = "I love that we have like 3 Chick-Fil-A’s on Campus. That’s wild.";
+    public static final String tur13 = "I\'m shooting a video to apply for a Buzzfeed internship. I want to be a director some day. I\'m going to make a movie about JFK that takes place in the early 2000s.";
+    public static final String tur14 = "I\'m only here to take a picture for my sorority. Yea, they make us get points. I\'m Ariel. No, sorry, I\'m busy.";
+    public static final String tur15 = "Hey ya I\'m Dustin. Haha yea.";
+    public static final String tur16 = "I love that we have like 3 Chick-Fil-A\'s on Campus. That\'s wild.";
     public static final String tur17 = "I really like going to the UF Gymnastics matches.";
-    public static final String tur18 = "I’m in an Organic Chemistry class. I feel so fancy and educated.";
-    public static final String tur19 = "Pre-Med isn’t actually a major these days. You can be Pre-Med with any major as long as you take the required classes for the MCAT.";
-    public static final String tur20 = "I’m really into The Weeknd these days. What type of music do you like?";
+    public static final String tur18 = "I\'m in an Organic Chemistry class. I feel so fancy and educated.";
+    public static final String tur19 = "Pre-Med isn\'t actually a major these days. You can be Pre-Med with any major as long as you take the required classes for the MCAT.";
+    public static final String tur20 = "I\'m really into The Weeknd these days. What type of music do you like?";
     public static final String tur21 = "I like trying different types of food. Recently I tried Thai food for the first time, and it was actually really good! They use a lot of coconut and peanut flavors.";
-    public static final String tur22 = "I’m trying to get into shape this semester. I’m monitoring my calorie intake and hitting the gym at least 3 times a week. I love how I feel!";
+    public static final String tur22 = "I\'m trying to get into shape this semester. I\'m monitoring my calorie intake and hitting the gym at least 3 times a week. I love how I feel!";
     public static final String tur23 = "I just got a haircut. I got 8 inches taken off! Do you think it looks good?";
-    public static final String tur24 = "I like that one vending machine right outside of Library West with the healthy snacks. It's so nice to be able to snack on edamame instead of Doritos some of the time.";
+    public static final String tur24 = "I like that one vending machine right outside of Library West with the healthy snacks. It\'s so nice to be able to snack on edamame instead of Doritos some of the time.";
     public static final String tur25 = "Have you every had a frozen lemonade from Chick-Fil-A? So good.";
-    public static final String tur26 = "I’m an art major. I love my classes!";
-    public static final String tur27 = "I like listening to country music. It's so soothing to me! It’s just a preference.";
-    public static final String tur28 = "My favorite show is Breaking Bad. I just finished watching it. I’m late, I know, but that ending…";
+    public static final String tur26 = "I\'m an art major. I love my classes!";
+    public static final String tur27 = "I like listening to country music. It\'s so soothing to me! It\'s just a preference.";
+    public static final String tur28 = "My favorite show is Breaking Bad. I just finished watching it. I\'m late, I know, but that ending…";
     public static final String tur29 = "Do you watch TV on your laptop or live? I just hate viewing the commercials.";
     public static final String tur30 = "I want to be tumblr famous.";
     public static final String tur31 = "My last insta is flopping. Only 49 likes. Will you follow me? I need to at least hit 50.";
-    public static final String tur32 = "I feel like I can speak an entirely different language with my engineering friends. My other friends don’t even know what we’re saying. There are so many acronyms!";
-    public static final String tur33 = "I’m beginning to hit my afternoon crash period. I feel great in the morning after I drink my coffee, but later in the day I always wish I could take a nap.";
-    public static final String tur34 = "I’m turning 21 tomorrow! I’m so excited.";
+    public static final String tur32 = "I feel like I can speak an entirely different language with my engineering friends. My other friends don\'t even know what we\'re saying. There are so many acronyms!";
+    public static final String tur33 = "I\'m beginning to hit my afternoon crash period. I feel great in the morning after I drink my coffee, but later in the day I always wish I could take a nap.";
+    public static final String tur34 = "I\'m turning 21 tomorrow! I\'m so excited.";
     public static final String tur35 = "Have you heard the new Ariana Grande song? It puts me in such a good mood.";
-    public static final String tur36 = "Make sure you join at least one student organization at UF. It's important to stay involved for your resume, and it’s also a great way to make friends.";
-    public static final String tur37 = "It's not always just what you know. Who you know can sometimes matter just as much, if not more.";
+    public static final String tur36 = "Make sure you join at least one student organization at UF. It\'s important to stay involved for your resume, and it\'s also a great way to make friends.";
+    public static final String tur37 = "It\'s not always just what you know. Who you know can sometimes matter just as much, if not more.";
     public static final String tur38 = "I just got summoned for jury duty. What a pain!";
-    public static final String tur39 = "I need to get a haircut. It's getting so unruly.";
+    public static final String tur39 = "I need to get a haircut. It\'s getting so unruly.";
     public static final String tur40 = "I just cleaned my whole apartment. I mopped, swept and even dusted.";
     public static final String tur41 = "My friend bought me a flask for my birthday. How nice!";
-    public static final String tur42 = "I've been working out a lot lately. Today was leg day. I love seeing how much I can squat.";
-    public static final String tur43 = "It seems like everyone is so smart here. I'm proud to be a Florida Gator.";
-    public static final String tur44 = "I’m feeling a little nostalgic lately. I like having social media so that I can go back through all of my old pictures.";
-    public static final String tur45 = "I like using those little Tide Pods. They look cool and they’re easier to use than the detergent that you have to pour.";
+    public static final String tur42 = "I\'ve been working out a lot lately. Today was leg day. I love seeing how much I can squat.";
+    public static final String tur43 = "It seems like everyone is so smart here. I\'m proud to be a Florida Gator.";
+    public static final String tur44 = "I\'m feeling a little nostalgic lately. I like having social media so that I can go back through all of my old pictures.";
+    public static final String tur45 = "I like using those little Tide Pods. They look cool and they\'re easier to use than the detergent that you have to pour.";
     public static final String tur46 = "Amazon always has great deals. I got my latest tennis shoes just a few days ago and they were at half price.";
     public static final String tur47 = "I have so much laundry to do!";
     public static final String tur48 = "Getting all dressed up is so fun. Wearing a suit and tie really boosts my confidence.";
-    public static final String tur49 = "I always bring my umbrella on the days that it doesn’t end up raining, but I forget it on the days when it really pours.";
-    public static final String tur50 = "Home Depot has a lot of good plants to choose from. I recently picked up a golden pothos and a snake plant. They’re meant to clean the air in my room.";
+    public static final String tur49 = "I always bring my umbrella on the days that it doesn\'t end up raining, but I forget it on the days when it really pours.";
+    public static final String tur50 = "Home Depot has a lot of good plants to choose from. I recently picked up a golden pothos and a snake plant. They\'re meant to clean the air in my room.";
     public static final String tur51 = "I love jamming out with my Bluetooth speaker.";
-    public static final String tur52 = "I packed my lunch today! I've been trying to do meal prep more consistently. Today, I have greek yogurt and a roast beef sandwich.";
-    public static final String tur53 = "Flannels are so nice, but they’re too warm to wear very often in Florida. I sometimes wish it could be a little cooler here.";
-    public static final String tur54 = "Gainesville is so muggy! I’m covered in sweat.";
+    public static final String tur52 = "I packed my lunch today! I\'ve been trying to do meal prep more consistently. Today, I have greek yogurt and a roast beef sandwich.";
+    public static final String tur53 = "Flannels are so nice, but they\'re too warm to wear very often in Florida. I sometimes wish it could be a little cooler here.";
+    public static final String tur54 = "Gainesville is so muggy! I\'m covered in sweat.";
     public static final String tur55 = "I prefer mechanical pencils over pens.";
 
 
@@ -633,13 +629,13 @@ public class Utils {
     public static final Texture advising_tex = new Texture("visuals/Menus/advising_tex.png");
 
     public static final String[] advText = {
-            "Your first class will be Java 1 with\nDr. Dobbins. Go meet him\n in the bottom of CISE",
-            "Your next class will be Calc 2 with\nDr. Chui. Go meet her\nin the bottom of Turlington",
-            "Your third class will be Programming 2\nwith Dr. Horton. Go meet\n him in the top of\nTurlington",
+            "Your first class will be Java 1 with\nDr. Dobbins. Go meet him in the\nbottom of CISE",
+            "Your next class will be Calc 2 with\nDr. Chui. Go meet her in the\nbottom of Turlington",
+            "Your third class will be Programming\n2with Dr. Horton. Go meet\nhim in South part\nof 2nd story Turlington",
             "Your next class will be Circuits I with\nDr. Srivastava. Go meet him\nin the NEB",
             "Your next class will be Signals with\nDr. Wong. Go meet him\nin the NEB",
             "Your next class will be Digital Logic with\nDr. Gugel. Go meet him\nin the NEB",
-            "Your next class will be Operating Systems with\nDr. Small. Go meet him\nin Turlington",
+            "Your next class will be Operating Systems with\nDr. Small. Go meet him on the\n3rd floor of Turlington",
             "Your next class will be Senior Design with\nDr. Schmalz. Go meet him\nin the CISE",
             "You've completed all your classes. \n\nCongrats, you're a Gator Alum!"
     };
@@ -1005,6 +1001,8 @@ public class Utils {
     public static final Texture starbucks_tex = new Texture("visuals/inv_items/consume/starbucks.png");
     public static final Texture chegg_tex = new Texture("visuals/inv_items/consume/chegg.png");
     public static final Texture tutoringzone_tex = new Texture("visuals/inv_items/consume/tutoringzone.png");
+    public static final Texture quiz_drop_tex = new Texture("visuals/inv_items/consume/quiz_drop.png");
+    public static final Texture test_drop_tex = new Texture("visuals/inv_items/consume/test_drop.png");
     //Apparel
     public static final Texture business_casual_attire_tex = new Texture("visuals/inv_items/apparel/business_casual_attire.png");
     public static final Texture class_ring_tex = new Texture("visuals/inv_items/apparel/class_ring.png");
@@ -1034,15 +1032,17 @@ public class Utils {
         STARBUCKS (6),
         CHEGG (7),
         TUTORINGZONE (8),
-        DRAGON (9),
-        CYCLONE (10),
-        DAD (11),
-        MACBOOK (12),
-        NSPIRE (13),
-        SOLDER (14),
-        TI89 (15),
-        USB_BLASTER (16),
-        WIRE_KIT (17);
+        QUIZ_DROP(9),
+        TEST_DROP(10),
+        DRAGON (11),
+        CYCLONE (12),
+        DAD (13),
+        MACBOOK (14),
+        NSPIRE (15),
+        SOLDER (16),
+        TI89 (17),
+        USB_BLASTER (18),
+        WIRE_KIT (19);
 
         private int numVal;
 
