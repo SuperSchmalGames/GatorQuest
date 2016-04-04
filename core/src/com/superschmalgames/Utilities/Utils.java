@@ -150,7 +150,7 @@ public class Utils {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////MOVES///////////////////////////////////////////////////////////////////////
-    public static final H_Move Java_Function = new H_Move("Java Function", java_function_tex, "A move that benefits\nfrom improved Software \nskill.", false, 0, 0, 3,7,10,11, 3,7,10,11, 100,300,500,110,110);
+    public static final H_Move Java_Function = new H_Move("Java Function", java_function_tex, "A move that benefits\nfrom improved Software \nskill.", false, 0, 0, 3,7,10,11, 3,7,10,11, 1,3,5,11,11);
     public static final H_Move Recursive_Loop = new H_Move("Recursive Loop",recursive_function_tex, "A move that benefits\nfrom improved Software \nskill.", false, 0, 0, 5,10,11,11, 5,10,11,11, 4,6,11,11,11);
     public static final H_Move Stack_Overflow = new H_Move("Stack Overflow",stack_overflow_tex, "A move that benefits\nfrom improved Software \nand Read/Write skills.", true, 0, 2, 3,5,8,11, 1,5,7,11, 2,4,6,11,11);
     public static final H_Move Commented_Code = new H_Move("Commented Code",commented_code_tex, "A move that benefits\nfrom improved Software\nand Read/Write skills.", true, 0, 2, 3,5,7,9, 2,4,6,8, 2,3,4,5,6);
