@@ -18,11 +18,13 @@ import com.superschmalgames.Utilities.Utils;
 public class BOSS extends ENEMY{
 
     int cost;
+    int semester;
 
-    public BOSS(char dir,String n, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a, H_Move[] b, int e, int m, int c) {
+    public BOSS(char dir,String n, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a, H_Move[] b, int e, int m, int c, int sem) {
         super(dir,s,win,lose,sprite,combat,x,y,h,a,b,e,m);
         name = n;
         cost = c;
+        semester = sem;
     }
 
     public void initiate(){
@@ -44,7 +46,15 @@ public class BOSS extends ENEMY{
 
         //Create new dialogue window containing the dialogue of the NPC we're talking to.
         MainClass.gameScreen.window = new CharacterDialogue();    //480=text block width, 8=left align, true=wrap
-        if(!triggered && MainClass.hero.gatorBucks < cost) {
+        if (!triggered && MainClass.hero.semester != semester) {
+            MainClass.gameScreen.window.dialog.setText(Utils.font_small, "You don't seem to meet the prerequisites for this course!" + cost, Color.BLUE, 480, 8, true);
+            MainClass.gameScreen.window.decLock = true;
+            MainClass.gameScreen.window.enemy = false;
+            MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
+            MainClass.gameScreen.window.decOffsetX = MainClass.gameScreen.window.OK_X_OFFSET;
+            MainClass.gameScreen.window.decOffsetY = MainClass.gameScreen.window.OK_Y_OFFSET;
+        }
+        else if(!triggered && MainClass.hero.gatorBucks < cost) {
             MainClass.gameScreen.window.dialog.setText(Utils.font_small, "It would appear that you can't pay your tuition. This course costs: $" + cost, Color.BLUE, 480, 8, true);
             MainClass.gameScreen.window.decLock = true;
             MainClass.gameScreen.window.enemy = false;

@@ -173,23 +173,23 @@ public class Utils {
     public static final H_Move Documentation = new H_Move("Documentation",documentation_tex, "A move that benefits\nfrom improved\nRead/Write skills.", false, 2, 2, 4,6,7,10, 4,6,7,10, 2,4,5,7,11);
     public static final H_Move Code_Testing = new H_Move("Code Testing",code_testing_tex, "A move that benefits\nfrom improved Software\nand Focus skills.", false, 0, 6, 4,6,7,10, 4,5,7,10, 3,4,6,7,11);
     public static final H_Move Perf_Presentation = new H_Move("Perf. Presentation",perfect_presentation_tex, "A move that benefits\nfrom improved Social\nskill.", false, 4, 4, 3,5,7,9, 3,5,7,9, 2,4,5,6,7);
-    public static final E_Move New_Syntax = new E_Move("New Syntax", 0, 0, 3,7,10,10, 3,7,10,10, .6,.5,.4,.1,.1);
+    public static final E_Move New_Syntax = new E_Move("New Syntax", 0, 0, 3,7,10,10, 3,7,10,10, .4,.3,.2,.1,.1);
     public static final E_Move Uncompilable_Code = new E_Move("Uncompilable Code", 0, 3, 2,4,6,10, 2,4,6,10, .6,.5,.4,.2,.1);
     public static final E_Move Build_the_Circuit = new E_Move("Build the Circuit", 1, 6, 2,4,6,10, 1,3,5,10, .5,.4,.3,.1,.1);
     public static final E_Move Memory_Map_It = new E_Move("Memory Map It", 1, 5, 3,4,5,10, 1,2,3,10, .55,.5,.45,.3,.1);
     public static final E_Move Essay = new E_Move("essay", 2, 2, 3,7,10,10, 3,7,10,10, .6,.3,.2,.1,.1);
-    public static final E_Move Ambiguous_Test_Question = new E_Move("Ambiguous Test Question", 2, 6, 3,5,8,10, 2,4,7,10, 1,.5,.25,0,0);
-    public static final E_Move Insurmountable_Workload = new E_Move("Insurmountable Work Load", 3, 3, 2,4,6,8, 2,4,6,8, 1.1,.9,.7,.5,.3);
-    public static final E_Move Simultaneous_Deadlines = new E_Move("Simultaneous Deadlines", 3, 3, 3,5,7,10, 3,5,7,10, 1.3,1.0,.7,.5,.3);
-    public static final E_Move Group_Project = new E_Move("Group Project", 4, 4, 2,4,6,8, 2,4,6,8, 1.2,1,.8,.6,.3);
-    public static final E_Move Partner_Up = new E_Move("Partner Up", 4, 4, 2,4,6,8, 2,4,6,8, .9,.8,.7,.6,.5);
+    public static final E_Move Ambiguous_Test_Question = new E_Move("Ambiguous Test Question", 2, 6, 3,5,8,10, 2,4,7,10, .75,.5,.25,0,0);
+    public static final E_Move Insurmountable_Workload = new E_Move("Insurmountable Work Load", 3, 3, 2,4,6,8, 2,4,6,8, .8,.55,.4,.3,.2);
+    public static final E_Move Simultaneous_Deadlines = new E_Move("Simultaneous Deadlines", 3, 3, 3,5,7,10, 3,5,7,10, .8,.7,.6,.5,.3);
+    public static final E_Move Group_Project = new E_Move("Group Project", 4, 4, 2,4,6,8, 2,4,6,8, .8,.7,.55,.4,.2);
+    public static final E_Move Partner_Up = new E_Move("Partner Up", 4, 4, 2,4,6,8, 2,4,6,8, .7,.6,.4,.3,.2);
     public static final E_Move Complex_Equation = new E_Move("Complex Equation", 5, 5, 2,4,6,8, 2,4,6,8, .7,.6,.5,.4,.3);
-    public static final E_Move Find_the_Algorithm = new E_Move("Find the Algorithm", 5, 2, 2,4,10,10, 1,3,10,10, 1,.7,.5,.3,.1);
-    public static final E_Move Off_by_One = new E_Move("Off By One", 5, 6, 4,6,10,10, 4,6,10,10, 1.1,.7,.6,.5,.4);
-    public static final E_Move Debug_Error = new E_Move("Debug The Error", 0, 6, 3,5,7,10, 3,5,7,10, 1.1,.9,.7,.5,.3);
-    public static final E_Move FFT_it = new E_Move("FFT It", 5, 6, 2,4,6,8, 3,5,7,9, 1.3,1,.7,.5,.3);
-    public static final E_Move Colloquialisms = new E_Move("Colloquialisms", 6, 6, 2,4,6,8, 2,4,6,8, 1.1,.9,.7,.5,.3);
-    public static final E_Move Trig_sub_it = new E_Move("Trig Substitution", 5,5, 3,5,7,9, 3,5,7,9, .9,.7,.5,.3,.1);
+    public static final E_Move Find_the_Algorithm = new E_Move("Find the Algorithm", 5, 2, 2,4,10,10, 1,3,10,10, .8,.6,.4,.3,.1);
+    public static final E_Move Off_by_One = new E_Move("Off By One", 5, 6, 4,6,10,10, 4,6,10,10, .8,.7,.6,.5,.4);
+    public static final E_Move Debug_Error = new E_Move("Debug The Error", 0, 6, 3,5,7,10, 3,5,7,10, .8,.7,.5,.3,.2);
+    public static final E_Move FFT_it = new E_Move("FFT It", 5, 6, 2,4,6,8, 3,5,7,9, .8,.5,.35,.25,.1);
+    public static final E_Move Colloquialisms = new E_Move("Colloquialisms", 6, 6, 2,4,6,8, 2,4,6,8, .7,.6,.5,.4,.3);
+    public static final E_Move Trig_sub_it = new E_Move("Trig Substitution", 5,5, 3,5,7,9, 3,5,7,9, .6,.5,.4,.3,.1);
     private static final E_Move[] Sriv_attacks = {Build_the_Circuit,Partner_Up,Complex_Equation,Find_the_Algorithm};
     private static final H_Move[] Sriv_weakness = {Nodal_Analysis,F2_Solve,Set_Equal_to_0};
     private static final E_Move[] Wong_attacks = {Ambiguous_Test_Question,Complex_Equation,New_Syntax,FFT_it};
@@ -674,7 +674,7 @@ public class Utils {
             new NPC('r', neb24, "visuals/sprite_sheets/sprite_walk_r1.png", 110*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
             new NPC('d', neb25, "visuals/sprite_sheets/sprite_walk_d11.png", 122*MAP_RESOLUTION, (89-62)*MAP_RESOLUTION),
             new NPC('r', neb26, "visuals/sprite_sheets/sprite_walk_r12.png", 121*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
-            new ENEMY('l', nebPPre, nebPWin, nebPLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 113*MAP_RESOLUTION, (89-38)*MAP_RESOLUTION, 25, Neb_A_attacks, Sriv_weakness, 10, 10),
+            new ENEMY('l', nebPPre, nebPWin, nebPLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 113*MAP_RESOLUTION, (89-38)*MAP_RESOLUTION, 16, Neb_A_attacks, Sriv_weakness, 10, 10),
 
             new NPC('l', neb27, "visuals/sprite_sheets/sprite_walk_l7.png", 125*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION),
             new NPC('r', neb28, "visuals/sprite_sheets/sprite_walk_r10.png", 118*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION), //30
@@ -691,7 +691,7 @@ public class Utils {
             new NPC('u', neb39, "visuals/sprite_sheets/sprite_walk_u14.png", 190*MAP_RESOLUTION, (89-50)*MAP_RESOLUTION),
             new NPC('u', neb40, "visuals/sprite_sheets/sprite_walk_u13.png", 202*MAP_RESOLUTION, (89-69)*MAP_RESOLUTION),
             new NPC('d', neb41, "visuals/sprite_sheets/sprite_walk_d12.png", 214*MAP_RESOLUTION, (89-66)*MAP_RESOLUTION),
-            new ENEMY('r', nebSPre, nebSWin, nebSLose, "visuals/sprite_sheets/sprite_walk_r11.png", "visuals/sprite_sheets/sprite_l11.png", 211*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION, 25, Neb_D_attacks, Wong_weakness, 10, 10),
+            new ENEMY('r', nebSPre, nebSWin, nebSLose, "visuals/sprite_sheets/sprite_walk_r11.png", "visuals/sprite_sheets/sprite_l11.png", 211*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION, 16, Neb_D_attacks, Wong_weakness, 10, 10),
             new NPC('u', neb42, "visuals/sprite_sheets/sprite_walk_u10.png", 229*MAP_RESOLUTION, (89-58)*MAP_RESOLUTION),
             new NPC('l', neb43, "visuals/sprite_sheets/sprite_walk_l9.png", 224*MAP_RESOLUTION, (89-52)*MAP_RESOLUTION), //46
             new NPC('r', neb44, "visuals/sprite_sheets/sprite_walk_r1.png", 187*MAP_RESOLUTION, (89-24)*MAP_RESOLUTION),
@@ -700,53 +700,53 @@ public class Utils {
             new NPC('d', neb47, "visuals/sprite_sheets/sprite_walk_d4.png", 229*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION), //50
             new NPC('r', neb48, "visuals/sprite_sheets/sprite_walk_r5.png", 246*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION),
             new NPC('u', neb49, "visuals/sprite_sheets/sprite_walk_u6.png", 258*MAP_RESOLUTION, (89-26)*MAP_RESOLUTION),
-            new ENEMY('d', nebXPre, nebXWin, nebXLose, "visuals/sprite_sheets/sprite_walk_d7.png", "visuals/sprite_sheets/sprite_l7.png", 283*MAP_RESOLUTION, (89-16)*MAP_RESOLUTION, 25, Neb_I_attacks, Gugel_weakness, 10, 10),
-            new ENEMY('d', nebVPre, nebVWin, nebVLose, "visuals/sprite_sheets/sprite_walk_d8.png", "visuals/sprite_sheets/sprite_l8.png", 284*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION, 25, Neb_G_attacks, Gugel_weakness, 10, 10),
+            new ENEMY('d', nebXPre, nebXWin, nebXLose, "visuals/sprite_sheets/sprite_walk_d7.png", "visuals/sprite_sheets/sprite_l7.png", 283*MAP_RESOLUTION, (89-16)*MAP_RESOLUTION, 16, Neb_I_attacks, Gugel_weakness, 10, 10),
+            new ENEMY('d', nebVPre, nebVWin, nebVLose, "visuals/sprite_sheets/sprite_walk_d8.png", "visuals/sprite_sheets/sprite_l8.png", 284*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION, 16, Neb_G_attacks, Gugel_weakness, 10, 10),
             new NPC('l', neb50, "visuals/sprite_sheets/sprite_walk_l9.png", 276*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
             new NPC('d', neb51, "visuals/sprite_sheets/sprite_walk_d10.png", 287*MAP_RESOLUTION, (89-70)*MAP_RESOLUTION),
             new NPC('d', neb52, "visuals/sprite_sheets/sprite_walk_d11.png", 269*MAP_RESOLUTION, (89-61)*MAP_RESOLUTION),
             new NPC('u', neb53, "visuals/sprite_sheets/sprite_walk_u12.png", 262*MAP_RESOLUTION, (89-54)*MAP_RESOLUTION),
             new NPC('d', neb54, "visuals/sprite_sheets/sprite_walk_d13.png", 262*MAP_RESOLUTION, (89-37)*MAP_RESOLUTION),
             new NPC('r', neb55, "visuals/sprite_sheets/sprite_walk_r14.png", 248*MAP_RESOLUTION, (89-46)*MAP_RESOLUTION), //60
-            new BOSS('d', "Srivastava", "I am Srivastava", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/srivastava/srivastava_d.png", "visuals/Professors/srivastava/srivastava_l.png", 112*MAP_RESOLUTION, (89-33)*MAP_RESOLUTION, 45, Sriv_attacks, Sriv_weakness, 10, 10, 2000),
-            new BOSS('d', "Wong", "I am Wong", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/wong/wong_d.png", "visuals/Professors/wong/wong_l.png", 211*MAP_RESOLUTION, (89-55)*MAP_RESOLUTION, 45, Wong_attacks, Wong_weakness, 10, 10, 2000),
-            new BOSS('d', "Gugel", "I am Gugel", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/gugel/gugel_d.png", "visuals/Professors/gugel/gugel_l.png", 287*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION, 45, Gugel_attacks, Gugel_weakness, 10, 10, 2000),
-            new ENEMY('r', nebQPre, nebQWin, nebQLose, "visuals/sprite_sheets/sprite_walk_r1.png", "visuals/sprite_sheets/sprite_l1.png", 110*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION, 25, Neb_B_attacks, Sriv_weakness, 10, 10),
-            new ENEMY('l', nebRPre, nebRWin, nebRLose, "visuals/sprite_sheets/sprite_walk_l2.png", "visuals/sprite_sheets/sprite_l2.png", 112*MAP_RESOLUTION, (89-44)*MAP_RESOLUTION, 25, Neb_C_attacks, Sriv_weakness, 10, 10),
-            new ENEMY('l', nebTPre, nebTWin, nebTLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 220*MAP_RESOLUTION, (89-48)*MAP_RESOLUTION, 25, Neb_E_attacks, Wong_weakness, 10, 10),
-            new ENEMY('r', nebUPre, nebUWin, nebULose, "visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l4.png", 229*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION, 25, Neb_F_attacks, Wong_weakness, 10, 10),
-            new ENEMY('l', nebWPre, nebWWin, nebWLose, "visuals/sprite_sheets/sprite_walk_l5.png", "visuals/sprite_sheets/sprite_l5.png", 281*MAP_RESOLUTION, (89-30)*MAP_RESOLUTION, 25, Neb_H_attacks, Gugel_weakness, 10, 10),
+            new BOSS('d', "Srivastava", "I am Srivastava", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/srivastava/srivastava_d.png", "visuals/Professors/srivastava/srivastava_l.png", 112*MAP_RESOLUTION, (89-33)*MAP_RESOLUTION, 25, Sriv_attacks, Sriv_weakness, 10, 10, 2000, 3),
+            new BOSS('d', "Wong", "I am Wong", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/wong/wong_d.png", "visuals/Professors/wong/wong_l.png", 211*MAP_RESOLUTION, (89-55)*MAP_RESOLUTION, 25, Wong_attacks, Wong_weakness, 10, 10, 2000, 4),
+            new BOSS('d', "Gugel", "I am Gugel", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/gugel/gugel_d.png", "visuals/Professors/gugel/gugel_l.png", 287*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION, 25, Gugel_attacks, Gugel_weakness, 10, 10, 2000, 5),
+            new ENEMY('r', nebQPre, nebQWin, nebQLose, "visuals/sprite_sheets/sprite_walk_r1.png", "visuals/sprite_sheets/sprite_l1.png", 110*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION, 16, Neb_B_attacks, Sriv_weakness, 10, 10),
+            new ENEMY('l', nebRPre, nebRWin, nebRLose, "visuals/sprite_sheets/sprite_walk_l2.png", "visuals/sprite_sheets/sprite_l2.png", 112*MAP_RESOLUTION, (89-44)*MAP_RESOLUTION, 16, Neb_C_attacks, Sriv_weakness, 10, 10),
+            new ENEMY('l', nebTPre, nebTWin, nebTLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 220*MAP_RESOLUTION, (89-48)*MAP_RESOLUTION, 16, Neb_E_attacks, Wong_weakness, 10, 10),
+            new ENEMY('r', nebUPre, nebUWin, nebULose, "visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l4.png", 229*MAP_RESOLUTION, (89-41)*MAP_RESOLUTION, 16, Neb_F_attacks, Wong_weakness, 10, 10),
+            new ENEMY('l', nebWPre, nebWWin, nebWLose, "visuals/sprite_sheets/sprite_walk_l5.png", "visuals/sprite_sheets/sprite_l5.png", 281*MAP_RESOLUTION, (89-30)*MAP_RESOLUTION, 16, Neb_H_attacks, Gugel_weakness, 10, 10),
     };
     
     public static ENEMY[] NEB_randoms = {
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Neb_random_attacks_1, Sriv_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Neb_random_attacks_2, Sriv_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Neb_random_attacks_3, Sriv_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Neb_random_attacks_4, Sriv_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Neb_random_attacks_5, Wong_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Neb_random_attacks_6, Wong_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Neb_random_attacks_7, Wong_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Neb_random_attacks_8, Gugel_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Neb_random_attacks_9, Gugel_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Neb_random_attacks_10, Gugel_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Neb_random_attacks_11, Sriv_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Neb_random_attacks_12, Sriv_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Neb_random_attacks_13, Sriv_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Neb_random_attacks_14, Sriv_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Neb_random_attacks_15, Wong_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Neb_random_attacks_16, Wong_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Neb_random_attacks_17, Wong_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Neb_random_attacks_18, Gugel_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Neb_random_attacks_19, Gugel_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Neb_random_attacks_20, Gugel_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Neb_random_attacks_21, Sriv_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Neb_random_attacks_22, Sriv_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Neb_random_attacks_23, Sriv_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Neb_random_attacks_24, Sriv_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Neb_random_attacks_25, Wong_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Neb_random_attacks_26, Wong_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Neb_random_attacks_27, Wong_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Neb_random_attacks_28, Gugel_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 8, Neb_random_attacks_1, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 8, Neb_random_attacks_2, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 8, Neb_random_attacks_3, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 8, Neb_random_attacks_4, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 8, Neb_random_attacks_5, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 8, Neb_random_attacks_6, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 8, Neb_random_attacks_7, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 8, Neb_random_attacks_8, Gugel_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 8, Neb_random_attacks_9, Gugel_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 8, Neb_random_attacks_10, Gugel_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 8, Neb_random_attacks_11, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 8, Neb_random_attacks_12, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 8, Neb_random_attacks_13, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 8, Neb_random_attacks_14, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 8, Neb_random_attacks_15, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 8, Neb_random_attacks_16, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 8, Neb_random_attacks_17, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 8, Neb_random_attacks_18, Gugel_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 8, Neb_random_attacks_19, Gugel_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 8, Neb_random_attacks_20, Gugel_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 8, Neb_random_attacks_21, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 8, Neb_random_attacks_22, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 8, Neb_random_attacks_23, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 8, Neb_random_attacks_24, Sriv_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 8, Neb_random_attacks_25, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 8, Neb_random_attacks_26, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 8, Neb_random_attacks_27, Wong_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 8, Neb_random_attacks_28, Gugel_weakness, 10, 10),
     };
     //========================================================================================
     //========================================CISE============================================
@@ -777,7 +777,7 @@ public class Utils {
             new NPC('d', cise24, "visuals/sprite_sheets/sprite_walk_d8.png", 130*MAP_RESOLUTION, (66-60)*MAP_RESOLUTION),
             new NPC('d', cise25, "visuals/sprite_sheets/sprite_walk_d9.png", 143*MAP_RESOLUTION, (66-43)*MAP_RESOLUTION),
 
-            new ENEMY('d', ciseOPre,ciseOWin,ciseOLose,"visuals/sprite_sheets/sprite_walk_d10.png", "visuals/sprite_sheets/sprite_l10.png", 175*MAP_RESOLUTION, (66-7)*MAP_RESOLUTION, 1, Cise_D_attacks, Schmalz_weakness, 10, 10),
+            new ENEMY('d', ciseOPre,ciseOWin,ciseOLose,"visuals/sprite_sheets/sprite_walk_d10.png", "visuals/sprite_sheets/sprite_l10.png", 175*MAP_RESOLUTION, (66-7)*MAP_RESOLUTION, 16, Cise_D_attacks, Schmalz_weakness, 10, 10),
             new NPC('l', cise26, "visuals/sprite_sheets/sprite_walk_l11.png", 202*MAP_RESOLUTION, (66-12)*MAP_RESOLUTION),
             new NPC('d', cise27, "visuals/sprite_sheets/sprite_walk_d13.png", 213*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION),
             new NPC('r', cise28, "visuals/sprite_sheets/sprite_walk_r14.png", 168*MAP_RESOLUTION, (66-34)*MAP_RESOLUTION),
@@ -786,45 +786,45 @@ public class Utils {
             new NPC('l', cise31, "visuals/sprite_sheets/sprite_walk_l3.png", 217*MAP_RESOLUTION, (66-32)*MAP_RESOLUTION),
             new NPC('l', cise32, "visuals/sprite_sheets/sprite_walk_l4.png", 213*MAP_RESOLUTION, (66-42)*MAP_RESOLUTION),
             new NPC('u', cise33, "visuals/sprite_sheets/sprite_walk_u5.png", 199*MAP_RESOLUTION, (66-58)*MAP_RESOLUTION),
-            new BOSS('d', "Dobbins", "I am Dobbins", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/dobbins/dobbins_d.png", "visuals/Professors/dobbins/dobbins_l.png", 2*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION, 45, Dobbins_attacks, Dobbins_weakness, 10, 10, 2000),
-            new BOSS('d', "Schmalz", "I am Schmalz", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/schmalz/schmalz_d.png", "visuals/Professors/schmalz/schmalz_l.png", 168*MAP_RESOLUTION, (66-4)*MAP_RESOLUTION, 45, Schmalz_attacks, Schmalz_weakness, 10, 10, 2000),
-            new ENEMY('d', ciseJPre,ciseJWin,ciseJLose,"visuals/sprite_sheets/sprite_walk_d6.png", "visuals/sprite_sheets/sprite_l6.png",33*MAP_RESOLUTION, (66-28)*MAP_RESOLUTION, 1, Cise_A_attacks, Dobbins_weakness, 10, 10),
-            new ENEMY('l', ciseKPre,ciseKWin,ciseKLose,"visuals/sprite_sheets/sprite_walk_l7.png", "visuals/sprite_sheets/sprite_l7.png",19*MAP_RESOLUTION, (66-31)*MAP_RESOLUTION, 1, Cise_B_attacks, Dobbins_weakness, 10, 10),
-            new ENEMY('r', ciseLPre,ciseLWin,ciseLLose,"visuals/sprite_sheets/sprite_walk_r8.png", "visuals/sprite_sheets/sprite_l8.png",8*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 1, Cise_C_attacks, Dobbins_weakness, 10, 10),
-            new ENEMY('r', ciseMPre,ciseMWin,ciseMLose,"visuals/sprite_sheets/sprite_walk_r9.png", "visuals/sprite_sheets/sprite_l9.png",177*MAP_RESOLUTION, (66-13)*MAP_RESOLUTION, 1, Cise_E_attacks, Schmalz_weakness, 10, 10),
-            new ENEMY('l', ciseNPre,ciseNWin,ciseNLose,"visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png",182*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 1, Cise_F_attacks, Schmalz_weakness, 10, 10), //40
+            new BOSS('d', "Dobbins", "I am Dobbins", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/dobbins/dobbins_d.png", "visuals/Professors/dobbins/dobbins_l.png", 2*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION, 25, Dobbins_attacks, Dobbins_weakness, 10, 10, 2000, 0),
+            new BOSS('d', "Schmalz", "I am Schmalz", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/schmalz/schmalz_d.png", "visuals/Professors/schmalz/schmalz_l.png", 168*MAP_RESOLUTION, (66-4)*MAP_RESOLUTION, 25, Schmalz_attacks, Schmalz_weakness, 10, 10, 2000, 7),
+            new ENEMY('d', ciseJPre,ciseJWin,ciseJLose,"visuals/sprite_sheets/sprite_walk_d6.png", "visuals/sprite_sheets/sprite_l6.png",33*MAP_RESOLUTION, (66-28)*MAP_RESOLUTION, 16, Cise_A_attacks, Dobbins_weakness, 10, 10),
+            new ENEMY('l', ciseKPre,ciseKWin,ciseKLose,"visuals/sprite_sheets/sprite_walk_l7.png", "visuals/sprite_sheets/sprite_l7.png",19*MAP_RESOLUTION, (66-31)*MAP_RESOLUTION, 16, Cise_B_attacks, Dobbins_weakness, 10, 10),
+            new ENEMY('r', ciseLPre,ciseLWin,ciseLLose,"visuals/sprite_sheets/sprite_walk_r8.png", "visuals/sprite_sheets/sprite_l8.png",8*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 16, Cise_C_attacks, Dobbins_weakness, 10, 10),
+            new ENEMY('r', ciseMPre,ciseMWin,ciseMLose,"visuals/sprite_sheets/sprite_walk_r9.png", "visuals/sprite_sheets/sprite_l9.png",177*MAP_RESOLUTION, (66-13)*MAP_RESOLUTION, 16, Cise_E_attacks, Schmalz_weakness, 10, 10),
+            new ENEMY('l', ciseNPre,ciseNWin,ciseNLose,"visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png",182*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 16, Cise_F_attacks, Schmalz_weakness, 10, 10), //40
 
     };
 
     public static ENEMY[] Cise_randoms = {
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Cise_random_attacks_1, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Cise_random_attacks_2, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Cise_random_attacks_3, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Cise_random_attacks_4, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Cise_random_attacks_5, Schmalz_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Cise_random_attacks_6, Schmalz_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Cise_random_attacks_7, Schmalz_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Cise_random_attacks_8, Schmalz_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Cise_random_attacks_9, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Cise_random_attacks_10, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Cise_random_attacks_11, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Cise_random_attacks_12, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Cise_random_attacks_13, Schmalz_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Cise_random_attacks_14, Schmalz_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Cise_random_attacks_15, Schmalz_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Cise_random_attacks_16, Schmalz_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Cise_random_attacks_17, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Cise_random_attacks_18, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Cise_random_attacks_19, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Cise_random_attacks_20, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Cise_random_attacks_21, Schmalz_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Cise_random_attacks_22, Schmalz_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Cise_random_attacks_23, Schmalz_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Cise_random_attacks_24, Schmalz_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Cise_random_attacks_25, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Cise_random_attacks_26, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Cise_random_attacks_27, Dobbins_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Cise_random_attacks_28, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 8, Cise_random_attacks_1, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 8, Cise_random_attacks_2, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 8, Cise_random_attacks_3, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 8, Cise_random_attacks_4, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 8, Cise_random_attacks_5, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 8, Cise_random_attacks_6, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 8, Cise_random_attacks_7, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 8, Cise_random_attacks_8, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 8, Cise_random_attacks_9, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 8, Cise_random_attacks_10, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 8, Cise_random_attacks_11, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 8, Cise_random_attacks_12, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 8, Cise_random_attacks_13, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 8, Cise_random_attacks_14, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 8, Cise_random_attacks_15, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 8, Cise_random_attacks_16, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 8, Cise_random_attacks_17, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 8, Cise_random_attacks_18, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 8, Cise_random_attacks_19, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 8, Cise_random_attacks_20, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 8, Cise_random_attacks_21, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 8, Cise_random_attacks_22, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 8, Cise_random_attacks_23, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 8, Cise_random_attacks_24, Schmalz_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 8, Cise_random_attacks_25, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 8, Cise_random_attacks_26, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 8, Cise_random_attacks_27, Dobbins_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 8, Cise_random_attacks_28, Dobbins_weakness, 10, 10),
     };
     //========================================================================================
     //========================================Turlington======================================
@@ -866,7 +866,7 @@ public class Utils {
             new NPC('u', tur35, "visuals/sprite_sheets/sprite_walk_u7.png", 146*MAP_RESOLUTION, (128-97)*MAP_RESOLUTION),
             new NPC('r', tur36, "visuals/sprite_sheets/sprite_walk_r8.png", 168*MAP_RESOLUTION, (128-102)*MAP_RESOLUTION),
             new NPC('d', tur37, "visuals/sprite_sheets/sprite_walk_d9.png", 151*MAP_RESOLUTION, (128-121)*MAP_RESOLUTION),
-            new ENEMY('l', turlingtonFPre,turlingtonFWin,turlingtonFLose, "visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png", 169*MAP_RESOLUTION, (128-113)*MAP_RESOLUTION, 25, Turlington_F_attacks, Horton_weakness, 10, 10),
+            new ENEMY('l', turlingtonFPre,turlingtonFWin,turlingtonFLose, "visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png", 169*MAP_RESOLUTION, (128-113)*MAP_RESOLUTION, 16, Turlington_F_attacks, Horton_weakness, 10, 10),
             new NPC('u', tur38, "visuals/sprite_sheets/sprite_walk_u11.png", 274*MAP_RESOLUTION, (128-125)*MAP_RESOLUTION),
             new NPC('l', tur39, "visuals/sprite_sheets/sprite_walk_l12.png", 292*MAP_RESOLUTION, (128-113)*MAP_RESOLUTION),
             new NPC('r', tur40, "visuals/sprite_sheets/sprite_walk_r13.png", 261*MAP_RESOLUTION, (128-92)*MAP_RESOLUTION), //40
@@ -884,50 +884,49 @@ public class Utils {
             new NPC('l', tur52, "visuals/sprite_sheets/sprite_walk_l11.png", 301*MAP_RESOLUTION, (128-28)*MAP_RESOLUTION),
             new NPC('l', tur53, "visuals/sprite_sheets/sprite_walk_l12.png", 320*MAP_RESOLUTION, (128-22)*MAP_RESOLUTION),
             new NPC('u', tur54, "visuals/sprite_sheets/sprite_walk_u13.png", 334*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION),
-            new ENEMY('d', turlingtonIPre,turlingtonIWin,turlingtonILose, "visuals/sprite_sheets/sprite_walk_d14.png", "visuals/sprite_sheets/sprite_l14.png", 349*MAP_RESOLUTION, (128-19)*MAP_RESOLUTION, 25, Turlington_I_attacks, Small_weakness, 10, 10),
+            new ENEMY('d', turlingtonIPre,turlingtonIWin,turlingtonILose, "visuals/sprite_sheets/sprite_walk_d14.png", "visuals/sprite_sheets/sprite_l14.png", 349*MAP_RESOLUTION, (128-19)*MAP_RESOLUTION, 16, Turlington_I_attacks, Small_weakness, 10, 10),
             new NPC('r', tur55, "visuals/sprite_sheets/sprite_walk_r1.png", 353*MAP_RESOLUTION, (128-30)*MAP_RESOLUTION), //56
-            new BOSS('d', "Chui", "I am Chui", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/chui/chui_d.png", "visuals/Professors/chui/chui_l.png", 46*MAP_RESOLUTION, (128-27)*MAP_RESOLUTION, 45, Chui_attacks, Chui_weakness, 10, 10, 2000),
-            new BOSS('d', "Horton", "I am Horton", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/horton/horton_d.png", "visuals/Professors/horton/horton_l.png", 170*MAP_RESOLUTION, (128-122)*MAP_RESOLUTION, 45, Horton_attacks, Horton_weakness, 10, 10, 2000),
-            new BOSS('d', "Small", "I am Small", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/small/small_d.png", "visuals/Professors/small/small_l.png", 362*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION, 45, Small_attacks, Small_weakness, 10, 10, 2000),
-            new ENEMY('d', turlingtonAPre,turlingtonAWin,turlingtonALose,"visuals/sprite_sheets/sprite_walk_d2.png", "visuals/sprite_sheets/sprite_l2.png", 63*MAP_RESOLUTION, (128-36)*MAP_RESOLUTION, 25, Turlington_A_attacks, Chui_weakness, 10, 10), //60
-            new ENEMY('l', turlingtonBPre,turlingtonBWin,turlingtonBLose,"visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 49*MAP_RESOLUTION, (128-40)*MAP_RESOLUTION, 25, Turlington_B_attacks, Chui_weakness, 10, 10),
-            new ENEMY('r', turlingtonCPre,turlingtonCWin,turlingtonCLose,"visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l4.png", 43*MAP_RESOLUTION, (128-37)*MAP_RESOLUTION, 25, Turlington_C_attacks, Chui_weakness, 10, 10),
-            new ENEMY('r', turlingtonDPre,turlingtonDWin,turlingtonDLose,"visuals/sprite_sheets/sprite_walk_r5.png", "visuals/sprite_sheets/sprite_l5.png", 173*MAP_RESOLUTION, (128-106)*MAP_RESOLUTION, 25, Turlington_D_attacks, Horton_weakness, 10, 10),
-            new ENEMY('r', turlingtonEPre,turlingtonEWin,turlingtonELose,"visuals/sprite_sheets/sprite_walk_r6.png", "visuals/sprite_sheets/sprite_l6.png", 158*MAP_RESOLUTION, (128-110)*MAP_RESOLUTION, 25, Turlington_E_attacks, Horton_weakness, 10, 10),
-            new ENEMY('d', turlingtonGPre,turlingtonGWin,turlingtonGLose,"visuals/sprite_sheets/sprite_walk_d7.png", "visuals/sprite_sheets/sprite_l7.png", 341*MAP_RESOLUTION, (128-15)*MAP_RESOLUTION, 25, Turlington_G_attacks, Small_weakness, 10, 10),
-            new ENEMY('l', turlingtonHPre,turlingtonHWin,turlingtonHLose,"visuals/sprite_sheets/sprite_walk_l8.png", "visuals/sprite_sheets/sprite_l8.png", 347*MAP_RESOLUTION, (128-25)*MAP_RESOLUTION, 25, Turlington_H_attacks, Small_weakness, 10, 10),
-
+            new BOSS('d', "Chui", "I am Chui", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/chui/chui_d.png", "visuals/Professors/chui/chui_l.png", 46*MAP_RESOLUTION, (128-27)*MAP_RESOLUTION, 25, Chui_attacks, Chui_weakness, 10, 10, 2000, 1),
+            new BOSS('d', "Horton", "I am Horton", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/horton/horton_d.png", "visuals/Professors/horton/horton_l.png", 170*MAP_RESOLUTION, (128-122)*MAP_RESOLUTION, 25, Horton_attacks, Horton_weakness, 10, 10, 2000, 2),
+            new BOSS('d', "Small", "I am Small", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/small/small_d.png", "visuals/Professors/small/small_l.png", 362*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION, 25, Small_attacks, Small_weakness, 10, 10, 2000, 6),
+            new ENEMY('d', turlingtonAPre,turlingtonAWin,turlingtonALose,"visuals/sprite_sheets/sprite_walk_d2.png", "visuals/sprite_sheets/sprite_l2.png", 63*MAP_RESOLUTION, (128-36)*MAP_RESOLUTION, 16, Turlington_A_attacks, Chui_weakness, 10, 10), //60
+            new ENEMY('l', turlingtonBPre,turlingtonBWin,turlingtonBLose,"visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 49*MAP_RESOLUTION, (128-40)*MAP_RESOLUTION, 16, Turlington_B_attacks, Chui_weakness, 10, 10),
+            new ENEMY('r', turlingtonCPre,turlingtonCWin,turlingtonCLose,"visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l4.png", 43*MAP_RESOLUTION, (128-37)*MAP_RESOLUTION, 16, Turlington_C_attacks, Chui_weakness, 10, 10),
+            new ENEMY('r', turlingtonDPre,turlingtonDWin,turlingtonDLose,"visuals/sprite_sheets/sprite_walk_r5.png", "visuals/sprite_sheets/sprite_l5.png", 173*MAP_RESOLUTION, (128-106)*MAP_RESOLUTION, 16, Turlington_D_attacks, Horton_weakness, 10, 10),
+            new ENEMY('r', turlingtonEPre,turlingtonEWin,turlingtonELose,"visuals/sprite_sheets/sprite_walk_r6.png", "visuals/sprite_sheets/sprite_l6.png", 158*MAP_RESOLUTION, (128-110)*MAP_RESOLUTION, 16, Turlington_E_attacks, Horton_weakness, 10, 10),
+            new ENEMY('d', turlingtonGPre,turlingtonGWin,turlingtonGLose,"visuals/sprite_sheets/sprite_walk_d7.png", "visuals/sprite_sheets/sprite_l7.png", 341*MAP_RESOLUTION, (128-15)*MAP_RESOLUTION, 16, Turlington_G_attacks, Small_weakness, 10, 10),
+            new ENEMY('l', turlingtonHPre,turlingtonHWin,turlingtonHLose,"visuals/sprite_sheets/sprite_walk_l8.png", "visuals/sprite_sheets/sprite_l8.png", 347*MAP_RESOLUTION, (128-25)*MAP_RESOLUTION, 16, Turlington_H_attacks, Small_weakness, 10, 10),
     };
 
     public static ENEMY[] Turlington_randoms = {
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Turlington_random_attacks_1, Chui_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Turlington_random_attacks_2, Chui_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Turlington_random_attacks_3, Chui_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Turlington_random_attacks_4, Chui_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Turlington_random_attacks_5, Horton_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Turlington_random_attacks_6, Horton_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Turlington_random_attacks_7, Horton_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Turlington_random_attacks_8, Horton_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Turlington_random_attacks_9, Small_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Turlington_random_attacks_10, Small_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Turlington_random_attacks_11, Small_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Turlington_random_attacks_12, Small_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Turlington_random_attacks_13, Chui_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Turlington_random_attacks_14, Chui_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 15, Turlington_random_attacks_15, Chui_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 15, Turlington_random_attacks_16, Chui_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 15, Turlington_random_attacks_17, Horton_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 15, Turlington_random_attacks_18, Horton_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 15, Turlington_random_attacks_19, Horton_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 15, Turlington_random_attacks_20, Small_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 15, Turlington_random_attacks_21, Small_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 15, Turlington_random_attacks_22, Small_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 15, Turlington_random_attacks_23, Chui_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 15, Turlington_random_attacks_24, Chui_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 15, Turlington_random_attacks_25, Chui_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 15, Turlington_random_attacks_26, Chui_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 15, Turlington_random_attacks_27, Horton_weakness, 10, 10),
-            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 15, Turlington_random_attacks_28, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 8, Turlington_random_attacks_1, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 8, Turlington_random_attacks_2, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 8, Turlington_random_attacks_3, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 8, Turlington_random_attacks_4, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 8, Turlington_random_attacks_5, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 8, Turlington_random_attacks_6, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 8, Turlington_random_attacks_7, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 8, Turlington_random_attacks_8, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 8, Turlington_random_attacks_9, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 8, Turlington_random_attacks_10, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 8, Turlington_random_attacks_11, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 8, Turlington_random_attacks_12, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 8, Turlington_random_attacks_13, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 8, Turlington_random_attacks_14, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l1.png", 0, 0, 8, Turlington_random_attacks_15, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l2.png", 0, 0, 8, Turlington_random_attacks_16, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 0, 0, 8, Turlington_random_attacks_17, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l4.png", 0, 0, 8, Turlington_random_attacks_18, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l5.png", 0, 0, 8, Turlington_random_attacks_19, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l6.png", 0, 0, 8, Turlington_random_attacks_20, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l7.png", 0, 0, 8, Turlington_random_attacks_21, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l8.png", 0, 0, 8, Turlington_random_attacks_22, Small_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l9.png", 0, 0, 8, Turlington_random_attacks_23, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l10.png", 0, 0, 8, Turlington_random_attacks_24, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l11.png", 0, 0, 8, Turlington_random_attacks_25, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l12.png", 0, 0, 8, Turlington_random_attacks_26, Chui_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l13.png", 0, 0, 8, Turlington_random_attacks_27, Horton_weakness, 10, 10),
+            new RANDOM('l', "","","", "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l14.png", 0, 0, 8, Turlington_random_attacks_28, Horton_weakness, 10, 10),
     };
     //========================================================================================
     //========================================Dorm============================================
