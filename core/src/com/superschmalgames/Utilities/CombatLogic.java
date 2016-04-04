@@ -256,6 +256,9 @@ public class CombatLogic {
             //Transport hero back to his dorm room.
             MainClass.gameScreen.setMap(Utils.dorm, Utils.start_x, Utils.start_y, 5);
             MainClass.openWorldScreen.camera.position.set(2700f,830f,0f);
+        }else
+        {
+            learnMoveProf();
         }
 
         if(!MainClass.hero.lastEnemy.name.equals("Professor") && !MainClass.hero.lastEnemy.name.equals("T.A."))
@@ -279,5 +282,23 @@ public class CombatLogic {
         Gdx.input.setInputProcessor(MainClass.inputHandler);
         MainClass.hero.canMove = true;
         ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+    }
+
+    public void learnMoveProf()
+    {
+        if(MainClass.hero.lastEnemy.name.equals("Dobbins"))
+            Utils.Extra_Credit.obtained = true;
+        else if(MainClass.hero.lastEnemy.name.equals("Chui"))
+            Utils.Boolean_Logic.obtained = true;
+        else if(MainClass.hero.lastEnemy.name.equals("Horton"))
+            Utils.F2_Solve.obtained = true;
+        else if(MainClass.hero.lastEnemy.name.equals("Srivastava"))
+            Utils._5_Lines_Matlab_Code.obtained = true;
+        else if(MainClass.hero.lastEnemy.name.equals("Wong"))
+            Utils.Soldering_Skills.obtained = true;
+        else if(MainClass.hero.lastEnemy.name.equals("Gugel"))
+            Utils.Documentation.obtained = true;
+        else if(MainClass.hero.lastEnemy.name.equals("Small"))
+            Utils.Perf_Presentation.obtained = true;
     }
 }

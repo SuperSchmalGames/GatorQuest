@@ -155,24 +155,24 @@ public class Utils {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////MOVES///////////////////////////////////////////////////////////////////////
-    public static final H_Move Java_Function = new H_Move("Java Function", java_function_tex, "A move that benefits\nfrom improved Software \nskill.", true, 0, 0, 3,7,10,11, 3,7,10,11, 1,3,5,11,11);
-    public static final H_Move Recursive_Loop = new H_Move("Recursive Loop",recursive_function_tex, "A move that benefits\nfrom improved Software \nskill.", true, 0, 0, 5,10,11,11, 5,10,11,11, 4,6,11,11,11);
+    public static final H_Move Java_Function = new H_Move("Java Function", java_function_tex, "A move that benefits\nfrom improved Software \nskill.", false, 0, 0, 3,7,10,11, 3,7,10,11, 1,3,5,11,11);
+    public static final H_Move Recursive_Loop = new H_Move("Recursive Loop",recursive_function_tex, "A move that benefits\nfrom improved Software \nskill.", false, 0, 0, 5,10,11,11, 5,10,11,11, 4,6,11,11,11);
     public static final H_Move Stack_Overflow = new H_Move("Stack Overflow",stack_overflow_tex, "A move that benefits\nfrom improved Software \nand Read/Write skills.", true, 0, 2, 3,5,8,11, 1,5,7,11, 2,4,6,11,11);
     public static final H_Move Commented_Code = new H_Move("Commented Code",commented_code_tex, "A move that benefits\nfrom improved Software\nand Read/Write skills.", true, 0, 2, 3,5,7,9, 2,4,6,8, 2,3,4,5,6);
     public static final H_Move Double_Integration = new H_Move("Double Integration",double_integration_tex, "A move that benefits\nfrom improved Math \nskills.", true, 5, 5, 2,4,10,11, 2,4,10,11, 2,4,5,11,11);
     public static final H_Move Set_Equal_to_0 = new H_Move("Set Equal to 0",set_equal_to_0_tex, "A move that benefits\nfrom improved Math \nskills.", true, 5, 5, 3,6,10,11, 3,6,10,11, 3,4,5,11,11);
     public static final H_Move Practice_Test = new H_Move("Practice Test",practice_test_tex, "A move that benefits\nfrom improved Focus \nskill.", true, 6, 6, 2,4,6,8, 2,4,6,8, 2,5,8,11,14);
-    public static final H_Move Extra_Credit = new H_Move("Extra Credit",extra_credit_tex, "A move that benefits\nfrom improved Social\nand Focus skills", true, 4, 6, 3,5,7,9, 2,4,6,8, 1,3,5,7,9);
-    public static final H_Move CPP_Skills = new H_Move("C++ Skills",cpp_skills_tex, "A move that benefits\nfrom improved Software\nskill.", true, 0, 0, 2,4,6,8, 2,4,6,8, 2,4,6,8,10);
-    public static final H_Move Nodal_Analysis = new H_Move("Nodal Analysis",nodal_analysis_tex, "A move that benefits\nfrom improved Hardware\nskill.", true, 1, 1, 2,5,9,10, 2,5,9,10, 3,5,6,8,11);
-    public static final H_Move F2_Solve = new H_Move("F2 Solve",f2_solve_tex, "A move that benefits\nfrom improved Math\nand Focus skills.", true, 5, 6, 3,10,10,10, 3,10,10,10, 4,5,5,5,5);
-    public static final H_Move _5_Lines_Matlab_Code = new H_Move("5 Lines Matlab Code",f_lines_matlab_code_tex, "A move that benefits\nfrom improved Software\nand Math skills.", true, 0, 5, 4,6,7,10, 2,4,5,10, 4,5,6,7,11);
-    public static final H_Move Karnaugh_Map = new H_Move("Karnaugh Map",karnaugh_map_tex, "A move that benefits\nfrom improved\nEndurance and\nHardware skills.", true, 1, 3, 2,4,10,10, 3,5,10,10, 4,6,8,11,11);
-    public static final H_Move Soldering_Skills = new H_Move("Soldering Skills",soldering_skills_tex, "A move that benefits\nfrom improved\nEndurance and\nFocus skills.", true, 3, 6, 2,4,10,10, 2,4,10,10, 2,3,5,11,11);
-    public static final H_Move Boolean_Logic = new H_Move("Boolean Logic",boolean_logic_tex, "A move that benefits\nfrom improved Math,\nFocus and Hardware\nskills.", true, 5, 1, 3,6,10,10, 3,6,10,10, 2,4,6,11,11);
-    public static final H_Move Documentation = new H_Move("Documentation",documentation_tex, "A move that benefits\nfrom improved\nRead/Write skills.", true, 2, 2, 4,6,7,10, 4,6,7,10, 2,4,5,7,11);
-    public static final H_Move Code_Testing = new H_Move("Code Testing",code_testing_tex, "A move that benefits\nfrom improved Software\nand Focus skills.", true, 0, 6, 4,6,7,10, 4,5,7,10, 3,4,6,7,11);
-    public static final H_Move Perf_Presentation = new H_Move("Perf. Presentation",perfect_presentation_tex, "A move that benefits\nfrom improved Social\nskill.", true, 4, 4, 3,5,7,9, 3,5,7,9, 2,4,5,6,7);
+    public static final H_Move Extra_Credit = new H_Move("Extra Credit",extra_credit_tex, "A move that benefits\nfrom improved Social\nand Focus skills", false, 4, 6, 3,5,7,9, 2,4,6,8, 1,3,5,7,9);
+    public static final H_Move CPP_Skills = new H_Move("C++ Skills",cpp_skills_tex, "A move that benefits\nfrom improved Software\nskill.", false, 0, 0, 2,4,6,8, 2,4,6,8, 2,4,6,8,10);
+    public static final H_Move Nodal_Analysis = new H_Move("Nodal Analysis",nodal_analysis_tex, "A move that benefits\nfrom improved Hardware\nskill.", false, 1, 1, 2,5,9,10, 2,5,9,10, 3,5,6,8,11);
+    public static final H_Move F2_Solve = new H_Move("F2 Solve",f2_solve_tex, "A move that benefits\nfrom improved Math\nand Focus skills.", false, 5, 6, 3,10,10,10, 3,10,10,10, 4,5,5,5,5);
+    public static final H_Move _5_Lines_Matlab_Code = new H_Move("5 Lines Matlab Code",f_lines_matlab_code_tex, "A move that benefits\nfrom improved Software\nand Math skills.", false, 0, 5, 4,6,7,10, 2,4,5,10, 4,5,6,7,11);
+    public static final H_Move Karnaugh_Map = new H_Move("Karnaugh Map",karnaugh_map_tex, "A move that benefits\nfrom improved\nEndurance and\nHardware skills.", false, 1, 3, 2,4,10,10, 3,5,10,10, 4,6,8,11,11);
+    public static final H_Move Soldering_Skills = new H_Move("Soldering Skills",soldering_skills_tex, "A move that benefits\nfrom improved\nEndurance and\nFocus skills.", false, 3, 6, 2,4,10,10, 2,4,10,10, 2,3,5,11,11);
+    public static final H_Move Boolean_Logic = new H_Move("Boolean Logic",boolean_logic_tex, "A move that benefits\nfrom improved Math,\nFocus and Hardware\nskills.", false, 5, 1, 3,6,10,10, 3,6,10,10, 2,4,6,11,11);
+    public static final H_Move Documentation = new H_Move("Documentation",documentation_tex, "A move that benefits\nfrom improved\nRead/Write skills.", false, 2, 2, 4,6,7,10, 4,6,7,10, 2,4,5,7,11);
+    public static final H_Move Code_Testing = new H_Move("Code Testing",code_testing_tex, "A move that benefits\nfrom improved Software\nand Focus skills.", false, 0, 6, 4,6,7,10, 4,5,7,10, 3,4,6,7,11);
+    public static final H_Move Perf_Presentation = new H_Move("Perf. Presentation",perfect_presentation_tex, "A move that benefits\nfrom improved Social\nskill.", false, 4, 4, 3,5,7,9, 3,5,7,9, 2,4,5,6,7);
     public static final E_Move New_Syntax = new E_Move("New Syntax", 0, 0, 3,7,10,10, 3,7,10,10, .6,.5,.4,.1,.1);
     public static final E_Move Uncompilable_Code = new E_Move("Uncompilable Code", 0, 3, 2,4,6,10, 2,4,6,10, .6,.5,.4,.2,.1);
     public static final E_Move Build_the_Circuit = new E_Move("Build the Circuit", 1, 6, 2,4,6,10, 1,3,5,10, .5,.4,.3,.1,.1);

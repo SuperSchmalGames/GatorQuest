@@ -9,6 +9,7 @@ import com.superschmalgames.NPC.ENEMY;
 import com.superschmalgames.NPC.NPC;
 import com.superschmalgames.Utilities.Animator;
 import com.superschmalgames.Utilities.MainClass;
+import com.superschmalgames.Utilities.Utils;
 
 import java.util.Random;
 
@@ -206,6 +207,7 @@ public class HeroCharacter {
     public void level() {
         boolean temp = true;
         lvl++;
+        learnMoveLvl();
         experience -= expCap;
         Random rand;
         while(temp) {
@@ -263,6 +265,31 @@ public class HeroCharacter {
             }
         }
         mult_level();
+    }
+
+    public void learnMoveLvl()
+    {
+        switch(lvl) {
+            case 2:
+                Utils.Java_Function.obtained = true;
+                break;
+            case 3:
+                Utils.Recursive_Loop.obtained = true;
+                break;
+            case 5:
+                Utils.CPP_Skills.obtained = true;
+                break;
+            case 7:
+                Utils.Code_Testing.obtained = true;
+                break;
+            case 9:
+                Utils.Nodal_Analysis.obtained = true;
+                break;
+            case 12:
+                Utils.Karnaugh_Map.obtained = true;
+                break;
+        }
+
     }
 
 }
