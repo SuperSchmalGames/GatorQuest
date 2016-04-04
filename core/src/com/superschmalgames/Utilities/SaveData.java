@@ -31,9 +31,10 @@ public class SaveData implements java.io.Serializable {
     public double Focus_buf;
 
     //hero inventory - only quantities needed
-    public int[] quantities = new int[18];
+    public int[] quantities = new int[25];
     public int apparel;
     public int equipped;
+    public boolean [] moves = new boolean[18];
 
 
     //enemies - only triggered flag (randoms excluded)

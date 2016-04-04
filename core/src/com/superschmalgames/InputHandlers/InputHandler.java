@@ -82,6 +82,9 @@ public class InputHandler implements InputProcessor {
                             MainClass.hero.Focus_buf = data.Focus_buf;
                             MainClass.openWorldScreen.camera.position.x = data.open_cam_x;
                             MainClass.openWorldScreen.camera.position.y = data.open_cam_y;
+                            for (int i = 0; i < 18; i++) {      // i < number of total moves
+                                MainClass.hero.moves.attacks[i].obtained = data.moves[i];
+                            }
                             for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
                                 MainClass.hero.inventory.items.get(i).setQuantity(data.quantities[i]);
                                 if(i == data.apparel) {
@@ -258,6 +261,9 @@ public class InputHandler implements InputProcessor {
                     data.equipped = 300;
                     data.open_cam_x = MainClass.openWorldScreen.camera.position.x;
                     data.open_cam_y = MainClass.openWorldScreen.camera.position.y;
+                    for (int i = 0; i < 18; i++) {      // i < number of total moves
+                        data.moves[i] = MainClass.hero.moves.attacks[i].obtained;
+                    }
                     for (int i = 0; i < MainClass.hero.inventory.items.size(); i++) {
                         data.quantities[i] = MainClass.hero.inventory.items.get(i).getQuantity();
                         if(MainClass.hero.inventory.items.get(i) == MainClass.hero.heroApparel) {
