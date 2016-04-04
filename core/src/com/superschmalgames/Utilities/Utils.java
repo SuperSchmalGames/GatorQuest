@@ -712,9 +712,9 @@ public class Utils {
             new NPC('u', neb53, "visuals/sprite_sheets/sprite_walk_u12.png", 262*MAP_RESOLUTION, (89-54)*MAP_RESOLUTION),
             new NPC('d', neb54, "visuals/sprite_sheets/sprite_walk_d13.png", 262*MAP_RESOLUTION, (89-37)*MAP_RESOLUTION),
             new NPC('r', neb55, "visuals/sprite_sheets/sprite_walk_r14.png", 248*MAP_RESOLUTION, (89-46)*MAP_RESOLUTION), //60
-            new BOSS('d', "Srivastava", "I am Srivastava", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/srivastava/srivastava_d.png", "visuals/Professors/srivastava/srivastava_l.png", 112*MAP_RESOLUTION, (89-33)*MAP_RESOLUTION, 45, Sriv_attacks, Sriv_weakness, 10, 10),
-            new BOSS('d', "Wong", "I am Wong", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/wong/wong_d.png", "visuals/Professors/wong/wong_l.png", 211*MAP_RESOLUTION, (89-55)*MAP_RESOLUTION, 45, Wong_attacks, Wong_weakness, 10, 10),
-            new BOSS('d', "Gugel", "I am Gugel", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/gugel/gugel_d.png", "visuals/Professors/gugel/gugel_l.png", 287*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION, 45, Gugel_attacks, Gugel_weakness, 10, 10),
+            new BOSS('d', "Srivastava", "I am Srivastava", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/srivastava/srivastava_d.png", "visuals/Professors/srivastava/srivastava_l.png", 112*MAP_RESOLUTION, (89-33)*MAP_RESOLUTION, 45, Sriv_attacks, Sriv_weakness, 10, 10, 2000),
+            new BOSS('d', "Wong", "I am Wong", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/wong/wong_d.png", "visuals/Professors/wong/wong_l.png", 211*MAP_RESOLUTION, (89-55)*MAP_RESOLUTION, 45, Wong_attacks, Wong_weakness, 10, 10, 2000),
+            new BOSS('d', "Gugel", "I am Gugel", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/gugel/gugel_d.png", "visuals/Professors/gugel/gugel_l.png", 287*MAP_RESOLUTION, (89-15)*MAP_RESOLUTION, 45, Gugel_attacks, Gugel_weakness, 10, 10, 2000),
             new ENEMY('r', nebQPre, nebQWin, nebQLose, "visuals/sprite_sheets/sprite_walk_r1.png", "visuals/sprite_sheets/sprite_l1.png", 110*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION, 25, Neb_B_attacks, Sriv_weakness, 10, 10),
             new ENEMY('l', nebRPre, nebRWin, nebRLose, "visuals/sprite_sheets/sprite_walk_l2.png", "visuals/sprite_sheets/sprite_l2.png", 112*MAP_RESOLUTION, (89-44)*MAP_RESOLUTION, 25, Neb_C_attacks, Sriv_weakness, 10, 10),
             new ENEMY('l', nebTPre, nebTWin, nebTLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 220*MAP_RESOLUTION, (89-48)*MAP_RESOLUTION, 25, Neb_E_attacks, Wong_weakness, 10, 10),
@@ -781,7 +781,7 @@ public class Utils {
             new NPC('d', cise24, "visuals/sprite_sheets/sprite_walk_d8.png", 130*MAP_RESOLUTION, (66-60)*MAP_RESOLUTION),
             new NPC('d', cise25, "visuals/sprite_sheets/sprite_walk_d9.png", 143*MAP_RESOLUTION, (66-43)*MAP_RESOLUTION),
 
-            new ENEMY('d', ciseOPre,ciseOWin,ciseOLose,"visuals/sprite_sheets/sprite_walk_d10.png", "visuals/sprite_sheets/sprite_l10.png", 175*MAP_RESOLUTION, (66-7)*MAP_RESOLUTION, 25, Cise_D_attacks, Schmalz_weakness, 10, 10),
+            new ENEMY('d', ciseOPre,ciseOWin,ciseOLose,"visuals/sprite_sheets/sprite_walk_d10.png", "visuals/sprite_sheets/sprite_l10.png", 175*MAP_RESOLUTION, (66-7)*MAP_RESOLUTION, 1, Cise_D_attacks, Schmalz_weakness, 10, 10),
             new NPC('l', cise26, "visuals/sprite_sheets/sprite_walk_l11.png", 202*MAP_RESOLUTION, (66-12)*MAP_RESOLUTION),
             new NPC('d', cise27, "visuals/sprite_sheets/sprite_walk_d13.png", 213*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION),
             new NPC('r', cise28, "visuals/sprite_sheets/sprite_walk_r14.png", 168*MAP_RESOLUTION, (66-34)*MAP_RESOLUTION),
@@ -790,13 +790,13 @@ public class Utils {
             new NPC('l', cise31, "visuals/sprite_sheets/sprite_walk_l3.png", 217*MAP_RESOLUTION, (66-32)*MAP_RESOLUTION),
             new NPC('l', cise32, "visuals/sprite_sheets/sprite_walk_l4.png", 213*MAP_RESOLUTION, (66-42)*MAP_RESOLUTION),
             new NPC('u', cise33, "visuals/sprite_sheets/sprite_walk_u5.png", 199*MAP_RESOLUTION, (66-58)*MAP_RESOLUTION),
-            new BOSS('d', "Dobbins", "I am Dobbins", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/dobbins/dobbins_d.png", "visuals/Professors/dobbins/dobbins_l.png", 2*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION, 45, Dobbins_attacks, Dobbins_weakness, 10, 10),
-            new BOSS('d', "Schmalz", "I am Schmalz", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/schmalz/schmalz_d.png", "visuals/Professors/schmalz/schmalz_l.png", 168*MAP_RESOLUTION, (66-4)*MAP_RESOLUTION, 45, Schmalz_attacks, Schmalz_weakness, 10, 10),
-            new ENEMY('d', ciseJPre,ciseJWin,ciseJLose,"visuals/sprite_sheets/sprite_walk_d6.png", "visuals/sprite_sheets/sprite_l6.png",33*MAP_RESOLUTION, (66-28)*MAP_RESOLUTION, 25, Cise_A_attacks, Dobbins_weakness, 10, 10),
-            new ENEMY('l', ciseKPre,ciseKWin,ciseKLose,"visuals/sprite_sheets/sprite_walk_l7.png", "visuals/sprite_sheets/sprite_l7.png",19*MAP_RESOLUTION, (66-31)*MAP_RESOLUTION, 25, Cise_B_attacks, Dobbins_weakness, 10, 10),
-            new ENEMY('r', ciseLPre,ciseLWin,ciseLLose,"visuals/sprite_sheets/sprite_walk_r8.png", "visuals/sprite_sheets/sprite_l8.png",8*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 25, Cise_C_attacks, Dobbins_weakness, 10, 10),
-            new ENEMY('r', ciseMPre,ciseMWin,ciseMLose,"visuals/sprite_sheets/sprite_walk_r9.png", "visuals/sprite_sheets/sprite_l9.png",177*MAP_RESOLUTION, (66-13)*MAP_RESOLUTION, 25, Cise_E_attacks, Schmalz_weakness, 10, 10),
-            new ENEMY('l', ciseNPre,ciseNWin,ciseNLose,"visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png",182*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 25, Cise_F_attacks, Schmalz_weakness, 10, 10), //40
+            new BOSS('d', "Dobbins", "I am Dobbins", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/dobbins/dobbins_d.png", "visuals/Professors/dobbins/dobbins_l.png", 2*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION, 45, Dobbins_attacks, Dobbins_weakness, 10, 10, 2000),
+            new BOSS('d', "Schmalz", "I am Schmalz", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/schmalz/schmalz_d.png", "visuals/Professors/schmalz/schmalz_l.png", 168*MAP_RESOLUTION, (66-4)*MAP_RESOLUTION, 45, Schmalz_attacks, Schmalz_weakness, 10, 10, 2000),
+            new ENEMY('d', ciseJPre,ciseJWin,ciseJLose,"visuals/sprite_sheets/sprite_walk_d6.png", "visuals/sprite_sheets/sprite_l6.png",33*MAP_RESOLUTION, (66-28)*MAP_RESOLUTION, 1, Cise_A_attacks, Dobbins_weakness, 10, 10),
+            new ENEMY('l', ciseKPre,ciseKWin,ciseKLose,"visuals/sprite_sheets/sprite_walk_l7.png", "visuals/sprite_sheets/sprite_l7.png",19*MAP_RESOLUTION, (66-31)*MAP_RESOLUTION, 1, Cise_B_attacks, Dobbins_weakness, 10, 10),
+            new ENEMY('r', ciseLPre,ciseLWin,ciseLLose,"visuals/sprite_sheets/sprite_walk_r8.png", "visuals/sprite_sheets/sprite_l8.png",8*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 1, Cise_C_attacks, Dobbins_weakness, 10, 10),
+            new ENEMY('r', ciseMPre,ciseMWin,ciseMLose,"visuals/sprite_sheets/sprite_walk_r9.png", "visuals/sprite_sheets/sprite_l9.png",177*MAP_RESOLUTION, (66-13)*MAP_RESOLUTION, 1, Cise_E_attacks, Schmalz_weakness, 10, 10),
+            new ENEMY('l', ciseNPre,ciseNWin,ciseNLose,"visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png",182*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 1, Cise_F_attacks, Schmalz_weakness, 10, 10), //40
 
     };
 
@@ -890,9 +890,9 @@ public class Utils {
             new NPC('u', tur54, "visuals/sprite_sheets/sprite_walk_u13.png", 334*MAP_RESOLUTION, (128-26)*MAP_RESOLUTION),
             new ENEMY('d', turlingtonIPre,turlingtonIWin,turlingtonILose, "visuals/sprite_sheets/sprite_walk_d14.png", "visuals/sprite_sheets/sprite_l14.png", 349*MAP_RESOLUTION, (128-19)*MAP_RESOLUTION, 25, Turlington_I_attacks, Small_weakness, 10, 10),
             new NPC('r', tur55, "visuals/sprite_sheets/sprite_walk_r1.png", 353*MAP_RESOLUTION, (128-30)*MAP_RESOLUTION), //56
-            new BOSS('d', "Chui", "I am Chui", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/chui/chui_d.png", "visuals/Professors/chui/chui_l.png", 46*MAP_RESOLUTION, (128-27)*MAP_RESOLUTION, 45, Chui_attacks, Chui_weakness, 10, 10),
-            new BOSS('d', "Horton", "I am Horton", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/horton/horton_d.png", "visuals/Professors/horton/horton_l.png", 170*MAP_RESOLUTION, (128-122)*MAP_RESOLUTION, 45, Horton_attacks, Horton_weakness, 10, 10),
-            new BOSS('d', "Small", "I am Small", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/small/small_d.png", "visuals/Professors/small/small_l.png", 362*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION, 45, Small_attacks, Small_weakness, 10, 10),
+            new BOSS('d', "Chui", "I am Chui", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/chui/chui_d.png", "visuals/Professors/chui/chui_l.png", 46*MAP_RESOLUTION, (128-27)*MAP_RESOLUTION, 45, Chui_attacks, Chui_weakness, 10, 10, 2000),
+            new BOSS('d', "Horton", "I am Horton", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/horton/horton_d.png", "visuals/Professors/horton/horton_l.png", 170*MAP_RESOLUTION, (128-122)*MAP_RESOLUTION, 45, Horton_attacks, Horton_weakness, 10, 10, 2000),
+            new BOSS('d', "Small", "I am Small", "Guess I will see you next semester", "Congratulations on passing the course", "visuals/Professors/small/small_d.png", "visuals/Professors/small/small_l.png", 362*MAP_RESOLUTION, (128-16)*MAP_RESOLUTION, 45, Small_attacks, Small_weakness, 10, 10, 2000),
             new ENEMY('d', turlingtonAPre,turlingtonAWin,turlingtonALose,"visuals/sprite_sheets/sprite_walk_d2.png", "visuals/sprite_sheets/sprite_l2.png", 63*MAP_RESOLUTION, (128-36)*MAP_RESOLUTION, 25, Turlington_A_attacks, Chui_weakness, 10, 10), //60
             new ENEMY('l', turlingtonBPre,turlingtonBWin,turlingtonBLose,"visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 49*MAP_RESOLUTION, (128-40)*MAP_RESOLUTION, 25, Turlington_B_attacks, Chui_weakness, 10, 10),
             new ENEMY('r', turlingtonCPre,turlingtonCWin,turlingtonCLose,"visuals/sprite_sheets/sprite_walk_r4.png", "visuals/sprite_sheets/sprite_l4.png", 43*MAP_RESOLUTION, (128-37)*MAP_RESOLUTION, 25, Turlington_C_attacks, Chui_weakness, 10, 10),

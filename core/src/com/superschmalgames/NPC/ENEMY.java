@@ -78,10 +78,6 @@ public class ENEMY extends NPC {
         //Set the position
         Utils.menuIcon.setPosition(MainClass.gameScreen.window.ICON_X_OFFSET, MainClass.gameScreen.window.ICON_Y_OFFSET);
 
-        //Set the NPC's triggered field to true, since we'll have talked to him already.
-        if (!triggered)  {
-            walk.currentFrame = walk.walkAnimation.getKeyFrame(0f, true);
-        }
     }
 
     public void combat_result(boolean t) {
