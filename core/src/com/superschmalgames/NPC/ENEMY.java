@@ -92,7 +92,7 @@ public class ENEMY extends NPC {
     }
 
     public void combat() {
-        if(MainClass.gameScreen.window.proceed && !triggered && MainClass.hero.lastEnemy.checkPreReqs()){
+        if(MainClass.gameScreen.window.proceed && !triggered){
             triggered = true;
 
             //Give input control to the combat input handler.
@@ -102,34 +102,9 @@ public class ENEMY extends NPC {
             MainClass.combatScreen = new CombatScreen();
             ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.combatScreen);
         }
-        else if(!MainClass.hero.lastEnemy.checkPreReqs())
-        {
-            System.out.print("Does not have the PreReqs");
-            //Give control back to the main input handler if we're not fighting.
-            Gdx.input.setInputProcessor(MainClass.inputHandler);
-        }
         else{
             //Give control back to the main input handler if we're not fighting.
             Gdx.input.setInputProcessor(MainClass.inputHandler);
         }
-    }
-
-    public boolean checkPreReqs() {
-        if (MainClass.hero.lastEnemy.name.equals("Chui") && MainClass.hero.semester < 1)
-            return false;
-        else if (MainClass.hero.lastEnemy.name.equals("Horton") && MainClass.hero.semester < 2)
-            return false;
-        else if (MainClass.hero.lastEnemy.name.equals("Srivastava") && MainClass.hero.semester < 3)
-            return false;
-        else if (MainClass.hero.lastEnemy.name.equals("Wong") && MainClass.hero.semester < 4)
-            return false;
-        else if (MainClass.hero.lastEnemy.name.equals("Gugel") && MainClass.hero.semester < 5)
-            return false;
-        else if (MainClass.hero.lastEnemy.name.equals("Small") && MainClass.hero.semester < 6)
-            return false;
-        else if (MainClass.hero.lastEnemy.name.equals("Schmalz") && MainClass.hero.semester < 7)
-            return false;
-        else
-            return true;
     }
 }

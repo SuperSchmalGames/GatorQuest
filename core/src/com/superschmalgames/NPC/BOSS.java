@@ -4,13 +4,10 @@ package com.superschmalgames.NPC;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.superschmalgames.Hero.E_Move;
 import com.superschmalgames.Hero.H_Move;
 import com.superschmalgames.Screens.CombatScreen;
 import com.superschmalgames.Utilities.CharacterDialogue;
-import com.superschmalgames.Utilities.CombatLogic;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
@@ -20,10 +17,10 @@ public class BOSS extends ENEMY{
     int cost;
     int semester;
 
-    public BOSS(char dir,String n, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a, H_Move[] b, int e, int m, int c, int sem) {
+    public BOSS(char dir,String n, String s, String win, String lose, String sprite, String combat, int x, int y, int h, E_Move[] a, H_Move[] b, int e, int m, int sem) {
         super(dir,s,win,lose,sprite,combat,x,y,h,a,b,e,m);
         name = n;
-        cost = c;
+        cost = 2000;
         semester = sem;
     }
 
@@ -47,7 +44,7 @@ public class BOSS extends ENEMY{
         //Create new dialogue window containing the dialogue of the NPC we're talking to.
         MainClass.gameScreen.window = new CharacterDialogue();    //480=text block width, 8=left align, true=wrap
         if (!triggered && MainClass.hero.semester != semester) {
-            MainClass.gameScreen.window.dialog.setText(Utils.font_small, "You don't seem to meet the prerequisites for this course!" + cost, Color.BLUE, 480, 8, true);
+            MainClass.gameScreen.window.dialog.setText(Utils.font_small, "You don't seem to meet the prerequisites for this course!", Color.BLUE, 480, 8, true);
             MainClass.gameScreen.window.decLock = true;
             MainClass.gameScreen.window.enemy = false;
             MainClass.gameScreen.window.decision = MainClass.gameScreen.window.ok;
