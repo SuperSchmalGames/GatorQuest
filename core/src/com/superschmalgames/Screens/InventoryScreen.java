@@ -182,7 +182,7 @@ public class InventoryScreen implements Screen {
                     MainClass.batch.draw(Utils.white_sq_tex, 505, 435, 94, 94);
                     MainClass.batch.draw(MainClass.hero.inventory.items.get(MainClass.inputHandler.currentItemIndex).getTexture(), 520, 450, 64, 64);
                     Utils.font_small.draw(MainClass.batch, MainClass.hero.inventory.items.get(MainClass.inputHandler.currentItemIndex).getItemName() +
-                            "\nBoosts "+ MainClass.hero.inventory.items.get(invIndex).getStatBoosted()+" by "+
+                            "\nBoosts "+ MainClass.hero.inventory.items.get(MainClass.inputHandler.currentItemIndex).getStatBoosted()+" by "+
                             MainClass.hero.inventory.items.get(MainClass.inputHandler.currentItemIndex).getBoostAmt()+"\n"+MainClass.hero.inventory.items.get(MainClass.inputHandler.currentItemIndex).getItemDes(), 610,520);
                 }
             }
