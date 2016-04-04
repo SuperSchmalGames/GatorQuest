@@ -11,14 +11,9 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.badlogic.gdx.scenes.scene2d.Group;
-import com.sun.media.sound.FFT;
 import com.superschmalgames.NPC.*;
 import com.superschmalgames.Hero.*;
-
-import javax.print.Doc;
 import java.text.DecimalFormat;
-import java.util.Set;
 
 public class Utils {
 
@@ -35,7 +30,7 @@ public class Utils {
     public static final BitmapFont testFont = new BitmapFont();
     public static boolean isPaused;
     public static final FPSLogger logger = new FPSLogger();
-    public static final DecimalFormat df1 = new DecimalFormat("0.0");
+    public static final DecimalFormat df1 = new DecimalFormat("0.00");
     public static final String savefile = "GatorQuest.save";
     //Enum for holding state info for fade-in/fade-out animation
     public enum fader{
@@ -675,7 +670,6 @@ public class Utils {
             new NPC('d', neb25, "visuals/sprite_sheets/sprite_walk_d11.png", 122*MAP_RESOLUTION, (89-62)*MAP_RESOLUTION),
             new NPC('r', neb26, "visuals/sprite_sheets/sprite_walk_r12.png", 121*MAP_RESOLUTION, (89-51)*MAP_RESOLUTION),
             new ENEMY('l', nebPPre, nebPWin, nebPLose, "visuals/sprite_sheets/sprite_walk_l3.png", "visuals/sprite_sheets/sprite_l3.png", 113*MAP_RESOLUTION, (89-38)*MAP_RESOLUTION, 16, Neb_A_attacks, Sriv_weakness, 75, 500),
-
             new NPC('l', neb27, "visuals/sprite_sheets/sprite_walk_l7.png", 125*MAP_RESOLUTION, (89-35)*MAP_RESOLUTION),
             new NPC('r', neb28, "visuals/sprite_sheets/sprite_walk_r10.png", 118*MAP_RESOLUTION, (89-22)*MAP_RESOLUTION), //30
             new NPC('d', neb29, "visuals/sprite_sheets/sprite_walk_d14.png", 133*MAP_RESOLUTION, (89-4)*MAP_RESOLUTION),
@@ -776,7 +770,6 @@ public class Utils {
             new NPC('l', cise23, "visuals/sprite_sheets/sprite_walk_l7.png", 123*MAP_RESOLUTION, (66-55)*MAP_RESOLUTION),
             new NPC('d', cise24, "visuals/sprite_sheets/sprite_walk_d8.png", 130*MAP_RESOLUTION, (66-60)*MAP_RESOLUTION),
             new NPC('d', cise25, "visuals/sprite_sheets/sprite_walk_d9.png", 143*MAP_RESOLUTION, (66-43)*MAP_RESOLUTION),
-
             new ENEMY('d', ciseOPre,ciseOWin,ciseOLose,"visuals/sprite_sheets/sprite_walk_d10.png", "visuals/sprite_sheets/sprite_l10.png", 175*MAP_RESOLUTION, (66-7)*MAP_RESOLUTION, 16, Cise_D_attacks, Schmalz_weakness, 75, 500),
             new NPC('l', cise26, "visuals/sprite_sheets/sprite_walk_l11.png", 202*MAP_RESOLUTION, (66-12)*MAP_RESOLUTION),
             new NPC('d', cise27, "visuals/sprite_sheets/sprite_walk_d13.png", 213*MAP_RESOLUTION, (66-3)*MAP_RESOLUTION),
@@ -793,7 +786,6 @@ public class Utils {
             new ENEMY('r', ciseLPre,ciseLWin,ciseLLose,"visuals/sprite_sheets/sprite_walk_r8.png", "visuals/sprite_sheets/sprite_l8.png",8*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 16, Cise_C_attacks, Dobbins_weakness, 75, 500),
             new ENEMY('r', ciseMPre,ciseMWin,ciseMLose,"visuals/sprite_sheets/sprite_walk_r9.png", "visuals/sprite_sheets/sprite_l9.png",177*MAP_RESOLUTION, (66-13)*MAP_RESOLUTION, 16, Cise_E_attacks, Schmalz_weakness, 75, 500),
             new ENEMY('l', ciseNPre,ciseNWin,ciseNLose,"visuals/sprite_sheets/sprite_walk_l10.png", "visuals/sprite_sheets/sprite_l10.png",182*MAP_RESOLUTION, (66-16)*MAP_RESOLUTION, 16, Cise_F_attacks, Schmalz_weakness, 57, 500), //40
-
     };
 
     public static ENEMY[] Cise_randoms = {
@@ -966,7 +958,7 @@ public class Utils {
     //========================================Bookstore=======================================
     public static NPC[] Bookstore_enemies = {
             new SHOP('d', "Biz Cas Attire $500\n\nClass Ring $1000\n\nGator Hat $400\n\nGrad Gown $1200\n\nSuit and Tie $2000", "visuals/sprite_sheets/sprite_walk_d1.png", 25*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION), //0
-            new SHOP('d', "Cyclone $700\n\nDAD Board $900\n\nMacbook Pro $2500\n\nNSpire $650\n\nSoldering Iron $350\n\nTI89 $500", "visuals/sprite_sheets/sprite_walk_d2.png", 22*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION),
+            new SHOP('d', "AVR Dragon $500\n\nCyclone $700\n\nDAD Board $900\n\nNSpire $400\n\nSoldering Iron $300\n\nTI-89 $200\n\nUSB Blaster $500", "visuals/sprite_sheets/sprite_walk_d2.png", 22*MAP_RESOLUTION, (64-3)*MAP_RESOLUTION),
             new NPC('r', worldH, "visuals/sprite_sheets/sprite_walk_r3.png", 19*MAP_RESOLUTION, (64-5)*MAP_RESOLUTION),
             new NPC('u', worldI, "visuals/sprite_sheets/sprite_walk_u4.png", 5*MAP_RESOLUTION, (64-10)*MAP_RESOLUTION),
             new NPC('u', worldJ, "visuals/sprite_sheets/sprite_walk_u5.png", 24*MAP_RESOLUTION, (64-13)*MAP_RESOLUTION),
