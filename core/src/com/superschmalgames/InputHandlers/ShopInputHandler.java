@@ -33,7 +33,7 @@ public class ShopInputHandler implements InputProcessor {
         else if(shop == 2 && keycode == Input.Keys.UP && MainClass.gameScreen.shop_window.currIndex > 0){
             Utils.menuIcon.translateY(65);
             MainClass.gameScreen.shop_window.currIndex -= 1;
-        }else if(shop == 3 && keycode == Input.Keys.DOWN && MainClass.gameScreen.shop_window.currIndex < 5){
+        }else if(shop == 3 && keycode == Input.Keys.DOWN && MainClass.gameScreen.shop_window.currIndex < 6){
             Utils.menuIcon.translateY(-65);
             MainClass.gameScreen.shop_window.currIndex += 1;
         }
@@ -84,28 +84,32 @@ public class ShopInputHandler implements InputProcessor {
             }
             else if(shop == 3)
             {
-                if (MainClass.gameScreen.shop_window.currIndex == 0 && MainClass.hero.gatorBucks >= 700) {
+                if (MainClass.gameScreen.shop_window.currIndex == 0 && MainClass.hero.gatorBucks >= 500) {
+                    MainClass.hero.inventory.incItem(Utils.INV_ITEMS.DRAGON);
+                    MainClass.hero.gatorBucks -= 500;
+                    Utils.kaching.play();
+                } else if (MainClass.gameScreen.shop_window.currIndex == 1 && MainClass.hero.gatorBucks >= 700) {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.CYCLONE);
                     MainClass.hero.gatorBucks -= 700;
                     Utils.kaching.play();
-                } else if (MainClass.gameScreen.shop_window.currIndex == 1 && MainClass.hero.gatorBucks >= 900) {
+                } else if (MainClass.gameScreen.shop_window.currIndex == 2 && MainClass.hero.gatorBucks >= 900) {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.DAD);
                     MainClass.hero.gatorBucks -= 900;
                     Utils.kaching.play();
-                } else if (MainClass.gameScreen.shop_window.currIndex == 2 && MainClass.hero.gatorBucks >= 2500) {
-                    MainClass.hero.inventory.incItem(Utils.INV_ITEMS.MACBOOK);
-                    MainClass.hero.gatorBucks -= 2500;
-                    Utils.kaching.play();
-                } else if (MainClass.gameScreen.shop_window.currIndex == 3 && MainClass.hero.gatorBucks >= 650) {
+                } else if (MainClass.gameScreen.shop_window.currIndex == 3 && MainClass.hero.gatorBucks >= 400) {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.NSPIRE);
-                    MainClass.hero.gatorBucks -= 650;
+                    MainClass.hero.gatorBucks -= 400;
                     Utils.kaching.play();
-                } else if (MainClass.gameScreen.shop_window.currIndex == 4 && MainClass.hero.gatorBucks >= 350) {
+                } else if (MainClass.gameScreen.shop_window.currIndex == 4 && MainClass.hero.gatorBucks >= 300) {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.SOLDER);
-                    MainClass.hero.gatorBucks -= 350;
+                    MainClass.hero.gatorBucks -= 300;
                     Utils.kaching.play();
-                }else if (MainClass.gameScreen.shop_window.currIndex == 5 && MainClass.hero.gatorBucks >= 500) {
+                }else if (MainClass.gameScreen.shop_window.currIndex == 5 && MainClass.hero.gatorBucks >= 200) {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.TI89);
+                    MainClass.hero.gatorBucks -= 200;
+                    Utils.kaching.play();
+                }else if (MainClass.gameScreen.shop_window.currIndex == 6 && MainClass.hero.gatorBucks >= 500) {
+                    MainClass.hero.inventory.incItem(Utils.INV_ITEMS.USB_BLASTER);
                     MainClass.hero.gatorBucks -= 500;
                     Utils.kaching.play();
                 }else {
