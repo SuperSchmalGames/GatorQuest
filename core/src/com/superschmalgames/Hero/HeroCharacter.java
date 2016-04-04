@@ -79,7 +79,7 @@ public class HeroCharacter {
     public Animator heroAnim;
 
     public HeroCharacter(){
-        GPA = 4.0;
+        GPA = 400.0;
         Software = 1.0;
         Hardware = 1.0;
         Writing = 1.0;
@@ -289,7 +289,6 @@ public class HeroCharacter {
                 Utils.Karnaugh_Map.obtained = true;
                 break;
         }
-
     }
 
 }

@@ -479,7 +479,7 @@ public class InputHandler implements InputProcessor {
                         } else
                             MainClass.heroScreen.heroRow += 1;
                     }
-                    else if (MainClass.heroScreen.heroPage * 8 + MainClass.heroScreen.heroRow + 1 < 18
+                    else if (MainClass.heroScreen.heroPage * 8 + MainClass.heroScreen.heroRow + 1 < MainClass.hero.moves.getNum()
                             && "Moves".equals(MainClass.heroScreen.heroPanel)) {
                         if ((MainClass.heroScreen.heroRow + 1) % 8 == 0) {
                             MainClass.heroScreen.heroPage += 1;
