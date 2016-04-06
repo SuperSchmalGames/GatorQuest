@@ -24,7 +24,7 @@ public class Utils {
     public static final int MOVE_DIST = 5;
     public static final int N_MOVE_DIST = - MOVE_DIST;
     public static final BitmapFont font = new BitmapFont(Gdx.files.internal("RosesAreFF0.fnt"));
-    public static final BitmapFont font_large = new BitmapFont(Gdx.files.internal("RosesAreFF0_large.fnt"));
+    //public static final BitmapFont font_large = new BitmapFont(Gdx.files.internal("RosesAreFF0_large.fnt"));
     public static final BitmapFont font_small = new BitmapFont(Gdx.files.internal("RosesAreFF0_small.fnt"));
     public static final BitmapFont font_medsmall = new BitmapFont(Gdx.files.internal("RosesAreFF0_medsmall.fnt"));
     public static final BitmapFont testFont = new BitmapFont();
@@ -128,7 +128,7 @@ public class Utils {
     public static final Texture stack_overflow_tex = new Texture("visuals/hero_moves/stack_overflow.png");
 
     //ADDITIONAL HERO SCREEN TEXTURES
-    public static final Texture checkbox_tex = new Texture("visuals/Menus/checkbox.png");
+    //public static final Texture checkbox_tex = new Texture("visuals/Menus/checkbox.png");
     public static final Texture checkbox2_tex = new Texture("visuals/Menus/checkbox2.png");
 
     public static final Texture hero_stats_tex = new Texture("visuals/Menus/hero_statistics_menu.png");

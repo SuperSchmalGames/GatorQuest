@@ -6,9 +6,6 @@ import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-/**
- * Created by Cory on 3/25/2016.
- */
 public class DataManager {
 
     public static void save(Serializable data, String filename) throws Exception {

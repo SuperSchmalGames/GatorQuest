@@ -73,7 +73,6 @@ public class HeroScreen implements Screen {
             MainClass.batch.draw(Utils.hero_moves_tex, 0, 0);
             int temp = 0;
             int p2index = 0;
-            int p3index = 0;
             if(MainClass.heroScreen.heroPage==0) {
                 for (int i = 0; i < 18; i++) {
                     if(MainClass.hero.moves.attacks[i].obtained && temp < 8)
