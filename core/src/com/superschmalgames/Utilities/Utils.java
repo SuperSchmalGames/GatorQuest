@@ -624,15 +624,15 @@ public class Utils {
     public static final Texture advising_tex = new Texture("visuals/Menus/advising_tex.png");
 
     public static final String[] advText = {
-            "Your first class will be Java 1 with\nDr. Dobbins. Go meet him in the\nbottom of CISE",
-            "Your next class will be Calc 2 with\nDr. Chui. Go meet her in the\nbottom of Turlington",
-            "Your third class will be Programming\n2with Dr. Horton. Go meet\nhim in South part\nof 2nd story Turlington",
-            "Your next class will be Circuits I with\nDr. Srivastava. Go meet him\nin the NEB",
-            "Your next class will be Signals with\nDr. Wong. Go meet him\nin the NEB",
-            "Your next class will be Digital Logic with\nDr. Gugel. Go meet him\nin the NEB",
-            "Your next class will be Operating Systems with\nDr. Small. Go meet him on the\n3rd floor of Turlington",
-            "Your next class will be Senior Design with\nDr. Schmalz. Go meet him\nin the CISE",
-            "You've completed all your classes. \n\nCongrats, you're a Gator Alum!"
+            "Your first class will be Java 1 with\nDr. Dobbins. Go meet him in the\nNorthwest part of CISE basement",
+            "Your next class will be Calc 2 with\nDr. Chui. Go meet her in the\nNorthwest part of Turlington 1F",
+            "Your third class will be Programming\n2with Dr. Horton. Go meet\nhim in South part\nof 2F Turlington",
+            "Your next class will be Circuits I with\nDr. Srivastava. Go meet him\nwest of the stairs\non 2F NEB",
+            "Your next class will be Signals with\nDr. Wong. Go meet him\nSouthwest of the stairs\non 3F NEB",
+            "Your next class will be Digital Logic with\nDr. Gugel. Go meet him\nin the Northeast corner\non 4F NEB",
+            "Your next class will be Operating Systems with\nDr. Small. Go meet him on the\nNortheast part of 3F\nin Turlington",
+            "Your next class will be Senior Design with\nDr. Schmalz. Go meet him in\n the Northwest part of 3F CISE",
+            "You\'ve completed all your classes. \n\nCongrats, you\'re a Gator Alum!"
     };
     //////////////////////////////////////END ADVISING//////////////////////////////////////////////////////////////////////
 
