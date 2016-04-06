@@ -80,10 +80,6 @@ public class ENEMY extends NPC {
 
     }
 
-    public void combat_result(boolean t) {
-        triggered = t;
-    }
-
     public void reset() {
         x_pos = org_x;
         y_pos = org_y;

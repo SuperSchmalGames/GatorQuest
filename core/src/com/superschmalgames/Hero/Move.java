@@ -17,13 +17,6 @@ public class Move {
         obtained = false;
     }
 
-    public Move(String name, String texPath, String des, boolean isObtained){
-        moveName = name;
-        texture = new Texture(texPath);
-        description = des;
-        obtained = isObtained;
-    }
-
     public Move(String name, Texture tex, String des, boolean isObtained){
         moveName = name;
         texture = tex;
@@ -31,20 +24,8 @@ public class Move {
         obtained = isObtained;
     }
 
-    public void addMove() {
-        this.obtained = true;
-    }
-
     public String getMoveName() {
         return moveName;
-    }
-
-    public void setMoveName(String moveName) {
-        moveName = moveName;
-    }
-
-    public void setDescription(String moveDescription) {
-        this.description = moveDescription;
     }
 
     public String getDescription(){ return description; }

@@ -8,7 +8,6 @@ import com.superschmalgames.Inventory.EquipableItem;
 import com.superschmalgames.NPC.ENEMY;
 import com.superschmalgames.NPC.NPC;
 import com.superschmalgames.Utilities.Animator;
-import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 
 import java.util.Random;

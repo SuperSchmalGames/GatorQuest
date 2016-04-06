@@ -1,8 +1,5 @@
 package com.superschmalgames.Utilities;
 
-/**
- * Created by Cory on 3/25/2016.
- */
 public class SaveData implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

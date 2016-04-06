@@ -5,7 +5,6 @@ package com.superschmalgames.InputHandlers;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
-import com.superschmalgames.Screens.GameScreen;
 import com.superschmalgames.Utilities.MainClass;
 import com.superschmalgames.Utilities.Utils;
 

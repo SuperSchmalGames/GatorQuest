@@ -6,7 +6,6 @@ import java.util.Random;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -207,7 +206,7 @@ public class GameScreen implements Screen {
         MainClass.batch.begin();
 
         ////////////////////////////////////////////////////////TEST PRINTS////////////////////////////////////////////////////////////////////
-        Utils.testFont.draw(MainClass.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y , camera.position.x-Utils.GAME_SCREEN_WIDTH/2, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-10);
+        //Utils.testFont.draw(MainClass.batch, "Player Coords: X: "+ camera.position.x +" Y: "+ camera.position.y , camera.position.x-Utils.GAME_SCREEN_WIDTH/2, camera.position.y+Utils.GAME_SCREEN_HEIGHT/2-10);
         //Utils.testFont.draw(MainClass.batch, "GPA: " + Utils.df1.format(MainClass.hero.GPA) + " RedBull Quant: " + MainClass.hero.inventory.items.get(5).getQuantity(), 0, Utils.GAME_SCREEN_HEIGHT - 75);
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

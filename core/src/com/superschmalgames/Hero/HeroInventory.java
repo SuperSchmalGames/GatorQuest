@@ -20,7 +20,7 @@ public class HeroInventory {
     public List<InventoryItem> items;
 
     public HeroInventory(){
-        items = new ArrayList<InventoryItem>();
+        items = new ArrayList<>();
 
         ApparelItem tmpA;
         ConsumableItem tmpC;
@@ -76,11 +76,6 @@ public class HeroInventory {
     public void useItem(Utils.INV_ITEMS itemName){
         //Pass in enum for item being used/equipped, then find item's index and call activate() for that item.
         items.get(itemName.getNumVal()).activateItem();
-    }
-
-    public void removeEffect(Utils.INV_ITEMS itemName){
-        //Pass in enum for item being unequipped, then find item's index and call disable() for that item.
-        items.get(itemName.getNumVal()).disableItem();
     }
 
     //Method to return the number of items of a certain type in the character's inventory.

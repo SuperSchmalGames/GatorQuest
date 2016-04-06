@@ -76,16 +76,8 @@ public class NPC {
         }
     }
 
-    public String getScript() {
-        return script;
-    }
-
     public boolean getTriggered() {
         return triggered;
-    }
-
-    public void setTriggered(boolean set) {
-        triggered = set;
     }
 
     public void initiate(){
