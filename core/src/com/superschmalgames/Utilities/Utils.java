@@ -66,10 +66,41 @@ public class Utils {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////AVATAR SCREEN/////////////////////////////////////////////////////////////////////////
-    public static final Music avatarScreenMusic =Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Prelude.ogg"));
+    public static final Music avatarScreenMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/music/soundtrack/Prelude.ogg"));
     public static final Sound avatarScreenSelectionSound = Gdx.audio.newSound(Gdx.files.internal("sound/effects/explosion.wav"));
-    public static final Texture avatarTexture = new Texture("visuals/sprite_sheets/Sprite_Color_Sel.png");
-    public static final String key_prompt_text = "Press the number key\ncorresponding to your\ndesired Avatar";
+    public static final Sprite profSchmalz = new Sprite(new Texture("visuals/intro_sequence/schmalz.png"));
+    public static final Sprite avatarChoices = new Sprite(new Texture("visuals/sprite_sheets/Sprite_Color_Sel.png"));
+    public static final String avatarPrompt = "Select your avatar!";
+    public static final String nameInstr = "Press [ENTER] to select, or [BACKSPACE] to delete";
+    public static final String introText1 = "Hello there! Allow me to introduce myself. I am Professor Schmalz, but most " +
+            "people just call me the Gator Professor.";
+    public static final String introText2 = "In the GatorQuest universe, it is your mission to face the challenges of " +
+            "UF undergrad engineering studies in order to attain the rank of Gator Alum!";
+    public static final String introText3 = "First, what is your name?";
+    public static String introText4;
+    public static final String introText5 = "Thanks, now it will be easier to put a name to the face.";
+    public static final String introText6 = "This is your rival, he - wait, what? You don't have a rival? Oh, ok. The " +
+            "last student I talked to insisted on having a rival. I thought it was sort of weird, too.";
+    public static final String introText7 = "First off, remember to get out and explore a bit. No sense in sitting " +
+            "around in your dorm room all day. Use the 'arrow' keys to stretch your legs and go for a walk. If " +
+            "you ever do need to take a break, press 'F1' to make a note of what you were working on so you can pick it back later.";
+    public static final String introText8 = "There are 8 professors whose classes you'll need to finish before you can " +
+            "graduate. Make sure to talk to your advisor to find out which professor you should go see next. Press 'A' " +
+            "to email Allison for advice.";
+    public static final String introText9 = "You'll need to use many engineering tools during your studies. And don't " +
+            "forget to bring a snack with you for those long study sessions! Press 'I' to keep track of everything in your bag.";
+    public static final String introText10 = "It's always a treat to see how students learn and mature during their " +
+            "time here at UF. Keep track of your progress at all times by pressing 'H'. Remember to keep track of how " +
+            "many Gatorbucks you have so you'll be able to pay tuition!";
+    public static final String introText11 = "Most students around campus are very nice, and just want to relax. But " +
+            "beware! If you venture into any of the buildings containing classrooms, you'll surely run into TA's and " +
+            "Professors looking to hand out assignments that can hurt your GPA.";
+    public static final String introText12 = "These next few years will be challenging, but with hard work, I'm sure " +
+            "you'll succeed. Remember, how do we eat an elephant? One bite at a time!";
+    public static String introText13;
+    public static final String nameSelect = "A B C D E F G H I\nJ K L M N O P Q R\nS T U V W X Y Z\n";
+    public static final String nameLine = "--------";
+    public static final String nameAccept = "OK!";
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////COMBAT SCREEN/////////////////////////////////////////////////////////////////////////
@@ -1098,6 +1129,9 @@ public class Utils {
 
         //////////////////////////////////AVATAR SCREEN////////////////////////////////////////////////////////////////////////
         avatarScreenMusic.setLooping(true);
+        introText4 = "Oh, so your name is " + MainClass.hero.name + "? Such a nice name. Say, my eyes aren't quite " +
+                "what they used to be. Step over here so I can see what you look like.";
+        introText13 = "Get ready, " + MainClass.hero.name + "! Your GatorQuest adventure is about to begin!";
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //////////////////////////////////COMBAT SCREEN////////////////////////////////////////////////////////////////////////

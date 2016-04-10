@@ -35,7 +35,7 @@ public class InputHandler implements InputProcessor {
     @Override
     public boolean keyDown(int keycode) {
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //                                           TITLESCREEN
+        //                                           TITLE SCREEN
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.titleScreen) {
                 if (keycode == Input.Keys.DOWN && Utils.menuReady && menuIndex < 2) {
@@ -157,37 +157,99 @@ public class InputHandler implements InputProcessor {
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //                                           AVATARSCREEN
+            //                                           AVATAR/INTRO SCREEN
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.avatarScreen) {
-                if (keycode == Input.Keys.NUM_1) {
-                    MainClass.hero.outfitNum = 7;
-                    pushed = true;
-                } else if (keycode == Input.Keys.NUM_2) {
-                    MainClass.hero.outfitNum = 11;
-                    pushed = true;
-                } else if (keycode == Input.Keys.NUM_3) {
-                    MainClass.hero.outfitNum = 10;
-                    pushed = true;
-                } else if (keycode == Input.Keys.NUM_4) {
-                    MainClass.hero.outfitNum = 9;
-                    pushed = true;
+                if(MainClass.avatarScreen.setName){
+                    //Logic for handling input when setting character's name
+                    if (keycode == Input.Keys.ENTER) {
+                        if(MainClass.introLogic.nameIndex == 60){
+                            //Finish our character's name and continue to next sentence of the intro sequence.
+                            MainClass.introLogic.nextSentence();
+                        }
+                        else{
+                            //Call method to add the current letter onto the character's name.
+                            MainClass.introLogic.concatName(MainClass.introLogic.nameIndex);
+                        }
+                        Utils.menuOptionSound.play();
+                    }
+                    else if(keycode == Input.Keys.LEFT && Utils.menuIcon.getX() > 275 && Utils.menuIcon.getY() >= 214){
+                        Utils.menuIcon.translateX(-48);
+                        MainClass.introLogic.nameIndex -= 2;
+                        Utils.menuOptionSound.play();
+                    }
+                    else if(keycode == Input.Keys.RIGHT && Utils.menuIcon.getX() < 650 && Utils.menuIcon.getY() >= 214){
+                        Utils.menuIcon.translateX(48);
+                        MainClass.introLogic.nameIndex += 2;
+                        Utils.menuOptionSound.play();
+                    }
+                    else if(keycode == Input.Keys.UP && Utils.menuIcon.getY() < 278 && Utils.menuIcon.getY() >= 214){
+                        Utils.menuIcon.translateY(32);
+                        MainClass.introLogic.nameIndex -= 18;
+                        Utils.menuOptionSound.play();
+                    }
+                    else if(keycode == Input.Keys.DOWN && Utils.menuIcon.getY() > 214){
+                        Utils.menuIcon.translateY(-32);
+                        MainClass.introLogic.nameIndex += 18;
+                        Utils.menuOptionSound.play();
+                    }
+                    else if(keycode == Input.Keys.DOWN && Utils.menuIcon.getY() == 214){
+                        Utils.menuIcon.setPosition(430,130);
+                        MainClass.introLogic.nameIndex = 60;
+                        Utils.menuOptionSound.play();
+                    }
+                    else if(keycode == Input.Keys.UP && Utils.menuIcon.getY() < 214){
+                        Utils.menuIcon.setPosition(275,214);
+                        MainClass.introLogic.nameIndex = 36;
+                        Utils.menuOptionSound.play();
+                    }
+                    else if(keycode == Input.Keys.BACKSPACE){
+                        MainClass.introLogic.removeLetter();
+                        Utils.menuOptionSound.play();
+                    }
+
                 }
-
-                if (pushed) {
-                    pushed = false;
-                    //Initialize character with proper texture.
-                    MainClass.hero.initAnimations();
-
-                    //Play the "selection" sound effect.
-                    Utils.avatarScreenSelectionSound.play(0.4f);
-
-                    //Set game screen to be the main game screen.
-                    //MainClass.gameScreen = new GameScreen();
-                    ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
-                    MainClass.avatarScreen.dispose();
+                else if(MainClass.avatarScreen.setAvatar){
+                    //Logic for handling input when selecting the character's avatar.
+                    if(keycode == Input.Keys.LEFT && MainClass.introLogic.nameIndex > 1){
+                        MainClass.introLogic.nameIndex--;
+                        Utils.menuIcon.translateX(-130);
+                        Utils.menuOptionSound.play();
+                    }
+                    else if(keycode == Input.Keys.RIGHT && MainClass.introLogic.nameIndex < 4){
+                        MainClass.introLogic.nameIndex++;
+                        Utils.menuIcon.translateX(130);
+                        Utils.menuOptionSound.play();
+                    }
+                    else if(keycode == Input.Keys.ENTER){
+                        MainClass.introLogic.nextSentence();
+                        Utils.menuOptionSound.play();
+                    }
                 }
+                else {
+                    if (keycode == Input.Keys.ENTER) {
+                        if (MainClass.introLogic.sentence < 13) {
+                            MainClass.introLogic.nextSentence();
+                            Utils.menuOptionSound.play();
+                        } else {
+                            pushed = true;
+                        }
+                    }
 
+                    if (pushed) {
+                        pushed = false;
+                        //Initialize character with proper texture.
+                        MainClass.introLogic.setCharacterAvatar();
+
+                        //Play the "selection" sound effect.
+                        Utils.avatarScreenSelectionSound.play(0.4f);
+
+                        //Set game screen to be the main game screen.
+                        //MainClass.gameScreen = new GameScreen();
+                        ((Game) Gdx.app.getApplicationListener()).setScreen(MainClass.gameScreen);
+                        MainClass.avatarScreen.dispose();
+                    }
+                }
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -291,8 +353,6 @@ public class InputHandler implements InputProcessor {
                         System.out.print("Unable to save data\n");
                     }
                 }
-
-                ////////////////////////////////////////////////TEST INPUTS///////////////////////////////////////////////////////
                 else if (keycode == Input.Keys.P) {
                     if (!Utils.isPaused) {
                         Utils.isPaused = true;
@@ -308,7 +368,7 @@ public class InputHandler implements InputProcessor {
                 }
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //THIS IS THE CODE FOR THE INVENTORY SCREEN
+            //                                          INVENTORY SCREEN
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.inventoryScreen) {
                 if (keycode == Input.Keys.LEFT) {
@@ -435,7 +495,7 @@ public class InputHandler implements InputProcessor {
                 }
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //THIS IS THE CODE FOR THE HERO SCREEN
+            //                                               HERO SCREEN
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             else if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.heroScreen) {
                 if (keycode == Input.Keys.LEFT) {
@@ -499,24 +559,28 @@ public class InputHandler implements InputProcessor {
                         MainClass.heroScreen.heroRow -= 1;
                 }
             }
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                          OPEN WORLD SCREEN
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openWorldScreen) {
+                if (keycode == Input.Keys.UP) {
+                    MainClass.openWorldScreen.uwalk = true;
+                }
+                else if (keycode == Input.Keys.DOWN) {
+                    MainClass.openWorldScreen.dwalk = true;
+                }
+                else if (keycode == Input.Keys.LEFT) {
+                    MainClass.openWorldScreen.lwalk = true;
+                }
+                else if (keycode == Input.Keys.RIGHT) {
+                    MainClass.openWorldScreen.rwalk = true;
+                }
+                else if (keycode == Input.Keys.ENTER) {
+                    MainClass.openWorldScreen.select();
+                }
+            }
 
-        else if(((Game)Gdx.app.getApplicationListener()).getScreen() == MainClass.openWorldScreen) {
-            if (keycode == Input.Keys.UP) {
-                MainClass.openWorldScreen.uwalk = true;
-            }
-            else if (keycode == Input.Keys.DOWN) {
-                MainClass.openWorldScreen.dwalk = true;
-            }
-            else if (keycode == Input.Keys.LEFT) {
-                MainClass.openWorldScreen.lwalk = true;
-            }
-            else if (keycode == Input.Keys.RIGHT) {
-                MainClass.openWorldScreen.rwalk = true;
-            }
-            else if (keycode == Input.Keys.ENTER) {
-                MainClass.openWorldScreen.select();
-            }
-        }
+
         return false;
 
     }
