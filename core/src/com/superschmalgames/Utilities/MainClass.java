@@ -28,6 +28,7 @@ public class MainClass extends Game {
 	public static OpenWorldScreen openWorldScreen;
 	public static CombatScreen combatScreen;
 	public static CombatLogic combatLogic;
+	public static IntroLogic introLogic;
 	
 	@Override
 	public void create () {
@@ -41,7 +42,7 @@ public class MainClass extends Game {
 
 		//Create and initialize the main character object.
 		hero = new HeroCharacter();
-		hero.name = "Matt";
+		hero.name = "Albert";
 		hero.width = 55;
 		hero.height = 64;
 		hero.xPos = Utils.GAME_SCREEN_WIDTH/2 - hero.width/2;
