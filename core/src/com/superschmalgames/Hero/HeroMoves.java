@@ -34,15 +34,6 @@ public class HeroMoves {
         attacks[17] = Utils.Perf_Presentation;
     }
 
-    /*public int calc_dmg(){
-        return 1;
-    }
-
-    public void generateMoves(Move[] moves)
-    {
-
-    }*/
-
     public int getCurrentMove()
     {
         int overallIndex = 0;
@@ -50,7 +41,7 @@ public class HeroMoves {
 
         //If we're in the combat screen, use movePane and index to find current move.
         if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.combatScreen){
-            while (relIndex < MainClass.combatInputHandler.index){
+            while (relIndex <= MainClass.combatInputHandler.index){
                 if (MainClass.hero.moves.attacks[overallIndex].obtained) {
                     relIndex += 1;
                 }
@@ -60,7 +51,7 @@ public class HeroMoves {
         }
         //If not in combat, use heroRow and heroPage to find current move.
         else {
-            while (relIndex < (MainClass.heroScreen.heroRow + MainClass.heroScreen.heroPage * 8)) {
+            while (relIndex <= (MainClass.heroScreen.heroRow + MainClass.heroScreen.heroPage * 8)) {
                 if (MainClass.hero.moves.attacks[overallIndex].obtained) {
                     relIndex += 1;
                 }
@@ -69,7 +60,7 @@ public class HeroMoves {
             }
         }
 
-        return overallIndex;
+        return (overallIndex > 0) ? overallIndex-1 : overallIndex;
     }
 
     //Return the total number of moves the Hero has in his arsenal.
