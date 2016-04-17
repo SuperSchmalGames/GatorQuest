@@ -30,6 +30,7 @@ public class TitleScreen implements Screen {
     public boolean doneFadingFont;
     public boolean doneOrange;
     public boolean titleDone;
+    public boolean credits;
     public float transDelay;
 
     public final float TIME_TO_FADE = 0.85f;
@@ -40,6 +41,7 @@ public class TitleScreen implements Screen {
         doneFadingFont = false;
         doneOrange = false;
         titleDone = false;
+        credits = false;
         Utils.fadeStatus = Utils.fader.FADING_IN;
         transDelay = 0.0f;
 
@@ -49,9 +51,9 @@ public class TitleScreen implements Screen {
         Utils.gatorLogo.setScale(3.5f);
         Utils.titleLogo.setPosition(Utils.GAME_SCREEN_WIDTH/2-Utils.titleLogo.getWidth()/2,
                 Utils.GAME_SCREEN_HEIGHT-Utils.titleLogo.getHeight()-15);
-        Utils.menuBorder.setScale(0.85f,0.4f);
+        Utils.menuBorder.setScale(0.85f,0.5f);
         Utils.menuBorder.setPosition(Utils.GAME_SCREEN_WIDTH/2-Utils.menuBorder.getWidth()/2+10,
-                -50);
+                -62);
         Utils.menuIcon.setPosition(Utils.GAME_SCREEN_WIDTH/2-105,
                 171);
         Utils.menuIcon.setScale(3);
@@ -107,9 +109,10 @@ public class TitleScreen implements Screen {
 
         //Draw to our batch each refresh. The batch is then rendered to the screen.
         MainClass.batch.begin();
-
-        Utils.gatorLogo.draw(MainClass.batch);
-        Utils.titleLogo.draw(MainClass.batch);
+        if(!credits) {
+            Utils.gatorLogo.draw(MainClass.batch);
+            Utils.titleLogo.draw(MainClass.batch);
+        }
         if(!Utils.menuReady) {
             Utils.font.draw(MainClass.batch,
                     Utils.superSchmal,
@@ -122,14 +125,17 @@ public class TitleScreen implements Screen {
                     Utils.GAME_SCREEN_HEIGHT / 2 + titleLayout2.height / 2 - 20
             );
         }
-        else if(!titleDone){
+        else if(!titleDone && !credits){
             Utils.font.draw(MainClass.batch,
                     Utils.menuOptions,
                     Utils.GAME_SCREEN_WIDTH / 2 - titleLayout3.width / 2+40,
-                    Utils.GAME_SCREEN_HEIGHT / 2 - titleLayout3.height-20
+                    Utils.GAME_SCREEN_HEIGHT / 2 - titleLayout3.height+12
             );
             Utils.menuBorder.draw(MainClass.batch);
             Utils.menuIcon.draw(MainClass.batch);
+        }
+        else if(credits){
+            Utils.font.draw(MainClass.batch, Utils.creditsText,20, 200);
         }
         else{
             transDelay += delta;

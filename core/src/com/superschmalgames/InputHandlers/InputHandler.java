@@ -206,29 +206,40 @@ public class InputHandler implements InputProcessor {
         //                                           TITLE SCREEN
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             if (((Game) Gdx.app.getApplicationListener()).getScreen() == MainClass.titleScreen) {
-                if (keycode == Input.Keys.DOWN && Utils.menuReady && menuIndex < 2) {
+                if (keycode == Input.Keys.DOWN && Utils.menuReady && menuIndex < 3 && !MainClass.titleScreen.credits) {
                     //Play the sound effect when player pushes the button.
                     Utils.menuOptionSound.play(0.6f);
                     //Move the menu icon down to the next menu option.
                     Utils.menuIcon.translateY(-33.0f);
                     //Increment the menu index.
                     menuIndex++;
-                } else if (keycode == Input.Keys.UP && Utils.menuReady && menuIndex > 0) {
+                }
+                else if (keycode == Input.Keys.UP && Utils.menuReady && menuIndex > 0 && !MainClass.titleScreen.credits) {
                     Utils.menuOptionSound.play(0.6f);
                     Utils.menuIcon.translateY(33.0f);
                     menuIndex--;
-                } else if (keycode == Input.Keys.ENTER && Utils.menuReady) {
+                }
+                else if (keycode == Input.Keys.ENTER && Utils.menuReady && !MainClass.titleScreen.credits) {
                     if (menuIndex == 0) {
                         //Play the sound effect and stop the music when player pushes the button.
                         Utils.titleScreenMusic.stop();
                         Utils.titleScreenSelectionSound.play();
                         MainClass.titleScreen.titleDone = true;
-                    } else if (menuIndex == 1){
+                    }
+                    else if (menuIndex == 1){
                         load();
-                    }else if (menuIndex == 2) {
+                    }
+                    else if (menuIndex == 2) {
                         Gdx.app.exit();
-                    } else
+                    }
+                    else if(menuIndex == 3){
+                        MainClass.titleScreen.credits = true;
+                    }
+                    else
                         Utils.errTone.play(0.5f);
+                }
+                else if(keycode == Input.Keys.ESCAPE){
+                    MainClass.titleScreen.credits = false;
                 }
             }
 

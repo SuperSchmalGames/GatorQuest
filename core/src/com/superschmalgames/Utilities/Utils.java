@@ -56,7 +56,8 @@ public class Utils {
     public static final Sprite menuIcon = new Sprite(new Texture("visuals/title_screen/white_tr.png"));
     public static final String superSchmal = "SUPER SCHMAL GAMES";
     public static final String presents = "presents";
-    public static final String menuOptions = "New Game\nLoad Game\nExit Game";
+    public static final String menuOptions = "New Game\nLoad Game\nExit Game\nCredits";
+    public static final String creditsText = "CHECK THE CREDITS BRAH";
     public static boolean menuReady;
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
