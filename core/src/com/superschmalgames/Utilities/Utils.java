@@ -57,7 +57,24 @@ public class Utils {
     public static final String superSchmal = "SUPER SCHMAL GAMES";
     public static final String presents = "presents";
     public static final String menuOptions = "New Game\nLoad Game\nExit Game\nCredits";
-    public static final String creditsText = "CHECK THE CREDITS BRAH";
+    public static final String creditsText = "Thanks to our friends at freesound.org for \n" +
+            "providing sound effects for the game!\n" +
+            "atha89, EverHeat, nsstudios, distillerystudio\n\n" +
+            "We also want to thank our friends over at \n" +
+            "opengameart.org for providing sprite sheets \n" +
+            "and map textures for our game!\n" +
+            "Icons borrowed from:\n" +
+            "http://piq.codeus.net/static/media/userpics/\n" +
+            "piq_139831_400x400.png\n" +
+            "http://www.clker.com/cliparts/2/k/n/l/C/Q/\n" +
+            "transparent-green-checkmark-hi.png\n" +
+            "http://emojipedia-us.s3.amazonaws.com/cache/\n" +
+            "c5/1f/c51f0caacbf8fa9d8c5fa9d163657f62.png\n" +
+            "\nMap/TileSets:\n" +
+            "Map data copyright 2016 Google Imagery copyright\n" +
+            "2016, DigitalGlobe, U.S. GeologicalSurvey\n" +
+            "Rogulike Modern City pack and Roguelike Indoor \n" +
+            "pack by Kenney Vleugels for Kenney (www.kenney.nl)";
     public static boolean menuReady;
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

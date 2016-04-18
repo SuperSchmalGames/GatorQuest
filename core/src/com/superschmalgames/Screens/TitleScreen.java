@@ -135,7 +135,7 @@ public class TitleScreen implements Screen {
             Utils.menuIcon.draw(MainClass.batch);
         }
         else if(credits){
-            Utils.font.draw(MainClass.batch, Utils.creditsText,20, 200);
+            Utils.font_medsmall.draw(MainClass.batch, Utils.creditsText,20, 600);
         }
         else{
             transDelay += delta;
