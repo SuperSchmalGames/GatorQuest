@@ -987,7 +987,7 @@ public class Utils {
     //========================================================================================
     //========================================Marston=========================================
     public static NPC[] Marston_enemies = {
-            new SHOP('r', "Redbull $100\n\nStarbucks $300", "visuals/sprite_sheets/sprite_walk_r1.png", 45*MAP_RESOLUTION, (45-18)*MAP_RESOLUTION), //0
+            new SHOP('r', "Redbull $100\n\nStarbucks $300\n\nTutorZone Pkt $500\n\nChegg Login $800", "visuals/sprite_sheets/sprite_walk_r1.png", 45*MAP_RESOLUTION, (45-18)*MAP_RESOLUTION), //0
             new NPC('d', marstonA, "visuals/sprite_sheets/sprite_walk_d2.png", 48*MAP_RESOLUTION, (45-14)*MAP_RESOLUTION),
             new NPC('u', marstonC, "visuals/sprite_sheets/sprite_walk_u3.png", 45*MAP_RESOLUTION, (45-30)*MAP_RESOLUTION),
             new NPC('r', marstonB, "visuals/sprite_sheets/sprite_walk_r4.png", 40*MAP_RESOLUTION, (45-16)*MAP_RESOLUTION),

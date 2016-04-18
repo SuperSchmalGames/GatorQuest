@@ -18,7 +18,7 @@ public class ShopInputHandler implements InputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
-        if(shop == 1 && keycode == Input.Keys.DOWN && MainClass.gameScreen.shop_window.currIndex < 1){
+        if(shop == 1 && keycode == Input.Keys.DOWN && MainClass.gameScreen.shop_window.currIndex < 3){
             Utils.menuIcon.translateY(-65);
             MainClass.gameScreen.shop_window.currIndex += 1;
         }
@@ -50,6 +50,14 @@ public class ShopInputHandler implements InputProcessor {
                 } else if (MainClass.gameScreen.shop_window.currIndex == 1 && MainClass.hero.gatorBucks >= 300) {
                     MainClass.hero.inventory.incItem(Utils.INV_ITEMS.STARBUCKS);
                     MainClass.hero.gatorBucks -= 300;
+                    Utils.kaching.play();
+                } else if (MainClass.gameScreen.shop_window.currIndex == 2 && MainClass.hero.gatorBucks >= 500) {
+                    MainClass.hero.inventory.incItem(Utils.INV_ITEMS.TUTORINGZONE);
+                    MainClass.hero.gatorBucks -= 500;
+                    Utils.kaching.play();
+                } else if (MainClass.gameScreen.shop_window.currIndex == 3 && MainClass.hero.gatorBucks >= 800) {
+                    MainClass.hero.inventory.incItem(Utils.INV_ITEMS.CHEGG);
+                    MainClass.hero.gatorBucks -= 800;
                     Utils.kaching.play();
                 } else {
                     Utils.oob_error.play();
