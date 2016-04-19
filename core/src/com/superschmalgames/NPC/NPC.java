@@ -17,7 +17,6 @@ public class NPC {
     public int org_x, org_y;
     public boolean triggered;
     public String script;
-    public boolean los;
 
     //NPCs will only move in one direction if any
     public NPC(char dir, String s, String sprite, int x, int y) {
@@ -30,7 +29,6 @@ public class NPC {
         walk = new Animator(4, 1, sprite, 0.17f);
         walk.currentFrame = walk.walkAnimation.getKeyFrame(walk.stateTime, true);
         triggered = false;
-        los = true;
     }
 
     //move to players location.
@@ -74,10 +72,6 @@ public class NPC {
             walk.stateTime += delta;
             walk.currentFrame = walk.walkAnimation.getKeyFrame(walk.stateTime, true);
         }
-    }
-
-    public boolean getTriggered() {
-        return triggered;
     }
 
     public void initiate(){

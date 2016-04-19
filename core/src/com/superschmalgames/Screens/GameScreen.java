@@ -138,7 +138,7 @@ public class GameScreen implements Screen {
     private void checkForEnemy(float delta) {
         if(collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().containsKey("enemy")) {
             int temp = Integer.valueOf((String)collision.getCell((int)camera.position.x/Utils.MAP_RESOLUTION, (int)camera.position.y/Utils.MAP_RESOLUTION).getTile().getProperties().get("number"));
-            if(!enemies[temp].getTriggered()) {
+            if(!enemies[temp].triggered) {
                 attackable = false;
                 lWalk = false;
                 rWalk = false;
